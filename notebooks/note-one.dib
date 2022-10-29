@@ -1,0 +1,3 @@
+#!csharp
+
+Console.WriteLine("Value of first parameter is {0:D} and value of second parameter is {1}", DateTime.Today, 12.0);
