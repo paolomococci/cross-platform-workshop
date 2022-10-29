@@ -3,7 +3,7 @@
 namespace Arguments {
     class Program {
         static void Main(string[] args) {
-            WriteLine("Sample Feedback!");
+            WriteLine($"There are {args.Length} arguments.");
         }
     }
 }
