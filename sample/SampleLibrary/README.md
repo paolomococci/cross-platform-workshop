@@ -1,4 +1,4 @@
-# SampleLibrary
+# SampleLibrary (legacy approach)
 
 ## scaffolding
 
