@@ -5,5 +5,5 @@
 From the parent directory type the following command:
 
 ```shell
-dotnet new classlib -name SampleLibrary
+dotnet new classlib --name SampleLibrary
 ```
