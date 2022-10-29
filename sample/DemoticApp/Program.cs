@@ -1,1 +1,5 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using Sample.Shared;
+
+using static System.Console;
+
+Person james = new();
