@@ -1,5 +1,7 @@
 namespace Sample.Shared {
     public class Account {
-        // todo
+        public string AccountName;
+        public decimal Balance;
+        public static decimal InterestRate;
     }
 }
