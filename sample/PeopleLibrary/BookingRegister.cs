@@ -16,5 +16,11 @@ public record Pet {
         Species = species;
     }
 
-    public void Deconstruct() {}
+    public void Deconstruct(
+        out string name,
+        out string species
+    ) {
+        name = Name;
+        species = Species;
+    }
 }
