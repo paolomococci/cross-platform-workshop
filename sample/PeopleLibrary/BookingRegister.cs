@@ -24,3 +24,8 @@ public record Pet {
         species = Species;
     }
 }
+
+public record Animal(
+    string Name, 
+    string Species
+);
