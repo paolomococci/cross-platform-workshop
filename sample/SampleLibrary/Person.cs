@@ -16,5 +16,11 @@ namespace Sample.Shared
         public Wonders FavoriteWonder;
         public Wonders BucketList;
         public List<Person> Children = new List<Person>();
+
+        public Person()
+        {
+            Name = "Unknown";
+            Instantiated = DateTime.Now;
+        }
     }
 }
