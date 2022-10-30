@@ -34,7 +34,7 @@ namespace Sample.Shared
                         break;
                     default:
                         throw new System.ArgumentException(
-                            $"{value} is not a primary color. " + "Choose from: red, green, blue."
+                            $"{value} is not a primary color, choose from: red, green, blue."
                         );
                 }
             }
