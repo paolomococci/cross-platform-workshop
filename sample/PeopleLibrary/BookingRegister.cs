@@ -3,3 +3,7 @@ public class PersonalBooking
 {
 
 }
+
+public record Pet {
+    
+}
