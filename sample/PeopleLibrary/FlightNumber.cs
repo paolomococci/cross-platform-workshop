@@ -1,5 +1,5 @@
 namespace Sample.Shared;
-public class FlightPlan
+public record FlightPlan
 {
     public int Id { get; init; }
     public string? Company { get; init; }
