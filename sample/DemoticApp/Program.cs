@@ -2,4 +2,3 @@
 
 using static System.Console;
 
-Person james = new();
