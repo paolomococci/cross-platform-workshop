@@ -30,6 +30,8 @@ public class Pet : object
     return null;
   }
 
+  public void Weaning(DateTime when) {}
+
   public override string? ToString()
   {
     return base.ToString();
