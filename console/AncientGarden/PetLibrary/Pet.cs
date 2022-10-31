@@ -10,7 +10,7 @@ public class Pet : object, IComparable<Pet?>
   public event EventHandler? Caress;
   public int DocilityLevel;
 
-  public static Pet? Procreate(
+  public static Pet Procreate(
     Pet mom,
     Pet dad
   ) {
