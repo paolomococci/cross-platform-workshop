@@ -19,4 +19,6 @@ public class Pet
   public static int? Factorial() {
     return null;
   }
+
+  public void Cuddles() {}
 }
