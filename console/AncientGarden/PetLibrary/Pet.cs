@@ -2,6 +2,7 @@
 public class Pet : object
 {
   public Guid? Id { get; set; }
+  public string? Owned { get; set; }
   public string? Name { get; set; }
   public string? Parents { get; set; }
   public DateTime? DateOfBirth { get; set; }
