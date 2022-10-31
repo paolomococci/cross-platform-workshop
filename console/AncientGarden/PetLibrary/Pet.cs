@@ -9,4 +9,8 @@ public class Pet
   public static Pet? Procreate() {
     return null;
   }
+
+  public Pet? ProcreateWith() {
+    return null;
+  }
 }
