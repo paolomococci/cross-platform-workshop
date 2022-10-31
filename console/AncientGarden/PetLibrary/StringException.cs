@@ -1,4 +1,4 @@
-namespace PetLibrary;
+namespace PetLibrary.Shared;
 
 using System.Text.RegularExpressions;
 public static class StringException
