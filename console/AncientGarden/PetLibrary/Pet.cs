@@ -38,7 +38,23 @@ public class Pet : object, IComparable<Pet?>
   public void Adoption() {}
 
   public int CompareTo(Pet? other) {
-    return 1;
+    if ((this is not null) && (other is not null)) {
+      if (Name is null) {
+        if (other.Name is null) return 0;
+        return 1;
+      } else {
+        if (other.Name is null) {
+          return -1;
+        }
+      }
+      return Name.CompareTo(other.Name);
+    } else if ((this is not null) && (other is null)) {
+      return -1;
+    } else if ((this is null) && (other is not null)) {
+      return 1;
+    } else {
+      return 0;
+    }
   }
 
   public void Weaning(DateTime when) {}
