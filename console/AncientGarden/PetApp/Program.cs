@@ -7,3 +7,5 @@ Pet iron = Pet.Procreate(
   ginger,
   gus
 );
+
+Console.WriteLine($"{ginger.Name} and {gus.Name} they had a puppy identified with {iron.Id}");
