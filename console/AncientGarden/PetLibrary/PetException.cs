@@ -1,4 +1,4 @@
-namespace PetLibrary;
+namespace PetLibrary.Shared;
 public class PetException : Exception
 {
   public PetException() : base() { }
