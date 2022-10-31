@@ -1,16 +1,26 @@
 ﻿namespace PetLibrary;
 public class Pet : object
 {
-  public string Id { get; init; } = "";
+  public Guid? Id { get; set; }
   public string? Name { get; set; }
+  public string? Parents { get; set; }
   public DateTime? DateOfBirth { get; set; }
   public Cub? Progeny { get; set; }
   public event EventHandler? Caress;
   public int DocilityLevel;
 
-  public static Pet? Procreate()
+  public static Pet? Procreate(
+    Pet mom,
+    Pet dad
+  )
   {
-    return null;
+    Pet newborn = new() 
+    {
+      Id = Guid.NewGuid(),
+      Parents = $"cub of {mom.Name} and {dad.Name}",
+      DateOfBirth = DateTime.Today
+    };
+    return newborn;
   }
 
   public Pet? ProcreateWith()
