@@ -21,4 +21,8 @@ public class Pet
   }
 
   public void Cuddles() {}
+
+  public int? CompareTo(Pet? other) {
+    return null;
+  }
 }
