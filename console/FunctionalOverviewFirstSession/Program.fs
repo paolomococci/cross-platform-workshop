@@ -1,1 +1,1 @@
-﻿printfn "Hello from F#"
+﻿printfn "A point of view on functional programming."
