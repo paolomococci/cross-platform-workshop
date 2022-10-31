@@ -1,4 +1,4 @@
-﻿namespace PetLibrary;
+﻿namespace PetLibrary.Shared;
 public class Pet : object, IComparable<Pet?>
 {
   public Guid? Id { get; set; }
