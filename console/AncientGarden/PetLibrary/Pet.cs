@@ -7,7 +7,7 @@ public class Pet : object, IComparable<Pet?>
   public string? Parents { get; set; }
   public DateTime? DateOfBirth { get; set; }
   public Cub Progeny = new();
-  public event EventHandler? Caress;
+  //public event EventHandler? Caress;
   public int DocilityLevel;
 
   public static Pet Procreate(
