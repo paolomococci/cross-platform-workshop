@@ -1,5 +1,5 @@
 ﻿namespace PetLibrary;
-public class Pet
+public class Pet : object
 {
   public string Id { get; init; } = "";
   public string? Name { get; set; }
@@ -25,4 +25,9 @@ public class Pet
   public int? CompareTo(Pet? other) {
     return null;
   }
+
+    public override string? ToString()
+    {
+        return base.ToString();
+    }
 }
