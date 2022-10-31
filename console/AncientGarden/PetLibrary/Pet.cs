@@ -13,4 +13,8 @@ public class Pet
   public Pet? ProcreateWith() {
     return null;
   }
+
+  public static int? Factorial() {
+    return null;
+  }
 }
