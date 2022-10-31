@@ -1,7 +1,7 @@
 namespace PetLibrary;
 
-public class PetSpecialist 
+public class PetSpecialist : Pet
 {
   public bool? SuitableForPetTherapy { get; set; }
-  public string? Specialist { get; set; }
+  public string? Specialization { get; set; }
 }
