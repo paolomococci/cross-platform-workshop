@@ -35,6 +35,8 @@ public class Pet : object
 
   public void Cuddles() { }
 
+  public void Adoption() {}
+
   public int? CompareTo(Pet? other) {
     return null;
   }
