@@ -1,5 +1,5 @@
 namespace PetLibrary;
-public class PStringException
+public class StringException
 {
 
 }
