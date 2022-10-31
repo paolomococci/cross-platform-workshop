@@ -1,8 +1,8 @@
 ﻿namespace PetLibrary;
 public class Pet
 {
-  public string Id;
-  public string? Name;
-  public DateTime DateOfBirth;
-  public Cub? Progeny;
+  public string Id { get; init; } = "";
+  public string? Name { get; set; }
+  public DateTime? DateOfBirth { get; set; }
+  public Cub? Progeny { get; set; }
 }
