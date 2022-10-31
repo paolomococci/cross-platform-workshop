@@ -1,5 +1,5 @@
 ﻿namespace PetLibrary;
-public class Pet : object
+public class Pet : object, IComparable<Pet?>
 {
   public Guid? Id { get; set; }
   public string? Owned { get; set; }
@@ -37,8 +37,8 @@ public class Pet : object
 
   public void Adoption() {}
 
-  public int? CompareTo(Pet? other) {
-    return null;
+  public int CompareTo(Pet? other) {
+    return 1;
   }
 
   public void Weaning(DateTime when) {}
