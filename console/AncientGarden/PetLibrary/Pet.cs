@@ -6,6 +6,7 @@ public class Pet
   public DateTime? DateOfBirth { get; set; }
   public Cub? Progeny { get; set; }
   public event EventHandler? Caress;
+  public int DocilityLevel;
 
   public static Pet? Procreate() {
     return null;
