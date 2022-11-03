@@ -34,4 +34,8 @@ dotnet new razorcomponent --name Category
 dotnet new razorcomponent --name Product
 dotnet new razorcomponent --name Form
 dotnet new razorcomponent --name Invoice
+cd ..
+mkdir RestRequestTests
+cd RestRequestTests
+touch get_employee_test.http
 ```
