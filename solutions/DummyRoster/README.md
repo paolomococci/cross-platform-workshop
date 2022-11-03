@@ -37,5 +37,5 @@ dotnet new razorcomponent --name Invoice
 cd ..
 mkdir RestRequestTests
 cd RestRequestTests
-touch get_employee_test.http
+touch get_employee_endpoint_test.http
 ```
