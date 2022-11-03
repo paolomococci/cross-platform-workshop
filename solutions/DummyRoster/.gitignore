@@ -457,5 +457,6 @@ $RECYCLE.BIN/
 lib/
 Properties/
 *.ico
+*.png
 *.db
 HELP.md
