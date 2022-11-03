@@ -7,7 +7,7 @@ mkdir DummyRoster
 cd DummyRoster
 dotnet new gitignore
 dotnet new sln
-echo "# DummyRoster project" > README.md
+echo "# DummyRoster solution" > README.md
 mkdir src
 cd src
 mkdir core
