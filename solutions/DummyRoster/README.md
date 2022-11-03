@@ -3,7 +3,6 @@
 ## scaffolding
 
 ```shell
-
 mkdir DummyRoster
 cd DummyRoster
 dotnet new gitignore
