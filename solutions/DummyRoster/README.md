@@ -24,4 +24,5 @@ dotnet new mvc --name DummyRoster.Mvc
 dotnet new webapi --name DummyRoster.OData
 dotnet new webapi --name DummyRoster.GraphQL
 dotnet new grpc --name DummyRoster.gRPC
+dotnet new razorclasslib --name DummyRoster.Razor
 ```
