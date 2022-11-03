@@ -1,4 +1,4 @@
-# DummyRoster project
+# DummyRoster solution
 
 ## scaffolding
 
@@ -48,4 +48,5 @@ touch get_invoice_endpoint_test.http
 cd ..
 dotnet new blazorserver --name DummyRoster.BlazorServer
 dotnet new blazorwasm --name DummyRoster.BlazorWasm
+dotnet new angular --name DummyRoster.Angular
 ```
