@@ -38,4 +38,11 @@ cd ..
 mkdir RestRequestTests
 cd RestRequestTests
 touch get_employee_endpoint_test.http
+touch get_customer_endpoint_test.http
+touch get_supplier_endpoint_test.http
+touch get_carrier_endpoint_test.http
+touch get_category_endpoint_test.http
+touch get_product_endpoint_test.http
+touch get_form_endpoint_test.http
+touch get_invoice_endpoint_test.http
 ```
