@@ -25,4 +25,13 @@ dotnet new webapi --name DummyRoster.OData
 dotnet new webapi --name DummyRoster.GraphQL
 dotnet new grpc --name DummyRoster.gRPC
 dotnet new razorclasslib --name DummyRoster.Razor
+cd DummyRoster.Razor
+dotnet new razorcomponent --name Employee
+dotnet new razorcomponent --name Customer
+dotnet new razorcomponent --name Supplier
+dotnet new razorcomponent --name Carrier
+dotnet new razorcomponent --name Category
+dotnet new razorcomponent --name Product
+dotnet new razorcomponent --name Form
+dotnet new razorcomponent --name Invoice
 ```
