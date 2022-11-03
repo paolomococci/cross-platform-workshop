@@ -456,6 +456,7 @@ $RECYCLE.BIN/
 # more
 lib/
 src/presentation/DummyRoster.BlazorServer/wwwroot/css/*
+src/presentation/DummyRoster.BlazorWasm/wwwroot/css/*
 *.ico
 *.png
 *.db
