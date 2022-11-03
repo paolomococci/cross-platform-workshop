@@ -47,4 +47,5 @@ touch get_form_endpoint_test.http
 touch get_invoice_endpoint_test.http
 cd ..
 dotnet new blazorserver --name DummyRoster.BlazorServer
+dotnet new blazorwasm --name DummyRoster.BlazorWasm
 ```
