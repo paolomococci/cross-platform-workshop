@@ -1,4 +1,4 @@
-# SampleApiSolution
+# CleanApiSolution
 
 ## scaffolding
 
