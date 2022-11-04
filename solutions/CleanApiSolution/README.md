@@ -5,7 +5,7 @@
 ```shell
 mkdir CleanApiSolution
 cd CleanApi
-echo "# SampleApiSolution" > README.md
+echo "# CleanApiSolution" > README.md
 dotnet new gitignore
 dotnet new sln
 dotnet new webapi --name CleanApiSolution.WebApi
