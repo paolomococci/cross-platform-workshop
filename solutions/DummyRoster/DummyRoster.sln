@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyRoster.Angular", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyRoster.BlazorServer", "src\presentation\DummyRoster.BlazorServer\DummyRoster.BlazorServer.csproj", "{7B21249C-592B-481D-A8D5-C2B0A2936AAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyRoster.BlazorWasm", "src\presentation\DummyRoster.BlazorWasm\DummyRoster.BlazorWasm.csproj", "{13F78A5A-BA14-4966-8906-07969F8B499C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{7B21249C-592B-481D-A8D5-C2B0A2936AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B21249C-592B-481D-A8D5-C2B0A2936AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B21249C-592B-481D-A8D5-C2B0A2936AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F78A5A-BA14-4966-8906-07969F8B499C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F78A5A-BA14-4966-8906-07969F8B499C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F78A5A-BA14-4966-8906-07969F8B499C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F78A5A-BA14-4966-8906-07969F8B499C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{73B9688E-CD80-4691-A498-FF8B3AAACEAC} = {A91E0336-1534-46ED-869C-E65AFC39FF1B}
@@ -57,5 +63,6 @@ Global
 		{75BABC8A-1818-406B-B28E-D169C66EFBE6} = {A91E0336-1534-46ED-869C-E65AFC39FF1B}
 		{6A254EDC-DCF1-4030-99BC-58EEADC28FFA} = {75BABC8A-1818-406B-B28E-D169C66EFBE6}
 		{7B21249C-592B-481D-A8D5-C2B0A2936AAE} = {75BABC8A-1818-406B-B28E-D169C66EFBE6}
+		{13F78A5A-BA14-4966-8906-07969F8B499C} = {75BABC8A-1818-406B-B28E-D169C66EFBE6}
 	EndGlobalSection
 EndGlobal
