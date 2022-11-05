@@ -66,4 +66,5 @@ dotnet sln add src/presentation/DummyRoster.Mvc/DummyRoster.Mvc.csproj
 dotnet sln add src/presentation/DummyRoster.OData/DummyRoster.OData.csproj
 dotnet sln add src/presentation/DummyRoster.Razor/DummyRoster.Razor.csproj
 dotnet sln add src/presentation/DummyRoster.Web/DummyRoster.Web.csproj
+dotnet sln add src/presentation/DummyRoster.WebApi/DummyRoster.WebApi.csproj
 ```
