@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyRoster.Angular", "src\presentation\DummyRoster.Angular\DummyRoster.Angular.csproj", "{6A254EDC-DCF1-4030-99BC-58EEADC28FFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyRoster.BlazorServer", "src\presentation\DummyRoster.BlazorServer\DummyRoster.BlazorServer.csproj", "{7B21249C-592B-481D-A8D5-C2B0A2936AAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{6A254EDC-DCF1-4030-99BC-58EEADC28FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A254EDC-DCF1-4030-99BC-58EEADC28FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A254EDC-DCF1-4030-99BC-58EEADC28FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B21249C-592B-481D-A8D5-C2B0A2936AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B21249C-592B-481D-A8D5-C2B0A2936AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B21249C-592B-481D-A8D5-C2B0A2936AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B21249C-592B-481D-A8D5-C2B0A2936AAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{73B9688E-CD80-4691-A498-FF8B3AAACEAC} = {A91E0336-1534-46ED-869C-E65AFC39FF1B}
@@ -50,5 +56,6 @@ Global
 		{675F5D1E-3169-4417-926D-72006A224131} = {73B9688E-CD80-4691-A498-FF8B3AAACEAC}
 		{75BABC8A-1818-406B-B28E-D169C66EFBE6} = {A91E0336-1534-46ED-869C-E65AFC39FF1B}
 		{6A254EDC-DCF1-4030-99BC-58EEADC28FFA} = {75BABC8A-1818-406B-B28E-D169C66EFBE6}
+		{7B21249C-592B-481D-A8D5-C2B0A2936AAE} = {75BABC8A-1818-406B-B28E-D169C66EFBE6}
 	EndGlobalSection
 EndGlobal
