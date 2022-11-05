@@ -63,4 +63,5 @@ dotnet sln add src/presentation/DummyRoster.BlazorWasm/DummyRoster.BlazorWasm.cs
 dotnet sln add src/presentation/DummyRoster.GraphQL/DummyRoster.GraphQL.csproj
 dotnet sln add src/presentation/DummyRoster.gRPC/DummyRoster.gRPC.csproj
 dotnet sln add src/presentation/DummyRoster.Mvc/DummyRoster.Mvc.csproj
+dotnet sln add src/presentation/DummyRoster.OData/DummyRoster.OData.csproj
 ```
