@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# name: cupcake
+# description: bash script to quickly generate a dotnet solution
+# date: 2022-11-05
+# version: 1.0.0
+# usage: cupcake SolutionName
+# author: Paolo Mococci
+# license: MIT
+
+# TODO
