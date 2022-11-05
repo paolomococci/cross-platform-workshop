@@ -54,5 +54,5 @@ dotnet new angular --name DummyRoster.Angular
 ## now it's time to add the projects to the solution file
 
 ```shell
-
+dotnet sln add src/core/DummyRoster.Common/DummyRoster.Common.csproj
 ```
