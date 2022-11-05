@@ -58,4 +58,5 @@ dotnet sln add src/core/DummyRoster.Common/DummyRoster.Common.csproj
 dotnet sln add src/core/DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj
 dotnet sln add src/core/DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj
 dotnet sln add src/presentation/DummyRoster.Angular/DummyRoster.Angular.csproj
+dotnet sln add src/presentation/DummyRoster.BlazorServer/DummyRoster.BlazorServer.csproj
 ```
