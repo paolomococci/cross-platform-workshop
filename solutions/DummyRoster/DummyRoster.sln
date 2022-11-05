@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyRoster.Common", "src\c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyRoster.Common.DataContext", "src\core\DummyRoster.Common.DataContext\DummyRoster.Common.DataContext.csproj", "{EC9653E4-CAFE-465B-8AF8-24B3BA1FDCF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyRoster.Common.EntityModel", "src\core\DummyRoster.Common.EntityModel\DummyRoster.Common.EntityModel.csproj", "{675F5D1E-3169-4417-926D-72006A224131}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +30,15 @@ Global
 		{EC9653E4-CAFE-465B-8AF8-24B3BA1FDCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC9653E4-CAFE-465B-8AF8-24B3BA1FDCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC9653E4-CAFE-465B-8AF8-24B3BA1FDCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675F5D1E-3169-4417-926D-72006A224131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675F5D1E-3169-4417-926D-72006A224131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675F5D1E-3169-4417-926D-72006A224131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675F5D1E-3169-4417-926D-72006A224131}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{73B9688E-CD80-4691-A498-FF8B3AAACEAC} = {A91E0336-1534-46ED-869C-E65AFC39FF1B}
 		{E60F8D4F-8AE0-4704-AAC7-E56E894899CF} = {73B9688E-CD80-4691-A498-FF8B3AAACEAC}
 		{EC9653E4-CAFE-465B-8AF8-24B3BA1FDCF7} = {73B9688E-CD80-4691-A498-FF8B3AAACEAC}
+		{675F5D1E-3169-4417-926D-72006A224131} = {73B9688E-CD80-4691-A498-FF8B3AAACEAC}
 	EndGlobalSection
 EndGlobal
