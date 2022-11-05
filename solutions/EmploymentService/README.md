@@ -1,1 +1,7 @@
-# EmploymentService solution 
+# EmploymentService solution
+
+## scaffolding
+
+```shell
+cupcake EmploymentService
+```
