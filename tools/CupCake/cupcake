@@ -8,4 +8,326 @@
 # author: Paolo Mococci
 # license: MIT
 
-# TODO
+buildNewInterface() {
+    interfaceNamespace=$2
+    interfaceName=$1
+    echo -e "namespace $interfaceNamespace\n{\n\tpublic interface $interfaceName\n\t{\n\t\t\n\t}\n}" > $interfaceName.cs
+}
+
+buildNewClass() {
+    classNamespace=$2
+    className=$1
+    echo -e "namespace $classNamespace\n{\n\tpublic class $className\n\t{\n\t\t\n\t}\n}" > $className.cs
+}
+
+buildCoreLayer() {
+
+    echo -e "\n 🔧 Scaffold of core layer under construction.\n"
+
+    cd src
+
+    mkdir core
+    cd core
+
+    dotnet new classlib --name $solutionName.Domain
+    dotnet new classlib --name $solutionName.Application
+
+    cd $solutionName.Domain \
+        && mkdir Entities \
+       	&& mkdir Enums \
+       	&& mkdir Settings
+
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
+
+    cd Entities
+    buildNewClass User $solutionName.Domain.Entities
+
+    cd ../Settings
+    buildNewClass MailSettings $solutionName.Domain.Settings
+
+
+    cd ../../$solutionName.Application \
+        && dotnet add reference ../$solutionName.Domain/$solutionName.Domain.csproj
+
+    dotnet add package MediatR
+    dotnet add package MediatR.Extensions.Microsoft.DependencyInjection
+    dotnet add package Microsoft.Extensions.Logging.Abstractions
+    dotnet add package FluentValidation
+    dotnet add package FluentValidation.DependencyInjectionExtensions
+    dotnet add package Microsoft.EntityFrameworkCore
+    dotnet add package AutoMapper
+    dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+    dotnet add package Microsoft.Extensions.Caching.StackExchangeRedis
+    dotnet add package Microsoft.Extensions.Configuration
+    dotnet add package Newtonsoft.Json
+
+    mkdir Common
+    mkdir Dtos
+
+    cd Common \
+        && mkdir Behaviors \
+        && mkdir Exceptions \
+        && mkdir Interfaces \
+        && mkdir Mappings
+
+    cd Behaviors
+    buildNewClass LoggingBehavior $solutionName.Application.Common.Behaviors
+    buildNewClass PerformanceBehavior $solutionName.Application.Common.Behaviors
+    buildNewClass UnhandledExceptionBehavior $solutionName.Application.Common.Behaviors
+    buildNewClass ValidationBehavior $solutionName.Application.Common.Behaviors
+
+    cd ../Exceptions
+    buildNewClass ApiException $solutionName.Application.Common.Exceptions
+    buildNewClass NotFoundException $solutionName.Application.Common.Exceptions
+    buildNewClass PropertyValidationException $solutionName.Application.Common.Exceptions
+    buildNewClass ValidationException $solutionName.Application.Common.Exceptions
+
+    cd ../Interfaces
+    buildNewInterface IApplicationDbContext $solutionName.Application.Common.Interfaces
+    buildNewInterface ICsvFileBuilder $solutionName.Application.Common.Interfaces
+    buildNewInterface IDateTime $solutionName.Application.Common.Interfaces
+    buildNewInterface IEmailService $solutionName.Application.Common.Interfaces
+    buildNewInterface IUserService $solutionName.Application.Common.Interfaces
+
+    cd ../Mappings
+    buildNewInterface IMapFrom $solutionName.Application.Common.Mappings
+    buildNewClass MappingProfile $solutionName.Application.Common.Mappings
+
+    cd ../../Dtos
+    mkdir Email
+    mkdir User
+    cd Email
+    buildNewClass EmailDto $solutionName.Application.Dtos.Email
+
+    cd ../User
+    buildNewClass AuthenticateResponse $solutionName.Application.Dtos.User
+    buildNewClass AuthenticateRequest $solutionName.Application.Dtos.User
+
+    cd ../..
+    buildNewClass DependencyInjection $solutionName.Application
+
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
+
+    cd ../..
+}
+
+
+buildInfrastructureLayer() {
+
+    echo -e "\n 🔧 Scaffold of infrastructure layer under construction.\n"
+
+    mkdir infrastructure
+    cd infrastructure
+
+    dotnet new classlib --name $solutionName.Data
+    dotnet new classlib --name $solutionName.Shared
+    dotnet new classlib --name $solutionName.Identity
+
+    cd $solutionName.Data \
+        && mkdir Contexts \
+        && dotnet add reference ../../core/$solutionName.Domain/$solutionName.Domain.csproj \
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+
+    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+    cd Contexts
+    buildNewClass ApplicationDbContext $solutionName.Data.Contexts
+
+    cd ..
+
+    buildNewClass DependencyInjection $solutionName.Data
+
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
+
+    cd ../$solutionName.Shared \
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+
+    dotnet add package MailKit
+    dotnet add package Microsoft.Extensions.Options.ConfigurationExtensions
+    dotnet add package MimeKit
+    dotnet add package CsvHelper
+
+    mkdir Files \
+        && cd Files \
+        && buildNewClass CsvFileBuilder $solutionName.Shared.Files \
+        && cd ..
+
+
+    mkdir Services \
+        && cd Services \
+        && buildNewClass DateTimeService $solutionName.Shared.Services \
+        && buildNewClass EmailService $solutionName.Shared.Services \
+        && cd ..
+
+    buildNewClass DependencyInjection $solutionName.Shared
+
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
+
+    cd ../..
+}
+
+definesProjectIdentity() {
+
+    echo -e "\n 🔧 Making the web API secure by defining the project Identity.\n"
+
+    cd infrastructure/$solutionName.Identity \
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj
+
+    dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+    dotnet add package Microsoft.AspNetCore.Authentication.OpenIdConnect
+
+    if [[ -f Class1.cs ]]; then
+        rm Class1.cs
+    fi
+
+    buildNewClass DependencyInjection $solutionName.Identity
+
+    mkdir Helpers \
+        && cd Helpers
+
+    buildNewClass AuthSettings $solutionName.Identity.Helpers
+    buildNewClass JwtMiddleware $solutionName.Identity.Helpers
+    buildNewClass AuthorizeAttribute $solutionName.Identity.Helpers
+
+    cd ..
+    mkdir Services \
+        && cd Services \
+        && buildNewClass UserService $solutionName.Identity.Services
+
+    cd ../../../presentation/$solutionName.WebApi \
+        && dotnet add reference ../../infrastructure/$solutionName.Identity/$solutionName.Identity.csproj
+
+    cd ../..
+}
+
+buildPresentationLayer() {
+
+    echo -e "\n 🔧 Scaffold of presentation layer under construction.\n"
+
+    mkdir presentation
+    cd presentation
+
+    dotnet new webapi --name $solutionName.WebApi \
+        && cd $solutionName.WebApi \
+        && dotnet add reference ../../core/$solutionName.Application/$solutionName.Application.csproj \
+        && dotnet add reference ../../infrastructure/$solutionName.Data/$solutionName.Data.csproj \
+        && dotnet add reference ../../infrastructure/$solutionName.Shared/$solutionName.Shared.csproj
+
+    dotnet add package Microsoft.EntityFrameworkCore.Design
+
+    # versioning
+    dotnet add package Microsoft.AspNetCore.Mvc.Versioning
+    dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
+
+    # logging
+    dotnet add package Serilog.AspNetCore
+    dotnet add package Serilog.Settings.Configuration
+    dotnet add package Serilog.Exceptions
+    dotnet add package Serilog.Formatting.Compact
+    dotnet add package Serilog.Enrichers.Environment
+    dotnet add package Serilog.Enrichers.Process
+    dotnet add package Serilog.Enrichers.Thread
+    dotnet add package Serilog.Sinks.File
+    dotnet add package Serilog.Sinks.SQLite
+
+    mkdir Filters \
+        && cd Filters \
+        && buildNewClass ApiExceptionFilter $solutionName.WebApi.Filters \
+        && cd ..
+
+    mkdir Helpers \
+        && cd Helpers \
+        && buildNewClass ConfigureSwaggerOptions $solutionName.WebApi.Helpers \
+        && buildNewClass SwaggerDefaultValues $solutionName.WebApi.Helpers \
+        && cd ..
+
+    cd ../../..
+}
+
+addingLayersToTheSolution() {
+
+    echo -e "\n ➕ Now all layers will be added to the solution.\n"
+
+    dotnet sln add src/core/$solutionName.Domain/$solutionName.Domain.csproj
+    dotnet sln add src/core/$solutionName.Application/$solutionName.Application.csproj
+    dotnet sln add src/infrastructure/$solutionName.Data/$solutionName.Data.csproj
+    dotnet sln add src/infrastructure/$solutionName.Shared/$solutionName.Shared.csproj
+    dotnet sln add src/presentation/$solutionName.WebApi/$solutionName.WebApi.csproj
+
+	cd src
+}
+
+addingUserController() {
+
+    echo -e "\n 🔧 Adding the class UsersController into Controllers directory.\n"
+
+	cd presentation/$solutionName.WebApi/Controllers \
+    && buildNewClass UsersController $solutionName.WebApi.Controllers
+
+    cd ../../..
+}
+
+buildSolution() {
+
+    solutionName=$1
+
+    excluded="\n# more"
+    excluded+="\nbin/"
+    excluded+="\nlib/"
+    excluded+="\nobj/"
+    excluded+="\n.vscode/"
+    excluded+="\n.config/"
+    excluded+="\nLogs/"
+    excluded+="\nHELP.md"
+    excluded+="\n*.png"
+    excluded+="\n*.svg"
+    excluded+="\n*.ico"
+    excluded+="\n*.db"
+    excluded+="\n*.sqlite3"
+
+    echo -e "\n 🆕 Scaffold of new solution: \"$solutionName\" under construction\n"
+
+    mkdir $solutionName
+    cd $solutionName \
+        && dotnet new gitignore \
+        && dotnet new sln
+
+	dotnet new tool-manifest
+    dotnet tool install dotnet-ef
+
+	echo -e "$excluded" >> .gitignore
+	echo -e "# $solutionName solution" > README.md
+
+	mkdir bin
+	mkdir src
+
+	buildCoreLayer $solutionName
+	buildInfrastructureLayer $solutionName
+	buildPresentationLayer $solutionName
+	addingLayersToTheSolution $solutionName
+	definesProjectIdentity $solutionName
+	addingUserController $solutionName
+
+    echo -e "\n 🆗 Well, a solution .NET named: \"$solutionName\" has just been generated.\n"
+}
+
+main() {
+	if [ "$1" != '' ]; then
+		buildSolution $1
+	else
+    		echo -e "\n ❌ I am sorry, you forgot to pass the solution name!\n"
+        echo -e "\tuse: cupcake TheNameYouChoseForTheSolution\n"
+	fi
+}
+
+# passing one argument to the main function
+
+main $1
