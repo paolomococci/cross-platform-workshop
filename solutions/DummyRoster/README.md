@@ -50,3 +50,9 @@ dotnet new blazorserver --name DummyRoster.BlazorServer
 dotnet new blazorwasm --name DummyRoster.BlazorWasm
 dotnet new angular --name DummyRoster.Angular
 ```
+
+## now it's time to add the projects to the solution file
+
+```shell
+
+```
