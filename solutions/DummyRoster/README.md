@@ -55,4 +55,5 @@ dotnet new angular --name DummyRoster.Angular
 
 ```shell
 dotnet sln add src/core/DummyRoster.Common/DummyRoster.Common.csproj
+dotnet sln add src/core/DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj
 ```
