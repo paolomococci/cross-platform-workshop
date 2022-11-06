@@ -12,8 +12,8 @@ public partial class Category
 {
     [Key]
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{1,9}")]
-    public long Id { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 Id { get; set; }
 
     [Required]
     [Column(TypeName = "varchar(32)")]
