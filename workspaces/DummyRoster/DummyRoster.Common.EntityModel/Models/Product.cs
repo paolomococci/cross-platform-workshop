@@ -16,8 +16,8 @@ public partial class Product
 {
     [Key]
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{1,9}")]
-    public long Id { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 Id { get; set; }
 
     [Required]
     [Column(TypeName = "varchar(32)")]
@@ -30,12 +30,12 @@ public partial class Product
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{,9}")]
-    public long? CategoryId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? CategoryId { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{,9}")]
-    public long? SupplierId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? SupplierId { get; set; }
 
     [Column(TypeName = "varchar(24)")]
     [RegularExpression(@"[0-9]{1,24}")]
@@ -44,20 +44,20 @@ public partial class Product
     public decimal? UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    [Range(0, 32767)]
-    public long? UnitsInStock { get; set; }
+    [Range(0, 65535)]
+    public UInt16? UnitsInStock { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    [Range(0, 32767)]
-    public long? UnitsOnOrder { get; set; }
+    [Range(0, 65535)]
+    public UInt16? UnitsOnOrder { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    [Range(0, 32767)]
-    public long? ReorderLevel { get; set; }
+    [Range(0, 65535)]
+    public UInt16? ReorderLevel { get; set; }
 
     [Column(TypeName = "TINYINT")]
     [Range(0, 255)]
-    public long Discontinued { get; set; }
+    public UInt16 Discontinued { get; set; }
 
     [ForeignKey("CategoryId")]
     [InverseProperty("Products")]
