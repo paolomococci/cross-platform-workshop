@@ -15,8 +15,8 @@ public partial class Customer
 {
     [Key]
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{1,9}")]
-    public long Id { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 Id { get; set; }
 
     [Required]
     [Column(TypeName = "varchar(32)")]
@@ -29,8 +29,8 @@ public partial class Customer
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{,9}")]
-    public long? Contact { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? Contact { get; set; }
 
     [Column(TypeName = "varchar(64)")]
     [RegularExpression(@"[a-zA-Z\s\-]{3,64}")]
