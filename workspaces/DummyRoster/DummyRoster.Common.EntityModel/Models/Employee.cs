@@ -15,6 +15,7 @@ public partial class Employee
 {
     [Key]
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long Id { get; set; }
 
     [Column(TypeName = "varchar(32)")]
