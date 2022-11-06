@@ -12,11 +12,11 @@ public partial class Category
 {
     [Key]
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{9}")]
+    [RegularExpression("[0-9]{,9}")]
     public long Id { get; set; }
 
     [Column(TypeName = "varchar(32)")]
-    [RegularExpression("[a-zA-Z]{32}")]
+    [RegularExpression("[a-zA-Z]{,32}")]
     public string Name { get; set; } = null!;
 
     [StringLength(64)]
