@@ -23,7 +23,7 @@ public partial class Employee
     [RegularExpression("[a-zA-Z]{1,32}")]
     public string Name { get; set; } = null!;
 
-    [StringLength(64)]
+    [RegularExpression(@"^([A-Z]{1,}+[a-zA-Z0-9\s\.\,]{1,63})$")]
     public string? Description { get; set; }
 
     public byte[]? Picture { get; set; }
