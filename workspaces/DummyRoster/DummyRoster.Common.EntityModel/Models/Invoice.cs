@@ -15,8 +15,8 @@ public partial class Invoice
 
     [Key]
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{1,9}")]
-    public long FormId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 FormId { get; set; }
 
     [Key]
     [Column(TypeName = "BIGINT")]
@@ -26,8 +26,8 @@ public partial class Invoice
     public double UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    [Range(0, 32767)]
-    public long Quantity { get; set; }
+    [Range(0, 65535)]
+    public UInt16 Quantity { get; set; }
 
     public decimal PriceCut { get; set; }
 
