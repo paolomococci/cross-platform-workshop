@@ -42,6 +42,7 @@ public partial class Customer
     public string? District { get; set; }
 
     [Column(TypeName = "varchar(8)")]
+    [RegularExpression("[a-zA-Z0-9]{1,8}")]
     public string? Postcode { get; set; }
 
     [Column(TypeName = "varchar(16)")]
