@@ -18,6 +18,7 @@ public partial class Form
 {
     [Key]
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long Id { get; set; }
 
     public string? Description { get; set; }
