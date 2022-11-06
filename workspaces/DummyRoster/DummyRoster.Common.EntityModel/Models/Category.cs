@@ -19,6 +19,7 @@ public partial class Category
     [RegularExpression("[a-zA-Z]{32}")]
     public string Name { get; set; } = null!;
 
+    [StringLength(64)]
     public string? Description { get; set; }
 
     public byte[]? Picture { get; set; }
