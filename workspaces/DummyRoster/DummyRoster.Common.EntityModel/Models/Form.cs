@@ -18,22 +18,22 @@ public partial class Form
 {
     [Key]
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{9}")]
-    public long Id { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 Id { get; set; }
 
     public string? Description { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{9}")]
-    public long? CustomerId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? CustomerId { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{9}")]
-    public long? CarrierId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? CarrierId { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{9}")]
-    public long? EmployeeId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? EmployeeId { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public DateTime? FormDate { get; set; }
