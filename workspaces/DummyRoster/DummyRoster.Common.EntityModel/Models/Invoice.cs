@@ -15,6 +15,7 @@ public partial class Invoice
 
     [Key]
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long FormId { get; set; }
 
     [Key]
