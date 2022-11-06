@@ -24,12 +24,15 @@ public partial class Form
     public string? Description { get; set; }
 
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long? CustomerId { get; set; }
 
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long? CarrierId { get; set; }
 
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long? EmployeeId { get; set; }
 
     [Column(TypeName = "DATETIME")]
