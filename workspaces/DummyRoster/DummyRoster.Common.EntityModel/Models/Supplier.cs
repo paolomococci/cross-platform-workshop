@@ -28,6 +28,7 @@ public partial class Supplier
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long? Contact { get; set; }
 
     [Column(TypeName = "varchar(64)")]
