@@ -15,11 +15,11 @@ public partial class Carrier
 {
     [Key]
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{9}")]
+    [RegularExpression("[0-9]{,9}")]
     public long Id { get; set; }
 
     [Column(TypeName = "varchar(32)")]
-    [RegularExpression("[a-zA-Z]{32}")]
+    [RegularExpression("[a-zA-Z]{,32}")]
     public string Name { get; set; } = null!;
 
     [StringLength(64)]
@@ -28,7 +28,7 @@ public partial class Carrier
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{9}")]
+    [RegularExpression("[0-9]{,9}")]
     public long? Contact { get; set; }
 
     [Column(TypeName = "varchar(64)")]
@@ -41,7 +41,7 @@ public partial class Carrier
     public string? District { get; set; }
 
     [Column(TypeName = "varchar(8)")]
-    [RegularExpression("[a-zA-Z0-9]{8}")]
+    [RegularExpression("[a-zA-Z0-9]{,8}")]
     public string? Postcode { get; set; }
 
     [Column(TypeName = "varchar(16)")]
