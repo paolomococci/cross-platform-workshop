@@ -44,15 +44,19 @@ public partial class Product
     public decimal? UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
+    [RegularExpression("[0-9]{1,4}")]
     public long? UnitsInStock { get; set; }
 
     [Column(TypeName = "SMALLINT")]
+    [RegularExpression("[0-9]{1,4}")]
     public long? UnitsOnOrder { get; set; }
 
     [Column(TypeName = "SMALLINT")]
+    [RegularExpression("[0-9]{1,4}")]
     public long? ReorderLevel { get; set; }
 
     [Column(TypeName = "TINYINT")]
+    [RegularExpression("[0-9]{1,2}")]
     public long Discontinued { get; set; }
 
     [ForeignKey("CategoryId")]
