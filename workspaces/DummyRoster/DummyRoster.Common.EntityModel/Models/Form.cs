@@ -44,7 +44,7 @@ public partial class Form
     [Column(TypeName = "DATETIME")]
     public DateTime? PromisedDate { get; set; }
 
-    public double? ShippingCost { get; set; }
+    public decimal? ShippingCost { get; set; }
 
     [ForeignKey("CarrierId")]
     [InverseProperty("Forms")]
