@@ -39,7 +39,7 @@ public partial class Product
     [Column(TypeName = "varchar(24)")]
     public string? QuantityPerUnit { get; set; }
 
-    public double? UnitPrice { get; set; }
+    public decimal? UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
     public long? UnitsInStock { get; set; }
