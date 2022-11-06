@@ -48,6 +48,7 @@ public partial class Employee
     public string? Country { get; set; }
 
     [Column(TypeName = "varchar(48)")]
+    [RegularExpression(@"^([a-zA-Z0-9\.\-]{2,27}+@+[a-zA-Z0-9\.]{2,20})$")]
     public string? Email { get; set; }
 
     [Column(TypeName = "varchar(24)")]
