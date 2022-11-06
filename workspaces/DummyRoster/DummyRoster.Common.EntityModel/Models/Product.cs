@@ -29,9 +29,11 @@ public partial class Product
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long? CategoryId { get; set; }
 
     [Column(TypeName = "BIGINT")]
+    [RegularExpression("[0-9]{9}")]
     public long? SupplierId { get; set; }
 
     [Column(TypeName = "varchar(24)")]
