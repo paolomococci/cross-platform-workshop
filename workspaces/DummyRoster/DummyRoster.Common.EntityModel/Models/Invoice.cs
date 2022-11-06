@@ -26,7 +26,7 @@ public partial class Invoice
     public double UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    [RegularExpression("[0-9]{1,4}")]
+    [Range(0, 32767)]
     public long Quantity { get; set; }
 
     public decimal PriceCut { get; set; }
