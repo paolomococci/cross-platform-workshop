@@ -33,6 +33,7 @@ public partial class Supplier
     public long? Contact { get; set; }
 
     [Column(TypeName = "varchar(64)")]
+    [RegularExpression(@"[a-zA-Z\s\-]{3,64}")]
     public string? Address { get; set; }
 
     [Column(TypeName = "varchar(16)")]
