@@ -20,7 +20,7 @@ public partial class Category
     [RegularExpression("[a-zA-Z]{1,32}")]
     public string Name { get; set; } = null!;
 
-    [StringLength(64)]
+    [RegularExpression(@"[a-zA-Z0-1\s\-\,\.]{3,64}")]
     public string? Description { get; set; }
 
     public byte[]? Picture { get; set; }
