@@ -37,7 +37,7 @@ public partial class Customer
     public string? Address { get; set; }
 
     [Column(TypeName = "varchar(16)")]
-    [RegularExpression(@"[a-zA-Z\s\-]{3,16}")]
+    [RegularExpression(@"[a-zA-Z0-9\s\-\,\.]{3,16}")]
     public string? City { get; set; }
 
     [Column(TypeName = "varchar(16)")]
