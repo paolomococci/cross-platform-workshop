@@ -50,6 +50,7 @@ public partial class Employee
     public string? Email { get; set; }
 
     [Column(TypeName = "varchar(24)")]
+    [RegularExpression(@"^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}")]
     public string? Phone { get; set; }
 
     [Column(TypeName = "varchar(24)")]
