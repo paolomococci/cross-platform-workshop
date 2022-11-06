@@ -28,7 +28,7 @@ public partial class Invoice
     [Column(TypeName = "SMALLINT")]
     public long Quantity { get; set; }
 
-    public double PriceCut { get; set; }
+    public decimal PriceCut { get; set; }
 
     [ForeignKey("FormId")]
     [InverseProperty("Invoices")]
