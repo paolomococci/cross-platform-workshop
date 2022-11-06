@@ -49,6 +49,7 @@ public partial class Carrier
     public string? Postcode { get; set; }
 
     [Column(TypeName = "varchar(16)")]
+    [RegularExpression(@"[a-zA-Z\-]{3,16}")]
     public string? Country { get; set; }
 
     [Column(TypeName = "varchar(48)")]
