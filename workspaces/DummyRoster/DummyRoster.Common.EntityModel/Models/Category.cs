@@ -15,6 +15,7 @@ public partial class Category
     [RegularExpression("[0-9]{1,9}")]
     public long Id { get; set; }
 
+    [Required]
     [Column(TypeName = "varchar(32)")]
     [RegularExpression("[a-zA-Z]{1,32}")]
     public string Name { get; set; } = null!;
