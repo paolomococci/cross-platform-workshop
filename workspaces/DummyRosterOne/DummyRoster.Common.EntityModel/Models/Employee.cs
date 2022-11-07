@@ -38,6 +38,7 @@ public partial class Employee
     public byte[]? RegistrationDate { get; set; }
 
     [Column(TypeName = "varchar(64)")]
+    [RegularExpression(@"[a-zA-Z0-9\s\-\,\.]{3,64}")]
     public string? Address { get; set; }
 
     [Column(TypeName = "varchar(16)")]
