@@ -36,7 +36,8 @@ public partial class Product
     public UInt64? CategoryId { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    public long? SupplierId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? SupplierId { get; set; }
 
     [Column(TypeName = "varchar(24)")]
     public string? QuantityPerUnit { get; set; }
