@@ -28,7 +28,8 @@ public partial class Form
     public DateTime? RegistrationDate { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    public long? CustomerId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? CustomerId { get; set; }
 
     [Column(TypeName = "BIGINT")]
     public long? CarrierId { get; set; }
