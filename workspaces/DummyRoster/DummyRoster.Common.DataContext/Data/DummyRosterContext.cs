@@ -38,13 +38,13 @@ public partial class DummyRosterContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Carrier>().Property(e => e.Inserted).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Carrier>().Property(e => e.Id).ValueGeneratedOnAdd();
 
-        modelBuilder.Entity<Category>().Property(e => e.Inserted).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Category>().Property(e => e.Id).ValueGeneratedOnAdd();
 
-        modelBuilder.Entity<Customer>().Property(e => e.Inserted).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Customer>().Property(e => e.Id).ValueGeneratedOnAdd();
 
-        modelBuilder.Entity<Employee>().Property(e => e.Inserted).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Employee>().Property(e => e.Id).ValueGeneratedOnAdd();
 
         modelBuilder.Entity<Form>(entity =>
         {
@@ -54,10 +54,9 @@ public partial class DummyRosterContext : DbContext
 
         modelBuilder.Entity<Invoice>(entity =>
         {
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Quantity).HasDefaultValueSql("1");
-
             entity.HasOne(d => d.Form).WithMany(p => p.Invoices).OnDelete(DeleteBehavior.ClientSetNull);
-
             entity.HasOne(d => d.Product).WithMany(p => p.Invoices).OnDelete(DeleteBehavior.ClientSetNull);
         });
 
@@ -70,7 +69,7 @@ public partial class DummyRosterContext : DbContext
             entity.Property(e => e.UnitsOnOrder).HasDefaultValueSql("0");
         });
 
-        modelBuilder.Entity<Supplier>().Property(e => e.Inserted).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Supplier>().Property(e => e.Id).ValueGeneratedOnAdd();
 
         OnModelCreatingPartial(modelBuilder);
     }
