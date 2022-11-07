@@ -24,7 +24,7 @@ public partial class Invoice
     public long ProductId { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[]? RegistrationDate { get; set; }
+    public DateTime? RegistrationDate { get; set; }
 
     public double UnitPrice { get; set; }
 
