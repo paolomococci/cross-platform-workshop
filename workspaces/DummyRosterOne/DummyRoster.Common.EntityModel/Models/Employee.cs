@@ -66,6 +66,7 @@ public partial class Employee
     public string? Phone { get; set; }
 
     [Column(TypeName = "varchar(24)")]
+    [RegularExpression(@"^\+?\d{0,2}\-?\d{7,11}")]
     public string? Fax { get; set; }
 
     [InverseProperty("ContactNavigation")]
