@@ -30,6 +30,8 @@ rm Class1.cs
 
 ### Get classes from database tables
 
+From the main workspace I type the following commands:
+
 ```shell
 cd Microsoft.EntityFrameworkCore.Sqlite
 dotnet new tool-manifest
