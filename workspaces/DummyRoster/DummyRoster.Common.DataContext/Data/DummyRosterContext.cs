@@ -54,7 +54,6 @@ public partial class DummyRosterContext : DbContext
 
         modelBuilder.Entity<Invoice>(entity =>
         {
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Quantity).HasDefaultValueSql("1");
             entity.HasOne(d => d.Form).WithMany(p => p.Invoices).OnDelete(DeleteBehavior.ClientSetNull);
             entity.HasOne(d => d.Product).WithMany(p => p.Invoices).OnDelete(DeleteBehavior.ClientSetNull);
