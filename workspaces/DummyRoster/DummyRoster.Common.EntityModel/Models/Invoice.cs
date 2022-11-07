@@ -11,6 +11,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 [Index("ProductId", Name = "IDX_ProductId")]
 public partial class Invoice
 {
+    [RegularExpression(@"[a-zA-Z0-1\s\-\,\.]{3,64}")]
     public string? Note { get; set; }
 
     [Key]
