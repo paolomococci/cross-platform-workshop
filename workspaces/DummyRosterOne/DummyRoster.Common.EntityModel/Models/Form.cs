@@ -25,7 +25,7 @@ public partial class Form
     public string? Description { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[]? RegistrationDate { get; set; }
+    public DateTime? RegistrationDate { get; set; }
 
     [Column(TypeName = "BIGINT")]
     public long? CustomerId { get; set; }
