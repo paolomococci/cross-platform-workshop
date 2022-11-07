@@ -21,8 +21,8 @@ public partial class Invoice
 
     [Key]
     [Column(TypeName = "BIGINT")]
-    [RegularExpression("[0-9]{1,9}")]
-    public long ProductId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 ProductId { get; set; }
 
     public double UnitPrice { get; set; }
 
