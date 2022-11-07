@@ -32,7 +32,8 @@ public partial class Product
     public DateTime? RegistrationDate { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    public long? CategoryId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? CategoryId { get; set; }
 
     [Column(TypeName = "BIGINT")]
     public long? SupplierId { get; set; }
