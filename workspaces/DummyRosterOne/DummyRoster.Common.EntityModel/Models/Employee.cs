@@ -35,7 +35,7 @@ public partial class Employee
     public string? Role { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[]? RegistrationDate { get; set; }
+    public DateTime? RegistrationDate { get; set; }
 
     [Column(TypeName = "varchar(64)")]
     [RegularExpression(@"[a-zA-Z0-9\s\-\,\.]{3,64}")]
