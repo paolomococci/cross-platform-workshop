@@ -36,7 +36,8 @@ public partial class Form
     public UInt64? CarrierId { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    public long? EmployeeId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? EmployeeId { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public byte[]? FormDate { get; set; }
