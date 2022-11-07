@@ -31,6 +31,7 @@ public partial class Employee
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "varchar(32)")]
+    [RegularExpression(@"[a-zA-Z\s\-]{3,32}")]
     public string? Role { get; set; }
 
     [Column(TypeName = "DATETIME")]
