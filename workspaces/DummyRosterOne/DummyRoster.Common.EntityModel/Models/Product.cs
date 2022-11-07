@@ -45,13 +45,16 @@ public partial class Product
     public double? UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    public long? UnitsInStock { get; set; }
+    [Range(0, 65535)]
+    public UInt16? UnitsInStock { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    public long? UnitsOnOrder { get; set; }
+    [Range(0, 65535)]
+    public UInt16? UnitsOnOrder { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    public long? ReorderLevel { get; set; }
+    [Range(0, 65535)]
+    public UInt16? ReorderLevel { get; set; }
 
     [Column(TypeName = "TINYINT")]
     public long Discontinued { get; set; }
