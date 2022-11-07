@@ -25,7 +25,7 @@ public partial class Category
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[]? RegistrationDate { get; set; }
+    public DateTime? RegistrationDate { get; set; }
 
     [InverseProperty("Category")]
     public virtual ICollection<Product> Products { get; } = new List<Product>();
