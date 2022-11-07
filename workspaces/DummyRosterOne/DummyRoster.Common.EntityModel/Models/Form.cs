@@ -18,7 +18,8 @@ public partial class Form
 {
     [Key]
     [Column(TypeName = "BIGINT")]
-    public long Id { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 Id { get; set; }
 
     public string? Description { get; set; }
 
