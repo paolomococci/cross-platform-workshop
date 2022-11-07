@@ -29,7 +29,7 @@ public partial class Product
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[]? RegistrationDate { get; set; }
+    public DateTime? RegistrationDate { get; set; }
 
     [Column(TypeName = "BIGINT")]
     public long? CategoryId { get; set; }
