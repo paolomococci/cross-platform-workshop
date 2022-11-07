@@ -30,7 +30,8 @@ public partial class Invoice
     public double UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    public long Quantity { get; set; }
+    [Range(0, 65535)]
+    public UInt16 Quantity { get; set; }
 
     public double PriceCut { get; set; }
 
