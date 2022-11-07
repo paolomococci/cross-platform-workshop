@@ -15,7 +15,8 @@ public partial class Invoice
 
     [Key]
     [Column(TypeName = "BIGINT")]
-    public long FormId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 FormId { get; set; }
 
     [Key]
     [Column(TypeName = "BIGINT")]
