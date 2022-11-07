@@ -33,6 +33,7 @@ public partial class Invoice
     [Range(0, 65535)]
     public UInt16 Quantity { get; set; }
 
+    [Range(0, 1)]
     public decimal PriceCut { get; set; }
 
     [ForeignKey("FormId")]
