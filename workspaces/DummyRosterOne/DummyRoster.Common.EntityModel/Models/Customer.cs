@@ -25,6 +25,7 @@ public partial class Customer
     [Column(TypeName = "DATETIME")]
     public byte[]? FoundationDate { get; set; }
 
+    [RegularExpression(@"^([A-Z]{1,}+[a-zA-Z0-9\s\.\,]{1,63})$")]
     public string? Description { get; set; }
 
     public byte[]? Picture { get; set; }
