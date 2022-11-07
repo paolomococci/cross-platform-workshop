@@ -18,6 +18,8 @@ and then give enter.
 
 ### Scaffolding of DummyRoster.Common.EntityModel project
 
+From the main workspace I type the following commands:
+
 ```shell
 dotnet new classlib --name DummyRoster.Common.EntityModel
 cd DummyRoster.Common.EntityModel
@@ -36,3 +38,9 @@ dotnet ef dbcontext scaffold "Filename=../DummyRoster.db" Microsoft.EntityFramew
 ```
 
 ### Scaffolding of DummyRoster.Common.DataContext project
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new classlib --name DummyRoster.Common.DataContext
+```
