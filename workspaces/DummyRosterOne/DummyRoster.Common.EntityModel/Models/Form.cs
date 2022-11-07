@@ -21,6 +21,7 @@ public partial class Form
     [Range(1, 18446744073709551615)]
     public UInt64 Id { get; set; }
 
+    [RegularExpression(@"^([A-Z]{1,}+[a-zA-Z0-9\s\.\,]{1,63})$")]
     public string? Description { get; set; }
 
     [Column(TypeName = "DATETIME")]
