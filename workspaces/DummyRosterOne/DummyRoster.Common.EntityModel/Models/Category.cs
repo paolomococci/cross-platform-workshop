@@ -15,6 +15,7 @@ public partial class Category
     [Range(1, 18446744073709551615)]
     public UInt64 Id { get; set; }
 
+    [Required]
     [Column(TypeName = "varchar(32)")]
     [RegularExpression("[a-zA-Z]{1,32}")]
     public string Name { get; set; } = null!;
