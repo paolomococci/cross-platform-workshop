@@ -12,7 +12,9 @@ public partial class DummyRosterContext : DbContext
     {
     }
 
-    public DummyRosterContext(DbContextOptions<DummyRosterContext> options)
+    public DummyRosterContext(
+        DbContextOptions<DummyRosterContext> options
+    )
         : base(options)
     {
     }
