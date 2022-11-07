@@ -32,7 +32,8 @@ public partial class Form
     public UInt64? CustomerId { get; set; }
 
     [Column(TypeName = "BIGINT")]
-    public long? CarrierId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64? CarrierId { get; set; }
 
     [Column(TypeName = "BIGINT")]
     public long? EmployeeId { get; set; }
