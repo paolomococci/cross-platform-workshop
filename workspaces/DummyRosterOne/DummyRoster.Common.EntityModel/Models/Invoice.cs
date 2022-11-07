@@ -21,7 +21,8 @@ public partial class Invoice
 
     [Key]
     [Column(TypeName = "BIGINT")]
-    public long ProductId { get; set; }
+    [Range(1, 18446744073709551615)]
+    public UInt64 ProductId { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public DateTime? RegistrationDate { get; set; }
