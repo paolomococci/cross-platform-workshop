@@ -23,7 +23,7 @@ public partial class Employee
     public string Name { get; set; } = null!;
 
     [Column(TypeName = "DATETIME")]
-    public byte[]? BirthDate { get; set; }
+    public DateTime? BirthDate { get; set; }
 
     [RegularExpression(@"^([A-Z]{1,}+[a-zA-Z0-9\s\.\,]{1,63})$")]
     public string? Description { get; set; }
