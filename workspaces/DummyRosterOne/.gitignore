@@ -455,6 +455,7 @@ $RECYCLE.BIN/
 
 # more
 .config/
+.vscode/
 lib/
 *.ico
 *.png
