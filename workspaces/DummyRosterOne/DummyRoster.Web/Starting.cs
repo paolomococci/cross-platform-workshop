@@ -3,7 +3,9 @@ namespace Dummyroster.Web;
 public class Starting {
   public void ConfigureServices(
     IServiceCollection services
-  ) {}
+  ) {
+    services.AddRazorPages();
+  }
 
   public void Configure(
     IApplicationBuilder applicationBuilder,
