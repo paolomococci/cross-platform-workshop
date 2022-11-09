@@ -15,10 +15,12 @@ public class Starting {
     }
     applicationBuilder.UseRouting();
     applicationBuilder.UseHttpsRedirection();
+    applicationBuilder.UseDefaultFiles();
+    applicationBuilder.UseStaticFiles();
     applicationBuilder.UseEndpoints(
       endpoints => {
         endpoints.MapGet(
-          "/",
+          "/endpoint",
           () => "Endpoint at work!"
         );
       }
