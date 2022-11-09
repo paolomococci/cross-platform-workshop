@@ -21,6 +21,7 @@ public class Starting {
     applicationBuilder.UseStaticFiles();
     applicationBuilder.UseEndpoints(
       endpoints => {
+        endpoints.MapRazorPages();
         endpoints.MapGet(
           "/endpoint",
           () => "Endpoint at work!"
