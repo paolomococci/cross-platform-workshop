@@ -15,5 +15,13 @@ public class Starting {
     }
     applicationBuilder.UseRouting();
     applicationBuilder.UseHttpsRedirection();
+    applicationBuilder.UseEndpoints(
+      endpoints => {
+        endpoints.MapGet(
+          "/",
+          () => "Endpoint at work!"
+        );
+      }
+    );
   }
 }
