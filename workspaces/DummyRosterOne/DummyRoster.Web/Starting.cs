@@ -14,5 +14,6 @@ public class Starting {
       applicationBuilder.UseHsts();
     }
     applicationBuilder.UseRouting();
+    applicationBuilder.UseHttpsRedirection();
   }
 }
