@@ -8,5 +8,10 @@ public class Starting {
   public void Configure(
     IApplicationBuilder applicationBuilder,
     IWebHostEnvironment webHostEnvironment
-  ) {}
+  ) {
+    if (!webHostEnvironment.IsDevelopment())
+    {
+      applicationBuilder.UseHsts();
+    }
+  }
 }
