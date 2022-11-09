@@ -4,6 +4,7 @@
   public string? Nowadays { get; set; }
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web";
+    Model.Nowadays = DateTime.Now.ToString("dddd");
   }
 }
 
