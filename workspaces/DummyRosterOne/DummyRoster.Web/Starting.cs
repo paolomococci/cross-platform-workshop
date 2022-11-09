@@ -1,7 +1,12 @@
 namespace Dummyroster.Web;
 
 public class Starting {
-  public void ConfigureService(
+  public void ConfigureServices(
     IServiceCollection services
+  ) {}
+
+  public void Configure(
+    IApplicationBuilder applicationBuilder,
+    IWebHostEnvironment webHostEnvironment
   ) {}
 }
