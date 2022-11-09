@@ -13,5 +13,6 @@ public class Starting {
     {
       applicationBuilder.UseHsts();
     }
+    applicationBuilder.UseRouting();
   }
 }
