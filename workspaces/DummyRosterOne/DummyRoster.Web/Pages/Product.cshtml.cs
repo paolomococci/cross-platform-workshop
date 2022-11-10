@@ -8,6 +8,7 @@ public class ProductModel : PageModel {
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Product";
+    ViewData["CardTitle"] = "Products";
     Products = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
   }
 }
