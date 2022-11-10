@@ -19,6 +19,7 @@ public class Starting {
     applicationBuilder.UseHttpsRedirection();
     applicationBuilder.UseDefaultFiles();
     applicationBuilder.UseStaticFiles();
+    
     applicationBuilder.UseEndpoints(
       endpoints => {
         endpoints.MapRazorPages();
