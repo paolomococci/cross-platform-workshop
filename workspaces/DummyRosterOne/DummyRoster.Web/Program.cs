@@ -1,4 +1,4 @@
-using Dummyroster.Web;
+using DummyRoster.Web;
 
   Host.CreateDefaultBuilder(
     args
