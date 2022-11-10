@@ -8,6 +8,7 @@ public class FormModel : PageModel {
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Form";
+    ViewData["CardTitle"] = "Forms";
     Forms = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
   }
 }
