@@ -8,6 +8,7 @@ public class CarrierModel : PageModel {
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Carrier";
+    ViewData["CardTitle"] = "Carriers";
     Carriers = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
   }
 }
