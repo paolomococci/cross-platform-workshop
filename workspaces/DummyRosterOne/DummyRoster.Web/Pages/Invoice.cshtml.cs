@@ -8,6 +8,7 @@ public class InvoiceModel : PageModel {
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Invoice";
+    ViewData["CardTitle"] = "Invoices";
     Invoices = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
   }
 }
