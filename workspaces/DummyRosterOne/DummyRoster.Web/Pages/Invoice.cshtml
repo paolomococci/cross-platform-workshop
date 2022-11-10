@@ -1,6 +1,17 @@
 @page
 @model DummyRoster.Web.Pages.InvoiceModel;
 
-<div>
-
+<div class="card">
+  <div class="card-header">
+    <h2 class="display-2">@ViewData["CardTitle"]</h2>
+  </div>
+  <ul class="list-group list-group-flush">
+    @if (Model.Invoices is not null)
+    {
+      @foreach (string item in Model.Invoices)
+      {
+        <li class="list-group-item">@item</li>
+      }
+    }
+  </ul>
 </div>
