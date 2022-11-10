@@ -8,6 +8,7 @@ public class SupplierModel : PageModel {
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Supplier";
+    ViewData["CardTitle"] = "Suppliers";
     Suppliers = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
   }
 }
