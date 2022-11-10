@@ -6,5 +6,8 @@ public class CategoryModel : PageModel {
   
   public IEnumerable<string>? Categories { get; set; }
 
-  public void OnGet() {}
+  public void OnGet() {
+    ViewData["Title"] = "DummyRoster Web - Category";
+    Categories = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
+  }
 }
