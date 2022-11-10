@@ -54,5 +54,8 @@ dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0-rc.2.224
 ```shell
 dotnet new web --name DummyRoster.Web
 cd DummyRoster.Web
-dotnet run
+dotnet watch
 ```
+
+Note:
+_"CTRL+R"_ to restart and _"CTRL+C"_ to stop
