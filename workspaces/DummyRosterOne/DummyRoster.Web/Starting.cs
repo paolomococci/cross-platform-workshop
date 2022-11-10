@@ -1,4 +1,4 @@
-namespace Dummyroster.Web;
+namespace DummyRoster.Web;
 
 public class Starting {
   public void ConfigureServices(
