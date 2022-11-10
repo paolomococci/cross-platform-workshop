@@ -6,5 +6,8 @@ public class SupplierModel : PageModel {
 
   public IEnumerable<string>? Suppliers { get; set; }
 
-  public void OnGet() {}
+  public void OnGet() {
+    ViewData["Title"] = "DummyRoster Web - Supplier";
+    Suppliers = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
+  }
 }
