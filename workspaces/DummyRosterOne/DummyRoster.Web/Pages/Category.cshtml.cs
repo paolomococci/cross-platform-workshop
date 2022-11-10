@@ -8,6 +8,7 @@ public class CategoryModel : PageModel {
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Category";
+    ViewData["CardTitle"] = "Categories";
     Categories = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
   }
 }
