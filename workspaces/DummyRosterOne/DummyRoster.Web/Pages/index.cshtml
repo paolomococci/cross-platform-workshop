@@ -1,10 +1,10 @@
 @page
 
 @functions {
-  public string? Nowadays { get; set; }
+  public string? DayOfTheWeek { get; set; }
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web";
-    Model.Nowadays = DateTime.Now.ToString("dddd");
+    Model.DayOfTheWeek = DateTime.Now.ToString("dddd");
   }
 }
 
@@ -13,7 +13,7 @@
     <h2>DummyRoster Web</h2>
   </div>
   <div class="card-body">
-    <h5 class="card-title">@Model.Nowadays</h5>
+    <h5 class="card-title">@Model.DayOfTheWeek</h5>
     <p class="card-text">todo</p>
     <a class="btn btn-primary" href="#">suppliers</a>
   </div>
