@@ -2,9 +2,11 @@
 @model DummyRoster.Web.Pages.SupplierModel;
 
 <div class="card">
+
   <div class="card-header">
     <h2 class="display-2">@ViewData["CardTitle"]</h2>
   </div>
+
   <ul class="list-group list-group-flush">
     @if (Model.Suppliers is not null)
     {
@@ -14,4 +16,5 @@
       }
     }
   </ul>
+  
 </div>
