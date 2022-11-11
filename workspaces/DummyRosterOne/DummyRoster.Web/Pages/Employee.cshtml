@@ -1,17 +1,33 @@
 @page
 @model DummyRoster.Web.Pages.EmployeeModel;
 
+@{int i = 0;}
+
 <div class="card">
+
   <div class="card-header">
     <h2 class="display-2">@ViewData["CardTitle"]</h2>
   </div>
-  <ul class="list-group list-group-flush">
+
+  <div class="accordion accordion-flush" id="accordionFlushForEmployees">
     @if (Model.Employees is not null)
     {
       @foreach (string item in Model.Employees)
       {
-        <li class="list-group-item">@item</li>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse-@(i)" aria-expanded="false" aria-controls="flush-collapse-@(i)">
+              @item
+            </button>
+          </h2>
+          <div id="flush-collapse-@(i++)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushForEmployees">
+            <div class="accordion-body">Content todo for this accordion.</div>
+          </div>
+        </div>
       }
     }
-  </ul>
+  </div>
+
 </div>
