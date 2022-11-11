@@ -15,11 +15,25 @@ public class Starting {
     {
       applicationBuilder.UseHsts();
     }
+
     applicationBuilder.UseRouting();
+
+    applicationBuilder.Use(
+      async (context, next) => {
+        RouteEndpoint? routeEndpoint = context.GetEndpoint() as RouteEndpoint;
+        if (routeEndpoint is not null)
+        {
+          Console.WriteLine($"Endpoint name: {routeEndpoint.DisplayName}");
+          Console.WriteLine($"Endpoint route pattern: {routeEndpoint.RoutePattern.RawText}");
+        }
+        await next(context);
+      }
+    );
+
     applicationBuilder.UseHttpsRedirection();
     applicationBuilder.UseDefaultFiles();
     applicationBuilder.UseStaticFiles();
-    
+
     applicationBuilder.UseEndpoints(
       endpoints => {
         endpoints.MapRazorPages();
