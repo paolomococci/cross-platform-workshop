@@ -1,3 +1,5 @@
+using DummyRoster.Common.DataContext;
+
 namespace DummyRoster.Web;
 
 public class Starting {
