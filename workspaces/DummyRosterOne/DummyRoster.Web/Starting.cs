@@ -1,4 +1,4 @@
-using DummyRoster.Common.DataContext;
+using DummyRoster.Common.DataContext.Data;
 
 namespace DummyRoster.Web;
 
