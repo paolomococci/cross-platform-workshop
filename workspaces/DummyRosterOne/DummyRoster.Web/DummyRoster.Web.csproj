@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj" />
+  </ItemGroup>
+
 </Project>
