@@ -12,6 +12,9 @@ public class FormModel : PageModel {
 
   private DummyRosterContext dummyRosterContext;
 
+  [BindProperty]
+  public Form? Form { get; set; }
+
   public FormModel(DummyRosterContext dummyRosterContextInjected) {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
