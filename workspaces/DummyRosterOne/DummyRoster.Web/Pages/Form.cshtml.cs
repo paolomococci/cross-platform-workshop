@@ -1,14 +1,26 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using DummyRoster.Common.DataContext.Data;
+using DummyRoster.Common.EntityModel.Models;
+
 namespace DummyRoster.Web.Pages;
 
 public class FormModel : PageModel {
 
-  public IEnumerable<string>? Forms { get; set; }
+  public IEnumerable<Form>? Forms { get; set; }
+
+  private DummyRosterContext dummyRosterContext;
+
+  public FormModel(DummyRosterContext dummyRosterContextInjected) {
+    this.dummyRosterContext = dummyRosterContextInjected;
+  }
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Form";
-    ViewData["CardTitle"] = "Forms";
-    Forms = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
+    Forms = dummyRosterContext.Forms.OrderBy(
+      form => form.RequiredDate
+    ).ThenBy(
+      form => form.PromisedDate
+    );
   }
 }
