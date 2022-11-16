@@ -3,6 +3,10 @@
 @model DummyRoster.Web.Pages.CarrierModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{
+  #nullable disable
+}
+
 <div class="card">
 
   <div class="card-header">
@@ -55,18 +59,18 @@
   </div>
 
   <div>
-    <p></p>
-    <form>
+    <p>Please, complete the fields of the following form.</p>
+    <form method="post">
       <div>
-        <input/>
+        <input asp-for="Carrier.Name" placeholder="Name"/>
       </div>
       <div>
-        <input/>
+        <input asp-for="Carrier.Country" placeholder="Country"/>
       </div>
       <div>
-        <input/>
+        <input asp-for="Carrier.Email" placeholder="Email"/>
       </div>
-      <input/>
+      <input type="submit"/>
     </form>
   </div>
 
