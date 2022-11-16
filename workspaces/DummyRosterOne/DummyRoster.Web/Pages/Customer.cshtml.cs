@@ -12,6 +12,9 @@ public class CustomerModel : PageModel {
 
   private DummyRosterContext dummyRosterContext;
 
+  [BindProperty]
+  public Customer? Customer { get; set; }
+
   public CustomerModel(DummyRosterContext dummyRosterContextInjected) {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
