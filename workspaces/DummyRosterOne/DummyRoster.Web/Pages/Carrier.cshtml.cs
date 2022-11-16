@@ -13,7 +13,7 @@ public class CarrierModel : PageModel {
   private DummyRosterContext dummyRosterContext;
 
   [BindProperty]
-  public Carrier? Carrier { get; set; }
+  public Carrier Carrier { get; set; } = new();
 
   public CarrierModel(DummyRosterContext dummyRosterContextInjected) {
     this.dummyRosterContext = dummyRosterContextInjected;
