@@ -1,14 +1,26 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using DummyRoster.Common.DataContext.Data;
+using DummyRoster.Common.EntityModel.Models;
+
 namespace DummyRoster.Web.Pages;
 
 public class EmployeeModel : PageModel {
 
-  public IEnumerable<string>? Employees { get; set; }
+  public IEnumerable<Employee>? Employees { get; set; }
+
+  private DummyRosterContext dummyRosterContext;
+
+  public EmployeeModel(DummyRosterContext dummyRosterContextInjected) {
+    this.dummyRosterContext = dummyRosterContextInjected;
+  }
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Employee";
-    ViewData["CardTitle"] = "Employees";
-    Employees = new[] {"Sample One", "Sample Two", "Sample Three", "Sample Four", "Sample Five"};
+    Employees = dummyRosterContext.Employees.OrderBy(
+      employee => employee.Country
+    ).ThenBy(
+      employee => employee.Name
+    );
   }
 }
