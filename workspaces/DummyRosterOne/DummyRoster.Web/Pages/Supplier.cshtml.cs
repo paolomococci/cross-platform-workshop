@@ -10,8 +10,8 @@ public class SupplierModel : PageModel {
 
   private DummyRosterContext dummyRosterContext;
 
-  public SupplierModel(DummyRosterContext injectedContext) {
-    this.dummyRosterContext = injectedContext;
+  public SupplierModel(DummyRosterContext dummyRosterContextInjected) {
+    this.dummyRosterContext = dummyRosterContextInjected;
   }
 
   public void OnGet() {
