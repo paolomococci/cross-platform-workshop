@@ -27,4 +27,8 @@ public class CarrierModel : PageModel {
       carrier => carrier.Name
     );
   }
+
+  public IActionResult OnPost() {
+    return Page();
+  }
 }
