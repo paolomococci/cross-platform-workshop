@@ -29,6 +29,12 @@ public class CustomerModel : PageModel {
   }
 
   public IActionResult OnPost() {
+    if ((this.Customer is not null) && ModelState.IsValid)
+    {
+      this.dummyRosterContext.Customers.Add(this.Customer);
+      this.dummyRosterContext.SaveChanges();
+      return RedirectToPage("/customer");
+    }
     return Page();
   }
 }
