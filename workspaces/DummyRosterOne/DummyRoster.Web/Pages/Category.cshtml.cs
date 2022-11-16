@@ -29,6 +29,12 @@ public class CategoryModel : PageModel {
   }
 
   public IActionResult OnPost() {
+    if ((this.Category is not null) && ModelState.IsValid)
+    {
+      this.dummyRosterContext.Categories.Add(this.Category);
+      this.dummyRosterContext.SaveChanges();
+      return RedirectToPage("/supplier");
+    }
     return Page();
   }
 }
