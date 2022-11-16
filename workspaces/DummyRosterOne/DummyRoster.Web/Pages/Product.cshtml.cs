@@ -12,6 +12,9 @@ public class ProductModel : PageModel {
 
   private DummyRosterContext dummyRosterContext;
 
+  [BindProperty]
+  public Product? Product { get; set; }
+
   public ProductModel(DummyRosterContext dummyRosterContextInjected) {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
