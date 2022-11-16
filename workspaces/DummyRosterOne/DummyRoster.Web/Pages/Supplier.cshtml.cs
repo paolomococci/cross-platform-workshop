@@ -29,6 +29,12 @@ public class SupplierModel : PageModel {
   }
 
   public IActionResult OnPost() {
+    if ((this.Supplier is not null) && ModelState.IsValid)
+    {
+      this.dummyRosterContext.Suppliers.Add(this.Supplier);
+      this.dummyRosterContext.SaveChanges();
+      return RedirectToPage("/supplier");
+    }
     return Page();
   }
 }
