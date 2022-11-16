@@ -12,9 +12,9 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Carrier
 {
     [Key]
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64 Id { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int Id { get; set; }
 
     [Required]
     [Column(TypeName = "varchar(32)")]
@@ -29,8 +29,8 @@ public partial class Carrier
 
     public byte[]? Picture { get; set; }
 
-    [Column(TypeName = "BIGINT")]
-    public long? Contact { get; set; }
+    [Column(TypeName = "INT")]
+    public int? Contact { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public DateTime? RegistrationDate { get; set; }
