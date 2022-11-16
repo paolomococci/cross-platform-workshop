@@ -12,7 +12,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Supplier
 {
     [Key]
-    [Column(TypeName = "BIGINT")]
+    [Column(TypeName = "INT")]
     [Range(0, 2147483647)]
     public int Id { get; set; }
 
