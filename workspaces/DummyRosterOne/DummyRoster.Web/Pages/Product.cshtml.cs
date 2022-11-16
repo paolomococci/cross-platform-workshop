@@ -29,6 +29,12 @@ public class ProductModel : PageModel {
   }
 
   public IActionResult OnPost() {
+    if ((this.Product is not null) && ModelState.IsValid)
+    {
+      this.dummyRosterContext.Products.Add(this.Product);
+      this.dummyRosterContext.SaveChanges();
+      return RedirectToPage("/product");
+    }
     return Page();
   }
 }
