@@ -29,7 +29,7 @@ public partial class Supplier
 
     public byte[]? Picture { get; set; }
 
-    [Column(TypeName = "BIGINT")]
+    [Column(TypeName = "INT")]
     public long? Contact { get; set; }
 
     [Column(TypeName = "DATETIME")]
