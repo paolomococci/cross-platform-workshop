@@ -12,6 +12,9 @@ public class InvoiceModel : PageModel {
 
   private DummyRosterContext dummyRosterContext;
 
+  [BindProperty]
+  public Invoice? Invoice { get; set; }
+
   public InvoiceModel(DummyRosterContext dummyRosterContextInjected) {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
