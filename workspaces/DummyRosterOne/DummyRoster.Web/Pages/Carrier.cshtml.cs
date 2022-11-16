@@ -29,6 +29,12 @@ public class CarrierModel : PageModel {
   }
 
   public IActionResult OnPost() {
+    if ((this.Carrier is not null) && ModelState.IsValid)
+    {
+      this.dummyRosterContext.Carriers.Add(this.Carrier);
+      this.dummyRosterContext.SaveChanges();
+      return RedirectToPage("/carrier");
+    }
     return Page();
   }
 }
