@@ -27,4 +27,8 @@ public class EmployeeModel : PageModel {
       employee => employee.Name
     );
   }
+
+  public IActionResult OnPost() {
+    return Page();
+  }
 }
