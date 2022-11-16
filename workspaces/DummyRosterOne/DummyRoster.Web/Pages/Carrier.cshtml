@@ -61,8 +61,18 @@
   <div>
     <p>Please, complete the fields of the following form.</p>
     <form method="post">
-      <div>
-        <input asp-for="Carrier.Name" placeholder="Name"/>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="carrierName" class="col-form-label">Name</label>
+        </div>
+        <div class="col-auto">
+          <input type="text" id="carrierName" class="form-control" aria-describedby="carrierNameHelpInline">
+        </div>
+        <div class="col-auto">
+          <span id="carrierNameHelpInline" class="form-text">
+            Help message.
+          </span>
+        </div>
       </div>
       <div>
         <input asp-for="Carrier.Country" placeholder="Country"/>
