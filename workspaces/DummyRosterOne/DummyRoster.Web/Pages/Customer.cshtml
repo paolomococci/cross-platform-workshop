@@ -1,29 +1,52 @@
 @page
+@using DummyRoster.Common.EntityModel.Models;
 @model DummyRoster.Web.Pages.CustomerModel;
-
-@{int i = 0;}
 
 <div class="card">
 
   <div class="card-header">
-    <h2 class="display-2">@ViewData["CardTitle"]</h2>
+    <h2 class="display-5">@ViewData["Title"]</h2>
   </div>
 
   <div class="accordion accordion-flush" id="accordionFlushForEmployees">
     @if (Model.Customers is not null)
     {
-      @foreach (string item in Model.Customers)
+      @foreach (Customer item in Model.Customers)
       {
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapse-@(i)" aria-expanded="false" aria-controls="flush-collapse-@(i)">
-              @item
+                data-bs-target="#flush-collapse-@(item.Id)" aria-expanded="false" aria-controls="flush-collapse-@(item.Id)">
+              @item.Name
             </button>
           </h2>
-          <div id="flush-collapse-@(i++)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+          <div id="flush-collapse-@(item.Id)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
               data-bs-parent="#accordionFlushForEmployees">
-            <div class="accordion-body">Content todo for this accordion.</div>
+            <div class="accordion-body">
+              <table class="table">
+                <caption>Details about the Customer</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Country</td>
+                    <td>@item.Email</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row">Customer ID: </th>
+                    <td>@item.Id</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </div>
       }
