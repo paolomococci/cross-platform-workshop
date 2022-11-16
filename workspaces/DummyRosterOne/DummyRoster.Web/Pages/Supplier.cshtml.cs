@@ -17,5 +17,10 @@ public class SupplierModel : PageModel {
 
   public void OnGet() {
     ViewData["Title"] = "DummyRoster Web - Supplier";
+    Suppliers = dummyRosterContext.Suppliers.OrderBy(
+      supplier => supplier.Country
+    ).ThenBy(
+      supplier => supplier.Name
+    );
   }
 }
