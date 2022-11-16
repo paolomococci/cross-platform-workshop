@@ -16,6 +16,6 @@ public class SupplierModel : PageModel {
   }
 
   public void OnGet() {
-    // TODO
+    ViewData["Title"] = "DummyRoster Web - Supplier";
   }
 }
