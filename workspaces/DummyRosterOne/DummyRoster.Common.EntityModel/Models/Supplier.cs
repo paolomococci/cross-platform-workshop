@@ -30,7 +30,7 @@ public partial class Supplier
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? Contact { get; set; }
+    public int? Contact { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public DateTime? RegistrationDate { get; set; }
