@@ -13,8 +13,8 @@ public partial class Supplier
 {
     [Key]
     [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64 Id { get; set; }
+    [Range(0, 2147483647)]
+    public int Id { get; set; }
 
     [Required]
     [Column(TypeName = "varchar(32)")]
