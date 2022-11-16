@@ -27,4 +27,8 @@ public class SupplierModel : PageModel {
       supplier => supplier.Name
     );
   }
+
+  public IActionResult OnPost() {
+    return Page();
+  }
 }
