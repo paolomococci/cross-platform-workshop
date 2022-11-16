@@ -15,9 +15,9 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Form
 {
     [Key]
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64 Id { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int Id { get; set; }
 
     [RegularExpression(@"^([A-Z]{1,}+[a-zA-Z0-9\s\.\,]{1,63})$")]
     public string? Description { get; set; }
@@ -25,17 +25,17 @@ public partial class Form
     [Column(TypeName = "DATETIME")]
     public DateTime? RegistrationDate { get; set; }
 
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64? CustomerId { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int? CustomerId { get; set; }
 
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64? CarrierId { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int? CarrierId { get; set; }
 
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64? EmployeeId { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int? EmployeeId { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public DateTime? FormDate { get; set; }
