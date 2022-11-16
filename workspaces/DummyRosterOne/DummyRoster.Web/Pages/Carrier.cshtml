@@ -87,8 +87,18 @@
           </span>
         </div>
       </div>
-      <div>
-        <input asp-for="Carrier.Email" placeholder="Email"/>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="carrierEmail" class="col-form-label">Email</label>
+        </div>
+        <div class="col-auto">
+          <input type="email" id="carrierEmail" class="form-control" aria-describedby="carrierEmailHelpInline">
+        </div>
+        <div class="col-auto">
+          <span id="carrierEmailHelpInline" class="form-text">
+            Help message.
+          </span>
+        </div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
