@@ -27,4 +27,8 @@ public class InvoiceModel : PageModel {
       invoice => invoice.Quantity
     );
   }
+
+  public IActionResult OnPost() {
+    return Page();
+  }
 }
