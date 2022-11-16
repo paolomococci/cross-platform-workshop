@@ -27,4 +27,8 @@ public class ProductModel : PageModel {
       product => product.Name
     );
   }
+
+  public IActionResult OnPost() {
+    return Page();
+  }
 }
