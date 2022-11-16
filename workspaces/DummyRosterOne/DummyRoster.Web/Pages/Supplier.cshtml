@@ -7,7 +7,7 @@
 <div class="card">
 
   <div class="card-header">
-    <h2 class="display-2">@ViewData["CardTitle"]</h2>
+    <h2 class="display-5">@ViewData["Title"]</h2>
   </div>
 
   <div class="accordion accordion-flush" id="accordionFlushForEmployees">
@@ -19,7 +19,7 @@
           <h2 class="accordion-header" id="flush-headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapse-@(i)" aria-expanded="false" aria-controls="flush-collapse-@(i)">
-              @item
+              @item.Name
             </button>
           </h2>
           <div id="flush-collapse-@(i++)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
@@ -45,10 +45,6 @@
                   <tr>
                     <th scope="row">Supplier ID: </th>
                     <td>@item.Id</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">total number of suppliers registered in the system: </th>
-                    <td>@(i)</td>
                   </tr>
                 </tfoot>
               </table>
