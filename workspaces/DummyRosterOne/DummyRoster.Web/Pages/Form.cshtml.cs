@@ -29,6 +29,12 @@ public class FormModel : PageModel {
   }
 
   public IActionResult OnPost() {
+    if ((this.Form is not null) && ModelState.IsValid)
+    {
+      this.dummyRosterContext.Forms.Add(this.Form);
+      this.dummyRosterContext.SaveChanges();
+      return RedirectToPage("/form");
+    }
     return Page();
   }
 }
