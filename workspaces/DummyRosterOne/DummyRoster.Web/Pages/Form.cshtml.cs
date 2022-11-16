@@ -27,4 +27,8 @@ public class FormModel : PageModel {
       form => form.PromisedDate
     );
   }
+
+  public IActionResult OnPost() {
+    return Page();
+  }
 }
