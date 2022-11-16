@@ -1,4 +1,5 @@
 @page
+@using DummyRoster.Common.EntityModel.Models;
 @model DummyRoster.Web.Pages.SupplierModel;
 
 @{int i = 0;}
@@ -12,7 +13,7 @@
   <div class="accordion accordion-flush" id="accordionFlushForEmployees">
     @if (Model.Suppliers is not null)
     {
-      @foreach (string item in Model.Suppliers)
+      @foreach (Supplier item in Model.Suppliers)
       {
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingOne">
