@@ -13,9 +13,9 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Product
 {
     [Key]
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64 Id { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int Id { get; set; }
 
     [Required]
     [Column(TypeName = "varchar(32)")]
@@ -30,13 +30,13 @@ public partial class Product
     [Column(TypeName = "DATETIME")]
     public DateTime? RegistrationDate { get; set; }
 
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64? CategoryId { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int? CategoryId { get; set; }
 
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64? SupplierId { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int? SupplierId { get; set; }
 
     [Column(TypeName = "varchar(24)")]
     public string? QuantityPerUnit { get; set; }
