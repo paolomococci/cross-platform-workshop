@@ -13,14 +13,14 @@ public partial class Invoice
     public string? Note { get; set; }
 
     [Key]
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64 FormId { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int FormId { get; set; }
 
     [Key]
-    [Column(TypeName = "BIGINT")]
-    [Range(1, 18446744073709551615)]
-    public UInt64 ProductId { get; set; }
+    [Column(TypeName = "INT")]
+    [Range(0, 2147483647)]
+    public int ProductId { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public DateTime? RegistrationDate { get; set; }
