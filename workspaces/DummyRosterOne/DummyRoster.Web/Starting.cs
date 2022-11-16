@@ -7,6 +7,7 @@ public class Starting {
     IServiceCollection services
   ) {
     services.AddRazorPages();
+    services.AddDbContext<DummyRosterContext>();
   }
 
   public void Configure(
