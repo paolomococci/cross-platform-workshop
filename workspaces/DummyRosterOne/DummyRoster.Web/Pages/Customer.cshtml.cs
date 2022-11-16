@@ -27,4 +27,8 @@ public class CustomerModel : PageModel {
       customer => customer.Name
     );
   }
+
+  public IActionResult OnPost() {
+    return Page();
+  }
 }
