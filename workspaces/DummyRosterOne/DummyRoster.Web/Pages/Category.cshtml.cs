@@ -27,4 +27,8 @@ public class CategoryModel : PageModel {
       category => category.Name
     );
   }
+
+  public IActionResult OnPost() {
+    return Page();
+  }
 }
