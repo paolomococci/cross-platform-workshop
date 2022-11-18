@@ -13,93 +13,105 @@
     <h2 class="display-5">@ViewData["Title"]</h2>
   </div>
 
-  <div class="accordion accordion-flush" id="accordionFlushForEmployees">
-    @if (Model.Carriers is not null)
-    {
-      @foreach (Carrier item in Model.Carriers)
+  <div class="card-body">
+    <div class="accordion accordion-flush" id="accordionFlushForEmployees">
+      @if (Model.Carriers is not null)
       {
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapse-@(item.Id)" aria-expanded="false" aria-controls="flush-collapse-@(item.Id)">
-              @item.Name
-            </button>
-          </h2>
-          <div id="flush-collapse-@(item.Id)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlushForEmployees">
-            <div class="accordion-body">
-              <table class="table">
-                <caption>Details about the Carrier</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">Email</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Country</td>
-                    <td>@item.Email</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th scope="row">Carrier ID: </th>
-                    <td>@item.Id</td>
-                  </tr>
-                </tfoot>
-              </table>
+        @foreach (Carrier item in Model.Carriers)
+        {
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse-@(item.Id)" aria-expanded="false" aria-controls="flush-collapse-@(item.Id)">
+                @item.Name
+              </button>
+            </h2>
+            <div id="flush-collapse-@(item.Id)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+          data-bs-parent="#accordionFlushForEmployees">
+              <div class="accordion-body">
+                <table class="table">
+                  <caption>Details about the Carrier</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Country</th>
+                      <th scope="col">Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>@item.Name</td>
+                      <td>@item.Country</td>
+                      <td>@item.Email</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">Carrier ID: </th>
+                      <td>@item.Id</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
+        }
       }
-    }
+    </div>
   </div>
 
-  <div class="row g-3">
+</div>
+
+<div class="card">
+
+  <div class="card-header">
+    <h2 class="display-5">new carrier</h2>
+  </div>
+
+  <div class="card-body">
     <form method="post">
-      <div class="align-items-center">
-        <div class="col-auto">
+      <div class="row mb-3 align-items-center">
+        <div class="">
           <label for="carrierName" class="col-form-label">Name</label>
         </div>
-        <div class="col-auto">
+        <div class="">
           <input type="text" id="carrierName" class="form-control" aria-describedby="carrierNameHelpInline">
         </div>
-        <div class="col-auto">
+        <div class="">
           <span id="carrierNameHelpInline" class="form-text">
             Some help message.
           </span>
         </div>
       </div>
-      <div class="align-items-center">
-        <div class="col-auto">
+      <div class="row mb-3 align-items-center">
+        <div class="">
           <label for="carrierCountry" class="col-form-label">Country</label>
         </div>
-        <div class="col-auto">
+        <div class="">
           <input type="text" id="carrierCountry" class="form-control" aria-describedby="carrierCountryHelpInline">
         </div>
-        <div class="col-auto">
+        <div class="">
           <span id="carrierCountryHelpInline" class="form-text">
             Some help message.
           </span>
         </div>
       </div>
-      <div class="align-items-center">
-        <div class="col-auto">
+      <div class="row mb-3 align-items-center">
+        <div class="">
           <label for="carrierEmail" class="col-form-label">Email</label>
         </div>
-        <div class="col-auto">
+        <div class="">
           <input type="email" id="carrierEmail" class="form-control" aria-describedby="carrierEmailHelpInline">
         </div>
-        <div class="col-auto">
+        <div class="">
           <span id="carrierEmailHelpInline" class="form-text">
             Some help message.
           </span>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Save</button>
+      <div class="align-items-center">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
     </form>
   </div>
 
