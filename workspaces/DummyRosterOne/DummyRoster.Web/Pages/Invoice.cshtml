@@ -74,6 +74,19 @@
       <form method="post">
         <div class="row mb-3 align-items-center">
           <div class="">
+            <label for="invoiceNote" class="col-form-label">Note</label>
+          </div>
+          <div class="">
+            <input type="text" id="invoiceNote" class="form-control" aria-describedby="invoiceNoteHelpInline" required minlength="2" maxlength="64" size="64">
+          </div>
+          <div class="">
+            <span id="invoiceNoteHelpInline" class="form-text">
+              Up to sixty-four characters are allowed.
+            </span>
+          </div>
+        </div>
+        <div class="row mb-3 align-items-center">
+          <div class="">
             <label for="invoiceUnitPrice" class="col-form-label">Unit Price</label>
           </div>
           <div class="">
