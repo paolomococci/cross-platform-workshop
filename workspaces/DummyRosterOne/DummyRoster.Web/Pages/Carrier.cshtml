@@ -12,7 +12,7 @@
     </div>
 
     <div class="card-body">
-      <div class="accordion accordion-flush" id="accordionFlushForCarrier">
+      <div class="accordion accordion-flush" id="accordionFlushForCarriers">
         @if (Model.Carriers is not null)
         {
           @foreach (Carrier item in Model.Carriers)
@@ -26,7 +26,7 @@
                 </button>
               </h2>
               <div id="flush-collapse-@(item.Id)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                data-bs-parent="#accordionFlushForCarrier">
+                data-bs-parent="#accordionFlushForCarriers">
                 <div class="accordion-body">
                   <table class="table">
                     <caption>Details about the Carrier</caption>
