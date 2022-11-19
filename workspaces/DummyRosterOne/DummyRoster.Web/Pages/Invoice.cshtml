@@ -29,7 +29,7 @@
                 </button>
               </h2>
               <div id="flush-collapse-@(i++)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-            data-bs-parent="#accordionFlushForEmployees">
+                data-bs-parent="#accordionFlushForEmployees">
                 <div class="accordion-body">
                   <table class="table">
                     <caption>Details about the Invoice</caption>
@@ -77,8 +77,8 @@
             <label for="invoiceNote" class="col-form-label">Note</label>
           </div>
           <div class="">
-            <input asp-for="Invoice.Note" type="text" id="invoiceNote" class="form-control" aria-describedby="invoiceNoteHelpInline" required
-              minlength="2" maxlength="64" size="64">
+            <input asp-for="Invoice.Note" type="text" id="invoiceNote" class="form-control"
+              aria-describedby="invoiceNoteHelpInline" required minlength="2" maxlength="64" size="64">
           </div>
           <div class="">
             <span id="invoiceNoteHelpInline" class="form-text">
@@ -105,7 +105,8 @@
             <label for="invoiceQuantity" class="col-form-label">Quantity</label>
           </div>
           <div class="">
-            <input asp-for="Invoice.Quantity" type="number" id="invoiceQuantity" class="form-control" aria-describedby="invoiceQuantityHelpInline">
+            <input asp-for="Invoice.Quantity" type="number" id="invoiceQuantity" class="form-control"
+              aria-describedby="invoiceQuantityHelpInline">
           </div>
           <div class="">
             <span id="invoiceQuantityHelpInline" class="form-text">
@@ -118,7 +119,8 @@
             <label for="invoicePriceCut" class="col-form-label">Price Cut</label>
           </div>
           <div class="">
-            <input asp-for="Invoice.PriceCut" type="number" id="invoicePriceCut" class="form-control" aria-describedby="invoicePriceCutHelpInline">
+            <input asp-for="Invoice.PriceCut" type="number" id="invoicePriceCut" class="form-control"
+              aria-describedby="invoicePriceCutHelpInline">
           </div>
           <div class="">
             <span id="invoicePriceCutHelpInline" class="form-text">
