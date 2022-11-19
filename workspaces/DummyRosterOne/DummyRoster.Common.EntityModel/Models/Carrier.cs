@@ -74,7 +74,7 @@ public partial class Carrier
   [InverseProperty("Carrier")]
   public virtual ICollection<Form> Forms { get; } = new List<Form>();
 
-  private const int seed = 3;
+  private const int seed = 7;
   private Random random = new Random(seed);
 
   public int generateRandomId()
