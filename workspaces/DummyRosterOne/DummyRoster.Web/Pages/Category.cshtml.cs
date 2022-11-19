@@ -13,7 +13,7 @@ public class CategoryModel : PageModel {
   private DummyRosterContext dummyRosterContext;
 
   [BindProperty]
-  public Category? Category { get; set; }
+  public Category Category { get; set; } = new();
 
   public CategoryModel(DummyRosterContext dummyRosterContextInjected) {
     this.dummyRosterContext = dummyRosterContextInjected;
