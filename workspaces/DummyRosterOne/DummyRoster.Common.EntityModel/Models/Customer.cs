@@ -74,7 +74,7 @@ public partial class Customer
   [InverseProperty("Customer")]
   public virtual ICollection<Form> Forms { get; } = new List<Form>();
 
-  private const int seed = 31;
+  private const int seed = 8191;
   private Random random = new Random(seed);
 
   public int generateRandomId()
