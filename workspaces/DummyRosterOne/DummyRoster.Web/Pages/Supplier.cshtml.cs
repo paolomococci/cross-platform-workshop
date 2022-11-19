@@ -13,7 +13,7 @@ public class SupplierModel : PageModel {
   private DummyRosterContext dummyRosterContext;
 
   [BindProperty]
-  public Supplier? Supplier { get; set; }
+  public Supplier Supplier { get; set; } = new();
 
   public SupplierModel(DummyRosterContext dummyRosterContextInjected) {
     this.dummyRosterContext = dummyRosterContextInjected;
