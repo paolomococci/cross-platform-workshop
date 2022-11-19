@@ -3,8 +3,8 @@
 ## Scaffolding of DummyRoster workspace
 
 ```shell
-mkdir DummyRoster
-cd DummyRoster
+mkdir DummyRosterOne
+cd DummyRosterOne
 echo "# DummyRosterOne" > README.md
 dotnet new gitignore
 sqlite3 DummyRoster.db -init dummyroster.sql
