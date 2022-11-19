@@ -24,7 +24,7 @@ public partial class Supplier
     [Column(TypeName = "DATETIME")]
     public DateTime? FoundationDate { get; set; }
 
-    [RegularExpression(@"^([A-Z]{1,}+[a-zA-Z0-9\s\.\,]{1,63})$")]
+    [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
     public string? Description { get; set; }
 
     public byte[]? Picture { get; set; }
@@ -56,15 +56,15 @@ public partial class Supplier
     public string? Country { get; set; }
 
     [Column(TypeName = "varchar(48)")]
-    [RegularExpression(@"^([a-zA-Z0-9\.\-]{2,27}+@+[a-zA-Z0-9\.]{2,20})$")]
+    [RegularExpression(@"^([a-zA-Z0-9\.\-]{2,27}@[a-zA-Z0-9\.]{2,20})$")]
     public string? Email { get; set; }
 
     [Column(TypeName = "varchar(24)")]
-    [RegularExpression(@"^\+?\d{0,2}\-?\d{7,11}")]
+    [RegularExpression(@"^\?\d{0,2}\-?\d{7,11}")]
     public string? Phone { get; set; }
 
     [Column(TypeName = "varchar(24)")]
-    [RegularExpression(@"^\+?\d{0,2}\-?\d{7,11}")]
+    [RegularExpression(@"^\?\d{0,2}\-?\d{7,11}")]
     public string? Fax { get; set; }
 
     [ForeignKey("Contact")]
