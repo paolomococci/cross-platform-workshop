@@ -41,12 +41,4 @@ public partial class Invoice
   [ForeignKey("ProductId")]
   [InverseProperty("Invoices")]
   public virtual Product Product { get; set; } = null!;
-
-  private const int seed = 131071;
-  private Random random = new Random(seed);
-
-  public int generateRandomId()
-  {
-    return this.random.Next();
-  }
 }
