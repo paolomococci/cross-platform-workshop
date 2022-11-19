@@ -113,6 +113,7 @@
           </div>
         </div>
         <div class="align-items-center">
+          <input asp-for="Supplier.Id" value="@Model.Supplier.generateRandomId()" type="hidden">
           <button type="submit" class="btn btn-primary">Save</button>
         </div>
       </form>
