@@ -13,7 +13,7 @@ public class EmployeeModel : PageModel {
   private DummyRosterContext dummyRosterContext;
 
   [BindProperty]
-  public Employee? Employee { get; set; }
+  public Employee Employee { get; set; } = new();
 
   public EmployeeModel(DummyRosterContext dummyRosterContextInjected) {
     this.dummyRosterContext = dummyRosterContextInjected;
