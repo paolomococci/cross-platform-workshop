@@ -19,7 +19,7 @@ public partial class Form
     [Range(0, 2147483647)]
     public int Id { get; set; }
 
-    [RegularExpression(@"^([A-Z]{1,}+[a-zA-Z0-9\s\.\,]{1,63})$")]
+    [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
     public string? Description { get; set; }
 
     [Column(TypeName = "DATETIME")]
