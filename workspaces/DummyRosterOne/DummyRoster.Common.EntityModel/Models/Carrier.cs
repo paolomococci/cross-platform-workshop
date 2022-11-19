@@ -24,7 +24,7 @@ public partial class Carrier
     [Column(TypeName = "DATETIME")]
     public DateTime? FoundationDate { get; set; }
 
-    [RegularExpression(@"^([A-Z]{1,}+[a-zA-Z0-9\s\.\,]{1,63})$")]
+    [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
     public string? Description { get; set; }
 
     public byte[]? Picture { get; set; }
@@ -56,7 +56,7 @@ public partial class Carrier
     public string? Country { get; set; }
 
     [Column(TypeName = "varchar(48)")]
-    [RegularExpression(@"^([a-zA-Z0-9\.\-]{2,27}+@+[a-zA-Z0-9\.]{2,20})$")]
+    [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,5})+)$")]
     public string? Email { get; set; }
 
     [Column(TypeName = "varchar(24)")]
