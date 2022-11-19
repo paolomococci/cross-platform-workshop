@@ -14,59 +14,60 @@ namespace DummyRoster.Common.EntityModel.Models;
 [Index("RequiredDate", Name = "IDX_RequiredDate")]
 public partial class Form
 {
-    [Key]
-    [Column(TypeName = "INT")]
-    [Range(0, 2147483647)]
-    public int Id { get; set; }
+  [Key]
+  [Column(TypeName = "INT")]
+  [Range(0, 2147483647)]
+  public int Id { get; set; }
 
-    [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
-    public string? Description { get; set; }
+  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
+  public string? Description { get; set; }
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? RegistrationDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? RegistrationDate { get; set; }
 
-    [Column(TypeName = "INT")]
-    [Range(0, 2147483647)]
-    public int? CustomerId { get; set; }
+  [Column(TypeName = "INT")]
+  [Range(0, 2147483647)]
+  public int? CustomerId { get; set; }
 
-    [Column(TypeName = "INT")]
-    [Range(0, 2147483647)]
-    public int? CarrierId { get; set; }
+  [Column(TypeName = "INT")]
+  [Range(0, 2147483647)]
+  public int? CarrierId { get; set; }
 
-    [Column(TypeName = "INT")]
-    [Range(0, 2147483647)]
-    public int? EmployeeId { get; set; }
+  [Column(TypeName = "INT")]
+  [Range(0, 2147483647)]
+  public int? EmployeeId { get; set; }
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? FormDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? FormDate { get; set; }
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? RequiredDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? RequiredDate { get; set; }
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? PromisedDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? PromisedDate { get; set; }
 
-    public decimal? ShippingCost { get; set; }
+  public decimal? ShippingCost { get; set; }
 
-    [ForeignKey("CarrierId")]
-    [InverseProperty("Forms")]
-    public virtual Carrier? Carrier { get; set; }
+  [ForeignKey("CarrierId")]
+  [InverseProperty("Forms")]
+  public virtual Carrier? Carrier { get; set; }
 
-    [ForeignKey("CustomerId")]
-    [InverseProperty("Forms")]
-    public virtual Customer? Customer { get; set; }
+  [ForeignKey("CustomerId")]
+  [InverseProperty("Forms")]
+  public virtual Customer? Customer { get; set; }
 
-    [ForeignKey("EmployeeId")]
-    [InverseProperty("Forms")]
-    public virtual Employee? Employee { get; set; }
+  [ForeignKey("EmployeeId")]
+  [InverseProperty("Forms")]
+  public virtual Employee? Employee { get; set; }
 
-    [InverseProperty("Form")]
-    public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
+  [InverseProperty("Form")]
+  public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
 
   private const int seed = 12345;
   private Random random = new Random(seed);
 
-  public int generateRandomId() {
+  public int generateRandomId()
+  {
     return this.random.Next();
   }
 }
