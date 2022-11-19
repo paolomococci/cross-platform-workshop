@@ -63,7 +63,7 @@ public partial class Form
   [InverseProperty("Form")]
   public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
 
-  private const int seed = 12345;
+  private const int seed = 8191;
   private Random random = new Random(seed);
 
   public int generateRandomId()
