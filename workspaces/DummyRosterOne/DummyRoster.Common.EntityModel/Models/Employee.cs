@@ -79,4 +79,11 @@ public partial class Employee
 
     [InverseProperty("ContactNavigation")]
     public virtual ICollection<Supplier> Suppliers { get; } = new List<Supplier>();
+
+  private const int seed = 12345;
+  private Random random = new Random(seed);
+
+  public int generateRandomId() {
+    return this.random.Next();
+  }
 }
