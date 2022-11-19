@@ -68,4 +68,11 @@ public partial class Product
     [ForeignKey("SupplierId")]
     [InverseProperty("Products")]
     public virtual Supplier? Supplier { get; set; }
+
+  private const int seed = 12345;
+  private Random random = new Random(seed);
+
+  public int generateRandomId() {
+    return this.random.Next();
+  }
 }
