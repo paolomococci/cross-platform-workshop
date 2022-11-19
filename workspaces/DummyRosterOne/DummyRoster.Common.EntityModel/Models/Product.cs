@@ -69,7 +69,7 @@ public partial class Product
   [InverseProperty("Products")]
   public virtual Supplier? Supplier { get; set; }
 
-  private const int seed = 12345;
+  private const int seed = 524287;
   private Random random = new Random(seed);
 
   public int generateRandomId()
