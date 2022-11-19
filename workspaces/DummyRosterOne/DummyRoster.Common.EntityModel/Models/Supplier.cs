@@ -73,4 +73,11 @@ public partial class Supplier
 
     [InverseProperty("Supplier")]
     public virtual ICollection<Product> Products { get; } = new List<Product>();
+
+  private const int seed = 12345;
+  private Random random = new Random(seed);
+
+  public int generateRandomId() {
+    return this.random.Next();
+  }
 }
