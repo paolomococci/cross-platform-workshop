@@ -12,67 +12,68 @@ namespace DummyRoster.Common.EntityModel.Models;
 [Index("SupplierId", Name = "IDX_SupplierId")]
 public partial class Product
 {
-    [Key]
-    [Column(TypeName = "INT")]
-    [Range(0, 2147483647)]
-    public int Id { get; set; }
+  [Key]
+  [Column(TypeName = "INT")]
+  [Range(0, 2147483647)]
+  public int Id { get; set; }
 
-    [Required]
-    [Column(TypeName = "varchar(32)")]
-    [RegularExpression("[a-zA-Z]{1,32}")]
-    public string Name { get; set; } = null!;
+  [Required]
+  [Column(TypeName = "varchar(32)")]
+  [RegularExpression("[a-zA-Z]{1,32}")]
+  public string Name { get; set; } = null!;
 
-    [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
-    public string? Description { get; set; }
+  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
+  public string? Description { get; set; }
 
-    public byte[]? Picture { get; set; }
+  public byte[]? Picture { get; set; }
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? RegistrationDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? RegistrationDate { get; set; }
 
-    [Column(TypeName = "INT")]
-    [Range(0, 2147483647)]
-    public int? CategoryId { get; set; }
+  [Column(TypeName = "INT")]
+  [Range(0, 2147483647)]
+  public int? CategoryId { get; set; }
 
-    [Column(TypeName = "INT")]
-    [Range(0, 2147483647)]
-    public int? SupplierId { get; set; }
+  [Column(TypeName = "INT")]
+  [Range(0, 2147483647)]
+  public int? SupplierId { get; set; }
 
-    [Column(TypeName = "varchar(24)")]
-    public string? QuantityPerUnit { get; set; }
+  [Column(TypeName = "varchar(24)")]
+  public string? QuantityPerUnit { get; set; }
 
-    public double? UnitPrice { get; set; }
+  public double? UnitPrice { get; set; }
 
-    [Column(TypeName = "SMALLINT")]
-    [Range(0, 65535)]
-    public UInt16? UnitsInStock { get; set; }
+  [Column(TypeName = "SMALLINT")]
+  [Range(0, 65535)]
+  public UInt16? UnitsInStock { get; set; }
 
-    [Column(TypeName = "SMALLINT")]
-    [Range(0, 65535)]
-    public UInt16? UnitsOnOrder { get; set; }
+  [Column(TypeName = "SMALLINT")]
+  [Range(0, 65535)]
+  public UInt16? UnitsOnOrder { get; set; }
 
-    [Column(TypeName = "SMALLINT")]
-    [Range(0, 65535)]
-    public UInt16? ReorderLevel { get; set; }
+  [Column(TypeName = "SMALLINT")]
+  [Range(0, 65535)]
+  public UInt16? ReorderLevel { get; set; }
 
-    [Column(TypeName = "TINYINT")]
-    public long Discontinued { get; set; }
+  [Column(TypeName = "TINYINT")]
+  public long Discontinued { get; set; }
 
-    [ForeignKey("CategoryId")]
-    [InverseProperty("Products")]
-    public virtual Category? Category { get; set; }
+  [ForeignKey("CategoryId")]
+  [InverseProperty("Products")]
+  public virtual Category? Category { get; set; }
 
-    [InverseProperty("Product")]
-    public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
+  [InverseProperty("Product")]
+  public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
 
-    [ForeignKey("SupplierId")]
-    [InverseProperty("Products")]
-    public virtual Supplier? Supplier { get; set; }
+  [ForeignKey("SupplierId")]
+  [InverseProperty("Products")]
+  public virtual Supplier? Supplier { get; set; }
 
   private const int seed = 12345;
   private Random random = new Random(seed);
 
-  public int generateRandomId() {
+  public int generateRandomId()
+  {
     return this.random.Next();
   }
 }
