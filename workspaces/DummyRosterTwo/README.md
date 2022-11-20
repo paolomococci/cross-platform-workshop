@@ -57,6 +57,7 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new web --name DummyRoster.Web
 cd DummyRoster.Web
+echo -e "namespace DummyRoster.Common.DataContext.Data;\npublic class Startup {}" > Startup.cs
 dotnet watch
 ```
 
