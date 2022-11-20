@@ -8,7 +8,7 @@ namespace DummyRoster.Web.Form.DummyRosterFeature.Pages;
 public class FormModel : PageModel
 {
   private DummyRosterContext dummyRosterContext;
-  public DummyRoster.Common.EntityModel.Models.Form[] forms { get; set; } = null!;
+  public IQueryable<DummyRoster.Common.EntityModel.Models.Form> forms { get; set; } = null!;
 
   public FormModel(
       DummyRosterContext dummyRosterContext
