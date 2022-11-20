@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using DummyRoster.Common.DataContext.Data;
-using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Carrier.DummyRosterFeature.Pages;
 
 public class CarrierModel : PageModel
 {
   private DummyRosterContext dummyRosterContext;
+  public DummyRoster.Common.EntityModel.Models.Carrier[] carriers { get; set; } = null!;
 
   public CarrierModel(
       DummyRosterContext dummyRosterContext
