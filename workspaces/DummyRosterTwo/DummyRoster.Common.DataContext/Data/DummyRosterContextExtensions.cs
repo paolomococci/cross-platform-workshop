@@ -1,5 +1,5 @@
-﻿namespace DummyRoster.Common.DataContext;
-public class Class1
+﻿namespace DummyRoster.Common.DataContext.Data;
+public class DummyRosterContextExtensions
 {
 
 }
