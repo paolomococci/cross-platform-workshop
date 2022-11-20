@@ -7,8 +7,17 @@ namespace DummyRoster.Web.Employee.DummyRosterFeature.Pages;
 
 public class EmployeeModel : PageModel
 {
-    public void OnGet()
-    {
+  private DummyRosterContext dummyRosterContext;
 
-    }
+  public EmployeeModel(
+      DummyRosterContext dummyRosterContext
+  )
+  {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+
+  public void OnGet()
+  {
+
+  }
 }
