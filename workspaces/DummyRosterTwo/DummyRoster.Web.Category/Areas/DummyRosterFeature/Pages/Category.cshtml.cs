@@ -19,6 +19,6 @@ public class CategoryModel : PageModel
 
   public void OnGet()
   {
-
+    ViewData["Title"] = "DummyRoster Admin - Category";
   }
 }
