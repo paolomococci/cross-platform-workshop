@@ -46,6 +46,7 @@ From the main workspace I type the following commands:
 dotnet new classlib --name DummyRoster.Common.DataContext
 cd DummyRoster.Common.DataContext
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
+mv --verbose ../DummyRoster.Common.EntityModel/Data .
 ```
 
 ### Scaffolding of DummyRoster.Web project
