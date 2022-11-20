@@ -8,7 +8,7 @@ namespace DummyRoster.Web.Customer.DummyRosterFeature.Pages;
 public class CustomerModel : PageModel
 {
   private DummyRosterContext dummyRosterContext;
-  public DummyRoster.Common.EntityModel.Models.Customer[] customers { get; set; } = null!;
+  public IQueryable<DummyRoster.Common.EntityModel.Models.Customer> customers { get; set; } = null!;
 
   public CustomerModel(
       DummyRosterContext dummyRosterContext
