@@ -8,7 +8,7 @@ namespace DummyRoster.Web.Supplier.DummyRosterFeature.Pages;
 public class SupplierModel : PageModel
 {
   private DummyRosterContext dummyRosterContext;
-  public IQueryable<DummyRoster.Common.EntityModel.Models.Supplier> suppliers { get; set; } = null!;
+  public DummyRoster.Common.EntityModel.Models.Supplier[] suppliers { get; set; } = null!;
 
   public SupplierModel(
       DummyRosterContext dummyRosterContext
@@ -24,6 +24,6 @@ public class SupplierModel : PageModel
       entity => entity.Country
     ).ThenBy(
       entity => entity.Name
-    );
+    ).ToArray();
   }
 }
