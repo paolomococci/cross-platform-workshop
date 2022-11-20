@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using DummyRoster.Common.DataContext.Data;
+using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Employee.DummyRosterFeature.Pages;
 
