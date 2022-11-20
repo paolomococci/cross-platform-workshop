@@ -47,7 +47,8 @@ dotnet new classlib --name DummyRoster.Common.DataContext
 cd DummyRoster.Common.DataContext
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
 mv --verbose ../DummyRoster.Common.EntityModel/Data .
-mv Class1.cs Data/DummyRosterContextExtensions.cs
+rm Class1.cs
+echo -e "namespace DummyRoster.Common.DataContext.Data;\npublic class DummyRosterContextExtensions {}" > Data/DummyRosterContextExtensions.cs
 ```
 
 ### Scaffolding of DummyRoster.Web project
@@ -57,7 +58,7 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new web --name DummyRoster.Web
 cd DummyRoster.Web
-echo -e "namespace DummyRoster.Common.DataContext.Data;\npublic class Startup {}" > Startup.cs
+echo -e "namespace DummyRoster.Web;\npublic class Startup {}" > Startup.cs
 dotnet watch
 ```
 
