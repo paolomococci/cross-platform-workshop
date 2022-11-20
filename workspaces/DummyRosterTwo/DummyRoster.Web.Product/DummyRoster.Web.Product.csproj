@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj" />
+    <ProjectReference Include="../DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj" />
   </ItemGroup>
 
 </Project>
