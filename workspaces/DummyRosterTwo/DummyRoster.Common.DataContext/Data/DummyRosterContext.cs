@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace DummyRoster.Common.EntityModel.Models;
+namespace DummyRoster.Common.DataContext.Data;
 
 public partial class DummyRosterContext : DbContext
 {
