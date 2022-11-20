@@ -17,21 +17,21 @@ public partial class DummyRosterContext : DbContext
     {
     }
 
-    public virtual DbSet<Carrier> Carriers { get; set; }
+    public virtual DbSet<Carrier> Carriers { get; set; } = null!;
 
-    public virtual DbSet<Category> Categories { get; set; }
+    public virtual DbSet<Category> Categories { get; set; } = null!;
 
-    public virtual DbSet<Customer> Customers { get; set; }
+    public virtual DbSet<Customer> Customers { get; set; } = null!;
 
-    public virtual DbSet<Employee> Employees { get; set; }
+    public virtual DbSet<Employee> Employees { get; set; } = null!;
 
-    public virtual DbSet<Form> Forms { get; set; }
+    public virtual DbSet<Form> Forms { get; set; } = null!;
 
-    public virtual DbSet<Invoice> Invoices { get; set; }
+    public virtual DbSet<Invoice> Invoices { get; set; } = null!;
 
-    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<Product> Products { get; set; } = null!;
 
-    public virtual DbSet<Supplier> Suppliers { get; set; }
+    public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
