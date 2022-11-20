@@ -19,6 +19,6 @@ public class InvoiceModel : PageModel
 
   public void OnGet()
   {
-
+    ViewData["Title"] = "DummyRoster Admin - Invoice";
   }
 }
