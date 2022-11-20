@@ -1,2 +1,2 @@
-namespace DummyRoster.Common.DataContext.Data;
+namespace DummyRoster.Web;
 public class Startup {}
