@@ -77,4 +77,5 @@ dotnet new razorclasslib --support-pages-and-views --name DummyRoster.Web.Carrie
 dotnet new razorclasslib --support-pages-and-views --name DummyRoster.Web.Category
 dotnet new razorclasslib --support-pages-and-views --name DummyRoster.Web.Product
 dotnet new razorclasslib --support-pages-and-views --name DummyRoster.Web.Form
+dotnet new razorclasslib --support-pages-and-views --name DummyRoster.Web.Invoice
 ```
