@@ -8,7 +8,7 @@ namespace DummyRoster.Web.Product.DummyRosterFeature.Pages;
 public class ProductModel : PageModel
 {
   private DummyRosterContext dummyRosterContext;
-  public DummyRoster.Common.EntityModel.Models.Product[] products { get; set; } = null!;
+  public IQueryable<DummyRoster.Common.EntityModel.Models.Product> products { get; set; } = null!;
 
   public ProductModel(
       DummyRosterContext dummyRosterContext
