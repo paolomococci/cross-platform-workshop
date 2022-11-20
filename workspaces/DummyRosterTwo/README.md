@@ -48,3 +48,14 @@ dotnet new classlib --name DummyRoster.Common.DataContext
 cd DummyRoster.Common.DataContext
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
 ```
+
+### Scaffolding of DummyRoster.Web project
+
+```shell
+dotnet new web --name DummyRoster.Web
+cd DummyRoster.Web
+dotnet watch
+```
+
+Note:
+_"CTRL+R"_ to restart and _"CTRL+C"_ to stop
