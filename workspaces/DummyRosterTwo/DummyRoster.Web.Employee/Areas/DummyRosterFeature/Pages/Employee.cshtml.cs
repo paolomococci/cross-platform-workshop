@@ -19,6 +19,6 @@ public class EmployeeModel : PageModel
 
   public void OnGet()
   {
-
+    ViewData["Title"] = "DummyRoster Admin - Employee";
   }
 }
