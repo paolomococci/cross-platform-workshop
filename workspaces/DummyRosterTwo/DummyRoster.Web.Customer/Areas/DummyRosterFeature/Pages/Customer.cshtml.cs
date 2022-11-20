@@ -7,8 +7,17 @@ namespace DummyRoster.Web.Customer.DummyRosterFeature.Pages;
 
 public class CustomerModel : PageModel
 {
-    public void OnGet()
-    {
+  private DummyRosterContext dummyRosterContext;
 
-    }
+  public CustomerModel(
+      DummyRosterContext dummyRosterContext
+  )
+  {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+
+  public void OnGet()
+  {
+
+  }
 }
