@@ -71,4 +71,5 @@ From the main workspace I type the following commands:
 
 ```shell
 dotnet new razorclasslib --support-pages-and-views --name DummyRoster.Web.Employee
+dotnet new razorclasslib --support-pages-and-views --name DummyRoster.Web.Customer
 ```
