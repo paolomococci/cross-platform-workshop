@@ -8,7 +8,7 @@ namespace DummyRoster.Web.Employee.DummyRosterFeature.Pages;
 public class EmployeeModel : PageModel
 {
   private DummyRosterContext dummyRosterContext;
-  public DummyRoster.Common.EntityModel.Models.Employee[] employees { get; set; } = null!;
+  public IQueryable<DummyRoster.Common.EntityModel.Models.Employee> employees { get; set; } = null!;
 
   public EmployeeModel(
       DummyRosterContext dummyRosterContext
