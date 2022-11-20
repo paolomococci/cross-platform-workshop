@@ -20,5 +20,10 @@ public class SupplierModel : PageModel
   public void OnGet()
   {
     ViewData["Title"] = "DummyRoster Admin - Supplier";
+    this.suppliers = this.dummyRosterContext.Suppliers.OrderBy(
+      entity => entity.Country
+    ).ThenBy(
+      entity => entity.Name
+    );
   }
 }
