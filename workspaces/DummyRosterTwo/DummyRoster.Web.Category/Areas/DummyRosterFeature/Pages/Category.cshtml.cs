@@ -8,7 +8,7 @@ namespace DummyRoster.Web.Category.DummyRosterFeature.Pages;
 public class CategoryModel : PageModel
 {
   private DummyRosterContext dummyRosterContext;
-  public DummyRoster.Common.EntityModel.Models.Category[] categories { get; set; } = null!;
+  public IQueryable<DummyRoster.Common.EntityModel.Models.Category> categories { get; set; } = null!;
 
   public CategoryModel(
       DummyRosterContext dummyRosterContext
