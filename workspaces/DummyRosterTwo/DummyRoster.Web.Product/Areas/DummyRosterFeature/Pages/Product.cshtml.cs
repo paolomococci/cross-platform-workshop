@@ -19,6 +19,6 @@ public class ProductModel : PageModel
 
   public void OnGet()
   {
-
+    ViewData["Title"] = "DummyRoster Admin - Product";
   }
 }
