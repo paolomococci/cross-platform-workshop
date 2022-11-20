@@ -20,5 +20,10 @@ public class CarrierModel : PageModel
   public void OnGet()
   {
     ViewData["Title"] = "DummyRoster Admin - Carrier";
+    this.carriers = this.dummyRosterContext.Carriers.OrderBy(
+      entity => entity.Country
+    ).ThenBy(
+      entity => entity.Name
+    );
   }
 }
