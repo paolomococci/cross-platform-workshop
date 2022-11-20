@@ -19,6 +19,6 @@ public class FormModel : PageModel
 
   public void OnGet()
   {
-
+    ViewData["Title"] = "DummyRoster Admin - Form";
   }
 }
