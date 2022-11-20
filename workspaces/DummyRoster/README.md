@@ -33,7 +33,7 @@ rm Class1.cs
 From the main workspace I type the following commands:
 
 ```shell
-cd Microsoft.EntityFrameworkCore.Sqlite
+cd DummyRoster.Common.EntityModel
 dotnet new tool-manifest
 dotnet tool install --local dotnet-ef --version 7.0.0-rc.2.22472.11
 dotnet ef dbcontext scaffold "Filename=../DummyRoster.db" Microsoft.EntityFrameworkCore.Sqlite --namespace DummyRoster.Common.EntityModel.Models --data-annotations --context-dir Data --output-dir Models
