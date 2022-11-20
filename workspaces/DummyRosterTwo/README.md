@@ -66,3 +66,9 @@ Note:
 _"CTRL+R"_ to restart and _"CTRL+C"_ to stop
 
 ### Scaffolding Razor class libraries
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new razorclasslib --support-pages-and-views --name DummyRoster.Web.Employee
+```
