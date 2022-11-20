@@ -20,5 +20,10 @@ public class FormModel : PageModel
   public void OnGet()
   {
     ViewData["Title"] = "DummyRoster Admin - Form";
+    this.forms = this.dummyRosterContext.Forms.OrderBy(
+      entity => entity.RequiredDate
+    ).ThenBy(
+      entity => entity.PromisedDate
+    );
   }
 }
