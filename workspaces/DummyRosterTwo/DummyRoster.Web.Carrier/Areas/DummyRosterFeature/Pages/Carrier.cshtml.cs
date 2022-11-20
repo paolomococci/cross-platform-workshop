@@ -7,8 +7,17 @@ namespace DummyRoster.Web.Carrier.DummyRosterFeature.Pages;
 
 public class CarrierModel : PageModel
 {
-    public void OnGet()
-    {
+  private DummyRosterContext dummyRosterContext;
 
-    }
+  public CarrierModel(
+      DummyRosterContext dummyRosterContext
+  )
+  {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+
+  public void OnGet()
+  {
+
+  }
 }
