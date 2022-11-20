@@ -52,6 +52,8 @@ mv Class1.cs Data/DummyRosterContextExtensions.cs
 
 ### Scaffolding of DummyRoster.Web project
 
+From the main workspace I type the following commands:
+
 ```shell
 dotnet new web --name DummyRoster.Web
 cd DummyRoster.Web
