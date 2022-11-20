@@ -64,3 +64,5 @@ dotnet watch
 
 Note:
 _"CTRL+R"_ to restart and _"CTRL+C"_ to stop
+
+### Scaffolding Razor class libraries
