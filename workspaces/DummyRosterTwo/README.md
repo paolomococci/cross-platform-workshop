@@ -15,3 +15,15 @@ On Linux, to exit the sqlite command prompt, type the following string:
 .quit
 ```
 and then give enter.
+
+### Scaffolding of DummyRoster.Common.EntityModel project
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new classlib --name DummyRoster.Common.EntityModel
+cd DummyRoster.Common.EntityModel
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.0
+rm Class1.cs
+```
