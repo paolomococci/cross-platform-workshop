@@ -20,5 +20,10 @@ public class CategoryModel : PageModel
   public void OnGet()
   {
     ViewData["Title"] = "DummyRoster Admin - Category";
+    this.categories = this.dummyRosterContext.Categories.OrderBy(
+      entity => entity.Description
+    ).ThenBy(
+      entity => entity.Name
+    );
   }
 }
