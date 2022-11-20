@@ -27,3 +27,14 @@ dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
 dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.0
 rm Class1.cs
 ```
+
+### Get classes from database tables
+
+From the main workspace I type the following commands:
+
+```shell
+cd Microsoft.EntityFrameworkCore.Sqlite
+dotnet new tool-manifest
+dotnet tool install --local dotnet-ef --version 7.0.0
+dotnet ef dbcontext scaffold "Filename=../DummyRoster.db" Microsoft.EntityFrameworkCore.Sqlite --namespace DummyRoster.Common.EntityModel.Models --data-annotations --context-dir Data --output-dir Models
+```
