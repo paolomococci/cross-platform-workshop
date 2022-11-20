@@ -20,5 +20,10 @@ public class ProductModel : PageModel
   public void OnGet()
   {
     ViewData["Title"] = "DummyRoster Admin - Product";
+    this.products = this.dummyRosterContext.Products.OrderBy(
+      entity => entity.Description
+    ).ThenBy(
+      entity => entity.Name
+    );
   }
 }
