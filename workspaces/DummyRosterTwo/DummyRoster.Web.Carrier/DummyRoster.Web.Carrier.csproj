@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="" />
+    <ProjectReference Include="../DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj" />
   </ItemGroup>
 
 </Project>
