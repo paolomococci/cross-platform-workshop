@@ -8,7 +8,7 @@ namespace DummyRoster.Web.Carrier.DummyRosterFeature.Pages;
 public class CarrierModel : PageModel
 {
   private DummyRosterContext dummyRosterContext;
-  public DummyRoster.Common.EntityModel.Models.Carrier[] carriers { get; set; } = null!;
+  public IQueryable<DummyRoster.Common.EntityModel.Models.Carrier> carriers { get; set; } = null!;
 
   public CarrierModel(
       DummyRosterContext dummyRosterContext
