@@ -454,9 +454,12 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 
 # more
+Properties/
 .config/
 .vscode/
 lib/
+appsettings.Development.json
+appsettings.json
 *.ico
 *.png
 *.db
