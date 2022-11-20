@@ -20,5 +20,10 @@ public class InvoiceModel : PageModel
   public void OnGet()
   {
     ViewData["Title"] = "DummyRoster Admin - Invoice";
+    this.invoices = this.dummyRosterContext.Invoices.OrderBy(
+      entity => entity.UnitPrice
+    ).ThenBy(
+      entity => entity.PriceCut
+    );
   }
 }
