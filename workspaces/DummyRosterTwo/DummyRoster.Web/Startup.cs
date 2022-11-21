@@ -1,3 +1,5 @@
+using DummyRoster.Common.DataContext.Data;
+
 namespace DummyRoster.Web;
 
 public class Startup {
@@ -5,6 +7,7 @@ public class Startup {
     IServiceCollection services
   ) {
     services.AddRazorPages();
+    //services.AddDbContext<DummyRosterContext>();
   }
 
   public void Configure(
