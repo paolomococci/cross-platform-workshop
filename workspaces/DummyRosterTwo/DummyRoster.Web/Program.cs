@@ -1,6 +1,10 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using DummyRoster.Web;
 
-app.MapGet("/", () => "Hello World!");
-
-app.Run();
+  Host.CreateDefaultBuilder(
+    args
+  ).ConfigureWebHostDefaults(
+    webBuilder => {
+      webBuilder.UseStartup<Startup>();
+    }
+  ).Build().Run();
+  
