@@ -11,7 +11,7 @@
     <ProjectReference Include="../DummyRoster.Web.Customer/DummyRoster.Web.Customer.csproj" />
     <ProjectReference Include="../DummyRoster.Web.Supplier/DummyRoster.Web.Supplier.csproj" />
     <ProjectReference Include="../DummyRoster.Web.Carrier/DummyRoster.Web.Carrier.csproj" />
-    <ProjectReference Include="../" />
+    <ProjectReference Include="../DummyRoster.Web.Category/DummyRoster.Web.Category.csproj" />
     <ProjectReference Include="../" />
     <ProjectReference Include="../" />
     <ProjectReference Include="../" />
