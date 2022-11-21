@@ -9,7 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="../DummyRoster.Web.Employee/DummyRoster.Web.Employee.csproj" />
     <ProjectReference Include="../DummyRoster.Web.Customer/DummyRoster.Web.Customer.csproj" />
-    <ProjectReference Include="../" />
+    <ProjectReference Include="../DummyRoster.Web.Supplier/DummyRoster.Web.Supplier.csproj" />
     <ProjectReference Include="../" />
     <ProjectReference Include="../" />
     <ProjectReference Include="../" />
