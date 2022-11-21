@@ -7,14 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../DummyRoster.Web.Employee/DummyRoster.Web.Employee.csproj" />
-    <ProjectReference Include="../DummyRoster.Web.Customer/DummyRoster.Web.Customer.csproj" />
-    <ProjectReference Include="../DummyRoster.Web.Supplier/DummyRoster.Web.Supplier.csproj" />
-    <ProjectReference Include="../DummyRoster.Web.Carrier/DummyRoster.Web.Carrier.csproj" />
-    <ProjectReference Include="../DummyRoster.Web.Category/DummyRoster.Web.Category.csproj" />
-    <ProjectReference Include="../DummyRoster.Web.Product/DummyRoster.Web.Product.csproj" />
-    <ProjectReference Include="../DummyRoster.Web.Form/DummyRoster.Web.Form.csproj" />
-    <ProjectReference Include="../DummyRoster.Web.Invoice/DummyRoster.Web.Invoice.csproj" />
+    <!--ProjectReference Include="../DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj" /-->
+    <!--ProjectReference Include="../DummyRoster.Web.Employee/DummyRoster.Web.Employee.csproj" /-->
+    <!--ProjectReference Include="../DummyRoster.Web.Customer/DummyRoster.Web.Customer.csproj" /-->
+    <!--ProjectReference Include="../DummyRoster.Web.Supplier/DummyRoster.Web.Supplier.csproj" /-->
+    <!--ProjectReference Include="../DummyRoster.Web.Carrier/DummyRoster.Web.Carrier.csproj" /-->
+    <!--ProjectReference Include="../DummyRoster.Web.Category/DummyRoster.Web.Category.csproj" /-->
+    <!--ProjectReference Include="../DummyRoster.Web.Product/DummyRoster.Web.Product.csproj" /-->
+    <!--ProjectReference Include="../DummyRoster.Web.Form/DummyRoster.Web.Form.csproj" /-->
+    <!--ProjectReference Include="../DummyRoster.Web.Invoice/DummyRoster.Web.Invoice.csproj" /-->
   </ItemGroup>
 
 </Project>
