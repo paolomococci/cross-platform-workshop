@@ -1,13 +1,17 @@
 ﻿@page
+@using DummyRoster.Common.EntityModel.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model DummyRoster.Web.Carrier.DummyRosterFeature.Pages.CarrierModel
 
-<!DOCTYPE html>
+<div class="row">
+    <h3 class="display-3">Carriers</h3>
+</div>
 
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Carrier</title>
-</head>
-<body>
-</body>
-</html>
+<div class="row">
+    @foreach (Carrier item in Model.carriers)
+    {
+        <div class="col-sm-3">
+            <partial name="_Carrier" model="item" />
+        </div>
+    }
+</div>
