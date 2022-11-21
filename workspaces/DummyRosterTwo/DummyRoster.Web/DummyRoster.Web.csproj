@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!--ProjectReference Include="../DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj" /-->
+    <ProjectReference Include="../DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj" />
     <!--ProjectReference Include="../DummyRoster.Web.Employee/DummyRoster.Web.Employee.csproj" /-->
     <!--ProjectReference Include="../DummyRoster.Web.Customer/DummyRoster.Web.Customer.csproj" /-->
     <!--ProjectReference Include="../DummyRoster.Web.Supplier/DummyRoster.Web.Supplier.csproj" /-->
