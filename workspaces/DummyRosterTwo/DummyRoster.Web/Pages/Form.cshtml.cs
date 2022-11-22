@@ -8,6 +8,9 @@ namespace DummyRoster.Web.Pages;
 
 public class FormModel : PageModel {
 
+  [BindProperty]
+  public Form form { get; set; } = new();
+
   public IEnumerable<Form>? forms { get; set; }
   private DummyRosterContext dummyRosterContext;
 
