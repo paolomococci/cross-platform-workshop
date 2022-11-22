@@ -8,6 +8,9 @@ namespace DummyRoster.Web.Pages;
 
 public class CategoryModel : PageModel {
 
+  [BindProperty]
+  public Category category { get; set; } = new();
+
   public IEnumerable<Category>? categories { get; set; }
   private DummyRosterContext dummyRosterContext;
 
