@@ -8,6 +8,9 @@ namespace DummyRoster.Web.Pages;
 
 public class EmployeeModel : PageModel {
 
+  [BindProperty]
+  public Employee employee { get; set; } = new();
+
   public IEnumerable<Employee>? employees { get; set; }
   private DummyRosterContext dummyRosterContext;
 
