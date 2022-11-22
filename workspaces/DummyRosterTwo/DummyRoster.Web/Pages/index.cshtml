@@ -1,0 +1,12 @@
+@page
+
+@functions {
+  public string? DayOfTheWeek { get; set; }
+  public void OnGet()
+  {
+    ViewData["Title"] = "DummyRoster";
+    Model.DayOfTheWeek = DateTime.Now.ToString("dddd");
+  }
+}
+
+<div class="container p-3"></div>
