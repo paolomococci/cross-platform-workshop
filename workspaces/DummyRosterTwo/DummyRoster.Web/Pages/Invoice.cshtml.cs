@@ -28,6 +28,12 @@ public class InvoiceModel : PageModel {
   }
 
   public IActionResult OnPost() {
+    if ((this.invoice is not null) && ModelState.IsValid)
+    {
+      this.dummyRosterContext.Invoices.Add(this.invoice);
+      this.dummyRosterContext.SaveChanges();
+      return RedirectToPage("/invoice");
+    }
     return Page();
   }
 
