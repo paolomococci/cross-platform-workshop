@@ -8,6 +8,9 @@ namespace DummyRoster.Web.Pages;
 
 public class InvoiceModel : PageModel {
 
+  [BindProperty]
+  public Invoice invoice { get; set; } = new();
+
   public IEnumerable<Invoice>? invoices { get; set; }
   private DummyRosterContext dummyRosterContext;
 
