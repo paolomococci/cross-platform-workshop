@@ -11,7 +11,7 @@ public class InvoiceModel : PageModel {
   [BindProperty]
   public Invoice invoice { get; set; } = new();
 
-  public IEnumerable<Invoice>? invoices { get; set; }
+  public IEnumerable<Invoice> invoices { get; set; } = null!;
   private DummyRosterContext dummyRosterContext;
 
   public InvoiceModel(DummyRosterContext dummyRosterContextInjected) {
