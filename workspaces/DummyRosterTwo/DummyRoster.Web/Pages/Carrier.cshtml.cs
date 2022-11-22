@@ -6,4 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class CarrierModel : PageModel {}
+public class CarrierModel : PageModel {
+
+  public IEnumerable<Carrier>? carriers { get; set; }
+
+}
