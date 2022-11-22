@@ -18,7 +18,14 @@ public class FormModel : PageModel {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {}
+  public void OnGet() {
+    ViewData["Title"] = "DummyRoster Web - Form";
+    forms = dummyRosterContext.Forms.OrderBy(
+      entity => entity.RequiredDate
+    ).ThenBy(
+      entity => entity.PromisedDate
+    );
+  }
 
   public IActionResult OnPost() {
     return Page();
