@@ -15,4 +15,10 @@ public class ProductModel : PageModel {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
+  public void OnGet() {}
+
+  public IActionResult OnPost() {
+    return Page();
+  }
+
 }
