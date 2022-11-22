@@ -6,4 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class ProductModel : PageModel {}
+public class ProductModel : PageModel {
+
+  public IEnumerable<Product>? products { get; set; }
+
+}
