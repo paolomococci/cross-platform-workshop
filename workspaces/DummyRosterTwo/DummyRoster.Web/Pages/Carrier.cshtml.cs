@@ -9,5 +9,10 @@ namespace DummyRoster.Web.Pages;
 public class CarrierModel : PageModel {
 
   public IEnumerable<Carrier>? carriers { get; set; }
+  private DummyRosterContext dummyRosterContext;
+
+  public CarrierModel(DummyRosterContext dummyRosterContextInjected) {
+    this.dummyRosterContext = dummyRosterContextInjected;
+  }
 
 }
