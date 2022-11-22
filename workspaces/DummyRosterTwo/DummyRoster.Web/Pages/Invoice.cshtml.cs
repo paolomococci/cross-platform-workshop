@@ -18,7 +18,14 @@ public class InvoiceModel : PageModel {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {}
+  public void OnGet() {
+    ViewData["Title"] = "DummyRoster Web - Invoice";
+    invoices = dummyRosterContext.Invoices.OrderBy(
+      entity => entity.Note
+    ).ThenBy(
+      entity => entity.Quantity
+    );
+  }
 
   public IActionResult OnPost() {
     return Page();
