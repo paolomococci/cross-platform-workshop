@@ -9,5 +9,10 @@ namespace DummyRoster.Web.Pages;
 public class FormModel : PageModel {
 
   public IEnumerable<Form>? forms { get; set; }
+  private DummyRosterContext dummyRosterContext;
+
+  public FormModel(DummyRosterContext dummyRosterContextInjected) {
+    this.dummyRosterContext = dummyRosterContextInjected;
+  }
 
 }
