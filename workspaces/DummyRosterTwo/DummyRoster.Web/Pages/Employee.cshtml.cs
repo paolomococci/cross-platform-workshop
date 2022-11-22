@@ -28,6 +28,12 @@ public class EmployeeModel : PageModel {
   }
 
   public IActionResult OnPost() {
+    if ((this.employee is not null) && ModelState.IsValid)
+    {
+      this.dummyRosterContext.Employees.Add(this.employee);
+      this.dummyRosterContext.SaveChanges();
+      return RedirectToPage("/employee");
+    }
     return Page();
   }
 
