@@ -9,5 +9,10 @@ namespace DummyRoster.Web.Pages;
 public class SupplierModel : PageModel {
 
   public IEnumerable<Supplier>? suppliers { get; set; }
+  private DummyRosterContext dummyRosterContext;
+
+  public SupplierModel(DummyRosterContext dummyRosterContextInjected) {
+    this.dummyRosterContext = dummyRosterContextInjected;
+  }
 
 }
