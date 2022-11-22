@@ -8,6 +8,9 @@ namespace DummyRoster.Web.Pages;
 
 public class SupplierModel : PageModel {
 
+  [BindProperty]
+  public Supplier supplier { get; set; } = new();
+
   public IEnumerable<Supplier>? suppliers { get; set; }
   private DummyRosterContext dummyRosterContext;
 
