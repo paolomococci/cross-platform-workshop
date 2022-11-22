@@ -9,5 +9,10 @@ namespace DummyRoster.Web.Pages;
 public class ProductModel : PageModel {
 
   public IEnumerable<Product>? products { get; set; }
+  private DummyRosterContext dummyRosterContext;
+
+  public ProductModel(DummyRosterContext dummyRosterContextInjected) {
+    this.dummyRosterContext = dummyRosterContextInjected;
+  }
 
 }
