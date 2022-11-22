@@ -7,7 +7,7 @@ public class Startup {
     IServiceCollection services
   ) {
     services.AddRazorPages();
-    //services.AddDbContext<DummyRosterContext>();
+    services.AddDbContext<DummyRosterContext>();
   }
 
   public void Configure(
@@ -35,7 +35,7 @@ public class Startup {
 
     applicationBuilder.UseHttpsRedirection();
     applicationBuilder.UseDefaultFiles();
-    applicationBuilder.UseStaticFiles();
+    //applicationBuilder.UseStaticFiles();
 
     applicationBuilder.UseEndpoints(
       endpoints => {
