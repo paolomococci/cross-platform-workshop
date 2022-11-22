@@ -33,7 +33,7 @@ public class CategoryModel : PageModel {
     {
       this.dummyRosterContext.Categories.Add(this.Category);
       this.dummyRosterContext.SaveChanges();
-      return RedirectToPage("/supplier");
+      return RedirectToPage("/category");
     }
     return Page();
   }
