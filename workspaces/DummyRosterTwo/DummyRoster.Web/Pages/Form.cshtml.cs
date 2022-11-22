@@ -6,4 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class FormModel : PageModel {}
+public class FormModel : PageModel {
+
+  public IEnumerable<Form>? forms { get; set; }
+
+}
