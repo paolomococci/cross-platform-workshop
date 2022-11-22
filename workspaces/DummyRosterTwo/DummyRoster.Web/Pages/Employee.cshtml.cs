@@ -15,7 +15,14 @@ public class EmployeeModel : PageModel {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {}
+  public void OnGet() {
+    ViewData["Title"] = "DummyRoster Web - Employee";
+    employees = dummyRosterContext.Employees.OrderBy(
+      entity => entity.Country
+    ).ThenBy(
+      entity => entity.Name
+    );
+  }
 
   public IActionResult OnPost() {
     return Page();
