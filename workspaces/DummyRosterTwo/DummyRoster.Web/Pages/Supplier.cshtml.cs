@@ -15,7 +15,14 @@ public class SupplierModel : PageModel {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {}
+  public void OnGet() {
+    ViewData["Title"] = "DummyRoster Web - Supplier";
+    suppliers = dummyRosterContext.Suppliers.OrderBy(
+      entity => entity.Country
+    ).ThenBy(
+      entity => entity.Name
+    );
+  }
 
   public IActionResult OnPost() {
     return Page();
