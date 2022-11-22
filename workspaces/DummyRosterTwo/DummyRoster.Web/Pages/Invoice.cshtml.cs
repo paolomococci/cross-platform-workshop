@@ -6,4 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class INvoiceModel : PageModel {}
+public class INvoiceModel : PageModel {
+
+  public IEnumerable<Invoice>? invoices { get; set; }
+
+}
