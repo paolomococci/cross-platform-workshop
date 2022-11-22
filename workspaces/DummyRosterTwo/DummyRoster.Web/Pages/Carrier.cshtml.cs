@@ -8,6 +8,9 @@ namespace DummyRoster.Web.Pages;
 
 public class CarrierModel : PageModel {
 
+  [BindProperty]
+  public Carrier carrier { get; set; } = new();
+
   public IEnumerable<Carrier>? carriers { get; set; }
   private DummyRosterContext dummyRosterContext;
 
