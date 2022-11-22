@@ -18,7 +18,14 @@ public class ProductModel : PageModel {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {}
+  public void OnGet() {
+    ViewData["Title"] = "DummyRoster Web - Product";
+    products = dummyRosterContext.Products.OrderBy(
+      entity => entity.Description
+    ).ThenBy(
+      entity => entity.Name
+    );
+  }
 
   public IActionResult OnPost() {
     return Page();
