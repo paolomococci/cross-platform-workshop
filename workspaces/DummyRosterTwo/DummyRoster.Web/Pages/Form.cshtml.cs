@@ -6,7 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class FormModel : PageModel {
+public class FormModel : PageModel
+{
 
   [BindProperty]
   public Form form { get; set; } = new();
@@ -14,11 +15,13 @@ public class FormModel : PageModel {
   public IEnumerable<Form>? forms { get; set; }
   private DummyRosterContext dummyRosterContext;
 
-  public FormModel(DummyRosterContext dummyRosterContextInjected) {
+  public FormModel(DummyRosterContext dummyRosterContextInjected)
+  {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {
+  public void OnGet()
+  {
     ViewData["Title"] = "DummyRoster Web - Form";
     forms = dummyRosterContext.Forms.OrderBy(
       entity => entity.RequiredDate
@@ -27,7 +30,8 @@ public class FormModel : PageModel {
     );
   }
 
-  public IActionResult OnPost() {
+  public IActionResult OnPost()
+  {
     if ((this.form is not null) && ModelState.IsValid)
     {
       this.dummyRosterContext.Forms.Add(this.form);
