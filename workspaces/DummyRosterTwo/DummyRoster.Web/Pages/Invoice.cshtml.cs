@@ -6,7 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class InvoiceModel : PageModel {
+public class InvoiceModel : PageModel
+{
 
   [BindProperty]
   public Invoice invoice { get; set; } = new();
@@ -14,11 +15,13 @@ public class InvoiceModel : PageModel {
   public IEnumerable<Invoice> invoices { get; set; } = null!;
   private DummyRosterContext dummyRosterContext;
 
-  public InvoiceModel(DummyRosterContext dummyRosterContextInjected) {
+  public InvoiceModel(DummyRosterContext dummyRosterContextInjected)
+  {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {
+  public void OnGet()
+  {
     ViewData["Title"] = "DummyRoster Web - Invoice";
     invoices = dummyRosterContext.Invoices.OrderBy(
       entity => entity.Note
@@ -27,7 +30,8 @@ public class InvoiceModel : PageModel {
     );
   }
 
-  public IActionResult OnPost() {
+  public IActionResult OnPost()
+  {
     if ((this.invoice is not null) && ModelState.IsValid)
     {
       this.dummyRosterContext.Invoices.Add(this.invoice);
