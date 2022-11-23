@@ -6,7 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class EmployeeModel : PageModel {
+public class EmployeeModel : PageModel
+{
 
   [BindProperty]
   public Employee employee { get; set; } = new();
@@ -14,11 +15,13 @@ public class EmployeeModel : PageModel {
   public IEnumerable<Employee>? employees { get; set; }
   private DummyRosterContext dummyRosterContext;
 
-  public EmployeeModel(DummyRosterContext dummyRosterContextInjected) {
+  public EmployeeModel(DummyRosterContext dummyRosterContextInjected)
+  {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {
+  public void OnGet()
+  {
     ViewData["Title"] = "DummyRoster Web - Employee";
     employees = dummyRosterContext.Employees.OrderBy(
       entity => entity.Country
@@ -27,7 +30,8 @@ public class EmployeeModel : PageModel {
     );
   }
 
-  public IActionResult OnPost() {
+  public IActionResult OnPost()
+  {
     if ((this.employee is not null) && ModelState.IsValid)
     {
       this.dummyRosterContext.Employees.Add(this.employee);
