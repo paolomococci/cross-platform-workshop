@@ -6,7 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class CategoryModel : PageModel {
+public class CategoryModel : PageModel
+{
 
   [BindProperty]
   public Category category { get; set; } = new();
@@ -14,11 +15,13 @@ public class CategoryModel : PageModel {
   public IEnumerable<Category>? categories { get; set; }
   private DummyRosterContext dummyRosterContext;
 
-  public CategoryModel(DummyRosterContext dummyRosterContextInjected) {
+  public CategoryModel(DummyRosterContext dummyRosterContextInjected)
+  {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {
+  public void OnGet()
+  {
     ViewData["Title"] = "DummyRoster Web - Category";
     categories = dummyRosterContext.Categories.OrderBy(
       entity => entity.Description
@@ -27,7 +30,8 @@ public class CategoryModel : PageModel {
     );
   }
 
-  public IActionResult OnPost() {
+  public IActionResult OnPost()
+  {
     if ((this.category is not null) && ModelState.IsValid)
     {
       this.dummyRosterContext.Categories.Add(this.category);
