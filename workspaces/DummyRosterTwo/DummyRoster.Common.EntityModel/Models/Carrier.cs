@@ -20,7 +20,7 @@ public partial class Carrier
     public string Name { get; set; } = null!;
 
     [Column(TypeName = "DATETIME")]
-    public byte[]? FoundationDate { get; set; }
+    public DateTime? FoundationDate { get; set; }
 
     public string? Description { get; set; }
 
