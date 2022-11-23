@@ -6,7 +6,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Web.Pages;
 
-public class SupplierModel : PageModel {
+public class SupplierModel : PageModel
+{
 
   [BindProperty]
   public Supplier supplier { get; set; } = new();
@@ -14,11 +15,13 @@ public class SupplierModel : PageModel {
   public IEnumerable<Supplier>? suppliers { get; set; }
   private DummyRosterContext dummyRosterContext;
 
-  public SupplierModel(DummyRosterContext dummyRosterContextInjected) {
+  public SupplierModel(DummyRosterContext dummyRosterContextInjected)
+  {
     this.dummyRosterContext = dummyRosterContextInjected;
   }
 
-  public void OnGet() {
+  public void OnGet()
+  {
     ViewData["Title"] = "DummyRoster Web - Supplier";
     suppliers = dummyRosterContext.Suppliers.OrderBy(
       entity => entity.Country
@@ -27,7 +30,8 @@ public class SupplierModel : PageModel {
     );
   }
 
-  public IActionResult OnPost() {
+  public IActionResult OnPost()
+  {
     if ((this.supplier is not null) && ModelState.IsValid)
     {
       this.dummyRosterContext.Suppliers.Add(this.supplier);
