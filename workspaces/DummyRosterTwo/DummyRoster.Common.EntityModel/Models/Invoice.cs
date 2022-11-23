@@ -15,17 +15,17 @@ public partial class Invoice
 
     [Key]
     [Column(TypeName = "INT")]
-    public long FormId { get; set; }
+    public int FormId { get; set; }
 
     [Key]
     [Column(TypeName = "INT")]
-    public long ProductId { get; set; }
+    public int ProductId { get; set; }
 
     [Column(TypeName = "NUMERIC")]
     public decimal UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
-    public long Quantity { get; set; }
+    public int Quantity { get; set; }
 
     [Column(TypeName = "NUMERIC")]
     public decimal PriceCut { get; set; }
