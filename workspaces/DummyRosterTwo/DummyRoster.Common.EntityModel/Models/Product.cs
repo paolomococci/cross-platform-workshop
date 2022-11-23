@@ -34,7 +34,7 @@ public partial class Product
     public string? QuantityPerUnit { get; set; }
 
     [Column(TypeName = "NUMERIC")]
-    public byte[]? UnitPrice { get; set; }
+    public decimal? UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
     public long? UnitsInStock { get; set; }
@@ -46,7 +46,7 @@ public partial class Product
     public long? ReorderLevel { get; set; }
 
     [Column(TypeName = "BOOLEAN")]
-    public byte[] Discontinued { get; set; } = null!;
+    public bool Discontinued { get; set; }
 
     [ForeignKey("CategoryId")]
     [InverseProperty("Products")]
