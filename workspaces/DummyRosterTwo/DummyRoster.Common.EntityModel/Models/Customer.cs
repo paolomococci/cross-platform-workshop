@@ -14,7 +14,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Customer
 {
     [Key]
-    public long Id { get; set; }
+    public int Id { get; set; }
 
     [Column(TypeName = "varchar(32)")]
     public string Name { get; set; } = null!;
@@ -27,7 +27,7 @@ public partial class Customer
     public byte[]? Picture { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? Contact { get; set; }
+    public int? Contact { get; set; }
 
     [Column(TypeName = "varchar(64)")]
     public string? Address { get; set; }
