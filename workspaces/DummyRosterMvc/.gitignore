@@ -469,3 +469,4 @@ appsettings.json
 app.db-shm
 app.db-wal
 HELP.md
+LOG.md
