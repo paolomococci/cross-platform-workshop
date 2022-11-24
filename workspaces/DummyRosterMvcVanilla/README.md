@@ -5,7 +5,7 @@
 ```shell
 mkdir DummyRosterMvcVanilla
 cd DummyRosterMvc
-echo "# DummyRosterMvc" > README.md
+echo "# DummyRosterMvcVanilla" > README.md
 dotnet new gitignore
 ```
 
