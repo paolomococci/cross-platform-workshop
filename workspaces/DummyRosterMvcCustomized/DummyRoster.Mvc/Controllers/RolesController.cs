@@ -25,6 +25,7 @@ public class RolesController : Controller {
         new IdentityRole(this.adminRole)
       );
     }
+    IdentityUser identityUser = await this.userManager.FindByEmailAsync(this.userEmail);
     // todo
     return Redirect("/");
   }
