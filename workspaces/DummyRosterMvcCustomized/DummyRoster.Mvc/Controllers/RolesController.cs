@@ -10,5 +10,11 @@ public class RolesController : Controller {
   private readonly RoleManager<IdentityRole> roleManager;
   private readonly UserManager<IdentityUser> userManager;
 
-  public RolesController() {}
+  public RolesController(
+    RoleManager<IdentityRole> roleManager,
+    UserManager<IdentityUser> userManager
+  ) {
+    this.roleManager = roleManager;
+    this.userManager = userManager;
+  }
 }
