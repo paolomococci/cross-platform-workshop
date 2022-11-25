@@ -37,6 +37,16 @@ public class RolesController : Controller {
       identityUser,
       this.adminPassword
     );
+    if (identityResult.Succeeded)
+    {
+      Console.WriteLine($"administrator {identityUser.UserName} identified correctly");
+    } else
+    {
+      foreach (IdentityError item in identityResult.Errors)
+      {
+        Console.WriteLine(item.Description);
+      }
+    }
     // todo
     return Redirect("/");
   }
