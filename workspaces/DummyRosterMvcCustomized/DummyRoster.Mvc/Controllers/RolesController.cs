@@ -19,6 +19,12 @@ public class RolesController : Controller {
   }
 
   public async Task<IActionResult> Index() {
+    if (!(await this.roleManager.RoleExistsAsync(this.adminRole)))
+    {
+      await this.roleManager.CreateAsync(
+        new IdentityRole(this.adminRole)
+      );
+    }
     // todo
     return Redirect("/");
   }
