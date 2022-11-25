@@ -7,6 +7,7 @@ public class RolesController : Controller {
 
   private string adminRole = "Admins";
   private string userEmail = "admin.one@example.local";
+  private string adminPassword = "";
   private readonly RoleManager<IdentityRole> roleManager;
   private readonly UserManager<IdentityUser> userManager;
 
@@ -32,6 +33,10 @@ public class RolesController : Controller {
       identityUser.UserName = this.userEmail;
       identityUser.Email = this.userEmail;
     }
+    IdentityResult identityResult = await this.userManager.CreateAsync(
+      identityUser,
+      this.adminPassword
+    );
     // todo
     return Redirect("/");
   }
