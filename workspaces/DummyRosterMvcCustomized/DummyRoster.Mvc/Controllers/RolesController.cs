@@ -21,6 +21,7 @@ public class RolesController : Controller
     this.configuration = configuration;
     this.roleManager = roleManager;
     this.userManager = userManager;
+    // querying the values ​​recorded in appsettings.json
     this.adminRole = this.configuration["UserAdminOne:group"];
     this.adminEmail = this.configuration["UserAdminOne:email"];
     this.adminPassword = this.configuration["UserAdminOne:password"];
