@@ -26,6 +26,12 @@ public class RolesController : Controller {
       );
     }
     IdentityUser identityUser = await this.userManager.FindByEmailAsync(this.userEmail);
+    if (identityUser == null)
+    {
+      identityUser = new();
+      identityUser.UserName = this.userEmail;
+      identityUser.Email = this.userEmail;
+    }
     // todo
     return Redirect("/");
   }
