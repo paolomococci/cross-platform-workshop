@@ -17,4 +17,9 @@ public class RolesController : Controller {
     this.roleManager = roleManager;
     this.userManager = userManager;
   }
+
+  public async Task<IActionResult> Index() {
+    // todo
+    return Redirect("/");
+  }
 }
