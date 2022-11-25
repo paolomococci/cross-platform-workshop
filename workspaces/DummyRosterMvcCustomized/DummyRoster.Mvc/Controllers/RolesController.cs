@@ -9,4 +9,6 @@ public class RolesController : Controller {
   private string userEmail = "admin.one@example.local";
   private readonly RoleManager<IdentityRole> roleManager;
   private readonly UserManager<IdentityUser> userManager;
+
+  public RolesController() {}
 }
