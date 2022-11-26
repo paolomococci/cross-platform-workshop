@@ -37,22 +37,22 @@ public class RolesController : Controller
       identityUser = new();
       identityUser.UserName = this.configuration["UserAdminOne:email"];
       identityUser.Email = this.configuration["UserAdminOne:email"];
-    }
-    IdentityResult identityResult = await this.userManager.CreateAsync(
+      IdentityResult identityResult = await this.userManager.CreateAsync(
       identityUser,
       this.configuration["UserAdminOne:password"]
-    );
-    if (identityResult.Succeeded)
-    {
-      this._logger.LogInformation($"Administrator {identityUser.UserName} identified correctly.");
-    }
-    else
-    {
-      foreach (IdentityError item in identityResult.Errors)
+    ); if (identityResult.Succeeded)
       {
-        this._logger.LogError($"Error description: {item.Description}");
+        this._logger.LogInformation($"Administrator {identityUser.UserName} identified correctly.");
+      }
+      else
+      {
+        foreach (IdentityError item in identityResult.Errors)
+        {
+          this._logger.LogError($"Error description: {item.Description}");
+        }
       }
     }
+
     // if the email is confirmed
     if (!identityUser.EmailConfirmed)
     {
@@ -72,26 +72,27 @@ public class RolesController : Controller
           this._logger.LogError($"Error description: {item.Description}");
         }
       }
-      // if the user belongs to the administrators group
-      if (!(await userManager.IsInRoleAsync(
+    }
+    
+    // if the user belongs to the administrators group
+    if (!(await userManager.IsInRoleAsync(
+      identityUser,
+      this.configuration["UserAdminOne:group"]
+    )))
+    {
+      IdentityResult addToAdminResult = await userManager.AddToRoleAsync(
         identityUser,
         this.configuration["UserAdminOne:group"]
-      )))
+      );
+      if (addToAdminResult.Succeeded)
       {
-        IdentityResult addToAdminResult = await userManager.AddToRoleAsync(
-          identityUser,
-          this.configuration["UserAdminOne:group"]
-        );
-        if (addToAdminResult.Succeeded)
+        Console.WriteLine($"{identityUser.UserName} successfully added to {this.configuration["UserAdminOne:group"]} group!");
+      }
+      else
+      {
+        foreach (IdentityError item in addToAdminResult.Errors)
         {
-          Console.WriteLine($"{identityUser.UserName} successfully added to {this.configuration["UserAdminOne:group"]} group!");
-        }
-        else
-        {
-          foreach (IdentityError item in addToAdminResult.Errors)
-          {
-            this._logger.LogError($"Error description: {item.Description}");
-          }
+          this._logger.LogError($"Error description: {item.Description}");
         }
       }
     }
