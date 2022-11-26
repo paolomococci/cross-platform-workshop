@@ -87,7 +87,13 @@ public class RolesController : Controller
         );
         if (addToAdminResult.Succeeded)
         {
-          Console.WriteLine();
+          Console.WriteLine($"{identityUser.UserName} successfully added to {this.adminRole} group!");
+        } else
+        {
+          foreach (IdentityError item in addToAdminResult.Errors)
+          {
+            Console.WriteLine($"Error description: {item.Description}");
+          }
         }
       }
     }
