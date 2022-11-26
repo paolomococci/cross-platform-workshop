@@ -65,6 +65,10 @@ public class RolesController : Controller
         identityUser,
         token
       );
+      if (idResult.Succeeded)
+      {
+        Console.WriteLine($"{identityUser.UserName}, the email is considered valid!");
+      }
     }
     return Redirect("/");
   }
