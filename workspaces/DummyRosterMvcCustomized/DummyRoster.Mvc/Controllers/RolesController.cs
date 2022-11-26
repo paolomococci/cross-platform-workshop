@@ -57,7 +57,15 @@ public class RolesController : Controller
         Console.WriteLine(item.Description);
       }
     }
-    // todo
+    // if the email is confirmed
+    if (!identityUser.EmailConfirmed)
+    {
+      string token = await userManager.GenerateEmailConfirmationTokenAsync(identityUser);
+      IdentityResult idResult = await userManager.ConfirmEmailAsync(
+        identityUser,
+        token
+      );
+    }
     return Redirect("/");
   }
 }
