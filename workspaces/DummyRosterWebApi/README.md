@@ -9,7 +9,7 @@ echo "# DummyRosterWebApi" > README.md
 dotnet new gitignore
 ```
 
-### Scaffolding of DummyRoster.Mvc project
+### Scaffolding of DummyRoster.WebApi project
 
 From the main workspace I type the following commands:
 
