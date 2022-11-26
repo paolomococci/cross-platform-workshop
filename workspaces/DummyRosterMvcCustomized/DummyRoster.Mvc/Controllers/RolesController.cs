@@ -75,6 +75,21 @@ public class RolesController : Controller
           Console.WriteLine($"Error description: {item.Description}");
         }
       }
+      // if the user belongs to the administrators group
+      if (!(await userManager.IsInRoleAsync(
+        identityUser,
+        this.adminRole
+      )))
+      {
+        IdentityResult addToAdminResult = await userManager.AddToRoleAsync(
+          identityUser,
+          this.adminRole
+        );
+        if (addToAdminResult.Succeeded)
+        {
+          Console.WriteLine();
+        }
+      }
     }
     return Redirect("/");
   }
