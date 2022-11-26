@@ -19,8 +19,9 @@ public class HomeController : Controller
     return View();
   }
 
+  [Route("Private")]
   [Authorize(Roles = "Admins")]
-  public IActionResult Privacy()
+  public IActionResult Restricted()
   {
     return View();
   }
