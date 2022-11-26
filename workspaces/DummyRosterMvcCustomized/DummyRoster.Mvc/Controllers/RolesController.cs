@@ -68,6 +68,12 @@ public class RolesController : Controller
       if (idResult.Succeeded)
       {
         Console.WriteLine($"{identityUser.UserName}, the email is considered valid!");
+      } else
+      {
+        foreach (IdentityError item in idResult.Errors)
+        {
+          Console.WriteLine($"Error description: {item.Description}");
+        }
       }
     }
     return Redirect("/");
