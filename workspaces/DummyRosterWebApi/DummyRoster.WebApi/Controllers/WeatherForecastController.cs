@@ -18,6 +18,11 @@ public class WeatherForecastController : ControllerBase
     _logger = logger;
   }
 
+  [HttpGet]
+  public IEnumerable<WeatherForecast> Get() {
+    return Get(7);
+  }
+
   [HttpGet("{days:int}")]
   public IEnumerable<WeatherForecast> Get(int days)
   {
