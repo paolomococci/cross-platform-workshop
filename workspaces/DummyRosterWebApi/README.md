@@ -1,11 +1,11 @@
-# DummyRosterWebApi
+# DummyRosterWebApiVanilla
 
-## Scaffolding of DummyRosterWebApi workspace
+## Scaffolding of DummyRosterWebApiVanilla workspace
 
 ```shell
-mkdir DummyRosterWebApi
-cd DummyRosterWebApi
-echo "# DummyRosterWebApi" > README.md
+mkdir DummyRosterWebApiVanilla
+cd DummyRosterWebApiVanilla
+echo "# DummyRosterWebApiVanilla" > README.md
 dotnet new gitignore
 ```
 
