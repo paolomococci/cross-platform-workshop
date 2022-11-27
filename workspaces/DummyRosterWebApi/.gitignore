@@ -460,7 +460,6 @@ Properties/
 lib/
 Areas/
 Migrations/
-*.csproj
 appsettings.Development.json
 appsettings.json
 *.ico
