@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DummyRoster.WebApi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("forecast")]
 public class WeatherForecastController : ControllerBase
 {
   private static readonly string[] Summaries = new[]
