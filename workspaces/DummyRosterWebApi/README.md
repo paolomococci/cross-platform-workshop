@@ -31,4 +31,7 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new classlib --name DummyRoster.Common.EntityModel
 cd DummyRoster.Common.EntityModel
+rm Class1.cs
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.0
 ```
