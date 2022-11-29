@@ -54,4 +54,5 @@ From the main workspace I type the following commands:
 dotnet new classlib --name DummyRoster.Common.DataContext
 cd DummyRoster.Common.DataContext
 rm Class1.cs
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
 ```
