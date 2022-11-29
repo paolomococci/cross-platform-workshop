@@ -53,4 +53,5 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new classlib --name DummyRoster.Common.DataContext
 cd DummyRoster.Common.DataContext
+rm Class1.cs
 ```
