@@ -61,3 +61,10 @@ dotnet add ./DummyRoster.Common.DataContext.csproj reference ../DummyRoster.Comm
 dotnet clean
 dotnet build
 ```
+
+### From the DummyRoster.WebApi project add a reference to the DummyRoster.Common.DataContext project
+
+```shell
+cd ../DummyRoster.WebApi
+dotnet add ./DummyRoster.WebApi.csproj reference ../DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj
+```
