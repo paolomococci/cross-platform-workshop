@@ -70,4 +70,5 @@ dotnet add ./DummyRoster.WebApi.csproj reference ../DummyRoster.Common.DataConte
 dotnet clean
 dotnet build
 dotnet run
+mkdir Repositories
 ```
