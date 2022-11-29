@@ -1,11 +1,33 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
-using DummyRoster.Common.DataContext;
+using DummyRoster.Common.DataContext.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<DummyRosterContext>();
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(
+  options =>
+  {
+    Console.WriteLine("default output formatter:");
+    foreach (IOutputFormatter item in options.OutputFormatters)
+    {
+      OutputFormatter? outputFormatter = item as OutputFormatter;
+      if (outputFormatter == null)
+      {
+        Console.WriteLine($" {item.GetType().Name}");
+      }
+      else
+      {
+        Console.WriteLine(
+          $" {0}, media type: {1}",
+          arg0: outputFormatter.GetType().Name,
+          arg1: string.Join(", ", outputFormatter.SupportedMediaTypes)
+        );
+      }
+    }
+  }
+).AddXmlDataContractSerializerFormatters().AddXmlSerializerFormatters();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
