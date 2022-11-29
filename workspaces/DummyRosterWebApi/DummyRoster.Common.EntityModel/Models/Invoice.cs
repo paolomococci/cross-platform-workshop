@@ -22,13 +22,13 @@ public partial class Invoice
     public int ProductId { get; set; }
 
     [Column(TypeName = "NUMERIC")]
-    public decimal UnitPrice { get; set; } = null!;
+    public decimal? UnitPrice { get; set; }
 
     [Column(TypeName = "SMALLINT")]
     public int Quantity { get; set; }
 
     [Column(TypeName = "NUMERIC")]
-    public decimal PriceCut { get; set; } = null!;
+    public decimal? PriceCut { get; set; }
 
     [ForeignKey("FormId")]
     [InverseProperty("Invoices")]
