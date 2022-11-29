@@ -59,4 +59,5 @@ mv --verbose ../DummyRoster.Common.EntityModel/Data .
 echo -e "namespace DummyRoster.Common.DataContext.Data;\n\npublic class DummyRosterContextExtensions {}" > Data/DummyRosterContextExtensions.cs
 dotnet add ./DummyRoster.Common.DataContext.csproj reference ../DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj
 dotnet clean
+dotnet build
 ```
