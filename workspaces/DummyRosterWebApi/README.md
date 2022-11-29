@@ -69,4 +69,5 @@ cd ../DummyRoster.WebApi
 dotnet add ./DummyRoster.WebApi.csproj reference ../DummyRoster.Common.DataContext/DummyRoster.Common.DataContext.csproj
 dotnet clean
 dotnet build
+dotnet run
 ```
