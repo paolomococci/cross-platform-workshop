@@ -46,7 +46,7 @@ public partial class Product
     public int? ReorderLevel { get; set; }
 
     [Column(TypeName = "BOOLEAN")]
-    public bool Discontinued { get; set; } = null!;
+    public bool? Discontinued { get; set; }
 
     [ForeignKey("CategoryId")]
     [InverseProperty("Products")]
