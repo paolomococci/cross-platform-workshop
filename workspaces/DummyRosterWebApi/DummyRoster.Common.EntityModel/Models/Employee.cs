@@ -10,38 +10,38 @@ namespace DummyRoster.Common.EntityModel.Models;
 [Index("Name", Name = "IDX_EmployeeName")]
 public partial class Employee
 {
-    [Key]
-    public int Id { get; set; }
+  [Key]
+  public int Id { get; set; }
 
-    [Column(TypeName = "varchar(32)")]
-    public string Name { get; set; } = null!;
+  [Column(TypeName = "varchar(32)")]
+  public string Name { get; set; } = null!;
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? BirthDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? BirthDate { get; set; }
 
-    public string? Description { get; set; }
+  public string? Description { get; set; }
 
-    public byte[]? Picture { get; set; }
+  public byte[]? Picture { get; set; }
 
-    [Column(TypeName = "varchar(32)")]
-    public string? Role { get; set; }
+  [Column(TypeName = "varchar(32)")]
+  public string? Role { get; set; }
 
-    [Column(TypeName = "INT")]
-    public int? Location { get; set; }
+  [Column(TypeName = "INT")]
+  public int? Location { get; set; }
 
-    [InverseProperty("ContactNavigation")]
-    public virtual ICollection<Carrier> Carriers { get; } = new List<Carrier>();
+  [InverseProperty("ContactNavigation")]
+  public virtual ICollection<Carrier> Carriers { get; } = new List<Carrier>();
 
-    [InverseProperty("ContactNavigation")]
-    public virtual ICollection<Customer> Customers { get; } = new List<Customer>();
+  [InverseProperty("ContactNavigation")]
+  public virtual ICollection<Customer> Customers { get; } = new List<Customer>();
 
-    [InverseProperty("Employee")]
-    public virtual ICollection<Form> Forms { get; } = new List<Form>();
+  [InverseProperty("Employee")]
+  public virtual ICollection<Form> Forms { get; } = new List<Form>();
 
-    [ForeignKey("Location")]
-    [InverseProperty("Employees")]
-    public virtual Address? LocationNavigation { get; set; }
+  [ForeignKey("Location")]
+  [InverseProperty("Employees")]
+  public virtual Address? LocationNavigation { get; set; }
 
-    [InverseProperty("ContactNavigation")]
-    public virtual ICollection<Supplier> Suppliers { get; } = new List<Supplier>();
+  [InverseProperty("ContactNavigation")]
+  public virtual ICollection<Supplier> Suppliers { get; } = new List<Supplier>();
 }
