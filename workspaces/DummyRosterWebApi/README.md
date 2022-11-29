@@ -56,4 +56,5 @@ cd DummyRoster.Common.DataContext
 rm Class1.cs
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
 mv --verbose ../DummyRoster.Common.EntityModel/Data .
+echo -e "namespace DummyRoster.Common.DataContext.Data;\n\npublic class DummyRosterContextExtensions {}" > Data/DummyRosterContextExtensions.cs
 ```
