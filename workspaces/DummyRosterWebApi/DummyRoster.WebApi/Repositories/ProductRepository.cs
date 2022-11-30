@@ -51,6 +51,17 @@ public class ProductRepository : IProductRepository
 
   private Product UpdateCache(int id, Product product)
   {
-    throw new NotImplementedException();
+    Product? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, product, alreadyRegistered))
+        {
+          return product;
+        }
+      }
+    }
+    return null!;
   }
 }
