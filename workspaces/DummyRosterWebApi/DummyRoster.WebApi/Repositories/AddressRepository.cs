@@ -7,6 +7,8 @@ namespace DummyRoster.WebApi.Repositories;
 
 public class AddressRepository : IAddressRepository
 {
+  private static ConcurrentDictionary<int, Address>? keyValuesCache;
+  private DummyRosterContext dummyRosterContext;
   public Task<Address?> CreateAsync(Address address)
   {
     throw new NotImplementedException();
