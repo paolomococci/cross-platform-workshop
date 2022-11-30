@@ -48,4 +48,9 @@ public class FormRepository : IFormRepository
   {
     throw new NotImplementedException();
   }
+
+  private Form UpdateCache(int id, Form form)
+  {
+    throw new NotImplementedException();
+  }
 }
