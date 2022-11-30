@@ -24,9 +24,26 @@ public class AddressRepository : IAddressRepository
     }
   }
   
-  public Task<Address?> CreateAsync(Address address)
+  public async Task<Address?> CreateAsync(Address address)
   {
-    throw new NotImplementedException();
+    EntityEntry<Address> entry = await this.dummyRosterContext.Addresses.AddAsync(address);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return address;
+      }
+      return keyValuesCache.AddOrUpdate(
+        address.Id,
+        address,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<bool?> DeleteAsync(int id)
@@ -45,6 +62,11 @@ public class AddressRepository : IAddressRepository
   }
 
   public Task<Address?> UpdateAsync(int id, Address address)
+  {
+    throw new NotImplementedException();
+  }
+
+  private Address UpdateCache(int id, Address address)
   {
     throw new NotImplementedException();
   }
