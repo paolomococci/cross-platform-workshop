@@ -14,6 +14,14 @@ public class CarrierRepository : ICarrierRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Carrier>(
+        this.dummyRosterContext.Carriers.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
   }
   
   public Task<Carrier?> CreateAsync(Carrier carrier)
