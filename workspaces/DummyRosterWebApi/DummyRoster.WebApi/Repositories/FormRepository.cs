@@ -9,6 +9,13 @@ public class FormRepository : IFormRepository
 {
   private static ConcurrentDictionary<int, Form>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public FormRepository(
+    DummyRosterContext dummyRosterContext
+  ) {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+  
   public Task<Form?> CreateAsync(Form form)
   {
     throw new NotImplementedException();
