@@ -14,6 +14,14 @@ public class EmployeeRepository : IEmployeeRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Employee>(
+        this.dummyRosterContext.Employees.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
   }
   
   public Task<Employee?> CreateAsync(Employee employee)
