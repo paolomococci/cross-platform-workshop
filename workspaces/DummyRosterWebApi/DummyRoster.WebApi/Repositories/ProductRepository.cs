@@ -14,6 +14,14 @@ public class ProductRepository : IProductRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Product>(
+        this.dummyRosterContext.Products.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
   }
   
   public Task<Product?> CreateAsync(Product product)
