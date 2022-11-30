@@ -41,7 +41,9 @@ public class CustomerRepository : ICustomerRepository
 
   public Task<Customer?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Customer? category);
+    return Task.FromResult(category);
   }
 
   public Task<Customer?> UpdateAsync(int id, Customer customer)
