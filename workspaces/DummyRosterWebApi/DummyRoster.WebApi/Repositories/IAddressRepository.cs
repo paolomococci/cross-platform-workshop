@@ -10,4 +10,5 @@ public interface IAddressRepository {
     int id,
     Address address
   );
+  Task<bool?> DeleteAsync(int id);
 }
