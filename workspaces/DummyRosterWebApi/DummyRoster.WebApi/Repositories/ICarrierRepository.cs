@@ -10,4 +10,5 @@ public interface ICarrierRepository {
     int id,
     Carrier carrier
   );
+  Task<bool?> DeleteAsync(int id);
 }
