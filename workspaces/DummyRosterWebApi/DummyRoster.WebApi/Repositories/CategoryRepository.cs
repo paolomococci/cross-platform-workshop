@@ -24,7 +24,7 @@ public class CategoryRepository : ICategoryRepository
     }
   }
   
-  public Task<Category?> CreateAsync(Category category)
+  public async Task<Category?> CreateAsync(Category category)
   {
     throw new NotImplementedException();
   }
