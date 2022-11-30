@@ -41,7 +41,9 @@ public class SupplierRepository : ISupplierRepository
 
   public Task<Supplier?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Supplier? supplier);
+    return Task.FromResult(supplier);
   }
 
   public Task<Supplier?> UpdateAsync(int id, Supplier supplier)
