@@ -68,6 +68,17 @@ public class AddressRepository : IAddressRepository
 
   private Address UpdateCache(int id, Address address)
   {
-    throw new NotImplementedException();
+    Address? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, address, alreadyRegistered))
+        {
+          return address;
+        }
+      }
+    }
+    return null!;
   }
 }
