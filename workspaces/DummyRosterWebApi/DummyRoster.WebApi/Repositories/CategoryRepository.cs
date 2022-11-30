@@ -7,6 +7,8 @@ namespace DummyRoster.WebApi.Repositories;
 
 public class CategoryRepository : ICategoryRepository
 {
+  private static ConcurrentDictionary<int, Category>? keyValuesCache;
+  private DummyRosterContext dummyRosterContext;
   public Task<Category?> CreateAsync(Category category)
   {
     throw new NotImplementedException();
