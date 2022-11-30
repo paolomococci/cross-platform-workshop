@@ -51,6 +51,17 @@ public class CategoryRepository : ICategoryRepository
 
   private Category UpdateCache(int id, Category category)
   {
-    throw new NotImplementedException();
+    Category? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, category, alreadyRegistered))
+        {
+          return category;
+        }
+      }
+    }
+    return null!;
   }
 }
