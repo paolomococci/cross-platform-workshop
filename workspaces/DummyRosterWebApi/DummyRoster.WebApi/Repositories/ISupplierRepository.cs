@@ -1,3 +1,3 @@
 namespace DummyRoster.WebApi.Repositories;
 
-public interface ISupplierRepository {}
+public interface ISupplierRepository { }
