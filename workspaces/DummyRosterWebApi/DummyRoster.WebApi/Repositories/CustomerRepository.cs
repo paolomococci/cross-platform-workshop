@@ -51,6 +51,17 @@ public class CustomerRepository : ICustomerRepository
 
   private Customer UpdateCache(int id, Customer customer)
   {
-    throw new NotImplementedException();
+    Customer? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, customer, alreadyRegistered))
+        {
+          return customer;
+        }
+      }
+    }
+    return null!;
   }
 }
