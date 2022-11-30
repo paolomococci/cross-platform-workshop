@@ -51,6 +51,17 @@ public class InvoiceRepository : IInvoiceRepository
 
   private Invoice UpdateCache(int id, Invoice invoice)
   {
-    throw new NotImplementedException();
+    Invoice? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, invoice, alreadyRegistered))
+        {
+          return invoice;
+        }
+      }
+    }
+    return null!;
   }
 }
