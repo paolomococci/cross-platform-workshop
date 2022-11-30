@@ -4,4 +4,5 @@ namespace DummyRoster.WebApi.Repositories;
 
 public interface IAddressRepository {
   Task<Address> CreateAsync(Address address);
+  Task<Address> RetrieveAsync(int id);
 }
