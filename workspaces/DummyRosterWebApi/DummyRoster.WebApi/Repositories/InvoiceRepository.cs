@@ -48,4 +48,9 @@ public class InvoiceRepository : IInvoiceRepository
   {
     throw new NotImplementedException();
   }
+
+  private Invoice UpdateCache(int id, Invoice invoice)
+  {
+    throw new NotImplementedException();
+  }
 }
