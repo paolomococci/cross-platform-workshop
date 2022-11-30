@@ -7,6 +7,8 @@ namespace DummyRoster.WebApi.Repositories;
 
 public class CarrierRepository : ICarrierRepository
 {
+  private static ConcurrentDictionary<int, Carrier>? keyValuesCache;
+  private DummyRosterContext dummyRosterContext;
   public Task<Carrier?> CreateAsync(Carrier carrier)
   {
     throw new NotImplementedException();
