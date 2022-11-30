@@ -9,6 +9,13 @@ public class ProductRepository : IProductRepository
 {
   private static ConcurrentDictionary<int, Product>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public ProductRepository(
+    DummyRosterContext dummyRosterContext
+  ) {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+  
   public Task<Product?> CreateAsync(Product product)
   {
     throw new NotImplementedException();
