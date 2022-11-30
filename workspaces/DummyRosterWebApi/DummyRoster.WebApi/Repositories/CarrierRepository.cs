@@ -48,4 +48,9 @@ public class CarrierRepository : ICarrierRepository
   {
     throw new NotImplementedException();
   }
+
+  private Carrier UpdateCache(int id, Carrier carrier)
+  {
+    throw new NotImplementedException();
+  }
 }
