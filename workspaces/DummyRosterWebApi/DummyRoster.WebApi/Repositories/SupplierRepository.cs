@@ -24,7 +24,7 @@ public class SupplierRepository : ISupplierRepository
     }
   }
   
-  public Task<Supplier?> CreateAsync(Supplier supplier)
+  public async Task<Supplier?> CreateAsync(Supplier supplier)
   {
     throw new NotImplementedException();
   }
