@@ -9,6 +9,13 @@ public class CarrierRepository : ICarrierRepository
 {
   private static ConcurrentDictionary<int, Carrier>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public CarrierRepository(
+    DummyRosterContext dummyRosterContext
+  ) {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+  
   public Task<Carrier?> CreateAsync(Carrier carrier)
   {
     throw new NotImplementedException();
