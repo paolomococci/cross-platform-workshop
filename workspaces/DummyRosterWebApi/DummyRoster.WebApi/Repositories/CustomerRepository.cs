@@ -7,6 +7,8 @@ namespace DummyRoster.WebApi.Repositories;
 
 public class CustomerRepository : ICustomerRepository
 {
+  private static ConcurrentDictionary<int, Customer>? keyValuesCache;
+  private DummyRosterContext dummyRosterContext;
   public Task<Customer?> CreateAsync(Customer customer)
   {
     throw new NotImplementedException();
