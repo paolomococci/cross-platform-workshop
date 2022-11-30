@@ -14,6 +14,14 @@ public class CustomerRepository : ICustomerRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Customer>(
+        this.dummyRosterContext.Customers.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
   }
   
   public Task<Customer?> CreateAsync(Customer customer)
