@@ -41,7 +41,9 @@ public class CarrierRepository : ICarrierRepository
 
   public Task<Carrier?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Carrier? carrier);
+    return Task.FromResult(carrier);
   }
 
   public Task<Carrier?> UpdateAsync(int id, Carrier carrier)
