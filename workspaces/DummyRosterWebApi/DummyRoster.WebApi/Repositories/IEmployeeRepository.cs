@@ -3,5 +3,5 @@ using DummyRoster.Common.EntityModel.Models;
 namespace DummyRoster.WebApi.Repositories;
 
 public interface IEmployeeRepository {
-  // TODO
+  Task<Employee> CreateAsync(Employee employee);
 }
