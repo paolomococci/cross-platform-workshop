@@ -3,5 +3,5 @@ using DummyRoster.Common.EntityModel.Models;
 namespace DummyRoster.WebApi.Repositories;
 
 public interface IAddressRepository {
-  // TODO
+  Task<Address> CreateAsync(Address address);
 }
