@@ -41,7 +41,9 @@ public class CategoryRepository : ICategoryRepository
 
   public Task<Category?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Category? category);
+    return Task.FromResult(category);
   }
 
   public Task<Category?> UpdateAsync(int id, Category category)
