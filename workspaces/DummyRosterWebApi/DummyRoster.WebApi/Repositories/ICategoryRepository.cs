@@ -10,4 +10,5 @@ public interface ICategoryRepository {
     int id,
     Category category
   );
+  Task<bool?> DeleteAsync(int id);
 }
