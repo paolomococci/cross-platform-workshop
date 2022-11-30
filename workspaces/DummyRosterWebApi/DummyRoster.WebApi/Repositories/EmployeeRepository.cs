@@ -24,7 +24,7 @@ public class EmployeeRepository : IEmployeeRepository
     }
   }
   
-  public Task<Employee?> CreateAsync(Employee employee)
+  public async Task<Employee?> CreateAsync(Employee employee)
   {
     throw new NotImplementedException();
   }
