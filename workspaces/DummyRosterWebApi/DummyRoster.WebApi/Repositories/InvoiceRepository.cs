@@ -14,6 +14,14 @@ public class InvoiceRepository : IInvoiceRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Invoice>(
+        this.dummyRosterContext.Invoices.ToDictionary(
+          entity => entity.FormId
+        )
+      );
+    }
   }
   
   public Task<Invoice?> CreateAsync(Invoice invoice)
