@@ -48,4 +48,9 @@ public class EmployeeRepository : IEmployeeRepository
   {
     throw new NotImplementedException();
   }
+
+  private Employee UpdateCache(int id, Employee employee)
+  {
+    throw new NotImplementedException();
+  }
 }
