@@ -4,4 +4,5 @@ namespace DummyRoster.WebApi.Repositories;
 
 public interface ICustomerRepository {
   Task<Customer> CreateAsync(Customer customer);
+  Task<Customer> RetrieveAsync(int id);
 }
