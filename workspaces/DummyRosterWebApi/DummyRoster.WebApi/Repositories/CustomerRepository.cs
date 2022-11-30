@@ -48,4 +48,9 @@ public class CustomerRepository : ICustomerRepository
   {
     throw new NotImplementedException();
   }
+
+  private Customer UpdateCache(int id, Customer customer)
+  {
+    throw new NotImplementedException();
+  }
 }
