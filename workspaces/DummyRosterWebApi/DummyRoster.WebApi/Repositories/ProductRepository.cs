@@ -41,7 +41,9 @@ public class ProductRepository : IProductRepository
 
   public Task<Product?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Product? product);
+    return Task.FromResult(product);
   }
 
   public Task<Product?> UpdateAsync(int id, Product product)
