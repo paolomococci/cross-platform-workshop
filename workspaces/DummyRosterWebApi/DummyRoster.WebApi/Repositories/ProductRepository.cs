@@ -48,4 +48,9 @@ public class ProductRepository : IProductRepository
   {
     throw new NotImplementedException();
   }
+
+  private Product UpdateCache(int id, Product product)
+  {
+    throw new NotImplementedException();
+  }
 }
