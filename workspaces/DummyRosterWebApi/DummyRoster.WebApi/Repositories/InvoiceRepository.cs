@@ -24,7 +24,7 @@ public class InvoiceRepository : IInvoiceRepository
     }
   }
   
-  public Task<Invoice?> CreateAsync(Invoice invoice)
+  public async Task<Invoice?> CreateAsync(Invoice invoice)
   {
     throw new NotImplementedException();
   }
