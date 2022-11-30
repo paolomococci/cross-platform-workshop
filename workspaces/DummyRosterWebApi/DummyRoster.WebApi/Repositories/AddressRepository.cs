@@ -9,6 +9,13 @@ public class AddressRepository : IAddressRepository
 {
   private static ConcurrentDictionary<int, Address>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public AddressRepository(
+    DummyRosterContext dummyRosterContext
+  ) {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+  
   public Task<Address?> CreateAsync(Address address)
   {
     throw new NotImplementedException();
