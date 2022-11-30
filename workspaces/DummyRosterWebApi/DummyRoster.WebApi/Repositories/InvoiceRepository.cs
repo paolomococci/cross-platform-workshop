@@ -41,7 +41,9 @@ public class InvoiceRepository : IInvoiceRepository
 
   public Task<Invoice?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Invoice? category);
+    return Task.FromResult(category);
   }
 
   public Task<Invoice?> UpdateAsync(int id, Invoice invoice)
