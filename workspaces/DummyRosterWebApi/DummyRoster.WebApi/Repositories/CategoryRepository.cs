@@ -48,4 +48,9 @@ public class CategoryRepository : ICategoryRepository
   {
     throw new NotImplementedException();
   }
+
+  private Category UpdateCache(int id, Category category)
+  {
+    throw new NotImplementedException();
+  }
 }
