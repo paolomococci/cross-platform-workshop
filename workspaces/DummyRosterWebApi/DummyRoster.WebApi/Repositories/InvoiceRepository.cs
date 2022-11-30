@@ -7,6 +7,8 @@ namespace DummyRoster.WebApi.Repositories;
 
 public class InvoiceRepository : IInvoiceRepository
 {
+  private static ConcurrentDictionary<int, Invoice>? keyValuesCache;
+  private DummyRosterContext dummyRosterContext;
   public Task<Invoice?> CreateAsync(Invoice invoice)
   {
     throw new NotImplementedException();
