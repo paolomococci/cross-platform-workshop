@@ -26,7 +26,24 @@ public class CustomerRepository : ICustomerRepository
   
   public async Task<Customer?> CreateAsync(Customer customer)
   {
-    throw new NotImplementedException();
+    EntityEntry<Customer> entry = await this.dummyRosterContext.Customers.AddAsync(customer);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return customer;
+      }
+      return keyValuesCache.AddOrUpdate(
+        customer.Id,
+        customer,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<bool?> DeleteAsync(int id)
