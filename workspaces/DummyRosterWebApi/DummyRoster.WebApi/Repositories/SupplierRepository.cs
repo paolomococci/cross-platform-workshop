@@ -48,4 +48,9 @@ public class SupplierRepository : ISupplierRepository
   {
     throw new NotImplementedException();
   }
+
+  private Supplier UpdateCache(int id, Supplier supplier)
+  {
+    throw new NotImplementedException();
+  }
 }
