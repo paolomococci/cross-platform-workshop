@@ -9,6 +9,13 @@ public class EmployeeRepository : IEmployeeRepository
 {
   private static ConcurrentDictionary<int, Employee>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public EmployeeRepository(
+    DummyRosterContext dummyRosterContext
+  ) {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+  
   public Task<Employee?> CreateAsync(Employee employee)
   {
     throw new NotImplementedException();
