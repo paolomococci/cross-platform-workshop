@@ -6,4 +6,8 @@ public interface ICarrierRepository {
   Task<Carrier> CreateAsync(Carrier carrier);
   Task<Carrier> RetrieveAsync(int id);
   Task<IEnumerable<Carrier>> RetrieveAllAsync();
+  Task<Carrier> UpdateAsync(
+    int id,
+    Carrier carrier
+  );
 }
