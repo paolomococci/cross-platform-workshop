@@ -51,6 +51,17 @@ public class CarrierRepository : ICarrierRepository
 
   private Carrier UpdateCache(int id, Carrier carrier)
   {
-    throw new NotImplementedException();
+    Carrier? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, carrier, alreadyRegistered))
+        {
+          return carrier;
+        }
+      }
+    }
+    return null!;
   }
 }
