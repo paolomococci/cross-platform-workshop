@@ -41,7 +41,9 @@ public class FormRepository : IFormRepository
 
   public Task<Form?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Form? form);
+    return Task.FromResult(form);
   }
 
   public Task<Form?> UpdateAsync(int id, Form form)
