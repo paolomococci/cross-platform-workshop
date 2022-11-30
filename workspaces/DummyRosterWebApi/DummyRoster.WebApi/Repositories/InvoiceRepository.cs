@@ -9,6 +9,13 @@ public class InvoiceRepository : IInvoiceRepository
 {
   private static ConcurrentDictionary<int, Invoice>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public InvoiceRepository(
+    DummyRosterContext dummyRosterContext
+  ) {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+  
   public Task<Invoice?> CreateAsync(Invoice invoice)
   {
     throw new NotImplementedException();
