@@ -41,7 +41,9 @@ public class EmployeeRepository : IEmployeeRepository
 
   public Task<Employee?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Employee? category);
+    return Task.FromResult(category);
   }
 
   public Task<Employee?> UpdateAsync(int id, Employee employee)
