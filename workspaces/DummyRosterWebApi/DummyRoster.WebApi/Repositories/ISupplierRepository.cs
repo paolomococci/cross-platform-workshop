@@ -10,4 +10,5 @@ public interface ISupplierRepository {
     int id,
     Supplier supplier
   );
+  Task<bool?> DeleteAsync(int id);
 }
