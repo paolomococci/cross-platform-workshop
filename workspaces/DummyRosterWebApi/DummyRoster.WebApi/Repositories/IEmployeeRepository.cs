@@ -10,4 +10,5 @@ public interface IEmployeeRepository {
     int id,
     Employee employee
   );
+  Task<bool?> DeleteAsync(int id);
 }
