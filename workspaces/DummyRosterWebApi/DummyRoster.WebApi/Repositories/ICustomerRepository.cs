@@ -10,4 +10,5 @@ public interface ICustomerRepository {
     int id,
     Customer customer
   );
+  Task<bool?> DeleteAsync(int id);
 }
