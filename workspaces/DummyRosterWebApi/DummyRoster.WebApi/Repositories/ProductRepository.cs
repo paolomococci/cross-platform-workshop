@@ -24,7 +24,7 @@ public class ProductRepository : IProductRepository
     }
   }
   
-  public Task<Product?> CreateAsync(Product product)
+  public async Task<Product?> CreateAsync(Product product)
   {
     throw new NotImplementedException();
   }
