@@ -9,6 +9,13 @@ public class SupplierRepository : ISupplierRepository
 {
   private static ConcurrentDictionary<int, Supplier>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public SupplierRepository(
+    DummyRosterContext dummyRosterContext
+  ) {
+    this.dummyRosterContext = dummyRosterContext;
+  }
+  
   public Task<Supplier?> CreateAsync(Supplier supplier)
   {
     throw new NotImplementedException();
