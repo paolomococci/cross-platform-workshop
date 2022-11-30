@@ -14,6 +14,14 @@ public class CategoryRepository : ICategoryRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Category>(
+        this.dummyRosterContext.Categories.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
   }
   
   public Task<Category?> CreateAsync(Category category)
