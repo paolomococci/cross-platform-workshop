@@ -26,7 +26,24 @@ public class ProductRepository : IProductRepository
   
   public async Task<Product?> CreateAsync(Product product)
   {
-    throw new NotImplementedException();
+    EntityEntry<Product> entry = await this.dummyRosterContext.Products.AddAsync(product);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return product;
+      }
+      return keyValuesCache.AddOrUpdate(
+        product.Id,
+        product,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<bool?> DeleteAsync(int id)
