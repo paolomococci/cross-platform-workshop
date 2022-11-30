@@ -51,6 +51,17 @@ public class FormRepository : IFormRepository
 
   private Form UpdateCache(int id, Form form)
   {
-    throw new NotImplementedException();
+    Form? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, form, alreadyRegistered))
+        {
+          return form;
+        }
+      }
+    }
+    return null!;
   }
 }
