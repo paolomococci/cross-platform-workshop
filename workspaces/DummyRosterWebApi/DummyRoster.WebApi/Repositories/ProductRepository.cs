@@ -4,4 +4,4 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.WebApi.Repositories;
 
-public class ProductRepository {}
+public class ProductRepository : IProductRepository {}
