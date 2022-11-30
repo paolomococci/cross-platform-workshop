@@ -26,7 +26,24 @@ public class SupplierRepository : ISupplierRepository
   
   public async Task<Supplier?> CreateAsync(Supplier supplier)
   {
-    throw new NotImplementedException();
+    EntityEntry<Supplier> entry = await this.dummyRosterContext.Suppliers.AddAsync(supplier);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return supplier;
+      }
+      return keyValuesCache.AddOrUpdate(
+        supplier.Id,
+        supplier,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<bool?> DeleteAsync(int id)
