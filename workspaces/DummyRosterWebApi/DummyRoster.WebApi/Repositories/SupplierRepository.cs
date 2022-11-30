@@ -14,6 +14,14 @@ public class SupplierRepository : ISupplierRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Supplier>(
+        this.dummyRosterContext.Suppliers.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
   }
   
   public Task<Supplier?> CreateAsync(Supplier supplier)
