@@ -14,6 +14,14 @@ public class FormRepository : IFormRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Form>(
+        this.dummyRosterContext.Forms.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
   }
   
   public Task<Form?> CreateAsync(Form form)
