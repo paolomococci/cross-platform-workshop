@@ -4,4 +4,4 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.WebApi.Repositories;
 
-public class SupplierRepository {}
+public class SupplierRepository : ISupplierRepository {}
