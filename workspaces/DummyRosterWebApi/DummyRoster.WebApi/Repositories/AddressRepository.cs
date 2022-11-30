@@ -14,6 +14,14 @@ public class AddressRepository : IAddressRepository
     DummyRosterContext dummyRosterContext
   ) {
     this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Address>(
+        this.dummyRosterContext.Addresses.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
   }
   
   public Task<Address?> CreateAsync(Address address)
