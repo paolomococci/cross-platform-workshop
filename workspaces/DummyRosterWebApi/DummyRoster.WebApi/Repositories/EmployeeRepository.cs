@@ -51,6 +51,17 @@ public class EmployeeRepository : IEmployeeRepository
 
   private Employee UpdateCache(int id, Employee employee)
   {
-    throw new NotImplementedException();
+    Employee? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, employee, alreadyRegistered))
+        {
+          return employee;
+        }
+      }
+    }
+    return null!;
   }
 }
