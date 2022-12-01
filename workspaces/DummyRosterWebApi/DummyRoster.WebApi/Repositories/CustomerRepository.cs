@@ -83,7 +83,7 @@ public class CustomerRepository : ICustomerRepository
     return Task.FromResult(category);
   }
 
-  public Task<Customer?> UpdateAsync(int id, Customer customer)
+  public async Task<Customer?> UpdateAsync(int id, Customer customer)
   {
     throw new NotImplementedException();
   }
