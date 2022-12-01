@@ -90,4 +90,5 @@ echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CategoryRepo
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class ProductRepository {}" > ProductRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class FormRepository {}" > FormRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class InvoiceRepository {}" > InvoiceRepository.cs
+cd ../Controllers
 ```
