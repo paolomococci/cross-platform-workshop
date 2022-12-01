@@ -46,9 +46,27 @@ public class AddressRepository : IAddressRepository
     }
   }
 
-  public Task<bool?> DeleteAsync(int id)
+  public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Address? address = this.dummyRosterContext.Addresses.Find(id);
+    if (address is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Addresses.Remove(address);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out address);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<IEnumerable<Address>> RetrieveAllAsync()
