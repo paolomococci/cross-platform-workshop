@@ -83,7 +83,7 @@ public class SupplierRepository : ISupplierRepository
     return Task.FromResult(supplier);
   }
 
-  public Task<Supplier?> UpdateAsync(int id, Supplier supplier)
+  public async Task<Supplier?> UpdateAsync(int id, Supplier supplier)
   {
     throw new NotImplementedException();
   }
