@@ -83,7 +83,7 @@ public class ProductRepository : IProductRepository
     return Task.FromResult(product);
   }
 
-  public Task<Product?> UpdateAsync(int id, Product product)
+  public async Task<Product?> UpdateAsync(int id, Product product)
   {
     throw new NotImplementedException();
   }
