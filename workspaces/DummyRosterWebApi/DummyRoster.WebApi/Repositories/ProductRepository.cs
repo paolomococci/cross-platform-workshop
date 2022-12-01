@@ -85,7 +85,13 @@ public class ProductRepository : IProductRepository
 
   public async Task<Product?> UpdateAsync(int id, Product product)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Products.Update(product);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, product);
+    }
+    return null;
   }
 
   private Product UpdateCache(int id, Product product)
