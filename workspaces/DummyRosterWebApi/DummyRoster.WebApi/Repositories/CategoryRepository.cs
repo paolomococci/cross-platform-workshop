@@ -71,7 +71,9 @@ public class CategoryRepository : ICategoryRepository
 
   public Task<IEnumerable<Category>> RetrieveAllAsync()
   {
-    throw new NotImplementedException();
+    return Task.FromResult(
+      keyValuesCache is null ? Enumerable.Empty<Category>() : keyValuesCache.Values
+    );
   }
 
   public Task<Category?> RetrieveAsync(int id)
