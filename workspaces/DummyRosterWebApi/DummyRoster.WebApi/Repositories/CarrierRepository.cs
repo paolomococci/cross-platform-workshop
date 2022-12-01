@@ -85,7 +85,13 @@ public class CarrierRepository : ICarrierRepository
 
   public async Task<Carrier?> UpdateAsync(int id, Carrier carrier)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Carriers.Update(carrier);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, carrier);
+    }
+    return null;
   }
 
   private Carrier UpdateCache(int id, Carrier carrier)
