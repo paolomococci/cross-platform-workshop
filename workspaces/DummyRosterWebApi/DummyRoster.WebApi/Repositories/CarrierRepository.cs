@@ -46,9 +46,27 @@ public class CarrierRepository : ICarrierRepository
     }
   }
 
-  public Task<bool?> DeleteAsync(int id)
+  public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Carrier? carrier = this.dummyRosterContext.Carriers.Find(id);
+    if (carrier is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Carriers.Remove(carrier);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out carrier);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<IEnumerable<Carrier>> RetrieveAllAsync()
