@@ -83,7 +83,7 @@ public class CarrierRepository : ICarrierRepository
     return Task.FromResult(carrier);
   }
 
-  public Task<Carrier?> UpdateAsync(int id, Carrier carrier)
+  public async Task<Carrier?> UpdateAsync(int id, Carrier carrier)
   {
     throw new NotImplementedException();
   }
