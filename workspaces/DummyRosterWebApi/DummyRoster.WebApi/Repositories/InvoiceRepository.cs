@@ -85,7 +85,13 @@ public class InvoiceRepository : IInvoiceRepository
 
   public async Task<Invoice?> UpdateAsync(int id, Invoice invoice)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Invoices.Update(invoice);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, invoice);
+    }
+    return null;
   }
 
   private Invoice UpdateCache(int id, Invoice invoice)
