@@ -83,7 +83,7 @@ public class InvoiceRepository : IInvoiceRepository
     return Task.FromResult(category);
   }
 
-  public Task<Invoice?> UpdateAsync(int id, Invoice invoice)
+  public async Task<Invoice?> UpdateAsync(int id, Invoice invoice)
   {
     throw new NotImplementedException();
   }
