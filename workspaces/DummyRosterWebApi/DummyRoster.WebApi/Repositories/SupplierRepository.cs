@@ -85,7 +85,13 @@ public class SupplierRepository : ISupplierRepository
 
   public async Task<Supplier?> UpdateAsync(int id, Supplier supplier)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Suppliers.Update(supplier);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, supplier);
+    }
+    return null;
   }
 
   private Supplier UpdateCache(int id, Supplier supplier)
