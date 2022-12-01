@@ -46,9 +46,27 @@ public class ProductRepository : IProductRepository
     }
   }
 
-  public Task<bool?> DeleteAsync(int id)
+  public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Product? product = this.dummyRosterContext.Products.Find(id);
+    if (product is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Products.Remove(product);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out product);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<IEnumerable<Product>> RetrieveAllAsync()
