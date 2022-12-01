@@ -46,9 +46,27 @@ public class SupplierRepository : ISupplierRepository
     }
   }
 
-  public Task<bool?> DeleteAsync(int id)
+  public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Supplier? supplier = this.dummyRosterContext.Suppliers.Find(id);
+    if (supplier is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Suppliers.Remove(supplier);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out supplier);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<IEnumerable<Supplier>> RetrieveAllAsync()
