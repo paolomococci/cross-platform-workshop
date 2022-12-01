@@ -71,7 +71,9 @@ public class FormRepository : IFormRepository
 
   public Task<IEnumerable<Form>> RetrieveAllAsync()
   {
-    throw new NotImplementedException();
+    return Task.FromResult(
+      keyValuesCache is null ? Enumerable.Empty<Form>() : keyValuesCache.Values
+    );
   }
 
   public Task<Form?> RetrieveAsync(int id)
