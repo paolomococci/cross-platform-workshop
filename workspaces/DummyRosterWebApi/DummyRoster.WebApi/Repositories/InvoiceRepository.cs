@@ -46,9 +46,27 @@ public class InvoiceRepository : IInvoiceRepository
     }
   }
 
-  public Task<bool?> DeleteAsync(int id)
+  public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Invoice? invoice = this.dummyRosterContext.Invoices.Find(id);
+    if (invoice is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Invoices.Remove(invoice);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out invoice);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<IEnumerable<Invoice>> RetrieveAllAsync()
