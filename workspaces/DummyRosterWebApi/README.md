@@ -91,4 +91,13 @@ echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class ProductRepos
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class FormRepository {}" > FormRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class InvoiceRepository {}" > InvoiceRepository.cs
 cd ../Controllers
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class EmployeeController {}" > EmployeeController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class CustomerController {}" > CustomerController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class SupplierController {}" > SupplierController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class CarrierController {}" > CarrierController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class AddressController {}" > AddressController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class CategoryController {}" > CategoryController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class ProductController {}" > ProductController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class FormController {}" > FormController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class InvoiceController {}" > InvoiceController.cs
 ```
