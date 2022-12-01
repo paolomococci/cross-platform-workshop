@@ -83,7 +83,7 @@ public class FormRepository : IFormRepository
     return Task.FromResult(form);
   }
 
-  public Task<Form?> UpdateAsync(int id, Form form)
+  public async Task<Form?> UpdateAsync(int id, Form form)
   {
     throw new NotImplementedException();
   }
