@@ -46,9 +46,27 @@ public class EmployeeRepository : IEmployeeRepository
     }
   }
 
-  public Task<bool?> DeleteAsync(int id)
+  public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Employee? employee = this.dummyRosterContext.Employees.Find(id);
+    if (employee is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Employees.Remove(employee);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out employee);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<IEnumerable<Employee>> RetrieveAllAsync()
