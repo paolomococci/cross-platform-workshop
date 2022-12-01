@@ -85,7 +85,13 @@ public class CategoryRepository : ICategoryRepository
 
   public async Task<Category?> UpdateAsync(int id, Category category)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Categories.Update(category);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, category);
+    }
+    return null;
   }
 
   private Category UpdateCache(int id, Category category)
