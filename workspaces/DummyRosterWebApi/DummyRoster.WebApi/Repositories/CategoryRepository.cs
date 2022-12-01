@@ -83,7 +83,7 @@ public class CategoryRepository : ICategoryRepository
     return Task.FromResult(category);
   }
 
-  public Task<Category?> UpdateAsync(int id, Category category)
+  public async Task<Category?> UpdateAsync(int id, Category category)
   {
     throw new NotImplementedException();
   }
