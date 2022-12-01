@@ -71,7 +71,9 @@ public class ProductRepository : IProductRepository
 
   public Task<IEnumerable<Product>> RetrieveAllAsync()
   {
-    throw new NotImplementedException();
+    return Task.FromResult(
+      keyValuesCache is null ? Enumerable.Empty<Product>() : keyValuesCache.Values
+    );
   }
 
   public Task<Product?> RetrieveAsync(int id)
