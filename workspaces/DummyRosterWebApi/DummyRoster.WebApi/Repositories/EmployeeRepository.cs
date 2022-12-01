@@ -85,7 +85,13 @@ public class EmployeeRepository : IEmployeeRepository
 
   public async Task<Employee?> UpdateAsync(int id, Employee employee)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Employees.Update(employee);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, employee);
+    }
+    return null;
   }
 
   private Employee UpdateCache(int id, Employee employee)
