@@ -71,7 +71,9 @@ public class CarrierRepository : ICarrierRepository
 
   public Task<IEnumerable<Carrier>> RetrieveAllAsync()
   {
-    throw new NotImplementedException();
+    return Task.FromResult(
+      keyValuesCache is null ? Enumerable.Empty<Carrier>() : keyValuesCache.Values
+    );
   }
 
   public Task<Carrier?> RetrieveAsync(int id)
