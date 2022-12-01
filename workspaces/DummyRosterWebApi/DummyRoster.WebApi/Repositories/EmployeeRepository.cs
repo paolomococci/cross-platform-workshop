@@ -83,7 +83,7 @@ public class EmployeeRepository : IEmployeeRepository
     return Task.FromResult(category);
   }
 
-  public Task<Employee?> UpdateAsync(int id, Employee employee)
+  public async Task<Employee?> UpdateAsync(int id, Employee employee)
   {
     throw new NotImplementedException();
   }
