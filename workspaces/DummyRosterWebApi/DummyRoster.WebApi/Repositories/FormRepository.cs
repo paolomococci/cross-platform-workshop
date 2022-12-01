@@ -46,9 +46,27 @@ public class FormRepository : IFormRepository
     }
   }
 
-  public Task<bool?> DeleteAsync(int id)
+  public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Form? form = this.dummyRosterContext.Forms.Find(id);
+    if (form is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Forms.Remove(form);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out form);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<IEnumerable<Form>> RetrieveAllAsync()
