@@ -85,7 +85,13 @@ public class AddressRepository : IAddressRepository
 
   public async Task<Address?> UpdateAsync(int id, Address address)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Addresses.Update(address);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, address);
+    }
+    return null;
   }
 
   private Address UpdateCache(int id, Address address)
