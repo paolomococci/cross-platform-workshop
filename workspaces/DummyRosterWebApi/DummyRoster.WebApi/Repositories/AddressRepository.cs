@@ -83,7 +83,7 @@ public class AddressRepository : IAddressRepository
     return Task.FromResult(address);
   }
 
-  public Task<Address?> UpdateAsync(int id, Address address)
+  public async Task<Address?> UpdateAsync(int id, Address address)
   {
     throw new NotImplementedException();
   }
