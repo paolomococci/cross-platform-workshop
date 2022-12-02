@@ -35,6 +35,7 @@ builder.Services.AddSwaggerGen();
 
 // From here I add the interfaces and classes regarding the repositories.
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 var app = builder.Build();
 
