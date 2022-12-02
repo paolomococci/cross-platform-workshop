@@ -34,7 +34,7 @@ public class FormController : ControllerBase
   }
 
   /* 
-    GET: api/invoices/[id]
+    GET: api/forms/[id]
    */
   [HttpGet("{id}", Name = nameof(GetForm))]
   [ProducesResponseType(
