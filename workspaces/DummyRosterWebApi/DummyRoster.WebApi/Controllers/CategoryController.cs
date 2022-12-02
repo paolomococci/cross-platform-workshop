@@ -9,5 +9,11 @@ namespace DummyRoster.WebApi.Controllers;
 public class CategoryController : ControllerBase {
 
   private readonly ICategoryRepository iCategoryRepository;
+
+  public CategoryController(
+    ICategoryRepository iRepo
+  ) {
+    this.iCategoryRepository = iRepo;
+  }
   // TODO
 }
