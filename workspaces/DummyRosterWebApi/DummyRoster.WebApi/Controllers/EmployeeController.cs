@@ -5,4 +5,7 @@ using DummyRoster.WebApi.Repositories;
 namespace DummyRoster.WebApi.Controllers;
 
 [Route("api/[controller]")]
-public class EmployeeController : ControllerBase {}
+[ApiController]
+public class EmployeeController : ControllerBase {
+  // TODO
+}
