@@ -7,5 +7,7 @@ namespace DummyRoster.WebApi.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 public class EmployeeController : ControllerBase {
+
+  private readonly IEmployeeRepository iEmployeeRepository;
   // TODO
 }
