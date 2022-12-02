@@ -17,5 +17,20 @@ public class CarrierController : ControllerBase
   {
     this.iCarrierRepository = iRepo;
   }
-  // TODO
+
+  /* 
+    GET: api/carriers
+    GET: api/carriers/?country=[country]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Carrier>)
+  )]
+  public Task<IEnumerable<Carrier>> GetCarriers(string? country)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
