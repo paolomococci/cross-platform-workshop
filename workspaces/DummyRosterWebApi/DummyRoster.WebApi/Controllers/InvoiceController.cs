@@ -64,4 +64,21 @@ public class InvoiceController : ControllerBase
     // TODO
   }
 
+  /* 
+    PUT: api/invoices/id
+    BODY: Invoice (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> Update(
+    int id,
+    [FromBody] Invoice entity
+  )
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
