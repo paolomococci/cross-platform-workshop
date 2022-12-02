@@ -33,4 +33,19 @@ public class CarrierController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetCarrier))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Carrier)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetCarrier(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
