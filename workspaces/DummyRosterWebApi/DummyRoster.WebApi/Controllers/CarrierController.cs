@@ -9,5 +9,11 @@ namespace DummyRoster.WebApi.Controllers;
 public class CarrierController : ControllerBase {
 
   private readonly ICarrierRepository iCarrierRepository;
+
+  public CarrierController(
+    ICarrierRepository iRepo
+  ) {
+    this.iCarrierRepository = iRepo;
+  }
   // TODO
 }
