@@ -22,8 +22,11 @@ public class EmployeeController : ControllerBase
     GET: api/employees/?country=[country]
    */
   [HttpGet]
-  [ProducesResponseType(200, Type = typeof(IEnumerable<Employee>))]
-  public Task<IEnumerable<Employee>> GetEmployees(string country)
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Employee>)
+  )]
+  public Task<IEnumerable<Employee>> GetEmployees(string? country)
   {
     // TODO
   }
