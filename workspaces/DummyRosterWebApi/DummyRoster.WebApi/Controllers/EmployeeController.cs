@@ -17,6 +17,7 @@ public class EmployeeController : ControllerBase
   {
     this.iEmployeeRepository = iRepo;
   }
+
   /* 
     GET: api/employees
     GET: api/employees/?country=[country]
@@ -28,6 +29,8 @@ public class EmployeeController : ControllerBase
   )]
   public Task<IEnumerable<Employee>> GetEmployees(string? country)
   {
+    throw new NotImplementedException();
     // TODO
   }
+
 }
