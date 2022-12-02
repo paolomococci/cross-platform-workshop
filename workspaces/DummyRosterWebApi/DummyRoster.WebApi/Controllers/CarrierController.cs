@@ -48,4 +48,20 @@ public class CarrierController : ControllerBase
     // TODO
   }
 
+  /* 
+    POST: api/carriers
+    BODY: Carrier (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201, 
+    Type = typeof(Carrier)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Carrier entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
