@@ -64,4 +64,21 @@ public class SupplierController : ControllerBase
     // TODO
   }
 
+  /* 
+    PUT: api/suppliers/id
+    BODY: Supplier (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> Update(
+    int id,
+    [FromBody] Supplier entity
+  )
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
