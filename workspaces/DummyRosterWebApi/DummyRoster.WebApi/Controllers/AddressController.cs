@@ -17,5 +17,20 @@ public class AddressController : ControllerBase
   {
     this.iAddressRepository = iRepo;
   }
-  // TODO
+
+  /* 
+    GET: api/addresses
+    GET: api/addresses/?country=[country]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Address>)
+  )]
+  public Task<IEnumerable<Address>> GetAddresses(string? country)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
