@@ -34,7 +34,7 @@ public class CategoryController : ControllerBase
   }
 
   /* 
-    GET: api/invoices/[id]
+    GET: api/categories/[id]
    */
   [HttpGet("{id}", Name = nameof(GetCategory))]
   [ProducesResponseType(
