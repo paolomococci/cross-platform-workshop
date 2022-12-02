@@ -17,5 +17,20 @@ public class InvoiceController : ControllerBase
   {
     this.iInvoiceRepository = iRepo;
   }
-  // TODO
+
+  /* 
+    GET: api/invoices
+    GET: api/invoices/?formId=[formId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Invoice>)
+  )]
+  public Task<IEnumerable<Invoice>> GetInvoices(string? formId)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
