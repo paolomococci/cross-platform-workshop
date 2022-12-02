@@ -64,4 +64,21 @@ public class EmployeeController : ControllerBase
     // TODO
   }
 
+  /* 
+    PUT: api/employees/id
+    BODY: Employee (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> Update(
+    int id,
+    [FromBody] Employee entity
+  )
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
