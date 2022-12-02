@@ -17,5 +17,20 @@ public class ProductController : ControllerBase
   {
     this.iProductRepository = iRepo;
   }
-  // TODO
+
+  /* 
+    GET: api/products
+    GET: api/products/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Product>)
+  )]
+  public Task<IEnumerable<Product>> GetProducts(string? name)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
