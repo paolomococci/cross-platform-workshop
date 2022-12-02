@@ -34,7 +34,7 @@ public class ProductController : ControllerBase
   }
 
   /* 
-    GET: api/invoices/[id]
+    GET: api/products/[id]
    */
   [HttpGet("{id}", Name = nameof(GetProduct))]
   [ProducesResponseType(
