@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
 using DummyRoster.Common.DataContext.Data;
+using DummyRoster.WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DummyRosterContext>();
