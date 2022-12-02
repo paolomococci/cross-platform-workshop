@@ -34,7 +34,7 @@ public class AddressController : ControllerBase
   }
 
   /* 
-    GET: api/invoices/[id]
+    GET: api/addresses/[id]
    */
   [HttpGet("{id}", Name = nameof(GetAddress))]
   [ProducesResponseType(
