@@ -33,4 +33,19 @@ public class CustomerController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetCustomer))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Customer)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetCustomer(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
