@@ -48,4 +48,20 @@ public class SupplierController : ControllerBase
     // TODO
   }
 
+  /* 
+    POST: api/suppliers
+    BODY: Supplier (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201, 
+    Type = typeof(Supplier)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Supplier entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
