@@ -38,6 +38,7 @@ builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
 builder.Services.AddScoped<ICarrierRepository, CarrierRepository>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 
 var app = builder.Build();
 
