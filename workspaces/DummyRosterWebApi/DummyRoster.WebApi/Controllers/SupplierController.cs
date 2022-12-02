@@ -34,7 +34,7 @@ public class SupplierController : ControllerBase
   }
 
   /* 
-    GET: api/invoices/[id]
+    GET: api/suppliers/[id]
    */
   [HttpGet("{id}", Name = nameof(GetSupplier))]
   [ProducesResponseType(
