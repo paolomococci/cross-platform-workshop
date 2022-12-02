@@ -17,5 +17,20 @@ public class FormController : ControllerBase
   {
     this.iFormRepository = iRepo;
   }
-  // TODO
+
+  /* 
+    GET: api/forms
+    GET: api/forms/?customerId=[customerId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Form>)
+  )]
+  public Task<IEnumerable<Form>> GetForms(string? customerId)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
