@@ -17,5 +17,20 @@ public class CategoryController : ControllerBase
   {
     this.iCategoryRepository = iRepo;
   }
-  // TODO
+
+  /* 
+    GET: api/categories
+    GET: api/categories/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Category>)
+  )]
+  public Task<IEnumerable<Category>> GetCategories(string? name)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
