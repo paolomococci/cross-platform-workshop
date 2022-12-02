@@ -7,5 +7,7 @@ namespace DummyRoster.WebApi.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 public class SupplierController : ControllerBase {
+
+  private readonly ISupplierRepository iSupplierRepository;
   // TODO
 }
