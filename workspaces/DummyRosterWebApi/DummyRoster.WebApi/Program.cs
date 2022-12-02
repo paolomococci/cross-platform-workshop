@@ -33,6 +33,8 @@ builder.Services.AddControllers(
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// I add the interfaces and classes concerning the repositories
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
