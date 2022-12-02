@@ -6,13 +6,15 @@ namespace DummyRoster.WebApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class CategoryController : ControllerBase {
+public class CategoryController : ControllerBase
+{
 
   private readonly ICategoryRepository iCategoryRepository;
 
   public CategoryController(
     ICategoryRepository iRepo
-  ) {
+  )
+  {
     this.iCategoryRepository = iRepo;
   }
   // TODO
