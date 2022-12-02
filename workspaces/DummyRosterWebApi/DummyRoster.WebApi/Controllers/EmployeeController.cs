@@ -20,14 +20,14 @@ public class EmployeeController : ControllerBase
 
   /* 
     GET: api/employees
-    GET: api/employees/?country=[country]
+    GET: api/employees/?name=[name]
    */
   [HttpGet]
   [ProducesResponseType(
     200, 
     Type = typeof(IEnumerable<Employee>)
   )]
-  public Task<IEnumerable<Employee>> GetEmployees(string? country)
+  public Task<IEnumerable<Employee>> GetEmployees(string? name)
   {
     throw new NotImplementedException();
     // TODO
