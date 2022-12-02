@@ -34,7 +34,7 @@ public class EmployeeController : ControllerBase
   }
 
   /* 
-    GET: api/invoices/[id]
+    GET: api/employees/[id]
    */
   [HttpGet("{id}", Name = nameof(GetEmployee))]
   [ProducesResponseType(
