@@ -17,5 +17,20 @@ public class SupplierController : ControllerBase
   {
     this.iSupplierRepository = iRepo;
   }
-  // TODO
+
+  /* 
+    GET: api/suppliers
+    GET: api/suppliers/?country=[country]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Supplier>)
+  )]
+  public Task<IEnumerable<Supplier>> GetSuppliers(string? country)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
