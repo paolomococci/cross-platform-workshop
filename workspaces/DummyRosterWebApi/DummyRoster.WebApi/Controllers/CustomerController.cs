@@ -17,5 +17,20 @@ public class CustomerController : ControllerBase
   {
     this.iCustomerRepository = iRepo;
   }
-  // TODO
+
+  /* 
+    GET: api/customers
+    GET: api/customers/?country=[country]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(IEnumerable<Customer>)
+  )]
+  public Task<IEnumerable<Customer>> GetCustomers(string? country)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
