@@ -33,4 +33,19 @@ public class FormController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetForm))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Form)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetForm(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
