@@ -48,4 +48,20 @@ public class AddressController : ControllerBase
     // TODO
   }
 
+  /* 
+    POST: api/addresses
+    BODY: Address (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201, 
+    Type = typeof(Address)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Address entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
