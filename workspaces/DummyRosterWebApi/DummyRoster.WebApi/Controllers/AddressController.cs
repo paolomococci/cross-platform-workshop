@@ -9,5 +9,11 @@ namespace DummyRoster.WebApi.Controllers;
 public class AddressController : ControllerBase {
 
   private readonly IAddressRepository iAddressRepository;
+
+  public AddressController(
+    IAddressRepository iRepo
+  ) {
+    this.iAddressRepository = iRepo;
+  }
   // TODO
 }
