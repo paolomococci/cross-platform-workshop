@@ -34,7 +34,7 @@ public class CarrierController : ControllerBase
   }
 
   /* 
-    GET: api/invoices/[id]
+    GET: api/carriers/[id]
    */
   [HttpGet("{id}", Name = nameof(GetCarrier))]
   [ProducesResponseType(
