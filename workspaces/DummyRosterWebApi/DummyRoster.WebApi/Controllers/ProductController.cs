@@ -9,5 +9,11 @@ namespace DummyRoster.WebApi.Controllers;
 public class ProductController : ControllerBase {
 
   private readonly IProductRepository iProductRepository;
+
+  public ProductController(
+    IProductRepository iRepo
+  ) {
+    this.iProductRepository = iRepo;
+  }
   // TODO
 }
