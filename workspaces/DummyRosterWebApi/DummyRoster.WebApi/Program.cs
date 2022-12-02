@@ -33,7 +33,7 @@ builder.Services.AddControllers(
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// I add the interfaces and classes concerning the repositories
+// From here I add the interfaces and classes regarding the repositories.
 
 var app = builder.Build();
 
