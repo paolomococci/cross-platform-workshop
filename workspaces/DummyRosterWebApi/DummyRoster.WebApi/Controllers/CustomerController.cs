@@ -34,7 +34,7 @@ public class CustomerController : ControllerBase
   }
 
   /* 
-    GET: api/invoices/[id]
+    GET: api/customers/[id]
    */
   [HttpGet("{id}", Name = nameof(GetCustomer))]
   [ProducesResponseType(
