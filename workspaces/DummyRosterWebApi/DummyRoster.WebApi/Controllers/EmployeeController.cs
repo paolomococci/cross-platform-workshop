@@ -9,5 +9,11 @@ namespace DummyRoster.WebApi.Controllers;
 public class EmployeeController : ControllerBase {
 
   private readonly IEmployeeRepository iEmployeeRepository;
+
+  public EmployeeController(
+    IEmployeeRepository iRepo
+  ) {
+    this.iEmployeeRepository = iRepo;
+  }
   // TODO
 }
