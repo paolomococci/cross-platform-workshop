@@ -4,4 +4,4 @@ using DummyRoster.WebApi.Repositories;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class CategoryController {}
+public class CategoryController : ControllerBase {}
