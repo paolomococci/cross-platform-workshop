@@ -5,4 +5,7 @@ using DummyRoster.WebApi.Repositories;
 namespace DummyRoster.WebApi.Controllers;
 
 [Route("api/[controller]")]
-public class FormController : ControllerBase {}
+[ApiController]
+public class FormController : ControllerBase {
+  // TODO
+}
