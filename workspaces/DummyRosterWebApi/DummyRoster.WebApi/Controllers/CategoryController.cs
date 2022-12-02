@@ -48,4 +48,20 @@ public class CategoryController : ControllerBase
     // TODO
   }
 
+  /* 
+    POST: api/categories
+    BODY: Category (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201, 
+    Type = typeof(Category)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Category entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
