@@ -64,4 +64,21 @@ public class FormController : ControllerBase
     // TODO
   }
 
+  /* 
+    PUT: api/forms/id
+    BODY: Form (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> Update(
+    int id,
+    [FromBody] Form entity
+  )
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
