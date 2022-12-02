@@ -9,5 +9,11 @@ namespace DummyRoster.WebApi.Controllers;
 public class FormController : ControllerBase {
 
   private readonly IFormRepository iFormRepository;
+
+  public FormController(
+    IFormRepository iRepo
+  ) {
+    this.iFormRepository = iRepo;
+  }
   // TODO
 }
