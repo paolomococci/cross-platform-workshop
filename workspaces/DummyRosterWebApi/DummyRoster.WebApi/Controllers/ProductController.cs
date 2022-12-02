@@ -33,4 +33,19 @@ public class ProductController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetProduct))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Product)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetProduct(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
