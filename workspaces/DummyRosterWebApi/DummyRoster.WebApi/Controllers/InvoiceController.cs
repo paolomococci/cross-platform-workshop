@@ -33,4 +33,19 @@ public class InvoiceController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetInvoice))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Invoice)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetInvoice(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
