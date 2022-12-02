@@ -20,14 +20,14 @@ public class CarrierController : ControllerBase
 
   /* 
     GET: api/carriers
-    GET: api/carriers/?country=[country]
+    GET: api/carriers/?name=[name]
    */
   [HttpGet]
   [ProducesResponseType(
     200, 
     Type = typeof(IEnumerable<Carrier>)
   )]
-  public Task<IEnumerable<Carrier>> GetCarriers(string? country)
+  public Task<IEnumerable<Carrier>> GetCarriers(string? name)
   {
     throw new NotImplementedException();
     // TODO
