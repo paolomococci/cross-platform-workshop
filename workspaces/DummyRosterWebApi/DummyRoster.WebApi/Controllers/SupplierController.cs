@@ -33,4 +33,19 @@ public class SupplierController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetSupplier))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Supplier)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetSupplier(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
