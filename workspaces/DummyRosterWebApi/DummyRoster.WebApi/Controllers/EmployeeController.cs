@@ -33,4 +33,19 @@ public class EmployeeController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetEmployee))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Employee)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetEmployee(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
