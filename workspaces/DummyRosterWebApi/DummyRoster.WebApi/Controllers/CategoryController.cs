@@ -33,4 +33,19 @@ public class CategoryController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetCategory))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Category)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetCategory(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
