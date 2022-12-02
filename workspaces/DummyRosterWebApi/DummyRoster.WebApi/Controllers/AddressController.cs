@@ -33,4 +33,19 @@ public class AddressController : ControllerBase
     // TODO
   }
 
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(GetAddress))]
+  [ProducesResponseType(
+    200, 
+    Type = typeof(Address)
+  )]
+  [ProducesResponseType(404)]
+  public Task<IActionResult> GetAddress(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
 }
