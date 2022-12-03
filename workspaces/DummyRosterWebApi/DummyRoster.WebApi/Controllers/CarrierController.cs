@@ -24,7 +24,7 @@ public class CarrierController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Carrier>)
   )]
   public Task<IEnumerable<Carrier>> GetCarriers(string? name)
@@ -38,7 +38,7 @@ public class CarrierController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetCarrier))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class CarrierController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(400)]
