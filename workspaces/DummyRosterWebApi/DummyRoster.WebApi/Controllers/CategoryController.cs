@@ -19,6 +19,22 @@ public class CategoryController : ControllerBase
   }
 
   /* 
+    POST: api/categories
+    BODY: Category (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Category)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Category entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
     GET: api/categories
     GET: api/categories/?name=[name]
    */
@@ -43,22 +59,6 @@ public class CategoryController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetCategory(int id)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
-    POST: api/categories
-    BODY: Category (JSON, XML)
-   */
-  [HttpPost]
-  [ProducesResponseType(
-    201,
-    Type = typeof(Category)
-  )]
-  [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Category entity)
   {
     throw new NotImplementedException();
     // TODO
