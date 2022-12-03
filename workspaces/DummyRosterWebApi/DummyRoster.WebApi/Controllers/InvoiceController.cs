@@ -24,7 +24,7 @@ public class InvoiceController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Invoice>)
   )]
   public Task<IEnumerable<Invoice>> GetInvoices(string? formId)
@@ -38,7 +38,7 @@ public class InvoiceController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetInvoice))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Invoice)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class InvoiceController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Invoice)
   )]
   [ProducesResponseType(400)]
