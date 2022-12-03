@@ -34,7 +34,7 @@ public class FormController : ControllerBase
     {
       return BadRequest();
     }
-    Form? managedEntity = await iFormRepository.CreateAsync(entity);
+    Form? managedEntity = await this.iFormRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -57,7 +57,7 @@ public class FormController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetForm(int id)
   {
-    Form? managedEntity = await iFormRepository.RetrieveAsync(id);
+    Form? managedEntity = await this.iFormRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
