@@ -99,7 +99,12 @@ public class CarrierController : ControllerBase
   )
   {
     Carrier? managedEntity = await this.iCarrierRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iCarrierRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
