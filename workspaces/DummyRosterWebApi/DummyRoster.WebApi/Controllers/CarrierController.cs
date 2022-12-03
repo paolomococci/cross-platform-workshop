@@ -19,6 +19,22 @@ public class CarrierController : ControllerBase
   }
 
   /* 
+    POST: api/carriers
+    BODY: Carrier (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Carrier)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Carrier entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
     GET: api/carriers
     GET: api/carriers/?name=[name]
    */
@@ -43,22 +59,6 @@ public class CarrierController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetCarrier(int id)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
-    POST: api/carriers
-    BODY: Carrier (JSON, XML)
-   */
-  [HttpPost]
-  [ProducesResponseType(
-    201,
-    Type = typeof(Carrier)
-  )]
-  [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Carrier entity)
   {
     throw new NotImplementedException();
     // TODO
