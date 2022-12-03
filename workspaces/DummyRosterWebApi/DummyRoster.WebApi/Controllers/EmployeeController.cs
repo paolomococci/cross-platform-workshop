@@ -34,7 +34,7 @@ public class EmployeeController : ControllerBase
     {
       return BadRequest();
     }
-    Employee? managedEntity = await iEmployeeRepository.CreateAsync(entity);
+    Employee? managedEntity = await this.iEmployeeRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -57,7 +57,7 @@ public class EmployeeController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetEmployee(int id)
   {
-    Employee? managedEntity = await iEmployeeRepository.RetrieveAsync(id);
+    Employee? managedEntity = await this.iEmployeeRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
