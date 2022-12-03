@@ -57,8 +57,12 @@ public class AddressController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetAddress(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    Address? managedEntity = await iAddressRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
