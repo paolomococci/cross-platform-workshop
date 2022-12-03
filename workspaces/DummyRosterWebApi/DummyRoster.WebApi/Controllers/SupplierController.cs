@@ -98,7 +98,7 @@ public class SupplierController : ControllerBase
     [FromBody] Supplier entity
   )
   {
-    throw new NotImplementedException();
+    Supplier? managedEntity = await this.iSupplierRepository.RetrieveAsync(id);
     // TODO
   }
 
