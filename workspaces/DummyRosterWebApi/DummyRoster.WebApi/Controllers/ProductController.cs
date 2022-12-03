@@ -24,7 +24,7 @@ public class ProductController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Product>)
   )]
   public Task<IEnumerable<Product>> GetProducts(string? name)
@@ -38,7 +38,7 @@ public class ProductController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetProduct))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Product)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class ProductController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Product)
   )]
   [ProducesResponseType(400)]
