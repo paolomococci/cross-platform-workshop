@@ -19,6 +19,22 @@ public class InvoiceController : ControllerBase
   }
 
   /* 
+    POST: api/invoices
+    BODY: Invoice (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Invoice)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Invoice entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
     GET: api/invoices
     GET: api/invoices/?formId=[formId]
    */
@@ -43,22 +59,6 @@ public class InvoiceController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetInvoice(int id)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
-    POST: api/invoices
-    BODY: Invoice (JSON, XML)
-   */
-  [HttpPost]
-  [ProducesResponseType(
-    201,
-    Type = typeof(Invoice)
-  )]
-  [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Invoice entity)
   {
     throw new NotImplementedException();
     // TODO
