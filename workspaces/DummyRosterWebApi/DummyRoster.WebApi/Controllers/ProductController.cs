@@ -19,6 +19,22 @@ public class ProductController : ControllerBase
   }
 
   /* 
+    POST: api/products
+    BODY: Product (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Product)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Product entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
     GET: api/products
     GET: api/products/?name=[name]
    */
@@ -43,22 +59,6 @@ public class ProductController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetProduct(int id)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
-    POST: api/products
-    BODY: Product (JSON, XML)
-   */
-  [HttpPost]
-  [ProducesResponseType(
-    201,
-    Type = typeof(Product)
-  )]
-  [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Product entity)
   {
     throw new NotImplementedException();
     // TODO
