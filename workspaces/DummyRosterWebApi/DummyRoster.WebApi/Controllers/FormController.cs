@@ -57,8 +57,12 @@ public class FormController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetForm(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    Form? managedEntity = await iFormRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
