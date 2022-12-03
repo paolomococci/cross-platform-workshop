@@ -34,7 +34,7 @@ public class ProductController : ControllerBase
     {
       return BadRequest();
     }
-    Product? managedEntity = await iProductRepository.CreateAsync(entity);
+    Product? managedEntity = await this.iProductRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -57,7 +57,7 @@ public class ProductController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetProduct(int id)
   {
-    Product? managedEntity = await iProductRepository.RetrieveAsync(id);
+    Product? managedEntity = await this.iProductRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
