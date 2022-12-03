@@ -76,8 +76,13 @@ public class CarrierController : ControllerBase
   )]
   public async Task<IEnumerable<Carrier>> GetCarriers(string? name)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.iCarrierRepository.RetrieveAllAsync();
+    }
+    return (await this.iCarrierRepository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
