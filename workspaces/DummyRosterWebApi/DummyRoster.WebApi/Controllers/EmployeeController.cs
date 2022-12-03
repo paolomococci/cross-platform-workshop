@@ -19,6 +19,22 @@ public class EmployeeController : ControllerBase
   }
 
   /* 
+    POST: api/employees
+    BODY: Employee (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Employee)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Employee entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
     GET: api/employees
     GET: api/employees/?name=[name]
    */
@@ -43,22 +59,6 @@ public class EmployeeController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetEmployee(int id)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
-    POST: api/employees
-    BODY: Employee (JSON, XML)
-   */
-  [HttpPost]
-  [ProducesResponseType(
-    201,
-    Type = typeof(Employee)
-  )]
-  [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Employee entity)
   {
     throw new NotImplementedException();
     // TODO
