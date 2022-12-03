@@ -99,7 +99,12 @@ public class EmployeeController : ControllerBase
   )
   {
     Employee? managedEntity = await this.iEmployeeRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iEmployeeRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
