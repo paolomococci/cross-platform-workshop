@@ -126,8 +126,19 @@ public class InvoiceController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    // TODO: remember that table Invoice does not have its own id
+    bool deleted = false;
+    Invoice? managedEntity = await this.iInvoiceRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.iInvoiceRepository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 
 }
