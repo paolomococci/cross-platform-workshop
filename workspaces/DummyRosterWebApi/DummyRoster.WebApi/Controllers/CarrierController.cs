@@ -98,7 +98,7 @@ public class CarrierController : ControllerBase
     [FromBody] Carrier entity
   )
   {
-    throw new NotImplementedException();
+    Carrier? managedEntity = await this.iCarrierRepository.RetrieveAsync(id);
     // TODO
   }
 
