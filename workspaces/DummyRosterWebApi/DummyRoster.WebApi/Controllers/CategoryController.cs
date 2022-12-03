@@ -28,7 +28,7 @@ public class CategoryController : ControllerBase
     Type = typeof(Category)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Category entity)
+  public async Task<IActionResult> Create([FromBody] Category entity)
   {
     throw new NotImplementedException();
     // TODO
@@ -43,7 +43,7 @@ public class CategoryController : ControllerBase
     Type = typeof(Category)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> GetCategory(int id)
+  public async Task<IActionResult> GetCategory(int id)
   {
     throw new NotImplementedException();
     // TODO
@@ -58,7 +58,7 @@ public class CategoryController : ControllerBase
     200,
     Type = typeof(IEnumerable<Category>)
   )]
-  public Task<IEnumerable<Category>> GetCategories(string? name)
+  public async Task<IEnumerable<Category>> GetCategories(string? name)
   {
     throw new NotImplementedException();
     // TODO
@@ -72,7 +72,7 @@ public class CategoryController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(
+  public async Task<IActionResult> Update(
     int id,
     [FromBody] Category entity
   )
@@ -88,7 +88,7 @@ public class CategoryController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
     // TODO
