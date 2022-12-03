@@ -57,8 +57,12 @@ public class ProductController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetProduct(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    Product? managedEntity = await iProductRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
