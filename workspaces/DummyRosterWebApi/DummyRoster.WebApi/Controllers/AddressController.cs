@@ -28,7 +28,7 @@ public class AddressController : ControllerBase
     Type = typeof(Address)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Address entity)
+  public async Task<IActionResult> Create([FromBody] Address entity)
   {
     throw new NotImplementedException();
     // TODO
@@ -43,7 +43,7 @@ public class AddressController : ControllerBase
     Type = typeof(Address)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> GetAddress(int id)
+  public async Task<IActionResult> GetAddress(int id)
   {
     throw new NotImplementedException();
     // TODO
@@ -58,7 +58,7 @@ public class AddressController : ControllerBase
     200,
     Type = typeof(IEnumerable<Address>)
   )]
-  public Task<IEnumerable<Address>> GetAddresses(string? country)
+  public async Task<IEnumerable<Address>> GetAddresses(string? country)
   {
     throw new NotImplementedException();
     // TODO
@@ -72,7 +72,7 @@ public class AddressController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(
+  public async Task<IActionResult> Update(
     int id,
     [FromBody] Address entity
   )
@@ -88,7 +88,7 @@ public class AddressController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
     // TODO
