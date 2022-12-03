@@ -116,7 +116,7 @@ public class FormController : ControllerBase
   }
 
   /* 
-    DELETE: api/foroms/id
+    DELETE: api/forms/id
    */
   [HttpDelete("{id}")]
   [ProducesResponseType(204)]
@@ -124,8 +124,18 @@ public class FormController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    bool deleted = false;
+    Form? managedEntity = await this.iFormRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.iFormRepository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 
 }
