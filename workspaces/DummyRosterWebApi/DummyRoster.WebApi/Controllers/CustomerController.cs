@@ -19,6 +19,22 @@ public class CustomerController : ControllerBase
   }
 
   /* 
+    POST: api/customers
+    BODY: Customer (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Customer)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Customer entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
     GET: api/customers
     GET: api/customers/?name=[name]
    */
@@ -43,22 +59,6 @@ public class CustomerController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetCustomer(int id)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
-    POST: api/customers
-    BODY: Customer (JSON, XML)
-   */
-  [HttpPost]
-  [ProducesResponseType(
-    201,
-    Type = typeof(Customer)
-  )]
-  [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Customer entity)
   {
     throw new NotImplementedException();
     // TODO
