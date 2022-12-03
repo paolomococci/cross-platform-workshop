@@ -76,8 +76,13 @@ public class SupplierController : ControllerBase
   )]
   public async Task<IEnumerable<Supplier>> GetSuppliers(string? name)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.iSupplierRepository.RetrieveAllAsync();
+    }
+    return (await this.iSupplierRepository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
