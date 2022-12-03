@@ -57,8 +57,13 @@ public class InvoiceController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetInvoice(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    // TODO: remember that table Invoice does not have its own id
+    Invoice? managedEntity = await iInvoiceRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
