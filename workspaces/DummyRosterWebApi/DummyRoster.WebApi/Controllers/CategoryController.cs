@@ -34,7 +34,7 @@ public class CategoryController : ControllerBase
     {
       return BadRequest();
     }
-    Category? managedEntity = await iCategoryRepository.CreateAsync(entity);
+    Category? managedEntity = await this.iCategoryRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -57,7 +57,7 @@ public class CategoryController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetCategory(int id)
   {
-    Category? managedEntity = await iCategoryRepository.RetrieveAsync(id);
+    Category? managedEntity = await this.iCategoryRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
