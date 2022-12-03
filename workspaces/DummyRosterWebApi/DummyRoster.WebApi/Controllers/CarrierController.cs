@@ -28,7 +28,7 @@ public class CarrierController : ControllerBase
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Carrier entity)
+  public async Task<IActionResult> Create([FromBody] Carrier entity)
   {
     throw new NotImplementedException();
     // TODO
@@ -43,7 +43,7 @@ public class CarrierController : ControllerBase
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> GetCarrier(int id)
+  public async Task<IActionResult> GetCarrier(int id)
   {
     throw new NotImplementedException();
     // TODO
@@ -58,7 +58,7 @@ public class CarrierController : ControllerBase
     200,
     Type = typeof(IEnumerable<Carrier>)
   )]
-  public Task<IEnumerable<Carrier>> GetCarriers(string? name)
+  public async Task<IEnumerable<Carrier>> GetCarriers(string? name)
   {
     throw new NotImplementedException();
     // TODO
@@ -72,7 +72,7 @@ public class CarrierController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(
+  public async Task<IActionResult> Update(
     int id,
     [FromBody] Carrier entity
   )
@@ -88,7 +88,7 @@ public class CarrierController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
     // TODO
