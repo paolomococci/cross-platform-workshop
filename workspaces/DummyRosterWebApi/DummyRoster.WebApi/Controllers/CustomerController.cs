@@ -24,7 +24,7 @@ public class CustomerController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Customer>)
   )]
   public Task<IEnumerable<Customer>> GetCustomers(string? name)
@@ -38,7 +38,7 @@ public class CustomerController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetCustomer))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Customer)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class CustomerController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Customer)
   )]
   [ProducesResponseType(400)]
