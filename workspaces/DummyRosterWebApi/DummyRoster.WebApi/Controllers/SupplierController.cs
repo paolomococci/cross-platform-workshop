@@ -116,8 +116,18 @@ public class SupplierController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    bool deleted = false;
+    Supplier? managedEntity = await this.iSupplierRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.iSupplierRepository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 
 }
