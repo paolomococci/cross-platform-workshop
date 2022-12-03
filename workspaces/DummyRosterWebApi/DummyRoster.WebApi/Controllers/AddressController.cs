@@ -30,8 +30,20 @@ public class AddressController : ControllerBase
   [ProducesResponseType(400)]
   public async Task<IActionResult> Create([FromBody] Address entity)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Address? managedEntity = await iAddressRepository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity.");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(GetAddress),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
