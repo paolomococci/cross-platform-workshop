@@ -99,7 +99,12 @@ public class ProductController : ControllerBase
   )
   {
     Product? managedEntity = await this.iProductRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iProductRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
