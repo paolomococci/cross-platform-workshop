@@ -28,7 +28,7 @@ public class EmployeeController : ControllerBase
     Type = typeof(Employee)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Employee entity)
+  public async Task<IActionResult> Create([FromBody] Employee entity)
   {
     throw new NotImplementedException();
     // TODO
@@ -43,7 +43,7 @@ public class EmployeeController : ControllerBase
     Type = typeof(Employee)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> GetEmployee(int id)
+  public async Task<IActionResult> GetEmployee(int id)
   {
     throw new NotImplementedException();
     // TODO
@@ -58,7 +58,7 @@ public class EmployeeController : ControllerBase
     200,
     Type = typeof(IEnumerable<Employee>)
   )]
-  public Task<IEnumerable<Employee>> GetEmployees(string? name)
+  public async Task<IEnumerable<Employee>> GetEmployees(string? name)
   {
     throw new NotImplementedException();
     // TODO
@@ -72,7 +72,7 @@ public class EmployeeController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(
+  public async Task<IActionResult> Update(
     int id,
     [FromBody] Employee entity
   )
@@ -88,7 +88,7 @@ public class EmployeeController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
     // TODO
