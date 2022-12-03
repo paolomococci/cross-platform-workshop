@@ -98,7 +98,7 @@ public class CustomerController : ControllerBase
     [FromBody] Customer entity
   )
   {
-    throw new NotImplementedException();
+    Customer? managedEntity = await this.iCustomerRepository.RetrieveAsync(id);
     // TODO
   }
 
