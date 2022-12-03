@@ -34,7 +34,7 @@ public class SupplierController : ControllerBase
     {
       return BadRequest();
     }
-    Supplier? managedEntity = await iSupplierRepository.CreateAsync(entity);
+    Supplier? managedEntity = await this.iSupplierRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -57,7 +57,7 @@ public class SupplierController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetSupplier(int id)
   {
-    Supplier? managedEntity = await iSupplierRepository.RetrieveAsync(id);
+    Supplier? managedEntity = await this.iSupplierRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
