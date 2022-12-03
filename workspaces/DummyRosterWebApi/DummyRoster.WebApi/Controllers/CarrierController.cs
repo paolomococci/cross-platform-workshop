@@ -34,7 +34,7 @@ public class CarrierController : ControllerBase
     {
       return BadRequest();
     }
-    Carrier? managedEntity = await iCarrierRepository.CreateAsync(entity);
+    Carrier? managedEntity = await this.iCarrierRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -57,7 +57,7 @@ public class CarrierController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetCarrier(int id)
   {
-    Carrier? managedEntity = await iCarrierRepository.RetrieveAsync(id);
+    Carrier? managedEntity = await this.iCarrierRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
