@@ -28,7 +28,7 @@ public class InvoiceController : ControllerBase
     Type = typeof(Invoice)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Invoice entity)
+  public async Task<IActionResult> Create([FromBody] Invoice entity)
   {
     throw new NotImplementedException();
     // TODO
@@ -43,7 +43,7 @@ public class InvoiceController : ControllerBase
     Type = typeof(Invoice)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> GetInvoice(int id)
+  public async Task<IActionResult> GetInvoice(int id)
   {
     throw new NotImplementedException();
     // TODO
@@ -58,7 +58,7 @@ public class InvoiceController : ControllerBase
     200,
     Type = typeof(IEnumerable<Invoice>)
   )]
-  public Task<IEnumerable<Invoice>> GetInvoices(string? formId)
+  public async Task<IEnumerable<Invoice>> GetInvoices(string? formId)
   {
     throw new NotImplementedException();
     // TODO
@@ -72,7 +72,7 @@ public class InvoiceController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(
+  public async Task<IActionResult> Update(
     int id,
     [FromBody] Invoice entity
   )
@@ -88,7 +88,7 @@ public class InvoiceController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
     // TODO
