@@ -24,7 +24,7 @@ public class EmployeeController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Employee>)
   )]
   public Task<IEnumerable<Employee>> GetEmployees(string? name)
@@ -38,7 +38,7 @@ public class EmployeeController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetEmployee))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Employee)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class EmployeeController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Employee)
   )]
   [ProducesResponseType(400)]
