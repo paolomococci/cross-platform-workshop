@@ -76,8 +76,13 @@ public class AddressController : ControllerBase
   )]
   public async Task<IEnumerable<Address>> GetAddresses(string? country)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (string.IsNullOrWhiteSpace(country))
+    {
+      return await this.iAddressRepository.RetrieveAllAsync();
+    }
+    return (await this.iAddressRepository.RetrieveAllAsync()).Where(
+      entity => entity.Country == country
+    );
   }
 
   /* 
