@@ -28,10 +28,13 @@ public class CustomerController : ControllerBase
     Type = typeof(Customer)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Customer entity)
+  public async Task<IActionResult?> Create([FromBody] Customer entity)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    return null;
   }
 
   /* 
@@ -43,7 +46,7 @@ public class CustomerController : ControllerBase
     Type = typeof(Customer)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> GetCustomer(int id)
+  public async Task<IActionResult> GetCustomer(int id)
   {
     throw new NotImplementedException();
     // TODO
@@ -58,7 +61,7 @@ public class CustomerController : ControllerBase
     200,
     Type = typeof(IEnumerable<Customer>)
   )]
-  public Task<IEnumerable<Customer>> GetCustomers(string? name)
+  public async Task<IEnumerable<Customer>> GetCustomers(string? name)
   {
     throw new NotImplementedException();
     // TODO
@@ -72,7 +75,7 @@ public class CustomerController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(
+  public async Task<IActionResult> Update(
     int id,
     [FromBody] Customer entity
   )
@@ -88,7 +91,7 @@ public class CustomerController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
     // TODO
