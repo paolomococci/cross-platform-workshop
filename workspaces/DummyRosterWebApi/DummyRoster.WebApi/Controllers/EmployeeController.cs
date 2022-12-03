@@ -98,7 +98,7 @@ public class EmployeeController : ControllerBase
     [FromBody] Employee entity
   )
   {
-    throw new NotImplementedException();
+    Employee? managedEntity = await this.iEmployeeRepository.RetrieveAsync(id);
     // TODO
   }
 
