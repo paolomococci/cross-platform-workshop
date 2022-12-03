@@ -28,7 +28,7 @@ public class FormController : ControllerBase
     Type = typeof(Form)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Form entity)
+  public async Task<IActionResult> Create([FromBody] Form entity)
   {
     throw new NotImplementedException();
     // TODO
@@ -43,7 +43,7 @@ public class FormController : ControllerBase
     Type = typeof(Form)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> GetForm(int id)
+  public async Task<IActionResult> GetForm(int id)
   {
     throw new NotImplementedException();
     // TODO
@@ -58,7 +58,7 @@ public class FormController : ControllerBase
     200,
     Type = typeof(IEnumerable<Form>)
   )]
-  public Task<IEnumerable<Form>> GetForms(string? customerId)
+  public async Task<IEnumerable<Form>> GetForms(string? customerId)
   {
     throw new NotImplementedException();
     // TODO
@@ -72,7 +72,7 @@ public class FormController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(
+  public async Task<IActionResult> Update(
     int id,
     [FromBody] Form entity
   )
@@ -88,7 +88,7 @@ public class FormController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
     // TODO
