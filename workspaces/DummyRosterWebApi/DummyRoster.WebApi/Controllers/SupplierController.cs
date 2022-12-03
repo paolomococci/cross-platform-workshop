@@ -57,8 +57,12 @@ public class SupplierController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetSupplier(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    Supplier? managedEntity = await iSupplierRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
