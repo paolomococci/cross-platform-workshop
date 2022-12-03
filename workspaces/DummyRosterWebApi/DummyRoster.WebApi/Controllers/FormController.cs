@@ -30,8 +30,20 @@ public class FormController : ControllerBase
   [ProducesResponseType(400)]
   public async Task<IActionResult> Create([FromBody] Form entity)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Form? managedEntity = await iFormRepository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity.");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(GetForm),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
