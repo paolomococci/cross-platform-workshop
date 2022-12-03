@@ -76,8 +76,21 @@ public class FormController : ControllerBase
   )]
   public async Task<IEnumerable<Form>> GetForms(string? customerId)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (!string.IsNullOrWhiteSpace(customerId))
+    {
+      try
+      {
+        int temp = Int32.Parse(customerId);
+        return (await this.iFormRepository.RetrieveAllAsync()).Where(
+          entity => entity.CustomerId == temp
+        );
+      }
+      catch (FormatException fe)
+      {
+        Console.WriteLine(fe.Message);
+      }
+    }
+    return await this.iFormRepository.RetrieveAllAsync();
   }
 
   /* 
