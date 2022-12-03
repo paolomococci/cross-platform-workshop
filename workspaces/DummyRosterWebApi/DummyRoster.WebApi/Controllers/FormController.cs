@@ -107,7 +107,12 @@ public class FormController : ControllerBase
   )
   {
     Form? managedEntity = await this.iFormRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iFormRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
