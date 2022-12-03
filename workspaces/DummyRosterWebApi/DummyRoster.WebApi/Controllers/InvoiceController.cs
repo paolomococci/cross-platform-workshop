@@ -109,7 +109,12 @@ public class InvoiceController : ControllerBase
   {
     // TODO: remember that table Invoice does not have its own id
     Invoice? managedEntity = await this.iInvoiceRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iInvoiceRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
