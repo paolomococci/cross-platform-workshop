@@ -77,8 +77,21 @@ public class InvoiceController : ControllerBase
   )]
   public async Task<IEnumerable<Invoice>> GetInvoices(string? formId)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (!string.IsNullOrWhiteSpace(formId))
+    {
+      try
+      {
+        int temp = Int32.Parse(formId);
+        return (await this.iInvoiceRepository.RetrieveAllAsync()).Where(
+          entity => entity.FormId == temp
+        );
+      }
+      catch (FormatException fe)
+      {
+        Console.WriteLine(fe.Message);
+      }
+    }
+    return await this.iInvoiceRepository.RetrieveAllAsync();
   }
 
   /* 
