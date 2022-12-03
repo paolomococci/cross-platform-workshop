@@ -35,21 +35,6 @@ public class ProductController : ControllerBase
   }
 
   /* 
-    GET: api/products
-    GET: api/products/?name=[name]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Product>)
-  )]
-  public Task<IEnumerable<Product>> GetProducts(string? name)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/products/[id]
    */
   [HttpGet("{id}", Name = nameof(GetProduct))]
@@ -59,6 +44,21 @@ public class ProductController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetProduct(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/products
+    GET: api/products/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Product>)
+  )]
+  public Task<IEnumerable<Product>> GetProducts(string? name)
   {
     throw new NotImplementedException();
     // TODO
