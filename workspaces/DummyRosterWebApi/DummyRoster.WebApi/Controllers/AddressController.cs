@@ -116,8 +116,18 @@ public class AddressController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    bool deleted = false;
+    Address? managedEntity = await this.iAddressRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.iAddressRepository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 
 }
