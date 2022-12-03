@@ -30,8 +30,20 @@ public class ProductController : ControllerBase
   [ProducesResponseType(400)]
   public async Task<IActionResult> Create([FromBody] Product entity)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Product? managedEntity = await iProductRepository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity.");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(GetProduct),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
