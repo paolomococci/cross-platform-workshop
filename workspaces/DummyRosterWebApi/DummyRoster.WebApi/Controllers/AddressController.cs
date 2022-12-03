@@ -99,7 +99,12 @@ public class AddressController : ControllerBase
   )
   {
     Address? managedEntity = await this.iAddressRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iAddressRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
