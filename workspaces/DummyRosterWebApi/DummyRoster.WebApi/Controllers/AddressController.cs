@@ -98,7 +98,7 @@ public class AddressController : ControllerBase
     [FromBody] Address entity
   )
   {
-    throw new NotImplementedException();
+    Address? managedEntity = await this.iAddressRepository.RetrieveAsync(id);
     // TODO
   }
 
