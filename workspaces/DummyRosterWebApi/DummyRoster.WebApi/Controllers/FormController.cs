@@ -24,7 +24,7 @@ public class FormController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Form>)
   )]
   public Task<IEnumerable<Form>> GetForms(string? customerId)
@@ -38,7 +38,7 @@ public class FormController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetForm))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Form)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class FormController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Form)
   )]
   [ProducesResponseType(400)]
