@@ -35,21 +35,6 @@ public class AddressController : ControllerBase
   }
 
   /* 
-    GET: api/addresses
-    GET: api/addresses/?country=[country]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Address>)
-  )]
-  public Task<IEnumerable<Address>> GetAddresses(string? country)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/addresses/[id]
    */
   [HttpGet("{id}", Name = nameof(GetAddress))]
@@ -59,6 +44,21 @@ public class AddressController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetAddress(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/addresses
+    GET: api/addresses/?country=[country]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Address>)
+  )]
+  public Task<IEnumerable<Address>> GetAddresses(string? country)
   {
     throw new NotImplementedException();
     // TODO
