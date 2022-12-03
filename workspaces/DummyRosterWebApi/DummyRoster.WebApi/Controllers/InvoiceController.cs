@@ -34,7 +34,7 @@ public class InvoiceController : ControllerBase
     {
       return BadRequest();
     }
-    Invoice? managedEntity = await iInvoiceRepository.CreateAsync(entity);
+    Invoice? managedEntity = await this.iInvoiceRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -58,7 +58,7 @@ public class InvoiceController : ControllerBase
   public async Task<IActionResult> GetInvoice(int id)
   {
     // TODO: remember that table Invoice does not have its own id
-    Invoice? managedEntity = await iInvoiceRepository.RetrieveAsync(id);
+    Invoice? managedEntity = await this.iInvoiceRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
