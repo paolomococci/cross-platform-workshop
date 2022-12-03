@@ -34,7 +34,7 @@ public class AddressController : ControllerBase
     {
       return BadRequest();
     }
-    Address? managedEntity = await iAddressRepository.CreateAsync(entity);
+    Address? managedEntity = await this.iAddressRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -57,7 +57,7 @@ public class AddressController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetAddress(int id)
   {
-    Address? managedEntity = await iAddressRepository.RetrieveAsync(id);
+    Address? managedEntity = await this.iAddressRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
