@@ -99,7 +99,12 @@ public class CategoryController : ControllerBase
   )
   {
     Category? managedEntity = await this.iCategoryRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iCategoryRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
