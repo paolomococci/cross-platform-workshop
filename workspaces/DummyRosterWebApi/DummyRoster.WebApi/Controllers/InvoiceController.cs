@@ -30,8 +30,20 @@ public class InvoiceController : ControllerBase
   [ProducesResponseType(400)]
   public async Task<IActionResult> Create([FromBody] Invoice entity)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Invoice? managedEntity = await iInvoiceRepository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity.");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(GetInvoices),
+      routeValues: new { id = managedEntity.FormId },
+      null
+    );
   }
 
   /* 
