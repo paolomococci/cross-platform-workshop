@@ -76,8 +76,13 @@ public class EmployeeController : ControllerBase
   )]
   public async Task<IEnumerable<Employee>> GetEmployees(string? name)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.iEmployeeRepository.RetrieveAllAsync();
+    }
+    return (await this.iEmployeeRepository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
