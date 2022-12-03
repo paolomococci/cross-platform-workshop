@@ -98,7 +98,7 @@ public class ProductController : ControllerBase
     [FromBody] Product entity
   )
   {
-    throw new NotImplementedException();
+    Product? managedEntity = await this.iProductRepository.RetrieveAsync(id);
     // TODO
   }
 
