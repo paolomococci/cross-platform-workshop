@@ -57,8 +57,12 @@ public class CategoryController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetCategory(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    Category? managedEntity = await iCategoryRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
