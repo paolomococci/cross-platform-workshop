@@ -107,7 +107,8 @@ public class InvoiceController : ControllerBase
     [FromBody] Invoice entity
   )
   {
-    throw new NotImplementedException();
+    // TODO: remember that table Invoice does not have its own id
+    Invoice? managedEntity = await this.iInvoiceRepository.RetrieveAsync(id);
     // TODO
   }
 
