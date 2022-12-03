@@ -98,7 +98,7 @@ public class CategoryController : ControllerBase
     [FromBody] Category entity
   )
   {
-    throw new NotImplementedException();
+    Category? managedEntity = await this.iCategoryRepository.RetrieveAsync(id);
     // TODO
   }
 
