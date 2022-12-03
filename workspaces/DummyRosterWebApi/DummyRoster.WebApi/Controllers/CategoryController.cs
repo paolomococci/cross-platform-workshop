@@ -35,21 +35,6 @@ public class CategoryController : ControllerBase
   }
 
   /* 
-    GET: api/categories
-    GET: api/categories/?name=[name]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Category>)
-  )]
-  public Task<IEnumerable<Category>> GetCategories(string? name)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/categories/[id]
    */
   [HttpGet("{id}", Name = nameof(GetCategory))]
@@ -59,6 +44,21 @@ public class CategoryController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetCategory(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/categories
+    GET: api/categories/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Category>)
+  )]
+  public Task<IEnumerable<Category>> GetCategories(string? name)
   {
     throw new NotImplementedException();
     // TODO
