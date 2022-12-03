@@ -30,8 +30,20 @@ public class CarrierController : ControllerBase
   [ProducesResponseType(400)]
   public async Task<IActionResult> Create([FromBody] Carrier entity)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Carrier? managedEntity = await iCarrierRepository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity.");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(GetCarrier),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
