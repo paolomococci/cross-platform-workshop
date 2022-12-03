@@ -35,21 +35,6 @@ public class SupplierController : ControllerBase
   }
 
   /* 
-    GET: api/suppliers
-    GET: api/suppliers/?name=[name]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Supplier>)
-  )]
-  public Task<IEnumerable<Supplier>> GetSuppliers(string? name)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/suppliers/[id]
    */
   [HttpGet("{id}", Name = nameof(GetSupplier))]
@@ -59,6 +44,21 @@ public class SupplierController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetSupplier(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/suppliers
+    GET: api/suppliers/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Supplier>)
+  )]
+  public Task<IEnumerable<Supplier>> GetSuppliers(string? name)
   {
     throw new NotImplementedException();
     // TODO
