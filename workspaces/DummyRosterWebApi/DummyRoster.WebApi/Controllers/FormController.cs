@@ -19,6 +19,22 @@ public class FormController : ControllerBase
   }
 
   /* 
+    POST: api/forms
+    BODY: Form (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Form)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Form entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
     GET: api/forms
     GET: api/forms/?customerId=[customerId]
    */
@@ -43,22 +59,6 @@ public class FormController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetForm(int id)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
-    POST: api/forms
-    BODY: Form (JSON, XML)
-   */
-  [HttpPost]
-  [ProducesResponseType(
-    201,
-    Type = typeof(Form)
-  )]
-  [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Form entity)
   {
     throw new NotImplementedException();
     // TODO
