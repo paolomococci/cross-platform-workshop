@@ -35,21 +35,6 @@ public class CarrierController : ControllerBase
   }
 
   /* 
-    GET: api/carriers
-    GET: api/carriers/?name=[name]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Carrier>)
-  )]
-  public Task<IEnumerable<Carrier>> GetCarriers(string? name)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/carriers/[id]
    */
   [HttpGet("{id}", Name = nameof(GetCarrier))]
@@ -59,6 +44,21 @@ public class CarrierController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetCarrier(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/carriers
+    GET: api/carriers/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Carrier>)
+  )]
+  public Task<IEnumerable<Carrier>> GetCarriers(string? name)
   {
     throw new NotImplementedException();
     // TODO
