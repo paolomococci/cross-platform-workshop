@@ -28,7 +28,7 @@ public class ProductController : ControllerBase
     Type = typeof(Product)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Product entity)
+  public async Task<IActionResult> Create([FromBody] Product entity)
   {
     throw new NotImplementedException();
     // TODO
@@ -43,7 +43,7 @@ public class ProductController : ControllerBase
     Type = typeof(Product)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> GetProduct(int id)
+  public async Task<IActionResult> GetProduct(int id)
   {
     throw new NotImplementedException();
     // TODO
@@ -58,7 +58,7 @@ public class ProductController : ControllerBase
     200,
     Type = typeof(IEnumerable<Product>)
   )]
-  public Task<IEnumerable<Product>> GetProducts(string? name)
+  public async Task<IEnumerable<Product>> GetProducts(string? name)
   {
     throw new NotImplementedException();
     // TODO
@@ -72,7 +72,7 @@ public class ProductController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(
+  public async Task<IActionResult> Update(
     int id,
     [FromBody] Product entity
   )
@@ -88,7 +88,7 @@ public class ProductController : ControllerBase
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
     // TODO
