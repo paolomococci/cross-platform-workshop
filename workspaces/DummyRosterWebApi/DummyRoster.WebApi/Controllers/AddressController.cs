@@ -19,6 +19,22 @@ public class AddressController : ControllerBase
   }
 
   /* 
+    POST: api/addresses
+    BODY: Address (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Address)
+  )]
+  [ProducesResponseType(400)]
+  public Task<IActionResult> Create([FromBody] Address entity)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
     GET: api/addresses
     GET: api/addresses/?country=[country]
    */
@@ -43,22 +59,6 @@ public class AddressController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetAddress(int id)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
-    POST: api/addresses
-    BODY: Address (JSON, XML)
-   */
-  [HttpPost]
-  [ProducesResponseType(
-    201,
-    Type = typeof(Address)
-  )]
-  [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Address entity)
   {
     throw new NotImplementedException();
     // TODO
