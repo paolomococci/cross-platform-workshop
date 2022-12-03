@@ -24,7 +24,7 @@ public class AddressController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Address>)
   )]
   public Task<IEnumerable<Address>> GetAddresses(string? country)
@@ -38,7 +38,7 @@ public class AddressController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetAddress))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Address)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class AddressController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Address)
   )]
   [ProducesResponseType(400)]
