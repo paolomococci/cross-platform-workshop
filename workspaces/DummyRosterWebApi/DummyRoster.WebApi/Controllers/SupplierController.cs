@@ -24,7 +24,7 @@ public class SupplierController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Supplier>)
   )]
   public Task<IEnumerable<Supplier>> GetSuppliers(string? name)
@@ -38,7 +38,7 @@ public class SupplierController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetSupplier))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Supplier)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class SupplierController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Supplier)
   )]
   [ProducesResponseType(400)]
