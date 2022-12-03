@@ -24,7 +24,7 @@ public class CategoryController : ControllerBase
    */
   [HttpGet]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(IEnumerable<Category>)
   )]
   public Task<IEnumerable<Category>> GetCategories(string? name)
@@ -38,7 +38,7 @@ public class CategoryController : ControllerBase
    */
   [HttpGet("{id}", Name = nameof(GetCategory))]
   [ProducesResponseType(
-    200, 
+    200,
     Type = typeof(Category)
   )]
   [ProducesResponseType(404)]
@@ -54,7 +54,7 @@ public class CategoryController : ControllerBase
    */
   [HttpPost]
   [ProducesResponseType(
-    201, 
+    201,
     Type = typeof(Category)
   )]
   [ProducesResponseType(400)]
