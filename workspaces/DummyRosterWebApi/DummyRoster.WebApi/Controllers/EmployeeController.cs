@@ -116,8 +116,18 @@ public class EmployeeController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
-    // TODO
+    bool deleted = false;
+    Employee? managedEntity = await this.iEmployeeRepository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.iEmployeeRepository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 
 }
