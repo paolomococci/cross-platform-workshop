@@ -35,21 +35,6 @@ public class FormController : ControllerBase
   }
 
   /* 
-    GET: api/forms
-    GET: api/forms/?customerId=[customerId]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Form>)
-  )]
-  public Task<IEnumerable<Form>> GetForms(string? customerId)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/forms/[id]
    */
   [HttpGet("{id}", Name = nameof(GetForm))]
@@ -59,6 +44,21 @@ public class FormController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetForm(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/forms
+    GET: api/forms/?customerId=[customerId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Form>)
+  )]
+  public Task<IEnumerable<Form>> GetForms(string? customerId)
   {
     throw new NotImplementedException();
     // TODO
