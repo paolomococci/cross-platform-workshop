@@ -35,21 +35,6 @@ public class EmployeeController : ControllerBase
   }
 
   /* 
-    GET: api/employees
-    GET: api/employees/?name=[name]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Employee>)
-  )]
-  public Task<IEnumerable<Employee>> GetEmployees(string? name)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/employees/[id]
    */
   [HttpGet("{id}", Name = nameof(GetEmployee))]
@@ -59,6 +44,21 @@ public class EmployeeController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetEmployee(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/employees
+    GET: api/employees/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Employee>)
+  )]
+  public Task<IEnumerable<Employee>> GetEmployees(string? name)
   {
     throw new NotImplementedException();
     // TODO
