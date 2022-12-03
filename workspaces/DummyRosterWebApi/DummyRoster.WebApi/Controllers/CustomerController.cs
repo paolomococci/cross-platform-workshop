@@ -34,7 +34,7 @@ public class CustomerController : ControllerBase
     {
       return BadRequest();
     }
-    Customer? managedEntity = await iCustomerRepository.CreateAsync(entity);
+    Customer? managedEntity = await this.iCustomerRepository.CreateAsync(entity);
     if (managedEntity == null)
     {
       return BadRequest("Unable to manage entity.");
@@ -57,7 +57,7 @@ public class CustomerController : ControllerBase
   [ProducesResponseType(404)]
   public async Task<IActionResult> GetCustomer(int id)
   {
-    Customer? managedEntity = await iCustomerRepository.RetrieveAsync(id);
+    Customer? managedEntity = await this.iCustomerRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
@@ -76,8 +76,13 @@ public class CustomerController : ControllerBase
   )]
   public async Task<IEnumerable<Customer>> GetCustomers(string? name)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.iCustomerRepository.RetrieveAllAsync();
+    }
+    return (await this.iCustomerRepository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
