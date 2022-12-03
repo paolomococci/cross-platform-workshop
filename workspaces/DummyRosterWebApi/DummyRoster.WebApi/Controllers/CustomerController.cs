@@ -35,21 +35,6 @@ public class CustomerController : ControllerBase
   }
 
   /* 
-    GET: api/customers
-    GET: api/customers/?name=[name]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Customer>)
-  )]
-  public Task<IEnumerable<Customer>> GetCustomers(string? name)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/customers/[id]
    */
   [HttpGet("{id}", Name = nameof(GetCustomer))]
@@ -59,6 +44,21 @@ public class CustomerController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetCustomer(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/customers
+    GET: api/customers/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Customer>)
+  )]
+  public Task<IEnumerable<Customer>> GetCustomers(string? name)
   {
     throw new NotImplementedException();
     // TODO
