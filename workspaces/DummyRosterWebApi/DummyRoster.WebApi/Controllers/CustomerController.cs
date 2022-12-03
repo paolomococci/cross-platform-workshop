@@ -99,7 +99,12 @@ public class CustomerController : ControllerBase
   )
   {
     Customer? managedEntity = await this.iCustomerRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iCustomerRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
