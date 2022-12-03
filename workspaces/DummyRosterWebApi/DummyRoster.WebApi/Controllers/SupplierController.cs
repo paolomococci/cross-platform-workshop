@@ -99,7 +99,12 @@ public class SupplierController : ControllerBase
   )
   {
     Supplier? managedEntity = await this.iSupplierRepository.RetrieveAsync(id);
-    // TODO
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.iSupplierRepository.UpdateAsync(id, managedEntity);
+    return new NoContentResult();
   }
 
   /* 
