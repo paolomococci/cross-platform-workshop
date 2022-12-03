@@ -106,7 +106,7 @@ public class FormController : ControllerBase
     [FromBody] Form entity
   )
   {
-    throw new NotImplementedException();
+    Form? managedEntity = await this.iFormRepository.RetrieveAsync(id);
     // TODO
   }
 
