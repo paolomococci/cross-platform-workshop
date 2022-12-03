@@ -35,21 +35,6 @@ public class InvoiceController : ControllerBase
   }
 
   /* 
-    GET: api/invoices
-    GET: api/invoices/?formId=[formId]
-   */
-  [HttpGet]
-  [ProducesResponseType(
-    200,
-    Type = typeof(IEnumerable<Invoice>)
-  )]
-  public Task<IEnumerable<Invoice>> GetInvoices(string? formId)
-  {
-    throw new NotImplementedException();
-    // TODO
-  }
-
-  /* 
     GET: api/invoices/[id]
    */
   [HttpGet("{id}", Name = nameof(GetInvoice))]
@@ -59,6 +44,21 @@ public class InvoiceController : ControllerBase
   )]
   [ProducesResponseType(404)]
   public Task<IActionResult> GetInvoice(int id)
+  {
+    throw new NotImplementedException();
+    // TODO
+  }
+
+  /* 
+    GET: api/invoices
+    GET: api/invoices/?formId=[formId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Invoice>)
+  )]
+  public Task<IEnumerable<Invoice>> GetInvoices(string? formId)
   {
     throw new NotImplementedException();
     // TODO
