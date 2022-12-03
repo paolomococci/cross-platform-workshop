@@ -28,13 +28,22 @@ public class CustomerController : ControllerBase
     Type = typeof(Customer)
   )]
   [ProducesResponseType(400)]
-  public async Task<IActionResult?> Create([FromBody] Customer entity)
+  public async Task<IActionResult> Create([FromBody] Customer entity)
   {
     if (entity == null)
     {
       return BadRequest();
     }
-    return null;
+    Customer? managedEntity = await iCustomerRepository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity.");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(GetCustomer),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
