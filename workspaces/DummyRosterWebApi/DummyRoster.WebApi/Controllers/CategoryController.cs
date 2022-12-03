@@ -76,8 +76,13 @@ public class CategoryController : ControllerBase
   )]
   public async Task<IEnumerable<Category>> GetCategories(string? name)
   {
-    throw new NotImplementedException();
-    // TODO
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.iCategoryRepository.RetrieveAllAsync();
+    }
+    return (await this.iCategoryRepository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
