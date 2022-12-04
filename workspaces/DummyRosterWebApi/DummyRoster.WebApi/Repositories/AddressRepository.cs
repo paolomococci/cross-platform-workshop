@@ -12,7 +12,8 @@ public class AddressRepository : IAddressRepository
 
   public AddressRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class AddressRepository : IAddressRepository
       );
     }
   }
-  
+
   public async Task<Address?> CreateAsync(Address address)
   {
     EntityEntry<Address> entry = await this.dummyRosterContext.Addresses.AddAsync(address);
