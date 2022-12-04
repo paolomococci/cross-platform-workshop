@@ -103,7 +103,7 @@ public class EmployeeController : ControllerBase
     {
       return NotFound();
     }
-    await this.iEmployeeRepository.UpdateAsync(id, managedEntity);
+    await this.iEmployeeRepository.UpdateAsync(id, entity);
     return new NoContentResult();
   }
 
