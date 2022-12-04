@@ -1,0 +1,4 @@
+# Weather forecast tests
+
+GET https://localhost:5001/forecast HTTP/1.1
+
