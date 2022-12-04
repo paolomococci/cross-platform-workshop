@@ -103,7 +103,7 @@ public class CustomerController : ControllerBase
     {
       return NotFound();
     }
-    await this.iCustomerRepository.UpdateAsync(id, managedEntity);
+    await this.iCustomerRepository.UpdateAsync(id, entity);
     return new NoContentResult();
   }
 
