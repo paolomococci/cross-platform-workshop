@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS "Invoice";
 
 -- Employee table
 CREATE TABLE "Employee" (
-  "Id" INTEGER PRIMARY KEY,
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "BirthDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -27,7 +27,7 @@ CREATE INDEX "IDX_EmployeeName" ON "Employee"("Name");
 
 -- Customer table
 CREATE TABLE "Customer" (
-  "Id" INTEGER PRIMARY KEY,
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -41,7 +41,7 @@ CREATE INDEX "IDX_CustomerName" ON "Customer"("Name");
 
 -- Supplier table
 CREATE TABLE "Supplier" (
-  "Id" INTEGER PRIMARY KEY,
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -55,7 +55,7 @@ CREATE INDEX "IDX_SupplierName" ON "Supplier"("Name");
 
 -- Carrier table
 CREATE TABLE "Carrier" (
-  "Id" INTEGER PRIMARY KEY,
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "FoundationDate" DATETIME NULL,
   "Description" TEXT NULL,
@@ -69,7 +69,7 @@ CREATE INDEX "IDX_CarrierName" ON "Carrier"("Name");
 
 -- Address table
 CREATE TABLE "Address" (
-  "Id" INTEGER PRIMARY KEY,
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "StreetOrSquare" varchar(32) NULL,
   "Civic" varchar(16) NULL,
   "City" varchar(16) NULL,
@@ -87,7 +87,7 @@ CREATE INDEX "IDX_AddressCountry" ON "Address"("Country");
 
 -- Category table
 CREATE TABLE "Category" (
-  "Id" INTEGER PRIMARY KEY,
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL
@@ -96,7 +96,7 @@ CREATE INDEX "IDX_CategoryName" ON "Category"("Name");
 
 -- Product table
 CREATE TABLE "Product" (
-  "Id" INTEGER PRIMARY KEY,
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -123,7 +123,7 @@ CREATE INDEX "IDX_ProductSuppliedBy" ON "Product"("SupplierId");
 
 -- Form table
 CREATE TABLE "Form" (
-  "Id" INTEGER PRIMARY KEY,
+  "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Description" TEXT NULL,
   "CustomerId" INT NULL,
   "CarrierId" INT NULL,
