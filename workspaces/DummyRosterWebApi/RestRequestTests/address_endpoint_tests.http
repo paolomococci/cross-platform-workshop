@@ -1,5 +1,5 @@
 # address endpoint tests
 
-### read all request:
+### read all:
 
 GET https://localhost:5001/api/addresses HTTP/1.1
