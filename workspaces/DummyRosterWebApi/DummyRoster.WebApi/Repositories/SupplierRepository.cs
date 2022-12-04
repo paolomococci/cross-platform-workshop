@@ -12,7 +12,8 @@ public class SupplierRepository : ISupplierRepository
 
   public SupplierRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class SupplierRepository : ISupplierRepository
       );
     }
   }
-  
+
   public async Task<Supplier?> CreateAsync(Supplier supplier)
   {
     EntityEntry<Supplier> entry = await this.dummyRosterContext.Suppliers.AddAsync(supplier);
