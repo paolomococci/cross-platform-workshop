@@ -12,7 +12,8 @@ public class CategoryRepository : ICategoryRepository
 
   public CategoryRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class CategoryRepository : ICategoryRepository
       );
     }
   }
-  
+
   public async Task<Category?> CreateAsync(Category category)
   {
     EntityEntry<Category> entry = await this.dummyRosterContext.Categories.AddAsync(category);
