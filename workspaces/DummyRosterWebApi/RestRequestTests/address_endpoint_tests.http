@@ -45,7 +45,6 @@ Content-Type: application/json
 ### update an identified data entry
 
 PUT https://localhost:5001/api/addresses/3 HTTP/1.1
-Accept: application/json
 Content-Type: application/json
 
 {
