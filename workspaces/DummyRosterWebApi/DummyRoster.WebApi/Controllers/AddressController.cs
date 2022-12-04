@@ -98,12 +98,16 @@ public class AddressController : ControllerBase
     [FromBody] Address entity
   )
   {
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
     Address? managedEntity = await this.iAddressRepository.RetrieveAsync(id);
     if (managedEntity == null)
     {
       return NotFound();
     }
-    await this.iAddressRepository.UpdateAsync(id, managedEntity);
+    await this.iAddressRepository.UpdateAsync(id, entity);
     return new NoContentResult();
   }
 
