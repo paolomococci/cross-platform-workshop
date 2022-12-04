@@ -12,7 +12,8 @@ public class CustomerRepository : ICustomerRepository
 
   public CustomerRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class CustomerRepository : ICustomerRepository
       );
     }
   }
-  
+
   public async Task<Customer?> CreateAsync(Customer customer)
   {
     EntityEntry<Customer> entry = await this.dummyRosterContext.Customers.AddAsync(customer);
