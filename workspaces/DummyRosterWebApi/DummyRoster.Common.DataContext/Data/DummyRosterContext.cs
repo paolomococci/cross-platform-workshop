@@ -41,7 +41,7 @@ public partial class DummyRosterContext : DbContext
   {
     modelBuilder.Entity<Address>(entity =>
     {
-      entity.Property(e => e.Id).ValueGeneratedNever();
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
     });
 
     modelBuilder.Entity<Carrier>(entity =>
