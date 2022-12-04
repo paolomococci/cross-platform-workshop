@@ -111,7 +111,7 @@ public class FormController : ControllerBase
     {
       return NotFound();
     }
-    await this.iFormRepository.UpdateAsync(id, managedEntity);
+    await this.iFormRepository.UpdateAsync(id, entity);
     return new NoContentResult();
   }
 
