@@ -1,10 +1,14 @@
 # address endpoint tests
 
-### read all:
+### read all
 
 GET https://localhost:5001/api/addresses HTTP/1.1
 
-### add a new fictitious address
+### read an identified data entry
+
+GET https://localhost:5001/api/addresses/3 HTTP/1.1
+
+### add a new fictitious data entry
 
 POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Type: application/json
@@ -21,7 +25,7 @@ Content-Type: application/json
   "Fax": "039035801010102"
 }
 
-### add a new fictitious address
+### add a new fictitious data entry
 
 POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Type: application/json
@@ -37,3 +41,30 @@ Content-Type: application/json
   "Phone": "039035801010103",
   "Fax": "039035801010104"
 }
+
+### update an identified data entry
+
+PUT https://localhost:5001/api/addresses/3 HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 3,
+  "streetOrSquare": "SomeOne avenue",
+  "civic": "20/D",
+  "city": "SomeOneCity",
+  "district": "SomeOneDistrict",
+  "postcode": "010101",
+  "country": "SomeOneCountry",
+  "email": "some.one@example.local",
+  "phone": "039035801010101",
+  "fax": "039035801010102",
+  "carriers": [],
+  "customers": [],
+  "employees": [],
+  "suppliers": []
+}
+
+### delete an identified data entry
+
+DELETE https://localhost:5001/api/addresses/2 HTTP/1.1
