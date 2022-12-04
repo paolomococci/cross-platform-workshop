@@ -115,4 +115,5 @@ touch get_supplier_endpoint_test.http
 touch get_carrier_endpoint_test.http
 touch get_address_endpoint_test.http
 touch get_category_endpoint_test.http
+touch get_product_endpoint_test.http
 ```
