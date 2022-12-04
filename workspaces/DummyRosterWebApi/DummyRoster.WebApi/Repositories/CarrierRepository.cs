@@ -12,7 +12,8 @@ public class CarrierRepository : ICarrierRepository
 
   public CarrierRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class CarrierRepository : ICarrierRepository
       );
     }
   }
-  
+
   public async Task<Carrier?> CreateAsync(Carrier carrier)
   {
     EntityEntry<Carrier> entry = await this.dummyRosterContext.Carriers.AddAsync(carrier);
