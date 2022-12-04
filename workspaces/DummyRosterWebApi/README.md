@@ -111,4 +111,5 @@ mkdir RestRequestTests
 cd RestRequestTests
 touch get_employee_endpoint_test.http
 touch get_customer_endpoint_test.http
+touch get_supplier_endpoint_test.http
 ```
