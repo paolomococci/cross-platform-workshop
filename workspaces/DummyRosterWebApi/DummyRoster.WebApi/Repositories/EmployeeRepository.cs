@@ -12,7 +12,8 @@ public class EmployeeRepository : IEmployeeRepository
 
   public EmployeeRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class EmployeeRepository : IEmployeeRepository
       );
     }
   }
-  
+
   public async Task<Employee?> CreateAsync(Employee employee)
   {
     EntityEntry<Employee> entry = await this.dummyRosterContext.Employees.AddAsync(employee);
