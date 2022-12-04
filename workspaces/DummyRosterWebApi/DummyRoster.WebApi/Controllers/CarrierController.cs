@@ -103,7 +103,7 @@ public class CarrierController : ControllerBase
     {
       return NotFound();
     }
-    await this.iCarrierRepository.UpdateAsync(id, managedEntity);
+    await this.iCarrierRepository.UpdateAsync(id, entity);
     return new NoContentResult();
   }
 
