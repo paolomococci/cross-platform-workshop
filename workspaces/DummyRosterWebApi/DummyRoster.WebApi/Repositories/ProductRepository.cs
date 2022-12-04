@@ -12,7 +12,8 @@ public class ProductRepository : IProductRepository
 
   public ProductRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class ProductRepository : IProductRepository
       );
     }
   }
-  
+
   public async Task<Product?> CreateAsync(Product product)
   {
     EntityEntry<Product> entry = await this.dummyRosterContext.Products.AddAsync(product);
