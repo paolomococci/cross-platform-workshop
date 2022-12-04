@@ -109,4 +109,5 @@ From the main workspace I type the following commands:
 ```shell
 mkdir RestRequestTests
 cd RestRequestTests
+touch get_employee_endpoint_test.http
 ```
