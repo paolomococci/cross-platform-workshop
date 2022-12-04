@@ -103,7 +103,7 @@ public class SupplierController : ControllerBase
     {
       return NotFound();
     }
-    await this.iSupplierRepository.UpdateAsync(id, managedEntity);
+    await this.iSupplierRepository.UpdateAsync(id, entity);
     return new NoContentResult();
   }
 
