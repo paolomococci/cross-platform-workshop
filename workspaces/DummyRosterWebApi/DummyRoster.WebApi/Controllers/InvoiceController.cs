@@ -113,7 +113,7 @@ public class InvoiceController : ControllerBase
     {
       return NotFound();
     }
-    await this.iInvoiceRepository.UpdateAsync(id, managedEntity);
+    await this.iInvoiceRepository.UpdateAsync(id, entity);
     return new NoContentResult();
   }
 
