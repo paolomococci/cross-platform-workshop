@@ -12,7 +12,8 @@ public class InvoiceRepository : IInvoiceRepository
 
   public InvoiceRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class InvoiceRepository : IInvoiceRepository
       );
     }
   }
-  
+
   public async Task<Invoice?> CreateAsync(Invoice invoice)
   {
     EntityEntry<Invoice> entry = await this.dummyRosterContext.Invoices.AddAsync(invoice);
