@@ -103,7 +103,7 @@ public class CategoryController : ControllerBase
     {
       return NotFound();
     }
-    await this.iCategoryRepository.UpdateAsync(id, managedEntity);
+    await this.iCategoryRepository.UpdateAsync(id, entity);
     return new NoContentResult();
   }
 
