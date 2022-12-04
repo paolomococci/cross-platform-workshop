@@ -43,14 +43,18 @@ public partial class Address
   public string? Fax { get; set; }
 
   [InverseProperty("LocationNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Carrier> Carriers { get; } = new List<Carrier>();
 
   [InverseProperty("LocationNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Customer> Customers { get; } = new List<Customer>();
 
   [InverseProperty("LocationNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Employee> Employees { get; } = new List<Employee>();
 
   [InverseProperty("LocationNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Supplier> Suppliers { get; } = new List<Supplier>();
 }
