@@ -108,4 +108,5 @@ From the main workspace I type the following commands:
 
 ```shell
 mkdir RestRequestTests
+cd RestRequestTests
 ```
