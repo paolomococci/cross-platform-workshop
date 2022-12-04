@@ -52,6 +52,7 @@ public partial class Product
   public virtual Category? Category { get; set; }
 
   [InverseProperty("Product")]
+  [XmlIgnore]
   public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
 
   [ForeignKey("SupplierId")]
