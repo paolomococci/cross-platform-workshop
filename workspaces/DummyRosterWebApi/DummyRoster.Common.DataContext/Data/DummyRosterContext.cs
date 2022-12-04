@@ -46,27 +46,27 @@ public partial class DummyRosterContext : DbContext
 
     modelBuilder.Entity<Carrier>(entity =>
     {
-      entity.Property(e => e.Id).ValueGeneratedNever();
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
     });
 
     modelBuilder.Entity<Category>(entity =>
     {
-      entity.Property(e => e.Id).ValueGeneratedNever();
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
     });
 
     modelBuilder.Entity<Customer>(entity =>
     {
-      entity.Property(e => e.Id).ValueGeneratedNever();
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
     });
 
     modelBuilder.Entity<Employee>(entity =>
     {
-      entity.Property(e => e.Id).ValueGeneratedNever();
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
     });
 
     modelBuilder.Entity<Form>(entity =>
     {
-      entity.Property(e => e.Id).ValueGeneratedNever();
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
       entity.Property(e => e.ShippingCost).HasDefaultValueSql("0");
     });
 
@@ -83,7 +83,7 @@ public partial class DummyRosterContext : DbContext
 
     modelBuilder.Entity<Product>(entity =>
     {
-      entity.Property(e => e.Id).ValueGeneratedNever();
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
       entity.Property(e => e.Discontinued).HasDefaultValueSql("0");
       entity.Property(e => e.ReorderLevel).HasDefaultValueSql("0");
       entity.Property(e => e.UnitPrice).HasDefaultValueSql("0");
@@ -93,7 +93,7 @@ public partial class DummyRosterContext : DbContext
 
     modelBuilder.Entity<Supplier>(entity =>
     {
-      entity.Property(e => e.Id).ValueGeneratedNever();
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
     });
 
     OnModelCreatingPartial(modelBuilder);
