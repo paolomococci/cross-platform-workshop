@@ -12,7 +12,8 @@ public class FormRepository : IFormRepository
 
   public FormRepository(
     DummyRosterContext dummyRosterContext
-  ) {
+  )
+  {
     this.dummyRosterContext = dummyRosterContext;
     if (keyValuesCache is null)
     {
@@ -23,7 +24,7 @@ public class FormRepository : IFormRepository
       );
     }
   }
-  
+
   public async Task<Form?> CreateAsync(Form form)
   {
     EntityEntry<Form> entry = await this.dummyRosterContext.Forms.AddAsync(form);
