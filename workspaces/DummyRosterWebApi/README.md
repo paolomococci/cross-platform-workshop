@@ -101,3 +101,11 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class ProductContro
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class FormController {}" > FormController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class InvoiceController {}" > InvoiceController.cs
 ```
+
+## REST request tests
+
+From the main workspace I type the following commands:
+
+```shell
+mkdir RestRequestTests
+```
