@@ -47,3 +47,19 @@ dotnet new tool-manifest
 dotnet tool install --local dotnet-ef --version 7.0.0
 dotnet ef dbcontext scaffold "Filename=../DummyRoster.db" Microsoft.EntityFrameworkCore.Sqlite --namespace DummyRoster.Common.EntityModel.Models --data-annotations --context-dir Data --output-dir Models
 ```
+
+### Scaffolding of DummyRoster.Common.DataContext project
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new classlib --name DummyRoster.Common.DataContext
+cd DummyRoster.Common.DataContext
+rm Class1.cs
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
+mv --verbose ../DummyRoster.Common.EntityModel/Data .
+echo -e "namespace DummyRoster.Common.DataContext.Data;\n\npublic class DummyRosterContextExtensions {}" > Data/DummyRosterContextExtensions.cs
+dotnet add ./DummyRoster.Common.DataContext.csproj reference ../DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj
+dotnet clean
+dotnet build
+```
