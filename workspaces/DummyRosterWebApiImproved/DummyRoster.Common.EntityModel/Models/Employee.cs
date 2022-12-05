@@ -15,7 +15,7 @@ public partial class Employee
   public string Name { get; set; } = null!;
 
   [Column(TypeName = "DATETIME")]
-  public byte[]? BirthDate { get; set; }
+  public DateTime? BirthDate { get; set; }
 
   public string? Description { get; set; }
 
