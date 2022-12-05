@@ -5,7 +5,7 @@
 ```shell
 mkdir DummyRosterWebApi
 cd DummyRosterWebApi
-echo "# DummyRosterWebApi > README.md
+echo "# DummyRosterWebApi" > README.md
 dotnet new gitignore
 ```
 
