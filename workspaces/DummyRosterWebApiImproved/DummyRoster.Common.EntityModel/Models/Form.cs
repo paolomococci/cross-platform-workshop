@@ -54,5 +54,6 @@ public partial class Form
   public virtual Employee? Employee { get; set; }
 
   [InverseProperty("Form")]
+  [XmlIgnore]
   public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
 }
