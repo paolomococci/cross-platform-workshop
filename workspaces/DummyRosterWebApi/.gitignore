@@ -462,7 +462,6 @@ Areas/
 Migrations/
 appsettings.Development.json
 appsettings.json
-compute.js
 *.ico
 *.png
 *.db
