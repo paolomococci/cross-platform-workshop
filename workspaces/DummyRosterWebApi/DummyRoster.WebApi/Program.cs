@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using DummyRoster.Common.DataContext.Data;
 using DummyRoster.WebApi.Repositories;
 
@@ -31,7 +32,17 @@ builder.Services.AddControllers(
 ).AddXmlDataContractSerializerFormatters().AddXmlSerializerFormatters();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(
+  temp => {
+    temp.SwaggerDoc(
+      "v1",
+      new() {
+        Title = "DummyRoster.WebApi project",
+        Version = "v1"
+      }
+    );
+  }
+);
 
 // From here I add the interfaces and classes regarding the repositories.
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
@@ -45,6 +56,27 @@ builder.Services.AddScoped<IFormRepository, FormRepository>();
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
 var app = builder.Build();
+
+if (builder.Environment.IsDevelopment())
+{
+  app.UseSwagger();
+  app.UseSwaggerUI(
+    temp => {
+      temp.SwaggerEndpoint(
+        "/swagger/v1/swagger.json",
+        "DummyRoster.WebApi project Version 1"
+      );
+      temp.SupportedSubmitMethods(
+        new[] {
+          SubmitMethod.Get,
+          SubmitMethod.Post,
+          SubmitMethod.Put,
+          SubmitMethod.Delete
+        }
+      );
+    }
+  );
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
