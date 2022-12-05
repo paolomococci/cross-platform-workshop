@@ -11,7 +11,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Employee
 {
   [Key]
-  public long Id { get; set; }
+  public int Id { get; set; }
 
   [Column(TypeName = "varchar(32)")]
   public string Name { get; set; } = null!;
@@ -27,7 +27,7 @@ public partial class Employee
   public string? Role { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? Location { get; set; }
+  public int? Location { get; set; }
 
   [InverseProperty("ContactNavigation")]
   public virtual ICollection<Carrier> Carriers { get; } = new List<Carrier>();
