@@ -154,7 +154,6 @@ CREATE TABLE "Invoice" (
   "UnitPrice" NUMERIC NOT NULL CONSTRAINT "DF_Form_Details_UnitPrice" DEFAULT (0),
   "Quantity" SMALLINT NOT NULL CONSTRAINT "DF_Form_Details_Quantity" DEFAULT (1),
   "PriceCut" NUMERIC NOT NULL CONSTRAINT "DF_Form_Details_PriceCut" DEFAULT (0),
-  CONSTRAINT "PK_Form_Details" PRIMARY KEY ("FormId", "ProductId"),
   CONSTRAINT "FK_Form_Details" FOREIGN KEY ("FormId") REFERENCES "Form" ("Id"),
   CONSTRAINT "FK_Product_Details" FOREIGN KEY ("ProductId") REFERENCES "Product" ("Id"),
   CONSTRAINT "CK_UnitPrice" CHECK (UnitPrice >= 0),
