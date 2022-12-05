@@ -28,14 +28,16 @@ public class WeatherForecastController : ControllerBase
   }
 
   [HttpGet]
-  public IEnumerable<WeatherForecast> Get() {
+  public IEnumerable<WeatherForecast> Get()
+  {
     return Get(7);
   }
 
   [HttpGet("{days:int}")]
   public IEnumerable<WeatherForecast> Get(int days)
   {
-    return Enumerable.Range(1, days).Select(index => new WeatherForecast
+    return Enumerable.Range(1, days).Select(
+    index => new WeatherForecast
     {
       Date = DateTime.Now.AddDays(index),
       TemperatureC = Random.Shared.Next(-20, 55),
