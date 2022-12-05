@@ -14,48 +14,48 @@ namespace DummyRoster.Common.EntityModel.Models;
 [Index("SupplierId", Name = "IDX_SupplierId")]
 public partial class Product
 {
-    [Key]
-    public long Id { get; set; }
+  [Key]
+  public long Id { get; set; }
 
-    [Column(TypeName = "varchar(32)")]
-    public string Name { get; set; } = null!;
+  [Column(TypeName = "varchar(32)")]
+  public string Name { get; set; } = null!;
 
-    public string? Description { get; set; }
+  public string? Description { get; set; }
 
-    public byte[]? Picture { get; set; }
+  public byte[]? Picture { get; set; }
 
-    [Column(TypeName = "INT")]
-    public long? CategoryId { get; set; }
+  [Column(TypeName = "INT")]
+  public long? CategoryId { get; set; }
 
-    [Column(TypeName = "INT")]
-    public long? SupplierId { get; set; }
+  [Column(TypeName = "INT")]
+  public long? SupplierId { get; set; }
 
-    [Column(TypeName = "varchar(24)")]
-    public string? QuantityPerUnit { get; set; }
+  [Column(TypeName = "varchar(24)")]
+  public string? QuantityPerUnit { get; set; }
 
-    [Column(TypeName = "NUMERIC")]
-    public byte[]? UnitPrice { get; set; }
+  [Column(TypeName = "NUMERIC")]
+  public byte[]? UnitPrice { get; set; }
 
-    [Column(TypeName = "SMALLINT")]
-    public long? UnitsInStock { get; set; }
+  [Column(TypeName = "SMALLINT")]
+  public long? UnitsInStock { get; set; }
 
-    [Column(TypeName = "SMALLINT")]
-    public long? UnitsOnOrder { get; set; }
+  [Column(TypeName = "SMALLINT")]
+  public long? UnitsOnOrder { get; set; }
 
-    [Column(TypeName = "SMALLINT")]
-    public long? ReorderLevel { get; set; }
+  [Column(TypeName = "SMALLINT")]
+  public long? ReorderLevel { get; set; }
 
-    [Column(TypeName = "BOOLEAN")]
-    public byte[] Discontinued { get; set; } = null!;
+  [Column(TypeName = "BOOLEAN")]
+  public byte[] Discontinued { get; set; } = null!;
 
-    [ForeignKey("CategoryId")]
-    [InverseProperty("Products")]
-    public virtual Category? Category { get; set; }
+  [ForeignKey("CategoryId")]
+  [InverseProperty("Products")]
+  public virtual Category? Category { get; set; }
 
-    [InverseProperty("Product")]
-    public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
+  [InverseProperty("Product")]
+  public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
 
-    [ForeignKey("SupplierId")]
-    [InverseProperty("Products")]
-    public virtual Supplier? Supplier { get; set; }
+  [ForeignKey("SupplierId")]
+  [InverseProperty("Products")]
+  public virtual Supplier? Supplier { get; set; }
 }
