@@ -29,12 +29,15 @@ public partial class Employee
   public int? Location { get; set; }
 
   [InverseProperty("ContactNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Carrier> Carriers { get; } = new List<Carrier>();
 
   [InverseProperty("ContactNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Customer> Customers { get; } = new List<Customer>();
 
   [InverseProperty("Employee")]
+  [XmlIgnore]
   public virtual ICollection<Form> Forms { get; } = new List<Form>();
 
   [ForeignKey("Location")]
@@ -42,5 +45,6 @@ public partial class Employee
   public virtual Address? LocationNavigation { get; set; }
 
   [InverseProperty("ContactNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Supplier> Suppliers { get; } = new List<Supplier>();
 }
