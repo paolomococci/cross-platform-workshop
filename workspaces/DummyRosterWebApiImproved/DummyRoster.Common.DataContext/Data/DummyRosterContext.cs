@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Common.DataContext.Data;
 
