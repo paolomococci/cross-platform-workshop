@@ -119,3 +119,24 @@ touch get_product_endpoint_test.http
 touch get_form_endpoint_test.http
 touch get_invoice_endpoint_test.http
 ```
+
+## Please note
+
+Attention, for the database to automatically generate incrementally the identifiers must be indicated as follows:
+
+```text
+...
+"Id" INTEGER PRIMARY KEY AUTOINCREMENT
+...
+```
+
+And also the context .cs file must contain the following code in the OnConfiguring method:
+
+```text
+...
+    modelBuilder.Entity<Address>(entity =>
+    {
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
+    });
+...
+```
