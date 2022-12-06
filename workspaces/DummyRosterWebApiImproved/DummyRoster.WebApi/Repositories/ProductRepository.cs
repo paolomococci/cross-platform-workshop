@@ -83,7 +83,25 @@ public class ProductRepository : IProductRepository
 
   public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Product? entity = this.dummyRosterContext.Products.Find(id);
+    if (entity is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Products.Remove(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out entity);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   private Product UpdateCache(
