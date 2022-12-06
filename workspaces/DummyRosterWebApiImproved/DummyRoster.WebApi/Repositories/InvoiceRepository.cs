@@ -62,9 +62,18 @@ public class InvoiceRepository : IInvoiceRepository
     );
   }
 
-  public Task<Invoice?> UpdateAsync(int id, Invoice entity)
+  public async Task<Invoice?> UpdateAsync(
+    int id, 
+    Invoice entity
+  )
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Invoices.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public Task<Invoice?> PartialUpdateAsync(int id, Invoice entity)
