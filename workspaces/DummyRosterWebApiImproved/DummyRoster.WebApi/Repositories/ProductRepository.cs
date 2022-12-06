@@ -50,7 +50,9 @@ public class ProductRepository : IProductRepository
 
   public Task<Product?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Product? entity);
+    return Task.FromResult(entity);
   }
 
   public Task<IEnumerable<Product>> RetrieveAllAsync()
