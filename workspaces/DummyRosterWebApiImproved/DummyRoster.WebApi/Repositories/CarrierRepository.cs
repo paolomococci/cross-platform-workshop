@@ -1,3 +1,3 @@
 namespace DummyRoster.WebApi.Repositories;
 
-public class CarrierRepository {}
+public class CarrierRepository { }
