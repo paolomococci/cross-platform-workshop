@@ -76,7 +76,10 @@ public class CustomerRepository : ICustomerRepository
     return null;
   }
 
-  public Task<Customer?> PartialUpdateAsync(int id, Customer entity)
+  public async Task<Customer?> PartialUpdateAsync(
+    int id, 
+    Customer entity
+  )
   {
     throw new NotImplementedException();
   }
