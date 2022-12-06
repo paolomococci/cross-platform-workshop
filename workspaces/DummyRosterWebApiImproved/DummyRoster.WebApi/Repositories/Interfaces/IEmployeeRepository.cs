@@ -7,4 +7,8 @@ public interface IEmployeeRepository
   Task<Employee?> CreateAsync(Employee entity);
   Task<Employee?> RetrieveAsync(int id);
   Task<IEnumerable<Employee>> RetrieveAllAsync();
+  Task<Employee?> UpdateAsync(
+    int id,
+    Employee entity
+  );
 }
