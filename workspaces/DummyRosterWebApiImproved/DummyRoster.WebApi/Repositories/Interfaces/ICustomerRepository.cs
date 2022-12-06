@@ -15,4 +15,5 @@ public interface ICustomerRepository
     int id,
     Customer entity
   );
+  Task<bool?> DeleteAsync(int id);
 }
