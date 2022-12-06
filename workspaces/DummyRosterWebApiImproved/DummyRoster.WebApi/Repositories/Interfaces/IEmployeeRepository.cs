@@ -2,4 +2,6 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.WebApi.Repositories.Interfaces;
 
-public interface IEmployeeRepository { }
+public interface IEmployeeRepository {
+  Task<Employee?> CreateAsync(Employee address);
+}
