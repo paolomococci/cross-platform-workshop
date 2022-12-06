@@ -15,4 +15,5 @@ public interface ISupplierRepository
     int id,
     Supplier entity
   );
+  Task<bool?> DeleteAsync(int id);
 }
