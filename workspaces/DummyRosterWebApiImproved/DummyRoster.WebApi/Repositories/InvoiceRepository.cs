@@ -31,12 +31,7 @@ public class InvoiceRepository : IInvoiceRepository
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Invoice?> PartialUpdateAsync(int id, Invoice entity)
+  public Task<Invoice?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -46,12 +41,17 @@ public class InvoiceRepository : IInvoiceRepository
     throw new NotImplementedException();
   }
 
-  public Task<Invoice?> RetrieveAsync(int id)
+  public Task<Invoice?> UpdateAsync(int id, Invoice entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<Invoice?> UpdateAsync(int id, Invoice entity)
+  public Task<Invoice?> PartialUpdateAsync(int id, Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
