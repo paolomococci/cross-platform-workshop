@@ -74,6 +74,8 @@ dotnet build
 dotnet run
 mkdir Repositories
 cd Repositories
+mkdir Interfaces
+cd Interfaces
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic interface IEmployeeRepository {}" > IEmployeeRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic interface ICustomerRepository {}" > ICustomerRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic interface ISupplierRepository {}" > ISupplierRepository.cs
@@ -83,6 +85,7 @@ echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic interface ICategor
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic interface IProductRepository {}" > IProductRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic interface IFormRepository {}" > IFormRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic interface IInvoiceRepository {}" > IInvoiceRepository.cs
+cd ..
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class EmployeeRepository {}" > EmployeeRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CustomerRepository {}" > CustomerRepository.cs
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class SupplierRepository {}" > SupplierRepository.cs
