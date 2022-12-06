@@ -11,4 +11,8 @@ public interface IInvoiceRepository
     int id,
     Invoice entity
   );
+  Task<Invoice?> PartialUpdateAsync(
+    int id,
+    Invoice entity
+  );
 }
