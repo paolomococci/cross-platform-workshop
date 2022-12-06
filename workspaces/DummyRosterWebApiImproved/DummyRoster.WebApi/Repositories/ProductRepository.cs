@@ -62,9 +62,18 @@ public class ProductRepository : IProductRepository
     );
   }
 
-  public Task<Product?> UpdateAsync(int id, Product entity)
+  public async Task<Product?> UpdateAsync(
+    int id, 
+    Product entity
+  )
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Products.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public Task<Product?> PartialUpdateAsync(int id, Product entity)
