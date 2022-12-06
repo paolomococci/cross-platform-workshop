@@ -26,9 +26,26 @@ public class EmployeeRepository : IEmployeeRepository
     }
   }
 
-  public Task<Employee?> CreateAsync(Employee entity)
+  public async Task<Employee?> CreateAsync(Employee entity)
   {
-    throw new NotImplementedException();
+    EntityEntry<Employee> entry = await this.dummyRosterContext.Employees.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<Employee?> RetrieveAsync(int id)
