@@ -11,4 +11,8 @@ public interface IEmployeeRepository
     int id,
     Employee entity
   );
+  Task<Employee?> PartialUpdateAsync(
+    int id,
+    Employee entity
+  );
 }
