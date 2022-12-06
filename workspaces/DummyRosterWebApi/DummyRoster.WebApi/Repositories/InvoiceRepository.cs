@@ -80,8 +80,8 @@ public class InvoiceRepository : IInvoiceRepository
   public Task<Invoice?> RetrieveAsync(int id)
   {
     if (keyValuesCache is null) return null!;
-    keyValuesCache.TryGetValue(id, out Invoice? category);
-    return Task.FromResult(category);
+    keyValuesCache.TryGetValue(id, out Invoice? invoice);
+    return Task.FromResult(invoice);
   }
 
   public async Task<Invoice?> UpdateAsync(int id, Invoice invoice)
