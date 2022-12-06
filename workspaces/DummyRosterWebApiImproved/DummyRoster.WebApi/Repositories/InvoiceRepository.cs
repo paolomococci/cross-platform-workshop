@@ -26,6 +26,36 @@ public class InvoiceRepository : IInvoiceRepository
     }
   }
 
+  public Task<Invoice?> CreateAsync(Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Invoice?> PartialUpdateAsync(int id, Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Invoice>> RetrieveAllAsync()
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Invoice?> RetrieveAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Invoice?> UpdateAsync(int id, Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
   private Invoice UpdateCache(
     int id, 
     Invoice entity
