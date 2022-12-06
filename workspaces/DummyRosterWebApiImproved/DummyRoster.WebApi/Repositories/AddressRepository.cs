@@ -76,7 +76,10 @@ public class AddressRepository : IAddressRepository
     return null;
   }
 
-  public Task<Address?> PartialUpdateAsync(int id, Address entity)
+  public async Task<Address?> PartialUpdateAsync(
+    int id, 
+    Address entity
+  )
   {
     throw new NotImplementedException();
   }
