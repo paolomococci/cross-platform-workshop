@@ -10,4 +10,19 @@ public class CarrierRepository
 {
   private static ConcurrentDictionary<int, Carrier>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public CarrierRepository(
+    DummyRosterContext dummyRosterContext
+  )
+  {
+    this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Carrier>(
+        this.dummyRosterContext.Carriers.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
+  }
 }
