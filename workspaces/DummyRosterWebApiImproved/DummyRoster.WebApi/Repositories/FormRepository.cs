@@ -1,3 +1,3 @@
 namespace DummyRoster.WebApi.Repositories;
 
-public class FormRepository {}
+public class FormRepository { }
