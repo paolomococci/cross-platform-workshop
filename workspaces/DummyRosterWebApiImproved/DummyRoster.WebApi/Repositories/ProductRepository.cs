@@ -31,12 +31,7 @@ public class ProductRepository : IProductRepository
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Product?> PartialUpdateAsync(int id, Product entity)
+  public Task<Product?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -46,12 +41,17 @@ public class ProductRepository : IProductRepository
     throw new NotImplementedException();
   }
 
-  public Task<Product?> RetrieveAsync(int id)
+  public Task<Product?> UpdateAsync(int id, Product entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<Product?> UpdateAsync(int id, Product entity)
+  public Task<Product?> PartialUpdateAsync(int id, Product entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
