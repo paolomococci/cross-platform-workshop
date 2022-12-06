@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using DummyRoster.Common.DataContext.Data;
+using DummyRoster.WebApi.Repositories.Interfaces;
 using DummyRoster.WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,6 +45,17 @@ builder.Services.AddSwaggerGen(
     );
   }
 );
+
+// From here I add the interfaces and classes regarding the repositories.
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
+builder.Services.AddScoped<ICarrierRepository, CarrierRepository>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IFormRepository, FormRepository>();
+builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
 var app = builder.Build();
 
