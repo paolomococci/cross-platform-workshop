@@ -2,4 +2,6 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.WebApi.Repositories.Interfaces;
 
-public interface ICategoryRepository { }
+public interface ICategoryRepository {
+  Task<Category?> CreateAsync(Category address);
+}
