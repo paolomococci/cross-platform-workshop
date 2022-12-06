@@ -26,6 +26,36 @@ public class EmployeeRepository : IEmployeeRepository
     }
   }
 
+  public Task<Employee?> CreateAsync(Employee entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Employee?> PartialUpdateAsync(int id, Employee entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Employee>> RetrieveAllAsync()
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Employee?> RetrieveAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Employee?> UpdateAsync(int id, Employee entity)
+  {
+    throw new NotImplementedException();
+  }
+
   private Employee UpdateCache(
     int id, 
     Employee entity
