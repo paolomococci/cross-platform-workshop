@@ -11,4 +11,8 @@ public interface ICategoryRepository
     int id,
     Category entity
   );
+  Task<Category?> PartialUpdateAsync(
+    int id,
+    Category entity
+  );
 }
