@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using DummyRoster.Common.DataContext.Data;
+using DummyRoster.WebApi.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
