@@ -11,4 +11,8 @@ public interface IFormRepository
     int id,
     Form entity
   );
+  Task<Form?> PartialUpdateAsync(
+    int id,
+    Form entity
+  );
 }
