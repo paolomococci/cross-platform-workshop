@@ -81,4 +81,4 @@ From the main workspace I type the following commands:
 ```shell
 mkdir RestRequestTests
 cd RestRequestTests
-touch get_weather_forecast_tests.http
+touch get_weather_forecast_tests.rest
