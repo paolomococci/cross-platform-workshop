@@ -70,9 +70,6 @@ builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
 var app = builder.Build();
 
-// HTTP logging
-//app.UseHttpLogging();
-
 // Configure the HTTP request pipeline.
 if (builder.Environment.IsDevelopment())
 {
@@ -94,6 +91,9 @@ if (builder.Environment.IsDevelopment())
     }
   );
 }
+
+// HTTP logging
+//app.UseHttpLogging();
 
 app.UseHttpsRedirection();
 
