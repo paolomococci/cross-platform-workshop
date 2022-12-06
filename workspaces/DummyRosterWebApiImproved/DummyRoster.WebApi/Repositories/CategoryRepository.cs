@@ -62,9 +62,18 @@ public class CategoryRepository : ICategoryRepository
     );
   }
 
-  public Task<Category?> UpdateAsync(int id, Category entity)
+  public async Task<Category?> UpdateAsync(
+    int id, 
+    Category entity
+  )
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Categories.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public Task<Category?> PartialUpdateAsync(int id, Category entity)
