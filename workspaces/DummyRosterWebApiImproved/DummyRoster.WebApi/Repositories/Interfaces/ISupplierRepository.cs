@@ -6,4 +6,5 @@ public interface ISupplierRepository
 {
   Task<Supplier?> CreateAsync(Supplier entity);
   Task<Supplier?> RetrieveAsync(int id);
+  Task<IEnumerable<Supplier>> RetrieveAllAsync();
 }
