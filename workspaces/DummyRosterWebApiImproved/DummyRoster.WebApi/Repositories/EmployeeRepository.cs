@@ -10,4 +10,19 @@ public class EmployeeRepository
 {
   private static ConcurrentDictionary<int, Employee>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public EmployeeRepository(
+    DummyRosterContext dummyRosterContext
+  )
+  {
+    this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Employee>(
+        this.dummyRosterContext.Employees.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
+  }
 }
