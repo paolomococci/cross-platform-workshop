@@ -31,12 +31,7 @@ public class SupplierRepository : ISupplierRepository
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Supplier?> PartialUpdateAsync(int id, Supplier entity)
+  public Task<Supplier?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -46,12 +41,17 @@ public class SupplierRepository : ISupplierRepository
     throw new NotImplementedException();
   }
 
-  public Task<Supplier?> RetrieveAsync(int id)
+  public Task<Supplier?> UpdateAsync(int id, Supplier entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<Supplier?> UpdateAsync(int id, Supplier entity)
+  public Task<Supplier?> PartialUpdateAsync(int id, Supplier entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
