@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Swashbuckle.AspNetCore.SwaggerUI;
+//using Microsoft.AspNetCore.HttpLogging;
 using DummyRoster.Common.DataContext.Data;
 using DummyRoster.WebApi.Repositories.Interfaces;
 using DummyRoster.WebApi.Repositories;
@@ -57,6 +58,17 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IFormRepository, FormRepository>();
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
+// Enabling HTTP logging: limit its use to the auditing and debugging stages!
+/*
+builder.Services.AddHttpLogging(
+  options => {
+    options.LoggingFields = HttpLoggingFields.All;
+    options.RequestBodyLogLimit = 4096;
+    options.ResponseBodyLogLimit = 4096;
+  }
+);
+*/
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -81,6 +93,9 @@ if (app.Environment.IsDevelopment())
     }
   );
 }
+
+// HTTP logging
+//app.UseHttpLogging();
 
 app.UseHttpsRedirection();
 
