@@ -76,7 +76,10 @@ public class CarrierRepository : ICarrierRepository
     return null;
   }
 
-  public Task<Carrier?> PartialUpdateAsync(int id, Carrier entity)
+  public async Task<Carrier?> PartialUpdateAsync(
+    int id, 
+    Carrier entity
+  )
   {
     throw new NotImplementedException();
   }
