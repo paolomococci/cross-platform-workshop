@@ -31,12 +31,7 @@ public class CarrierRepository : ICarrierRepository
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Carrier?> PartialUpdateAsync(int id, Carrier entity)
+  public Task<Carrier?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -46,12 +41,17 @@ public class CarrierRepository : ICarrierRepository
     throw new NotImplementedException();
   }
 
-  public Task<Carrier?> RetrieveAsync(int id)
+  public Task<Carrier?> UpdateAsync(int id, Carrier entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<Carrier?> UpdateAsync(int id, Carrier entity)
+  public Task<Carrier?> PartialUpdateAsync(int id, Carrier entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
