@@ -76,7 +76,10 @@ public class CategoryRepository : ICategoryRepository
     return null;
   }
 
-  public Task<Category?> PartialUpdateAsync(int id, Category entity)
+  public async Task<Category?> PartialUpdateAsync(
+    int id, 
+    Category entity
+  )
   {
     throw new NotImplementedException();
   }
