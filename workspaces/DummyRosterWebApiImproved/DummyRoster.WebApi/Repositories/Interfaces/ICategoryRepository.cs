@@ -15,4 +15,5 @@ public interface ICategoryRepository
     int id,
     Category entity
   );
+  Task<bool?> DeleteAsync(int id);
 }
