@@ -83,7 +83,25 @@ public class InvoiceRepository : IInvoiceRepository
 
   public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Invoice? entity = this.dummyRosterContext.Invoices.Find(id);
+    if (entity is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Invoices.Remove(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out entity);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   private Invoice UpdateCache(
