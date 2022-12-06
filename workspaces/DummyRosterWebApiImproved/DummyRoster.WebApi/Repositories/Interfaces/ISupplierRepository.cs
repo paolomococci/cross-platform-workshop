@@ -11,4 +11,8 @@ public interface ISupplierRepository
     int id,
     Supplier entity
   );
+  Task<Supplier?> PartialUpdateAsync(
+    int id,
+    Supplier entity
+  );
 }
