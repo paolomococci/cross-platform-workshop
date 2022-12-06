@@ -76,7 +76,10 @@ public class ProductRepository : IProductRepository
     return null;
   }
 
-  public Task<Product?> PartialUpdateAsync(int id, Product entity)
+  public async Task<Product?> PartialUpdateAsync(
+    int id, 
+    Product entity
+  )
   {
     throw new NotImplementedException();
   }
