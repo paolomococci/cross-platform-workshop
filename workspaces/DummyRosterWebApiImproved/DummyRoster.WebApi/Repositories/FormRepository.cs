@@ -26,6 +26,36 @@ public class FormRepository : IFormRepository
     }
   }
 
+  public Task<Form?> CreateAsync(Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Form?> PartialUpdateAsync(int id, Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Form>> RetrieveAllAsync()
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Form?> RetrieveAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Form?> UpdateAsync(int id, Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
   private Form UpdateCache(
     int id, 
     Form entity
