@@ -57,7 +57,9 @@ public class EmployeeRepository : IEmployeeRepository
 
   public Task<IEnumerable<Employee>> RetrieveAllAsync()
   {
-    throw new NotImplementedException();
+    return Task.FromResult(
+      keyValuesCache is null ? Enumerable.Empty<Employee>() : keyValuesCache.Values
+    );
   }
 
   public Task<Employee?> UpdateAsync(int id, Employee entity)
