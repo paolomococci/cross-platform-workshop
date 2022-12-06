@@ -25,4 +25,23 @@ public class CarrierRepository
       );
     }
   }
+
+  private Carrier UpdateCache(
+    int id, 
+    Carrier entity
+  )
+  {
+    Carrier? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
