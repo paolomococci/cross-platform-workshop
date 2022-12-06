@@ -10,4 +10,19 @@ public class AddressRepository
 {
   private static ConcurrentDictionary<int, Address>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
+
+  public AddressRepository(
+    DummyRosterContext dummyRosterContext
+  )
+  {
+    this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Address>(
+        this.dummyRosterContext.Addresses.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
+  }
 }
