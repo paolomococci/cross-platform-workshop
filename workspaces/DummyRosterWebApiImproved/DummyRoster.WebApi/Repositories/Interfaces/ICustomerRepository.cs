@@ -6,4 +6,5 @@ public interface ICustomerRepository
 {
   Task<Customer?> CreateAsync(Customer entity);
   Task<Customer?> RetrieveAsync(int id);
+  Task<IEnumerable<Customer>> RetrieveAllAsync();
 }
