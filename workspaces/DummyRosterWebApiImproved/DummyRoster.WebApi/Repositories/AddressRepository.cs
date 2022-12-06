@@ -31,12 +31,7 @@ public class AddressRepository : IAddressRepository
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Address?> PartialUpdateAsync(int id, Address entity)
+  public Task<Address?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -46,12 +41,17 @@ public class AddressRepository : IAddressRepository
     throw new NotImplementedException();
   }
 
-  public Task<Address?> RetrieveAsync(int id)
+  public Task<Address?> UpdateAsync(int id, Address entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<Address?> UpdateAsync(int id, Address entity)
+  public Task<Address?> PartialUpdateAsync(int id, Address entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
