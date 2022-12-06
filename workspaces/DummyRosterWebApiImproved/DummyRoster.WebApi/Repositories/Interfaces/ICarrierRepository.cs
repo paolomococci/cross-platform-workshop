@@ -1,3 +1,3 @@
 namespace DummyRoster.WebApi.Repositories.Interfaces;
 
-public interface ICarrierRepository {}
+public interface ICarrierRepository { }
