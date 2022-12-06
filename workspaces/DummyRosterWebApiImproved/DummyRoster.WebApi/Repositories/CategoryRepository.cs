@@ -25,4 +25,23 @@ public class CategoryRepository
       );
     }
   }
+
+  private Category UpdateCache(
+    int id, 
+    Category entity
+  )
+  {
+    Category? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
