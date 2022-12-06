@@ -76,7 +76,10 @@ public class FormRepository : IFormRepository
     return null;
   }
 
-  public Task<Form?> PartialUpdateAsync(int id, Form entity)
+  public async Task<Form?> PartialUpdateAsync(
+    int id, 
+    Form entity
+  )
   {
     throw new NotImplementedException();
   }
