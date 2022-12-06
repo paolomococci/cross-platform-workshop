@@ -31,12 +31,7 @@ public class CategoryRepository : ICategoryRepository
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Category?> PartialUpdateAsync(int id, Category entity)
+  public Task<Category?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -46,12 +41,17 @@ public class CategoryRepository : ICategoryRepository
     throw new NotImplementedException();
   }
 
-  public Task<Category?> RetrieveAsync(int id)
+  public Task<Category?> UpdateAsync(int id, Category entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<Category?> UpdateAsync(int id, Category entity)
+  public Task<Category?> PartialUpdateAsync(int id, Category entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
