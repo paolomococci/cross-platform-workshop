@@ -11,4 +11,8 @@ public interface IAddressRepository
     int id,
     Address entity
   );
+  Task<Address?> PartialUpdateAsync(
+    int id,
+    Address entity
+  );
 }
