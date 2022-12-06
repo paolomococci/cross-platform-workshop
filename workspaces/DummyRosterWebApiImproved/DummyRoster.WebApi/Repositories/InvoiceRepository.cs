@@ -25,4 +25,23 @@ public class InvoiceRepository
       );
     }
   }
+
+  private Invoice UpdateCache(
+    int id, 
+    Invoice entity
+  )
+  {
+    Invoice? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
