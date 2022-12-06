@@ -76,7 +76,10 @@ public class InvoiceRepository : IInvoiceRepository
     return null;
   }
 
-  public Task<Invoice?> PartialUpdateAsync(int id, Invoice entity)
+  public async Task<Invoice?> PartialUpdateAsync(
+    int id, 
+    Invoice entity
+  )
   {
     throw new NotImplementedException();
   }
