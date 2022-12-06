@@ -6,4 +6,8 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Repositories;
 
-public class EmployeeRepository { }
+public class EmployeeRepository
+{
+  private static ConcurrentDictionary<int, Employee>? keyValuesCache;
+  private DummyRosterContext dummyRosterContext;
+}
