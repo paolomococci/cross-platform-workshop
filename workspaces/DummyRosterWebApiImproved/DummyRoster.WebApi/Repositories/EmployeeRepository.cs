@@ -76,7 +76,10 @@ public class EmployeeRepository : IEmployeeRepository
     return null;
   }
 
-  public Task<Employee?> PartialUpdateAsync(int id, Employee entity)
+  public async Task<Employee?> PartialUpdateAsync(
+    int id, 
+    Employee entity
+  )
   {
     throw new NotImplementedException();
   }
