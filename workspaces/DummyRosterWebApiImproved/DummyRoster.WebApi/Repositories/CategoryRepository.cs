@@ -26,9 +26,26 @@ public class CategoryRepository : ICategoryRepository
     }
   }
 
-  public Task<Category?> CreateAsync(Category entity)
+  public async Task<Category?> CreateAsync(Category entity)
   {
-    throw new NotImplementedException();
+    EntityEntry<Category> entry = await this.dummyRosterContext.Categories.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<Category?> RetrieveAsync(int id)
