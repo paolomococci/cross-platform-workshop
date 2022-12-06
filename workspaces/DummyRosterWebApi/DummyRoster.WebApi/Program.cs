@@ -5,6 +5,7 @@ using DummyRoster.Common.DataContext.Data;
 using DummyRoster.WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddDbContext<DummyRosterContext>();
 
 // Add services to the container.
