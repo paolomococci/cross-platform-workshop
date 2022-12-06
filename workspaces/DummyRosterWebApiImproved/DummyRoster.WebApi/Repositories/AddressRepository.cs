@@ -25,4 +25,23 @@ public class AddressRepository
       );
     }
   }
+
+  private Address UpdateCache(
+    int id, 
+    Address entity
+  )
+  {
+    Address? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
