@@ -62,9 +62,18 @@ public class FormRepository : IFormRepository
     );
   }
 
-  public Task<Form?> UpdateAsync(int id, Form entity)
+  public async Task<Form?> UpdateAsync(
+    int id, 
+    Form entity
+  )
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Forms.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public Task<Form?> PartialUpdateAsync(int id, Form entity)
