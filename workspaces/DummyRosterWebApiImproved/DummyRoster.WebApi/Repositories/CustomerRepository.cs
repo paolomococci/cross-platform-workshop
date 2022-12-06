@@ -25,4 +25,23 @@ public class CustomerRepository
       );
     }
   }
+
+  private Customer UpdateCache(
+    int id, 
+    Customer entity
+  )
+  {
+    Customer? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
