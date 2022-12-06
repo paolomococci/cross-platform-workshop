@@ -25,4 +25,23 @@ public class EmployeeRepository
       );
     }
   }
+
+  private Employee UpdateCache(
+    int id, 
+    Employee entity
+  )
+  {
+    Employee? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
