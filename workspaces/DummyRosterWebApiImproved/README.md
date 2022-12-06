@@ -115,3 +115,13 @@ touch product_endpoint_test.rest
 touch form_endpoint_test.rest
 touch invoice_endpoint_test.rest
 ```
+
+## Please note
+
+Attention, for the database to automatically generate incrementally the identifiers must be indicated as follows:
+
+```text
+...
+"Id" INTEGER PRIMARY KEY AUTOINCREMENT
+...
+```
