@@ -111,15 +111,16 @@ From the main workspace I type the following commands:
 ```shell
 mkdir RestRequestTests
 cd RestRequestTests
-touch get_employee_endpoint_test.http
-touch get_customer_endpoint_test.http
-touch get_supplier_endpoint_test.http
-touch get_carrier_endpoint_test.http
-touch get_address_endpoint_test.http
-touch get_category_endpoint_test.http
-touch get_product_endpoint_test.http
-touch get_form_endpoint_test.http
-touch get_invoice_endpoint_test.http
+touch get_weather_forecast_tests.http
+touch employee_endpoint_test.http
+touch customer_endpoint_test.http
+touch supplier_endpoint_test.http
+touch carrier_endpoint_test.http
+touch address_endpoint_test.http
+touch category_endpoint_test.http
+touch product_endpoint_test.http
+touch form_endpoint_test.http
+touch invoice_endpoint_test.http
 ```
 
 ## Please note
