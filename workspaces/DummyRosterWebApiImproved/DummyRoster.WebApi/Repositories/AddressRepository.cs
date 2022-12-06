@@ -26,9 +26,26 @@ public class AddressRepository : IAddressRepository
     }
   }
 
-  public Task<Address?> CreateAsync(Address entity)
+  public async Task<Address?> CreateAsync(Address entity)
   {
-    throw new NotImplementedException();
+    EntityEntry<Address> entry = await this.dummyRosterContext.Addresses.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<Address?> RetrieveAsync(int id)
