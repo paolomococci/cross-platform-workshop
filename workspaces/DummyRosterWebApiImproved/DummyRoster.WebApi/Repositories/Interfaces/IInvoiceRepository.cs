@@ -15,4 +15,5 @@ public interface IInvoiceRepository
     int id,
     Invoice entity
   );
+  Task<bool?> DeleteAsync(int id);
 }
