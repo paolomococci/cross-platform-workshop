@@ -11,4 +11,8 @@ public interface ICustomerRepository
     int id,
     Customer entity
   );
+  Task<Customer?> PartialUpdateAsync(
+    int id,
+    Customer entity
+  );
 }
