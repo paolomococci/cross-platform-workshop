@@ -11,4 +11,8 @@ public interface IProductRepository
     int id,
     Product entity
   );
+  Task<Product?> PartialUpdateAsync(
+    int id,
+    Product entity
+  );
 }
