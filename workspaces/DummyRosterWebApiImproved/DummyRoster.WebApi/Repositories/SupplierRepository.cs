@@ -76,7 +76,10 @@ public class SupplierRepository : ISupplierRepository
     return null;
   }
 
-  public Task<Supplier?> PartialUpdateAsync(int id, Supplier entity)
+  public async Task<Supplier?> PartialUpdateAsync(
+    int id, 
+    Supplier entity
+  )
   {
     throw new NotImplementedException();
   }
