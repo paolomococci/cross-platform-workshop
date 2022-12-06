@@ -26,9 +26,26 @@ public class FormRepository : IFormRepository
     }
   }
 
-  public Task<Form?> CreateAsync(Form entity)
+  public async Task<Form?> CreateAsync(Form entity)
   {
-    throw new NotImplementedException();
+    EntityEntry<Form> entry = await this.dummyRosterContext.Forms.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<Form?> RetrieveAsync(int id)
