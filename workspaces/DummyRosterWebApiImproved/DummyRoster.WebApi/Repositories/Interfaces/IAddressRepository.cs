@@ -6,4 +6,5 @@ public interface IAddressRepository
 {
   Task<Address?> CreateAsync(Address entity);
   Task<Address?> RetrieveAsync(int id);
+  Task<IEnumerable<Address>> RetrieveAllAsync();
 }
