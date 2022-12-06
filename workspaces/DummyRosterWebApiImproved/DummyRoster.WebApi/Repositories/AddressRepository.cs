@@ -50,7 +50,9 @@ public class AddressRepository : IAddressRepository
 
   public Task<Address?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Address? entity);
+    return Task.FromResult(entity);
   }
 
   public Task<IEnumerable<Address>> RetrieveAllAsync()
