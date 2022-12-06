@@ -15,4 +15,5 @@ public interface IFormRepository
     int id,
     Form entity
   );
+  Task<bool?> DeleteAsync(int id);
 }
