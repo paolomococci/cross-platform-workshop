@@ -11,4 +11,8 @@ public interface ICarrierRepository
     int id,
     Carrier entity
   );
+  Task<Carrier?> PartialUpdateAsync(
+    int id,
+    Carrier entity
+  );
 }
