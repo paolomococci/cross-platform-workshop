@@ -26,9 +26,26 @@ public class InvoiceRepository : IInvoiceRepository
     }
   }
 
-  public Task<Invoice?> CreateAsync(Invoice entity)
+  public async Task<Invoice?> CreateAsync(Invoice entity)
   {
-    throw new NotImplementedException();
+    EntityEntry<Invoice> entry = await this.dummyRosterContext.Invoices.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<Invoice?> RetrieveAsync(int id)
