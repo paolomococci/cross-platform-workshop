@@ -15,4 +15,5 @@ public interface IProductRepository
     int id,
     Product entity
   );
+  Task<bool?> DeleteAsync(int id);
 }
