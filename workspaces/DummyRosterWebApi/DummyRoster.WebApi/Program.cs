@@ -73,6 +73,7 @@ var app = builder.Build();
 // HTTP logging
 //app.UseHttpLogging();
 
+// Configure the HTTP request pipeline.
 if (builder.Environment.IsDevelopment())
 {
   app.UseSwagger();
@@ -92,13 +93,6 @@ if (builder.Environment.IsDevelopment())
       );
     }
   );
-}
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-  app.UseSwagger();
-  app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
