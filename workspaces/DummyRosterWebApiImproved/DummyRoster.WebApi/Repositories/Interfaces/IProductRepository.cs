@@ -7,4 +7,8 @@ public interface IProductRepository
   Task<Product?> CreateAsync(Product entity);
   Task<Product?> RetrieveAsync(int id);
   Task<IEnumerable<Product>> RetrieveAllAsync();
+  Task<Product?> UpdateAsync(
+    int id,
+    Product entity
+  );
 }
