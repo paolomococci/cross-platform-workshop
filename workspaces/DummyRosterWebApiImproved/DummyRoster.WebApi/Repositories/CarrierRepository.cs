@@ -26,9 +26,26 @@ public class CarrierRepository : ICarrierRepository
     }
   }
 
-  public Task<Carrier?> CreateAsync(Carrier entity)
+  public async Task<Carrier?> CreateAsync(Carrier entity)
   {
-    throw new NotImplementedException();
+    EntityEntry<Carrier> entry = await this.dummyRosterContext.Carriers.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public Task<Carrier?> RetrieveAsync(int id)
