@@ -62,9 +62,18 @@ public class EmployeeRepository : IEmployeeRepository
     );
   }
 
-  public Task<Employee?> UpdateAsync(int id, Employee entity)
+  public async Task<Employee?> UpdateAsync(
+    int id, 
+    Employee entity
+  )
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Employees.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public Task<Employee?> PartialUpdateAsync(int id, Employee entity)
