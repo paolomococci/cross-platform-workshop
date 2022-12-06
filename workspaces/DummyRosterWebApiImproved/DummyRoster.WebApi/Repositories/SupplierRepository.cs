@@ -62,9 +62,18 @@ public class SupplierRepository : ISupplierRepository
     );
   }
 
-  public Task<Supplier?> UpdateAsync(int id, Supplier entity)
+  public async Task<Supplier?> UpdateAsync(
+    int id, 
+    Supplier entity
+  )
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Suppliers.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public Task<Supplier?> PartialUpdateAsync(int id, Supplier entity)
