@@ -26,6 +26,36 @@ public class CategoryRepository : ICategoryRepository
     }
   }
 
+  public Task<Category?> CreateAsync(Category entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Category?> PartialUpdateAsync(int id, Category entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Category>> RetrieveAllAsync()
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Category?> RetrieveAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Category?> UpdateAsync(int id, Category entity)
+  {
+    throw new NotImplementedException();
+  }
+
   private Category UpdateCache(
     int id, 
     Category entity
