@@ -25,4 +25,23 @@ public class FormRepository
       );
     }
   }
+
+  private Form UpdateCache(
+    int id, 
+    Form entity
+  )
+  {
+    Form? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
