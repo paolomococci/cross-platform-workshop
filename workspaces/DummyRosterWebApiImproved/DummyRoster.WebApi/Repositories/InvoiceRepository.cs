@@ -50,7 +50,9 @@ public class InvoiceRepository : IInvoiceRepository
 
   public Task<Invoice?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Invoice? entity);
+    return Task.FromResult(entity);
   }
 
   public Task<IEnumerable<Invoice>> RetrieveAllAsync()
