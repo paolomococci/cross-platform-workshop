@@ -43,9 +43,14 @@ public class SupplierController : ControllerBase, ISupplierController
     Type = typeof(Supplier)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Get(int id)
   {
-    throw new NotImplementedException();
+    Supplier? managedEntity = await this.repository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
