@@ -11,11 +11,6 @@ public class FormController : ControllerBase, IFormController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Delete(int id)
-  {
-    throw new NotImplementedException();
-  }
-
   public Task<IActionResult> Get(int id)
   {
     throw new NotImplementedException();
@@ -26,12 +21,17 @@ public class FormController : ControllerBase, IFormController
     throw new NotImplementedException();
   }
 
+  public Task<IActionResult> Update(int id, [FromBody] Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Form entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Form entity)
+  public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
   }
