@@ -43,9 +43,14 @@ public class CarrierController : ControllerBase, ICarrierController
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Get(int id)
   {
-    throw new NotImplementedException();
+    Carrier? managedEntity = await this.repository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
