@@ -37,13 +37,13 @@ public class SupplierController : ControllerBase, ISupplierController
   /* 
     GET: api/suppliers/[id]
    */
-  [HttpGet("{id}", Name = nameof(Read))]
+  [HttpGet("{id}", Name = nameof(ReadSupplier))]
   [ProducesResponseType(
     200,
     Type = typeof(Supplier)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Read(int id)
+  public async Task<IActionResult> ReadSupplier(int id)
   {
     Supplier? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
