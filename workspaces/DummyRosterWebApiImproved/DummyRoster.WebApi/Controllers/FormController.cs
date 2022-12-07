@@ -12,6 +12,13 @@ public class FormController : ControllerBase, IFormController
 
   private readonly IFormRepository repository;
 
+  public FormController(
+    IFormRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/forms
     BODY: Form (JSON, XML)
