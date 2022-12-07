@@ -65,6 +65,14 @@ public class CustomerController : ControllerBase, ICustomerController
     throw new NotImplementedException();
   }
 
+  /* 
+    PATCH: api/customers/id
+    BODY: Customer (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity)
   {
     throw new NotImplementedException();
