@@ -43,9 +43,14 @@ public class AddressController : ControllerBase, IAddressController
     Type = typeof(Address)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Get(int id)
   {
-    throw new NotImplementedException();
+    Address? managedEntity = await this.repository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
