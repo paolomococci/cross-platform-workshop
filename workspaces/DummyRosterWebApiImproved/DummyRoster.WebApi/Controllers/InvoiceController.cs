@@ -62,9 +62,15 @@ public class InvoiceController : ControllerBase, IInvoiceController
     200,
     Type = typeof(IEnumerable<Invoice>)
   )]
-  public Task<IEnumerable<Invoice>> GetAll(int? formId)
+  public async Task<IEnumerable<Invoice>> GetAll(int? formId)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(formId.ToString()))
+    {
+      return await this.repository.RetrieveAllAsync();
+    }
+    return (await this.repository.RetrieveAllAsync()).Where(
+      entity => entity.FormId == formId
+    );
   }
 
   /* 
