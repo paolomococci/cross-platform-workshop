@@ -62,9 +62,15 @@ public class AddressController : ControllerBase, IAddressController
     200,
     Type = typeof(IEnumerable<Address>)
   )]
-  public Task<IEnumerable<Address>> GetAll(string? country)
+  public async Task<IEnumerable<Address>> GetAll(string? country)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(country))
+    {
+      return await this.repository.RetrieveAllAsync();
+    }
+    return (await this.repository.RetrieveAllAsync()).Where(
+      entity => entity.Country == country
+    );
   }
 
   /* 
