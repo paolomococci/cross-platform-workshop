@@ -78,6 +78,13 @@ public class EmployeeController : ControllerBase, IEmployeeController
     throw new NotImplementedException();
   }
 
+  /* 
+    DELETE: api/employees/id
+   */
+  [HttpDelete("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
