@@ -4,4 +4,35 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class ProductController : ControllerBase, IProductController { }
+public class ProductController : ControllerBase, IProductController
+{
+  public Task<IActionResult> Create([FromBody] Product entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Get(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Product>> GetAll(string? country)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Product entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Update(int id, [FromBody] Product entity)
+  {
+    throw new NotImplementedException();
+  }
+}
