@@ -38,7 +38,16 @@ public class CarrierController : ControllerBase, ICarrierController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Carrier>> GetAll(string? country)
+  /* 
+    GET: api/carriers
+    GET: api/carriers/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Carrier>)
+  )]
+  public Task<IEnumerable<Carrier>> GetAll(string? name)
   {
     throw new NotImplementedException();
   }
