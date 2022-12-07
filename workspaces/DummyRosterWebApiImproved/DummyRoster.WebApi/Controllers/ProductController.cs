@@ -5,8 +5,8 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
-[Route("api/products")]
 [ApiController]
+[Route("api/products")]
 public class ProductController : ControllerBase, IProductController
 {
 
