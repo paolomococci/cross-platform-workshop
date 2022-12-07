@@ -4,4 +4,4 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class CarrierController : ControllerBase { }
+public class CarrierController : ControllerBase, ICarrierController { }
