@@ -24,6 +24,15 @@ public class FormController : ControllerBase, IFormController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/forms/[id]
+   */
+  [HttpGet("{id}", Name = nameof(Get))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Form)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Get(int id)
   {
     throw new NotImplementedException();
