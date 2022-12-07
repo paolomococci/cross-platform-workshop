@@ -1,6 +1,7 @@
+using Microsoft.AspNetCore.Mvc;
 using DummyRoster.Common.EntityModel.Models;
 using DummyRoster.WebApi.Controllers.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
