@@ -5,7 +5,7 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
-[Route("api/controllers")]
+[Route("api/suppliers")]
 [ApiController]
 public class SupplierController : ControllerBase, ISupplierController
 {
