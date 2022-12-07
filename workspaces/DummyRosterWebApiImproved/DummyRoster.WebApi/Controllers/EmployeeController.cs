@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class EmployeeController : ControllerBase, IEmployeeController
 {
 
+  private readonly IEmployeeRepository repository;
+
   /* 
     POST: api/employees
     BODY: Employee (JSON, XML)
