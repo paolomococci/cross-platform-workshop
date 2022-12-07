@@ -78,6 +78,13 @@ public class SupplierController : ControllerBase, ISupplierController
     throw new NotImplementedException();
   }
 
+  /* 
+    DELETE: api/suppliers/id
+   */
+  [HttpDelete("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
