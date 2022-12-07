@@ -12,6 +12,13 @@ public class SupplierController : ControllerBase, ISupplierController
 
   private readonly ISupplierRepository repository;
 
+  public SupplierController(
+    ISupplierRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/suppliers
     BODY: Supplier (JSON, XML)
