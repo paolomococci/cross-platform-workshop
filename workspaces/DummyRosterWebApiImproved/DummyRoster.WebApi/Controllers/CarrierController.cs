@@ -37,13 +37,13 @@ public class CarrierController : ControllerBase, ICarrierController
   /* 
     GET: api/carriers/[id]
    */
-  [HttpGet("{id}", Name = nameof(Get))]
+  [HttpGet("{id}", Name = nameof(Read))]
   [ProducesResponseType(
     200,
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Read(int id)
   {
     Carrier? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
@@ -62,7 +62,7 @@ public class CarrierController : ControllerBase, ICarrierController
     200,
     Type = typeof(IEnumerable<Carrier>)
   )]
-  public async Task<IEnumerable<Carrier>> GetAll(string? name)
+  public async Task<IEnumerable<Carrier>> ReadAll(string? name)
   {
     if (string.IsNullOrWhiteSpace(name))
     {
