@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class ProductController : ControllerBase, IProductController
 {
 
+  private readonly IProductRepository repository;
+
   /* 
     POST: api/products
     BODY: Product (JSON, XML)
