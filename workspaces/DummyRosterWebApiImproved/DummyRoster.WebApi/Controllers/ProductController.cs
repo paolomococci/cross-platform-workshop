@@ -38,7 +38,16 @@ public class ProductController : ControllerBase, IProductController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Product>> GetAll(string? country)
+  /* 
+    GET: api/products
+    GET: api/products/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Product>)
+  )]
+  public Task<IEnumerable<Product>> GetAll(string? name)
   {
     throw new NotImplementedException();
   }
