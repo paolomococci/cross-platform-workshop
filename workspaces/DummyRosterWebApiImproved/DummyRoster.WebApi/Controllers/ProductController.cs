@@ -37,13 +37,13 @@ public class ProductController : ControllerBase, IProductController
   /* 
     GET: api/products/[id]
    */
-  [HttpGet("{id}", Name = nameof(Read))]
+  [HttpGet("{id}", Name = nameof(ReadProduct))]
   [ProducesResponseType(
     200,
     Type = typeof(Product)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Read(int id)
+  public async Task<IActionResult> ReadProduct(int id)
   {
     Product? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
