@@ -8,6 +8,17 @@ namespace DummyRoster.WebApi.Controllers;
 [ApiController]
 public class ProductController : ControllerBase, IProductController
 {
+
+  /* 
+    POST: api/products
+    BODY: Product (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Product)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Product entity)
   {
     throw new NotImplementedException();
