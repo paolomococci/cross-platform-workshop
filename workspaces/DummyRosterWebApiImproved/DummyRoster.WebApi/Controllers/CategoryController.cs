@@ -11,11 +11,6 @@ public class CategoryController : ControllerBase, ICategoryController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Delete(int id)
-  {
-    throw new NotImplementedException();
-  }
-
   public Task<IActionResult> Get(int id)
   {
     throw new NotImplementedException();
@@ -26,12 +21,17 @@ public class CategoryController : ControllerBase, ICategoryController
     throw new NotImplementedException();
   }
 
+  public Task<IActionResult> Update(int id, [FromBody] Category entity)
+  {
+    throw new NotImplementedException();
+  }
+
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Category entity)
+  public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
   }
