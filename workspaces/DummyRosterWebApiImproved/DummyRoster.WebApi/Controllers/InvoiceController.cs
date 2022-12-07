@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[Route("api/invoices")]
+[ApiController]
 public class InvoiceController : ControllerBase, IInvoiceController
 {
   public Task<IActionResult> Create([FromBody] Invoice entity)
