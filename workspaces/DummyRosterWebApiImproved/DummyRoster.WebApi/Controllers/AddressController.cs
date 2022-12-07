@@ -29,9 +29,22 @@ public class AddressController : ControllerBase, IAddressController
     Type = typeof(Address)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Address entity)
+  public async Task<IActionResult> Create([FromBody] Address entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Address? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadAddress),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
