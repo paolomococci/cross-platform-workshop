@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[Route("api/carriers")]
+[ApiController]
 public class CarrierController : ControllerBase, ICarrierController
 {
   public Task<IActionResult> Create([FromBody] Carrier entity)
