@@ -24,6 +24,15 @@ public class ProductController : ControllerBase, IProductController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/products/[id]
+   */
+  [HttpGet("{id}", Name = nameof(Get))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Product)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Get(int id)
   {
     throw new NotImplementedException();
