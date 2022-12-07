@@ -43,9 +43,14 @@ public class CustomerController : ControllerBase, ICustomerController
     Type = typeof(Customer)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Get(int id)
   {
-    throw new NotImplementedException();
+    Customer? managedEntity = await this.repository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
