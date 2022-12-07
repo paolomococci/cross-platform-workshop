@@ -12,6 +12,13 @@ public class ProductController : ControllerBase, IProductController
 
   private readonly IProductRepository repository;
 
+  public ProductController(
+    IProductRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/products
     BODY: Product (JSON, XML)
