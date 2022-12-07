@@ -38,7 +38,16 @@ public class CustomerController : ControllerBase, ICustomerController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Customer>> GetAll(string? country)
+  /* 
+    GET: api/customers
+    GET: api/customers/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Customer>)
+  )]
+  public Task<IEnumerable<Customer>> GetAll(string? name)
   {
     throw new NotImplementedException();
   }
