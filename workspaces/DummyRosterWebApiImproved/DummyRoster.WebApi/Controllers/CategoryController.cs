@@ -38,7 +38,16 @@ public class CategoryController : ControllerBase, ICategoryController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Category>> GetAll(string? country)
+  /* 
+    GET: api/categories
+    GET: api/categories/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Category>)
+  )]
+  public Task<IEnumerable<Category>> GetAll(string? name)
   {
     throw new NotImplementedException();
   }
