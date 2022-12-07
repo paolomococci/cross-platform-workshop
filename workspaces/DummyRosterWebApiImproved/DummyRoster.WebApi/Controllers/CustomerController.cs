@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class CustomerController : ControllerBase, ICustomerController
 {
 
+  private readonly ICustomerRepository repository;
+
   /* 
     POST: api/customers
     BODY: Customer (JSON, XML)
