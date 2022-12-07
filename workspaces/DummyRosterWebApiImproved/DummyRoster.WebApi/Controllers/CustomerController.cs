@@ -12,6 +12,13 @@ public class CustomerController : ControllerBase, ICustomerController
 
   private readonly ICustomerRepository repository;
 
+  public CustomerController(
+    ICustomerRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/customers
     BODY: Customer (JSON, XML)
