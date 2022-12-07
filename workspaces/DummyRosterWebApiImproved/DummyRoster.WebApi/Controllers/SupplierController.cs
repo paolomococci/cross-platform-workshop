@@ -37,13 +37,13 @@ public class SupplierController : ControllerBase, ISupplierController
   /* 
     GET: api/suppliers/[id]
    */
-  [HttpGet("{id}", Name = nameof(Get))]
+  [HttpGet("{id}", Name = nameof(Read))]
   [ProducesResponseType(
     200,
     Type = typeof(Supplier)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Read(int id)
   {
     Supplier? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
@@ -62,7 +62,7 @@ public class SupplierController : ControllerBase, ISupplierController
     200,
     Type = typeof(IEnumerable<Supplier>)
   )]
-  public async Task<IEnumerable<Supplier>> GetAll(string? name)
+  public async Task<IEnumerable<Supplier>> ReadAll(string? name)
   {
     if (string.IsNullOrWhiteSpace(name))
     {
