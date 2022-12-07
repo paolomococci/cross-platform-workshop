@@ -4,4 +4,4 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class CategoryController : ControllerBase { }
+public class CategoryController : ControllerBase, ICategoryController { }
