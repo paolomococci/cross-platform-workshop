@@ -11,11 +11,6 @@ public class CarrierController : ControllerBase, ICarrierController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Delete(int id)
-  {
-    throw new NotImplementedException();
-  }
-
   public Task<IActionResult> Get(int id)
   {
     throw new NotImplementedException();
@@ -26,12 +21,17 @@ public class CarrierController : ControllerBase, ICarrierController
     throw new NotImplementedException();
   }
 
+  public Task<IActionResult> Update(int id, [FromBody] Carrier entity)
+  {
+    throw new NotImplementedException();
+  }
+
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Carrier entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Carrier entity)
+  public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
   }
