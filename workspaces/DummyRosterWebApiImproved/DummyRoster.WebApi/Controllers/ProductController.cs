@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[Route("api/products")]
+[ApiController]
 public class ProductController : ControllerBase, IProductController
 {
   public Task<IActionResult> Create([FromBody] Product entity)
