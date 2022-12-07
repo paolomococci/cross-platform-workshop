@@ -37,13 +37,13 @@ public class FormController : ControllerBase, IFormController
   /* 
     GET: api/forms/[id]
    */
-  [HttpGet("{id}", Name = nameof(Get))]
+  [HttpGet("{id}", Name = nameof(Read))]
   [ProducesResponseType(
     200,
     Type = typeof(Form)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Read(int id)
   {
     Form? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
@@ -62,7 +62,7 @@ public class FormController : ControllerBase, IFormController
     200,
     Type = typeof(IEnumerable<Form>)
   )]
-  public async Task<IEnumerable<Form>> GetAll(int? customerId)
+  public async Task<IEnumerable<Form>> ReadAll(int? customerId)
   {
     if (string.IsNullOrWhiteSpace(customerId.ToString()))
     {
