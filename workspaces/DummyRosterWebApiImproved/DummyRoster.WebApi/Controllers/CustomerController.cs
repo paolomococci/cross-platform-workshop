@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[Route("api/customers")]
+[ApiController]
 public class CustomerController : ControllerBase, ICustomerController
 {
   public Task<IActionResult> Create([FromBody] Customer entity)
