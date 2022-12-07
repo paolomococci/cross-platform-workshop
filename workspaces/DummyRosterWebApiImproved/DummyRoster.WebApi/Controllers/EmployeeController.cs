@@ -37,13 +37,13 @@ public class EmployeeController : ControllerBase, IEmployeeController
   /* 
     GET: api/employees/[id]
    */
-  [HttpGet("{id}", Name = nameof(Get))]
+  [HttpGet("{id}", Name = nameof(Read))]
   [ProducesResponseType(
     200,
     Type = typeof(Employee)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Read(int id)
   {
     Employee? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
@@ -62,7 +62,7 @@ public class EmployeeController : ControllerBase, IEmployeeController
     200,
     Type = typeof(IEnumerable<Employee>)
   )]
-  public async Task<IEnumerable<Employee>> GetAll(string? name)
+  public async Task<IEnumerable<Employee>> ReadAll(string? name)
   {
     if (string.IsNullOrWhiteSpace(name))
     {
