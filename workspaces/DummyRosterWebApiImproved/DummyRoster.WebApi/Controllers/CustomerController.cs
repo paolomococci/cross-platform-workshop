@@ -37,13 +37,13 @@ public class CustomerController : ControllerBase, ICustomerController
   /* 
     GET: api/customers/[id]
    */
-  [HttpGet("{id}", Name = nameof(Read))]
+  [HttpGet("{id}", Name = nameof(ReadCustomer))]
   [ProducesResponseType(
     200,
     Type = typeof(Customer)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Read(int id)
+  public async Task<IActionResult> ReadCustomer(int id)
   {
     Customer? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
