@@ -24,6 +24,15 @@ public class AddressController : ControllerBase, IAddressController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/addresses/[id]
+   */
+  [HttpGet("{id}", Name = nameof(Get))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Address)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Get(int id)
   {
     throw new NotImplementedException();
