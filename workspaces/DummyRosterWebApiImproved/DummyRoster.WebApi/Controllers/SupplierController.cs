@@ -8,6 +8,17 @@ namespace DummyRoster.WebApi.Controllers;
 [ApiController]
 public class SupplierController : ControllerBase, ISupplierController
 {
+
+  /* 
+    POST: api/suppliers
+    BODY: Supplier (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Supplier)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Supplier entity)
   {
     throw new NotImplementedException();
