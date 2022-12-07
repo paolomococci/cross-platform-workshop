@@ -62,9 +62,15 @@ public class CategoryController : ControllerBase, ICategoryController
     200,
     Type = typeof(IEnumerable<Category>)
   )]
-  public Task<IEnumerable<Category>> GetAll(string? name)
+  public async Task<IEnumerable<Category>> GetAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAllAsync();
+    }
+    return (await this.repository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
