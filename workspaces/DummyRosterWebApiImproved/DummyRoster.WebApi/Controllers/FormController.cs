@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[Route("api/forms")]
+[ApiController]
 public class FormController : ControllerBase, IFormController
 {
   public Task<IActionResult> Create([FromBody] Form entity)
