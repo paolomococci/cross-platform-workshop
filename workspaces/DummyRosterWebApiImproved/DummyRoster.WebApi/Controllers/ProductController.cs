@@ -62,9 +62,15 @@ public class ProductController : ControllerBase, IProductController
     200,
     Type = typeof(IEnumerable<Product>)
   )]
-  public Task<IEnumerable<Product>> GetAll(string? name)
+  public async Task<IEnumerable<Product>> GetAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAllAsync();
+    }
+    return (await this.repository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
