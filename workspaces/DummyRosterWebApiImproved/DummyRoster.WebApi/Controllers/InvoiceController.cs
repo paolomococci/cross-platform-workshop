@@ -12,6 +12,13 @@ public class InvoiceController : ControllerBase, IInvoiceController
 
   private readonly IInvoiceRepository repository;
 
+  public InvoiceController(
+    IInvoiceRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/invoices
     BODY: Invoice (JSON, XML)
