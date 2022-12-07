@@ -62,9 +62,15 @@ public class CustomerController : ControllerBase, ICustomerController
     200,
     Type = typeof(IEnumerable<Customer>)
   )]
-  public Task<IEnumerable<Customer>> GetAll(string? name)
+  public async Task<IEnumerable<Customer>> GetAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAllAsync();
+    }
+    return (await this.repository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
