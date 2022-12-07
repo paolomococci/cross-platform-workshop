@@ -8,6 +8,17 @@ namespace DummyRoster.WebApi.Controllers;
 [ApiController]
 public class InvoiceController : ControllerBase, IInvoiceController
 {
+
+  /* 
+    POST: api/invoices
+    BODY: Invoice (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Invoice)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Invoice entity)
   {
     throw new NotImplementedException();
