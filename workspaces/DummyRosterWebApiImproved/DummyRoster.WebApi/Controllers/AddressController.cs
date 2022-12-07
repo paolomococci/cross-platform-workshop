@@ -37,13 +37,13 @@ public class AddressController : ControllerBase, IAddressController
   /* 
     GET: api/addresses/[id]
    */
-  [HttpGet("{id}", Name = nameof(Read))]
+  [HttpGet("{id}", Name = nameof(ReadAddress))]
   [ProducesResponseType(
     200,
     Type = typeof(Address)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Read(int id)
+  public async Task<IActionResult> ReadAddress(int id)
   {
     Address? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
