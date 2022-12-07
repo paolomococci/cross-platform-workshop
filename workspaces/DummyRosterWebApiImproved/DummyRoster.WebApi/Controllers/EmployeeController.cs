@@ -38,7 +38,16 @@ public class EmployeeController : ControllerBase, IEmployeeController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Employee>> GetAll(string? country)
+  /* 
+    GET: api/employees
+    GET: api/employees/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Employee>)
+  )]
+  public Task<IEnumerable<Employee>> GetAll(string? name)
   {
     throw new NotImplementedException();
   }
