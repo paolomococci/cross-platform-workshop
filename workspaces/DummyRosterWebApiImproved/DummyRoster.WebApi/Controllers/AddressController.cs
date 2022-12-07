@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class AddressController : ControllerBase, IAddressController
 {
 
+  private readonly IAddressRepository repository;
+
   /* 
     POST: api/addresses
     BODY: Address (JSON, XML)
