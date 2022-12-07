@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class FormController : ControllerBase, IFormController
 {
 
+  private readonly IFormRepository repository;
+
   /* 
     POST: api/forms
     BODY: Form (JSON, XML)
