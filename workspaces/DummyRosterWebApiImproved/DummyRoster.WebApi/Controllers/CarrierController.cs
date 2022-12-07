@@ -52,6 +52,14 @@ public class CarrierController : ControllerBase, ICarrierController
     throw new NotImplementedException();
   }
 
+  /* 
+    PUT: api/carriers/id
+    BODY: Carrier (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Update(int id, [FromBody] Carrier entity)
   {
     throw new NotImplementedException();
