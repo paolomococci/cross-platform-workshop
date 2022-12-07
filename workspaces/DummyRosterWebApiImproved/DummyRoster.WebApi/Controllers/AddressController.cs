@@ -52,6 +52,14 @@ public class AddressController : ControllerBase, IAddressController
     throw new NotImplementedException();
   }
 
+  /* 
+    PUT: api/addresses/id
+    BODY: Address (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Update(int id, [FromBody] Address entity)
   {
     throw new NotImplementedException();
