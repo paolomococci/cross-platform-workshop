@@ -128,6 +128,7 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class CategoryContr
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class ProductController {}" > Controllers/ProductController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class FormController {}" > Controllers/FormController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class InvoiceController {}" > Controllers/InvoiceController.cs
+mkdir Controllers/Interfaces
 ```
 
 ## Please note
