@@ -37,13 +37,13 @@ public class InvoiceController : ControllerBase, IInvoiceController
   /* 
     GET: api/invoices/[id]
    */
-  [HttpGet("{id}", Name = nameof(Get))]
+  [HttpGet("{id}", Name = nameof(Read))]
   [ProducesResponseType(
     200,
     Type = typeof(Invoice)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Read(int id)
   {
     Invoice? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
@@ -62,7 +62,7 @@ public class InvoiceController : ControllerBase, IInvoiceController
     200,
     Type = typeof(IEnumerable<Invoice>)
   )]
-  public async Task<IEnumerable<Invoice>> GetAll(int? formId)
+  public async Task<IEnumerable<Invoice>> ReadAll(int? formId)
   {
     if (string.IsNullOrWhiteSpace(formId.ToString()))
     {
