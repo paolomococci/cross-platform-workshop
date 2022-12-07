@@ -5,8 +5,8 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
-[Route("api/employees")]
 [ApiController]
+[Route("api/employees")]
 public class EmployeeController : ControllerBase, IEmployeeController
 {
 
