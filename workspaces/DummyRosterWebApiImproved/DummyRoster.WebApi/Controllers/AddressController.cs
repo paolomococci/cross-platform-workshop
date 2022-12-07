@@ -11,11 +11,6 @@ public class AddressController : ControllerBase, IAddressController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Delete(int id)
-  {
-    throw new NotImplementedException();
-  }
-
   public Task<IActionResult> Get(int id)
   {
     throw new NotImplementedException();
@@ -26,12 +21,17 @@ public class AddressController : ControllerBase, IAddressController
     throw new NotImplementedException();
   }
 
+  public Task<IActionResult> Update(int id, [FromBody] Address entity)
+  {
+    throw new NotImplementedException();
+  }
+
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Address entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Address entity)
+  public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
   }
