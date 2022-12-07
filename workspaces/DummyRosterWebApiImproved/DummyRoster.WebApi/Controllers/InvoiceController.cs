@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class InvoiceController : ControllerBase, IInvoiceController
 {
 
+  private readonly IInvoiceRepository repository;
+
   /* 
     POST: api/invoices
     BODY: Invoice (JSON, XML)
