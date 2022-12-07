@@ -8,6 +8,17 @@ namespace DummyRoster.WebApi.Controllers;
 [ApiController]
 public class AddressController : ControllerBase, IAddressController
 {
+
+  /* 
+    POST: api/addresses
+    BODY: Address (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Address)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Address entity)
   {
     throw new NotImplementedException();
