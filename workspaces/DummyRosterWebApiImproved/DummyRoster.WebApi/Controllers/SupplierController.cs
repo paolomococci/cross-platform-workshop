@@ -24,6 +24,15 @@ public class SupplierController : ControllerBase, ISupplierController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/suppliers/[id]
+   */
+  [HttpGet("{id}", Name = nameof(Get))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Supplier)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Get(int id)
   {
     throw new NotImplementedException();
