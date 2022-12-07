@@ -65,6 +65,14 @@ public class FormController : ControllerBase, IFormController
     throw new NotImplementedException();
   }
 
+  /* 
+    PATCH: api/forms/id
+    BODY: Form (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Form entity)
   {
     throw new NotImplementedException();
