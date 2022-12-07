@@ -38,7 +38,16 @@ public class InvoiceController : ControllerBase, IInvoiceController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Invoice>> GetAll(string? country)
+  /* 
+    GET: api/invoices
+    GET: api/invoices/?formId=[formId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Invoice>)
+  )]
+  public Task<IEnumerable<Invoice>> GetAll(int? formId)
   {
     throw new NotImplementedException();
   }
