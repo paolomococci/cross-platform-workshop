@@ -37,13 +37,13 @@ public class CategoryController : ControllerBase, ICategoryController
   /* 
     GET: api/categories/[id]
    */
-  [HttpGet("{id}", Name = nameof(Get))]
+  [HttpGet("{id}", Name = nameof(Read))]
   [ProducesResponseType(
     200,
     Type = typeof(Category)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Get(int id)
+  public async Task<IActionResult> Read(int id)
   {
     Category? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
@@ -62,7 +62,7 @@ public class CategoryController : ControllerBase, ICategoryController
     200,
     Type = typeof(IEnumerable<Category>)
   )]
-  public async Task<IEnumerable<Category>> GetAll(string? name)
+  public async Task<IEnumerable<Category>> ReadAll(string? name)
   {
     if (string.IsNullOrWhiteSpace(name))
     {
