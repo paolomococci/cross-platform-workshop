@@ -5,8 +5,8 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
-[Route("api/categories")]
 [ApiController]
+[Route("api/categories")]
 public class CategoryController : ControllerBase, ICategoryController
 {
 
