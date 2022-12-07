@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[Route("api/categories")]
+[ApiController]
 public class CategoryController : ControllerBase, ICategoryController
 {
   public Task<IActionResult> Create([FromBody] Category entity)
