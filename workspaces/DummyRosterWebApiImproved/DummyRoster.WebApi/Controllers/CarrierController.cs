@@ -8,6 +8,17 @@ namespace DummyRoster.WebApi.Controllers;
 [ApiController]
 public class CarrierController : ControllerBase, ICarrierController
 {
+
+  /* 
+    POST: api/carriers
+    BODY: Carrier (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Carrier)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Carrier entity)
   {
     throw new NotImplementedException();
