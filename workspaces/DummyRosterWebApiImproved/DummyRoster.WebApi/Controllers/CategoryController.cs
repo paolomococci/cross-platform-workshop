@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class CategoryController : ControllerBase, ICategoryController
 {
 
+  private readonly ICategoryRepository repository;
+
   /* 
     POST: api/categories
     BODY: Category (JSON, XML)
