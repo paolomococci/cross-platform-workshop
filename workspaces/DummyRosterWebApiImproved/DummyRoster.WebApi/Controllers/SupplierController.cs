@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class SupplierController : ControllerBase, ISupplierController
 {
 
+  private readonly ISupplierRepository repository;
+
   /* 
     POST: api/suppliers
     BODY: Supplier (JSON, XML)
