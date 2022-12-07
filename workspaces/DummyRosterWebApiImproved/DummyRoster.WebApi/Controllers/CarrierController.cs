@@ -12,6 +12,13 @@ public class CarrierController : ControllerBase, ICarrierController
 
   private readonly ICarrierRepository repository;
 
+  public CarrierController(
+    ICarrierRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/carriers
     BODY: Carrier (JSON, XML)
