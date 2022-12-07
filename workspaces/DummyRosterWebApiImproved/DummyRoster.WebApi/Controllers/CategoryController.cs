@@ -12,6 +12,13 @@ public class CategoryController : ControllerBase, ICategoryController
 
   private readonly ICategoryRepository repository;
 
+  public CategoryController(
+    ICategoryRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/categories
     BODY: Category (JSON, XML)
