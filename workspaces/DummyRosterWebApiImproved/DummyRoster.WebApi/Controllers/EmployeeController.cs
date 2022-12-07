@@ -8,6 +8,17 @@ namespace DummyRoster.WebApi.Controllers;
 [ApiController]
 public class EmployeeController : ControllerBase, IEmployeeController
 {
+
+  /* 
+    POST: api/employees
+    BODY: Employee (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Employee)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Employee entity)
   {
     throw new NotImplementedException();
