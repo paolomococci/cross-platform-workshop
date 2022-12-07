@@ -1,3 +1,3 @@
 namespace DummyRoster.WebApi.Controllers.Interfaces;
 
-public interface IProductController {}
+public interface IProductController { }
