@@ -6,8 +6,8 @@ namespace DummyRoster.WebApi.Controllers.Interfaces;
 public interface IInvoiceController
 {
   public Task<IActionResult> Create([FromBody] Invoice entity);
-  public Task<IActionResult> Get(int id);
-  public Task<IEnumerable<Invoice>> GetAll(int? formId);
+  public Task<IActionResult> Read(int id);
+  public Task<IEnumerable<Invoice>> ReadAll(int? formId);
   public Task<IActionResult> Update(int id, [FromBody] Invoice entity);
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity);
   public Task<IActionResult> Delete(int id);
