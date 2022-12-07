@@ -12,6 +12,13 @@ public class AddressController : ControllerBase, IAddressController
 
   private readonly IAddressRepository repository;
 
+  public AddressController(
+    IAddressRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/addresses
     BODY: Address (JSON, XML)
