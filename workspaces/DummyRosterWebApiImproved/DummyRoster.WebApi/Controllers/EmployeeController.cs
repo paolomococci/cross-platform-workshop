@@ -12,6 +12,13 @@ public class EmployeeController : ControllerBase, IEmployeeController
 
   private readonly IEmployeeRepository repository;
 
+  public EmployeeController(
+    IEmployeeRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+
   /* 
     POST: api/employees
     BODY: Employee (JSON, XML)
