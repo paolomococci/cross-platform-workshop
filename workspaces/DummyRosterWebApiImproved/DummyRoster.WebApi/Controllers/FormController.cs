@@ -4,4 +4,35 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class FormController : ControllerBase, IFormController { }
+public class FormController : ControllerBase, IFormController
+{
+  public Task<IActionResult> Create([FromBody] Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Get(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Form>> GetAll(string? country)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Update(int id, [FromBody] Form entity)
+  {
+    throw new NotImplementedException();
+  }
+}
