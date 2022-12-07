@@ -37,13 +37,13 @@ public class InvoiceController : ControllerBase, IInvoiceController
   /* 
     GET: api/invoices/[id]
    */
-  [HttpGet("{id}", Name = nameof(Read))]
+  [HttpGet("{id}", Name = nameof(ReadInvoice))]
   [ProducesResponseType(
     200,
     Type = typeof(Invoice)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Read(int id)
+  public async Task<IActionResult> ReadInvoice(int id)
   {
     Invoice? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
