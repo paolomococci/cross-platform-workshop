@@ -38,6 +38,15 @@ public class AddressController : ControllerBase, IAddressController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/addresses
+    GET: api/addresses/?country=[country]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Address>)
+  )]
   public Task<IEnumerable<Address>> GetAll(string? country)
   {
     throw new NotImplementedException();
