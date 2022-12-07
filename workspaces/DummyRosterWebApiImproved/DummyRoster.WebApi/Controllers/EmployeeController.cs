@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[Route("api/employees")]
+[ApiController]
 public class EmployeeController : ControllerBase, IEmployeeController
 {
   public Task<IActionResult> Create([FromBody] Employee entity)
