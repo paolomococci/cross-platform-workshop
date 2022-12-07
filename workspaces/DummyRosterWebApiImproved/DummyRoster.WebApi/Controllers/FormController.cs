@@ -38,7 +38,16 @@ public class FormController : ControllerBase, IFormController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Form>> GetAll(string? country)
+  /* 
+    GET: api/forms
+    GET: api/forms/?customerId=[customerId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Form>)
+  )]
+  public Task<IEnumerable<Form>> GetAll(int? customerId)
   {
     throw new NotImplementedException();
   }
