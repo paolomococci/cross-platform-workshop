@@ -37,13 +37,13 @@ public class EmployeeController : ControllerBase, IEmployeeController
   /* 
     GET: api/employees/[id]
    */
-  [HttpGet("{id}", Name = nameof(Read))]
+  [HttpGet("{id}", Name = nameof(ReadEmployee))]
   [ProducesResponseType(
     200,
     Type = typeof(Employee)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Read(int id)
+  public async Task<IActionResult> ReadEmployee(int id)
   {
     Employee? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
