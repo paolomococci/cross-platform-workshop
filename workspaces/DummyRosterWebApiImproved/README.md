@@ -129,15 +129,15 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class ProductContro
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class FormController {}" > Controllers/FormController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class InvoiceController {}" > Controllers/InvoiceController.cs
 mkdir Controllers/Interfaces
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface IEmployeeController {}" > Controllers/Interfaces/IEmployeeController.cs
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface ICustomerController {}" > Controllers/Interfaces/ICustomerController.cs
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface ISupplierController {}" > Controllers/Interfaces/ISupplierController.cs
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface ICarrierController {}" > Controllers/Interfaces/ICarrierController.cs
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface IAddressController {}" > Controllers/Interfaces/IAddressController.cs
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface ICategoryController {}" > Controllers/Interfaces/ICategoryController.cs
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface IProductController {}" > Controllers/Interfaces/IProductController.cs
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface IFormController {}" > Controllers/Interfaces/IFormController.cs
-echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic interface IInvoiceController {}" > Controllers/Interfaces/IInvoiceController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IEmployeeController {}" > Controllers/Interfaces/IEmployeeController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface ICustomerController {}" > Controllers/Interfaces/ICustomerController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface ISupplierController {}" > Controllers/Interfaces/ISupplierController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface ICarrierController {}" > Controllers/Interfaces/ICarrierController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IAddressController {}" > Controllers/Interfaces/IAddressController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface ICategoryController {}" > Controllers/Interfaces/ICategoryController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IProductController {}" > Controllers/Interfaces/IProductController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IFormController {}" > Controllers/Interfaces/IFormController.cs
+echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IInvoiceController {}" > Controllers/Interfaces/IInvoiceController.cs
 ```
 
 ## Please note
