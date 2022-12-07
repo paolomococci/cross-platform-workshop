@@ -65,6 +65,14 @@ public class ProductController : ControllerBase, IProductController
     throw new NotImplementedException();
   }
 
+  /* 
+    PATCH: api/products/id
+    BODY: Product (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Product entity)
   {
     throw new NotImplementedException();
