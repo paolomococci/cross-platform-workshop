@@ -10,6 +10,8 @@ namespace DummyRoster.WebApi.Controllers;
 public class CarrierController : ControllerBase, ICarrierController
 {
 
+  private readonly ICarrierRepository repository;
+
   /* 
     POST: api/carriers
     BODY: Carrier (JSON, XML)
