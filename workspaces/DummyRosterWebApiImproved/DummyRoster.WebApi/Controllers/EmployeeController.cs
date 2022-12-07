@@ -62,9 +62,15 @@ public class EmployeeController : ControllerBase, IEmployeeController
     200,
     Type = typeof(IEnumerable<Employee>)
   )]
-  public Task<IEnumerable<Employee>> GetAll(string? name)
+  public async Task<IEnumerable<Employee>> GetAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAllAsync();
+    }
+    return (await this.repository.RetrieveAllAsync()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
