@@ -6,7 +6,7 @@ namespace DummyRoster.WebApi.Controllers.Interfaces;
 public interface ICategoryController
 {
   public Task<IActionResult> Create([FromBody] Category entity);
-  public Task<IActionResult> Read(int id);
+  public Task<IActionResult> ReadCategory(int id);
   public Task<IEnumerable<Category>> ReadAll(string? name);
   public Task<IActionResult> Update(int id, [FromBody] Category entity);
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity);
