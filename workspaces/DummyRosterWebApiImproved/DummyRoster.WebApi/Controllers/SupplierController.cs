@@ -38,7 +38,16 @@ public class SupplierController : ControllerBase, ISupplierController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Supplier>> GetAll(string? country)
+  /* 
+    GET: api/suppliers
+    GET: api/suppliers/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Supplier>)
+  )]
+  public Task<IEnumerable<Supplier>> GetAll(string? name)
   {
     throw new NotImplementedException();
   }
