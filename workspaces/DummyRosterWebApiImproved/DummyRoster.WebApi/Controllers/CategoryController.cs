@@ -8,6 +8,17 @@ namespace DummyRoster.WebApi.Controllers;
 [ApiController]
 public class CategoryController : ControllerBase, ICategoryController
 {
+
+  /* 
+    POST: api/categories
+    BODY: Category (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Category)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Category entity)
   {
     throw new NotImplementedException();
