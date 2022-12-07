@@ -1,3 +1,3 @@
 namespace DummyRoster.WebApi.Controllers;
 
-public class AddressController {}
+public class AddressController { }
