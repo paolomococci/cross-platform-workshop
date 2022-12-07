@@ -37,13 +37,13 @@ public class CategoryController : ControllerBase, ICategoryController
   /* 
     GET: api/categories/[id]
    */
-  [HttpGet("{id}", Name = nameof(Read))]
+  [HttpGet("{id}", Name = nameof(ReadCategory))]
   [ProducesResponseType(
     200,
     Type = typeof(Category)
   )]
   [ProducesResponseType(404)]
-  public async Task<IActionResult> Read(int id)
+  public async Task<IActionResult> ReadCategory(int id)
   {
     Category? managedEntity = await this.repository.RetrieveAsync(id);
     if (managedEntity == null)
