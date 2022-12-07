@@ -4,4 +4,4 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class EmployeeController : ControllerBase { }
+public class EmployeeController : ControllerBase, IEmployeeController { }
