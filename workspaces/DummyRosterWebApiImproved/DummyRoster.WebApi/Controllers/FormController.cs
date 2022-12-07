@@ -62,9 +62,15 @@ public class FormController : ControllerBase, IFormController
     200,
     Type = typeof(IEnumerable<Form>)
   )]
-  public Task<IEnumerable<Form>> GetAll(int? customerId)
+  public async Task<IEnumerable<Form>> GetAll(int? customerId)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(customerId.ToString()))
+    {
+      return await this.repository.RetrieveAllAsync();
+    }
+    return (await this.repository.RetrieveAllAsync()).Where(
+      entity => entity.CustomerId == customerId
+    );
   }
 
   /* 
