@@ -81,7 +81,24 @@ public class CarrierRepository : ICarrierRepository
     Carrier entity
   )
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Carrier? registered);
+    if (registered != null)
+    {
+      if (entity.Name != null) registered.Name = entity.Name;
+      if (entity.FoundationDate != null) registered.FoundationDate = entity.FoundationDate;
+      if (entity.Description != null) registered.Description = entity.Description;
+      if (entity.Picture != null) registered.Picture = entity.Picture;
+      if (entity.Contact != null) registered.Contact = entity.Contact;
+      if (entity.Location != null) registered.Location = entity.Location;
+      this.dummyRosterContext.Carriers.Update(registered);
+      int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+      if (changesSaved == 1)
+      {
+        return this.UpdateCache(id, registered);
+      }
+    }
+    return null;
   }
 
   public async Task<bool?> DeleteAsync(int id)
