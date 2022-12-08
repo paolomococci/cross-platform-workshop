@@ -4,11 +4,11 @@
 
 POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Type: application/json
-Content-Length: 232
+Content-Length: 230
 
 {
-  "StreetOrSquare": "Some Street One",
-  "Civic": "151/B",
+  "StreetOrSquare": "SomeOne Street",
+  "Civic": "15/B",
   "City": "SomeOneCity",
   "District": "SomeOneDistrict",
   "Postcode": "010101",
