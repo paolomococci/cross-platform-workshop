@@ -95,3 +95,7 @@ Content-Length: 32
   "id": 2,
   "Name": "SomeTwo square"
 }
+
+### delete an identified data entry
+
+DELETE https://localhost:5001/api/addresses/1 HTTP/1.1
