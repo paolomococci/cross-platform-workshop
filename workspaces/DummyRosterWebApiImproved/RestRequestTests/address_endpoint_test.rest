@@ -36,6 +36,10 @@ Content-Length: 229
   "Fax": "039035801010111"
 }
 
+### read one
+
+GET https://localhost:5001/api/addresses/1 HTTP/1.1
+
 ### read all
 
 GET https://localhost:5001/api/addresses HTTP/1.1
