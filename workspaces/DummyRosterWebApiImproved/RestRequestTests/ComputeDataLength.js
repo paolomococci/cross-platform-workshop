@@ -1,15 +1,15 @@
 /* extract of javascript code to calculate the length of the data to be sent in JSON format */
 
 const data = {
-  "Name": "SomeThree Street",
-  "Civic": "101",
-  "City": "SomeThreeCity",
-  "District": "SomeThreeDistrict",
+  "Name": "SomeTwo avenue",
+  "Civic": "101/D",
+  "City": "SomeTwoCity",
+  "District": "SomeTwoDistrict",
   "Postcode": "010110",
-  "Country": "SomeThreeCountry",
-  "Email": "some.three@example.local",
-  "Phone": "039035801010113",
-  "Fax": "039035801010114"
+  "Country": "SomeTwoCountry",
+  "Email": "some.two@example.local",
+  "Phone": "039035801010110",
+  "Fax": "039035801010111"
 }
 
 const dataLength = JSON.stringify(data).length;
