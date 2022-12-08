@@ -2,19 +2,7 @@
 
 const data = {
   "id": 2,
-  "Name": "SomeTwo avenue",
-  "Civic": "101/D",
-  "City": "SomeTwoCity",
-  "District": "SomeTwoDistrict",
-  "Postcode": "010110",
-  "Country": "SomeTwoCountry",
-  "Email": "some.two@example.local",
-  "Phone": "039035801010110",
-  "Fax": "039035801010111",
-  "carriers": [],
-  "customers": [],
-  "employees": [],
-  "suppliers": []
+  "Name": "SomeTwo square"
 }
 
 const dataLength = JSON.stringify(data).length;
