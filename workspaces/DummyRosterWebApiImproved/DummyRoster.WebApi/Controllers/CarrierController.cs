@@ -29,9 +29,22 @@ public class CarrierController : ControllerBase, ICarrierController
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Carrier entity)
+  public async Task<IActionResult> Create([FromBody] Carrier entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Carrier? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadCarrier),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
