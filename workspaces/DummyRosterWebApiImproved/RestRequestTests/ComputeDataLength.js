@@ -1,8 +1,8 @@
 /* extract of javascript code to calculate the length of the data to be sent in JSON format */
 
 const data = {
-  "StreetOrSquare": "Some Street One",
-  "Civic": "151/B",
+  "StreetOrSquare": "SomeOne Street",
+  "Civic": "15/B",
   "City": "SomeOneCity",
   "District": "SomeOneDistrict",
   "Postcode": "010101",
