@@ -1,6 +1,6 @@
 # address endpoint tests
 
-### create a new fictitious data entry
+### inserting dummy data
 
 POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Type: application/json
@@ -18,7 +18,7 @@ Content-Length: 220
   "Fax": "039035801010102"
 }
 
-### create a new fictitious data entry
+### inserting dummy data
 
 POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Type: application/json
@@ -36,7 +36,7 @@ Content-Length: 219
   "Fax": "039035801010111"
 }
 
-### create a new fictitious data entry
+### inserting dummy data
 
 POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Type: application/json
@@ -62,7 +62,7 @@ GET https://localhost:5001/api/addresses/2 HTTP/1.1
 
 GET https://localhost:5001/api/addresses HTTP/1.1
 
-### update a fictitious data entry with id 2
+### update a dummy data with id 2
 
 PUT https://localhost:5001/api/addresses/2 HTTP/1.1
 Content-Type: application/json
@@ -85,7 +85,7 @@ Content-Length: 287
   "suppliers": []
 }
 
-### partial update a fictitious data entry with id 2
+### partial update a dummy data with id 2
 
 PATCH https://localhost:5001/api/addresses/2 HTTP/1.1
 Content-Type: application/json
