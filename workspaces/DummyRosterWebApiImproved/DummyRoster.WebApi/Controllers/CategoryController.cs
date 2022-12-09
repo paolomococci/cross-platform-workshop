@@ -29,9 +29,22 @@ public class CategoryController : ControllerBase, ICategoryController
     Type = typeof(Category)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Category entity)
+  public async Task<IActionResult> Create([FromBody] Category entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Category? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadCategory),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
