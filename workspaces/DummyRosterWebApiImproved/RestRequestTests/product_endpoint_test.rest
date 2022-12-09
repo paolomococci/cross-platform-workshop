@@ -25,7 +25,15 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "": ""
+  "Name": "",
+  "Description": "",
+  "Picture": "",
+  "QuantityPerUnit": "",
+  "UnitPrice": "",
+  "UnitsInStock": "",
+  "UnitsOnOrder": "",
+  "ReorderLevel": "",
+  "Discontinued": ""
 }
 
 ### inserting dummy data
@@ -35,7 +43,15 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "": ""
+  "Name": "",
+  "Description": "",
+  "Picture": "",
+  "QuantityPerUnit": "",
+  "UnitPrice": "",
+  "UnitsInStock": "",
+  "UnitsOnOrder": "",
+  "ReorderLevel": "",
+  "Discontinued": ""
 }
 
 ### read
