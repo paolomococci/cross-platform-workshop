@@ -59,6 +59,10 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IFormRepository, FormRepository>();
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
+builder.WebHost.UseUrls(
+  "https://127.0.0.1:5002/"
+);
+
 // Enabling HTTP logging: limit its use to the auditing and debugging stages!
 /*
 builder.Services.AddHttpLogging(
