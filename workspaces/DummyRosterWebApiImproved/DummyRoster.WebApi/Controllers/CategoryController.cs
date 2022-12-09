@@ -117,9 +117,19 @@ public class CategoryController : ControllerBase, ICategoryController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Category? managedEntity = await this.repository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.PartialUpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
   /* 
