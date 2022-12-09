@@ -29,9 +29,22 @@ public class FormController : ControllerBase, IFormController
     Type = typeof(Form)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Form entity)
+  public async Task<IActionResult> Create([FromBody] Form entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Form? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadForm),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
