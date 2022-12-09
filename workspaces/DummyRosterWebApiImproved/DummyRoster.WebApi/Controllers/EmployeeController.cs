@@ -29,9 +29,22 @@ public class EmployeeController : ControllerBase, IEmployeeController
     Type = typeof(Employee)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Employee entity)
+  public async Task<IActionResult> Create([FromBody] Employee entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Employee? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadEmployee),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
