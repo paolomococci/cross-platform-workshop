@@ -19,7 +19,9 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "": ""
+  "Name": "",
+  "Description": "",
+  "Picture": ""
 }
 
 ### inserting dummy data
@@ -29,7 +31,9 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "": ""
+  "Name": "",
+  "Description": "",
+  "Picture": ""
 }
 
 ### read
