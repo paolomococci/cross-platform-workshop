@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Net.Http.Headers;
 //using Microsoft.AspNetCore.HttpLogging;
 using DummyRoster.Common.DataContext.Data;
 using DummyRoster.WebApi.Repositories.Interfaces;
