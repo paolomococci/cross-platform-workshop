@@ -21,7 +21,11 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "": ""
+  "Description": "",
+  "FormDate": "",
+  "RequiredDate": "",
+  "PromisedDate": "",
+  "ShippingCost": ""
 }
 
 ### inserting dummy data
@@ -31,7 +35,11 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "": ""
+  "Description": "",
+  "FormDate": "",
+  "RequiredDate": "",
+  "PromisedDate": "",
+  "ShippingCost": ""
 }
 
 ### read
