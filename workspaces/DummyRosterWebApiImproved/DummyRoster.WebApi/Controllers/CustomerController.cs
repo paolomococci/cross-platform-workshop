@@ -29,9 +29,22 @@ public class CustomerController : ControllerBase, ICustomerController
     Type = typeof(Customer)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Customer entity)
+  public async Task<IActionResult> Create([FromBody] Customer entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Customer? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadCustomer),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
