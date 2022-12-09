@@ -20,7 +20,10 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "": ""
+  "Name": "",
+  "FoundationDate": "",
+  "Description": "",
+  "Picture": ""
 }
 
 ### inserting dummy data
@@ -30,7 +33,10 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "": ""
+  "Name": "",
+  "FoundationDate": "",
+  "Description": "",
+  "Picture": ""
 }
 
 ### read
