@@ -63,6 +63,18 @@ builder.WebHost.UseUrls(
   "https://127.0.0.1:5002/"
 );
 
+builder.Services.AddHttpClient(
+  name: "DummyRoster.WebApi",
+  configureClient: options => {
+    options.BaseAddress = new Uri("https://127.0.0.1:5002/");
+    options.DefaultRequestHeaders.Accept.Add(
+      new MediaTypeWithQualityHeaderValue(
+        "application/json", 1.0
+      )
+    );
+  }
+);
+
 // Enabling HTTP logging: limit its use to the auditing and debugging stages!
 /*
 builder.Services.AddHttpLogging(
