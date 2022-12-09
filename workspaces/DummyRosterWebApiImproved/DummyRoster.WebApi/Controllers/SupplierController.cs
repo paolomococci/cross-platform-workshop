@@ -94,9 +94,19 @@ public class SupplierController : ControllerBase, ISupplierController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Supplier entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Supplier entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Supplier? managedEntity = await this.repository.RetrieveAsync(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.UpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
   /* 
