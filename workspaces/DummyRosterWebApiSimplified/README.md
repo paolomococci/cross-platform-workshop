@@ -32,3 +32,13 @@ Attention, for the database to automatically generate incrementally the identifi
 "Id" INTEGER PRIMARY KEY AUTOINCREMENT
 ...
 ```
+
+### Scaffolding of DummyRoster.Common project
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new classlib --name DummyRoster.Common
+cd DummyRoster.Common.EntityModel
+rm Class1.cs
+```
