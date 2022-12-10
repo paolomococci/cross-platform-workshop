@@ -22,3 +22,13 @@ On Linux, to exit the sqlite command prompt, type the following string:
 ```
 
 and then give enter.
+
+### Please note
+
+Attention, for the database to automatically generate incrementally the identifiers must be indicated as follows:
+
+```text
+...
+"Id" INTEGER PRIMARY KEY AUTOINCREMENT
+...
+```
