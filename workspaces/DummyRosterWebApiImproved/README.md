@@ -26,6 +26,16 @@ On Linux, to exit the sqlite command prompt, type the following string:
 
 and then give enter.
 
+### Please note
+
+Attention, for the database to automatically generate incrementally the identifiers must be indicated as follows:
+
+```text
+...
+"Id" INTEGER PRIMARY KEY AUTOINCREMENT
+...
+```
+
 ### Scaffolding of DummyRoster.Common.EntityModel project
 
 From the main workspace I type the following commands:
@@ -138,14 +148,4 @@ echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interfac
 echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IProductController {}" > Controllers/Interfaces/IProductController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IFormController {}" > Controllers/Interfaces/IFormController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IInvoiceController {}" > Controllers/Interfaces/IInvoiceController.cs
-```
-
-## Please note
-
-Attention, for the database to automatically generate incrementally the identifiers must be indicated as follows:
-
-```text
-...
-"Id" INTEGER PRIMARY KEY AUTOINCREMENT
-...
 ```
