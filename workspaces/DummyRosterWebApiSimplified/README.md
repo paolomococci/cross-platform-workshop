@@ -39,6 +39,6 @@ From the main workspace I type the following commands:
 
 ```shell
 dotnet new classlib --name DummyRoster.Common
-cd DummyRoster.Common.EntityModel
+cd DummyRoster.Common
 mv Class1.cs Forecast.cs
 ```
