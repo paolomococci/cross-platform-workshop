@@ -155,5 +155,7 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class HomeControlle
 ### create a customers view
 
 ```shell
+mkdir Views
+mkdir Views/Home
 echo -e "@using DummyRoster.Common.DataContext.Data\n@model IEnumerable<Customer>\n" > Views/Home/Customers.cshtml
 ```
