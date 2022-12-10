@@ -50,4 +50,5 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new web --name DummyRoster.Web
 cd DummyRoster.Web
+dotnet add ./DummyRoster.Web.csproj reference ../DummyRoster.Common/DummyRoster.Common.csproj
 ```
