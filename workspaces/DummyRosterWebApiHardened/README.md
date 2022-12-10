@@ -157,5 +157,5 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class HomeControlle
 ```shell
 mkdir Views
 mkdir Views/Home
-echo -e "@using DummyRoster.Common.DataContext.Data\n@model IEnumerable<Customer>\n" > Views/Home/Customers.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>" > Views/Home/Customers.cshtml
 ```
