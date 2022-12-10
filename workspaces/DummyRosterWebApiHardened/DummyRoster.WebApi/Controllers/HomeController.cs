@@ -6,9 +6,12 @@ namespace DummyRoster.WebApi.Controllers;
 
 public class HomeController : IHomeController
 {
-  ILogger<HomeController> logger;
+  ILogger<HomeController> _logger;
   DummyRosterContext dummyRosterContext;
   IHttpClientFactory httpClientFactory;
+
+
+
   public Task<IActionResult> Customers(string name)
   {
     throw new NotImplementedException();
