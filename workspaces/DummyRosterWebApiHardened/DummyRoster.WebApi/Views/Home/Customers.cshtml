@@ -18,7 +18,20 @@
     {
       @foreach (Customer item in Model)
       {
-        <!-- todo -->
+        <tr>
+          <td>
+            @Html.DisplayFor(modelItem => item.Id)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Name)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.FoundationDate)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Description)
+          </td>
+        </tr>
       }
     }
   </tbody>
