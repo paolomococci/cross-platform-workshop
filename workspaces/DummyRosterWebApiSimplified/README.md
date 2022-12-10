@@ -53,4 +53,5 @@ cd DummyRoster.Web
 dotnet add ./DummyRoster.Web.csproj reference ../DummyRoster.Common/DummyRoster.Common.csproj
 dotnet clean
 dotnet build
+dotnet run
 ```
