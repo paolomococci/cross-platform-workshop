@@ -19,7 +19,19 @@ app.UseCors(
 /* todo */
 app.MapGet(
   "/api/forecast", 
-  () => {}
+  () => {
+    return Enumerable.Range(1, 10).Select(
+      index => new Forecast {
+        NextDays = DateTime.Now.AddDays(index),
+        Sample = Random.Shared.Next(0, 9),
+        Foregone = Forecast.Forecasts[
+          Random.Shared.Next(
+            Forecast.Forecasts.Length
+          )
+        ]
+      }
+    ).ToArray();
+  }
 );
 
 app.Run();
