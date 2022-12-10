@@ -15,6 +15,6 @@ public class Forecast
     "nine"
   };
   public DateTime NextDays { get; set; }
-  public string Sample { get; set; } = "";
+  public int Sample { get; set; }
   public string? Foregone { get; set; }
 }
