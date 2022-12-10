@@ -42,3 +42,12 @@ dotnet new classlib --name DummyRoster.Common
 cd DummyRoster.Common
 mv Class1.cs Forecast.cs
 ```
+
+### Scaffolding of DummyRoster.Web project
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new web --name DummyRoster.Web
+cd DummyRoster.Web
+```
