@@ -10,7 +10,8 @@ var app = builder.Build();
 
 /* todo */
 app.UseCors(
-  configurePolicy: options => {
+  configurePolicy: options =>
+  {
     options.WithMethods("GET");
     options.WithOrigins("https://127.0.0.1:5001");
   }
@@ -18,10 +19,12 @@ app.UseCors(
 
 /* todo */
 app.MapGet(
-  "/api/forecast", 
-  () => {
+  "/api/forecast",
+  () =>
+  {
     return Enumerable.Range(1, 10).Select(
-      index => new Forecast {
+      index => new Forecast
+      {
         NextDays = DateTime.Now.AddDays(index),
         Sample = Random.Shared.Next(0, 9),
         Foregone = Forecast.Forecasts[
