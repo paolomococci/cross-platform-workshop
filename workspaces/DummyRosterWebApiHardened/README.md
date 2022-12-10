@@ -151,3 +151,9 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class FormControlle
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class InvoiceController {}" > Controllers/InvoiceController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 ```
+
+### create a customers view
+
+```shell
+echo -e "@using DummyRoster.Common.DataContext.Data\n@model IEnumerable<Customer>\n" > Views/Home/Customers.cshtml
+```
