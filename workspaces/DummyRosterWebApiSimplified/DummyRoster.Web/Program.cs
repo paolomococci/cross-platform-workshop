@@ -2,13 +2,13 @@ using DummyRoster.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
-/* todo */
+/* setting of the port from which the service will respond */
 builder.WebHost.UseUrls("https://127.0.0.1:5002");
 builder.Services.AddCors();
 
 var app = builder.Build();
 
-/* todo */
+/* setting of the port from which requests will be allowed to be made with the methods listed */
 app.UseCors(
   configurePolicy: options =>
   {
@@ -17,7 +17,7 @@ app.UseCors(
   }
 );
 
-/* todo */
+/* URI mapping and service implementation */
 app.MapGet(
   "/api/forecast",
   () =>
