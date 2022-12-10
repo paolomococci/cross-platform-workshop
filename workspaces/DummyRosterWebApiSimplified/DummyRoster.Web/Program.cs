@@ -16,6 +16,10 @@ app.UseCors(
   }
 );
 
-app.MapGet("/", () => "Hello World!");
+/* todo */
+app.MapGet(
+  "/api/forecast", 
+  () => {}
+);
 
 app.Run();
