@@ -20,7 +20,7 @@ public class HomeController : IHomeController
     this.httpClientFactory = httpClientFactory;
   }
 
-  public Task<IActionResult> Customers(string name)
+  public async Task<IActionResult> Customers(string name)
   {
     throw new NotImplementedException();
   }
