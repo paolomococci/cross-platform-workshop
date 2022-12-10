@@ -10,7 +10,15 @@ public class HomeController : IHomeController
   DummyRosterContext dummyRosterContext;
   IHttpClientFactory httpClientFactory;
 
-
+  public HomeController(
+    ILogger<HomeController> logger,
+    DummyRosterContext dummyRosterContext,
+    IHttpClientFactory httpClientFactory
+  ) {
+    this._logger = logger;
+    this.dummyRosterContext = dummyRosterContext;
+    this.httpClientFactory = httpClientFactory;
+  }
 
   public Task<IActionResult> Customers(string name)
   {
