@@ -460,6 +460,7 @@ Properties/
 lib/
 Areas/
 Migrations/
+wwwroot/
 appsettings.Development.json
 appsettings.json
 *.ico
