@@ -101,6 +101,9 @@ if (app.Environment.IsDevelopment())
 //app.UseHttpLogging();
 
 /* configure CORS */
+app.UseCors(
+  configurePolicy: options => {}
+);
 
 app.UseHttpsRedirection();
 
