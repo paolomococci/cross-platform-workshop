@@ -151,3 +151,11 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class FormControlle
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class InvoiceController {}" > Controllers/InvoiceController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 ```
+
+## Add Entity Framework Core database health checks
+
+From the DummyRoster.WebApi directory:
+
+```shell
+dotnet add package Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore --version 6.0.11
+```
