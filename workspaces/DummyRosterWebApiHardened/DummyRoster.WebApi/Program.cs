@@ -69,6 +69,9 @@ builder.Services.AddHttpLogging(
 );
 */
 
+/* enable Cross-Origin Resource Sharing (CORS) */
+builder.Services.AddCors();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -96,6 +99,8 @@ if (app.Environment.IsDevelopment())
 
 // HTTP logging
 //app.UseHttpLogging();
+
+/* configure CORS */
 
 app.UseHttpsRedirection();
 
