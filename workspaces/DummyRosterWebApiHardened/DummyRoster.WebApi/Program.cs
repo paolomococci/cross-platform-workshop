@@ -105,7 +105,7 @@ app.UseCors(
   configurePolicy: options => {
     options.WithMethods("POST", "GET", "PUT", "PATCH", "DELETE");
     options.WithOrigins(
-      "https://127.0.0.1:50001"
+      "https://127.0.0.1:5001"
     );
   }
 );
