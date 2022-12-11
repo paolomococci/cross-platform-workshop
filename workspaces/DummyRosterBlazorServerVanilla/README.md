@@ -15,4 +15,6 @@ From the main workspace I type the following commands:
 
 ```shell
 dotnet new blazorserver --name DummyRoster.BlazorServer
+cd DummyRoster.BlazorServer
+dotnet run
 ```
