@@ -71,6 +71,9 @@ builder.Services.AddHttpLogging(
 );
 */
 
+/* database health checks */
+builder.Services.AddHealthChecks().AddDbContextCheck<DummyRosterContext>();
+
 /* enable Cross-Origin Resource Sharing (CORS) */
 builder.Services.AddCors();
 
@@ -115,6 +118,11 @@ app.UseCors(
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+/* health checks */
+app.UseHealthChecks(
+  path: "/feedback"
+);
 
 app.MapControllers();
 
