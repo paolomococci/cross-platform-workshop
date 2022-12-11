@@ -102,7 +102,12 @@ if (app.Environment.IsDevelopment())
 
 /* configure CORS */
 app.UseCors(
-  configurePolicy: options => {}
+  configurePolicy: options => {
+    options.WithMethods("POST", "GET", "PUT", "PATCH", "DELETE");
+    options.WithOrigins(
+      "https://127.0.0.1:50001"
+    );
+  }
 );
 
 app.UseHttpsRedirection();
