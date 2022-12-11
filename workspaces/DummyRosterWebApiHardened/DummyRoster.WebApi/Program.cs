@@ -9,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DummyRosterContext>();
 
+builder.WebHost.UseUrls("https://127.0.0.1:5002");
+
 // Add services to the container.
 
 builder.Services.AddControllers(
