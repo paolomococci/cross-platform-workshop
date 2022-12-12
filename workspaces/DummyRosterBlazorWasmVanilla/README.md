@@ -15,5 +15,8 @@ From the main workspace I type the following commands:
 
 ```shell
 dotnet new blazorwasm --pwa --hosted --name DummyRoster.BlazorWasm
-cd DummyRoster.BlazorWasm
+cd DummyRoster.BlazorWasm/Server
+dotnet clear
+dotnet build
+dotnet run
 ```
