@@ -460,11 +460,12 @@ Properties/
 lib/
 Areas/
 Migrations/
-wwwroot/
+css/
 appsettings.Development.json
 appsettings.json
 *.ico
 *.png
 *.db
+*.sln
 HELP.md
 LOG.md
