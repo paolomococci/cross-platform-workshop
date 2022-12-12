@@ -48,6 +48,7 @@ public partial class Address
   [Column(TypeName = "varchar(24)")]
   public string? Phone { get; set; }
 
+  [RegularExpression(@"^\+?\d{0,2}\-?\d{7,11}")]
   [Column(TypeName = "varchar(24)")]
   public string? Fax { get; set; }
 
