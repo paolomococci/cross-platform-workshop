@@ -41,6 +41,7 @@ public partial class Address
   public string? Country { get; set; }
 
   [Column(TypeName = "varchar(48)")]
+  [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,5})+)$")]
   public string? Email { get; set; }
 
   [Column(TypeName = "varchar(24)")]
