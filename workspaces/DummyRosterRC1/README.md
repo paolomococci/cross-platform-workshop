@@ -1,5 +1,7 @@
 # DummyRosterRC1
 
+Release candidate which should implement both an webapi ​​and a blazorserver interface.
+
 ## Scaffolding of DummyRosterRC1 workspace
 
 ```shell
