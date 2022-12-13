@@ -44,12 +44,12 @@ public partial class Address
   [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,5})+)$")]
   public string? Email { get; set; }
 
-  [RegularExpression(@"^\+?\d{0,2}\-?\d{7,11}")]
   [Column(TypeName = "varchar(24)")]
+  [RegularExpression(@"^\+?\d{0,2}\-?\d{7,11}")]
   public string? Phone { get; set; }
 
-  [RegularExpression(@"^\+?\d{0,2}\-?\d{7,11}")]
   [Column(TypeName = "varchar(24)")]
+  [RegularExpression(@"^\+?\d{0,2}\-?\d{7,11}")]
   public string? Fax { get; set; }
 
   [InverseProperty("LocationNavigation")]
