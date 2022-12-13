@@ -73,7 +73,7 @@ public class RolesController : Controller
         }
       }
     }
-    
+
     // if the user belongs to the administrators group
     if (!(await userManager.IsInRoleAsync(
       identityUser,
