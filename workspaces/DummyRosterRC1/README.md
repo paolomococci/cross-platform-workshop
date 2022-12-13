@@ -11,7 +11,7 @@ echo "# DummyRosterRC1" > README.md
 dotnet new gitignore
 ```
 
-## Initializing database SQLite
+## Initializing database SQLite DummyRoster.db
 
 From the main workspace I type the following commands:
 
@@ -35,4 +35,16 @@ Attention, for the database to automatically generate incrementally the identifi
 ...
 "Id" INTEGER PRIMARY KEY AUTOINCREMENT
 ...
+```
+
+## Scaffolding of DummyRoster.Common.EntityModel project
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new classlib --name DummyRoster.Common.EntityModel
+cd DummyRoster.Common.EntityModel
+rm Class1.cs
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.0
 ```
