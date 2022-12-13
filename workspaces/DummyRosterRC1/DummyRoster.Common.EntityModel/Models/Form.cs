@@ -17,7 +17,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Form
 {
   [Key]
-  public long Id { get; set; }
+  public int Id { get; set; }
 
   public string? Description { get; set; }
 
