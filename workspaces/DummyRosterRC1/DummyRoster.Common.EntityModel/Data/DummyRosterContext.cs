@@ -15,25 +15,25 @@ public partial class DummyRosterContext : DbContext
     {
     }
 
-    public virtual DbSet<Address> Addresses { get; set; }
+    public virtual DbSet<Address> Addresses { get; set; } = null!;
 
-    public virtual DbSet<Carrier> Carriers { get; set; }
+    public virtual DbSet<Carrier> Carriers { get; set; } = null!;
 
-    public virtual DbSet<Category> Categories { get; set; }
+    public virtual DbSet<Category> Categories { get; set; } = null!;
 
-    public virtual DbSet<Credential> Credentials { get; set; }
+    public virtual DbSet<Credential> Credentials { get; set; } = null!;
 
-    public virtual DbSet<Customer> Customers { get; set; }
+    public virtual DbSet<Customer> Customers { get; set; } = null!;
 
-    public virtual DbSet<Employee> Employees { get; set; }
+    public virtual DbSet<Employee> Employees { get; set; } = null!;
 
-    public virtual DbSet<Form> Forms { get; set; }
+    public virtual DbSet<Form> Forms { get; set; } = null!;
 
-    public virtual DbSet<Invoice> Invoices { get; set; }
+    public virtual DbSet<Invoice> Invoices { get; set; } = null!;
 
-    public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<Product> Products { get; set; } = null!;
 
-    public virtual DbSet<Supplier> Suppliers { get; set; }
+    public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlite("Filename=../DummyRoster.db");
