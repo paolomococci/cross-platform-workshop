@@ -44,6 +44,7 @@ public partial class Carrier
   public virtual Employee? ContactNavigation { get; set; }
 
   [InverseProperty("Carrier")]
+  [XmlIgnore]
   public virtual ICollection<Form> Forms { get; } = new List<Form>();
 
   [ForeignKey("Loc")]
