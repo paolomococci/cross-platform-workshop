@@ -41,7 +41,7 @@ public partial class Form
   public DateTime? PromisedDate { get; set; }
 
   [Column(TypeName = "NUMERIC")]
-  public byte[]? ShippingCost { get; set; }
+  public decimal? ShippingCost { get; set; }
 
   [ForeignKey("CarrierId")]
   [InverseProperty("Forms")]
