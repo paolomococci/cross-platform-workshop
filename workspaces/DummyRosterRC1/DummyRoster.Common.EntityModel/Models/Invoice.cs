@@ -23,7 +23,7 @@ public partial class Invoice
   public string? Note { get; set; }
 
   [Column(TypeName = "NUMERIC")]
-  public byte[] UnitPrice { get; set; } = null!;
+  public decimal UnitPrice { get; set; }
 
   [Column(TypeName = "SMALLINT")]
   public int Quantity { get; set; }
