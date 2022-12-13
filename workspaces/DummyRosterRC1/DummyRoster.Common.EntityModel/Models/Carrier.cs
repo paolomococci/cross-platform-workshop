@@ -28,13 +28,13 @@ public partial class Carrier
   public string? Belonging { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? Contact { get; set; }
+  public int? Contact { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? Loc { get; set; }
+  public int? Loc { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? Ref { get; set; }
+  public int? Ref { get; set; }
 
   [ForeignKey("Contact")]
   [InverseProperty("Carriers")]
