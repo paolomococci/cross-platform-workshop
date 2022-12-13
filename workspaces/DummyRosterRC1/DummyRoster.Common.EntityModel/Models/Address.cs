@@ -15,7 +15,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Address
 {
   [Key]
-  public long Id { get; set; }
+  public int Id { get; set; }
 
   [Column(TypeName = "varchar(32)")]
   [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,31})$")]
