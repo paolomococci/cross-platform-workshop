@@ -93,3 +93,28 @@ touch product_endpoint_test.rest
 touch form_endpoint_test.rest
 touch invoice_endpoint_test.rest
 ```
+
+### From the DummyRoster.WebApi project add the following repositories
+
+```shell
+cd Repositories/Interfaces
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IEmployeeRepository {}" > IEmployeeRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICustomerRepository {}" > ICustomerRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ISupplierRepository {}" > ISupplierRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICarrierRepository {}" > ICarrierRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IAddressRepository {}" > IAddressRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICategoryRepository {}" > ICategoryRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IProductRepository {}" > IProductRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IFormRepository {}" > IFormRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IInvoiceRepository {}" > IInvoiceRepository.cs
+cd ..
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class EmployeeRepository {}" > EmployeeRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CustomerRepository {}" > CustomerRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class SupplierRepository {}" > SupplierRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CarrierRepository {}" > CarrierRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class AddressRepository {}" > AddressRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CategoryRepository {}" > CategoryRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class ProductRepository {}" > ProductRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class FormRepository {}" > FormRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class InvoiceRepository {}" > InvoiceRepository.cs
+```
