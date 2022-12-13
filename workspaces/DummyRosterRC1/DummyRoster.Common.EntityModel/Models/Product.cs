@@ -18,7 +18,7 @@ public partial class Product
   public int Id { get; set; }
 
   [Column(TypeName = "varchar(32)")]
-  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,31})$")]
+  [RegularExpression("[a-zA-Z]{1,32}")]
   public string Name { get; set; } = null!;
 
   [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
