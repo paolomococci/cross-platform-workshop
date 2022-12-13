@@ -12,7 +12,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Invoice
 {
   [Key]
-  public long Id { get; set; }
+  public int Id { get; set; }
 
   [Column(TypeName = "INT")]
   public long? FormId { get; set; }
