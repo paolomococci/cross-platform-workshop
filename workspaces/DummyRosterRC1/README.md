@@ -61,3 +61,11 @@ cd DummyRoster.Common.EntityModel
 dotnet clean
 dotnet build
 ```
+
+### Scaffolding of DummyRoster.WebApi project
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new webapi --name DummyRoster.WebApi
+```
