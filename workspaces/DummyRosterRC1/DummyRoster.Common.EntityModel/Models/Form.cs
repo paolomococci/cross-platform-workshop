@@ -22,13 +22,13 @@ public partial class Form
   public string? Description { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? CustomerId { get; set; }
+  public int? CustomerId { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? CarrierId { get; set; }
+  public int? CarrierId { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? EmployeeId { get; set; }
+  public int? EmployeeId { get; set; }
 
   [Column(TypeName = "DATETIME")]
   public DateTime? FormDate { get; set; }
