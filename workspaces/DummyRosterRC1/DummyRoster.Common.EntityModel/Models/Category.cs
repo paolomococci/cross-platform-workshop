@@ -10,17 +10,17 @@ namespace DummyRoster.Common.EntityModel.Models;
 [Index("Name", Name = "IDX_CategoryName")]
 public partial class Category
 {
-    [Key]
-    public long Id { get; set; }
+  [Key]
+  public long Id { get; set; }
 
-    [Column(TypeName = "varchar(32)")]
+  [Column(TypeName = "varchar(32)")]
   [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,31})$")]
-    public string Name { get; set; } = null!;
+  public string Name { get; set; } = null!;
 
-    public string? Description { get; set; }
+  public string? Description { get; set; }
 
-    public byte[]? Picture { get; set; }
+  public byte[]? Picture { get; set; }
 
-    [InverseProperty("Category")]
-    public virtual ICollection<Product> Products { get; } = new List<Product>();
+  [InverseProperty("Category")]
+  public virtual ICollection<Product> Products { get; } = new List<Product>();
 }
