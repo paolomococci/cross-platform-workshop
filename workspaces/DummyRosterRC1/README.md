@@ -68,4 +68,8 @@ From the main workspace I type the following commands:
 
 ```shell
 dotnet new webapi --name DummyRoster.WebApi
+cd DummyRoster.WebApi
+mkdir Controllers/Interfaces
+mkdir Repositories
+mkdir Repositories/Interfaces
 ```
