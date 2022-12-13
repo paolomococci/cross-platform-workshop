@@ -48,6 +48,7 @@ public partial class Supplier
   public virtual Address? LocNavigation { get; set; }
 
   [InverseProperty("Supplier")]
+  [XmlIgnore]
   public virtual ICollection<Product> Products { get; } = new List<Product>();
 
   [ForeignKey("Ref")]
