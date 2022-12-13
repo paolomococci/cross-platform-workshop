@@ -44,6 +44,7 @@ public partial class Customer
   public virtual Employee? ContactNavigation { get; set; }
 
   [InverseProperty("Customer")]
+  [XmlIgnore]
   public virtual ICollection<Form> Forms { get; } = new List<Form>();
 
   [ForeignKey("Loc")]
