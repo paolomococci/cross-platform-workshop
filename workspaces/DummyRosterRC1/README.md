@@ -69,6 +69,7 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new webapi --name DummyRoster.WebApi
 cd DummyRoster.WebApi
+dotnet add ./DummyRoster.WebApi.csproj reference ../DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj
 mkdir Controllers/Interfaces
 mkdir Repositories
 mkdir Repositories/Interfaces
