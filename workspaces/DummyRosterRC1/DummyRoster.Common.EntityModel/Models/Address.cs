@@ -43,14 +43,18 @@ public partial class Address
   public string? Country { get; set; }
 
   [InverseProperty("LocNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Carrier> Carriers { get; } = new List<Carrier>();
 
   [InverseProperty("LocNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Customer> Customers { get; } = new List<Customer>();
 
   [InverseProperty("LocNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Employee> Employees { get; } = new List<Employee>();
 
   [InverseProperty("LocNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Supplier> Suppliers { get; } = new List<Supplier>();
 }
