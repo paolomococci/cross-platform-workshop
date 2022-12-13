@@ -26,6 +26,7 @@ public partial class Invoice
   public decimal UnitPrice { get; set; }
 
   [Column(TypeName = "SMALLINT")]
+  [Range(0, 65535)]
   public int Quantity { get; set; }
 
   [Column(TypeName = "NUMERIC")]
