@@ -31,10 +31,10 @@ public partial class Employee
   public string? Belonging { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? Loc { get; set; }
+  public int? Loc { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? Ref { get; set; }
+  public int? Ref { get; set; }
 
   [InverseProperty("ContactNavigation")]
   public virtual ICollection<Carrier> Carriers { get; } = new List<Carrier>();
