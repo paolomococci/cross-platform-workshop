@@ -29,7 +29,7 @@ public partial class Invoice
   public int Quantity { get; set; }
 
   [Column(TypeName = "NUMERIC")]
-  public byte[] PriceCut { get; set; } = null!;
+  public decimal PriceCut { get; set; }
 
   [ForeignKey("FormId")]
   [InverseProperty("Invoices")]
