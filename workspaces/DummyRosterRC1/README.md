@@ -75,7 +75,7 @@ mkdir Repositories
 mkdir Repositories/Interfaces
 ```
 
-## REST request tests
+### REST request tests
 
 From the DummyRoster.WebApi directory I type the following commands:
 
