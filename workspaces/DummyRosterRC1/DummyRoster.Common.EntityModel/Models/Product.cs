@@ -36,7 +36,7 @@ public partial class Product
   public string? QuantityPerUnit { get; set; }
 
   [Column(TypeName = "NUMERIC")]
-  public byte[]? UnitPrice { get; set; }
+  public decimal? UnitPrice { get; set; }
 
   [Column(TypeName = "SMALLINT")]
   public int? UnitsInStock { get; set; }
