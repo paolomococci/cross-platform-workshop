@@ -27,14 +27,18 @@ public partial class Credential
   public string? Fax { get; set; }
 
   [InverseProperty("RefNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Carrier> Carriers { get; } = new List<Carrier>();
 
   [InverseProperty("RefNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Customer> Customers { get; } = new List<Customer>();
 
   [InverseProperty("RefNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Employee> Employees { get; } = new List<Employee>();
 
   [InverseProperty("RefNavigation")]
+  [XmlIgnore]
   public virtual ICollection<Supplier> Suppliers { get; } = new List<Supplier>();
 }
