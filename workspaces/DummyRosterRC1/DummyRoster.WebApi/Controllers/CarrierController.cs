@@ -7,7 +7,7 @@ namespace DummyRoster.WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class CarrierController
+public class CarrierController : ControllerBase, ICarrierController
 {
 
   private readonly ICarrierRepository repository;
