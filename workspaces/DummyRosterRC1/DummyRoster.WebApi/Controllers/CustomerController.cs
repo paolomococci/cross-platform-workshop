@@ -24,12 +24,7 @@ public class CustomerController : ControllerBase, ICustomerController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Delete(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity)
+  public Task<IActionResult> ReadCustomer(int id)
   {
     throw new NotImplementedException();
   }
@@ -39,12 +34,17 @@ public class CustomerController : ControllerBase, ICustomerController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> ReadCustomer(int id)
+  public Task<IActionResult> Update(int id, [FromBody] Customer entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Customer entity)
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
   }
