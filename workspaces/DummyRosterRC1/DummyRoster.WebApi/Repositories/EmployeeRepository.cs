@@ -47,12 +47,7 @@ public class EmployeeRepository : IEmployeeRepository
     }
   }
 
-  public async Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public async Task<Employee?> PartialUpdateAsync(int id, Employee entity)
+  public Task<Employee?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -62,12 +57,17 @@ public class EmployeeRepository : IEmployeeRepository
     throw new NotImplementedException();
   }
 
-  public Task<Employee?> RetrieveAsync(int id)
+  public async Task<Employee?> UpdateAsync(int id, Employee entity)
   {
     throw new NotImplementedException();
   }
 
-  public async Task<Employee?> UpdateAsync(int id, Employee entity)
+  public async Task<Employee?> PartialUpdateAsync(int id, Employee entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
