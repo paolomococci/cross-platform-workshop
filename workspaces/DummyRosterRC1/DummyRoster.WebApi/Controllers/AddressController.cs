@@ -18,4 +18,34 @@ public class AddressController : ControllerBase, IAddressController
   {
     this.repository = repo;
   }
+
+  public Task<IActionResult> Create([FromBody] Address entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Address entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> ReadAddress(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Address>> ReadAll(string? country)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Update(int id, [FromBody] Address entity)
+  {
+    throw new NotImplementedException();
+  }
 }
