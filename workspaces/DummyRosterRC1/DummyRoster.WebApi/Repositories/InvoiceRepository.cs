@@ -47,14 +47,14 @@ public class InvoiceRepository : IInvoiceRepository
     }
   }
 
-  public Task<Invoice?> RetrieveAsync(int id)
+  public Task<Invoice?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Invoice? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Invoice>> RetrieveAllAsync()
+  public Task<IEnumerable<Invoice>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Invoice>() : keyValuesCache.Values
