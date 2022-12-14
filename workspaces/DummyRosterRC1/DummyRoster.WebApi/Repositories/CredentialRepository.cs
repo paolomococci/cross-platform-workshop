@@ -24,4 +24,34 @@ public class CredentialRepository : ICredentialRepository
       );
     }
   }
+
+  public Task<Credential?> CreateAsync(Credential entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Credential?> PartialUpdateAsync(int id, Credential entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Credential>> RetrieveAllAsync()
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Credential?> RetrieveAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Credential?> UpdateAsync(int id, Credential entity)
+  {
+    throw new NotImplementedException();
+  }
 }
