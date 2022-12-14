@@ -24,12 +24,7 @@ public class EmployeeController : ControllerBase, IEmployeeController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Delete(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Employee entity)
+  public Task<IActionResult> ReadEmployee(int id)
   {
     throw new NotImplementedException();
   }
@@ -39,12 +34,17 @@ public class EmployeeController : ControllerBase, IEmployeeController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> ReadEmployee(int id)
+  public Task<IActionResult> Update(int id, [FromBody] Employee entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Employee entity)
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Employee entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
   }
