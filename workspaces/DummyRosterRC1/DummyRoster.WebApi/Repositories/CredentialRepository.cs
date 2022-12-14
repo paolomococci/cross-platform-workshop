@@ -74,7 +74,21 @@ public class CredentialRepository : ICredentialRepository
 
   public async Task<Credential?> PartialUpdateAsync(int id, Credential entity)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Credential? registered);
+    if (registered != null)
+    {
+      if (entity.Email != null) registered.Email = entity.Email;
+      if (entity.Phone != null) registered.Phone = entity.Phone;
+      if (entity.Fax != null) registered.Fax = entity.Fax;
+      this.dummyRosterContext.Credentials.Update(registered);
+      int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+      if (changesSaved == 1)
+      {
+        return this.UpdateCache(id, registered);
+      }
+    }
+    return null;
   }
 
   public async Task<bool?> DeleteAsync(int id)
