@@ -47,14 +47,14 @@ public class FormRepository : IFormRepository
     }
   }
 
-  public Task<Form?> RetrieveAsync(int id)
+  public Task<Form?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Form? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Form>> RetrieveAllAsync()
+  public Task<IEnumerable<Form>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Form>() : keyValuesCache.Values
