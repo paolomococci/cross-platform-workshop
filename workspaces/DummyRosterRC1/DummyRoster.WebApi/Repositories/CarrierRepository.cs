@@ -47,14 +47,14 @@ public class CarrierRepository : ICarrierRepository
     }
   }
 
-  public Task<Carrier?> RetrieveAsync(int id)
+  public Task<Carrier?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Carrier? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Carrier>> RetrieveAllAsync()
+  public Task<IEnumerable<Carrier>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Carrier>() : keyValuesCache.Values
