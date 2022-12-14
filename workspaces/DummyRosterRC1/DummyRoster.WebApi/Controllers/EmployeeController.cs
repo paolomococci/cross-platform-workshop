@@ -18,4 +18,34 @@ public class EmployeeController : ControllerBase, IEmployeeController
   {
     this.repository = repo;
   }
+
+  public Task<IActionResult> Create([FromBody] Employee entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Employee entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Employee>> ReadAll(string? name)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> ReadEmployee(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Update(int id, [FromBody] Employee entity)
+  {
+    throw new NotImplementedException();
+  }
 }
