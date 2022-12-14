@@ -47,14 +47,14 @@ public class CustomerRepository : ICustomerRepository
     }
   }
 
-  public Task<Customer?> RetrieveAsync(int id)
+  public Task<Customer?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Customer? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Customer>> RetrieveAllAsync()
+  public Task<IEnumerable<Customer>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Customer>() : keyValuesCache.Values
