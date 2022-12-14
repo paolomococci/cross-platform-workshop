@@ -47,14 +47,14 @@ public class EmployeeRepository : IEmployeeRepository
     }
   }
 
-  public Task<Employee?> RetrieveAsync(int id)
+  public Task<Employee?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Employee? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Employee>> RetrieveAllAsync()
+  public Task<IEnumerable<Employee>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Employee>() : keyValuesCache.Values
