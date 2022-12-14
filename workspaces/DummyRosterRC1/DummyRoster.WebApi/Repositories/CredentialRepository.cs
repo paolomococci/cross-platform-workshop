@@ -47,14 +47,14 @@ public class CredentialRepository : ICredentialRepository
     }
   }
 
-  public Task<Credential?> RetrieveAsync(int id)
+  public Task<Credential?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Credential? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Credential>> RetrieveAllAsync()
+  public Task<IEnumerable<Credential>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Credential>() : keyValuesCache.Values
