@@ -82,6 +82,7 @@ public class EmployeeRepository : IEmployeeRepository
       if (entity.BirthDate != null) registered.BirthDate = entity.BirthDate;
       if (entity.Description != null) registered.Description = entity.Description;
       if (entity.Picture != null) registered.Picture = entity.Picture;
+      if (entity.Belonging != null) registered.Belonging = entity.Belonging;
       if (entity.Role != null) registered.Role = entity.Role;
       if (entity.Loc != null) registered.Loc = entity.Loc;
       if (entity.Ref != null) registered.Ref = entity.Ref;
