@@ -47,14 +47,14 @@ public class AddressRepository : IAddressRepository
     }
   }
 
-  public Task<Address?> RetrieveAsync(int id)
+  public Task<Address?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Address? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Address>> RetrieveAllAsync()
+  public Task<IEnumerable<Address>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Address>() : keyValuesCache.Values
