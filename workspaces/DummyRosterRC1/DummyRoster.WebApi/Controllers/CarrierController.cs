@@ -18,4 +18,34 @@ public class CarrierController : ControllerBase, ICarrierController
   {
     this.repository = repo;
   }
+
+  public Task<IActionResult> Create([FromBody] Carrier entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Carrier entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Carrier>> ReadAll(string? name)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> ReadCarrier(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Update(int id, [FromBody] Carrier entity)
+  {
+    throw new NotImplementedException();
+  }
 }
