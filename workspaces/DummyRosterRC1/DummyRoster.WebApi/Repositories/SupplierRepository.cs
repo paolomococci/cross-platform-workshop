@@ -24,4 +24,34 @@ public class SupplierRepository : ISupplierRepository
       );
     }
   }
+
+  public Task<Supplier?> CreateAsync(Supplier entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Supplier?> PartialUpdateAsync(int id, Supplier entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Supplier>> RetrieveAllAsync()
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Supplier?> RetrieveAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Supplier?> UpdateAsync(int id, Supplier entity)
+  {
+    throw new NotImplementedException();
+  }
 }
