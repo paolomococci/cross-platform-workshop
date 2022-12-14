@@ -74,7 +74,24 @@ public class AddressRepository : IAddressRepository
 
   public async Task<Address?> PartialUpdateAsync(int id, Address entity)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Address? registered);
+    if (registered != null)
+    {
+      if (entity.Name != null) registered.Name = entity.Name;
+      if (entity.Civic != null) registered.Civic = entity.Civic;
+      if (entity.City != null) registered.City = entity.City;
+      if (entity.District != null) registered.District = entity.District;
+      if (entity.Postcode != null) registered.Postcode = entity.Postcode;
+      if (entity.Country != null) registered.Country = entity.Country;
+      this.dummyRosterContext.Addresses.Update(registered);
+      int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+      if (changesSaved == 1)
+      {
+        return this.UpdateCache(id, registered);
+      }
+    }
+    return null;
   }
 
   public async Task<bool?> DeleteAsync(int id)
