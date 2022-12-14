@@ -49,7 +49,9 @@ public class CredentialRepository : ICredentialRepository
 
   public Task<Credential?> RetrieveAsync(int id)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Credential? entity);
+    return Task.FromResult(entity);
   }
 
   public Task<IEnumerable<Credential>> RetrieveAllAsync()
