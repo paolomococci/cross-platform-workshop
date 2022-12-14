@@ -54,4 +54,23 @@ public class SupplierRepository : ISupplierRepository
   {
     throw new NotImplementedException();
   }
+
+  private Supplier UpdateCache(
+    int id, 
+    Supplier entity
+  )
+  {
+    Supplier? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
