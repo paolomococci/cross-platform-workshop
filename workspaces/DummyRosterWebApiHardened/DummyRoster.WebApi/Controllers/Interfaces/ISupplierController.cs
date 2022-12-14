@@ -12,4 +12,3 @@ public interface ISupplierController
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Supplier entity);
   public Task<IActionResult> Delete(int id);
 }
-
