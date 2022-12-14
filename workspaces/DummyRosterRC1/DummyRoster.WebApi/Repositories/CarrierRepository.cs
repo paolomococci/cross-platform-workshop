@@ -24,4 +24,34 @@ public class CarrierRepository : ICarrierRepository
       );
     }
   }
+
+  public Task<Carrier?> CreateAsync(Carrier entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<bool?> DeleteAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Carrier?> PartialUpdateAsync(int id, Carrier entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Carrier>> RetrieveAllAsync()
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Carrier?> RetrieveAsync(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<Carrier?> UpdateAsync(int id, Carrier entity)
+  {
+    throw new NotImplementedException();
+  }
 }
