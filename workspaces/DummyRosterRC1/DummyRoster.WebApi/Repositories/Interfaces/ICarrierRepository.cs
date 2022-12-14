@@ -5,8 +5,8 @@ namespace DummyRoster.WebApi.Repositories.Interfaces;
 public interface ICarrierRepository
 {
   Task<Carrier?> CreateAsync(Carrier entity);
-  Task<Carrier?> RetrieveAsync(int id);
-  Task<IEnumerable<Carrier>> RetrieveAllAsync();
+  Task<Carrier?> Retrieve(int id);
+  Task<IEnumerable<Carrier>> RetrieveAll();
   Task<Carrier?> UpdateAsync(
     int id,
     Carrier entity
