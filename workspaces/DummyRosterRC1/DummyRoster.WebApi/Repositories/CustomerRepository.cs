@@ -47,12 +47,7 @@ public class CustomerRepository : ICustomerRepository
     }
   }
 
-  public async Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public async Task<Customer?> PartialUpdateAsync(int id, Customer entity)
+  public Task<Customer?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -62,12 +57,17 @@ public class CustomerRepository : ICustomerRepository
     throw new NotImplementedException();
   }
 
-  public Task<Customer?> RetrieveAsync(int id)
+  public async Task<Customer?> UpdateAsync(int id, Customer entity)
   {
     throw new NotImplementedException();
   }
 
-  public async Task<Customer?> UpdateAsync(int id, Customer entity)
+  public async Task<Customer?> PartialUpdateAsync(int id, Customer entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
