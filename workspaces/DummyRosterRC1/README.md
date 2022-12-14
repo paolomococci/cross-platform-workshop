@@ -79,8 +79,8 @@ mkdir Controllers/Interfaces
 From the DummyRoster.WebApi directory I type the following commands:
 
 ```shell
-mkdir RestRequestTests
-cd RestRequestTests
+mkdir Tests
+cd Tests
 touch get_weather_forecast_tests.rest
 touch employee_endpoint_test.rest
 touch customer_endpoint_test.rest
