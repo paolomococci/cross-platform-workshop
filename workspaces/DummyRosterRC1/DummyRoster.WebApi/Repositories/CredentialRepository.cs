@@ -63,7 +63,13 @@ public class CredentialRepository : ICredentialRepository
 
   public async Task<Credential?> UpdateAsync(int id, Credential entity)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Credentials.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public async Task<Credential?> PartialUpdateAsync(int id, Credential entity)
