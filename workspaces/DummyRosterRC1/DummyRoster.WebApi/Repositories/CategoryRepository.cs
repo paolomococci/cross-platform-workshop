@@ -5,7 +5,7 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Repositories;
 
-public class CategoryRepository
+public class CategoryRepository : ICategoryRepository
 {
   private static ConcurrentDictionary<int, Category>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
