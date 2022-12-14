@@ -12,4 +12,3 @@ public interface IEmployeeController
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Employee entity);
   public Task<IActionResult> Delete(int id);
 }
-
