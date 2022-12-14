@@ -63,7 +63,13 @@ public class CustomerRepository : ICustomerRepository
 
   public async Task<Customer?> UpdateAsync(int id, Customer entity)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Customers.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public async Task<Customer?> PartialUpdateAsync(int id, Customer entity)
