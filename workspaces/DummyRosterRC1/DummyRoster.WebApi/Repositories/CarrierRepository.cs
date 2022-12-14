@@ -63,7 +63,13 @@ public class CarrierRepository : ICarrierRepository
 
   public async Task<Carrier?> UpdateAsync(int id, Carrier entity)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Carriers.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public async Task<Carrier?> PartialUpdateAsync(int id, Carrier entity)
