@@ -12,4 +12,3 @@ public interface ICustomerController
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity);
   public Task<IActionResult> Delete(int id);
 }
-
