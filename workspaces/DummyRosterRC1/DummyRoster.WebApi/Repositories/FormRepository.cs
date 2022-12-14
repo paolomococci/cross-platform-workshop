@@ -74,7 +74,26 @@ public class FormRepository : IFormRepository
 
   public async Task<Form?> PartialUpdateAsync(int id, Form entity)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Form? registered);
+    if (registered != null)
+    {
+      if (entity.Description != null) registered.Description = entity.Description;
+      if (entity.CustomerId != null) registered.CustomerId = entity.CustomerId;
+      if (entity.CarrierId != null) registered.CarrierId = entity.CarrierId;
+      if (entity.EmployeeId != null) registered.EmployeeId = entity.EmployeeId;
+      if (entity.FormDate != null) registered.FormDate = entity.FormDate;
+      if (entity.RequiredDate != null) registered.RequiredDate = entity.RequiredDate;
+      if (entity.PromisedDate != null) registered.PromisedDate = entity.PromisedDate;
+      if (entity.ShippingCost != null) registered.ShippingCost = entity.ShippingCost;
+      this.dummyRosterContext.Forms.Update(registered);
+      int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+      if (changesSaved == 1)
+      {
+        return this.UpdateCache(id, registered);
+      }
+    }
+    return null;
   }
 
   public async Task<bool?> DeleteAsync(int id)
