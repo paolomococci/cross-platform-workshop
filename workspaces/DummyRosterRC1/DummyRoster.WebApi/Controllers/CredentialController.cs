@@ -24,12 +24,7 @@ public class CredentialController : ControllerBase, ICredentialController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Delete(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Credential entity)
+  public Task<IActionResult> ReadCredential(int id)
   {
     throw new NotImplementedException();
   }
@@ -39,12 +34,17 @@ public class CredentialController : ControllerBase, ICredentialController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> ReadCredential(int id)
+  public Task<IActionResult> Update(int id, [FromBody] Credential entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Credential entity)
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Credential entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
   }
