@@ -5,8 +5,8 @@ namespace DummyRoster.WebApi.Repositories.Interfaces;
 public interface IFormRepository
 {
   Task<Form?> CreateAsync(Form entity);
-  Task<Form?> RetrieveAsync(int id);
-  Task<IEnumerable<Form>> RetrieveAllAsync();
+  Task<Form?> Retrieve(int id);
+  Task<IEnumerable<Form>> RetrieveAll();
   Task<Form?> UpdateAsync(
     int id,
     Form entity
