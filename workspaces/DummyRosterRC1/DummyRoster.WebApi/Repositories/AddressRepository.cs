@@ -5,7 +5,7 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Repositories;
 
-public class AddressRepository
+public class AddressRepository : IAddressRepository
 {
   private static ConcurrentDictionary<int, Address>? keyValuesCache;
   private DummyRosterContext dummyRosterContext;
