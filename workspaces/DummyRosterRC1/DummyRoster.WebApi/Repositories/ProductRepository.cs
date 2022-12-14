@@ -74,7 +74,29 @@ public class ProductRepository : IProductRepository
 
   public async Task<Product?> PartialUpdateAsync(int id, Product entity)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Product? registered);
+    if (registered != null)
+    {
+      if (entity.Name != null) registered.Name = entity.Name;
+      if (entity.Description != null) registered.Description = entity.Description;
+      if (entity.Picture != null) registered.Picture = entity.Picture;
+      if (entity.CategoryId != null) registered.CategoryId = entity.CategoryId;
+      if (entity.SupplierId != null) registered.SupplierId = entity.SupplierId;
+      if (entity.QuantityPerUnit != null) registered.QuantityPerUnit = entity.QuantityPerUnit;
+      if (entity.UnitPrice != null) registered.UnitPrice = entity.UnitPrice;
+      if (entity.UnitsInStock != null) registered.UnitsInStock = entity.UnitsInStock;
+      if (entity.UnitsOnOrder != null) registered.UnitsOnOrder = entity.UnitsOnOrder;
+      if (entity.ReorderLevel != null) registered.ReorderLevel = entity.ReorderLevel;
+      if (entity.Discontinued != null) registered.Discontinued = entity.Discontinued;
+      this.dummyRosterContext.Products.Update(registered);
+      int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+      if (changesSaved == 1)
+      {
+        return this.UpdateCache(id, registered);
+      }
+    }
+    return null;
   }
 
   public async Task<bool?> DeleteAsync(int id)
