@@ -80,18 +80,17 @@ From the DummyRoster.WebApi directory I type the following commands:
 
 ```shell
 mkdir Tests
-cd Tests
-touch get_weather_forecast_tests.rest
-touch employee_endpoint_tests.rest
-touch customer_endpoint_tests.rest
-touch supplier_endpoint_tests.rest
-touch carrier_endpoint_tests.rest
-touch address_endpoint_tests.rest
-touch credential_endpoint_tests.rest
-touch category_endpoint_tests.rest
-touch product_endpoint_tests.rest
-touch form_endpoint_tests.rest
-touch invoice_endpoint_tests.rest
+touch Tests/get_weather_forecast_tests.rest
+touch Tests/employee_endpoint_tests.rest
+touch Tests/customer_endpoint_tests.rest
+touch Tests/supplier_endpoint_tests.rest
+touch Tests/carrier_endpoint_tests.rest
+touch Tests/address_endpoint_tests.rest
+touch Tests/credential_endpoint_tests.rest
+touch Tests/category_endpoint_tests.rest
+touch Tests/product_endpoint_tests.rest
+touch Tests/form_endpoint_tests.rest
+touch Tests/invoice_endpoint_tests.rest
 ```
 
 ### From the DummyRoster.WebApi directory add the following repositories
