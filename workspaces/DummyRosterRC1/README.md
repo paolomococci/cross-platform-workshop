@@ -97,28 +97,26 @@ touch invoice_endpoint_tests.rest
 ### From the DummyRoster.WebApi directory add the following repositories
 
 ```shell
-cd Repositories/Interfaces
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IEmployeeRepository {}" > IEmployeeRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICustomerRepository {}" > ICustomerRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ISupplierRepository {}" > ISupplierRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICarrierRepository {}" > ICarrierRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IAddressRepository {}" > IAddressRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICredentialRepository {}" > ICredentialRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICategoryRepository {}" > ICategoryRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IProductRepository {}" > IProductRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IFormRepository {}" > IFormRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IInvoiceRepository {}" > IInvoiceRepository.cs
-cd ..
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class EmployeeRepository {}" > EmployeeRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CustomerRepository {}" > CustomerRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class SupplierRepository {}" > SupplierRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CarrierRepository {}" > CarrierRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class AddressRepository {}" > AddressRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CredentialRepository {}" > CredentialRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CategoryRepository {}" > CategoryRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class ProductRepository {}" > ProductRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class FormRepository {}" > FormRepository.cs
-echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class InvoiceRepository {}" > InvoiceRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IEmployeeRepository {}" > Repositories/Interfaces/IEmployeeRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICustomerRepository {}" > Repositories/Interfaces/ICustomerRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ISupplierRepository {}" > Repositories/Interfaces/ISupplierRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICarrierRepository {}" > Repositories/Interfaces/ICarrierRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IAddressRepository {}" > Repositories/Interfaces/IAddressRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICredentialRepository {}" > Repositories/Interfaces/ICredentialRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface ICategoryRepository {}" > Repositories/Interfaces/ICategoryRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IProductRepository {}" > Repositories/Interfaces/IProductRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IFormRepository {}" > Repositories/Interfaces/IFormRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories.Interfaces;\n\npublic interface IInvoiceRepository {}" > Repositories/Interfaces/IInvoiceRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class EmployeeRepository {}" > Repositories/EmployeeRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CustomerRepository {}" > Repositories/CustomerRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class SupplierRepository {}" > Repositories/SupplierRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CarrierRepository {}" > Repositories/CarrierRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class AddressRepository {}" > Repositories/AddressRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CredentialRepository {}" > Repositories/CredentialRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class CategoryRepository {}" > Repositories/CategoryRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class ProductRepository {}" > Repositories/ProductRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class FormRepository {}" > Repositories/FormRepository.cs
+echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class InvoiceRepository {}" > Repositories/InvoiceRepository.cs
 ```
 
 ## From the DummyRoster.WebApi directory add the following controllers
