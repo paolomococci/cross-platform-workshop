@@ -18,4 +18,34 @@ public class FormController : ControllerBase, IFormController
   {
     this.repository = repo;
   }
+
+  public Task<IActionResult> Create([FromBody] Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Form>> ReadAll(int? customerId)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> ReadForm(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Update(int id, [FromBody] Form entity)
+  {
+    throw new NotImplementedException();
+  }
 }
