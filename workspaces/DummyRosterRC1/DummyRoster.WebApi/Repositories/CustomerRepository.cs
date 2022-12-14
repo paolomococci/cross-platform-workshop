@@ -25,17 +25,34 @@ public class CustomerRepository : ICustomerRepository
     }
   }
 
-  public Task<Customer?> CreateAsync(Customer entity)
+  public async Task<Customer?> CreateAsync(Customer entity)
+  {
+    EntityEntry<Customer> entry = await this.dummyRosterContext.Customers.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Customer?> PartialUpdateAsync(int id, Customer entity)
+  public async Task<Customer?> PartialUpdateAsync(int id, Customer entity)
   {
     throw new NotImplementedException();
   }
@@ -50,7 +67,7 @@ public class CustomerRepository : ICustomerRepository
     throw new NotImplementedException();
   }
 
-  public Task<Customer?> UpdateAsync(int id, Customer entity)
+  public async Task<Customer?> UpdateAsync(int id, Customer entity)
   {
     throw new NotImplementedException();
   }
