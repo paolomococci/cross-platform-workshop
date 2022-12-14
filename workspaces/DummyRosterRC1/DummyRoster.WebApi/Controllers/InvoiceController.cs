@@ -18,4 +18,34 @@ public class InvoiceController : ControllerBase, IInvoiceController
   {
     this.repository = repo;
   }
+
+  public Task<IActionResult> Create([FromBody] Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Invoice>> ReadAll(int? formId)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> ReadInvoice(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Update(int id, [FromBody] Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
 }
