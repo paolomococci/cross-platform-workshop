@@ -5,8 +5,8 @@ namespace DummyRoster.WebApi.Repositories.Interfaces;
 public interface ICategoryRepository
 {
   Task<Category?> CreateAsync(Category entity);
-  Task<Category?> RetrieveAsync(int id);
-  Task<IEnumerable<Category>> RetrieveAllAsync();
+  Task<Category?> Retrieve(int id);
+  Task<IEnumerable<Category>> RetrieveAll();
   Task<Category?> UpdateAsync(
     int id,
     Category entity
