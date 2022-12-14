@@ -54,4 +54,23 @@ public class CredentialRepository : ICredentialRepository
   {
     throw new NotImplementedException();
   }
+
+  private Credential UpdateCache(
+    int id, 
+    Credential entity
+  )
+  {
+    Credential? alreadyRegistered;
+    if (keyValuesCache is not null)
+    {
+      if (keyValuesCache.TryGetValue(id, out alreadyRegistered))
+      {
+        if (keyValuesCache.TryUpdate(id, entity, alreadyRegistered))
+        {
+          return entity;
+        }
+      }
+    }
+    return null!;
+  }
 }
