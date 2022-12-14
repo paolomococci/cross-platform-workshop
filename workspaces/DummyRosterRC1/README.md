@@ -160,4 +160,7 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new blazorserver --auth Individual --name DummyRoster.BlazorServer
 cd DummyRoster.BlazorServer
+dotnet clean
+dotnet build
+dotnet run
 ```
