@@ -25,17 +25,34 @@ public class SupplierRepository : ISupplierRepository
     }
   }
 
-  public Task<Supplier?> CreateAsync(Supplier entity)
+  public async Task<Supplier?> CreateAsync(Supplier entity)
+  {
+    EntityEntry<Supplier> entry = await this.dummyRosterContext.Suppliers.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Supplier?> PartialUpdateAsync(int id, Supplier entity)
+  public async Task<Supplier?> PartialUpdateAsync(int id, Supplier entity)
   {
     throw new NotImplementedException();
   }
@@ -50,7 +67,7 @@ public class SupplierRepository : ISupplierRepository
     throw new NotImplementedException();
   }
 
-  public Task<Supplier?> UpdateAsync(int id, Supplier entity)
+  public async Task<Supplier?> UpdateAsync(int id, Supplier entity)
   {
     throw new NotImplementedException();
   }
