@@ -82,16 +82,16 @@ From the DummyRoster.WebApi directory I type the following commands:
 mkdir Tests
 cd Tests
 touch get_weather_forecast_tests.rest
-touch employee_endpoint_test.rest
-touch customer_endpoint_test.rest
-touch supplier_endpoint_test.rest
-touch carrier_endpoint_test.rest
-touch address_endpoint_test.rest
-touch credential_endpoint_test.rest
-touch category_endpoint_test.rest
-touch product_endpoint_test.rest
-touch form_endpoint_test.rest
-touch invoice_endpoint_test.rest
+touch employee_endpoint_tests.rest
+touch customer_endpoint_tests.rest
+touch supplier_endpoint_tests.rest
+touch carrier_endpoint_tests.rest
+touch address_endpoint_tests.rest
+touch credential_endpoint_tests.rest
+touch category_endpoint_tests.rest
+touch product_endpoint_tests.rest
+touch form_endpoint_tests.rest
+touch invoice_endpoint_tests.rest
 ```
 
 ### From the DummyRoster.WebApi directory add the following repositories
