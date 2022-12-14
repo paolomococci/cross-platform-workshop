@@ -5,4 +5,23 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Repositories;
 
-public class FormRepository {}
+public class FormRepository
+{
+  private static ConcurrentDictionary<int, Form>? keyValuesCache;
+  private DummyRosterContext dummyRosterContext;
+
+  public FormRepository(
+    DummyRosterContext dummyRosterContext
+  )
+  {
+    this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Form>(
+        this.dummyRosterContext.Forms.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
+  }
+}
