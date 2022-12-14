@@ -12,4 +12,3 @@ public interface IProductController
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Product entity);
   public Task<IActionResult> Delete(int id);
 }
-
