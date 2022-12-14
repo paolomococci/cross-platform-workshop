@@ -47,14 +47,14 @@ public class ProductRepository : IProductRepository
     }
   }
 
-  public Task<Product?> RetrieveAsync(int id)
+  public Task<Product?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Product? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Product>> RetrieveAllAsync()
+  public Task<IEnumerable<Product>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Product>() : keyValuesCache.Values
