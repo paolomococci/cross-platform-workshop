@@ -56,7 +56,9 @@ public class AddressRepository : IAddressRepository
 
   public Task<IEnumerable<Address>> RetrieveAllAsync()
   {
-    throw new NotImplementedException();
+    return Task.FromResult(
+      keyValuesCache is null ? Enumerable.Empty<Address>() : keyValuesCache.Values
+    );
   }
 
   public async Task<Address?> UpdateAsync(int id, Address entity)
