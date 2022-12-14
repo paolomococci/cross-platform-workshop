@@ -5,8 +5,8 @@ namespace DummyRoster.WebApi.Repositories.Interfaces;
 public interface ICustomerRepository
 {
   Task<Customer?> CreateAsync(Customer entity);
-  Task<Customer?> RetrieveAsync(int id);
-  Task<IEnumerable<Customer>> RetrieveAllAsync();
+  Task<Customer?> Retrieve(int id);
+  Task<IEnumerable<Customer>> RetrieveAll();
   Task<Customer?> UpdateAsync(
     int id,
     Customer entity
