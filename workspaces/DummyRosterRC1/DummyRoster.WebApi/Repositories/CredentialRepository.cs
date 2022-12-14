@@ -5,4 +5,23 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Repositories;
 
-public class CredentialRepository {}
+public class CredentialRepository
+{
+  private static ConcurrentDictionary<int, Credential>? keyValuesCache;
+  private DummyRosterContext dummyRosterContext;
+
+  public CredentialRepository(
+    DummyRosterContext dummyRosterContext
+  )
+  {
+    this.dummyRosterContext = dummyRosterContext;
+    if (keyValuesCache is null)
+    {
+      keyValuesCache = new ConcurrentDictionary<int, Credential>(
+        this.dummyRosterContext.Credentials.ToDictionary(
+          entity => entity.Id
+        )
+      );
+    }
+  }
+}
