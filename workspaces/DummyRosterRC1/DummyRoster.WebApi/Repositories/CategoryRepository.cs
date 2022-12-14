@@ -47,14 +47,14 @@ public class CategoryRepository : ICategoryRepository
     }
   }
 
-  public Task<Category?> RetrieveAsync(int id)
+  public Task<Category?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Category? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Category>> RetrieveAllAsync()
+  public Task<IEnumerable<Category>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Category>() : keyValuesCache.Values
