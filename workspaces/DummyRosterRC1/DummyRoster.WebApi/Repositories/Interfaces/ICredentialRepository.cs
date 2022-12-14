@@ -5,8 +5,8 @@ namespace DummyRoster.WebApi.Repositories.Interfaces;
 public interface ICredentialRepository
 {
   Task<Credential?> CreateAsync(Credential entity);
-  Task<Credential?> RetrieveAsync(int id);
-  Task<IEnumerable<Credential>> RetrieveAllAsync();
+  Task<Credential?> Retrieve(int id);
+  Task<IEnumerable<Credential>> RetrieveAll();
   Task<Credential?> UpdateAsync(
     int id,
     Credential entity
