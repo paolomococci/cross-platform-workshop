@@ -47,12 +47,7 @@ public class CredentialRepository : ICredentialRepository
     }
   }
 
-  public async Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public async Task<Credential?> PartialUpdateAsync(int id, Credential entity)
+  public Task<Credential?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -62,12 +57,17 @@ public class CredentialRepository : ICredentialRepository
     throw new NotImplementedException();
   }
 
-  public Task<Credential?> RetrieveAsync(int id)
+  public async Task<Credential?> UpdateAsync(int id, Credential entity)
   {
     throw new NotImplementedException();
   }
 
-  public async Task<Credential?> UpdateAsync(int id, Credential entity)
+  public async Task<Credential?> PartialUpdateAsync(int id, Credential entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
