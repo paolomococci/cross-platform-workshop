@@ -12,4 +12,3 @@ public interface IInvoiceController
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity);
   public Task<IActionResult> Delete(int id);
 }
-
