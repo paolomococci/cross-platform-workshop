@@ -74,7 +74,24 @@ public class InvoiceRepository : IInvoiceRepository
 
   public async Task<Invoice?> PartialUpdateAsync(int id, Invoice entity)
   {
-    throw new NotImplementedException();
+    if (keyValuesCache is null) return null!;
+    keyValuesCache.TryGetValue(id, out Invoice? registered);
+    if (registered != null)
+    {
+      if (entity.FormId != null) registered.FormId = entity.FormId;
+      if (entity.ProductId != null) registered.ProductId = entity.ProductId;
+      if (entity.Note != null) registered.Note = entity.Note;
+      if (!entity.UnitPrice.Equals(0)) registered.UnitPrice = entity.UnitPrice;
+      if (entity.Quantity != 1) registered.Quantity = entity.Quantity;
+      if (!entity.PriceCut.Equals(0)) registered.PriceCut = entity.PriceCut;
+      this.dummyRosterContext.Invoices.Update(registered);
+      int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+      if (changesSaved == 1)
+      {
+        return this.UpdateCache(id, registered);
+      }
+    }
+    return null;
   }
 
   public async Task<bool?> DeleteAsync(int id)
