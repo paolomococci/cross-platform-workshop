@@ -97,7 +97,25 @@ public class CustomerRepository : ICustomerRepository
 
   public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Customer? entity = this.dummyRosterContext.Customers.Find(id);
+    if (entity is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Customers.Remove(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out entity);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   private Customer UpdateCache(
