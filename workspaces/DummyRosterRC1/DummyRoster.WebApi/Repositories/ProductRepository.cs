@@ -25,17 +25,34 @@ public class ProductRepository : IProductRepository
     }
   }
 
-  public Task<Product?> CreateAsync(Product entity)
+  public async Task<Product?> CreateAsync(Product entity)
+  {
+    EntityEntry<Product> entry = await this.dummyRosterContext.Products.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Product?> PartialUpdateAsync(int id, Product entity)
+  public async Task<Product?> PartialUpdateAsync(int id, Product entity)
   {
     throw new NotImplementedException();
   }
@@ -50,7 +67,7 @@ public class ProductRepository : IProductRepository
     throw new NotImplementedException();
   }
 
-  public Task<Product?> UpdateAsync(int id, Product entity)
+  public async Task<Product?> UpdateAsync(int id, Product entity)
   {
     throw new NotImplementedException();
   }
