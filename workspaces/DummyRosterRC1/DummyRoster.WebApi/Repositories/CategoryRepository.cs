@@ -93,7 +93,25 @@ public class CategoryRepository : ICategoryRepository
 
   public async Task<bool?> DeleteAsync(int id)
   {
-    throw new NotImplementedException();
+    Category? entity = this.dummyRosterContext.Categories.Find(id);
+    if (entity is null)
+    {
+      return null;
+    }
+    this.dummyRosterContext.Categories.Remove(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return null;
+      }
+      return keyValuesCache.TryRemove(id, out entity);
+    }
+    else
+    {
+      return null;
+    }
   }
 
   private Category UpdateCache(
