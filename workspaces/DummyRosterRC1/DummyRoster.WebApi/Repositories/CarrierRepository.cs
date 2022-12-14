@@ -82,7 +82,8 @@ public class CarrierRepository : ICarrierRepository
       if (entity.FoundationDate != null) registered.FoundationDate = entity.FoundationDate;
       if (entity.Description != null) registered.Description = entity.Description;
       if (entity.Picture != null) registered.Picture = entity.Picture;
-      if (entity.Contact != null) registered.Contact = entity.Contact;
+      if (entity.Picture != null) registered.Picture = entity.Picture;
+      if (entity.Belonging != null) registered.Belonging = entity.Belonging;
       if (entity.Loc != null) registered.Loc = entity.Loc;
       if (entity.Ref != null) registered.Ref = entity.Ref;
       this.dummyRosterContext.Carriers.Update(registered);
