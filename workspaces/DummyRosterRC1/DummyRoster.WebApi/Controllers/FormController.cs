@@ -7,4 +7,15 @@ namespace DummyRoster.WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class FormController {}
+public class FormController
+{
+
+  private readonly IFormRepository repository;
+
+  public FormController(
+    IFormRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+}
