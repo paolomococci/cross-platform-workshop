@@ -24,12 +24,7 @@ public class InvoiceController : ControllerBase, IInvoiceController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Delete(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
+  public Task<IActionResult> ReadInvoice(int id)
   {
     throw new NotImplementedException();
   }
@@ -39,12 +34,17 @@ public class InvoiceController : ControllerBase, IInvoiceController
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> ReadInvoice(int id)
+  public Task<IActionResult> Update(int id, [FromBody] Invoice entity)
   {
     throw new NotImplementedException();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Invoice entity)
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
   }
