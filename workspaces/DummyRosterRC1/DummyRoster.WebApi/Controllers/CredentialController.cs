@@ -7,4 +7,15 @@ namespace DummyRoster.WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class CredentialController {}
+public class CredentialController
+{
+
+  private readonly ICredentialRepository repository;
+
+  public CredentialController(
+    ICredentialRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+}
