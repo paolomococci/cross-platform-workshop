@@ -7,7 +7,7 @@ namespace DummyRoster.WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class CustomerController
+public class CustomerController : ControllerBase, ICustomerController
 {
 
   private readonly ICustomerRepository repository;
