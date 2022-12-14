@@ -47,14 +47,14 @@ public class SupplierRepository : ISupplierRepository
     }
   }
 
-  public Task<Supplier?> RetrieveAsync(int id)
+  public Task<Supplier?> Retrieve(int id)
   {
     if (keyValuesCache is null) return null!;
     keyValuesCache.TryGetValue(id, out Supplier? entity);
     return Task.FromResult(entity);
   }
 
-  public Task<IEnumerable<Supplier>> RetrieveAllAsync()
+  public Task<IEnumerable<Supplier>> RetrieveAll()
   {
     return Task.FromResult(
       keyValuesCache is null ? Enumerable.Empty<Supplier>() : keyValuesCache.Values
