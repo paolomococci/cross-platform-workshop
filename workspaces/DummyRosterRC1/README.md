@@ -118,7 +118,7 @@ echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class FormReposito
 echo -e "namespace DummyRoster.WebApi.Repositories;\n\npublic class InvoiceRepository {}" > Repositories/InvoiceRepository.cs
 ```
 
-## From the DummyRoster.WebApi directory add the following controllers
+### From the DummyRoster.WebApi directory add the following controllers
 
 ```shell
 echo -e "namespace DummyRoster.WebApi.Controllers.Interfaces;\n\npublic interface IEmployeeController {}" > Controllers/Interfaces/IEmployeeController.cs
@@ -143,4 +143,12 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class ProductContro
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class FormController {}" > Controllers/FormController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class InvoiceController {}" > Controllers/InvoiceController.cs
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
+```
+
+### Finally, once the code has been developed and the necessary settings have been added, as far as project DummyRoster.WebApi is concerned, the time has come to test the API
+
+```shell
+dotnet clean
+dotnet build
+dotnet run
 ```
