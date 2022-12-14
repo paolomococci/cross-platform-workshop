@@ -87,6 +87,7 @@ touch customer_endpoint_test.rest
 touch supplier_endpoint_test.rest
 touch carrier_endpoint_test.rest
 touch address_endpoint_test.rest
+touch credential_endpoint_test.rest
 touch category_endpoint_test.rest
 touch product_endpoint_test.rest
 touch form_endpoint_test.rest
