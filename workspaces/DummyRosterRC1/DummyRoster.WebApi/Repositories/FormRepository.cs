@@ -25,17 +25,34 @@ public class FormRepository : IFormRepository
     }
   }
 
-  public Task<Form?> CreateAsync(Form entity)
+  public async Task<Form?> CreateAsync(Form entity)
+  {
+    EntityEntry<Form> entry = await this.dummyRosterContext.Forms.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Form?> PartialUpdateAsync(int id, Form entity)
+  public async Task<Form?> PartialUpdateAsync(int id, Form entity)
   {
     throw new NotImplementedException();
   }
@@ -50,7 +67,7 @@ public class FormRepository : IFormRepository
     throw new NotImplementedException();
   }
 
-  public Task<Form?> UpdateAsync(int id, Form entity)
+  public async Task<Form?> UpdateAsync(int id, Form entity)
   {
     throw new NotImplementedException();
   }
