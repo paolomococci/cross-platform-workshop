@@ -47,12 +47,7 @@ public class FormRepository : IFormRepository
     }
   }
 
-  public async Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public async Task<Form?> PartialUpdateAsync(int id, Form entity)
+  public Task<Form?> RetrieveAsync(int id)
   {
     throw new NotImplementedException();
   }
@@ -62,12 +57,17 @@ public class FormRepository : IFormRepository
     throw new NotImplementedException();
   }
 
-  public Task<Form?> RetrieveAsync(int id)
+  public async Task<Form?> UpdateAsync(int id, Form entity)
   {
     throw new NotImplementedException();
   }
 
-  public async Task<Form?> UpdateAsync(int id, Form entity)
+  public async Task<Form?> PartialUpdateAsync(int id, Form entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
