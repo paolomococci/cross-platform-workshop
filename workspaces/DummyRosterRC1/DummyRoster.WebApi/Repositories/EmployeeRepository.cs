@@ -25,17 +25,34 @@ public class EmployeeRepository : IEmployeeRepository
     }
   }
 
-  public Task<Employee?> CreateAsync(Employee entity)
+  public async Task<Employee?> CreateAsync(Employee entity)
+  {
+    EntityEntry<Employee> entry = await this.dummyRosterContext.Employees.AddAsync(entity);
+    int changesWereSavedAsynchronously = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesWereSavedAsynchronously == 1)
+    {
+      if (keyValuesCache is null)
+      {
+        return entity;
+      }
+      return keyValuesCache.AddOrUpdate(
+        entity.Id,
+        entity,
+        UpdateCache
+      );
+    }
+    else
+    {
+      return null;
+    }
+  }
+
+  public async Task<bool?> DeleteAsync(int id)
   {
     throw new NotImplementedException();
   }
 
-  public Task<bool?> DeleteAsync(int id)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task<Employee?> PartialUpdateAsync(int id, Employee entity)
+  public async Task<Employee?> PartialUpdateAsync(int id, Employee entity)
   {
     throw new NotImplementedException();
   }
@@ -50,7 +67,7 @@ public class EmployeeRepository : IEmployeeRepository
     throw new NotImplementedException();
   }
 
-  public Task<Employee?> UpdateAsync(int id, Employee entity)
+  public async Task<Employee?> UpdateAsync(int id, Employee entity)
   {
     throw new NotImplementedException();
   }
