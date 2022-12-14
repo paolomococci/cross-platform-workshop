@@ -56,7 +56,9 @@ public class InvoiceRepository : IInvoiceRepository
 
   public Task<IEnumerable<Invoice>> RetrieveAllAsync()
   {
-    throw new NotImplementedException();
+    return Task.FromResult(
+      keyValuesCache is null ? Enumerable.Empty<Invoice>() : keyValuesCache.Values
+    );
   }
 
   public async Task<Invoice?> UpdateAsync(int id, Invoice entity)
