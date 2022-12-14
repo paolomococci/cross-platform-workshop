@@ -152,3 +152,12 @@ dotnet clean
 dotnet build
 dotnet run
 ```
+
+## Scaffolding of DummyRoster.BlazorServer project
+
+From the main workspace I type the following commands:
+
+```shell
+dotnet new blazorserver --auth Individual --name DummyRoster.BlazorServer
+cd DummyRoster.BlazorServer
+```
