@@ -63,7 +63,13 @@ public class AddressRepository : IAddressRepository
 
   public async Task<Address?> UpdateAsync(int id, Address entity)
   {
-    throw new NotImplementedException();
+    this.dummyRosterContext.Addresses.Update(entity);
+    int changesSaved = await this.dummyRosterContext.SaveChangesAsync();
+    if (changesSaved == 1)
+    {
+      return this.UpdateCache(id, entity);
+    }
+    return null;
   }
 
   public async Task<Address?> PartialUpdateAsync(int id, Address entity)
