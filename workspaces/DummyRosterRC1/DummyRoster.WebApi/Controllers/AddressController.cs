@@ -7,4 +7,15 @@ namespace DummyRoster.WebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class AddressController {}
+public class AddressController
+{
+
+  private readonly IAddressRepository repository;
+
+  public AddressController(
+    IAddressRepository repo
+  )
+  {
+    this.repository = repo;
+  }
+}
