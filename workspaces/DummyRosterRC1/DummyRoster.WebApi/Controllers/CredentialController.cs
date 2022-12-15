@@ -19,6 +19,16 @@ public class CredentialController : ControllerBase, ICredentialController
     this.repository = repo;
   }
 
+  /* 
+    POST: api/credentials
+    BODY: Credential (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Credential)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Credential entity)
   {
     throw new NotImplementedException();
