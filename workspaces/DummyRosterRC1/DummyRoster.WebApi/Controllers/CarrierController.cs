@@ -95,8 +95,19 @@ public class CarrierController : ControllerBase, ICarrierController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Delete(int id)
+  public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
+    bool deleted = false;
+    Carrier? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.repository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 }
