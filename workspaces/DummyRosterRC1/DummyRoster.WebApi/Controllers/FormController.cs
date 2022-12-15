@@ -45,7 +45,12 @@ public class FormController : ControllerBase, IFormController
   [ProducesResponseType(404)]
   public async Task<IActionResult> ReadForm(int id)
   {
-    throw new NotImplementedException();
+    Form? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
