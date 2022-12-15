@@ -45,7 +45,12 @@ public class CredentialController : ControllerBase, ICredentialController
   [ProducesResponseType(404)]
   public async Task<IActionResult> ReadCredential(int id)
   {
-    throw new NotImplementedException();
+    Credential? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
