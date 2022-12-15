@@ -29,7 +29,7 @@ public class FormController : ControllerBase, IFormController
     Type = typeof(Form)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Form entity)
+  public async Task<IActionResult> Create([FromBody] Form entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class FormController : ControllerBase, IFormController
     Type = typeof(Form)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadForm(int id)
+  public async Task<IActionResult> ReadForm(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class FormController : ControllerBase, IFormController
     200,
     Type = typeof(IEnumerable<Form>)
   )]
-  public Task<IEnumerable<Form>> ReadAll(int? customerId)
+  public async Task<IEnumerable<Form>> ReadAll(int? customerId)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class FormController : ControllerBase, IFormController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Form entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Form entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class FormController : ControllerBase, IFormController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Form entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Form entity)
   {
     throw new NotImplementedException();
   }
