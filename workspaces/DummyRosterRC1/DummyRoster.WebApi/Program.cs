@@ -33,7 +33,7 @@ builder.Services.AddControllers(
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(
-  /*temp => {
+  temp => {
     temp.SwaggerDoc(
       "v1",
       new() {
@@ -41,7 +41,7 @@ builder.Services.AddSwaggerGen(
         Version = "v1"
       }
     );
-  }*/
+  }
 );
 
 /* From here I add the interfaces and classes regarding the repositories */
