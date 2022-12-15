@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using DummyRoster.Common.EntityModel.Models;
+using DummyRoster.Common.EntityModel.Data;
 using DummyRoster.WebApi.Repositories.Interfaces;
 using DummyRoster.WebApi.Repositories;
 
@@ -58,6 +58,9 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IFormRepository, FormRepository>();
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
+/* database health checks */
+//builder.Services.AddHealthChecks().AddDbContextCheck<DummyRosterContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -88,9 +91,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 /* health checks */
-app.UseHealthChecks(
+/*app.UseHealthChecks(
   path: "/health/checks"
-);
+);*/
 
 app.MapControllers();
 
