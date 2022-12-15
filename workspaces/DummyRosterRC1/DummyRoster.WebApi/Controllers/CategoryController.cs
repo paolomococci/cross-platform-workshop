@@ -29,7 +29,7 @@ public class CategoryController : ControllerBase, ICategoryController
     Type = typeof(Category)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Category entity)
+  public async Task<IActionResult> Create([FromBody] Category entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class CategoryController : ControllerBase, ICategoryController
     Type = typeof(Category)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadCategory(int id)
+  public async Task<IActionResult> ReadCategory(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class CategoryController : ControllerBase, ICategoryController
     200,
     Type = typeof(IEnumerable<Category>)
   )]
-  public Task<IEnumerable<Category>> ReadAll(string? name)
+  public async Task<IEnumerable<Category>> ReadAll(string? name)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class CategoryController : ControllerBase, ICategoryController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Category entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Category entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class CategoryController : ControllerBase, ICategoryController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity)
   {
     throw new NotImplementedException();
   }
