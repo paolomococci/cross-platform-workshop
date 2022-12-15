@@ -6,7 +6,7 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 namespace DummyRoster.WebApi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/invoices")]
 public class InvoiceController : ControllerBase, IInvoiceController
 {
 
