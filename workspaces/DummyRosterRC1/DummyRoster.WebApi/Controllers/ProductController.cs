@@ -88,6 +88,13 @@ public class ProductController : ControllerBase, IProductController
     throw new NotImplementedException();
   }
 
+  /* 
+    DELETE: api/products/id
+   */
+  [HttpDelete("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Delete(int id)
   {
     throw new NotImplementedException();
