@@ -48,7 +48,16 @@ public class CredentialController : ControllerBase, ICredentialController
     throw new NotImplementedException();
   }
 
-  public Task<IEnumerable<Credential>> ReadAll(string? name)
+  /* 
+    GET: api/credentials
+    GET: api/credentials/?email=[email]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Credential>)
+  )]
+  public Task<IEnumerable<Credential>> ReadAll(string? email)
   {
     throw new NotImplementedException();
   }
