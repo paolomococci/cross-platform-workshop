@@ -59,7 +59,7 @@ builder.Services.AddScoped<IFormRepository, FormRepository>();
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
 /* database health checks */
-//builder.Services.AddHealthChecks().AddDbContextCheck<DummyRosterContext>();
+builder.Services.AddHealthChecks().AddDbContextCheck<DummyRosterContext>();
 
 var app = builder.Build();
 
@@ -91,9 +91,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 /* health checks */
-/*app.UseHealthChecks(
+app.UseHealthChecks(
   path: "/health/checks"
-);*/
+);
 
 app.MapControllers();
 
