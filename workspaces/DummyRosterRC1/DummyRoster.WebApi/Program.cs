@@ -35,8 +35,8 @@ builder.Services.AddControllers(
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(
-  temp => {
-    temp.SwaggerDoc(
+  swaggerConf => {
+    swaggerConf.SwaggerDoc(
       "v1",
       new() {
         Title = "DummyRoster.WebApi project",
@@ -68,12 +68,12 @@ if (app.Environment.IsDevelopment())
 {
   app.UseSwagger();
   app.UseSwaggerUI(
-    temp => {
-      temp.SwaggerEndpoint(
+    swaggerConf => {
+      swaggerConf.SwaggerEndpoint(
         "/swagger/v1/swagger.json",
         "DummyRoster.WebApi project Version 1"
       );
-      temp.SupportedSubmitMethods(
+      swaggerConf.SupportedSubmitMethods(
         new[] {
           SubmitMethod.Get,
           SubmitMethod.Post,
