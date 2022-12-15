@@ -6,7 +6,7 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 namespace DummyRoster.WebApi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/carriers")]
 public class CarrierController : ControllerBase, ICarrierController
 {
 
