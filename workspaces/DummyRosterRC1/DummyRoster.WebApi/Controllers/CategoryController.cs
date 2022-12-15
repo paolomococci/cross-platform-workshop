@@ -62,6 +62,14 @@ public class CategoryController : ControllerBase, ICategoryController
     throw new NotImplementedException();
   }
 
+  /* 
+    PUT: api/categories/id
+    BODY: Category (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Update(int id, [FromBody] Category entity)
   {
     throw new NotImplementedException();
