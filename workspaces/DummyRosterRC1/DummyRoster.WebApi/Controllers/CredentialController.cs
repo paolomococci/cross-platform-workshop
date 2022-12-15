@@ -59,7 +59,13 @@ public class CredentialController : ControllerBase, ICredentialController
   )]
   public async Task<IEnumerable<Credential>> ReadAll(string? email)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(email))
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.Email == email
+    );
   }
 
   /* 
