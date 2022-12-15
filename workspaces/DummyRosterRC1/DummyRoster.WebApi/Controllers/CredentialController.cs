@@ -34,6 +34,15 @@ public class CredentialController : ControllerBase, ICredentialController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/credentials/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadCredential))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Credential)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> ReadCredential(int id)
   {
     throw new NotImplementedException();
