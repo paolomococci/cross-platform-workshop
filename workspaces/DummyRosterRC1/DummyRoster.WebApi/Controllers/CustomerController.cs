@@ -29,7 +29,7 @@ public class CustomerController : ControllerBase, ICustomerController
     Type = typeof(Customer)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Customer entity)
+  public async Task<IActionResult> Create([FromBody] Customer entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class CustomerController : ControllerBase, ICustomerController
     Type = typeof(Customer)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadCustomer(int id)
+  public async Task<IActionResult> ReadCustomer(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class CustomerController : ControllerBase, ICustomerController
     200,
     Type = typeof(IEnumerable<Customer>)
   )]
-  public Task<IEnumerable<Customer>> ReadAll(string? name)
+  public async Task<IEnumerable<Customer>> ReadAll(string? name)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class CustomerController : ControllerBase, ICustomerController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Customer entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Customer entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class CustomerController : ControllerBase, ICustomerController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity)
   {
     throw new NotImplementedException();
   }
