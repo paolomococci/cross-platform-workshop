@@ -34,6 +34,15 @@ public class EmployeeController : ControllerBase, IEmployeeController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/employees/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadEmployee))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Employee)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> ReadEmployee(int id)
   {
     throw new NotImplementedException();
