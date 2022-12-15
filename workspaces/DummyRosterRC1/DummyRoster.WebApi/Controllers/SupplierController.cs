@@ -31,7 +31,20 @@ public class SupplierController : ControllerBase, ISupplierController
   [ProducesResponseType(400)]
   public async Task<IActionResult> Create([FromBody] Supplier entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Supplier? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadSupplier),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
