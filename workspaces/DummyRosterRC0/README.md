@@ -166,4 +166,7 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new mvc --auth Individual --name DummyRoster.Mvc
 cd DummyRoster.Mvc
+dotnet clean
+dotnet build
+dotnet run
 ```
