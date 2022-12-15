@@ -34,6 +34,15 @@ public class CarrierController : ControllerBase, ICarrierController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/carriers/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadCarrier))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Carrier)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> ReadCarrier(int id)
   {
     throw new NotImplementedException();
