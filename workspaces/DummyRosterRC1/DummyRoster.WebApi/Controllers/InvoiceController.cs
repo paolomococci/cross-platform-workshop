@@ -48,6 +48,15 @@ public class InvoiceController : ControllerBase, IInvoiceController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/invoices
+    GET: api/invoices/?formId=[formId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Invoice>)
+  )]
   public Task<IEnumerable<Invoice>> ReadAll(int? formId)
   {
     throw new NotImplementedException();
