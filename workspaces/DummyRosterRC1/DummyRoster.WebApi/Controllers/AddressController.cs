@@ -49,14 +49,14 @@ public class AddressController : ControllerBase, IAddressController
   }
 
   /* 
-    GET: api/addresses/[id]
+    GET: api/addresses
+    GET: api/addresses/?country=[country]
    */
-  [HttpGet("{id}", Name = nameof(ReadAddress))]
+  [HttpGet]
   [ProducesResponseType(
     200,
-    Type = typeof(Address)
+    Type = typeof(IEnumerable<Address>)
   )]
-  [ProducesResponseType(404)]
   public Task<IEnumerable<Address>> ReadAll(string? country)
   {
     throw new NotImplementedException();
