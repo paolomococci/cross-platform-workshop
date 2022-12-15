@@ -29,7 +29,7 @@ public class EmployeeController : ControllerBase, IEmployeeController
     Type = typeof(Employee)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Employee entity)
+  public async Task<IActionResult> Create([FromBody] Employee entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class EmployeeController : ControllerBase, IEmployeeController
     Type = typeof(Employee)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadEmployee(int id)
+  public async Task<IActionResult> ReadEmployee(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class EmployeeController : ControllerBase, IEmployeeController
     200,
     Type = typeof(IEnumerable<Employee>)
   )]
-  public Task<IEnumerable<Employee>> ReadAll(string? name)
+  public async Task<IEnumerable<Employee>> ReadAll(string? name)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class EmployeeController : ControllerBase, IEmployeeController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Employee entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Employee entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class EmployeeController : ControllerBase, IEmployeeController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Employee entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Employee entity)
   {
     throw new NotImplementedException();
   }
