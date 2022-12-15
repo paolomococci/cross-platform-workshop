@@ -34,6 +34,15 @@ public class CategoryController : ControllerBase, ICategoryController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/categories/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadCategory))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Category)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> ReadCategory(int id)
   {
     throw new NotImplementedException();
