@@ -59,7 +59,13 @@ public class InvoiceController : ControllerBase, IInvoiceController
   )]
   public async Task<IEnumerable<Invoice>> ReadAll(int? formId)
   {
-    throw new NotImplementedException();
+    if (formId is null)
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.FormId == formId
+    );
   }
 
   /* 
