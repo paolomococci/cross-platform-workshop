@@ -59,7 +59,13 @@ public class AddressController : ControllerBase, IAddressController
   )]
   public async Task<IEnumerable<Address>> ReadAll(string? country)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(country))
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.Country == country
+    );
   }
 
   /* 
