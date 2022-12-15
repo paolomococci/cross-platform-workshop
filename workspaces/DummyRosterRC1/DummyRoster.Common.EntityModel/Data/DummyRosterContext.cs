@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using DummyRoster.Common.EntityModel.Models;
 
-namespace DummyRoster.Common.EntityModel.Models;
+namespace DummyRoster.Common.EntityModel.Data;
 
 public partial class DummyRosterContext : DbContext
 {
