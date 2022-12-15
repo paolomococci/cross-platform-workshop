@@ -45,7 +45,12 @@ public class EmployeeController : ControllerBase, IEmployeeController
   [ProducesResponseType(404)]
   public async Task<IActionResult> ReadEmployee(int id)
   {
-    throw new NotImplementedException();
+    Employee? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
