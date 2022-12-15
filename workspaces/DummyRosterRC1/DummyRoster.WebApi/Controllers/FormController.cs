@@ -59,7 +59,13 @@ public class FormController : ControllerBase, IFormController
   )]
   public async Task<IEnumerable<Form>> ReadAll(int? customerId)
   {
-    throw new NotImplementedException();
+    if (customerId == null)
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.CustomerId == customerId
+    );
   }
 
   /* 
