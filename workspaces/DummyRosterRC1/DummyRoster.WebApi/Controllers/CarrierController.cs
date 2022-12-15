@@ -85,7 +85,17 @@ public class CarrierController : ControllerBase, ICarrierController
   [ProducesResponseType(404)]
   public async Task<IActionResult> PartialUpdate(int id, [FromBody] Carrier entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Carrier? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.PartialUpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
   /* 
