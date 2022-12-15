@@ -85,6 +85,7 @@ if (app.Environment.IsDevelopment())
     }
   );
 }
+/* SwaggerUI will be available at the URL: https://127.0.0.1:5001/swagger/index.html */
 
 app.UseHttpsRedirection();
 
