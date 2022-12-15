@@ -29,7 +29,7 @@ public class SupplierController : ControllerBase, ISupplierController
     Type = typeof(Supplier)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Supplier entity)
+  public async Task<IActionResult> Create([FromBody] Supplier entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class SupplierController : ControllerBase, ISupplierController
     Type = typeof(Supplier)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadSupplier(int id)
+  public async Task<IActionResult> ReadSupplier(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class SupplierController : ControllerBase, ISupplierController
     200,
     Type = typeof(IEnumerable<Supplier>)
   )]
-  public Task<IEnumerable<Supplier>> ReadAll(string? name)
+  public async Task<IEnumerable<Supplier>> ReadAll(string? name)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class SupplierController : ControllerBase, ISupplierController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Supplier entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Supplier entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class SupplierController : ControllerBase, ISupplierController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Supplier entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Supplier entity)
   {
     throw new NotImplementedException();
   }
