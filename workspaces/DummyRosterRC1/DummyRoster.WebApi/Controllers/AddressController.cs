@@ -75,6 +75,14 @@ public class AddressController : ControllerBase, IAddressController
     throw new NotImplementedException();
   }
 
+  /* 
+    PATCH: api/addresses/id
+    BODY: Address (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Address entity)
   {
     throw new NotImplementedException();
