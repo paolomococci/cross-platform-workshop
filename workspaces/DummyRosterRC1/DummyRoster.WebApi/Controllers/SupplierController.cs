@@ -59,7 +59,13 @@ public class SupplierController : ControllerBase, ISupplierController
   )]
   public async Task<IEnumerable<Supplier>> ReadAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
