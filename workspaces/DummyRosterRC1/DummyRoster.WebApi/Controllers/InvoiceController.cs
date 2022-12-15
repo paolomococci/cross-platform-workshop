@@ -31,7 +31,20 @@ public class InvoiceController : ControllerBase, IInvoiceController
   [ProducesResponseType(400)]
   public async Task<IActionResult> Create([FromBody] Invoice entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Invoice? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadInvoice),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
