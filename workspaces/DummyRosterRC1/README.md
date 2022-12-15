@@ -145,6 +145,14 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class InvoiceContro
 echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 ```
 
+### Add Entity Framework Core database health checks
+
+From the DummyRoster.WebApi directory:
+
+```shell
+dotnet add package Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore --version 6.0.12
+```
+
 ### Finally, once the code has been developed and the necessary settings have been added, as far as project DummyRoster.WebApi is concerned, the time has come to test the API
 
 ```shell
