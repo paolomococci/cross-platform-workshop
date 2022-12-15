@@ -29,7 +29,7 @@ public class ProductController : ControllerBase, IProductController
     Type = typeof(Product)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Product entity)
+  public async Task<IActionResult> Create([FromBody] Product entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class ProductController : ControllerBase, IProductController
     Type = typeof(Product)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadProduct(int id)
+  public async Task<IActionResult> ReadProduct(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class ProductController : ControllerBase, IProductController
     200,
     Type = typeof(IEnumerable<Product>)
   )]
-  public Task<IEnumerable<Product>> ReadAll(string? name)
+  public async Task<IEnumerable<Product>> ReadAll(string? name)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class ProductController : ControllerBase, IProductController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Product entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Product entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class ProductController : ControllerBase, IProductController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Product entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Product entity)
   {
     throw new NotImplementedException();
   }
