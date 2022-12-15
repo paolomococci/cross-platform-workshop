@@ -59,7 +59,13 @@ public class ProductController : ControllerBase, IProductController
   )]
   public async Task<IEnumerable<Product>> ReadAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
