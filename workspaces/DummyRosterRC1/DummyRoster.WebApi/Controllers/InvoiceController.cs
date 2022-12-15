@@ -29,7 +29,7 @@ public class InvoiceController : ControllerBase, IInvoiceController
     Type = typeof(Invoice)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Invoice entity)
+  public async Task<IActionResult> Create([FromBody] Invoice entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class InvoiceController : ControllerBase, IInvoiceController
     Type = typeof(Invoice)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadInvoice(int id)
+  public async Task<IActionResult> ReadInvoice(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class InvoiceController : ControllerBase, IInvoiceController
     200,
     Type = typeof(IEnumerable<Invoice>)
   )]
-  public Task<IEnumerable<Invoice>> ReadAll(int? formId)
+  public async Task<IEnumerable<Invoice>> ReadAll(int? formId)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class InvoiceController : ControllerBase, IInvoiceController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Invoice entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Invoice entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class InvoiceController : ControllerBase, IInvoiceController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
   {
     throw new NotImplementedException();
   }
