@@ -48,6 +48,15 @@ public class ProductController : ControllerBase, IProductController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/products
+    GET: api/products/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Product>)
+  )]
   public Task<IEnumerable<Product>> ReadAll(string? name)
   {
     throw new NotImplementedException();
