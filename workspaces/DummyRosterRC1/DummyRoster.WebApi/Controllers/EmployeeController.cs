@@ -19,6 +19,16 @@ public class EmployeeController : ControllerBase, IEmployeeController
     this.repository = repo;
   }
 
+  /* 
+    POST: api/employees
+    BODY: Employee (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Employee)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Employee entity)
   {
     throw new NotImplementedException();
