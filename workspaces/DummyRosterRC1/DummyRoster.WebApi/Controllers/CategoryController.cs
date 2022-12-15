@@ -75,6 +75,14 @@ public class CategoryController : ControllerBase, ICategoryController
     throw new NotImplementedException();
   }
 
+  /* 
+    PATCH: api/categories/id
+    BODY: Category (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity)
   {
     throw new NotImplementedException();
