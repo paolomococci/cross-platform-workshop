@@ -45,7 +45,12 @@ public class InvoiceController : ControllerBase, IInvoiceController
   [ProducesResponseType(404)]
   public async Task<IActionResult> ReadInvoice(int id)
   {
-    throw new NotImplementedException();
+    Invoice? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
   /* 
