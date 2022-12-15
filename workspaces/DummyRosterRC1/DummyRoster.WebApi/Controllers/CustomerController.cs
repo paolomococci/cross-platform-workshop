@@ -34,6 +34,15 @@ public class CustomerController : ControllerBase, ICustomerController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/customers/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadCustomer))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Customer)
+  )]
+  [ProducesResponseType(404)]
   public Task<IActionResult> ReadCustomer(int id)
   {
     throw new NotImplementedException();
