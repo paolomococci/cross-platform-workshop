@@ -87,6 +87,11 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+/* health checks */
+app.UseHealthChecks(
+  path: "/health/checks"
+);
+
 app.MapControllers();
 
 app.Run();
