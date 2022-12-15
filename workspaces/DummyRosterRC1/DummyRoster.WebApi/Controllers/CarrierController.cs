@@ -75,6 +75,14 @@ public class CarrierController : ControllerBase, ICarrierController
     throw new NotImplementedException();
   }
 
+  /* 
+    PATCH: api/carriers/id
+    BODY: Carrier (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Carrier entity)
   {
     throw new NotImplementedException();
