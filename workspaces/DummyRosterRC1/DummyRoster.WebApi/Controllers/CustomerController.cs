@@ -85,7 +85,17 @@ public class CustomerController : ControllerBase, ICustomerController
   [ProducesResponseType(404)]
   public async Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Customer? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.PartialUpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
   /* 
