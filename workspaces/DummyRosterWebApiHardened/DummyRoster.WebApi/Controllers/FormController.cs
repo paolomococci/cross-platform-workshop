@@ -77,7 +77,7 @@ public class FormController : ControllerBase, IFormController
   )]
   public async Task<IEnumerable<Form>> ReadAll(int? customerId)
   {
-    if (string.IsNullOrWhiteSpace(customerId.ToString()))
+    if (customerId == null)
     {
       return await this.repository.RetrieveAllAsync();
     }
