@@ -59,7 +59,13 @@ public class EmployeeController : ControllerBase, IEmployeeController
   )]
   public async Task<IEnumerable<Employee>> ReadAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.Name == name
+    );
   }
 
   /* 
