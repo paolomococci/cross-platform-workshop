@@ -77,7 +77,7 @@ public class InvoiceController : ControllerBase, IInvoiceController
   )]
   public async Task<IEnumerable<Invoice>> ReadAll(int? formId)
   {
-    if (string.IsNullOrWhiteSpace(formId.ToString()))
+    if (formId is null)
     {
       return await this.repository.RetrieveAllAsync();
     }
