@@ -157,5 +157,5 @@ echo -e "namespace DummyRoster.WebApi.Controllers;\n\npublic class HomeControlle
 From the DummyRoster.WebApi directory:
 
 ```shell
-dotnet add package Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore --version 6.0.11
+dotnet add package Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore --version 6.0.12
 ```
