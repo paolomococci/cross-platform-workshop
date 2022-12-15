@@ -31,7 +31,20 @@ public class CredentialController : ControllerBase, ICredentialController
   [ProducesResponseType(400)]
   public async Task<IActionResult> Create([FromBody] Credential entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Credential? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadCredential),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
   /* 
