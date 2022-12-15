@@ -29,7 +29,7 @@ public class CarrierController : ControllerBase, ICarrierController
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Carrier entity)
+  public async Task<IActionResult> Create([FromBody] Carrier entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class CarrierController : ControllerBase, ICarrierController
     Type = typeof(Carrier)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadCarrier(int id)
+  public async Task<IActionResult> ReadCarrier(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class CarrierController : ControllerBase, ICarrierController
     200,
     Type = typeof(IEnumerable<Carrier>)
   )]
-  public Task<IEnumerable<Carrier>> ReadAll(string? name)
+  public async Task<IEnumerable<Carrier>> ReadAll(string? name)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class CarrierController : ControllerBase, ICarrierController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Carrier entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Carrier entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class CarrierController : ControllerBase, ICarrierController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Carrier entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Carrier entity)
   {
     throw new NotImplementedException();
   }
