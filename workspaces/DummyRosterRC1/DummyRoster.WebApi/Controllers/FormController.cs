@@ -62,6 +62,14 @@ public class FormController : ControllerBase, IFormController
     throw new NotImplementedException();
   }
 
+  /* 
+    PUT: api/forms/id
+    BODY: Form (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Update(int id, [FromBody] Form entity)
   {
     throw new NotImplementedException();
