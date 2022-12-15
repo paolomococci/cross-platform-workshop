@@ -72,7 +72,17 @@ public class CustomerController : ControllerBase, ICustomerController
   [ProducesResponseType(404)]
   public async Task<IActionResult> Update(int id, [FromBody] Customer entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Customer? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.UpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
   /* 
