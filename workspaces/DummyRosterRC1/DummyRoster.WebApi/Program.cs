@@ -1,6 +1,9 @@
 using Swashbuckle.AspNetCore.SwaggerUI;
+using DummyRoster.Common.EntityModel.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<DummyRosterContext>();
 
 // Add services to the container.
 
