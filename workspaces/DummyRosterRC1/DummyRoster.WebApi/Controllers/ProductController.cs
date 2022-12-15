@@ -62,6 +62,14 @@ public class ProductController : ControllerBase, IProductController
     throw new NotImplementedException();
   }
 
+  /* 
+    PUT: api/products/id
+    BODY: Product (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> Update(int id, [FromBody] Product entity)
   {
     throw new NotImplementedException();
