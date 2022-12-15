@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using DummyRoster.Common.EntityModel.Models;
+using DummyRoster.WebApi.Repositories.Interfaces;
+using DummyRoster.WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,7 +47,7 @@ builder.Services.AddSwaggerGen(
 );
 
 /* From here I add the interfaces and classes regarding the repositories */
-//builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 //builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 //builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
 //builder.Services.AddScoped<ICarrierRepository, CarrierRepository>();
