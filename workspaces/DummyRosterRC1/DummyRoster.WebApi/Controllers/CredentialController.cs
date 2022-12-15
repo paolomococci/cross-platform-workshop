@@ -29,7 +29,7 @@ public class CredentialController : ControllerBase, ICredentialController
     Type = typeof(Credential)
   )]
   [ProducesResponseType(400)]
-  public Task<IActionResult> Create([FromBody] Credential entity)
+  public async Task<IActionResult> Create([FromBody] Credential entity)
   {
     throw new NotImplementedException();
   }
@@ -43,7 +43,7 @@ public class CredentialController : ControllerBase, ICredentialController
     Type = typeof(Credential)
   )]
   [ProducesResponseType(404)]
-  public Task<IActionResult> ReadCredential(int id)
+  public async Task<IActionResult> ReadCredential(int id)
   {
     throw new NotImplementedException();
   }
@@ -57,7 +57,7 @@ public class CredentialController : ControllerBase, ICredentialController
     200,
     Type = typeof(IEnumerable<Credential>)
   )]
-  public Task<IEnumerable<Credential>> ReadAll(string? email)
+  public async Task<IEnumerable<Credential>> ReadAll(string? email)
   {
     throw new NotImplementedException();
   }
@@ -70,7 +70,7 @@ public class CredentialController : ControllerBase, ICredentialController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> Update(int id, [FromBody] Credential entity)
+  public async Task<IActionResult> Update(int id, [FromBody] Credential entity)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public class CredentialController : ControllerBase, ICredentialController
   [ProducesResponseType(204)]
   [ProducesResponseType(400)]
   [ProducesResponseType(404)]
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Credential entity)
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Credential entity)
   {
     throw new NotImplementedException();
   }
