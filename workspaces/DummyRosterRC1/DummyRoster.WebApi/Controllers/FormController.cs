@@ -19,6 +19,16 @@ public class FormController : ControllerBase, IFormController
     this.repository = repo;
   }
 
+  /* 
+    POST: api/forms
+    BODY: Form (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Form)
+  )]
+  [ProducesResponseType(400)]
   public Task<IActionResult> Create([FromBody] Form entity)
   {
     throw new NotImplementedException();
