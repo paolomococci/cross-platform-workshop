@@ -65,7 +65,7 @@ if (app.Environment.IsDevelopment())
 {
   app.UseSwagger();
   app.UseSwaggerUI(
-    /*temp => {
+    temp => {
       temp.SwaggerEndpoint(
         "/swagger/v1/swagger.json",
         "DummyRoster.WebApi project Version 1"
@@ -79,7 +79,7 @@ if (app.Environment.IsDevelopment())
           SubmitMethod.Delete
         }
       );
-    }*/
+    }
   );
 }
 
