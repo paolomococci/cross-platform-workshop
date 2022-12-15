@@ -75,6 +75,14 @@ public class InvoiceController : ControllerBase, IInvoiceController
     throw new NotImplementedException();
   }
 
+  /* 
+    PATCH: api/invoices/id
+    BODY: Invoice (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
   {
     throw new NotImplementedException();
