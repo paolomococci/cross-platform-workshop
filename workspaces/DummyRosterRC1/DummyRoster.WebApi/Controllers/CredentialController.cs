@@ -75,6 +75,14 @@ public class CredentialController : ControllerBase, ICredentialController
     throw new NotImplementedException();
   }
 
+  /* 
+    PATCH: api/credentials/id
+    BODY: Credential (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Credential entity)
   {
     throw new NotImplementedException();
