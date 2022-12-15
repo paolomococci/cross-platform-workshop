@@ -48,6 +48,15 @@ public class EmployeeController : ControllerBase, IEmployeeController
     throw new NotImplementedException();
   }
 
+  /* 
+    GET: api/employees
+    GET: api/employees/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Employee>)
+  )]
   public Task<IEnumerable<Employee>> ReadAll(string? name)
   {
     throw new NotImplementedException();
