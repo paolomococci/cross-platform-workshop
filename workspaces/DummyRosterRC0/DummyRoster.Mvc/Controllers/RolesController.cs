@@ -90,7 +90,7 @@ public class RolesController : Controller
       if (identityResult.Succeeded)
       {
         Console.WriteLine(
-          $"User: {identityUser.UserName} added as {this.configuration["UserAdmin:role"]} successfully"
+          $"User: {identityUser.UserName} added as {this.configuration["UserAdmin:role"]} successfully."
         );
       }
       else
