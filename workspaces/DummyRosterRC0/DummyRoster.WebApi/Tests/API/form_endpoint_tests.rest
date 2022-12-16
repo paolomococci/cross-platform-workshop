@@ -1,6 +1,6 @@
 # form endpoint tests
 
-## inserting dummy data
+## I insert a dummy record
 
 POST https://localhost:5001/api/forms HTTP/1.1
 Content-Type: application/json
