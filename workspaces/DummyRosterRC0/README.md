@@ -32,9 +32,7 @@ and then give enter.
 Attention, for the database to automatically generate incrementally the identifiers must be indicated as follows:
 
 ```text
-...
 "Id" INTEGER PRIMARY KEY AUTOINCREMENT
-...
 ```
 
 ## Scaffolding of DummyRoster.Common.EntityModel project
