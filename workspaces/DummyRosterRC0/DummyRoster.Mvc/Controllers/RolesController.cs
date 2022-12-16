@@ -47,6 +47,15 @@ public class RolesController : Controller
           $"User: {identityUser.UserName} just successfully created!"
         );
       }
+      else
+      {
+        foreach (IdentityError error in identityResult.Errors)
+        {
+          Console.WriteLine(
+            $"Error: {error.Description}"
+          );
+        }
+      }
     }
   }
 }
