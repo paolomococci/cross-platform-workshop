@@ -166,6 +166,32 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new mvc --auth Individual --name DummyRoster.Mvc
 cd DummyRoster.Mvc
+```
+
+Note: sensitive data could be written as follows in file x, excluding it from the source tree.
+
+
+```text
+,
+  "UserAdmin": {
+    "group": "Admins",
+    "email": "your-example-email",
+    "password": "your-example-password"
+  }
+```
+
+Sensitive data which can then be retrieved via:
+
+```text
+private readonly IConfiguration configuration;
+```
+
+as done in DummyRoster.Mvc/Controllers/RolesController.cs
+
+
+### and now you can proceed with the following commands
+
+```shell
 dotnet clean
 dotnet build
 dotnet run
