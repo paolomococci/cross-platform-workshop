@@ -19,5 +19,12 @@ public class RolesController : Controller
     this.userManager = userManager;
   }
 
-  public async Task<IActionResult> Index() {}
+  public async Task<IActionResult> Index() {
+    if (!(await this.roleManager.RoleExistsAsync(this.RoleAdmin)))
+    {
+      await this.roleManager.CreateAsync(
+        new IdentityRole(this.RoleAdmin)
+      );
+    }
+  }
 }
