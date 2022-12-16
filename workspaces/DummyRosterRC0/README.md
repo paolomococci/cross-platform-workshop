@@ -174,7 +174,7 @@ Note: sensitive data could be written as follows in file x, excluding it from th
 ```text
 ,
   "UserAdmin": {
-    "group": "Admins",
+    "role": "Admins",
     "email": "your-example-email",
     "password": "your-example-password"
   }
