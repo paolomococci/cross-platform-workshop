@@ -41,6 +41,12 @@ public class RolesController : Controller
         identityUser,
         this.AdminPassword
       );
+      if (identityResult.Succeeded)
+      {
+        Console.WriteLine(
+          $"User: {identityUser.UserName} just successfully created!"
+        );
+      }
     }
   }
 }
