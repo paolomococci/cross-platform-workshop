@@ -12,7 +12,7 @@ Content-Length:
 {
   "Name": "VQXALVGYMYKCPANW",
   "Description": "GMUWTWHIFBCRTWYJIBKYGECCTLJPDBSB",
-  "QuantityPerUnit": ""
+  "QuantityPerUnit": "12"
 }
 
 ## I insert another one
@@ -24,7 +24,7 @@ Content-Length:
 {
   "Name": "LRRYQQDRUWESISBE",
   "Description": "LHMHDWCGSCDPMOIDNPCXCNMMFVKWJADO",
-  "QuantityPerUnit": ""
+  "QuantityPerUnit": "18"
 }
 
 ## I insert another one
@@ -36,7 +36,7 @@ Content-Length:
 {
   "Name": "QJKUTTKNONZRNHCK",
   "Description": "LVWODVRJUVZOXXVWIDHHKAXOLPUTPNSI",
-  "QuantityPerUnit": ""
+  "QuantityPerUnit": "24"
 }
 
 ## read
