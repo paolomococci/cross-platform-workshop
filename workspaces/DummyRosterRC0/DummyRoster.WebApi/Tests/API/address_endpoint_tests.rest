@@ -1,6 +1,6 @@
 # address endpoint tests
 
-## inserting dummy data
+## I insert a dummy record
 
 POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Type: application/json
@@ -15,7 +15,7 @@ Content-Length:
   "Country": ""
 }
 
-## inserting dummy data
+## I insert another one
 
 POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Type: application/json
@@ -30,7 +30,7 @@ Content-Length:
   "Country": ""
 }
 
-## inserting dummy data
+## I insert another one
 
 POST https://localhost:5001/api/addresses HTTP/1.1
   Content-Type: application/json
