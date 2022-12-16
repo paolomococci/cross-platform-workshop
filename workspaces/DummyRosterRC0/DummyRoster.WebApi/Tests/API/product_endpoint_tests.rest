@@ -12,12 +12,7 @@ Content-Length:
 {
   "Name": "VQXALVGYMYKCPANW",
   "Description": "",
-  "QuantityPerUnit": "",
-  "UnitPrice": "",
-  "UnitsInStock": "",
-  "UnitsOnOrder": "",
-  "ReorderLevel": "",
-  "Discontinued": ""
+  "QuantityPerUnit": ""
 }
 
 ## I insert another one
@@ -29,12 +24,7 @@ Content-Length:
 {
   "Name": "LRRYQQDRUWESISBE",
   "Description": "",
-  "QuantityPerUnit": "",
-  "UnitPrice": "",
-  "UnitsInStock": "",
-  "UnitsOnOrder": "",
-  "ReorderLevel": "",
-  "Discontinued": ""
+  "QuantityPerUnit": ""
 }
 
 ## I insert another one
@@ -46,12 +36,7 @@ Content-Length:
 {
   "Name": "QJKUTTKNONZRNHCK",
   "Description": "",
-  "QuantityPerUnit": "",
-  "UnitPrice": "",
-  "UnitsInStock": "",
-  "UnitsOnOrder": "",
-  "ReorderLevel": "",
-  "Discontinued": ""
+  "QuantityPerUnit": ""
 }
 
 ## read
