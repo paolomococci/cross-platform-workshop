@@ -13,7 +13,6 @@ Content-Length:
   "Name": "XFHRKGNZBZENDHXP",
   "FoundationDate": "",
   "Description": "",
-  "Picture": "",
   "Belonging": ""
 }
 
@@ -27,7 +26,6 @@ Content-Length:
   "Name": "GWBLPABBCQOBHRQR",
   "FoundationDate": "",
   "Description": "",
-  "Picture": "",
   "Belonging": ""
 }
 
@@ -41,7 +39,6 @@ Content-Length:
   "Name": "YZIJGEYCLLDUCCNM",
   "FoundationDate": "",
   "Description": "",
-  "Picture": "",
   "Belonging": ""
 }
 
