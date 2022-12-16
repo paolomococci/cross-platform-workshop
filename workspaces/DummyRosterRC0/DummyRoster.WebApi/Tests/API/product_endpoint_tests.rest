@@ -10,7 +10,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "VQXALVGYMYKCPANW",
   "Description": "",
   "Picture": "",
   "QuantityPerUnit": "",
@@ -28,7 +28,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "LRRYQQDRUWESISBE",
   "Description": "",
   "Picture": "",
   "QuantityPerUnit": "",
@@ -46,7 +46,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "QJKUTTKNONZRNHCK",
   "Description": "",
   "Picture": "",
   "QuantityPerUnit": "",
