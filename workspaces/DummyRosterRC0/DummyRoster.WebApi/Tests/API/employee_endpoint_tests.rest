@@ -7,11 +7,11 @@
 
 POST https://localhost:5001/api/employees HTTP/1.1
 Content-Type: application/json
-Content-Length: 
+Content-Length: 152
 
 {
   "Name": "PYYBQNEYVCDSUKTN",
-  "BirthDate": "",
+  "BirthDate": "2000-03-21T00:00:00",
   "Description": "ZAQPGLXBTXZJOFGQDOAMIJVWFREIHGGW",
   "Role": "GPPOEAYMHKHISPVE",
   "Belonging": "A"
@@ -21,11 +21,11 @@ Content-Length:
 
 POST https://localhost:5001/api/employees HTTP/1.1
 Content-Type: application/json
-Content-Length: 
+Content-Length: 152
 
 {
   "Name": "CYOFZZGZKZDYAVHD",
-  "BirthDate": "",
+  "BirthDate": "1997-07-11T00:00:00",
   "Description": "YSCKQAEITWOZGMKWKJLWUTTANTUMPUTO",
   "Role": "AKQWVLUCTGEFLCXU",
   "Belonging": "B"
@@ -35,11 +35,11 @@ Content-Length:
 
 POST https://localhost:5001/api/employees HTTP/1.1
 Content-Type: application/json
-Content-Length: 
+Content-Length: 152
 
 {
   "Name": "KFLVULYUGPTKQDFD",
-  "BirthDate": "",
+  "BirthDate": "1995-05-24T00:00:00",
   "Description": "NTYWIVIBAFWGXRDXNIPAPDLBIAGSJUMW",
   "Role": "HUTXWGDKQRJOKMSF",
   "Belonging": "C"
