@@ -10,7 +10,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "GZEMQFEJJNXEBNGY",
   "Description": "",
   "Picture": ""
 }
@@ -22,7 +22,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "FSKFYIVBBZRWXDCF",
   "Description": "",
   "Picture": ""
 }
@@ -34,7 +34,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "DKXCZTLHZVTAKYTG",
   "Description": "",
   "Picture": ""
 }
