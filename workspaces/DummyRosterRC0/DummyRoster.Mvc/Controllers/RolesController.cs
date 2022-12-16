@@ -82,7 +82,10 @@ public class RolesController : Controller
         }
       }
     }
-    // todo
+    if (!(await this.userManager.IsInRoleAsync(identityUser, this.AdminRole)))
+    {
+      // todo
+    }
     return Redirect("/");
   }
 }
