@@ -150,7 +150,7 @@ GET https://localhost:5001/api/addresses HTTP/1.1
 
 PUT https://localhost:5001/api/addresses/2 HTTP/1.1
 Content-Type: application/json
-Content-Length: 
+Content-Length: 195
 
 {
   "id": 2,
@@ -170,7 +170,7 @@ Content-Length:
 
 PATCH https://localhost:5001/api/addresses/2 HTTP/1.1
 Content-Type: application/json
-Content-Length: 
+Content-Length: 48
 
 {
   "id": 2,
