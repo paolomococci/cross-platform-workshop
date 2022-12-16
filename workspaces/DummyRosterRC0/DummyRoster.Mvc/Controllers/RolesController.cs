@@ -72,6 +72,15 @@ public class RolesController : Controller
           $"User: email belonging to {identityUser.UserName} successfully confirmed!"
         );
       }
+      else
+      {
+        foreach (IdentityError error in identityResult.Errors)
+        {
+          Console.WriteLine(
+            $"Error: {error.Description}"
+          );
+        }
+      }
     }
   }
 }
