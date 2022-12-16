@@ -13,7 +13,6 @@ Content-Length:
   "Name": "PYYBQNEYVCDSUKTN",
   "BirthDate": "",
   "Description": "",
-  "Picture": "",
   "Role": "",
   "Belonging": ""
 }
@@ -28,7 +27,6 @@ Content-Length:
   "Name": "CYOFZZGZKZDYAVHD",
   "BirthDate": "",
   "Description": "",
-  "Picture": "",
   "Role": "",
   "Belonging": ""
 }
@@ -43,7 +41,6 @@ Content-Length:
   "Name": "KFLVULYUGPTKQDFD",
   "BirthDate": "",
   "Description": "",
-  "Picture": "",
   "Role": "",
   "Belonging": ""
 }
