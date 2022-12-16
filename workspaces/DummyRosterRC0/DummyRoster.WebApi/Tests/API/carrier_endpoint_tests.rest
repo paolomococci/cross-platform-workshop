@@ -12,9 +12,8 @@ Content-Length:
 {
   "Name": "BAFRIMBBKYQDTBCA",
   "FoundationDate": "",
-  "Description": "",
-  "Picture": "",
-  "Belonging": ""
+  "Description": "YAFWJSJKLYWJEDEKIFGPKAASQMSHIVFF",
+  "Belonging": "C"
 }
 
 ## I insert another one
@@ -26,9 +25,8 @@ Content-Length:
 {
   "Name": "VILZZNJYTDPNHCHM",
   "FoundationDate": "",
-  "Description": "",
-  "Picture": "",
-  "Belonging": ""
+  "Description": "PPVLQAAQOBOVDHSHZYPLEKVPKGVNDHZF",
+  "Belonging": "B"
 }
 
 ## I insert another one
@@ -40,9 +38,8 @@ Content-Length:
 {
   "Name": "IAXQTZIGEENPGYXG",
   "FoundationDate": "",
-  "Description": "",
-  "Picture": "",
-  "Belonging": ""
+  "Description": "ZIJNYHYFMFDKBGNAQNQDUTFFUUIREJLG",
+  "Belonging": "A"
 }
 
 ## read
