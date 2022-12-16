@@ -11,9 +11,9 @@ Content-Length:
 
 {
   "Note": "ZPPYUWLESGGCQGYJVFDZKILDXGHOIQLG",
-  "UnitPrice": "",
-  "Quantity": "",
-  "PriceCut": ""
+  "UnitPrice": 2.0,
+  "Quantity": 2,
+  "PriceCut": 0.12
 }
 
 ## I insert another one
@@ -24,9 +24,9 @@ Content-Length:
 
 {
   "Note": "VRTGHNLJPCFQMOTCUPLKATIEFXXQZGOO",
-  "UnitPrice": "",
-  "Quantity": "",
-  "PriceCut": ""
+  "UnitPrice": 3.0,
+  "Quantity": 2,
+  "PriceCut": 0.13
 }
 
 ## I insert another one
@@ -37,9 +37,9 @@ Content-Length:
 
 {
   "Note": "NFGDKIYGCCWBJOYOLBQWSDIDJJBEMNUB",
-  "UnitPrice": "",
-  "Quantity": "",
-  "PriceCut": ""
+  "UnitPrice": 2.5,
+  "Quantity": 2,
+  "PriceCut": 0.11
 }
 
 ## read
