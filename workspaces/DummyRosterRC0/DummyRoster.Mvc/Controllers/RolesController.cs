@@ -22,10 +22,10 @@ public class RolesController : Controller
 
   public async Task<IActionResult> Index()
   {
-    if (!(await this.roleManager.RoleExistsAsync(this.configuration["UserAdmin:group"])))
+    if (!(await this.roleManager.RoleExistsAsync(this.configuration["UserAdmin:role"])))
     {
       await this.roleManager.CreateAsync(
-        new IdentityRole(this.configuration["UserAdmin:group"])
+        new IdentityRole(this.configuration["UserAdmin:role"])
       );
     }
     IdentityUser identityUser = await this.userManager.FindByEmailAsync(
@@ -81,16 +81,16 @@ public class RolesController : Controller
         }
       }
     }
-    if (!(await this.userManager.IsInRoleAsync(identityUser, this.configuration["UserAdmin:group"])))
+    if (!(await this.userManager.IsInRoleAsync(identityUser, this.configuration["UserAdmin:role"])))
     {
       IdentityResult identityResult = await this.userManager.AddToRoleAsync(
         identityUser,
-        this.configuration["UserAdmin:group"]
+        this.configuration["UserAdmin:role"]
       );
       if (identityResult.Succeeded)
       {
         Console.WriteLine(
-          $"User: {identityUser.UserName} added as {this.configuration["UserAdmin:group"]} successfully"
+          $"User: {identityUser.UserName} added as {this.configuration["UserAdmin:role"]} successfully"
         );
       }
       else
