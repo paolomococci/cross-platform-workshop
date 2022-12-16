@@ -62,6 +62,10 @@ public class RolesController : Controller
       string token = await this.userManager.GenerateEmailConfirmationTokenAsync(
         identityUser
       );
+      IdentityResult idResult = await this.userManager.ConfirmEmailAsync(
+        identityUser,
+        token
+      );
     }
   }
 }
