@@ -11,7 +11,7 @@ Content-Length:
 
 {
   "Name": "VQXALVGYMYKCPANW",
-  "Description": "",
+  "Description": "GMUWTWHIFBCRTWYJIBKYGECCTLJPDBSB",
   "QuantityPerUnit": ""
 }
 
@@ -23,7 +23,7 @@ Content-Length:
 
 {
   "Name": "LRRYQQDRUWESISBE",
-  "Description": "",
+  "Description": "LHMHDWCGSCDPMOIDNPCXCNMMFVKWJADO",
   "QuantityPerUnit": ""
 }
 
@@ -35,7 +35,7 @@ Content-Length:
 
 {
   "Name": "QJKUTTKNONZRNHCK",
-  "Description": "",
+  "Description": "LVWODVRJUVZOXXVWIDHHKAXOLPUTPNSI",
   "QuantityPerUnit": ""
 }
 
