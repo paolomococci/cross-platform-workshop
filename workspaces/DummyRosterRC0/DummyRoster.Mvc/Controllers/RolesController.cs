@@ -5,41 +5,40 @@ namespace DummyRoster.Mvc.Controllers;
 
 public class RolesController : Controller
 {
-  private string AdminRole = "Admin";
-  private string AdminUserName = "";
-  private string AdminPassword = "";
-
+  private readonly IConfiguration configuration;
   private readonly RoleManager<IdentityRole> roleManager;
   private readonly UserManager<IdentityUser> userManager;
 
   public RolesController(
+    IConfiguration configuration,
     RoleManager<IdentityRole> roleManager,
     UserManager<IdentityUser> userManager
   )
   {
+    this.configuration = configuration;
     this.roleManager = roleManager;
     this.userManager = userManager;
   }
 
   public async Task<IActionResult> Index()
   {
-    if (!(await this.roleManager.RoleExistsAsync(this.AdminRole)))
+    if (!(await this.roleManager.RoleExistsAsync(this.configuration["UserAdmin:group"])))
     {
       await this.roleManager.CreateAsync(
-        new IdentityRole(this.AdminRole)
+        new IdentityRole(this.configuration["UserAdmin:group"])
       );
     }
     IdentityUser identityUser = await this.userManager.FindByEmailAsync(
-      this.AdminUserName
+      this.configuration["UserAdmin:email"]
     );
     if (identityUser is null)
     {
       identityUser = new();
-      identityUser.UserName = this.AdminUserName;
-      identityUser.Email = this.AdminUserName;
+      identityUser.UserName = this.configuration["UserAdmin:email"];
+      identityUser.Email = this.configuration["UserAdmin:email"];
       IdentityResult identityResult = await this.userManager.CreateAsync(
         identityUser,
-        this.AdminPassword
+        this.configuration["UserAdmin:password"]
       );
       if (identityResult.Succeeded)
       {
@@ -82,16 +81,16 @@ public class RolesController : Controller
         }
       }
     }
-    if (!(await this.userManager.IsInRoleAsync(identityUser, this.AdminRole)))
+    if (!(await this.userManager.IsInRoleAsync(identityUser, this.configuration["UserAdmin:group"])))
     {
-      IdentityResult identityResult = await this.userManager.AddToRolesAsync(
+      IdentityResult identityResult = await this.userManager.AddToRoleAsync(
         identityUser,
-        this.AdminRole
+        this.configuration["UserAdmin:group"]
       );
       if (identityResult.Succeeded)
       {
         Console.WriteLine(
-          $"User: {identityUser.UserName} added as {this.AdminRole} successfully"
+          $"User: {identityUser.UserName} added as {this.configuration["UserAdmin:group"]} successfully"
         );
       }
       else
