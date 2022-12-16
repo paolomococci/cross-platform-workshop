@@ -84,7 +84,25 @@ public class RolesController : Controller
     }
     if (!(await this.userManager.IsInRoleAsync(identityUser, this.AdminRole)))
     {
-      // todo
+      IdentityResult identityResult = await this.userManager.AddToRolesAsync(
+        identityUser,
+        this.AdminRole
+      );
+      if (identityResult.Succeeded)
+      {
+        Console.WriteLine(
+          $"User: {identityUser.UserName} added as {this.AdminRole} successfully"
+        );
+      }
+      else
+      {
+        foreach (IdentityError error in identityResult.Errors)
+        {
+          Console.WriteLine(
+            $"Error: {error.Description}"
+          );
+        }
+      }
     }
     return Redirect("/");
   }
