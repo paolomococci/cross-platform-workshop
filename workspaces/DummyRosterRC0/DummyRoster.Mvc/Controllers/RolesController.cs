@@ -57,5 +57,11 @@ public class RolesController : Controller
         }
       }
     }
+    if (!identityUser.EmailConfirmed)
+    {
+      string token = await this.userManager.GenerateEmailConfirmationTokenAsync(
+        identityUser
+      );
+    }
   }
 }
