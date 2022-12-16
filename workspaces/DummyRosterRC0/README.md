@@ -203,7 +203,7 @@ https://127.0.0.1:8081/roles
 And finally, the following confirmation message will appear on the console from which we launched the server:
 
 ```text
-User: your-example-email added as Admins successfully
+User: your-example-email added as Admins successfully.
 ```
 
 From now on, with the right credentials, access will be allowed.
