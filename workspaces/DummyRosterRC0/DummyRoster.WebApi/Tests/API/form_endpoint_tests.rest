@@ -12,9 +12,9 @@ Content-Length:
 {
   "Description": "AAHRGGMJBSAEGTZLTQYFEIJRCWBEYEAX",
   "FormDate": "2022-12-16T18:00:00",
-  "RequiredDate": "",
-  "PromisedDate": "",
-  "ShippingCost": ""
+  "RequiredDate": "2022-12-20T18:00:00",
+  "PromisedDate": "2022-12-20T18:00:00",
+  "ShippingCost": 5.0
 }
 
 ## I insert another one
@@ -25,10 +25,10 @@ Content-Length:
 
 {
   "Description": "AOWQHLSPLMOMTXTFHIYKUWDNFALPSGLR",
-  "FormDate": "",
-  "RequiredDate": "",
-  "PromisedDate": "",
-  "ShippingCost": ""
+  "FormDate": "2022-12-16T18:00:00",
+  "RequiredDate": "2022-12-20T18:00:00",
+  "PromisedDate": "2022-12-21T18:00:00",
+  "ShippingCost": 3.0
 }
 
 ## I insert another one
@@ -39,10 +39,10 @@ Content-Length:
 
 {
   "Description": "PTKERIXIDZQCCJCHLUOUQSSORUSNVXUG",
-  "FormDate": "",
-  "RequiredDate": "",
-  "PromisedDate": "",
-  "ShippingCost": ""
+  "FormDate": "2022-12-16T18:00:00",
+  "RequiredDate": "2022-12-21T18:00:00",
+  "PromisedDate": "2022-12-21T18:00:00",
+  "ShippingCost": 5.0
 }
 
 ## read
