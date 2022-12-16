@@ -154,12 +154,12 @@ Content-Length:
 
 {
   "id": 2,
-  "Name": "",
-  "Civic": "",
-  "City": "",
-  "District": "",
-  "Postcode": "",
-  "Country": "",
+  "Name": "QLKABHJMNVHITFCJ",
+  "Civic": "116",
+  "City": "GWNLKXHKAX",
+  "District": "LJAFGJKXDICP",
+  "Postcode": "9515428",
+  "Country": "UDQNEIEC",
   "carriers": [],
   "customers": [],
   "employees": [],
@@ -174,7 +174,8 @@ Content-Length:
 
 {
   "id": 2,
-  "Name": ""
+  "Name": "XFUNTYZFNJHCHBQQ",
+  "Civic": "233",
 }
 
 ### delete an identified data entry
