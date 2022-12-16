@@ -170,7 +170,6 @@ cd DummyRoster.Mvc
 
 Note: sensitive data could be written as follows in file x, excluding it from the source tree.
 
-
 ```text
   "UserAdmin": {
     "role": "Admins",
@@ -186,7 +185,6 @@ private readonly IConfiguration configuration;
 ```
 
 as done in DummyRoster.Mvc/Controllers/RolesController.cs
-
 
 ### and now you can proceed with the following commands
 
