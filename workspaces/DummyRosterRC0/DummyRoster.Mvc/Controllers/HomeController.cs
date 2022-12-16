@@ -14,6 +14,7 @@ public class HomeController : Controller
     _logger = logger;
   }
 
+  [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any)]
   public IActionResult Index()
   {
     return View();
