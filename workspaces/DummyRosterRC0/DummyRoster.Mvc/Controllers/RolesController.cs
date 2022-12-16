@@ -26,5 +26,8 @@ public class RolesController : Controller
         new IdentityRole(this.RoleAdmin)
       );
     }
+    IdentityUser identityUser = await this.userManager.FindByEmailAsync(
+      this.EmailAdmin
+    );
   }
 }
