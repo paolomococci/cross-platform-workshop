@@ -12,7 +12,6 @@ Content-Length:
 {
   "Name": "VQXALVGYMYKCPANW",
   "Description": "",
-  "Picture": "",
   "QuantityPerUnit": "",
   "UnitPrice": "",
   "UnitsInStock": "",
@@ -30,7 +29,6 @@ Content-Length:
 {
   "Name": "LRRYQQDRUWESISBE",
   "Description": "",
-  "Picture": "",
   "QuantityPerUnit": "",
   "UnitPrice": "",
   "UnitsInStock": "",
@@ -48,7 +46,6 @@ Content-Length:
 {
   "Name": "QJKUTTKNONZRNHCK",
   "Description": "",
-  "Picture": "",
   "QuantityPerUnit": "",
   "UnitPrice": "",
   "UnitsInStock": "",
