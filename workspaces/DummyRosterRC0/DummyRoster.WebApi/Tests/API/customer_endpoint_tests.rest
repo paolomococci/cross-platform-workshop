@@ -10,7 +10,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "XFHRKGNZBZENDHXP",
   "FoundationDate": "",
   "Description": "",
   "Picture": "",
@@ -24,7 +24,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "GWBLPABBCQOBHRQR",
   "FoundationDate": "",
   "Description": "",
   "Picture": "",
@@ -38,7 +38,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "YZIJGEYCLLDUCCNM",
   "FoundationDate": "",
   "Description": "",
   "Picture": "",
