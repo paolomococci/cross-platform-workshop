@@ -37,6 +37,10 @@ public class RolesController : Controller
       identityUser = new();
       identityUser.UserName = this.AdminUserName;
       identityUser.Email = this.AdminUserName;
+      IdentityResult identityResult = await this.userManager.CreateAsync(
+        identityUser,
+        this.AdminPassword
+      );
     }
   }
 }
