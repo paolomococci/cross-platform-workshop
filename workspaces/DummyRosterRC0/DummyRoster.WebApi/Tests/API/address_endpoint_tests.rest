@@ -10,7 +10,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "MNTRHRQPMVQDOMSI",
   "Civic": "",
   "City": "",
   "District": "",
@@ -25,7 +25,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "CHQBFKGGYDGRFSKP",
   "Civic": "",
   "City": "",
   "District": "",
@@ -40,7 +40,7 @@ POST https://localhost:5001/api/addresses HTTP/1.1
 Content-Length: 
 
 {
-  "Name": "",
+  "Name": "KQEPPOVUWAJNCIKV",
   "Civic": "",
   "City": "",
   "District": "",
