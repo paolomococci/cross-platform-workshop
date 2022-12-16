@@ -5,8 +5,9 @@ namespace DummyRoster.Mvc.Controllers;
 
 public class RolesController : Controller
 {
-  private string RoleAdmin = "Admin";
-  private string EmailAdmin = "";
+  private string AdminRole = "Admin";
+  private string AdminUserName = "";
+  private string AdminPassword = "";
 
   private readonly RoleManager<IdentityRole> roleManager;
   private readonly UserManager<IdentityUser> userManager;
@@ -22,14 +23,20 @@ public class RolesController : Controller
 
   public async Task<IActionResult> Index()
   {
-    if (!(await this.roleManager.RoleExistsAsync(this.RoleAdmin)))
+    if (!(await this.roleManager.RoleExistsAsync(this.AdminRole)))
     {
       await this.roleManager.CreateAsync(
-        new IdentityRole(this.RoleAdmin)
+        new IdentityRole(this.AdminRole)
       );
     }
     IdentityUser identityUser = await this.userManager.FindByEmailAsync(
-      this.EmailAdmin
+      this.AdminUserName
     );
+    if (identityUser is null)
+    {
+      identityUser = new();
+      identityUser.UserName = this.AdminUserName;
+      identityUser.Email = this.AdminUserName;
+    }
   }
 }
