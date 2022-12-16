@@ -466,3 +466,4 @@ appsettings.json
 *.sln
 HELP.md
 LOG.md
+app.db*
