@@ -10,7 +10,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Note": "",
+  "Note": "ZPPYUWLESGGCQGYJVFDZKILDXGHOIQLG",
   "UnitPrice": "",
   "Quantity": "",
   "PriceCut": ""
@@ -23,7 +23,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Note": "",
+  "Note": "VRTGHNLJPCFQMOTCUPLKATIEFXXQZGOO",
   "UnitPrice": "",
   "Quantity": "",
   "PriceCut": ""
@@ -36,7 +36,7 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "Note": "",
+  "Note": "NFGDKIYGCCWBJOYOLBQWSDIDJJBEMNUB",
   "UnitPrice": "",
   "Quantity": "",
   "PriceCut": ""
