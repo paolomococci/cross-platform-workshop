@@ -14,12 +14,14 @@ public class RolesController : Controller
   public RolesController(
     RoleManager<IdentityRole> roleManager,
     UserManager<IdentityUser> userManager
-  ) {
+  )
+  {
     this.roleManager = roleManager;
     this.userManager = userManager;
   }
 
-  public async Task<IActionResult> Index() {
+  public async Task<IActionResult> Index()
+  {
     if (!(await this.roleManager.RoleExistsAsync(this.RoleAdmin)))
     {
       await this.roleManager.CreateAsync(
