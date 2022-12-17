@@ -75,10 +75,11 @@ Content-Length: 289
 
 PATCH https://localhost:5001/api/products/2 HTTP/1.1
 Content-Type: application/json
-Content-Length: 57
+Content-Length: 83
 
 {
   "id": 2,
+  "name": "LRRYQQDRUWESISBE",
   "description": "CMNWACAMJVZRBUOHCLGNTRIEUJFEKMSZ"
 }
 
