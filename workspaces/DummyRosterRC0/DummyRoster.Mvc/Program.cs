@@ -24,7 +24,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient(
   name: "DummyRoster.WebApi",
   configureClient: options => {
-    options.BaseAddress = new Uri("");
+    options.BaseAddress = new Uri(
+      "https://127.0.0.1:5001"
+    );
     options.DefaultRequestHeaders.Accept.Add(
       new MediaTypeWithQualityHeaderValue(
         "application/json", 1.0
