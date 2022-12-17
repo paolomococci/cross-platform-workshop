@@ -20,6 +20,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(
 
 builder.Services.AddControllersWithViews();
 
+/* Configure Httpclient */
+builder.Services.AddHttpClient(
+  name: "DummyRoster.WebApi",
+  configureClient: options => {}
+);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
