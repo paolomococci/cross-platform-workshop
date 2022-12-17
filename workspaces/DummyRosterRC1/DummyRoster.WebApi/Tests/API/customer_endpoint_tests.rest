@@ -44,7 +44,7 @@ Content-Length: 131
 
 ### read
 
-GET https://localhost:5001/api/customers/2 HTTP/1.1
+GET https://localhost:5001/api/customers/3 HTTP/1.1
 
 ### read all
 
@@ -52,22 +52,36 @@ GET https://localhost:5001/api/customers HTTP/1.1
 
 ### update a dummy data with id 2
 
-PUT https://localhost:5001/api/customers/2 HTTP/1.1
+PUT https://localhost:5001/api/customers/3 HTTP/1.1
 Content-Type: application/json
-Content-Length: 
+Content-Length: 268
 
 {
-  "id": ""
+  "id": 3,
+  "name": "YZIJGEYCLLDUCCNM",
+  "foundationDate": "2012-04-15T00:00:00",
+  "description": "JPUECLPQUFNZZVXAODSPRKYHAUXQIOPA",
+  "picture": null,
+  "belonging": "C",
+  "contact": null,
+  "loc": null,
+  "ref": null,
+  "contactNavigation": null,
+  "forms": [],
+  "locNavigation": null,
+  "refNavigation": null
 }
 
 ### partial update a dummy data with id 2
 
-PATCH https://localhost:5001/api/customers/2 HTTP/1.1
+PATCH https://localhost:5001/api/customers/3 HTTP/1.1
 Content-Type: application/json
-Content-Length: 
+Content-Length: 96
 
 {
-  "id": ""
+  "id": 3,
+  "foundationDate": "2012-04-18T00:00:00",
+  "description": "UFWLQFROPDVHEAKAXVEWADDTOJRMXPWG"
 }
 
 ### delete an identified data entry
