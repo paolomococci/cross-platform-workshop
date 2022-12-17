@@ -72,12 +72,13 @@ Content-Length: 151
 
 PATCH https://localhost:5001/api/invoices/2 HTTP/1.1
 Content-Type: application/json
-Content-Length: 66
+Content-Length: 79
 
 {
   "id": 2,
-  "note": "APHOVQBEISYQHCEZYYURKANAJEAXRAWE",
-  "priceCut": 0.09
+  "note": "AZASZNOABFDUKJNDZZPADUIVSXLJZPSC",
+  "quantity": 2,
+  "priceCut": 0.08
 }
 
 ### delete an identified data entry
