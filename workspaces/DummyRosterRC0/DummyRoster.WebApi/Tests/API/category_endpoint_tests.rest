@@ -66,7 +66,7 @@ Content-Length:
 
 {
   "id": 3,
-  "description": "CHFCGGIHZRCHPYSMYSMEAEBOSPZIFNOP"
+  "description": "AFRLQVBQKZEVQQNCCCFCWIYVKSINEFUC"
 }
 
 ### delete an identified data entry
