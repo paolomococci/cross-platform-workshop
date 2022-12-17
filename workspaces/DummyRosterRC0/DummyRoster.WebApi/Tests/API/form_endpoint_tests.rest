@@ -60,7 +60,19 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "description": "SRBWLPOUTOEIOYHNOFGWNLKXMEKDIAZA",
+  "customerId": null,
+  "carrierId": null,
+  "employeeId": null,
+  "formDate": "2022-12-16T18:00:00",
+  "requiredDate": "2022-12-20T18:00:00",
+  "promisedDate": "2022-12-20T18:00:00",
+  "shippingCost": 3.0,
+  "carrier": null,
+  "customer": null,
+  "employee": null,
+  "invoices": []
 }
 
 ### partial update a dummy data with id 2
@@ -70,7 +82,9 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "description": "XESAPHAGHDOECVUBUCQDJLPXQXCDJCUB"
+  "promisedDate": "2022-12-20T18:00:00"
 }
 
 ### delete an identified data entry
