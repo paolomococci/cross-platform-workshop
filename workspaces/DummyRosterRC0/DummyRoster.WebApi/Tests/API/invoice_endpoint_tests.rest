@@ -57,7 +57,15 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "formId": null,
+  "productId": null,
+  "note": "AZASZNOABFDUKJNDZZPADUIVSXLJZPSC",
+  "unitPrice": 3.0,
+  "quantity": 2,
+  "priceCut": 0.09,
+  "form": null,
+  "product": null
 }
 
 ### partial update a dummy data with id 2
@@ -67,7 +75,9 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "note": "APHOVQBEISYQHCEZYYURKANAJEAXRAWE",
+  "priceCut": 0.09
 }
 
 ### delete an identified data entry
