@@ -10,9 +10,13 @@ public class HomeController : Controller
   private readonly ILogger<HomeController> _logger;
   private readonly IHttpClientFactory httpClientFactory;
 
-  public HomeController(ILogger<HomeController> logger)
+  public HomeController(
+    ILogger<HomeController> logger,
+    IHttpClientFactory httpClientFactory
+  )
   {
-    _logger = logger;
+    this._logger = logger;
+    this.httpClientFactory = httpClientFactory;
   }
 
   [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any)]
