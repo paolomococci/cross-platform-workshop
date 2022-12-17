@@ -52,8 +52,8 @@ Content-Length:
 
 {
   "id": 3,
-  "name": "DKXCZTLHZVTAKYTG",
-  "description": "CHFCGGIHZRCHPYSMYSMEAEBOSPZIFNOP",
+  "name": "ZMOGKYKKSIAUADPF",
+  "description": "UGADCWEWKRFDCOGRBOTSCCTUXJQTPPBA",
   "picture": null,
   "products": []
 }
