@@ -149,6 +149,34 @@ From the DummyRoster.WebApi directory:
 dotnet add package Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore --version 6.0.12
 ```
 
+### Add HTTP logging
+
+After suitably modifying the Program.cs:
+
+```text
+...
+using Microsoft.AspNetCore.HttpLogging;
+...
+uilder.Services.AddHttpLogging(
+  options => {
+    options.LoggingFields = HttpLoggingFields.All;
+    options.RequestBodyLogLimit = 4096;
+    options.ResponseBodyLogLimit = 4096;
+  }
+);
+...
+app.UseHttpLogging();
+...
+```
+
+Remember to edit file appsettings.Development.json as follows:
+
+```text
+...
+      "Microsoft.AspNetCore": "Information"
+...
+```
+
 ### Finally, once the code has been developed and the necessary settings have been added, as far as project DummyRoster.WebApi is concerned, the time has come to test the API
 
 ```shell
