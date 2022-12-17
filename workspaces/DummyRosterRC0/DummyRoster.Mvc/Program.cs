@@ -25,6 +25,11 @@ builder.Services.AddHttpClient(
   name: "DummyRoster.WebApi",
   configureClient: options => {
     options.BaseAddress = new Uri("");
+    options.DefaultRequestHeaders.Accept.Add(
+      new MediaTypeWithQualityHeaderValue(
+        ""
+      )
+    );
   }
 );
 
