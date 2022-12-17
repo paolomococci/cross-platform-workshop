@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http.Headers;
 using DummyRoster.Mvc.Data;
 
 var builder = WebApplication.CreateBuilder(args);
