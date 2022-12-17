@@ -1,6 +1,6 @@
 # DummyRosterRC0
 
-Release candidate which should implement both an webapi ​​and a mvc interface.
+Release candidate which should implement both an webapi ​​and a mvc with Individual authentication.
 
 ## Scaffolding of DummyRosterRC0 workspace
 
@@ -157,7 +157,7 @@ After suitably modifying the Program.cs:
 ...
 using Microsoft.AspNetCore.HttpLogging;
 ...
-uilder.Services.AddHttpLogging(
+builder.Services.AddHttpLogging(
   options => {
     options.LoggingFields = HttpLoggingFields.All;
     options.RequestBodyLogLimit = 4096;
