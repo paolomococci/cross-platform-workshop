@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.HttpLogging;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using DummyRoster.Common.EntityModel.Data;
 using DummyRoster.WebApi.Repositories.Interfaces;
@@ -60,6 +61,11 @@ builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
 /* database health checks */
 builder.Services.AddHealthChecks().AddDbContextCheck<DummyRosterContext>();
+
+/* HTTP logging */
+builder.Services.AddHttpLogging(
+  options => {}
+);
 
 var app = builder.Build();
 
