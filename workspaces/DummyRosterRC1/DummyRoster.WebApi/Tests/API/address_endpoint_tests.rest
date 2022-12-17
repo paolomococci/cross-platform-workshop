@@ -150,16 +150,16 @@ GET https://localhost:5001/api/addresses HTTP/1.1
 
 PUT https://localhost:5001/api/addresses/2 HTTP/1.1
 Content-Type: application/json
-Content-Length: 195
+Content-Length: 194
 
 {
   "id": 2,
-  "Name": "QLKABHJMNVHITFCJ",
-  "Civic": "116",
-  "City": "GWNLKXHKAX",
-  "District": "LJAFGJKXDICP",
-  "Postcode": "9515428",
-  "Country": "UDQNEIEC",
+  "name": "CHQBFKGGYDGRFSKP",
+  "civic": "34",
+  "city": "RERXDNJODQ",
+  "district": "CHUYEHGHUDOE",
+  "postcode": "8813283",
+  "country": "YUSHHXXS",
   "carriers": [],
   "customers": [],
   "employees": [],
@@ -170,12 +170,11 @@ Content-Length: 195
 
 PATCH https://localhost:5001/api/addresses/2 HTTP/1.1
 Content-Type: application/json
-Content-Length: 48
+Content-Length: 21
 
 {
   "id": 2,
-  "Name": "XFUNTYZFNJHCHBQQ",
-  "Civic": "233",
+  "civic": "61"
 }
 
 ### delete an identified data entry
