@@ -27,7 +27,7 @@ builder.Services.AddHttpClient(
     options.BaseAddress = new Uri("");
     options.DefaultRequestHeaders.Accept.Add(
       new MediaTypeWithQualityHeaderValue(
-        ""
+        "application/json", 1.0
       )
     );
   }
