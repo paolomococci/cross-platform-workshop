@@ -57,7 +57,19 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "name": "RUKMIRZCTXJNCXMC",
+  "foundationDate": "2016-10-09T00:00:00",
+  "description": "",
+  "picture": null,
+  "belonging": "B",
+  "contact": null,
+  "loc": null,
+  "ref": null,
+  "contactNavigation": null,
+  "locNavigation": null,
+  "products": [],
+  "refNavigation": null
 }
 
 ### partial update a dummy data with id 2
@@ -67,7 +79,9 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "foundationDate": "2016-10-09T00:00:00",
+  "description": ""
 }
 
 ### delete an identified data entry
