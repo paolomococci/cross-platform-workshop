@@ -54,7 +54,21 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "name": "LRRYQQDRUWESISBE",
+  "description": "LHMHDWCGSCDPMOIDNPCXCNMMFVKWJADO",
+  "picture": null,
+  "categoryId": null,
+  "supplierId": null,
+  "quantityPerUnit": "18",
+  "unitPrice": 0,
+  "unitsInStock": 0,
+  "unitsOnOrder": 0,
+  "reorderLevel": 0,
+  "discontinued": false,
+  "category": null,
+  "invoices": [],
+  "supplier": null
 }
 
 ### partial update a dummy data with id 2
@@ -64,7 +78,8 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "description": "LHMHDWCGSCDPMOIDNPCXCNMMFVKWJADO"
 }
 
 ### delete an identified data entry
