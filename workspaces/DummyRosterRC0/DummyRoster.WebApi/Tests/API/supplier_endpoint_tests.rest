@@ -60,7 +60,7 @@ Content-Length:
   "id": 2,
   "name": "RUKMIRZCTXJNCXMC",
   "foundationDate": "2016-10-09T00:00:00",
-  "description": "",
+  "description": "ZJDBXESCQRUFTATPXRKHFZPNGWGKKGXG",
   "picture": null,
   "belonging": "B",
   "contact": null,
@@ -81,7 +81,7 @@ Content-Length:
 {
   "id": 2,
   "foundationDate": "2016-10-09T00:00:00",
-  "description": ""
+  "description": "ATXMFKKJETJDAQAHXRBTBKRROAXHKDTT"
 }
 
 ### delete an identified data entry
