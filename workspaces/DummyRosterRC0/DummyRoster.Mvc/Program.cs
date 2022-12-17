@@ -20,10 +20,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(
 
 builder.Services.AddControllersWithViews();
 
-/* Configure Httpclient */
+/* Configure HttpClient */
 builder.Services.AddHttpClient(
   name: "DummyRoster.WebApi",
-  configureClient: options => {}
+  configureClient: options => {
+    options.BaseAddress = new Uri("");
+  }
 );
 
 var app = builder.Build();
