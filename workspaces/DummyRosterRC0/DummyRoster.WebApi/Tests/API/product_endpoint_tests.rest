@@ -56,7 +56,7 @@ Content-Length:
 {
   "id": 2,
   "name": "LRRYQQDRUWESISBE",
-  "description": "LHMHDWCGSCDPMOIDNPCXCNMMFVKWJADO",
+  "description": "GOEFJYISFXRFUVUROMZIYUAYBBOAATTT",
   "picture": null,
   "categoryId": null,
   "supplierId": null,
@@ -79,7 +79,7 @@ Content-Length:
 
 {
   "id": 2,
-  "description": "LHMHDWCGSCDPMOIDNPCXCNMMFVKWJADO"
+  "description": "CMNWACAMJVZRBUOHCLGNTRIEUJFEKMSZ"
 }
 
 ### delete an identified data entry
