@@ -8,6 +8,7 @@ namespace DummyRoster.Mvc.Controllers;
 public class HomeController : Controller
 {
   private readonly ILogger<HomeController> _logger;
+  private readonly IHttpClientFactory httpClientFactory;
 
   public HomeController(ILogger<HomeController> logger)
   {
