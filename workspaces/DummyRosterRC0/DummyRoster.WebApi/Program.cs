@@ -66,6 +66,8 @@ builder.Services.AddHealthChecks().AddDbContextCheck<DummyRosterContext>();
 builder.Services.AddHttpLogging(
   options => {
     options.LoggingFields = HttpLoggingFields.All;
+    options.RequestBodyLogLimit = 4096;
+    options.ResponseBodyLogLimit = 4096;
   }
 );
 
