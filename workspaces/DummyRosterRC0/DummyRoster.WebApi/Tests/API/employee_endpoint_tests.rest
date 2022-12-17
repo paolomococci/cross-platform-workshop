@@ -60,7 +60,21 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "name": "CYOFZZGZKZDYAVHD",
+  "birthDate": "1997-07-11T00:00:00",
+  "description": "YSCKQAEITWOZGMKWKJLWUTTANTUMPUTO",
+  "picture": null,
+  "role": "AKQWVLUCTGEFLCXU",
+  "belonging": "B",
+  "loc": null,
+  "ref": null,
+  "carriers": [],
+  "customers": [],
+  "forms": [],
+  "locNavigation": null,
+  "refNavigation": null,
+  "suppliers": []
 }
 
 ### partial update a dummy data with id 2
@@ -70,7 +84,8 @@ Content-Type: application/json
 Content-Length: 
 
 {
-  "id": ""
+  "id": 2,
+  "role": "AKQWVLUCTGEFLCXU",
 }
 
 ### delete an identified data entry
