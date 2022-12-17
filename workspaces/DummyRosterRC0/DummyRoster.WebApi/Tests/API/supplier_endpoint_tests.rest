@@ -80,6 +80,7 @@ Content-Length: 96
 
 {
   "id": 2,
+  "name": "RUKMIRZCTXJNCXMC",
   "foundationDate": "2016-10-09T00:00:00",
   "description": "ATXMFKKJETJDAQAHXRBTBKRROAXHKDTT"
 }
