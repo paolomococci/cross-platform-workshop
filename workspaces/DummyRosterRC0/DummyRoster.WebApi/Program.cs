@@ -64,7 +64,9 @@ builder.Services.AddHealthChecks().AddDbContextCheck<DummyRosterContext>();
 
 /* HTTP logging */
 builder.Services.AddHttpLogging(
-  options => {}
+  options => {
+    options.LoggingFields = HttpLoggingFields.All;
+  }
 );
 
 var app = builder.Build();
