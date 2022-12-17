@@ -106,6 +106,9 @@ app.UseHealthChecks(
   path: "/health/checks"
 );
 
+/* HTTP logging */
+app.UseHttpLogging();
+
 app.MapControllers();
 
 app.Run();
