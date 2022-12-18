@@ -11,7 +11,7 @@
       <th>Form Id</th>
       <th>Product Id</th>
       <th>Note</th>
-      <th>Todo</th>
+      <th>Unit Price</th>
     </tr>
   </thead>
   <tbody>
@@ -41,7 +41,9 @@
             )
           </td>
           <td>
-            todo
+            @Html.DisplayFor(
+              modelItem => item.UnitPrice
+            )
           </td>
         </tr>
       }
