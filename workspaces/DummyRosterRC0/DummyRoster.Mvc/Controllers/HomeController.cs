@@ -208,7 +208,30 @@ public class HomeController : Controller
 
   public async Task<IActionResult>? Products(string? name)
   {
-    return null;
+    string apiUri = "";
+    if (string.IsNullOrEmpty(name))
+    {
+      ViewData["Title"] = "All Products";
+      apiUri = "api/products";
+    }
+    else
+    {
+      ViewData["Title"] = "Products with a similar name";
+      apiUri = $"api/products*?name={name}";
+    }
+    HttpClient httpClient = this.httpClientFactory.CreateClient(
+      name: "DummyRoster.WebApi"
+    );
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Product>? products = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Product>>();
+    return View(products);
   }
 
   public Task<IActionResult>? Forms(int? customerId)
