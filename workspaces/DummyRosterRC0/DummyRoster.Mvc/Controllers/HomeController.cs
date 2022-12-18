@@ -119,7 +119,30 @@ public class HomeController : Controller
 
   public async Task<IActionResult>? Carriers(string? name)
   {
-    return null;
+    string apiUri = "";
+    if (string.IsNullOrEmpty(name))
+    {
+      ViewData["Title"] = "All Carriers";
+      apiUri = "api/carriers";
+    }
+    else
+    {
+      ViewData["Title"] = "Carriers with a similar name";
+      apiUri = $"api/carriers*?name={name}";
+    }
+    HttpClient httpClient = this.httpClientFactory.CreateClient(
+      name: "DummyRoster.WebApi"
+    );
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Carrier>? carriers = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Carrier>>();
+    return View(carriers);
   }
 
   public Task<IActionResult>? Addresses()
