@@ -245,14 +245,14 @@ dotnet add ./DummyRoster.Mvc.csproj reference ../DummyRoster.Common.EntityModel/
 ### From the DummyRoster.Mvc directory add the following Razor files:
 
 ```shell
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employee>\n\n<h2>Employees</h2>" > Views/Home/Employees.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>\n\n<h2>Customers</h2>" > Views/Home/Customers.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Supplier>\n\n<h2>Suppliers</h2>" > Views/Home/Suppliers.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Carrier>\n\n<h2>Carriers</h2>" > Views/Home/Carriers.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Address>\n\n<h2>Addresses</h2>" > Views/Home/Addresses.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Credential>\n\n<h2>Credentials</h2>" > Views/Home/Credentials.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Category>\n\n<h2>Categories</h2>" > Views/Home/Categories.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Product>\n\n<h2>Products</h2>" > Views/Home/Products.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Form>\n\n<h2>Forms</h2>" > Views/Home/Forms.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Invoice>\n\n<h2>Invoices</h2>" > Views/Home/Invoices.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employee>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Employees.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Customers.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Supplier>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Suppliers.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Carrier>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Carriers.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Address>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Addresses.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Credential>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Credentials.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Category>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Categories.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Product>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Products.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Form>\n\n<h2>For@ViewData[\"Title\"]ms</h2>" > Views/Home/Forms.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Invoice>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Invoices.cshtml
 ```
