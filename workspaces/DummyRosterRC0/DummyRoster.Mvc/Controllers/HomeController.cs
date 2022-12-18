@@ -178,7 +178,7 @@ public class HomeController : Controller
     return null;
   }
 
-  public Task<IActionResult>? Categories()
+  public Task<IActionResult>? Categories(string? name)
   {
     return null;
   }
