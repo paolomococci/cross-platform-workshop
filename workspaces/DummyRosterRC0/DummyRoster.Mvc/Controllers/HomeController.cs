@@ -285,7 +285,7 @@ public class HomeController : Controller
     return View(forms);
   }
 
-  public Task<IActionResult>? Invoices(int? formId)
+  public async Task<IActionResult>? Invoices(int? formId)
   {
     return null;
   }
