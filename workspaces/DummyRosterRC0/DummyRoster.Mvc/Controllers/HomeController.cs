@@ -145,7 +145,7 @@ public class HomeController : Controller
     return View(carriers);
   }
 
-  public Task<IActionResult>? Addresses(string? name)
+  public async Task<IActionResult>? Addresses(string? name)
   {
     return null;
   }
