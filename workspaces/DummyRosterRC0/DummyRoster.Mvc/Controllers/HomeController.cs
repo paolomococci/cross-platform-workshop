@@ -183,7 +183,7 @@ public class HomeController : Controller
     return null;
   }
 
-  public Task<IActionResult>? Products()
+  public Task<IActionResult>? Products(string? name)
   {
     return null;
   }
