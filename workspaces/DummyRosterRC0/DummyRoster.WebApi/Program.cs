@@ -71,6 +71,9 @@ builder.Services.AddHttpLogging(
   }
 );
 
+/* Cross-Origin Resource Sharing (CORS) */
+builder.Services.AddCors();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
