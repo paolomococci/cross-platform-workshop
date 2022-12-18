@@ -178,7 +178,7 @@ public class HomeController : Controller
     return null;
   }
 
-  public async Task<IActionResult>? Categories(string? name)
+  public async Task<IActionResult> Categories(string? name)
   {
     string apiUri = "";
     if (string.IsNullOrEmpty(name))
