@@ -188,7 +188,7 @@ public class HomeController : Controller
     return null;
   }
 
-  public Task<IActionResult>? Forms()
+  public Task<IActionResult>? Forms(int? customerId)
   {
     return null;
   }
