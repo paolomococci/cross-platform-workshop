@@ -7,7 +7,7 @@ public interface ICredentialController
 {
   public Task<IActionResult> Create([FromBody] Credential entity);
   public Task<IActionResult> ReadCredential(int id);
-  public Task<IEnumerable<Credential>> ReadAll(string? name);
+  public Task<IEnumerable<Credential>> ReadAll(string? email);
   public Task<IActionResult> Update(int id, [FromBody] Credential entity);
   public Task<IActionResult> PartialUpdate(int id, [FromBody] Credential entity);
   public Task<IActionResult> Delete(int id);
