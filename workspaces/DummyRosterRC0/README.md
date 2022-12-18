@@ -249,4 +249,5 @@ echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employ
 echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>\n\n<h2>Customers</h2>" > Views/Home/Customers.cshtml
 echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Supplier>\n\n<h2>Suppliers</h2>" > Views/Home/Suppliers.cshtml
 echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Carrier>\n\n<h2>Carriers</h2>" > Views/Home/Carriers.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Address>\n\n<h2>Addresses</h2>" > Views/Home/Addresses.cshtml
 ```
