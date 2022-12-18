@@ -117,7 +117,7 @@ public class HomeController : Controller
     return View(suppliers);
   }
 
-  public Task<IActionResult>? Carriers(string? name)
+  public async Task<IActionResult>? Carriers(string? name)
   {
     return null;
   }
