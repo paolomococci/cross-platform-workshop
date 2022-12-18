@@ -285,7 +285,7 @@ public class HomeController : Controller
     return View(forms);
   }
 
-  public async Task<IActionResult>? Invoices(int? formId)
+  public async Task<IActionResult> Invoices(int? formId)
   {
     string apiUri = "";
     if (string.IsNullOrEmpty(formId.ToString()))
