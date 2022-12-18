@@ -12,6 +12,7 @@
       <th>Carrier Id</th>
       <th>Employee Id</th>
       <th>Form Date</th>
+      <th>Required Date</th>
     </tr>
   </thead>
   <tbody>
@@ -43,6 +44,11 @@
           <td>
             @Html.DisplayFor(
               modelItem => item.FormDate
+            )
+          </td>
+          <td>
+            @Html.DisplayFor(
+              modelItem => item.RequiredDate
             )
           </td>
         </tr>
