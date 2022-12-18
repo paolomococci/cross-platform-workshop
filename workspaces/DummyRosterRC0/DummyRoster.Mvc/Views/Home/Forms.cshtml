@@ -10,7 +10,7 @@
       <th>Id</th>
       <th>Customer Id</th>
       <th>Carrier Id</th>
-      <th>Todo</th>
+      <th>Employee Id</th>
       <th>Todo</th>
     </tr>
   </thead>
@@ -36,7 +36,9 @@
             )
           </td>
           <td>
-            todo
+            @Html.DisplayFor(
+              modelItem => item.EmployeeId
+            )
           </td>
           <td>
             todo
