@@ -12,6 +12,7 @@
       <th>Description</th>
       <th>Category Id</th>
       <th>Supplier Id</th>
+      <th>Quantity Per Unit</th>
     </tr>
   </thead>
   <tbody>
@@ -43,6 +44,11 @@
           <td>
             @Html.DisplayFor(
               modelItem => item.SupplierId
+            )
+          </td>
+          <td>
+            @Html.DisplayFor(
+              modelItem => item.QuantityPerUnit
             )
           </td>
         </tr>
