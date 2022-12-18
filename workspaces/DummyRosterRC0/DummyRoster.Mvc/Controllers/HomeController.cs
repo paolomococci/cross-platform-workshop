@@ -37,8 +37,19 @@ public class HomeController : Controller
     return null;
   }
 
-  public Task<IActionResult>? Customers()
+  public Task<IActionResult>? Customers(string? name)
   {
+    string apiUri = "";
+    if (string.IsNullOrEmpty(name))
+    {
+      ViewData["Title"] = "All Customers";
+      apiUri = "api/customers";
+    }
+    else
+    {
+      ViewData["Title"] = "Customers with a similar name";
+      apiUri = $"api/customers*?name={name}";
+    }
     return null;
   }
 
