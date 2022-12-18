@@ -13,6 +13,7 @@
       <th>Note</th>
       <th>Unit Price</th>
       <th>Quantity</th>
+      <th>Price Cut</th>
     </tr>
   </thead>
   <tbody>
@@ -49,6 +50,11 @@
           <td>
             @Html.DisplayFor(
               modelItem => item.Quantity
+            )
+          </td>
+          <td>
+            @Html.DisplayFor(
+              modelItem => item.PriceCut
             )
           </td>
         </tr>
