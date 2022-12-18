@@ -14,5 +14,29 @@
       <th>Todo</th>
     </tr>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    @if (Model is not null)
+    {
+      @foreach (Supplier item in Model)
+      {
+        <tr>
+          <td>
+            todo
+          </td>
+          <td>
+            todo
+          </td>
+          <td>
+            todo
+          </td>
+          <td>
+            todo
+          </td>
+          <td>
+            todo
+          </td>
+        </tr>
+      }
+    }
+  </tbody>
 </table>
