@@ -246,4 +246,5 @@ dotnet add ./DummyRoster.Mvc.csproj reference ../DummyRoster.Common.EntityModel/
 
 ```shell
 echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employee>\n\n<h2>Employees</h2>" > Views/Home/Employees.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>\n\n<h2>Customers</h2>" > Views/Home/Customers.cshtml
 ```
