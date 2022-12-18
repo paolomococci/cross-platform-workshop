@@ -50,6 +50,9 @@ public class HomeController : Controller
       ViewData["Title"] = "Customers with a similar name";
       apiUri = $"api/customers*?name={name}";
     }
+    HttpClient httpClient = this.httpClientFactory.CreateClient(
+      name: "DummyRoster.WebApi"
+    );
     return null;
   }
 
