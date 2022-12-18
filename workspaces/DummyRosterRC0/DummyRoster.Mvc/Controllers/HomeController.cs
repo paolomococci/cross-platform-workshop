@@ -257,7 +257,7 @@ public class HomeController : Controller
     return View(products);
   }
 
-  public async Task<IActionResult>? Forms(int? customerId)
+  public async Task<IActionResult> Forms(int? customerId)
   {
     string apiUri = "";
     if (string.IsNullOrEmpty(customerId.ToString()))
