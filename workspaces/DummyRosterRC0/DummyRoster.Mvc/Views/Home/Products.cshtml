@@ -15,6 +15,7 @@
       <th>Quantity Per Unit</th>
       <th>Unit Price</th>
       <th>Units In Stock</th>
+      <th>Units On Order</th>
     </tr>
   </thead>
   <tbody>
@@ -61,6 +62,11 @@
           <td>
             @Html.DisplayFor(
               modelItem => item.UnitsInStock
+            )
+          </td>
+          <td>
+            @Html.DisplayFor(
+              modelItem => item.UnitsOnOrder
             )
           </td>
         </tr>
