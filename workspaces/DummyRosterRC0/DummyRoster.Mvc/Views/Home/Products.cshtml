@@ -11,7 +11,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Category Id</th>
-      <th>Todo</th>
+      <th>Supplier Id</th>
     </tr>
   </thead>
   <tbody>
@@ -41,7 +41,9 @@
             )
           </td>
           <td>
-            todo
+            @Html.DisplayFor(
+              modelItem => item.SupplierId
+            )
           </td>
         </tr>
       }
