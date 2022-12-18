@@ -206,7 +206,7 @@ public class HomeController : Controller
     return View(categories);
   }
 
-  public Task<IActionResult>? Products(string? name)
+  public async Task<IActionResult>? Products(string? name)
   {
     return null;
   }
