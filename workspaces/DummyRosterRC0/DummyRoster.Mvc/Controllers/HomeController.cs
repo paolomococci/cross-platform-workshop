@@ -33,9 +33,32 @@ public class HomeController : Controller
     return View();
   }
 
-  public Task<IActionResult>? Employees()
+  public async Task<IActionResult>? Employees(string? name)
   {
-    return null;
+    string apiUri = "";
+    if (string.IsNullOrEmpty(name))
+    {
+      ViewData["Title"] = "All Employees";
+      apiUri = "api/employees";
+    }
+    else
+    {
+      ViewData["Title"] = "Employees with a similar name";
+      apiUri = $"api/employees*?name={name}";
+    }
+    HttpClient httpClient = this.httpClientFactory.CreateClient(
+      name: "DummyRoster.WebApi"
+    );
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Employee>? employees = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Employee>>();
+    return View(employees);
   }
 
   public async Task<IActionResult> Customers(string? name)
