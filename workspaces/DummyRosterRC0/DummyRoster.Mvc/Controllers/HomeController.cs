@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using DummyRoster.Mvc.Models;
+using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Mvc.Controllers;
 
@@ -37,7 +38,7 @@ public class HomeController : Controller
     return null;
   }
 
-  public Task<IActionResult>? Customers(string? name)
+  public async Task<IActionResult> Customers(string? name)
   {
     string apiUri = "";
     if (string.IsNullOrEmpty(name))
@@ -57,7 +58,12 @@ public class HomeController : Controller
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    return null;
+    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Customer>? customers = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Customer>>();
+    return View(customers);
   }
 
   public Task<IActionResult>? Suppliers()
