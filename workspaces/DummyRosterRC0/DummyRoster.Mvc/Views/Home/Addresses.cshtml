@@ -11,7 +11,7 @@
       <th>Name</th>
       <th>Civic</th>
       <th>City</th>
-      <th>Todo</th>
+      <th>District</th>
     </tr>
   </thead>
   <tbody>
@@ -41,7 +41,9 @@
             )
           </td>
           <td>
-            todo
+            @Html.DisplayFor(
+              modelItem => item.District
+            )
           </td>
         </tr>
       }
