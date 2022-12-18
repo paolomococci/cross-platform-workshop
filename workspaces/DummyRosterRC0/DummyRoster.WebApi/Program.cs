@@ -114,7 +114,10 @@ app.UseHttpLogging();
 
 /* Configure of CORS */
 app.UseCors(
-  configurePolicy: options => {}
+  configurePolicy: options => {
+    options.WithMethods();
+    options.WithOrigins();
+  }
 );
 
 app.MapControllers();
