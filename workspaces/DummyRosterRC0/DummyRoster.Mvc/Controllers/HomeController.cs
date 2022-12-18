@@ -180,7 +180,30 @@ public class HomeController : Controller
 
   public async Task<IActionResult>? Categories(string? name)
   {
-    return null;
+    string apiUri = "";
+    if (string.IsNullOrEmpty(name))
+    {
+      ViewData["Title"] = "All Categories";
+      apiUri = "api/categories";
+    }
+    else
+    {
+      ViewData["Title"] = "Categories with a similar name";
+      apiUri = $"api/categories*?name={name}";
+    }
+    HttpClient httpClient = this.httpClientFactory.CreateClient(
+      name: "DummyRoster.WebApi"
+    );
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Category>? categories = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Category>>();
+    return View(categories);
   }
 
   public Task<IActionResult>? Products(string? name)
