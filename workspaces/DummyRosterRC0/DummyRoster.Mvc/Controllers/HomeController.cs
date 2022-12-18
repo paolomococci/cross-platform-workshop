@@ -33,7 +33,7 @@ public class HomeController : Controller
     return View();
   }
 
-  public async Task<IActionResult>? Employees(string? name)
+  public async Task<IActionResult> Employees(string? name)
   {
     string apiUri = "";
     if (string.IsNullOrEmpty(name))
