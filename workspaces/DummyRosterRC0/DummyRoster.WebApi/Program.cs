@@ -113,7 +113,9 @@ app.UseHealthChecks(
 app.UseHttpLogging();
 
 /* Configure of CORS */
-app.UseCors();
+app.UseCors(
+  configurePolicy: options => {}
+);
 
 app.MapControllers();
 
