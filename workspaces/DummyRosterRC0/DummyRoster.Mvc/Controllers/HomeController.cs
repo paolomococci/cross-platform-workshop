@@ -173,7 +173,7 @@ public class HomeController : Controller
     return View(addresses);
   }
 
-  public async Task<IActionResult>? Credentials(string? email)
+  public async Task<IActionResult> Credentials(string? email)
   {
     string apiUri = "";
     if (string.IsNullOrEmpty(email))
