@@ -89,7 +89,7 @@ public class HomeController : Controller
     return View(customers);
   }
 
-  public Task<IActionResult>? Suppliers()
+  public async Task<IActionResult>? Suppliers()
   {
     return null;
   }
