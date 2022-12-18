@@ -175,7 +175,30 @@ public class HomeController : Controller
 
   public async Task<IActionResult>? Credentials(string? email)
   {
-    return null;
+    string apiUri = "";
+    if (string.IsNullOrEmpty(email))
+    {
+      ViewData["Title"] = "All Credentials";
+      apiUri = "api/credentials";
+    }
+    else
+    {
+      ViewData["Title"] = "Credentials with a similar email";
+      apiUri = $"api/credentials*?email={email}";
+    }
+    HttpClient httpClient = this.httpClientFactory.CreateClient(
+      name: "DummyRoster.WebApi"
+    );
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Credential>? credentials = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Credential>>();
+    return View(credentials);
   }
 
   public async Task<IActionResult> Categories(string? name)
