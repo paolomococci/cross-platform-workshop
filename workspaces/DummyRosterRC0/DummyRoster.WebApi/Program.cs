@@ -112,6 +112,9 @@ app.UseHealthChecks(
 /* HTTP logging */
 app.UseHttpLogging();
 
+/* Configure of CORS */
+app.UseCors();
+
 app.MapControllers();
 
 app.Run();
