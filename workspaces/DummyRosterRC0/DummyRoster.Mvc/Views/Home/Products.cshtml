@@ -9,7 +9,7 @@
     <tr>
       <th>Id</th>
       <th>Name</th>
-      <th>Todo</th>
+      <th>Description</th>
       <th>Todo</th>
       <th>Todo</th>
     </tr>
@@ -31,7 +31,9 @@
             )
           </td>
           <td>
-            todo
+            @Html.DisplayFor(
+              modelItem => item.Description
+            )
           </td>
           <td>
             todo
