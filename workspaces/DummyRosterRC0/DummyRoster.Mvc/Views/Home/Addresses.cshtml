@@ -12,6 +12,7 @@
       <th>Civic</th>
       <th>City</th>
       <th>District</th>
+      <th>Postcode</th>
     </tr>
   </thead>
   <tbody>
@@ -43,6 +44,11 @@
           <td>
             @Html.DisplayFor(
               modelItem => item.District
+            )
+          </td>
+          <td>
+            @Html.DisplayFor(
+              modelItem => item.Postcode
             )
           </td>
         </tr>
