@@ -235,3 +235,15 @@ User: your-example-email added as Admins successfully.
 ```
 
 From now on, with the right credentials, access will be allowed.
+
+### From the DummyRoster.Mvc directory add the reference to DummyRoster.Common.EntityModel:
+
+```shell
+dotnet add ./DummyRoster.Mvc.csproj reference ../DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj
+```
+
+### From the DummyRoster.Mvc directory add the following Razor files:
+
+```shell
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employee>\n\n<h2>Employees</h2>" > Views/Home/Employees.cshtml
+```
