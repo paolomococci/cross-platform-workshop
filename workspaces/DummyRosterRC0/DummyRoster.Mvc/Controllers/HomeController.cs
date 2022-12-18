@@ -53,6 +53,7 @@ public class HomeController : Controller
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
     );
+    HttpRequestMessage httpRequestMessage = new();
     return null;
   }
 
