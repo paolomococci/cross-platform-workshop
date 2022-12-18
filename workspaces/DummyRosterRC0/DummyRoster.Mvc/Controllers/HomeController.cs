@@ -259,7 +259,30 @@ public class HomeController : Controller
 
   public async Task<IActionResult>? Forms(int? customerId)
   {
-    return null;
+    string apiUri = "";
+    if (string.IsNullOrEmpty(customerId.ToString()))
+    {
+      ViewData["Title"] = "All Forms";
+      apiUri = "api/forms";
+    }
+    else
+    {
+      ViewData["Title"] = "Forms with a similar customerId";
+      apiUri = $"api/forms*?customerId={customerId.ToString()}";
+    }
+    HttpClient httpClient = this.httpClientFactory.CreateClient(
+      name: "DummyRoster.WebApi"
+    );
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Form>? forms = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Form>>();
+    return View(forms);
   }
 
   public Task<IActionResult>? Invoices(int? formId)
