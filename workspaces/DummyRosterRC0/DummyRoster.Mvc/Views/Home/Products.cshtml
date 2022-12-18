@@ -16,6 +16,7 @@
       <th>Unit Price</th>
       <th>Units In Stock</th>
       <th>Units On Order</th>
+      <th>Reorder Level</th>
     </tr>
   </thead>
   <tbody>
@@ -67,6 +68,11 @@
           <td>
             @Html.DisplayFor(
               modelItem => item.UnitsOnOrder
+            )
+          </td>
+          <td>
+            @Html.DisplayFor(
+              modelItem => item.ReorderLevel
             )
           </td>
         </tr>
