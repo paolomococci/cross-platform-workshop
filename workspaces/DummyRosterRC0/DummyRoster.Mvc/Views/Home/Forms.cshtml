@@ -11,7 +11,7 @@
       <th>Customer Id</th>
       <th>Carrier Id</th>
       <th>Employee Id</th>
-      <th>Todo</th>
+      <th>Form Date</th>
     </tr>
   </thead>
   <tbody>
@@ -41,7 +41,9 @@
             )
           </td>
           <td>
-            todo
+            @Html.DisplayFor(
+              modelItem => item.FormDate
+            )
           </td>
         </tr>
       }
