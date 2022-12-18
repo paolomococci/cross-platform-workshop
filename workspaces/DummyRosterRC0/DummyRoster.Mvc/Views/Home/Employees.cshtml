@@ -12,6 +12,7 @@
       <th>Birth Date</th>
       <th>Description</th>
       <th>Role</th>
+      <th>Belonging</th>
     </tr>
   </thead>
   <tbody>
@@ -43,6 +44,11 @@
           <td>
             @Html.DisplayFor(
               modelItem => item.Role
+            )
+          </td>
+          <td>
+            @Html.DisplayFor(
+              modelItem => item.Belonging
             )
           </td>
         </tr>
