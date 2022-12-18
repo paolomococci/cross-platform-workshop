@@ -173,7 +173,7 @@ public class HomeController : Controller
     return View(addresses);
   }
 
-  public Task<IActionResult>? Credentials()
+  public Task<IActionResult>? Credentials(string? email)
   {
     return null;
   }
