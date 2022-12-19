@@ -16,4 +16,5 @@ dotnet new gitignore
 ```shell
 dotnet new blazorserver --auth Individual --framework "net7.0" --name DummyRoster.BlazorServer
 dotnet new classlib --framework "net7.0" --name DummyRoster.Common.EntityModel
+dotnet new webapi --framework "net7.0" --name DummyRoster.WebApi
 ```
