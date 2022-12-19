@@ -57,7 +57,6 @@ From the DummyRoster.Common.EntityModel directory I type the following commands:
 dotnet new tool-manifest
 dotnet tool install --local dotnet-ef --version 7.0.0
 dotnet ef dbcontext scaffold "Filename=../DummyRoster.db" Microsoft.EntityFrameworkCore.Sqlite --namespace DummyRoster.Common.EntityModel.Models --data-annotations --context-dir Data --output-dir Models
-cd DummyRoster.Common.EntityModel
 dotnet clean
 dotnet build
 ```
