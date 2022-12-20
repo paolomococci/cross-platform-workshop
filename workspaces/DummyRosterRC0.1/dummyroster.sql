@@ -16,11 +16,7 @@ DROP TABLE IF EXISTS "Invoice";
 -- Employee table
 CREATE TABLE "Employee" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
-  "FirstName" varchar(16) NOT NULL,
-  "SecondName" varchar(16) NULL,
-  "LastName" varchar(16) NOT NULL,
-  "Nickname" varchar(16) NULL,
-  "Username" varchar(32) NULL,
+  "Name" varchar(32) NOT NULL,
   "BirthDate" DATETIME NULL,
   "Description" TEXT NULL,
   "Picture" BLOB NULL,
@@ -114,7 +110,6 @@ CREATE TABLE "Category" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
-  "Belonging" varchar(8) NULL,
   "Picture" BLOB NULL
 );
 CREATE INDEX "IDX_CategoryName" ON "Category"("Name");
@@ -124,7 +119,6 @@ CREATE TABLE "Product" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "Name" varchar(32) NOT NULL,
   "Description" TEXT NULL,
-  "Belonging" varchar(8) NULL,
   "Picture" BLOB NULL,
   "CategoryId" INT NULL,
   "SupplierId" INT NULL,
@@ -175,7 +169,6 @@ CREATE TABLE "Invoice" (
   "Id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "FormId" INT NULL,
   "ProductId" INT NULL,
-  "IssuingDate" DATETIME NULL,
   "Note" TEXT NULL,
   "UnitPrice" NUMERIC NOT NULL CONSTRAINT "DF_Form_Details_UnitPrice" DEFAULT (0),
   "Quantity" SMALLINT NOT NULL CONSTRAINT "DF_Form_Details_Quantity" DEFAULT (1),
