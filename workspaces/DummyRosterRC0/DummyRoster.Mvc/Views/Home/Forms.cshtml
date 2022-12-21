@@ -4,69 +4,69 @@
 <h2>@ViewData["Title"]</h2>
 
 <div class="table-responsive-lg">
-<table class="table table-bordered table-info table-striped-columns">
-  <caption>@ViewData["Title"] registered in the management</caption>
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Customer Id</th>
-      <th scope="col">Carrier Id</th>
-      <th scope="col">Employee Id</th>
-      <th scope="col">Form Date</th>
-      <th scope="col">Required Date</th>
-      <th scope="col">Promised Date</th>
-      <th scope="col">Shipping Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    @if (Model is not null)
-    {
-      @foreach (Form item in Model)
+  <table class="table table-bordered table-info table-striped-columns">
+    <caption>@ViewData["Title"] registered in the management</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Carrier Id</th>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Form Date</th>
+        <th scope="col">Required Date</th>
+        <th scope="col">Promised Date</th>
+        <th scope="col">Shipping Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model is not null)
       {
-        <tr>
-          <th scope="row">
-            @Html.DisplayFor(
-              modelItem => item.Id
-            )
-          </th>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.CustomerId
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.CarrierId
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.EmployeeId
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.FormDate
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.RequiredDate
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.PromisedDate
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.ShippingCost
-            )
-          </td>
-        </tr>
+        @foreach (Form item in Model)
+        {
+          <tr>
+            <th scope="row">
+              @Html.DisplayFor(
+          modelItem => item.Id
+          )
+            </th>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.CustomerId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.CarrierId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.EmployeeId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.FormDate
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.RequiredDate
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.PromisedDate
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.ShippingCost
+          )
+            </td>
+          </tr>
+        }
       }
-    }
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
