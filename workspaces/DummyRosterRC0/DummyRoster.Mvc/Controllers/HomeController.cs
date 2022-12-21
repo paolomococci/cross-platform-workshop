@@ -114,14 +114,11 @@ public class HomeController : Controller
       ViewData["Title"] = "Suppliers with a similar name";
       apiUri = $"api/suppliers/?name={name}";
     }
-    HttpClient httpClient = this.httpClientFactory.CreateClient(
-      name: "DummyRoster.WebApi"
-    );
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
       httpRequestMessage
     );
     IEnumerable<Supplier>? suppliers = await httpResponseMessage
