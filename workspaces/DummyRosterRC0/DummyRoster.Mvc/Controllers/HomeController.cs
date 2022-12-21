@@ -86,7 +86,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Customers with a similar name";
+      ViewData["Title"] = $"Customers with the name similar to {name}";
       apiUri = $"{baseUri}api/customers/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
@@ -111,7 +111,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Suppliers with a similar name";
+      ViewData["Title"] = $"Suppliers with the name similar to {name}";
       apiUri = $"{baseUri}api/suppliers/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
@@ -136,7 +136,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Carriers with a similar name";
+      ViewData["Title"] = $"Carriers with the name similar to {name}";
       apiUri = $"{baseUri}api/carriers/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
@@ -161,7 +161,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Addresses with a similar country";
+      ViewData["Title"] = $"Addresses with the country name similar to {country}";
       apiUri = $"{baseUri}api/addresses/?country={country}";
     }
     HttpRequestMessage httpRequestMessage = new(
@@ -186,7 +186,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Credentials with a similar email";
+      ViewData["Title"] = $"Credentials with the email similar to {email}";
       apiUri = $"{baseUri}api/credentials/?email={email}";
     }
     HttpRequestMessage httpRequestMessage = new(
@@ -211,7 +211,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Categories with a similar name";
+      ViewData["Title"] = $"Categories with the name similar to {name}";
       apiUri = $"{baseUri}api/categories/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
@@ -236,7 +236,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Products with a similar name";
+      ViewData["Title"] = $"Products with the name similar to {name}";
       apiUri = $"{baseUri}api/products/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
@@ -261,7 +261,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Forms with a similar customerId";
+      ViewData["Title"] = $"Forms with the customer id {customerId}";
       apiUri = $"{baseUri}api/forms/?customerId={customerId.ToString()}";
     }
     HttpRequestMessage httpRequestMessage = new(
@@ -286,7 +286,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Invoices with a similar formId";
+      ViewData["Title"] = $"Invoices with the form id {formId}";
       apiUri = $"{baseUri}api/invoices/?formId={formId.ToString()}";
     }
     HttpRequestMessage httpRequestMessage = new(
