@@ -89,7 +89,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Customers with a similar name";
-      apiUri = $"a{this.baseUri}pi/customers/?name={name}";
+      apiUri = $"a{this.baseUri}api/customers/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
