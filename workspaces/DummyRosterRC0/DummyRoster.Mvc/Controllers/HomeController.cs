@@ -107,7 +107,7 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Suppliers";
-      apiUri = $"{baseUri}/suppliers";
+      apiUri = $"{baseUri}api/suppliers";
     }
     else
     {
