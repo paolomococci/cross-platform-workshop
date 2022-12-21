@@ -257,21 +257,18 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(customerId.ToString()))
     {
       ViewData["Title"] = "All Forms";
-      apiUri = "api/forms";
+      apiUri = $"{baseUri}api/forms";
     }
     else
     {
       ViewData["Title"] = "Forms with a similar customerId";
-      apiUri = $"api/forms/?customerId={customerId.ToString()}";
+      apiUri = $"{baseUri}api/forms/?customerId={customerId.ToString()}";
     }
-    HttpClient httpClient = this.httpClientFactory.CreateClient(
-      name: "DummyRoster.WebApi"
-    );
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
       httpRequestMessage
     );
     IEnumerable<Form>? forms = await httpResponseMessage
