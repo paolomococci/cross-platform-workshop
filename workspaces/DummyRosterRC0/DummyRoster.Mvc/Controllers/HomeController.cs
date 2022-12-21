@@ -232,21 +232,18 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Products";
-      apiUri = "api/products";
+      apiUri = $"{baseUri}api/products";
     }
     else
     {
       ViewData["Title"] = "Products with a similar name";
-      apiUri = $"api/products/?name={name}";
+      apiUri = $"{baseUri}api/products/?name={name}";
     }
-    HttpClient httpClient = this.httpClientFactory.CreateClient(
-      name: "DummyRoster.WebApi"
-    );
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
       httpRequestMessage
     );
     IEnumerable<Product>? products = await httpResponseMessage
