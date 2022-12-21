@@ -91,9 +91,6 @@ public class HomeController : Controller
       ViewData["Title"] = "Customers with a similar name";
       apiUri = $"{baseUri}api/customers/?name={name}";
     }
-    HttpClient httpClient = this.httpClientFactory.CreateClient(
-      name: "DummyRoster.WebApi"
-    );
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
       requestUri: apiUri
