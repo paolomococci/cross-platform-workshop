@@ -94,3 +94,16 @@
             </form>
         </div>
     </div>
+
+    <div class="card m-3" style="width: 20rem;">
+        <h5 class="card-header">Query Products</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Products" method="get">
+                <div class="mb-3">
+                    <input class="form-control" name="name" type="text" placeholder="type a name">
+                </div>
+                <input class="btn btn-outline-primary" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
