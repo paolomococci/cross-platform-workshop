@@ -20,8 +20,9 @@ public class HomeController : Controller
     this._logger = logger;
     this.httpClientFactory = httpClientFactory;
     /*
+      How to fix, only in the development environment and when it is not convenient to do otherwise, the following error:
+      "The SSL connection could not be established, see inner exception".
       The following code, applied to file HomeController.cs, is capable of overriding the validity of the certificate.
-      Use only in development environment!
      */
     HttpClientHandler httpClientHandler = new HttpClientHandler();
     httpClientHandler.ServerCertificateCustomValidationCallback += (
