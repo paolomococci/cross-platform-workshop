@@ -61,7 +61,7 @@ public class HomeController : Controller
     }
     else
     {
-      ViewData["Title"] = "Employees with a similar name";
+      ViewData["Title"] = $"Employees with the name similar to {name}";
       apiUri = $"{baseUri}api/employees/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
