@@ -20,11 +20,11 @@
       @foreach (Carrier item in Model)
       {
         <tr>
-          <td>
+          <th scope="row">
             @Html.DisplayFor(
               modelItem => item.Id
             )
-          </td>
+          </th>
           <td>
             @Html.DisplayFor(
               modelItem => item.Name
