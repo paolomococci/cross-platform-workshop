@@ -107,12 +107,12 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Suppliers";
-      apiUri = "api/suppliers";
+      apiUri = $"{baseUri}/suppliers";
     }
     else
     {
       ViewData["Title"] = "Suppliers with a similar name";
-      apiUri = $"api/suppliers/?name={name}";
+      apiUri = $"{baseUri}api/suppliers/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
