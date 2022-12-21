@@ -157,21 +157,18 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Addresses";
-      apiUri = "api/addresses";
+      apiUri = $"{baseUri}api/addresses";
     }
     else
     {
       ViewData["Title"] = "Addresses with a similar name";
-      apiUri = $"api/addresses/?name={name}";
+      apiUri = $"{baseUri}api/addresses/?name={name}";
     }
-    HttpClient httpClient = this.httpClientFactory.CreateClient(
-      name: "DummyRoster.WebApi"
-    );
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
       httpRequestMessage
     );
     IEnumerable<Address>? addresses = await httpResponseMessage
