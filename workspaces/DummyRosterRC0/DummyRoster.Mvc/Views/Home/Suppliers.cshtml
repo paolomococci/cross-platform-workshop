@@ -4,51 +4,51 @@
 <h2>@ViewData["Title"]</h2>
 
 <div class="table-responsive-lg">
-<table class="table table-bordered table-info table-striped-columns">
-  <caption>@ViewData["Title"] registered in the management</caption>
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Name</th>
-      <th scope="col">Fondation Date</th>
-      <th scope="col">Description</th>
-      <th scope="col">Belonging</th>
-    </tr>
-  </thead>
-  <tbody>
-    @if (Model is not null)
-    {
-      @foreach (Supplier item in Model)
+  <table class="table table-bordered table-info table-striped-columns">
+    <caption>@ViewData["Title"] registered in the management</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Fondation Date</th>
+        <th scope="col">Description</th>
+        <th scope="col">Belonging</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model is not null)
       {
-        <tr>
-          <th scope="row">
-            @Html.DisplayFor(
-              modelItem => item.Id
-            )
-          </th>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.Name
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.FoundationDate
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.Description
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.Belonging
-            )
-          </td>
-        </tr>
+        @foreach (Supplier item in Model)
+        {
+          <tr>
+            <th scope="row">
+              @Html.DisplayFor(
+          modelItem => item.Id
+          )
+            </th>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Name
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.FoundationDate
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Description
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Belonging
+          )
+            </td>
+          </tr>
+        }
       }
-    }
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
