@@ -207,21 +207,18 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Categories";
-      apiUri = "api/categories";
+      apiUri = $"{baseUri}api/categories";
     }
     else
     {
       ViewData["Title"] = "Categories with a similar name";
-      apiUri = $"api/categories/?name={name}";
+      apiUri = $"{baseUri}api/categories/?name={name}";
     }
-    HttpClient httpClient = this.httpClientFactory.CreateClient(
-      name: "DummyRoster.WebApi"
-    );
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
       httpRequestMessage
     );
     IEnumerable<Category>? categories = await httpResponseMessage
