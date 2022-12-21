@@ -5,9 +5,9 @@
 <h3 class="display-3">@ViewData["Title"]</h1>
 
     <div class="card">
-        <h5 class="card-header">Query Employees from API</h5>
+        <h5 class="card-header">Query Employees</h5>
         <div class="card-body">
-            <h5 class="card-title">get data</h5>
+            <h5 class="card-title">get data from API</h5>
             <form asp-action="Employees" method="get">
                 <div class="mb-3">
                     <input class="form-control" name="name" type="text" placeholder="type a name">
@@ -18,10 +18,23 @@
     </div>
 
     <div class="card">
-        <h5 class="card-header">Query Customers from API</h5>
+        <h5 class="card-header">Query Customers</h5>
         <div class="card-body">
-            <h5 class="card-title">get data</h5>
+            <h5 class="card-title">get data from API</h5>
             <form asp-action="Customers" method="get">
+                <div class="mb-3">
+                    <input class="form-control" name="name" type="text" placeholder="type a name">
+                </div>
+                <input class="btn btn-outline-primary" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <h5 class="card-header">Query Suppliers</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Suppliers" method="get">
                 <div class="mb-3">
                     <input class="form-control" name="name" type="text" placeholder="type a name">
                 </div>
