@@ -84,12 +84,12 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Customers";
-      apiUri = "api/customers";
+      apiUri = $"{this.baseUri}api/customers";
     }
     else
     {
       ViewData["Title"] = "Customers with a similar name";
-      apiUri = $"api/customers/?name={name}";
+      apiUri = $"a{this.baseUri}pi/customers/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
