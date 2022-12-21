@@ -151,18 +151,18 @@ public class HomeController : Controller
     return View(carriers);
   }
 
-  public async Task<IActionResult> Addresses(string? name)
+  public async Task<IActionResult> Addresses(string? country)
   {
     string apiUri = "";
-    if (string.IsNullOrEmpty(name))
+    if (string.IsNullOrEmpty(country))
     {
       ViewData["Title"] = "All Addresses";
       apiUri = $"{baseUri}api/addresses";
     }
     else
     {
-      ViewData["Title"] = "Addresses with a similar name";
-      apiUri = $"{baseUri}api/addresses/?name={name}";
+      ViewData["Title"] = "Addresses with a similar country";
+      apiUri = $"{baseUri}api/addresses/?country={country}";
     }
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
