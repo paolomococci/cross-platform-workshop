@@ -182,21 +182,18 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(email))
     {
       ViewData["Title"] = "All Credentials";
-      apiUri = "api/credentials";
+      apiUri = $"{baseUri}api/credentials";
     }
     else
     {
       ViewData["Title"] = "Credentials with a similar email";
-      apiUri = $"api/credentials/?email={email}";
+      apiUri = $"{baseUri}api/credentials/?email={email}";
     }
-    HttpClient httpClient = this.httpClientFactory.CreateClient(
-      name: "DummyRoster.WebApi"
-    );
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
       httpRequestMessage
     );
     IEnumerable<Credential>? credentials = await httpResponseMessage
