@@ -4,87 +4,87 @@
 <h2>@ViewData["Title"]</h2>
 
 <div class="table-responsive-lg">
-<table class="table table-bordered table-info table-striped-columns">
-  <caption>@ViewData["Title"] registered in the management</caption>
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Category Id</th>
-      <th scope="col">Supplier Id</th>
-      <th scope="col">Quantity Per Unit</th>
-      <th scope="col">Unit Price</th>
-      <th scope="col">Units In Stock</th>
-      <th scope="col">Units On Order</th>
-      <th scope="col">Reorder Level</th>
-      <th scope="col">Discontinued</th>
-    </tr>
-  </thead>
-  <tbody>
-    @if (Model is not null)
-    {
-      @foreach (Product item in Model)
+  <table class="table table-bordered table-info table-striped-columns">
+    <caption>@ViewData["Title"] registered in the management</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Category Id</th>
+        <th scope="col">Supplier Id</th>
+        <th scope="col">Quantity Per Unit</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Units In Stock</th>
+        <th scope="col">Units On Order</th>
+        <th scope="col">Reorder Level</th>
+        <th scope="col">Discontinued</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model is not null)
       {
-        <tr>
-          <th scope="row">
-            @Html.DisplayFor(
-              modelItem => item.Id
-            )
-          </th>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.Name
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.Description
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.CategoryId
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.SupplierId
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.QuantityPerUnit
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.UnitPrice
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.UnitsInStock
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.UnitsOnOrder
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.ReorderLevel
-            )
-          </td>
-          <td>
-            @Html.DisplayFor(
-              modelItem => item.Discontinued
-            )
-          </td>
-        </tr>
+        @foreach (Product item in Model)
+        {
+          <tr>
+            <th scope="row">
+              @Html.DisplayFor(
+          modelItem => item.Id
+          )
+            </th>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Name
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Description
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.CategoryId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.SupplierId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.QuantityPerUnit
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.UnitPrice
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.UnitsInStock
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.UnitsOnOrder
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.ReorderLevel
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Discontinued
+          )
+            </td>
+          </tr>
+        }
       }
-    }
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
