@@ -9,7 +9,6 @@ namespace DummyRoster.Mvc.Controllers;
 public class HomeController : Controller
 {
   private readonly ILogger<HomeController> _logger;
-  private readonly IHttpClientFactory httpClientFactory;
   private readonly HttpClient httpClient;
   private const string baseUri = "https://localhost:5001/";
 
@@ -19,7 +18,6 @@ public class HomeController : Controller
   )
   {
     this._logger = logger;
-    this.httpClientFactory = httpClientFactory;
     /*
       How to fix, only in the development environment and when it is not convenient to do otherwise, the following error:
       "The SSL connection could not be established, see inner exception".
