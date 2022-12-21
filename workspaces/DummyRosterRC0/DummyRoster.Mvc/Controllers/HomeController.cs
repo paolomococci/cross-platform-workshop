@@ -11,6 +11,7 @@ public class HomeController : Controller
   private readonly ILogger<HomeController> _logger;
   private readonly IHttpClientFactory httpClientFactory;
   private readonly HttpClient httpClient;
+  private readonly string baseUri = "https://localhost:5001/";
 
   public HomeController(
     ILogger<HomeController> logger,
@@ -57,13 +58,13 @@ public class HomeController : Controller
     {
       ViewData["Title"] = "All Employees";
       /* Please enter the complete URL */
-      apiUri = "https://localhost:5001/api/employees";
+      apiUri = $"{this.baseUri}api/employees";
     }
     else
     {
       ViewData["Title"] = "Employees with a similar name";
       /* Please enter the complete URL */
-      apiUri = $"https://localhost:5001/api/employees/?name={name}";
+      apiUri = $"{this.baseUri}api/employees/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
