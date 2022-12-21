@@ -57,13 +57,11 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Employees";
-      /* Please enter the complete URL */
       apiUri = $"{baseUri}api/employees";
     }
     else
     {
       ViewData["Title"] = "Employees with a similar name";
-      /* Please enter the complete URL */
       apiUri = $"{baseUri}api/employees/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
