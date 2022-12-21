@@ -11,7 +11,7 @@ public class HomeController : Controller
   private readonly ILogger<HomeController> _logger;
   private readonly IHttpClientFactory httpClientFactory;
   private readonly HttpClient httpClient;
-  private readonly string baseUri = "https://localhost:5001/";
+  private const string baseUri = "https://localhost:5001/";
 
   public HomeController(
     ILogger<HomeController> logger,
@@ -58,13 +58,13 @@ public class HomeController : Controller
     {
       ViewData["Title"] = "All Employees";
       /* Please enter the complete URL */
-      apiUri = $"{this.baseUri}api/employees";
+      apiUri = $"{baseUri}api/employees";
     }
     else
     {
       ViewData["Title"] = "Employees with a similar name";
       /* Please enter the complete URL */
-      apiUri = $"{this.baseUri}api/employees/?name={name}";
+      apiUri = $"{baseUri}api/employees/?name={name}";
     }
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
@@ -84,12 +84,12 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Customers";
-      apiUri = $"{this.baseUri}api/customers";
+      apiUri = $"{baseUri}api/customers";
     }
     else
     {
       ViewData["Title"] = "Customers with a similar name";
-      apiUri = $"a{this.baseUri}api/customers/?name={name}";
+      apiUri = $"{baseUri}api/customers/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -98,7 +98,7 @@ public class HomeController : Controller
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
       httpRequestMessage
     );
     IEnumerable<Customer>? customers = await httpResponseMessage
