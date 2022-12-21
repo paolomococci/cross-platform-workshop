@@ -10,6 +10,7 @@ public class HomeController : Controller
 {
   private readonly ILogger<HomeController> _logger;
   private readonly IHttpClientFactory httpClientFactory;
+  private readonly HttpClient httpClient;
 
   public HomeController(
     ILogger<HomeController> logger,
@@ -18,6 +19,21 @@ public class HomeController : Controller
   {
     this._logger = logger;
     this.httpClientFactory = httpClientFactory;
+    /*
+      The following code, applied to file HomeController.cs, is capable of overriding the validity of the certificate.
+      Use only in development environment!
+     */
+    HttpClientHandler httpClientHandler = new HttpClientHandler();
+    httpClientHandler.ServerCertificateCustomValidationCallback += (
+      sender,
+      certificate,
+      chain,
+      error
+    ) =>
+    {
+      return true;
+    };
+    this.httpClient = new HttpClient(httpClientHandler);
   }
 
   [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any)]
@@ -39,21 +55,20 @@ public class HomeController : Controller
     if (string.IsNullOrEmpty(name))
     {
       ViewData["Title"] = "All Employees";
-      apiUri = "api/employees";
+      /* Please enter the complete URL */
+      apiUri = "https://localhost:5001/api/employees";
     }
     else
     {
       ViewData["Title"] = "Employees with a similar name";
-      apiUri = $"api/employees*?name={name}";
+      /* Please enter the complete URL */
+      apiUri = $"https://localhost:5001/api/employees/?name={name}";
     }
-    HttpClient httpClient = this.httpClientFactory.CreateClient(
-      name: "DummyRoster.WebApi"
-    );
     HttpRequestMessage httpRequestMessage = new(
       method: HttpMethod.Get,
       requestUri: apiUri
     );
-    HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
       httpRequestMessage
     );
     IEnumerable<Employee>? employees = await httpResponseMessage
@@ -72,7 +87,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Customers with a similar name";
-      apiUri = $"api/customers*?name={name}";
+      apiUri = $"api/customers/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -100,7 +115,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Suppliers with a similar name";
-      apiUri = $"api/suppliers*?name={name}";
+      apiUri = $"api/suppliers/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -128,7 +143,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Carriers with a similar name";
-      apiUri = $"api/carriers*?name={name}";
+      apiUri = $"api/carriers/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -156,7 +171,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Addresses with a similar name";
-      apiUri = $"api/addresses*?name={name}";
+      apiUri = $"api/addresses/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -184,7 +199,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Credentials with a similar email";
-      apiUri = $"api/credentials*?email={email}";
+      apiUri = $"api/credentials/?email={email}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -212,7 +227,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Categories with a similar name";
-      apiUri = $"api/categories*?name={name}";
+      apiUri = $"api/categories/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -240,7 +255,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Products with a similar name";
-      apiUri = $"api/products*?name={name}";
+      apiUri = $"api/products/?name={name}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -268,7 +283,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Forms with a similar customerId";
-      apiUri = $"api/forms*?customerId={customerId.ToString()}";
+      apiUri = $"api/forms/?customerId={customerId.ToString()}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
@@ -296,7 +311,7 @@ public class HomeController : Controller
     else
     {
       ViewData["Title"] = "Invoices with a similar formId";
-      apiUri = $"api/invoices*?formId={formId.ToString()}";
+      apiUri = $"api/invoices/?formId={formId.ToString()}";
     }
     HttpClient httpClient = this.httpClientFactory.CreateClient(
       name: "DummyRoster.WebApi"
