@@ -29,13 +29,13 @@ public partial class Form
   public int? EmployeeId { get; set; }
 
   [Column(TypeName = "DATETIME")]
-  public byte[]? FormDate { get; set; }
+  public DateTime? FormDate { get; set; }
 
   [Column(TypeName = "DATETIME")]
-  public byte[]? RequiredDate { get; set; }
+  public DateTime? RequiredDate { get; set; }
 
   [Column(TypeName = "DATETIME")]
-  public byte[]? PromisedDate { get; set; }
+  public DateTime? PromisedDate { get; set; }
 
   [Column(TypeName = "NUMERIC")]
   public byte[]? ShippingCost { get; set; }
