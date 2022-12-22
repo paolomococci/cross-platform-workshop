@@ -41,12 +41,15 @@ public partial class Product
   public decimal? UnitPrice { get; set; }
 
   [Column(TypeName = "SMALLINT")]
+  [Range(0, 65535)]
   public int? UnitsInStock { get; set; }
 
   [Column(TypeName = "SMALLINT")]
+  [Range(0, 65535)]
   public int? UnitsOnOrder { get; set; }
 
   [Column(TypeName = "SMALLINT")]
+  [Range(0, 65535)]
   public int? ReorderLevel { get; set; }
 
   [Column(TypeName = "BOOLEAN")]
