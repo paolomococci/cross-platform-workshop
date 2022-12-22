@@ -76,17 +76,21 @@ From the DummyRoster.WebApi directory I type the following commands:
 
 ```shell
 mkdir Tests
-touch Tests/get_weather_forecast_tests.rest
-touch Tests/employee_endpoint_tests.rest
-touch Tests/customer_endpoint_tests.rest
-touch Tests/supplier_endpoint_tests.rest
-touch Tests/carrier_endpoint_tests.rest
-touch Tests/address_endpoint_tests.rest
-touch Tests/credential_endpoint_tests.rest
-touch Tests/category_endpoint_tests.rest
-touch Tests/product_endpoint_tests.rest
-touch Tests/form_endpoint_tests.rest
-touch Tests/invoice_endpoint_tests.rest
+mkdir Tests/API
+mkdir Tests/Forecasting
+mkdir Tests/js
+touch Tests/API/Forecasting/get_weather_forecast_tests.rest
+touch Tests/API/employee_endpoint_tests.rest
+touch Tests/API/customer_endpoint_tests.rest
+touch Tests/API/supplier_endpoint_tests.rest
+touch Tests/API/carrier_endpoint_tests.rest
+touch Tests/API/address_endpoint_tests.rest
+touch Tests/API/credential_endpoint_tests.rest
+touch Tests/API/category_endpoint_tests.rest
+touch Tests/API/product_endpoint_tests.rest
+touch Tests/API/form_endpoint_tests.rest
+touch Tests/API/invoice_endpoint_tests.rest
+touch Tests/js/ComputeDataLength.js
 ```
 
 ### From the DummyRoster.WebApi directory add the following repositories
