@@ -34,6 +34,7 @@ public partial class Product
   public int? SupplierId { get; set; }
 
   [Column(TypeName = "varchar(24)")]
+  [RegularExpression(@"[a-zA-Z0-9\s\-]{1,24}")]
   public string? QuantityPerUnit { get; set; }
 
   [Column(TypeName = "NUMERIC")]
