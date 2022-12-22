@@ -14,44 +14,44 @@ namespace DummyRoster.Common.EntityModel.Models;
 [Index("RequiredDate", Name = "IDX_RequiredDate")]
 public partial class Form
 {
-    [Key]
-    public int Id { get; set; }
+  [Key]
+  public int Id { get; set; }
 
-    public string? Description { get; set; }
+  public string? Description { get; set; }
 
-    [Column(TypeName = "INT")]
-    public int? CustomerId { get; set; }
+  [Column(TypeName = "INT")]
+  public int? CustomerId { get; set; }
 
-    [Column(TypeName = "INT")]
-    public int? CarrierId { get; set; }
+  [Column(TypeName = "INT")]
+  public int? CarrierId { get; set; }
 
-    [Column(TypeName = "INT")]
-    public int? EmployeeId { get; set; }
+  [Column(TypeName = "INT")]
+  public int? EmployeeId { get; set; }
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? FormDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? FormDate { get; set; }
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? RequiredDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? RequiredDate { get; set; }
 
-    [Column(TypeName = "DATETIME")]
-    public DateTime? PromisedDate { get; set; }
+  [Column(TypeName = "DATETIME")]
+  public DateTime? PromisedDate { get; set; }
 
-    [Column(TypeName = "NUMERIC")]
-    public decimal? ShippingCost { get; set; }
+  [Column(TypeName = "NUMERIC")]
+  public decimal? ShippingCost { get; set; }
 
-    [ForeignKey("CarrierId")]
-    [InverseProperty("Forms")]
-    public virtual Carrier? Carrier { get; set; }
+  [ForeignKey("CarrierId")]
+  [InverseProperty("Forms")]
+  public virtual Carrier? Carrier { get; set; }
 
-    [ForeignKey("CustomerId")]
-    [InverseProperty("Forms")]
-    public virtual Customer? Customer { get; set; }
+  [ForeignKey("CustomerId")]
+  [InverseProperty("Forms")]
+  public virtual Customer? Customer { get; set; }
 
-    [ForeignKey("EmployeeId")]
-    [InverseProperty("Forms")]
-    public virtual Employee? Employee { get; set; }
+  [ForeignKey("EmployeeId")]
+  [InverseProperty("Forms")]
+  public virtual Employee? Employee { get; set; }
 
-    [InverseProperty("Form")]
-    public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
+  [InverseProperty("Form")]
+  public virtual ICollection<Invoice> Invoices { get; } = new List<Invoice>();
 }
