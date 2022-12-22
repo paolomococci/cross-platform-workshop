@@ -32,6 +32,7 @@ public partial class Address
   public string? District { get; set; }
 
   [Column(TypeName = "varchar(8)")]
+  [RegularExpression("[0-9]{1,8}")]
   public string? Postcode { get; set; }
 
   [Column(TypeName = "varchar(16)")]
