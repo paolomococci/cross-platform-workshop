@@ -37,6 +37,7 @@ public partial class Employee
   public string? Role { get; set; }
 
   [Column(TypeName = "varchar(8)")]
+  [RegularExpression(@"[A-Z\-]{1,8}")]
   public string? Belonging { get; set; }
 
   [Column(TypeName = "INT")]
