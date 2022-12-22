@@ -9,7 +9,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Customer
 {
     [Key]
-    public long Id { get; set; }
+    public int Id { get; set; }
 
     [Column(TypeName = "varchar(32)")]
     public string Name { get; set; } = null!;
@@ -25,13 +25,13 @@ public partial class Customer
     public string? Belonging { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? Contact { get; set; }
+    public int? Contact { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? Loc { get; set; }
+    public int? Loc { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? Ref { get; set; }
+    public int? Ref { get; set; }
 
     [ForeignKey("Contact")]
     [InverseProperty("Customers")]
