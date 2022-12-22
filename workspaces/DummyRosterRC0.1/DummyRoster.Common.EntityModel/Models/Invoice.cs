@@ -10,13 +10,13 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Invoice
 {
   [Key]
-  public long Id { get; set; }
+  public int Id { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? FormId { get; set; }
+  public int? FormId { get; set; }
 
   [Column(TypeName = "INT")]
-  public long? ProductId { get; set; }
+  public int? ProductId { get; set; }
 
   public string? Note { get; set; }
 
@@ -24,7 +24,7 @@ public partial class Invoice
   public byte[] UnitPrice { get; set; } = null!;
 
   [Column(TypeName = "SMALLINT")]
-  public long Quantity { get; set; }
+  public int Quantity { get; set; }
 
   [Column(TypeName = "NUMERIC")]
   public byte[] PriceCut { get; set; } = null!;
