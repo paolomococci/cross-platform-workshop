@@ -36,6 +36,7 @@ public partial class Address
   public string? Postcode { get; set; }
 
   [Column(TypeName = "varchar(16)")]
+  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,15})$")]
   public string? Country { get; set; }
 
   [InverseProperty("LocNavigation")]
