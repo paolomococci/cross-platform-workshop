@@ -13,7 +13,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Address
 {
   [Key]
-  public long Id { get; set; }
+  public int Id { get; set; }
 
   [Column(TypeName = "varchar(32)")]
   public string? Name { get; set; }
