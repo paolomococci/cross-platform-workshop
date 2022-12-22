@@ -12,6 +12,7 @@ public partial class Credential
   public int Id { get; set; }
 
   [Column(TypeName = "varchar(48)")]
+  [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,5})+)$")]
   public string? Email { get; set; }
 
   [Column(TypeName = "varchar(24)")]
