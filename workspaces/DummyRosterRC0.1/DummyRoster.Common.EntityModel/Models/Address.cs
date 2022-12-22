@@ -20,6 +20,7 @@ public partial class Address
   public string? Name { get; set; }
 
   [Column(TypeName = "varchar(16)")]
+  [RegularExpression(@"[a-zA-Z0-9\s\-\/]{1,16}")]
   public string? Civic { get; set; }
 
   [Column(TypeName = "varchar(16)")]
