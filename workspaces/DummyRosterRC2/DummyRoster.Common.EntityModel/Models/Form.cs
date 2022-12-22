@@ -17,6 +17,7 @@ public partial class Form
   [Key]
   public int Id { get; set; }
 
+  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
   public string? Description { get; set; }
 
   [Column(TypeName = "INT")]
