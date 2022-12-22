@@ -289,3 +289,7 @@ HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
 ### Home page:
 
 ![home page](https://github.com/paolomococci/cross-platform-workshop/blob/main/workspaces/DummyRosterRC0/Screenshots/home_page.png)
+
+### Employees page
+
+![employees page](https://github.com/paolomococci/cross-platform-workshop/blob/main/workspaces/DummyRosterRC0/Screenshots/employees_page.png)
