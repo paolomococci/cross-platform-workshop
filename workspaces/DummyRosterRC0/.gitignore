@@ -453,7 +453,7 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# more
+# further exclusions
 Properties/
 .config/
 .vscode/
@@ -467,3 +467,6 @@ appsettings.json
 HELP.md
 LOG.md
 app.db*
+
+# how to include a specific path
+!Screenshots/*.png
