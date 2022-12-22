@@ -18,6 +18,7 @@ public partial class Supplier
   [Column(TypeName = "DATETIME")]
   public DateTime? FoundationDate { get; set; }
 
+  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,63})$")]
   public string? Description { get; set; }
 
   public byte[]? Picture { get; set; }
