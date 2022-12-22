@@ -28,6 +28,7 @@ public partial class Address
   public string? City { get; set; }
 
   [Column(TypeName = "varchar(16)")]
+  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,15})$")]
   public string? District { get; set; }
 
   [Column(TypeName = "varchar(8)")]
