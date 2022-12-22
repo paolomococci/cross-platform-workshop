@@ -293,3 +293,7 @@ HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
 ### Employees page
 
 ![employees page](https://github.com/paolomococci/cross-platform-workshop/blob/main/workspaces/DummyRosterRC0/Screenshots/employees_page.png)
+
+### Employee filter page
+
+![employee filter page](https://github.com/paolomococci/cross-platform-workshop/blob/main/workspaces/DummyRosterRC0/Screenshots/employees_filtered.png)
