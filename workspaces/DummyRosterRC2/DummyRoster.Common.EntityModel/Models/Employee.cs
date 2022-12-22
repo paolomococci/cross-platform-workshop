@@ -12,6 +12,7 @@ public partial class Employee
   public int Id { get; set; }
 
   [Column(TypeName = "varchar(16)")]
+  [RegularExpression(@"[a-zA-Z0-9\s\-]{1,32}")]
   public string Name { get; set; } = null!;
 
   [Column(TypeName = "varchar(16)")]
