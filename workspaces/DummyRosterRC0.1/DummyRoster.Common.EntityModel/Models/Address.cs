@@ -16,6 +16,7 @@ public partial class Address
   public int Id { get; set; }
 
   [Column(TypeName = "varchar(32)")]
+  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,31})$")]
   public string? Name { get; set; }
 
   [Column(TypeName = "varchar(16)")]
