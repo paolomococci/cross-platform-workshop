@@ -9,7 +9,7 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Credential
 {
   [Key]
-  public long Id { get; set; }
+  public int Id { get; set; }
 
   [Column(TypeName = "varchar(48)")]
   public string? Email { get; set; }
