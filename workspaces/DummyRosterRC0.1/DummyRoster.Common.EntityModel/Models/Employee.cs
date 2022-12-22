@@ -24,6 +24,7 @@ public partial class Employee
   public byte[]? Picture { get; set; }
 
   [Column(TypeName = "varchar(32)")]
+  [RegularExpression(@"^([A-Z]{1,}[a-zA-Z0-9\s\.\,]{1,31})$")]
   public string? Role { get; set; }
 
   [Column(TypeName = "varchar(8)")]
