@@ -1,6 +1,6 @@
 # DummyRosterRC0
 
-Release candidate which should implement both an webapi ​​and a mvc with Individual authentication.
+Release candidate which should implement both an webapi and a mvc with Individual authentication.
 
 ## Scaffolding of DummyRosterRC0 workspace
 
