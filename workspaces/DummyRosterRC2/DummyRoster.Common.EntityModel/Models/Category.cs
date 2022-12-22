@@ -19,6 +19,7 @@ public partial class Category
   public string? Description { get; set; }
 
   [Column(TypeName = "varchar(8)")]
+  [RegularExpression(@"[A-Z\-]{1,8}")]
   public string? Belonging { get; set; }
 
   public byte[]? Picture { get; set; }
