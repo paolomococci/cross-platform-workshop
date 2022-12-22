@@ -15,18 +15,18 @@ namespace DummyRoster.Common.EntityModel.Models;
 public partial class Form
 {
     [Key]
-    public long Id { get; set; }
+    public int Id { get; set; }
 
     public string? Description { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? CustomerId { get; set; }
+    public int? CustomerId { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? CarrierId { get; set; }
+    public int? CarrierId { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? EmployeeId { get; set; }
+    public int? EmployeeId { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public byte[]? FormDate { get; set; }
