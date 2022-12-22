@@ -458,9 +458,6 @@ Properties/
 .config/
 .vscode/
 lib/
-Areas/
-Migrations/
-css/
 appsettings.Development.json
 appsettings.json
 *.ico
