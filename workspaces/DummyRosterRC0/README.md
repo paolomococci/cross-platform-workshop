@@ -255,3 +255,31 @@ echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Produc
 echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Form>\n\n<h2>For@ViewData[\"Title\"]ms</h2>" > Views/Home/Forms.cshtml
 echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Invoice>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Invoices.cshtml
 ```
+
+## Please note:
+
+How to fix, only in the development environment and when it is not convenient to do otherwise, the following error: "The SSL connection could not be established, see inner exception".
+
+The following code, applied to file HomeController.cs, is capable of overriding the validity of the certificate:
+
+```text
+...
+  private readonly HttpClient httpClient;
+...
+HttpClientHandler httpClientHandler = new HttpClientHandler();
+    httpClientHandler.ServerCertificateCustomValidationCallback += (
+      sender,
+      certificate,
+      chain,
+      error
+    ) =>
+    {
+      return true;
+    };
+    this.httpClient = new HttpClient(httpClientHandler);
+...
+HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
+      httpRequestMessage
+    );
+...
+```
