@@ -45,8 +45,8 @@ From the main workspace I type the following commands:
 dotnet new classlib --name DummyRoster.Common.EntityModel
 cd DummyRoster.Common.EntityModel
 rm Class1.cs
-dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.0
-dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.0
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 7.0.1
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.1
 ```
 
 ### Migration of entity classes from database tables
@@ -55,7 +55,7 @@ From the DummyRoster.Common.EntityModel directory I type the following commands:
 
 ```shell
 dotnet new tool-manifest
-dotnet tool install --local dotnet-ef --version 7.0.0
+dotnet tool install --local dotnet-ef --version 7.0.1
 dotnet ef dbcontext scaffold "Filename=../DummyRoster.db" Microsoft.EntityFrameworkCore.Sqlite --namespace DummyRoster.Common.EntityModel.Models --data-annotations --context-dir Data --output-dir Models
 dotnet clean
 dotnet build
