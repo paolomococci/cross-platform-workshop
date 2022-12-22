@@ -19,7 +19,7 @@ public partial class Invoice
     public int? ProductId { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[]? IssuingDate { get; set; }
+    public DateTime? IssuingDate { get; set; }
 
     public string? Note { get; set; }
 
