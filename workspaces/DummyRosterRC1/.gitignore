@@ -453,7 +453,7 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# more
+# further exclusions
 Properties/
 .config/
 .vscode/
