@@ -12,16 +12,19 @@ public partial class Employee
   public int Id { get; set; }
 
   [Column(TypeName = "varchar(16)")]
-  [RegularExpression(@"[a-zA-Z0-9\s\-]{1,32}")]
+  [RegularExpression(@"[a-zA-Z0-9\s\-]{1,16}")]
   public string Name { get; set; } = null!;
 
   [Column(TypeName = "varchar(16)")]
+  [RegularExpression(@"[a-zA-Z0-9\s\-]{1,16}")]
   public string Surname { get; set; } = null!;
 
   [Column(TypeName = "varchar(16)")]
+  [RegularExpression(@"[a-zA-Z0-9\s\-]{1,16}")]
   public string? Nickname { get; set; }
 
   [Column(TypeName = "varchar(32)")]
+  [RegularExpression(@"[a-z0-9]{1,16}")]
   public string? Username { get; set; }
 
   [Column(TypeName = "DATETIME")]
