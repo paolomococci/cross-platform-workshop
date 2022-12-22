@@ -283,3 +283,5 @@ HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
     );
 ...
 ```
+
+## Example screenshots:
