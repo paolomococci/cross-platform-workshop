@@ -1,11 +1,21 @@
+using Microsoft.AspNetCore.Mvc;
 using DummyRoster.Common.EntityModel.Models;
 using DummyRoster.WebApi.Controllers.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
 public class CarrierController : ControllerBase, ICarrierController
 {
+
+  private readonly ICarrierRepository repository;
+
+  public CarrierController(
+    ICarrierRepository repo
+  )
+  {
+    this.repository = repo;
+  }
   public Task<IActionResult> Create([FromBody] Carrier entity)
   {
     throw new NotImplementedException();
