@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class AddressController : IAddressController
+public class AddressController : ControllerBase, IAddressController
 {
   public Task<IActionResult> Create([FromBody] Address entity)
   {
