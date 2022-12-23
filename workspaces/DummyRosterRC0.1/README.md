@@ -66,6 +66,7 @@ From the main workspace I type the following commands:
 ```shell
 dotnet new webapi --framework "net7.0" --name DummyRoster.WebApi
 cd DummyRoster.WebApi
+dotnet add package Microsoft.EntityFrameworkCore --version 7.0.1
 dotnet add ./DummyRoster.WebApi.csproj reference ../DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj
 mkdir Controllers/Interfaces
 mkdir Repositories
