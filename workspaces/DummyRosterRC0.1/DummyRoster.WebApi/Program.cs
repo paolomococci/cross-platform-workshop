@@ -1,3 +1,10 @@
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.HttpLogging;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using DummyRoster.Common.EntityModel.Data;
+using DummyRoster.WebApi.Repositories.Interfaces;
+using DummyRoster.WebApi.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
