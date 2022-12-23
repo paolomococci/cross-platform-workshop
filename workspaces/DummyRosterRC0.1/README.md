@@ -81,7 +81,7 @@ mkdir Tests
 mkdir Tests/API
 mkdir Tests/Forecasting
 mkdir Tests/js
-touch Tests/API/Forecasting/get_weather_forecast_tests.rest
+touch Tests/Forecasting/get_weather_forecast_tests.rest
 touch Tests/API/employee_endpoint_tests.rest
 touch Tests/API/customer_endpoint_tests.rest
 touch Tests/API/supplier_endpoint_tests.rest
