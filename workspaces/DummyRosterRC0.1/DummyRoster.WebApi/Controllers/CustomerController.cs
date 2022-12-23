@@ -16,33 +16,140 @@ public class CustomerController : ControllerBase, ICustomerController
   {
     this.repository = repo;
   }
-  public Task<IActionResult> Create([FromBody] Customer entity)
+
+  /* 
+    POST: api/customers
+    BODY: Customer (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Customer)
+  )]
+  [ProducesResponseType(400)]
+  public async Task<IActionResult> Create([FromBody] Customer entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Customer? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadCustomer),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
-  public Task<IActionResult> Delete(int id)
+  /* 
+    GET: api/customers/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadCustomer))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Customer)
+  )]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> ReadCustomer(int id)
   {
-    throw new NotImplementedException();
+    Customer? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity)
+  /* 
+    GET: api/customers
+    GET: api/customers/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Customer>)
+  )]
+  public async Task<IEnumerable<Customer>> ReadAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.Name == name
+    );
   }
 
-  public Task<IEnumerable<Customer>> ReadAll(string? name)
+  /* 
+    PUT: api/customers/id
+    BODY: Customer (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Update(int id, [FromBody] Customer entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Customer? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.UpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> ReadCustomer(int id)
+  /* 
+    PATCH: api/customers/id
+    BODY: Customer (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Customer entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Customer? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.PartialUpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Customer entity)
+  /* 
+    DELETE: api/customers/id
+   */
+  [HttpDelete("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
+    bool deleted = false;
+    Customer? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.repository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 }
