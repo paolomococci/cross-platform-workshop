@@ -16,33 +16,140 @@ public class InvoiceController : ControllerBase, IInvoiceController
   {
     this.repository = repo;
   }
-  public Task<IActionResult> Create([FromBody] Invoice entity)
+
+  /* 
+    POST: api/invoices
+    BODY: Invoice (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Invoice)
+  )]
+  [ProducesResponseType(400)]
+  public async Task<IActionResult> Create([FromBody] Invoice entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Invoice? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadInvoice),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
-  public Task<IActionResult> Delete(int id)
+  /* 
+    GET: api/invoices/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadInvoice))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Invoice)
+  )]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> ReadInvoice(int id)
   {
-    throw new NotImplementedException();
+    Invoice? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
+  /* 
+    GET: api/invoices
+    GET: api/invoices/?formId=[formId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Invoice>)
+  )]
+  public async Task<IEnumerable<Invoice>> ReadAll(int? formId)
   {
-    throw new NotImplementedException();
+    if (formId is null)
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.FormId == formId
+    );
   }
 
-  public Task<IEnumerable<Invoice>> ReadAll(int? formId)
+  /* 
+    PUT: api/invoices/id
+    BODY: Invoice (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Update(int id, [FromBody] Invoice entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Invoice? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.UpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> ReadInvoice(int id)
+  /* 
+    PATCH: api/invoices/id
+    BODY: Invoice (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Invoice? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.PartialUpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Invoice entity)
+  /* 
+    DELETE: api/invoices/id
+   */
+  [HttpDelete("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
+    bool deleted = false;
+    Invoice? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.repository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 }
