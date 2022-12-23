@@ -103,6 +103,20 @@ app.UseAuthorization();
 /* HTTP logging */
 app.UseHttpLogging();
 
+/* Configure of CORS */
+app.UseCors(
+  configurePolicy: options => {
+    options.WithMethods(
+      // for the moment I want to authorize the use of only the GET method
+      "GET"
+    );
+    options.WithOrigins(
+      // for now I want to allow only requests coming from DummyRoster.Mvc
+      "https://127.0.0.1:8081"
+    );
+  }
+);
+
 app.MapControllers();
 
 app.Run();
