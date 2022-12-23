@@ -77,7 +77,23 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
   app.UseSwagger();
-  app.UseSwaggerUI();
+  app.UseSwaggerUI(
+    swaggerConf => {
+      swaggerConf.SwaggerEndpoint(
+        "/swagger/v1/swagger.json",
+        "DummyRoster.WebApi project Version 1"
+      );
+      swaggerConf.SupportedSubmitMethods(
+        new[] {
+          SubmitMethod.Get,
+          SubmitMethod.Post,
+          SubmitMethod.Put,
+          SubmitMethod.Patch,
+          SubmitMethod.Delete
+        }
+      );
+    }
+  );
 }
 
 app.UseHttpsRedirection();
