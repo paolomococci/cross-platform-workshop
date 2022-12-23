@@ -1,3 +1,5 @@
+using DummyRoster.WebApi.Repositories.Interfaces;
+
 namespace DummyRoster.WebApi.Repositories;
 
-public class FormRepository {}
+public class FormRepository : IFormRepository {}
