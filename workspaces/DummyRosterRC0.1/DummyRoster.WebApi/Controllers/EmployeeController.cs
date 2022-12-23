@@ -16,33 +16,140 @@ public class EmployeeController : ControllerBase, IEmployeeController
   {
     this.repository = repo;
   }
-  public Task<IActionResult> Create([FromBody] Employee entity)
+
+  /* 
+    POST: api/employees
+    BODY: Employee (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Employee)
+  )]
+  [ProducesResponseType(400)]
+  public async Task<IActionResult> Create([FromBody] Employee entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Employee? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadEmployee),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
-  public Task<IActionResult> Delete(int id)
+  /* 
+    GET: api/employees/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadEmployee))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Employee)
+  )]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> ReadEmployee(int id)
   {
-    throw new NotImplementedException();
+    Employee? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Employee entity)
+  /* 
+    GET: api/employees
+    GET: api/employees/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Employee>)
+  )]
+  public async Task<IEnumerable<Employee>> ReadAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.Name == name
+    );
   }
 
-  public Task<IEnumerable<Employee>> ReadAll(string? name)
+  /* 
+    PUT: api/employees/id
+    BODY: Employee (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Update(int id, [FromBody] Employee entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Employee? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.UpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> ReadEmployee(int id)
+  /* 
+    PATCH: api/employees/id
+    BODY: Employee (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Employee entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Employee? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.PartialUpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Employee entity)
+  /* 
+    DELETE: api/employees/id
+   */
+  [HttpDelete("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
+    bool deleted = false;
+    Employee? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.repository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 }
