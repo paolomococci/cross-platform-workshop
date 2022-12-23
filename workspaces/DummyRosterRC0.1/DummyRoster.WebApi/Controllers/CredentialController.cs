@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class CredentialController : ICredentialController
+public class CredentialController : ControllerBase, ICredentialController
 {
   public Task<IActionResult> Create([FromBody] Credential entity)
   {
