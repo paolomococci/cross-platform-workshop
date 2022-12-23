@@ -59,6 +59,15 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IFormRepository, FormRepository>();
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
+/* HTTP logging */
+builder.Services.AddHttpLogging(
+  options => {
+    options.LoggingFields = HttpLoggingFields.All;
+    options.RequestBodyLogLimit = 4096;
+    options.ResponseBodyLogLimit = 4096;
+  }
+);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
