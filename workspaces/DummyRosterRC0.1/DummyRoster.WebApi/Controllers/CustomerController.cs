@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class CustomerController : ICustomerController
+public class CustomerController : ControllerBase, ICustomerController
 {
   public Task<IActionResult> Create([FromBody] Customer entity)
   {
