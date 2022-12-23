@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class EmployeeController : IEmployeeController
+public class EmployeeController : ControllerBase, IEmployeeController
 {
   public Task<IActionResult> Create([FromBody] Employee entity)
   {
