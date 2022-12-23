@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class ProductController : IProductController
+public class ProductController : ControllerBase, IProductController
 {
   public Task<IActionResult> Create([FromBody] Product entity)
   {
