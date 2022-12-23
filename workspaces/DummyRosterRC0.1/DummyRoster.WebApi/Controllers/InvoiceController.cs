@@ -1,5 +1,38 @@
+using DummyRoster.Common.EntityModel.Models;
 using DummyRoster.WebApi.Controllers.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class InvoiceController : IInvoiceController {}
+public class InvoiceController : IInvoiceController
+{
+  public Task<IActionResult> Create([FromBody] Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Delete(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> PartialUpdate(int id, [FromBody] Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IEnumerable<Invoice>> ReadAll(int? formId)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> ReadInvoice(int id)
+  {
+    throw new NotImplementedException();
+  }
+
+  public Task<IActionResult> Update(int id, [FromBody] Invoice entity)
+  {
+    throw new NotImplementedException();
+  }
+}
