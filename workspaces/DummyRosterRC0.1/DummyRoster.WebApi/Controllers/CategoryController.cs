@@ -1,11 +1,21 @@
+using Microsoft.AspNetCore.Mvc;
 using DummyRoster.Common.EntityModel.Models;
 using DummyRoster.WebApi.Controllers.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
 public class CategoryController : ControllerBase, ICategoryController
 {
+
+  private readonly ICategoryRepository repository;
+
+  public CategoryController(
+    ICategoryRepository repo
+  )
+  {
+    this.repository = repo;
+  }
   public Task<IActionResult> Create([FromBody] Category entity)
   {
     throw new NotImplementedException();
