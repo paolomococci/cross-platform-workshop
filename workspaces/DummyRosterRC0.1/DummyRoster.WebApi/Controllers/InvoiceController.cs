@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class InvoiceController : IInvoiceController
+public class InvoiceController : ControllerBase, IInvoiceController
 {
   public Task<IActionResult> Create([FromBody] Invoice entity)
   {
