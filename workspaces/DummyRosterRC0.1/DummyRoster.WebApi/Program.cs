@@ -7,7 +7,7 @@ using DummyRoster.WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddDbContext<DummyRosterContext>();
+builder.Services.AddDbContext<DummyRosterContext>();
 
 // Add services to the container.
 
