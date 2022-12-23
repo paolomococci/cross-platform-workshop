@@ -1,3 +1,5 @@
+using DummyRoster.WebApi.Repositories.Interfaces;
+
 namespace DummyRoster.WebApi.Repositories;
 
-public class CategoryRepository {}
+public class CategoryRepository : ICategoryRepository {}
