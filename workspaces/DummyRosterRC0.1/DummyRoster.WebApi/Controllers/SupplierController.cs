@@ -1,3 +1,5 @@
+using DummyRoster.WebApi.Controllers.Interfaces;
+
 namespace DummyRoster.WebApi.Controllers;
 
-public class SupplierController {}
+public class SupplierController : ISupplierController {}
