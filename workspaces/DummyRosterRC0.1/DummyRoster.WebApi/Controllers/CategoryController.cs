@@ -16,33 +16,140 @@ public class CategoryController : ControllerBase, ICategoryController
   {
     this.repository = repo;
   }
-  public Task<IActionResult> Create([FromBody] Category entity)
+
+  /* 
+    POST: api/categories
+    BODY: Category (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Category)
+  )]
+  [ProducesResponseType(400)]
+  public async Task<IActionResult> Create([FromBody] Category entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Category? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadCategory),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
-  public Task<IActionResult> Delete(int id)
+  /* 
+    GET: api/categories/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadCategory))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Category)
+  )]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> ReadCategory(int id)
   {
-    throw new NotImplementedException();
+    Category? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity)
+  /* 
+    GET: api/categories
+    GET: api/categories/?name=[name]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Category>)
+  )]
+  public async Task<IEnumerable<Category>> ReadAll(string? name)
   {
-    throw new NotImplementedException();
+    if (string.IsNullOrWhiteSpace(name))
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.Name == name
+    );
   }
 
-  public Task<IEnumerable<Category>> ReadAll(string? name)
+  /* 
+    PUT: api/categories/id
+    BODY: Category (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Update(int id, [FromBody] Category entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Category? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.UpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> ReadCategory(int id)
+  /* 
+    PATCH: api/categories/id
+    BODY: Category (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Category entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Category? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.PartialUpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Category entity)
+  /* 
+    DELETE: api/categories/id
+   */
+  [HttpDelete("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
+    bool deleted = false;
+    Category? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.repository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 }
