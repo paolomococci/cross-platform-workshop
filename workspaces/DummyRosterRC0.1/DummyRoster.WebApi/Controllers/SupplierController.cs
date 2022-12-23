@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class SupplierController : ISupplierController
+public class SupplierController : ControllerBase, ISupplierController
 {
   public Task<IActionResult> Create([FromBody] Supplier entity)
   {
