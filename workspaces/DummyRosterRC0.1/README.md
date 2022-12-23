@@ -191,7 +191,7 @@ dotnet new mvc --auth Individual --framework "net7.0" --name DummyRoster.Mvc
 cd DummyRoster.Mvc
 ```
 
-Note: sensitive data could be written as follows in file x, excluding it from the source tree.
+Note: sensitive data could be written as follows in file appsettings.json, excluding it from the source tree.
 
 ```text
   "UserAdmin": {
