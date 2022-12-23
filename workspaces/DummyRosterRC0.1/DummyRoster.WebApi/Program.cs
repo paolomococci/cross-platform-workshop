@@ -35,7 +35,17 @@ builder.Services.AddControllers(
 ).AddXmlDataContractSerializerFormatters().AddXmlSerializerFormatters();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(
+  swaggerConf => {
+    swaggerConf.SwaggerDoc(
+      "v1",
+      new() {
+        Title = "DummyRoster.WebApi project",
+        Version = "v1"
+      }
+    );
+  }
+);
 
 var app = builder.Build();
 
