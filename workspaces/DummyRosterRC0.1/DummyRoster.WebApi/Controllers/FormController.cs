@@ -16,33 +16,140 @@ public class FormController : ControllerBase, IFormController
   {
     this.repository = repo;
   }
-  public Task<IActionResult> Create([FromBody] Form entity)
+
+  /* 
+    POST: api/forms
+    BODY: Form (JSON, XML)
+   */
+  [HttpPost]
+  [ProducesResponseType(
+    201,
+    Type = typeof(Form)
+  )]
+  [ProducesResponseType(400)]
+  public async Task<IActionResult> Create([FromBody] Form entity)
   {
-    throw new NotImplementedException();
+    if (entity == null)
+    {
+      return BadRequest();
+    }
+    Form? managedEntity = await this.repository.CreateAsync(entity);
+    if (managedEntity == null)
+    {
+      return BadRequest("Unable to manage entity!");
+    }
+    return CreatedAtRoute(
+      routeName: nameof(ReadForm),
+      routeValues: new { id = managedEntity.Id },
+      value: managedEntity
+    );
   }
 
-  public Task<IActionResult> Delete(int id)
+  /* 
+    GET: api/forms/[id]
+   */
+  [HttpGet("{id}", Name = nameof(ReadForm))]
+  [ProducesResponseType(
+    200,
+    Type = typeof(Form)
+  )]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> ReadForm(int id)
   {
-    throw new NotImplementedException();
+    Form? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    return Ok(managedEntity);
   }
 
-  public Task<IActionResult> PartialUpdate(int id, [FromBody] Form entity)
+  /* 
+    GET: api/forms
+    GET: api/forms/?customerId=[customerId]
+   */
+  [HttpGet]
+  [ProducesResponseType(
+    200,
+    Type = typeof(IEnumerable<Form>)
+  )]
+  public async Task<IEnumerable<Form>> ReadAll(int? customerId)
   {
-    throw new NotImplementedException();
+    if (customerId == null)
+    {
+      return await this.repository.RetrieveAll();
+    }
+    return (await this.repository.RetrieveAll()).Where(
+      entity => entity.CustomerId == customerId
+    );
   }
 
-  public Task<IEnumerable<Form>> ReadAll(int? customerId)
+  /* 
+    PUT: api/forms/id
+    BODY: Form (JSON, XML)
+   */
+  [HttpPut("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Update(int id, [FromBody] Form entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Form? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.UpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> ReadForm(int id)
+  /* 
+    PATCH: api/forms/id
+    BODY: Form (JSON, XML)
+   */
+  [HttpPatch("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> PartialUpdate(int id, [FromBody] Form entity)
   {
-    throw new NotImplementedException();
+    if (entity == null || entity.Id != id)
+    {
+      return BadRequest();
+    }
+    Form? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    await this.repository.PartialUpdateAsync(id, entity);
+    return new NoContentResult();
   }
 
-  public Task<IActionResult> Update(int id, [FromBody] Form entity)
+  /* 
+    DELETE: api/forms/id
+   */
+  [HttpDelete("{id}")]
+  [ProducesResponseType(204)]
+  [ProducesResponseType(400)]
+  [ProducesResponseType(404)]
+  public async Task<IActionResult> Delete(int id)
   {
-    throw new NotImplementedException();
+    bool deleted = false;
+    Form? managedEntity = await this.repository.Retrieve(id);
+    if (managedEntity == null)
+    {
+      return NotFound();
+    }
+    deleted = (bool)await this.repository.DeleteAsync(id);
+    if (deleted)
+    {
+      return new NoContentResult();
+    }
+    return BadRequest();
   }
 }
