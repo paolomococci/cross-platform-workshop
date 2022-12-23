@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.WebApi.Controllers;
 
-public class FormController : IFormController
+public class FormController : ControllerBase, IFormController
 {
   public Task<IActionResult> Create([FromBody] Form entity)
   {
