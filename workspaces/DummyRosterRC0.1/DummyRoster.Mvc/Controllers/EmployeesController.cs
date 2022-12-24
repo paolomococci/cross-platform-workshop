@@ -14,6 +14,16 @@ public class EmployeesController : Controller
   )
   {
     this._logger = logger;
-    this.httpClient = new HttpClient();
+    HttpClientHandler httpClientHandler = new HttpClientHandler();
+    httpClientHandler.ServerCertificateCustomValidationCallback += (
+      sender,
+      certificate,
+      chain,
+      error
+    ) =>
+    {
+      return true;
+    };
+    this.httpClient = new HttpClient(httpClientHandler);
   }
 }
