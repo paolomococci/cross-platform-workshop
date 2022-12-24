@@ -233,23 +233,39 @@ User: your-example-email added as Admins successfully.
 
 From now on, with the right credentials, access will be allowed.
 
-### From the DummyRoster.Mvc directory add the reference to DummyRoster.Common.EntityModel:
+### From the DummyRoster.Mvc directory I add the reference to DummyRoster.Common.EntityModel:
 
 ```shell
 dotnet add ./DummyRoster.Mvc.csproj reference ../DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj
 ```
 
-### From the DummyRoster.Mvc directory add the following Razor files:
+### From the DummyRoster.Mvc directory I add a controller for each entity to display:
 
 ```shell
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employee>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Employees.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Customers.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Supplier>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Suppliers.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Carrier>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Carriers.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Address>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Addresses.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Credential>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Credentials.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Category>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Categories.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Product>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Products.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Form>\n\n<h2>For@ViewData[\"Title\"]ms</h2>" > Views/Home/Forms.cshtml
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Invoice>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Home/Invoices.cshtml
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class EmployeesController : Controller {}" > Controllers/EmployeesController.cs
+```
+
+### From the DummyRoster.Mvc directory I add the following Razor files:
+
+```shell
+mkdir Views/Employees
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employee>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Employees/Employees.cshtml
+mkdir Views/Customers
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Customers/Customers.cshtml
+mkdir Views/Suppliers
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Supplier>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Suppliers/Suppliers.cshtml
+mkdir Views/Carriers
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Carrier>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Carriers/Carriers.cshtml
+mkdir Views/Addresses
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Address>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Addresses/Addresses.cshtml
+mkdir Views/Credentials
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Credential>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Credentials/Credentials.cshtml
+mkdir Views/Categories
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Category>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Categories/Categories.cshtml
+mkdir Views/Products
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Product>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Products/Products.cshtml
+mkdir Views/Forms
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Form>\n\n<h2>For@ViewData[\"Title\"]ms</h2>" > Views/Forms/Forms.cshtml
+mkdir Views/Invoices
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Invoice>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Invoices/Invoices.cshtml
 ```
