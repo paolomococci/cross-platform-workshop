@@ -27,4 +27,29 @@ public class CustomersController : Controller
     };
     this.httpClient = new HttpClient(httpClientHandler);
   }
+
+  public async Task<IActionResult> Customers(string? name)
+  {
+    string apiUri = "";
+    if (string.IsNullOrEmpty(name))
+    {
+      ViewData["Title"] = "All Customers";
+      apiUri = $"{baseUri}";
+    }
+    else
+    {
+      ViewData["Title"] = $"Customers with the name equal to {name}";
+      apiUri = $"{baseUri}/?name={name}";
+    }
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Customer>? customers = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Customer>>();
+    return View(customers);
+  }
 }
