@@ -27,4 +27,29 @@ public class AddressesController : Controller
     };
     this.httpClient = new HttpClient(httpClientHandler);
   }
+
+  public async Task<IActionResult> Addresses(string? country)
+  {
+    string apiUri = "";
+    if (string.IsNullOrEmpty(country))
+    {
+      ViewData["Title"] = "All Addresses";
+      apiUri = $"{baseUri}";
+    }
+    else
+    {
+      ViewData["Title"] = $"Addresses with the country name equal to {country}";
+      apiUri = $"{baseUri}/?country={country}";
+    }
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Address>? addresses = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Address>>();
+    return View(addresses);
+  }
 }
