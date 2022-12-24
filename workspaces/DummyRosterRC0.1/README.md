@@ -264,25 +264,25 @@ echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controller
 
 ```shell
 mkdir Views/Employees
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employee>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Employees/Employees.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Employee>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Employees/Employees.cshtml
 mkdir Views/Customers
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Customers/Customers.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Customer>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Customers/Customers.cshtml
 mkdir Views/Suppliers
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Supplier>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Suppliers/Suppliers.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Supplier>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Suppliers/Suppliers.cshtml
 mkdir Views/Carriers
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Carrier>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Carriers/Carriers.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Carrier>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Carriers/Carriers.cshtml
 mkdir Views/Addresses
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Address>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Addresses/Addresses.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Address>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Addresses/Addresses.cshtml
 mkdir Views/Credentials
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Credential>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Credentials/Credentials.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Credential>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Credentials/Credentials.cshtml
 mkdir Views/Categories
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Category>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Categories/Categories.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Category>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Categories/Categories.cshtml
 mkdir Views/Products
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Product>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Products/Products.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Product>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Products/Products.cshtml
 mkdir Views/Forms
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Form>\n\n<h2>For@ViewData[\"Title\"]ms</h2>" > Views/Forms/Forms.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Form>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Forms/Forms.cshtml
 mkdir Views/Invoices
-echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Invoice>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Invoices/Invoices.cshtml
+echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Invoice>\n\n<h1 class="display-4">@ViewData["Title"]</h1>" > Views/Invoices/Invoices.cshtml
 ```
 
 ### Note, in file launchSettings.json:
