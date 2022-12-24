@@ -27,4 +27,29 @@ public class CarriersController : Controller
     };
     this.httpClient = new HttpClient(httpClientHandler);
   }
+
+  public async Task<IActionResult> Carriers(string? name)
+  {
+    string apiUri = "";
+    if (string.IsNullOrEmpty(name))
+    {
+      ViewData["Title"] = "All Carriers";
+      apiUri = $"{baseUri}";
+    }
+    else
+    {
+      ViewData["Title"] = $"Carriers with the name equal to {name}";
+      apiUri = $"{baseUri}/?name={name}";
+    }
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Carrier>? carriers = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Carrier>>();
+    return View(carriers);
+  }
 }
