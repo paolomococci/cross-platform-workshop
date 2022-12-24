@@ -27,4 +27,29 @@ public class InvoicesController : Controller
     };
     this.httpClient = new HttpClient(httpClientHandler);
   }
+
+  public async Task<IActionResult> Invoices(int? formId)
+  {
+    string apiUri = "";
+    if (string.IsNullOrEmpty(formId.ToString()))
+    {
+      ViewData["Title"] = "All Invoices";
+      apiUri = $"{baseUri}";
+    }
+    else
+    {
+      ViewData["Title"] = $"Invoices with the form id {formId}";
+      apiUri = $"{baseUri}/?formId={formId.ToString()}";
+    }
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Invoice>? invoices = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Invoice>>();
+    return View(invoices);
+  }
 }
