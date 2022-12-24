@@ -5,6 +5,8 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[ApiController]
+[Route("api/customers")]
 public class CustomerController : ControllerBase, ICustomerController
 {
 
