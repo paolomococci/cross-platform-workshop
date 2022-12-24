@@ -5,6 +5,8 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[ApiController]
+[Route("api/forms")]
 public class FormController : ControllerBase, IFormController
 {
 
