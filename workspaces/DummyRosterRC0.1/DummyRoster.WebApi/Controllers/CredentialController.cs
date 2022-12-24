@@ -5,6 +5,8 @@ using DummyRoster.WebApi.Repositories.Interfaces;
 
 namespace DummyRoster.WebApi.Controllers;
 
+[ApiController]
+[Route("api/credentials")]
 public class CredentialController : ControllerBase, ICredentialController
 {
 
