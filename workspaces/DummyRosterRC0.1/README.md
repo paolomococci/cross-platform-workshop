@@ -243,6 +243,15 @@ dotnet add ./DummyRoster.Mvc.csproj reference ../DummyRoster.Common.EntityModel/
 
 ```shell
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class EmployeesController : Controller {}" > Controllers/EmployeesController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class CustomersController : Controller {}" > Controllers/CustomersController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class SuppliersController : Controller {}" > Controllers/SuppliersController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class CarriersController : Controller {}" > Controllers/CarriersController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class AddressesController : Controller {}" > Controllers/AddressesController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class CredentialsController : Controller {}" > Controllers/CredentialsController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class CategoriesController : Controller {}" > Controllers/CategoriesController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class ProductsController : Controller {}" > Controllers/ProductsController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class FormsController : Controller {}" > Controllers/FormsController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class InvoicesController : Controller {}" > Controllers/InvoicesController.cs
 ```
 
 ### From the DummyRoster.Mvc directory I add the following Razor files:
