@@ -284,3 +284,21 @@ echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Form>\
 mkdir Views/Invoices
 echo -e "@using DummyRoster.Common.EntityModel.Models\n@model IEnumerable<Invoice>\n\n<h2>@ViewData[\"Title\"]</h2>" > Views/Invoices/Invoices.cshtml
 ```
+
+### Note, in file launchSettings.json:
+
+```text
+...
+
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5011",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+...
+```
