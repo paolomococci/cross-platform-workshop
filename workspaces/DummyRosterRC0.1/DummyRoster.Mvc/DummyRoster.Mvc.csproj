@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-DummyRoster.Mvc-365bb941-7051-46a2-a800-aa56d11b9866</UserSecretsId>
+    <NoWarn>8600</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
