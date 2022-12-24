@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.Mvc.Controllers;
 
-public class RolesController : Controller {
+public class RolesController : Controller
+{
   private readonly IConfiguration configuration;
   private readonly RoleManager<IdentityRole> roleManager;
   private readonly UserManager<IdentityUser> userManager;
