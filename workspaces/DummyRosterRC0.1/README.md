@@ -252,6 +252,7 @@ echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controller
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class ProductsController : Controller {}" > Controllers/ProductsController.cs
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class FormsController : Controller {}" > Controllers/FormsController.cs
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class InvoicesController : Controller {}" > Controllers/InvoicesController.cs
+echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class RolesController : Controller {}" > Controllers/RolesController.cs
 ```
 
 ### From the DummyRoster.Mvc directory I add the following Razor files:
