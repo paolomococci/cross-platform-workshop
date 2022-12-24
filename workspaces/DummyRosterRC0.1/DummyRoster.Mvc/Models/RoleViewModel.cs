@@ -1,3 +1,7 @@
 namespace DummyRoster.Mvc.Models;
 
-public class RoleViewModel {}
+public class RoleViewModel {
+  public string Role { get; set; } = string.Empty;
+  public string Email { get; set; } = string.Empty;
+  public string Password { get; set; } = string.Empty;
+}
