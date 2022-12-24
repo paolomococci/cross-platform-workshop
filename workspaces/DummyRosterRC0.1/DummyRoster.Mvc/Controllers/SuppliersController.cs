@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DummyRoster.Mvc.Controllers;
 
-public class SuppliersController : Controller {
+public class SuppliersController : Controller
+{
   private const string baseUri = "https://localhost:5001/api/addresses";
   private readonly ILogger<SuppliersController> _logger;
   private readonly HttpClient httpClient;
