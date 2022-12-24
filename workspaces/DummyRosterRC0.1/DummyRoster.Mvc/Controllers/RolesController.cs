@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using DummyRoster.Mvc.Models;
 
 namespace DummyRoster.Mvc.Controllers;
 
@@ -8,6 +9,7 @@ public class RolesController : Controller
   private readonly IConfiguration configuration;
   private readonly RoleManager<IdentityRole> roleManager;
   private readonly UserManager<IdentityUser> userManager;
+  private RoleViewModel role = new();
 
   public RolesController(
     IConfiguration configuration,
