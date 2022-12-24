@@ -27,4 +27,29 @@ public class CategoriesController : Controller
     };
     this.httpClient = new HttpClient(httpClientHandler);
   }
+
+  public async Task<IActionResult> Categories(string? name)
+  {
+    string apiUri = "";
+    if (string.IsNullOrEmpty(name))
+    {
+      ViewData["Title"] = "All Categories";
+      apiUri = $"{baseUri}";
+    }
+    else
+    {
+      ViewData["Title"] = $"Categories with the name equal to {name}";
+      apiUri = $"{baseUri}/?name={name}";
+    }
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Category>? categories = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Category>>();
+    return View(categories);
+  }
 }
