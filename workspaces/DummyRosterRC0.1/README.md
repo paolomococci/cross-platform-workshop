@@ -239,7 +239,7 @@ From now on, with the right credentials, access will be allowed.
 dotnet add ./DummyRoster.Mvc.csproj reference ../DummyRoster.Common.EntityModel/DummyRoster.Common.EntityModel.csproj
 ```
 
-### From the DummyRoster.Mvc directory I add a controller for each entity to display:
+### From the DummyRoster.Mvc directory I add a controllers for each entity to display:
 
 ```shell
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class EmployeesController : Controller {}" > Controllers/EmployeesController.cs
@@ -252,6 +252,11 @@ echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controller
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class ProductsController : Controller {}" > Controllers/ProductsController.cs
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class FormsController : Controller {}" > Controllers/FormsController.cs
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class InvoicesController : Controller {}" > Controllers/InvoicesController.cs
+```
+
+### From the DummyRoster.Mvc directory I add a controller to manage the different roles:
+
+```shell
 echo -e "using Microsoft.AspNetCore.Mvc;\n\nnamespace DummyRoster.Mvc.Controllers;\n\npublic class RolesController : Controller {}" > Controllers/RolesController.cs
 ```
 
