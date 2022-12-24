@@ -27,4 +27,29 @@ public class CredentialsController : Controller
     };
     this.httpClient = new HttpClient(httpClientHandler);
   }
+
+  public async Task<IActionResult> Credentials(string? email)
+  {
+    string apiUri = "";
+    if (string.IsNullOrEmpty(email))
+    {
+      ViewData["Title"] = "All Credentials";
+      apiUri = $"{baseUri}";
+    }
+    else
+    {
+      ViewData["Title"] = $"Credentials with the email equal to {email}";
+      apiUri = $"{baseUri}/?email={email}";
+    }
+    HttpRequestMessage httpRequestMessage = new(
+      method: HttpMethod.Get,
+      requestUri: apiUri
+    );
+    HttpResponseMessage httpResponseMessage = await this.httpClient.SendAsync(
+      httpRequestMessage
+    );
+    IEnumerable<Credential>? credentials = await httpResponseMessage
+      .Content.ReadFromJsonAsync<IEnumerable<Credential>>();
+    return View(credentials);
+  }
 }
