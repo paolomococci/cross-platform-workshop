@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Mvc.Controllers;
 
