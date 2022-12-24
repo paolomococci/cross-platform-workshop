@@ -25,9 +25,9 @@ public class RolesController : Controller
   {
     try
     {
-      string adminRole = this.configuration["UserAdmin:role"] ?? "";
-      string adminEmail = this.configuration["UserAdmin:email"] ?? "";
-      string adminPassword = this.configuration["UserAdmin:password"] ?? "";
+      string adminRole = this.configuration["UserAdmin:role"] ?? string.Empty;
+      string adminEmail = this.configuration["UserAdmin:email"] ?? string.Empty;
+      string adminPassword = this.configuration["UserAdmin:password"] ?? string.Empty;
       if (!(await this.roleManager.RoleExistsAsync(adminRole)))
     {
       await this.roleManager.CreateAsync(
