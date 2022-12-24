@@ -22,87 +22,93 @@ public class RolesController : Controller
 
   public async Task<IActionResult> Index()
   {
-    if (!(await this.roleManager.RoleExistsAsync(this.configuration["UserAdmin:role"])))
+    try
     {
-      await this.roleManager.CreateAsync(
-        new IdentityRole(this.configuration["UserAdmin:role"])
-      );
-    }
-    IdentityUser identityUser = await this.userManager.FindByEmailAsync(
-      this.configuration["UserAdmin:email"]
-    );
-    if (identityUser is null)
-    {
-      identityUser = new();
-      identityUser.UserName = this.configuration["UserAdmin:email"];
-      identityUser.Email = this.configuration["UserAdmin:email"];
-      IdentityResult identityResult = await this.userManager.CreateAsync(
-        identityUser,
-        this.configuration["UserAdmin:password"]
-      );
-      if (identityResult.Succeeded)
+      if (!(await this.roleManager.RoleExistsAsync(this.configuration["UserAdmin:role"] ?? "")))
       {
-        Console.WriteLine(
-          $"User: {identityUser.UserName} just successfully created!"
+        await this.roleManager.CreateAsync(
+          new IdentityRole(this.configuration["UserAdmin:role"] ?? "")
         );
       }
-      else
+      IdentityUser identityUser = await this.userManager.FindByEmailAsync(this.configuration["UserAdmin:email"] ?? string.Empty);
+      if (identityUser is null)
       {
-        foreach (IdentityError error in identityResult.Errors)
-        {
-          Console.WriteLine(
-            $"Error: {error.Description}"
-          );
-        }
-      }
-    }
-    if (!identityUser.EmailConfirmed)
-    {
-      string token = await this.userManager.GenerateEmailConfirmationTokenAsync(
-        identityUser
-      );
-      IdentityResult identityResult = await this.userManager.ConfirmEmailAsync(
-        identityUser,
-        token
-      );
-      if (identityResult.Succeeded)
-      {
-        Console.WriteLine(
-          $"User: email belonging to {identityUser.UserName} successfully confirmed!"
+        identityUser = new();
+        identityUser.UserName = this.configuration["UserAdmin:email"];
+        identityUser.Email = this.configuration["UserAdmin:email"];
+        IdentityResult identityResult = await this.userManager.CreateAsync(
+          identityUser,
+          this.configuration["UserAdmin:password"] ?? ""
         );
-      }
-      else
-      {
-        foreach (IdentityError error in identityResult.Errors)
+        if (identityResult.Succeeded)
         {
           Console.WriteLine(
-            $"Error: {error.Description}"
+            $"User: {identityUser.UserName} just successfully created!"
           );
         }
+        else
+        {
+          foreach (IdentityError error in identityResult.Errors)
+          {
+            Console.WriteLine(
+              $"Error: {error.Description}"
+            );
+          }
+        }
       }
-    }
-    if (!(await this.userManager.IsInRoleAsync(identityUser, this.configuration["UserAdmin:role"])))
-    {
-      IdentityResult identityResult = await this.userManager.AddToRoleAsync(
-        identityUser,
-        this.configuration["UserAdmin:role"]
-      );
-      if (identityResult.Succeeded)
+      if (!identityUser.EmailConfirmed)
       {
-        Console.WriteLine(
-          $"User: {identityUser.UserName} added as {this.configuration["UserAdmin:role"]} successfully."
+        string token = await this.userManager.GenerateEmailConfirmationTokenAsync(
+          identityUser
         );
-      }
-      else
-      {
-        foreach (IdentityError error in identityResult.Errors)
+        IdentityResult identityResult = await this.userManager.ConfirmEmailAsync(
+          identityUser,
+          token
+        );
+        if (identityResult.Succeeded)
         {
           Console.WriteLine(
-            $"Error: {error.Description}"
+            $"User: email belonging to {identityUser.UserName} successfully confirmed!"
           );
         }
+        else
+        {
+          foreach (IdentityError error in identityResult.Errors)
+          {
+            Console.WriteLine(
+              $"Error: {error.Description}"
+            );
+          }
+        }
       }
+      if (!(await this.userManager.IsInRoleAsync(identityUser, this.configuration["UserAdmin:role"] ?? "")))
+      {
+        IdentityResult identityResult = await this.userManager.AddToRoleAsync(
+          identityUser,
+          this.configuration["UserAdmin:role"] ?? ""
+        );
+        if (identityResult.Succeeded)
+        {
+          Console.WriteLine(
+            $"User: {identityUser.UserName} added as {this.configuration["UserAdmin:role"]} successfully."
+          );
+        }
+        else
+        {
+          foreach (IdentityError error in identityResult.Errors)
+          {
+            Console.WriteLine(
+              $"Error: {error.Description}"
+            );
+          }
+        }
+      }
+      return Redirect("/");
     }
-    return Redirect("/");
+    catch (System.Exception)
+    {
+
+      throw;
+    }
   }
 }
