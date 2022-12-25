@@ -28,6 +28,7 @@ public class InvoicesController : Controller
     this.httpClient = new HttpClient(httpClientHandler);
   }
 
+  [Route("Home/Invoices")]
   public async Task<IActionResult> Invoices(int? formId)
   {
     string apiUri = "";
