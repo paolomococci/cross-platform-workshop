@@ -28,6 +28,7 @@ public class ProductsController : Controller
     this.httpClient = new HttpClient(httpClientHandler);
   }
 
+  [Route("Home/Products")]
   public async Task<IActionResult> Products(string? name)
   {
     string apiUri = "";
