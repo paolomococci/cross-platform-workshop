@@ -28,6 +28,7 @@ public class CredentialsController : Controller
     this.httpClient = new HttpClient(httpClientHandler);
   }
 
+  [Route("Home/Credentials")]
   public async Task<IActionResult> Credentials(string? email)
   {
     string apiUri = "";
