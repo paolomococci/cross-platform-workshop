@@ -28,6 +28,7 @@ public class CategoriesController : Controller
     this.httpClient = new HttpClient(httpClientHandler);
   }
 
+  [Route("Home/Categories")]
   public async Task<IActionResult> Categories(string? name)
   {
     string apiUri = "";
