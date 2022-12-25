@@ -3,6 +3,8 @@ using DummyRoster.Common.EntityModel.Models;
 
 namespace DummyRoster.Mvc.Controllers;
 
+// https://localhost:8081/Home/Addresses?name=
+//[Route("")]
 public class AddressesController : Controller
 {
   private const string baseUri = "https://localhost:5001/api/addresses";
@@ -28,6 +30,7 @@ public class AddressesController : Controller
     this.httpClient = new HttpClient(httpClientHandler);
   }
 
+  [Route("Home/Addresses")]
   public async Task<IActionResult> Addresses(string? country)
   {
     string apiUri = "";
