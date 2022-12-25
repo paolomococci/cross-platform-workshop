@@ -28,6 +28,7 @@ public class CarriersController : Controller
     this.httpClient = new HttpClient(httpClientHandler);
   }
 
+  [Route("Home/Carriers")]
   public async Task<IActionResult> Carriers(string? name)
   {
     string apiUri = "";
