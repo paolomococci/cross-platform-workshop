@@ -3,7 +3,7 @@
 ## For example, values ​​can be generated pseudo-randomly with the following shell command:
 ### cat /dev/urandom | tr -dc 'A-Z' | fold -w 16 | head -n 1
 
-### I insert a dummy record
+### record number 1
 
 POST https://localhost:5001/api/suppliers HTTP/1.1
 Content-Type: application/json
@@ -16,7 +16,7 @@ Content-Length: 131
   "Belonging": "C"
 }
 
-### I insert another one
+### record number 2
 
 POST https://localhost:5001/api/suppliers HTTP/1.1
 Content-Type: application/json
@@ -29,7 +29,7 @@ Content-Length: 131
   "Belonging": "B"
 }
 
-### I insert another one
+### record number 3
 
 POST https://localhost:5001/api/suppliers HTTP/1.1
 Content-Type: application/json
