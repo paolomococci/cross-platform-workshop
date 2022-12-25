@@ -28,6 +28,7 @@ public class FormsController : Controller
     this.httpClient = new HttpClient(httpClientHandler);
   }
 
+  [Route("Home/Forms")]
   public async Task<IActionResult> Forms(int? customerId)
   {
     string apiUri = "";
