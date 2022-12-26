@@ -1,0 +1,197 @@
+﻿@{
+    ViewData["Title"] = "management system";
+}
+
+<h3 class="display-3">@ViewData["Title"]</h1>
+
+<!-- todo -->
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Employees</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Employees" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">name</span>
+                    <input class="form-control" name="name" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Customers</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Customers" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">name</span>
+                    <input class="form-control" name="name" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Suppliers</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Suppliers" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">name</span>
+                    <input class="form-control" name="name" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Carriers</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Carriers" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">name</span>
+                    <input class="form-control" name="name" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Addresses</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Addresses" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">country</span>
+                    <input class="form-control" name="country" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Credentials</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Credentials" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">email</span>
+                    <input class="form-control" name="email" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Categories</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Categories" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">name</span>
+                    <input class="form-control" name="name" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Products</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Products" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">name</span>
+                    <input class="form-control" name="name" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Forms</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Forms" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">customer Id</span>
+                    <input class="form-control" name="customerId" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="m-3 w-75">
+    <div class="card">
+        <h5 class="card-header">Query Invoices</h5>
+        <div class="card-body">
+            <h5 class="card-title">get data from API</h5>
+            <form asp-action="Invoices" method="get">
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">form id</span>
+                    <input class="form-control" name="formId" type="text">
+                </div>
+                <div class="input-group input-group-lg">
+                    <input class="btn btn-outline-primary" type="submit" value="Submit">
+                    <input class="btn btn-outline-secondary" type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
