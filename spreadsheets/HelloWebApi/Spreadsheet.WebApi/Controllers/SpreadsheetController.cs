@@ -1,7 +1,7 @@
+using ClosedXML.Excel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Spreadsheet.WebApi.Controllers;
-
 
 [ApiController]
 [Route("api/spreadsheets")]
@@ -13,8 +13,30 @@ public class SpreadsheetController : ControllerBase
    */
   [HttpGet("generated")]
   [ProducesResponseType(200)]
-  [ProducesResponseType(404)]
   public IActionResult Generate() {
-    return NotFound();
+    using (MemoryStream memoryStream = new MemoryStream()) {
+      var xlWorkbook = new XLWorkbook();
+      var sheetNames = new List<string>() {
+        "SheetOne", 
+        "SheetTwo", 
+        "SheetThree", 
+        "SheetFour", 
+        "SheetFive"
+      };
+      foreach (var sheetName in sheetNames) {
+        var xlWorksheet = xlWorkbook.Worksheets.Add(sheetName);
+        xlWorksheet.Cell("A1").Value = sheetName;
+      }
+      xlWorkbook.SaveAs(memoryStream);
+      memoryStream.Seek(
+        0, 
+        SeekOrigin.Begin
+      );
+      return this.File(
+        fileContents: memoryStream.ToArray(),
+        contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        fileDownloadName: "Generated.xlsx"
+      );
+    }
   }
 }
