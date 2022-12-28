@@ -13,23 +13,26 @@ public class SpreadsheetController : ControllerBase
    */
   [HttpGet("generated")]
   [ProducesResponseType(200)]
-  public IActionResult Generate() {
-    using (MemoryStream memoryStream = new MemoryStream()) {
+  public IActionResult Generate()
+  {
+    using (MemoryStream memoryStream = new MemoryStream())
+    {
       var xlWorkbook = new XLWorkbook();
       var sheetNames = new List<string>() {
-        "SheetOne", 
-        "SheetTwo", 
-        "SheetThree", 
-        "SheetFour", 
+        "SheetOne",
+        "SheetTwo",
+        "SheetThree",
+        "SheetFour",
         "SheetFive"
       };
-      foreach (var sheetName in sheetNames) {
+      foreach (var sheetName in sheetNames)
+      {
         var xlWorksheet = xlWorkbook.Worksheets.Add(sheetName);
         xlWorksheet.Cell("A1").Value = sheetName;
       }
       xlWorkbook.SaveAs(memoryStream);
       memoryStream.Seek(
-        0, 
+        0,
         SeekOrigin.Begin
       );
       return this.File(
