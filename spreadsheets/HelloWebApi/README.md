@@ -11,5 +11,6 @@ dotnet new gitignore
 dotnet new webapi -o Spreadsheet.WebApi
 cd Spreadsheet.WebApi
 dotnet add package ClosedXML --version 0.97.0
+echo -e "namespace Spreadsheet.WebApi.Controllers;\n\npublic class SpreadsheetController {}" > Controllers/SpreadsheetController.cs
 dotnet run
 ```
