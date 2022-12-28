@@ -7,5 +7,14 @@ namespace Spreadsheet.WebApi.Controllers;
 [Route("api/spreadsheets")]
 public class SpreadsheetController : ControllerBase
 {
-  // todo
+
+  /* 
+    GET: api/spreadsheets/generated
+   */
+  [HttpGet("generated")]
+  [ProducesResponseType(200)]
+  [ProducesResponseType(404)]
+  public IActionResult Generate() {
+    return NotFound();
+  }
 }
