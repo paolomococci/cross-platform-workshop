@@ -1,3 +1,11 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace Spreadsheet.WebApi.Controllers;
 
-public class SpreadsheetController {}
+
+[ApiController]
+[Route("api/spreadsheets")]
+public class SpreadsheetController : ControllerBase
+{
+  // todo
+}
