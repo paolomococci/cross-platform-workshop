@@ -1,5 +1,7 @@
 # Hello
 
+This trace is useful if you want to process spreadsheets locally.
+
 ## Scaffolding
 
 ```shell
