@@ -1,5 +1,7 @@
 # HelloWeb
 
+This trace is useful if you want to process and distribute spreadsheets thanks to the web.
+
 ## Scaffolding
 
 ```shell
