@@ -5,7 +5,7 @@ string basePath = "../spreadsheets/";
 
 XLWorkbook xlWorkbook = new XLWorkbook();
 
-xlWorkbook.Worksheets.Add("Hello").Cell("A1").SetValue<string>("Hello World");
+xlWorkbook.Worksheets.Add("Hello").Cell("A1").SetValue<string>("Hello World!");
 
 /* save the workbook */
 xlWorkbook.SaveAs($"{basePath}Hello.xlsx");
