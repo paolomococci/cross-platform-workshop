@@ -7,8 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 app.MapGet(
-  "/", 
-  () => {
+  "/",
+  () =>
+  {
     return xlWorkbook.Worksheets.Worksheet("Hello").Cell("A1").GetValue<string>();
   }
 );
