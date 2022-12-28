@@ -477,6 +477,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # furthermore
+.vscode/
 Properties/
 appsettings.Development.json
 appsettings.json
