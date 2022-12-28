@@ -1,6 +1,6 @@
 # HelloWeb
 
-This trace is useful if you want to process and distribute spreadsheets thanks to the web.
+This trace is useful if you want to process and return the data contained in a spreadsheet thanks to the web.
 
 ## Scaffolding
 
