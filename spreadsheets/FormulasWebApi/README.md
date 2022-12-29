@@ -11,6 +11,8 @@ dotnet new gitignore
 dotnet new webapi -o Spreadsheet.WebApi
 cd Spreadsheet.WebApi
 dotnet add package ClosedXML --version 0.97.0
+mkdir Templates
 echo -e "namespace Spreadsheet.WebApi.Controllers;\n\npublic class SpreadsheetController {}" > Controllers/SpreadsheetController.cs
+echo -e "namespace Spreadsheet.WebApi.Templates;\n\npublic class AdjuvantTemplate {}" > Templates/AdjuvantTemplate.cs
 dotnet run
 ```
