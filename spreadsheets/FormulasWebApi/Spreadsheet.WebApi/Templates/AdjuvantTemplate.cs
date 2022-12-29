@@ -22,7 +22,7 @@ public class AdjuvantTemplate
     }
 
     /* adds data and formulas to a specific spreadsheet */
-    var sheet1 = xlWorkbook.Worksheet(1);
+    var sheet1 = xlWorkbook.Worksheet("Sheet1");
     sheet1.Cell("B1").SetValue("Values");
     sheet1.Cell("B2").SetValue(4.55);
     sheet1.Cell("B3").SetValue(2.55);
