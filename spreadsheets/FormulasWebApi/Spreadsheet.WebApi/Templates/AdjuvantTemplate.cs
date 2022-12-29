@@ -6,17 +6,24 @@ public class AdjuvantTemplate
 {
   public static byte[] Perform(MemoryStream memoryStream)
   {
+    /* generate the workbook */
     XLWorkbook xlWorkbook = new XLWorkbook();
+
+    /* adds three spreadsheets */
     List<string> sheetNames = new List<string>() {
         "Sheet1",
         "Sheet2",
         "Sheet3"
       };
-    foreach (var sheetName in sheetNames)
+    foreach (XLWorksheet sheetName in sheetNames)
     {
-      var xlWorksheet = xlWorkbook.Worksheets.Add(sheetName);
+      XLWorksheet xlWorksheet = xlWorkbook.Worksheets.Add(sheetName);
       xlWorksheet.Cell("A1").Value = sheetName;
     }
+
+    /* adds data and formulas to a specific spreadsheet */
+    
+
     xlWorkbook.SaveAs(memoryStream);
     memoryStream.Seek(
       0,
