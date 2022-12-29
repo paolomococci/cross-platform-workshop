@@ -1,3 +1,6 @@
 namespace Spreadsheet.WebApi.Templates;
 
-public class AdjuvantTemplate {}
+public class AdjuvantTemplate {
+
+  public void Perform() {}
+}
