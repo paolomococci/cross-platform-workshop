@@ -1,0 +1,5 @@
+# spreadsheet endpoint tests
+
+### get
+
+GET http://localhost:5000/api/spreadsheets/generated HTTP/1.1
