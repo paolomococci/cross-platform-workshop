@@ -7,7 +7,6 @@ namespace Spreadsheet.WebApi.Controllers;
 [Route("api/spreadsheets")]
 public class SpreadsheetController : ControllerBase
 {
-
   /* 
     GET: api/spreadsheets/generated
    */
