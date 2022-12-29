@@ -21,7 +21,7 @@ public class SpreadsheetController : ControllerBase
       return this.File(
         fileContents: AdjuvantTemplate.Perform(memoryStream),
         contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        fileDownloadName: "Generated.xlsx"
+        fileDownloadName: "Formulas.xlsx"
       );
     }
   }
