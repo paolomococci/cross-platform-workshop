@@ -1,4 +1,3 @@
-using ClosedXML.Excel;
 using Microsoft.AspNetCore.Mvc;
 using Spreadsheet.WebApi.Templates;
 
