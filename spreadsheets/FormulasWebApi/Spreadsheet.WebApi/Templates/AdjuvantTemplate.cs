@@ -32,6 +32,19 @@ public class AdjuvantTemplate
     sheet1.Cell("A7").SetValue("Average");
     sheet1.Cell("B6").FormulaA1 = "SUM(B2:B5)";
     sheet1.Cell("B7").FormulaA1 = "AVERAGE(B2:B5)";
+    /* performs calculations programmatically */
+    decimal[] decimalNumbers = new decimal[4];
+    decimalNumbers[0] = sheet1.Cell("B2").GetValue<decimal>();
+    decimalNumbers[1] = sheet1.Cell("B3").GetValue<decimal>();
+    decimalNumbers[2] = sheet1.Cell("B4").GetValue<decimal>();
+    decimalNumbers[3] = sheet1.Cell("B5").GetValue<decimal>();
+
+    sheet1.Cell("B12").SetValue(
+      (decimalNumbers[0] + decimalNumbers[1] + decimalNumbers[2] + decimalNumbers[3])
+    );
+    sheet1.Cell("B13").SetValue(
+      (decimalNumbers[0] + decimalNumbers[1] + decimalNumbers[2] + decimalNumbers[3]) / decimalNumbers.Length
+    );
 
     /* pack it all up */
     xlWorkbook.SaveAs(memoryStream);
