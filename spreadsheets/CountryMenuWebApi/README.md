@@ -16,5 +16,6 @@ echo -e "namespace Spreadsheet.WebApi.Controllers;\n\npublic class SpreadsheetCo
 echo -e "namespace Spreadsheet.WebApi.Templates;\n\npublic class AdjuvantTemplate {}" > Templates/AdjuvantTemplate.cs
 echo -e "namespace Spreadsheet.WebApi.Templates;\n\npublic class RetrieverTemplate {}" > Templates/RetrieverTemplate.cs
 mkdir Models
+echo -e "namespace Spreadsheet.WebApi.Models;\n\npublic class MenuModel {}" > Models/MenuModel.cs
 dotnet run
 ```
