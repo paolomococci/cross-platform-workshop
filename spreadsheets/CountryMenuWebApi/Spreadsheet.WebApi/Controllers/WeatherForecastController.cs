@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Spreadsheet.WebApi.Models;
 
 namespace Spreadsheet.WebApi.Controllers;
 
