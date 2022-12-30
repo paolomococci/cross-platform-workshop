@@ -15,5 +15,6 @@ mkdir Templates
 echo -e "namespace Spreadsheet.WebApi.Controllers;\n\npublic class SpreadsheetController {}" > Controllers/SpreadsheetController.cs
 echo -e "namespace Spreadsheet.WebApi.Templates;\n\npublic class AdjuvantTemplate {}" > Templates/AdjuvantTemplate.cs
 echo -e "namespace Spreadsheet.WebApi.Templates;\n\npublic class RetrieverTemplate {}" > Templates/RetrieverTemplate.cs
+mkdir Models
 dotnet run
 ```
