@@ -5,4 +5,5 @@ public class OrderModel {
   public int TableId { get; set; }
   public int MenuId { get; set; }
   public int NumberOfServings { get; set; }
+  public decimal PartialAccount { get; set; }
 }
