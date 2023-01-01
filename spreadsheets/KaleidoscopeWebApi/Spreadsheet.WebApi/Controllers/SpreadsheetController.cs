@@ -19,11 +19,7 @@ public class SpreadsheetController : ControllerBase
     {
       var xlWorkbook = new XLWorkbook();
       var sheetNames = new List<string>() {
-        "SheetOne",
-        "SheetTwo",
-        "SheetThree",
-        "SheetFour",
-        "SheetFive"
+        "Sample"
       };
       foreach (var sheetName in sheetNames)
       {
