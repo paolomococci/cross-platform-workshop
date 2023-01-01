@@ -1,3 +1,5 @@
 namespace Spreadsheet.WebApi.Sheet.Templates;
 
-public class DatatypeSheetTemplate {}
+public class DatatypeSheetTemplate {
+  internal static void Transcribe() {}
+}
