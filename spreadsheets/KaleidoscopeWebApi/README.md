@@ -1,6 +1,7 @@
 # KaleidoscopeWebApi
 
 This trace is useful if you want to process and distribute spreadsheets thanks to the web.
+In particular, it is an example of transcription of data of different types, in a collection of spreadsheets, which took place in a programmatic way.
 
 ## Scaffolding
 
