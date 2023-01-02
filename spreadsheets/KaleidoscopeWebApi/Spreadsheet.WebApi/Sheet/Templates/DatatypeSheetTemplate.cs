@@ -38,7 +38,7 @@ public class DatatypeSheetTemplate
     datatypeSheet.Cell(++row, (column + 1)).SetValue<TimeSpan>(new TimeSpan(1, 30, 30));
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Set Hyperlinks:");
-    datatypeSheet.Cell(row, (column + 1)).SetHyperlink(new XLHyperlink("http://127.0.0.1:8080"));
-    datatypeSheet.Cell(++row, (column + 1)).SetHyperlink(new XLHyperlink("http://127.0.0.1:8081"));
+    datatypeSheet.Cell(row, (column + 1)).SetHyperlink(new XLHyperlink(@"http://127.0.0.1:8080"));
+    datatypeSheet.Cell(++row, (column + 1)).SetHyperlink(new XLHyperlink(@"http://127.0.0.1:8081"));
   }
 }
