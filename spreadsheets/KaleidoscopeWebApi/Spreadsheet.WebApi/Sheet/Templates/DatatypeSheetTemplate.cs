@@ -34,7 +34,7 @@ public class DatatypeSheetTemplate
     datatypeSheet.Cell(++row, (column + 1)).SetValue<decimal>(10.25m);
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of time span:");
-    datatypeSheet.Cell(row, (column + 1)).SetValue<TimeSpan>(new TimeSpan(1000));
+    datatypeSheet.Cell(row, (column + 1)).SetValue<TimeSpan>(new TimeSpan(0, 15, 0));
     datatypeSheet.Cell(++row, (column + 1)).SetValue<TimeSpan>(new TimeSpan(1, 30, 30));
   }
 }
