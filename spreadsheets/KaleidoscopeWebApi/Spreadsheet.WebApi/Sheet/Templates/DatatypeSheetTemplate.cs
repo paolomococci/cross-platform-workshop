@@ -29,6 +29,8 @@ public class DatatypeSheetTemplate
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of numeric values:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<int>(10);
+    datatypeSheet.Cell(++row, (column + 1)).SetValue<double>(10.25);
+    datatypeSheet.Cell(++row, (column + 1)).SetValue<decimal>((decimal)10.25);
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of time span:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<TimeSpan>(new TimeSpan(1000));
