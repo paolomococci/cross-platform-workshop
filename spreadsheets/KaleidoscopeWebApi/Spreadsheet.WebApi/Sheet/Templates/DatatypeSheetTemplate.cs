@@ -25,6 +25,7 @@ public class DatatypeSheetTemplate
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of Boolean values:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<bool>(true);
+    datatypeSheet.Cell(++row, (column + 1)).SetValue<bool>(false);
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of numeric values:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<int>(10);
