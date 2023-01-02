@@ -14,8 +14,18 @@ public class PinnedSheetTemplate
       true,
       new DateTime(2010, 1, 1)
     ));
-    items.Add(new ItemModel());
-    items.Add(new ItemModel());
+    items.Add(new ItemModel(
+      "10111121",
+      230,
+      false,
+      new DateTime(2010, 1, 1)
+    ));
+    items.Add(new ItemModel(
+      "10111131",
+      510,
+      true,
+      new DateTime(2010, 1, 1)
+    ));
     items.Add(new ItemModel());
     items.Add(new ItemModel());
     items.Add(new ItemModel());
