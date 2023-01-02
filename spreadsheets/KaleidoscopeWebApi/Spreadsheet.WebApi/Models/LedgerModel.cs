@@ -23,6 +23,7 @@ public class LedgerModel
     }
 
     FormulaSheetTemplate.Transcribe(ledger);
+    DatatypeSheetTemplate.Transcribe(ledger);
 
     /* pack it all up */
     ledger.SaveAs(memoryStream);
