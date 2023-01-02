@@ -21,6 +21,7 @@ public class DatatypeSheetTemplate
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of date and time:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<DateTime>(new DateTime(2023, 1, 2, 2, 0, 0));
+    datatypeSheet.Cell(++row, (column + 1)).SetValue<DateTime>(new DateTime(2023, 1, 2, 3, 0, 0));
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of Boolean values:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<bool>(true);
