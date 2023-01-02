@@ -98,5 +98,7 @@ public class PinnedSheetTemplate
       false,
       new DateTime(2010, 3, 1)
     ));
+
+    var pinnedSheet = xLWorkbook.Worksheet("PinnedSheet");
   }
 }
