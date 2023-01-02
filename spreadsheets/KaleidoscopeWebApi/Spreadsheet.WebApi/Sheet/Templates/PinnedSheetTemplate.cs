@@ -100,10 +100,6 @@ public class PinnedSheetTemplate
     ));
 
     var pinnedSheet = xLWorkbook.Worksheet("PinnedSheet");
-    var pivotTable = pinnedSheet.Cell(2, 2).InsertTable(
-      items,
-      "PinnedSheet",
-      true
-    );
+    // todo
   }
 }
