@@ -13,14 +13,14 @@ public class DatatypeSheetTemplate
 
     datatypeSheet.Cell(row, column).SetValue<string>("Simple text examples:");
 
-    datatypeSheet.Cell(row, column).SetValue<string>("Date examples:");
+    datatypeSheet.Cell(++row, column).SetValue<string>("Date examples:");
 
-    datatypeSheet.Cell(row, column).SetValue<string>("Examples of date and time:");
+    datatypeSheet.Cell(++row, column).SetValue<string>("Examples of date and time:");
 
-    datatypeSheet.Cell(row, column).SetValue<string>("Examples of Boolean values:");
+    datatypeSheet.Cell(++row, column).SetValue<string>("Examples of Boolean values:");
 
-    datatypeSheet.Cell(row, column).SetValue<string>("Examples of numeric values:");
+    datatypeSheet.Cell(++row, column).SetValue<string>("Examples of numeric values:");
 
-    datatypeSheet.Cell(row, column).SetValue<string>("Examples of time span:");
+    datatypeSheet.Cell(++row, column).SetValue<string>("Examples of time span:");
   }
 }
