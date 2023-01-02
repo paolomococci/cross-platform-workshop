@@ -21,4 +21,14 @@ public class ItemModel
     this.Name = Name;
     this.Orders = Orders;
   }
+
+  public ItemModel(
+    string Name,
+    int Orders,
+    string Quarter
+  ) {
+    this.Name = Name;
+    this.Orders = Orders;
+    this.Quarter = Quarter;
+  }
 }
