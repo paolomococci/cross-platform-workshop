@@ -35,4 +35,17 @@ public class ItemModel
     this.Orders = Orders;
     this.Quarter = Quarter;
   }
+
+  public ItemModel(
+    string Name,
+    int Orders,
+    string Quarter,
+    string Year
+  )
+  {
+    this.Name = Name;
+    this.Orders = Orders;
+    this.Quarter = Quarter;
+    this.Year = Year;
+  }
 }
