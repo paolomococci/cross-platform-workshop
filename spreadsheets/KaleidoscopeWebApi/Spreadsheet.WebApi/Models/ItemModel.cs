@@ -4,7 +4,7 @@ public class ItemModel
 {
   public string Code { get; set; } = string.Empty;
   public int Orders { get; set; }
-  public string Quarter { get; set; } = string.Empty;
+  public bool Delivered { get; set; } = false;
   public string Year { get; set; } = string.Empty;
 
   public ItemModel() { }
@@ -28,24 +28,24 @@ public class ItemModel
   public ItemModel(
     string Code,
     int Orders,
-    string Quarter
+    bool Delivered
   )
   {
     this.Code = Code;
     this.Orders = Orders;
-    this.Quarter = Quarter;
+    this.Delivered = Delivered;
   }
 
   public ItemModel(
     string Code,
     int Orders,
-    string Quarter,
+    bool Delivered,
     string Year
   )
   {
     this.Code = Code;
     this.Orders = Orders;
-    this.Quarter = Quarter;
+    this.Delivered = Delivered;
     this.Year = Year;
   }
 }
