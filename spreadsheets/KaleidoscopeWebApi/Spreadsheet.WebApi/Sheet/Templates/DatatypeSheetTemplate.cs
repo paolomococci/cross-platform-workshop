@@ -13,6 +13,7 @@ public class DatatypeSheetTemplate
 
     datatypeSheet.Cell(row, column).SetValue<string>("Simple text examples:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<string>("Hello everyone!");
+    datatypeSheet.Cell(++row, (column + 1)).SetValue<string>("Happy New Year.");
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Date examples:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<DateTime>(new DateTime(2023, 1, 2));
