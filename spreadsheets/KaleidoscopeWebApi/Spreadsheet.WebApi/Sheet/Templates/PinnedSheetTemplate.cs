@@ -44,9 +44,29 @@ public class PinnedSheetTemplate
       true,
       new DateTime(2010, 1, 1)
     ));
-    items.Add(new ItemModel());
-    items.Add(new ItemModel());
-    items.Add(new ItemModel());
-    items.Add(new ItemModel());
+    items.Add(new ItemModel(
+      "10911113",
+      105,
+      true,
+      new DateTime(2010, 1, 1)
+    ));
+    items.Add(new ItemModel(
+      "10111217",
+      206,
+      false,
+      new DateTime(2010, 1, 1)
+    ));
+    items.Add(new ItemModel(
+      "10133311",
+      451,
+      true,
+      new DateTime(2010, 1, 1)
+    ));
+    items.Add(new ItemModel(
+      "10132211",
+      305,
+      false,
+      new DateTime(2010, 1, 1)
+    ));
   }
 }
