@@ -15,6 +15,7 @@ dotnet add package ClosedXML --version 0.97.0
 echo -e "namespace Spreadsheet.WebApi.Controllers;\n\npublic class LedgerController {}" > Controllers/LedgerController.cs
 mkdir Models
 echo -e "namespace Spreadsheet.WebApi.Models;\n\npublic class LedgerModel {}" > Models/LedgerModel.cs
+echo -e "namespace Spreadsheet.WebApi.Models;\n\npublic class ItemModel {}" > Models/ItemModel.cs
 mkdir Sheet
 mkdir Sheet/Templates
 echo -e "namespace Spreadsheet.WebApi.Sheet.Templates;\n\npublic class FormulaSheetTemplate {}" > Sheet/Templates/FormulaSheetTemplate.cs
