@@ -16,7 +16,8 @@ public class DatatypeSheetTemplate
     datatypeSheet.Cell(++row, (column + 1)).SetValue<string>("Happy New Year.");
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Date examples:");
-    datatypeSheet.Cell(row, (column + 1)).SetValue<DateTime>(new DateTime(2023, 1, 2));
+    datatypeSheet.Cell(row, (column + 1)).SetValue<DateTime>(new DateTime(2023, 1, 1));
+    datatypeSheet.Cell(++row, (column + 1)).SetValue<DateTime>(new DateTime(2023, 1, 2));
 
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of date and time:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<DateTime>(new DateTime(2023, 1, 2, 2, 0, 0));
