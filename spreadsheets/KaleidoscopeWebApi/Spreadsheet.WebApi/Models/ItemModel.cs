@@ -13,4 +13,12 @@ public class ItemModel
   ) {
     this.Name = Name;
   }
+
+  public ItemModel(
+    string Name,
+    int Orders
+  ) {
+    this.Name = Name;
+    this.Orders = Orders;
+  }
 }
