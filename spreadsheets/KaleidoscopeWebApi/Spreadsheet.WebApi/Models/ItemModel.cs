@@ -5,7 +5,7 @@ public class ItemModel
   public string Code { get; set; } = string.Empty;
   public int Orders { get; set; }
   public bool Delivered { get; set; } = false;
-  public string Year { get; set; } = string.Empty;
+  public DateTime Period { get; set; }
 
   public ItemModel() { }
 
@@ -40,12 +40,12 @@ public class ItemModel
     string Code,
     int Orders,
     bool Delivered,
-    string Year
+    DateTime Period
   )
   {
     this.Code = Code;
     this.Orders = Orders;
     this.Delivered = Delivered;
-    this.Year = Year;
+    this.Period = Period;
   }
 }
