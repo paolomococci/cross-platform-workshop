@@ -36,5 +36,9 @@ public class DatatypeSheetTemplate
     datatypeSheet.Cell(++row, column).SetValue<string>("Examples of time span:");
     datatypeSheet.Cell(row, (column + 1)).SetValue<TimeSpan>(new TimeSpan(0, 15, 0));
     datatypeSheet.Cell(++row, (column + 1)).SetValue<TimeSpan>(new TimeSpan(1, 30, 30));
+
+    datatypeSheet.Cell(++row, column).SetValue<string>("Set Hyperlinks:");
+    datatypeSheet.Cell(row, (column + 1)).SetValue<XLHyperlink>(new XLHyperlink("http://127.0.0.1:8080"));
+    datatypeSheet.Cell(++row, (column + 1)).SetValue<XLHyperlink>(new XLHyperlink("http://127.0.0.1:8081"));
   }
 }
