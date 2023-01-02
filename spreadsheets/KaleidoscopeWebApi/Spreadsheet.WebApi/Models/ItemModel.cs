@@ -7,4 +7,10 @@ public class ItemModel
   public string Quarter { get; set; } = string.Empty;
 
   public ItemModel() {}
+
+  public ItemModel(
+    string Name
+  ) {
+    this.Name = Name;
+  }
 }
