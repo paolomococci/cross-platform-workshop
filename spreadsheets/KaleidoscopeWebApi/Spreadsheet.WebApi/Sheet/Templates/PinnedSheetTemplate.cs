@@ -106,7 +106,7 @@ public class PinnedSheetTemplate
       true
     );
     var pivotSheet = xLWorkbook.Worksheet("PivotSheet");
-    var pivot = pinnedSheet.PivotTables.Add(
+    var pivot = pivotSheet.PivotTables.Add(
      "PivotSheet",
      pivotSheet.Cell(2, 2),
      table.AsRange()
