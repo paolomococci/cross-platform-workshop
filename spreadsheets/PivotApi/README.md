@@ -34,6 +34,8 @@ dotnet run
 ```shell
 dotnet new classlib -o Pivot.Common
 cd Pivot.Common
+mkdir Models
+mkdir Templates
 ```
 
 ### Pivot.Web project
@@ -41,4 +43,5 @@ cd Pivot.Common
 ```shell
 dotnet new web -o Pivot.Web
 cd Pivot.Web
+mkdir Controllers
 ```
