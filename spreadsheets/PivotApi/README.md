@@ -34,6 +34,7 @@ dotnet run
 ```shell
 dotnet new classlib -o Pivot.Common
 cd Pivot.Common
+rm Class1.cs
 dotnet add package ClosedXML --version 0.97.0
 mkdir Models
 echo -e "namespace Pivot.Common.Models;\n\npublic class LedgerModel {}" > Models/LedgerModel.cs
