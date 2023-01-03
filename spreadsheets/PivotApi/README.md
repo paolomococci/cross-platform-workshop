@@ -47,4 +47,5 @@ echo -e "namespace Pivot.Common.Templates;\n\npublic class PinnedSheetTemplate {
 dotnet new web -o Pivot.Web
 cd Pivot.Web
 mkdir Controllers
+echo -e "namespace Pivot.Web.Controllers;\n\npublic class LedgerController {}" > Controllers/LedgerController.cs
 ```
