@@ -34,3 +34,9 @@ dotnet run
 ```shell
 
 ```
+
+### Pivot.Web project
+
+```shell
+
+```
