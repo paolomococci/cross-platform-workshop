@@ -28,3 +28,9 @@ mkdir Sheet/Templates
 echo -e "namespace Spreadsheet.WebApi.Sheet.Templates;\n\npublic class PinnedSheetTemplate {}" > Sheet/Templates/PinnedSheetTemplate.cs
 dotnet run
 ```
+
+### Pivot.Common project
+
+```shell
+
+```
