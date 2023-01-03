@@ -3,10 +3,11 @@ using Pivot.Common.Templates;
 
 namespace Pivot.Common.Models;
 
-public class LedgerModel {
+public class LedgerModel
+{
   internal static byte[] Perform(MemoryStream memoryStream)
   {
-    
+
     /* generate the workbook */
     XLWorkbook ledger = new XLWorkbook();
 
