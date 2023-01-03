@@ -5,7 +5,7 @@ namespace Pivot.Common.Models;
 
 public class LedgerModel
 {
-  internal static byte[] Perform(MemoryStream memoryStream)
+  public static byte[] Perform(MemoryStream memoryStream)
   {
 
     /* generate the workbook */
