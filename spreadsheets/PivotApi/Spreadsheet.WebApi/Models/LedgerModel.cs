@@ -13,8 +13,6 @@ public class LedgerModel
 
     /* adds three spreadsheets */
     List<string> sheetNames = new List<string>() {
-        "FormulaSheet",
-        "DatatypeSheet",
         "PinnedSheet",
         "PivotSheet"
       };
@@ -24,8 +22,6 @@ public class LedgerModel
       sheet.Cell("A1").Value = sheetName;
     }
 
-    FormulaSheetTemplate.Transcribe(ledger);
-    DatatypeSheetTemplate.Transcribe(ledger);
     PinnedSheetTemplate.Transcribe(ledger);
 
     /* pack it all up */
