@@ -105,6 +105,11 @@ public class PinnedSheetTemplate
       "PinnedSheet",
       true
     );
-   var pivotSheet = xLWorkbook.Worksheet("PivotSheet"); 
+   var pivotSheet = xLWorkbook.Worksheet("PivotSheet");
+   var pivot = pinnedSheet.PivotTables.Add(
+    "PivotSheet",
+    pinnedSheet.Cell(2, 2),
+    table.AsRange()
+   ); 
   }
 }
