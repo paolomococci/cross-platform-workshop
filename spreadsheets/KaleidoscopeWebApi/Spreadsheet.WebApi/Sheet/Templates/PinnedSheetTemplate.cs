@@ -110,6 +110,9 @@ public class PinnedSheetTemplate
     "PivotSheet",
     pinnedSheet.Cell(2, 2),
     table.AsRange()
-   ); 
+   );
+   pivot.RowLabels.Add("Code");
+   pivot.ColumnLabels.Add("Period");
+   pivot.Values.Add("Orders");
   }
 }
