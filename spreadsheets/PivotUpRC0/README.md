@@ -1,6 +1,6 @@
 # PivotUpRC0
 
-This trace is useful if you want to process and distribute spreadsheets thanks to the Api.
+This trace is useful if you want to process and distribute spreadsheets thanks to the web.
 In particular, it is an example of transcription of data of different types, in a collection of spreadsheets, which took place in a programmatic way.
 
 ## Scaffolding
@@ -35,5 +35,16 @@ cd Pivot.Api
 dotnet add ./Pivot.Api.csproj reference ../Pivot.Common/Pivot.Common.csproj
 mkdir Controllers
 echo -e "namespace Pivot.Api.Controllers;\n\npublic class LedgerController {}" > Controllers/LedgerController.cs
+dotnet run
+```
+
+### Pivot.Mvc project
+
+```shell
+dotnet new mvc -o Pivot.Mvc
+cd Pivot.Mvc
+dotnet add ./Pivot.Mvc.csproj reference ../Pivot.Common/Pivot.Common.csproj
+mkdir Controllers
+echo -e "namespace Pivot.Mvc.Controllers;\n\npublic class LedgerController {}" > Controllers/LedgerController.cs
 dotnet run
 ```
