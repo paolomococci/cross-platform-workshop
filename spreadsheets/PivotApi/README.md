@@ -25,8 +25,6 @@ echo -e "namespace Spreadsheet.WebApi.Models;\n\npublic class LedgerModel {}" > 
 echo -e "namespace Spreadsheet.WebApi.Models;\n\npublic class ItemModel {}" > Models/ItemModel.cs
 mkdir Sheet
 mkdir Sheet/Templates
-echo -e "namespace Spreadsheet.WebApi.Sheet.Templates;\n\npublic class FormulaSheetTemplate {}" > Sheet/Templates/FormulaSheetTemplate.cs
-echo -e "namespace Spreadsheet.WebApi.Sheet.Templates;\n\npublic class DatatypeSheetTemplate {}" > Sheet/Templates/DatatypeSheetTemplate.cs
 echo -e "namespace Spreadsheet.WebApi.Sheet.Templates;\n\npublic class PinnedSheetTemplate {}" > Sheet/Templates/PinnedSheetTemplate.cs
 dotnet run
 ```
