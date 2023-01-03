@@ -5,4 +5,4 @@ namespace Pivot.Web.Controllers;
 
 [ApiController]
 [Route("api/spreadsheets")]
-public class LedgerController {}
+public class LedgerController : ControllerBase {}
