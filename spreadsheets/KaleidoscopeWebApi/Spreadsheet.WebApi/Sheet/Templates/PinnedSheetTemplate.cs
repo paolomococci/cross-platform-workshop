@@ -105,5 +105,6 @@ public class PinnedSheetTemplate
       "PinnedSheet",
       true
     );
+   var pivotSheet = xLWorkbook.Worksheet("PivotSheet"); 
   }
 }
