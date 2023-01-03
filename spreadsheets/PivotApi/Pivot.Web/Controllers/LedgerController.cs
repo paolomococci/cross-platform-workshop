@@ -9,7 +9,7 @@ namespace Pivot.Web.Controllers;
 public class LedgerController : ControllerBase
 {
   /* 
-    GET: api/spreadsheets/generated
+    GET: http://localhost:8080/api/spreadsheets/generated
    */
   [HttpGet("generated")]
   [ProducesResponseType(200)]
