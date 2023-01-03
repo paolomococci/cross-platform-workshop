@@ -1,6 +1,7 @@
 namespace Pivot.Common.Models;
 
-public class ItemModel {
+public class ItemModel
+{
   public string Code { get; set; } = string.Empty;
   public int Orders { get; set; }
   public bool Delivered { get; set; } = false;
