@@ -38,5 +38,5 @@ dotnet new classlib -o Pivot.Common
 ### Pivot.Web project
 
 ```shell
-
+dotnet new web -o Pivot.Web
 ```
