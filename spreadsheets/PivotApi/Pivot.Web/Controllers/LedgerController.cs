@@ -6,7 +6,8 @@ namespace Pivot.Web.Controllers;
 
 [ApiController]
 [Route("api/spreadsheets")]
-public class LedgerController : ControllerBase {
+public class LedgerController : ControllerBase
+{
   /* 
     GET: api/spreadsheets/generated
    */
