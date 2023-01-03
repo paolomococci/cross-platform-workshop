@@ -106,13 +106,6 @@ public class PinnedSheetTemplate
       true
     );
    var pivotSheet = xLWorkbook.Worksheet("PivotSheet");
-   var pivot = pinnedSheet.PivotTables.Add(
-    "PivotSheet",
-    pivotSheet.Cell(2, 2),
-    table.AsRange()
-   );
-   pivot.RowLabels.Add("Code");
-   pivot.ColumnLabels.Add("Period");
-   pivot.Values.Add("Orders");
+   
   }
 }
