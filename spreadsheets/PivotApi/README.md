@@ -32,7 +32,7 @@ dotnet run
 ### Pivot.Common project
 
 ```shell
-
+dotnet new classlib -o Pivot.Common
 ```
 
 ### Pivot.Web project
