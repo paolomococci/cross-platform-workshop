@@ -30,7 +30,7 @@ echo -e "namespace Pivot.Common.Templates;\n\npublic class PinnedSheetTemplate {
 ### Pivot.Api project
 
 ```shell
-dotnet new Api -o Pivot.Api
+dotnet new web -o Pivot.Api
 cd Pivot.Api
 dotnet add ./Pivot.Api.csproj reference ../Pivot.Common/Pivot.Common.csproj
 mkdir Controllers
