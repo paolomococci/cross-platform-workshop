@@ -45,5 +45,6 @@ dotnet new mvc -o Pivot.Mvc
 cd Pivot.Mvc
 dotnet add ./Pivot.Mvc.csproj reference ../Pivot.Common/Pivot.Common.csproj
 touch Views/Home/Pivot.cshtml
+echo -e "namespace Pivot.Mvc.Controllers;\n\npublic class UploadController {}" > Controllers/UploadController.cs
 dotnet run
 ```
