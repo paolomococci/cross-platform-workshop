@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Pivot.Mvc.Controllers;
 
-public class UploadController : Controller {
+public class UploadController : Controller
+{
   private readonly ILogger<HomeController> _logger;
 
   public UploadController(ILogger<HomeController> logger)
