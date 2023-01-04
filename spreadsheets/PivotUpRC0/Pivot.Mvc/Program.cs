@@ -1,3 +1,5 @@
+using System.Net.Http.Headers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,7 +8,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient(
   name: "Pivot.Api",
   configureClient: options => {
-    
+    options.BaseAddress = new Uri("");
+    options.DefaultRequestHeaders.Accept.Add(
+      new MediaTypeWithQualityHeaderValue(
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      )
+    );
   }
 );
 
