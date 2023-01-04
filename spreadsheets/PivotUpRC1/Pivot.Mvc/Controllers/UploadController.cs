@@ -15,4 +15,10 @@ public class UploadController : Controller
   {
     return View();
   }
+
+  [HttpGet]
+  public IActionResult Uploaded()
+  {
+    return View();
+  }
 }
