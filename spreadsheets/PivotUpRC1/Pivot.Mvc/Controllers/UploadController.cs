@@ -25,6 +25,7 @@ public class UploadController : Controller
   [HttpPost]
   public IActionResult Upload(List<IFormFile> formFiles)
   {
+    string uploadedPath = Path.Combine("../Uploaded", "Uploads");
     return View();
   }
 }
