@@ -7,14 +7,28 @@ namespace Pivot.Mvc.Controllers;
 public class HomeController : Controller
 {
   private readonly ILogger<HomeController> _logger;
+  private readonly IHttpClientFactory httpClientFactory;
 
-  public HomeController(ILogger<HomeController> logger)
+  public HomeController(
+    ILogger<HomeController> logger,
+    IHttpClientFactory httpClientFactory
+  )
   {
     _logger = logger;
+    this.httpClientFactory = httpClientFactory;
   }
 
   public IActionResult Index()
   {
+    try
+    {
+      HttpClient httpClient = httpClientFactory.CreateClient();
+    }
+    catch (System.Exception)
+    {
+      
+      throw;
+    }
     return View();
   }
 
