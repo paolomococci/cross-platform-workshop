@@ -1,5 +1,4 @@
 using System.Net.Http.Headers;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
