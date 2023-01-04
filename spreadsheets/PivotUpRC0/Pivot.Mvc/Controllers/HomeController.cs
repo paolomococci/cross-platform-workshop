@@ -18,7 +18,7 @@ public class HomeController : Controller
     this.httpClientFactory = httpClientFactory;
   }
 
-  public IActionResult Index()
+  public async IActionResult Index()
   {
     try
     {
@@ -27,6 +27,8 @@ public class HomeController : Controller
         method: HttpMethod.Get,
         requestUri: "api/pivot"
       );
+      HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
+      ViewData["pivot"] = await httpResponseMessage.Content.ReadFromJsonAsync<MemoryStream>();
     }
     catch (System.Exception)
     {
