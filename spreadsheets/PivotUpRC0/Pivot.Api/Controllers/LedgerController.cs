@@ -9,7 +9,7 @@ namespace Pivot.Api.Controllers;
 public class LedgerController : ControllerBase
 {
   /* 
-    GET: http://localhost:8083/api/pivot
+    GET: https://localhost:8083/api/pivot
    */
   [HttpGet("pivot")]
   [ProducesResponseType(200)]
