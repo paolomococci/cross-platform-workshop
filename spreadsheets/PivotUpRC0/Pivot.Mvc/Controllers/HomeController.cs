@@ -22,7 +22,7 @@ public class HomeController : Controller
   {
     try
     {
-      HttpClient httpClient = httpClientFactory.CreateClient();
+      HttpClient httpClient = httpClientFactory.CreateClient(name: "Pivot.Api");
     }
     catch (System.Exception)
     {
