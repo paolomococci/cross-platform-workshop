@@ -1,4 +1,5 @@
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,11 @@ builder.Services.AddHttpClient(
 );
 
 var app = builder.Build();
+
+app.MapGet(
+  "/pivot",
+  () => Results.Ok("https://localhost:8083/api/pivot")
+);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
