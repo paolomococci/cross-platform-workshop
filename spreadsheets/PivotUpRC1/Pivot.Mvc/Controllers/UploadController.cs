@@ -10,4 +10,9 @@ public class UploadController : Controller
   {
     _logger = logger;
   }
+
+  public IActionResult Index()
+  {
+    return View();
+  }
 }
