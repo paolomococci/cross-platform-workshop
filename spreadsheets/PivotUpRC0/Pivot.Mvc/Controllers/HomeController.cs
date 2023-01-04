@@ -23,6 +23,11 @@ public class HomeController : Controller
     return View();
   }
 
+  public IActionResult Pivot()
+  {
+    return RedirectToPage("https://localhost:8083/api/pivot");
+  }
+
   [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
   public IActionResult Error()
   {
