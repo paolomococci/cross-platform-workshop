@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient(
   name: "Pivot.Api",
   configureClient: options => {
-    options.BaseAddress = new Uri("");
+    options.BaseAddress = new Uri("https://localhost:8083/");
     options.DefaultRequestHeaders.Accept.Add(
       new MediaTypeWithQualityHeaderValue(
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
