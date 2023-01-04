@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace Pivot.Mvc.Controllers;
 
-public class UploadController {}
+public class UploadController : Controller {}
