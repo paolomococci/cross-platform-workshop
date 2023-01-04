@@ -30,10 +30,10 @@ public class HomeController : Controller
       HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
       ViewData["pivot"] = await httpResponseMessage.Content.ReadFromJsonAsync<MemoryStream>();
     }
-    catch (System.Exception)
+    catch (System.Exception ex)
     {
-      
-      throw;
+      _logger.LogWarning($"Pivot.Api not responding: {ex.Message}");
+      ViewData["pivot"] = Enumerable.Empty<MemoryStream>().ToArray();
     }
     return View();
   }
