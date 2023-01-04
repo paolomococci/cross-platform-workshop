@@ -7,34 +7,14 @@ namespace Pivot.Mvc.Controllers;
 public class HomeController : Controller
 {
   private readonly ILogger<HomeController> _logger;
-  private readonly IHttpClientFactory httpClientFactory;
 
-  public HomeController(
-    ILogger<HomeController> logger,
-    IHttpClientFactory httpClientFactory
-  )
+  public HomeController(ILogger<HomeController> logger)
   {
     _logger = logger;
-    this.httpClientFactory = httpClientFactory;
   }
 
-  public async IActionResult Index()
+  public IActionResult Index()
   {
-    try
-    {
-      HttpClient httpClient = httpClientFactory.CreateClient(name: "Pivot.Api");
-      HttpRequestMessage httpRequestMessage = new(
-        method: HttpMethod.Get,
-        requestUri: "api/pivot"
-      );
-      HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
-      ViewData["pivot"] = await httpResponseMessage.Content.ReadFromJsonAsync<MemoryStream>();
-    }
-    catch (System.Exception ex)
-    {
-      _logger.LogWarning($"Pivot.Api not responding: {ex.Message}");
-      ViewData["pivot"] = Enumerable.Empty<MemoryStream>().ToArray();
-    }
     return View();
   }
 
