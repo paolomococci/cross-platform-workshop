@@ -11,8 +11,7 @@ builder.Services.AddHttpClient(
     options.BaseAddress = new Uri("https://localhost:8083/");
     options.DefaultRequestHeaders.Accept.Add(
       new MediaTypeWithQualityHeaderValue(
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        1.0
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
       )
     );
   }
