@@ -23,7 +23,7 @@ public class UploadController : Controller
   }
 
   [HttpPost]
-  public IActionResult Upload()
+  public IActionResult Upload(List<IFormFile> formFiles)
   {
     return View();
   }
