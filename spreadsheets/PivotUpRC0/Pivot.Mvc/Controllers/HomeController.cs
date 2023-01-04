@@ -25,7 +25,7 @@ public class HomeController : Controller
 
   public IActionResult Pivot()
   {
-    return RedirectToPage("https://localhost:8083/api/pivot");
+    return View();
   }
 
   [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
