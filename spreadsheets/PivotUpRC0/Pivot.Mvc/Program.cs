@@ -20,11 +20,6 @@ builder.Services.AddHttpClient(
 
 var app = builder.Build();
 
-app.MapGet(
-  "/pivot",
-  () => Results.Ok("https://localhost:8083/api/pivot")
-);
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
