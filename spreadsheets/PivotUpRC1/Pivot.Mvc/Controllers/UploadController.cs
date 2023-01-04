@@ -21,4 +21,10 @@ public class UploadController : Controller
   {
     return View();
   }
+
+  [HttpPost]
+  public IActionResult Upload()
+  {
+    return View();
+  }
 }
