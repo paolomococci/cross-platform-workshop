@@ -23,7 +23,10 @@ public class HomeController : Controller
     try
     {
       HttpClient httpClient = httpClientFactory.CreateClient(name: "Pivot.Api");
-      HttpRequestMessage httpRequestMessage = new();
+      HttpRequestMessage httpRequestMessage = new(
+        method: HttpMethod.Get,
+        requestUri: "api/pivot"
+      );
     }
     catch (System.Exception)
     {
