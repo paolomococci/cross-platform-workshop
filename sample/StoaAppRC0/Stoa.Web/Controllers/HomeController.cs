@@ -20,7 +20,7 @@ public class HomeController : Controller
 
   public IActionResult Create()
   {
-    return View();
+    return View(new PostModel());
   }
 
   public IActionResult Upload()
