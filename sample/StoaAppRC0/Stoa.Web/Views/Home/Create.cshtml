@@ -1,14 +1,16 @@
 @{
-    ViewData["Title"] = "StoaApp";
+  ViewData["Title"] = "StoaApp";
 }
 @model PostModel
 
 <div class="text-center">
-    <h1 class="display-4">Create</h1>
+  <h1 class="display-4">Create</h1>
+  <div class="mb-3 row">
     <form asp-action="Create" enctype="multipart/form-data">
       <input asp-for="Caption">
       <input asp-for="Description">
       <input asp-for="Concept">
       <input type="submit">
     </form>
+  </div>
 </div>
