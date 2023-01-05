@@ -16,6 +16,8 @@ mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
 mkdir Views/Shared
+touch Views/Shared/_Layout.cshtml
+touch Views/Shared/Error.cshtml
 mkdir Views/Home
 touch Views/Home/Index.cshtml
 touch Views/Home/Upload.cshtml
