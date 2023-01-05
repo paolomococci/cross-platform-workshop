@@ -12,6 +12,7 @@ dotnet new web -o Stoa.Web
 cd Stoa.Web
 mkdir Models
 echo -e "namespace Stoa.Web.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
+echo -e "namespace Stoa.Web.Models;\n\npublic class PostModel {}" > Models/PostModel.cs
 mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
