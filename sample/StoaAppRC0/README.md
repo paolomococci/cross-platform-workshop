@@ -12,6 +12,7 @@ dotnet new web -o Stoa.Web
 cd Stoa.Web
 mkdir Models
 mkdir Views
+mkdir Views/Shared
 mkdir Views/Home
 mkdir Controllers
 echo -e "namespace Stoa.Web.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
