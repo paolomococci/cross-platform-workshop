@@ -25,4 +25,5 @@ touch Views/Home/Upload.cshtml
 touch Views/Home/Uploaded.cshtml
 mkdir Controllers
 echo -e "namespace Stoa.Web.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
+dotnet watch run
 ```
