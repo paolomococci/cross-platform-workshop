@@ -2,12 +2,33 @@
 
 ## scaffolding
 
+### I start by creating the directory that will hold the entire project
+
 ```shell
 mkdir StoaAppRC0
 cd StoaAppRC0
+```
+
+### I create the file that defines the workspace
+
+```shell
+cat <<EOF | tee StoaAppRC0.code-workspace
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
+EOF
+```
+
+### I create an MVC structure as light as possible
+
+```shell
 dotnet new gitignore
 touch README.md
-echo -e "{\n\t\"folders\": [\n\t\t{\n\t\t\t\"path\": \".\"\n\t\t}\n\t],\n\t\"settings\": {}\n}" > StoaAppRC0.code-workspace
 dotnet new web -o Stoa.Web
 cd Stoa.Web
 mkdir Models
