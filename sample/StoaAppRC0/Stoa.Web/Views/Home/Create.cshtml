@@ -7,8 +7,14 @@
   <h1 class="display-4">Create</h1>
   <div class="mb-3 row">
     <form asp-action="Create" enctype="multipart/form-data">
-      <input asp-for="Caption">
-      <input asp-for="Description">
+      <label for="caption" class="col-sm-2 col-form-label">Caption</label>
+      <div class="col-sm-10">
+        <input type="text" id="caption" asp-for="Caption">
+      </div>
+      <label for="description" class="col-sm-2 col-form-label">Description</label>
+      <div class="col-sm-10">
+        <input type="text" id="description" asp-for="Description">
+      </div>
       <input asp-for="Concept">
       <input type="submit">
     </form>
