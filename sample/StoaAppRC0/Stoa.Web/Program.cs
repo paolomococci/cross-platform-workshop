@@ -1,6 +1,34 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+namespace Stoa.Web;
 
-app.MapGet("/", () => "Hello World!");
+internal class Program
+{
+  private static void Main(string[] args)
+  {
+    var builder = WebApplication.CreateBuilder(args);
 
-app.Run();
+    // Add services to the container.
+    builder.Services.AddControllersWithViews();
+
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    if (!app.Environment.IsDevelopment())
+    {
+      app.UseExceptionHandler("/Home/Error");
+      app.UseHsts();
+    }
+
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+
+    app.UseRouting();
+
+    app.UseAuthorization();
+
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    app.Run();
+  }
+}
