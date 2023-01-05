@@ -42,6 +42,7 @@ touch Views/Shared/_Layout.cshtml
 touch Views/Shared/Error.cshtml
 mkdir Views/Home
 touch Views/Home/Index.cshtml
+touch Views/Home/Create.cshtml
 touch Views/Home/Upload.cshtml
 touch Views/Home/Uploaded.cshtml
 mkdir Controllers
