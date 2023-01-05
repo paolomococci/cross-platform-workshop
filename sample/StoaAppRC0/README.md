@@ -11,6 +11,7 @@ echo -e "{\n\t\"folders\": [\n\t\t{\n\t\t\t\"path\": \".\"\n\t\t}\n\t],\n\t\"set
 dotnet new web -o Stoa.Web
 cd Stoa.Web
 mkdir Models
+mkdir Views/Home
 mkdir Views
 mkdir Controllers
 ```
