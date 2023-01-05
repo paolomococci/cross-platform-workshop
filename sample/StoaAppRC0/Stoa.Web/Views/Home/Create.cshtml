@@ -9,15 +9,24 @@
     <form class="row g-3" asp-action="Create" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="caption" class="form-label">Caption</label>
-        <input class="form-control" type="text" id="caption" asp-for="Caption">
+        <input class="form-control form-control-lg" type="text" id="caption" asp-for="Caption">
+        <div id="captionHelp" class="form-text">
+          some help for the caption field
+        </div>
       </div>
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <input class="form-control" type="text" id="description" asp-for="Description">
+        <input class="form-control form-control-lg" type="text" id="description" asp-for="Description">
+        <div id="captionHelp" class="form-text">
+          some help for the description field
+        </div>
       </div>
       <div class="mb-3">
         <label for="concept" class="form-label">Concept</label>
-        <input class="form-control" type="file" id="concept" asp-for="Concept">
+        <input class="form-control form-control-lg" type="file" id="concept" asp-for="Concept">
+        <div id="captionHelp" class="form-text">
+          some help for the concept field
+        </div>
       </div>
       <div class="col-auto">
         <button type="submit" class="btn btn-primary mb-3">Submit</button>
