@@ -13,6 +13,8 @@ cd Stoa.Web
 mkdir Models
 echo -e "namespace Stoa.Web.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
 mkdir Views
+touch Views/_ViewImports.cshtml
+touch Views/_ViewStart.cshtml
 mkdir Views/Shared
 mkdir Views/Home
 touch Views/Home/Index.cshtml
