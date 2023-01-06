@@ -48,7 +48,6 @@ public class HomeController : Controller
         new FileStream(path, FileMode.Create)
       );
     }
-    // todo
     return RedirectToAction(
       "Index",
       "Home"
