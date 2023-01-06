@@ -7,6 +7,7 @@ namespace Stoa.Web.Controllers;
 public class HomeController : Controller
 {
   private readonly ILogger<HomeController> _logger;
+  private readonly IWebHostEnvironment webHostEnvironment;
 
   public HomeController(
     ILogger<HomeController> logger,
@@ -14,6 +15,7 @@ public class HomeController : Controller
   )
   {
     _logger = logger;
+    this.webHostEnvironment = webHostEnvironment;
   }
 
   public IActionResult Index()
@@ -36,6 +38,15 @@ public class HomeController : Controller
       var concept = postModel.Concept;
       var conceptName = Path.GetFileName(concept.FileName);
       var conceptContentType = concept.ContentType;
+      var unique = this.MakeUnique(conceptName);
+      var upload = Path.Combine(
+        this.webHostEnvironment.WebRootPath, 
+        "Store"
+      );
+      var path = Path.Combine(upload, unique);
+      postModel.Concept.CopyTo(
+        new FileStream(path, FileMode.Create)
+      );
     }
     // todo
     return RedirectToAction(
