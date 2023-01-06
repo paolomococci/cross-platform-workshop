@@ -29,8 +29,19 @@ public class HomeController : Controller
   [HttpPost]
   public IActionResult Create(PostModel postModel)
   {
+    var caption = postModel.Caption;
+    var description = postModel.Description;
+    var concept = postModel.Concept;
+    if (postModel.Concept != null)
+    {
+      var conceptName = Path.GetFileName(postModel.Concept.FileName);
+      var conceptContentType = postModel.Concept.ContentType;
+    }
     // todo
-    return View();
+    return RedirectToAction(
+      "Index",
+      "Home"
+    );
   }
 
   public IActionResult Upload()
