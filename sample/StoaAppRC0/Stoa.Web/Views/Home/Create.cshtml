@@ -7,7 +7,7 @@
   <h1 class="display-4">Create</h1>
 </div>
 <div class="mb-3 row">
-  <form class="row g-3" asp-action="Create" enctype="multipart/form-data">
+  <form asp-action="Create" enctype="multipart/form-data">
     <label for="caption" class="col-sm-2 col-form-label col-form-label-lg">Caption</label>
     <div class="col-sm-10">
       <input class="form-control form-control-lg" type="text" id="caption" asp-for="Caption" required>
