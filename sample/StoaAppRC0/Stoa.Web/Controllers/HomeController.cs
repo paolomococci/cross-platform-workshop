@@ -29,13 +29,13 @@ public class HomeController : Controller
   [HttpPost]
   public IActionResult Create(PostModel postModel)
   {
-    var caption = postModel.Caption;
-    var description = postModel.Description;
-    var concept = postModel.Concept;
-    if (postModel.Concept != null)
+    if (postModel.Caption != null && postModel.Description != null && postModel.Concept != null)
     {
-      var conceptName = Path.GetFileName(postModel.Concept.FileName);
-      var conceptContentType = postModel.Concept.ContentType;
+      var caption = postModel.Caption;
+      var description = postModel.Description;
+      var concept = postModel.Concept;
+      var conceptName = Path.GetFileName(concept.FileName);
+      var conceptContentType = concept.ContentType;
     }
     // todo
     return RedirectToAction(
