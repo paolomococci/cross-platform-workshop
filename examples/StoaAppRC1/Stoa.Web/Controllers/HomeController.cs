@@ -23,37 +23,6 @@ public class HomeController : Controller
     return View();
   }
 
-  public IActionResult Create()
-  {
-    return View(new PostModel());
-  }
-
-  [HttpPost]
-  public IActionResult Create(PostModel postModel)
-  {
-    if (postModel.Caption != null && postModel.Description != null && postModel.Concept != null)
-    {
-      var caption = postModel.Caption;
-      var description = postModel.Description;
-      var concept = postModel.Concept;
-      var conceptName = Path.GetFileName(concept.FileName);
-      var conceptContentType = concept.ContentType;
-      var unique = this.MakeUnique(conceptName);
-      var upload = Path.Combine(
-        this.webHostEnvironment.WebRootPath, 
-        "Store"
-      );
-      var path = Path.Combine(upload, unique);
-      postModel.Concept.CopyTo(
-        new FileStream(path, FileMode.Create)
-      );
-    }
-    return RedirectToAction(
-      "Index",
-      "Home"
-    );
-  }
-
   public IActionResult Upload()
   {
     return View(new PostModel());
