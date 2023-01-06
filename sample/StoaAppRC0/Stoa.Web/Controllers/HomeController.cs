@@ -56,7 +56,7 @@ public class HomeController : Controller
 
   public IActionResult Upload()
   {
-    return View();
+    return View(new PostModel());
   }
 
   public IActionResult Uploaded()
