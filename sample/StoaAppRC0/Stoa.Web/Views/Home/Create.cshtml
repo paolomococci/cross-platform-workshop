@@ -8,22 +8,22 @@
 </div>
 <div class="mb-3 row">
   <form class="row g-3" asp-action="Create" enctype="multipart/form-data">
-    <div class="mb-3">
-      <label for="caption" class="form-label">Caption</label>
+    <label for="caption" class="col-sm-2 col-form-label col-form-label-lg">Caption</label>
+    <div class="col-sm-10">
       <input class="form-control form-control-lg" type="text" id="caption" asp-for="Caption" required>
       <div id="captionHelp" class="form-text">
         some help for the caption field
       </div>
     </div>
-    <div class="mb-3">
-      <label for="description" class="form-label">Description</label>
+    <label for="description" class="col-sm-2 col-form-label col-form-label-lg">Description</label>
+    <div class="col-sm-10">
       <input class="form-control form-control-lg" type="text" id="description" asp-for="Description" required>
       <div id="captionHelp" class="form-text">
         some help for the description field
       </div>
     </div>
-    <div class="mb-3">
-      <label for="concept" class="form-label">Concept</label>
+    <label for="concept" class="col-sm-2 col-form-label col-form-label-lg">Concept</label>
+    <div class="col-sm-10">
       <input class="form-control form-control-lg" type="file" id="concept" asp-for="Concept" required>
       <div id="captionHelp" class="form-text">
         some help for the concept field
