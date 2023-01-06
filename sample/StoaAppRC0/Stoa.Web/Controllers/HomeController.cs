@@ -65,7 +65,8 @@ public class HomeController : Controller
     );
   }
 
-  private string MakeUnique() {
-    return "";
+  private string MakeUnique(string file) {
+    var name = Path.GetFileName(file);
+    return Path.GetFileNameWithoutExtension(name) + "_" + Guid.NewGuid().ToString() + Path.GetExtension(name);
   }
 }
