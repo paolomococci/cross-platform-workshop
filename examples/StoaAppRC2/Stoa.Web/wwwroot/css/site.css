@@ -22,6 +22,10 @@ body {
   margin-bottom: 60px;
 }
 
+input[type=file]::file-selector-button {
+  display: none;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
