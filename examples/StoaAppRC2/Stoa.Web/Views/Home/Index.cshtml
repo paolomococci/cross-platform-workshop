@@ -2,9 +2,11 @@
   ViewData["Title"] = "StoaApp";
 }
 
-<div class="text-center">
-  <h1 class="p-3 display-4">Home</h1>
-  <p><a asp-area="" asp-controller="Home" asp-action="Uploaded">
-      Uploaded list
-    </a></p>
+<div class="uk-text-center">
+  <h1 class="uk-heading-large">Home</h1>
+  <p>
+    <a asp-area="" asp-controller="Home" asp-action="Uploaded">
+      <span title="list of uploaded files" uk-icon="album"></span>
+    </a>
+  </p>
 </div>
