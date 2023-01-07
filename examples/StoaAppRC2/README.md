@@ -1,5 +1,7 @@
 # StoaAppRC2
 
+Stylization study thanks to the UIkit front-end framework.
+
 ## scaffolding
 
 ### I start by creating the directory that will hold the entire project
