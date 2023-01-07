@@ -3,34 +3,39 @@
 }
 @model PostModel
 
-<div class="text-center">
-    <h1 class="p-3 display-4">Upload</h1>
+<div class="uk-text-center">
+    <h1 class="uk-heading-large">Upload</h1>
 </div>
-<div class="mb-3 row">
+<div class="uk-card uk-card-default">
     <form asp-action="Upload" enctype="multipart/form-data">
-        <label for="caption" class="col-sm-2 col-form-label col-form-label-lg">Caption</label>
-        <div class="col-sm-10">
-            <input class="form-control form-control-lg" type="text" id="caption" asp-for="Caption" required>
-            <div id="captionHelp" class="form-text">
-                some help for the caption field
+        <fieldset class="uk-fieldset">
+            <legend class="uk-margin">form dedicated to uploading one file at a time</legend>
+            <label for="caption" class="uk-label">Caption</label>
+            <div class="uk-child-width-1-2">
+                <input class="uk-input uk-width-1-1 uk-form-large" type="text" id="caption" asp-for="Caption" required>
+                <div id="captionHelp" class="uk-comment">
+                    some help for the caption field
+                </div>
             </div>
-        </div>
-        <label for="description" class="col-sm-2 col-form-label col-form-label-lg">Description</label>
-        <div class="col-sm-10">
-            <input class="form-control form-control-lg" type="text" id="description" asp-for="Description" required>
-            <div id="descriptionHelp" class="form-text">
-                some help for the description field
+            <label for="description" class="uk-label uk-margin-top">Description</label>
+            <div class="uk-child-width-1-2">
+                <input class="uk-input uk-width-1-1 uk-form-large" type="text" id="description" asp-for="Description"
+                  required>
+                <div id="descriptionHelp" class="uk-comment">
+                    some help for the description field
+                </div>
             </div>
-        </div>
-        <label for="concept" class="col-sm-2 col-form-label col-form-label-lg">Concept</label>
-        <div class="col-sm-10">
-            <input class="form-control form-control-lg" type="file" id="concept" asp-for="Concept" required>
-            <div id="conceptHelp" class="form-text">
-                some help for the concept field
+            <label for="concept" class="uk-label uk-margin-top">Concept</label>
+            <div class="uk-child-width-1-2">
+                <input class="uk-button uk-button-default uk-width-1-1" type="file" id="concept" asp-for="Concept"
+                  required>
+                <div id="conceptHelp" class="uk-comment">
+                    some help for the concept field
+                </div>
             </div>
-        </div>
-        <div class="mt-4 col-auto">
-            <button type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
-        </div>
+            <div class="uk-margin-top">
+                <button type="submit" class="uk-button uk-button-primary uk-width-1-1 uk-button-large">Submit</button>
+            </div>
+        </fieldset>
     </form>
 </div>
