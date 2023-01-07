@@ -5,56 +5,43 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/css/uikit.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
   </head>
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-          <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">StoaApp</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
-              <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                  Index
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Uploaded">
-                  Uploaded
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Upload">
-                  Upload
-                </a>
-              </li>
-            </ul>
-          </div>
+      <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+            <li class="uk-active">
+              <a asp-area="" asp-controller="Home" asp-action="Index">
+                <span title="home" class="uk-margin-small-left" uk-icon="home"></span>
+              </a>
+            </li>
+            <li>
+              <a asp-area="" asp-controller="Home" asp-action="Upload">
+                <span title="upload a file" uk-icon="upload"></span>
+              </a>
+            </li>
+            <li>
+              <a asp-area="" asp-controller="Home" asp-action="Uploaded">
+                <span title="list of uploaded files" uk-icon="album"></span>
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
-    <div class="container">
-      <main role="main" class="pb-3">
-        @RenderBody()
-      </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-      <div class="container">
-        &copy; 2023 - StoaApp - <a asp-area="" asp-controller="Home" asp-action="Uploaded">Uploaded</a>
+    <main role="main" class="uk-container">
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+        @RenderBody()
       </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"></script>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit-icons.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
   </body>
