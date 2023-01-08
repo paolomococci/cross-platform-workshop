@@ -475,3 +475,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# furthermore
+.vscode/
+Properties/
+lib/
+appsettings.Development.json
+appsettings.json
+HELP.md
+*.ico
