@@ -8,12 +8,9 @@
 
 <div class="uk-card uk-card-default">
     <ul>
-        @if (ViewData["fileNameList"] is not null)
+        @foreach (var item in ViewData["fileNameList"] as List<string>)
         {
-            @foreach (var item in ViewData["fileNameList"] as List<string>)
-            {
-                <li>@item</li>
-            }
+            <li>@item</li>
         }
     </ul>
 </div>
