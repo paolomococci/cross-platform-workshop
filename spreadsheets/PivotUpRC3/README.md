@@ -2,11 +2,31 @@
 
 ## Scaffolding
 
-### main project
+### I start by creating the directory that will house the entire project
 
 ```shell
 mkdir PivotUpRC3
 cd PivotUpRC3
+```
+
+### I create the file that defines the workspace
+
+```shell
+cat <<EOF | tee PivotUpRC3.code-workspace
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
+EOF
+```
+
+### main project
+
+```shell
 dotnet new gitignore
 touch README.md
 ```
