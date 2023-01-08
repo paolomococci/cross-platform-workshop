@@ -11,6 +11,7 @@ In particular, it is an example of transcription of data of different types, in 
 mkdir PivotUpRC2
 cd PivotUpRC2
 dotnet new gitignore
+touch README.md
 ```
 
 ### Pivot.Common project
