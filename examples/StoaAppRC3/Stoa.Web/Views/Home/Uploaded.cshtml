@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "StoaApp";
+    var items = ViewData["fileNameList"] as List<string>;
 }
 
 <div class="uk-text-center">
@@ -8,7 +9,7 @@
 
 <div class="uk-card uk-card-default">
     <ul>
-        @foreach (var item in ViewData["fileNameList"] as List<string>)
+        @foreach (var item in @items)
         {
             <li>@item</li>
         }
