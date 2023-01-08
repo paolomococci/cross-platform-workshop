@@ -1,6 +1,10 @@
 @{
     ViewData["Title"] = "StoaApp";
-    var items = ViewData["fileNameList"] as List<string>;
+    List<string>? items = new();
+    if (ViewData["fileNameList"] as List<string> != null)
+    {
+        items = ViewData["fileNameList"] as List<string>;
+    }
 }
 
 <div class="uk-text-center">
