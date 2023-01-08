@@ -56,6 +56,18 @@ public class HomeController : Controller
 
   public IActionResult Uploaded()
   {
+    List<string> listOfUploadedFilenames = new();
+    var store = Path.Combine(
+        this.webHostEnvironment.WebRootPath, 
+        "Store"
+      );
+    var uploadedFiles = Directory.GetFiles(store);
+    foreach (var item in uploadedFiles)
+    {
+      var itemName = Path.GetFileName(item);
+      listOfUploadedFilenames.Add(itemName);
+      ViewData["fileNameList"] = listOfUploadedFilenames;
+    }
     return View();
   }
 
