@@ -483,5 +483,6 @@ lib/
 appsettings.Development.json
 appsettings.json
 HELP.md
+*.txt
 *.ico
 *.png
