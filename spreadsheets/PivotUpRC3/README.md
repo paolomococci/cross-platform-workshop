@@ -50,6 +50,7 @@ echo -e "namespace Pivot.Common.Templates;\n\npublic class PinnedSheetTemplate {
 ```shell
 dotnet new web -o Pivot.Mvc.Feather
 cd Pivot.Mvc.Feather
+dotnet add ./Pivot.Mvc.Feather.csproj reference ../Pivot.Common/Pivot.Common.csproj
 mkdir Models
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class PostModel {}" > Models/PostModel.cs
