@@ -38,7 +38,7 @@ public class HomeController : Controller
       var concept = postModel.Concept;
       var conceptName = Path.GetFileName(concept.FileName);
       var conceptContentType = concept.ContentType;
-      var unique = this.MakeUnique(conceptName);
+      var unique = this.AppendDateTime(conceptName);
       var upload = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store"
@@ -82,9 +82,9 @@ public class HomeController : Controller
     );
   }
 
-  private string MakeUnique(string file)
+  private string AppendDateTime(string file)
   {
     var name = Path.GetFileName(file);
-    return Path.GetFileNameWithoutExtension(name) + "_" + Guid.NewGuid().ToString() + Path.GetExtension(name);
+    return Path.GetFileNameWithoutExtension(name) + $"_{DateTime.Now:yyyy-MM-dd_hh-mm-ss}" + Path.GetExtension(name);
   }
 }
