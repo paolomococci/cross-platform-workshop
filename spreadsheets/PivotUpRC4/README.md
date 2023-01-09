@@ -66,6 +66,7 @@ mkdir Views/Home
 touch Views/Home/Index.cshtml
 touch Views/Home/Upload.cshtml
 touch Views/Home/Uploaded.cshtml
+touch Views/Home/Process.cshtml
 mkdir Views/Ledger
 touch Views/Ledger/Index.cshtml
 mkdir Controllers
