@@ -71,6 +71,11 @@ public class HomeController : Controller
     return View();
   }
 
+  public IActionResult Process() {
+    // TODO
+    return View();
+  }
+
   [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
   public IActionResult Error()
   {
