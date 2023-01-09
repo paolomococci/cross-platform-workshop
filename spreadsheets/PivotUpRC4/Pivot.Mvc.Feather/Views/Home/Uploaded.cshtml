@@ -16,7 +16,12 @@
 </div>
 
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
-    <h3 class="uk-card-title uk-margin-large-bottom">please select a file uploaded to the system:</h3>
+    <h3 class="uk-card-title uk-margin-large-bottom">File uploaded to the system</h3>
+    <form>
+        <fieldset class="uk-fieldset">
+            <legend class="uk-legend">please select a file uploaded to the system:</legend>
+        </fieldset>
+    </form>
     <ul class="uk-list uk-list-large uk-list-divider">
         @foreach (var item in @items!)
         {
