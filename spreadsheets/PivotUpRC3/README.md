@@ -1,5 +1,7 @@
 # PivotUpRC3
 
+Example of a web application dedicated to the upload and subsequent programmatic processing of spreadsheets.
+
 ## Scaffolding
 
 ### I start by creating the directory that will house the entire project
