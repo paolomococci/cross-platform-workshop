@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Pivot.Common.Models;
 
 namespace Pivot.Mvc.Feather.Controllers;
 
@@ -19,5 +20,18 @@ public class LedgerController : Controller {
   public IActionResult Index()
   {
     return View();
+  }
+
+  // todo
+  public IActionResult Generate()
+  {
+    using (MemoryStream memoryStream = new MemoryStream())
+    {
+      return this.File(
+        fileContents: LedgerModel.Perform(memoryStream),
+        contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        fileDownloadName: "Pivot.xlsx"
+      );
+    }
   }
 }
