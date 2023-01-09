@@ -20,12 +20,14 @@
     <form>
         <fieldset class="uk-fieldset">
             <legend class="uk-legend">please select a file uploaded to the system:</legend>
+            <div class="uk-margin">
+                <select class="uk-select" aria-label="Select">
+                    @foreach (var item in @items!)
+                    {
+                        <option>@item</option>
+                    }
+                </select>
+            </div>
         </fieldset>
     </form>
-    <ul class="uk-list uk-list-large uk-list-divider">
-        @foreach (var item in @items!)
-        {
-            <li>@item</li>
-        }
-    </ul>
 </div>
