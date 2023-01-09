@@ -23,7 +23,6 @@ public class LedgerController : Controller
     return View();
   }
 
-  // todo
   public IActionResult Generate()
   {
     using (MemoryStream memoryStream = new MemoryStream())
