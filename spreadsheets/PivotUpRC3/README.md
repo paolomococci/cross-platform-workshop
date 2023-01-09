@@ -46,3 +46,7 @@ echo -e "namespace Pivot.Common.Templates;\n\npublic class PinnedSheetTemplate {
 ```
 
 ### Pivot.Mvc.Feather project
+
+```shell
+dotnet new web -o Pivot.Mvc.Feather
+```
