@@ -1,3 +1,3 @@
 namespace Pivot.Mvc.Feather.Controllers;
 
-public class LedgerController {}
+public class LedgerController { }
