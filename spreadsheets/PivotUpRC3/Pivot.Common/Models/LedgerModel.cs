@@ -3,7 +3,8 @@ using Pivot.Common.Templates;
 
 namespace Pivot.Common.Models;
 
-public class LedgerModel {
+public class LedgerModel
+{
   public static byte[] Perform(MemoryStream memoryStream)
   {
 
