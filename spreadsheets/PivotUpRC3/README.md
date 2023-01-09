@@ -44,3 +44,5 @@ echo -e "namespace Pivot.Common.Models;\n\npublic class ItemModel {}" > Models/I
 mkdir Templates
 echo -e "namespace Pivot.Common.Templates;\n\npublic class PinnedSheetTemplate {}" > Templates/PinnedSheetTemplate.cs
 ```
+
+### Pivot.Mvc.Feather project
