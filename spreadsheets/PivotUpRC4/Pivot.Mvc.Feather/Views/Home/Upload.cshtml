@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "PivotUp";
+}
+@model PostModel
+
+<div class="uk-text-center">
+    <h1 class="uk-heading-large">Upload</h1>
+</div>
+
+<div class="uk-card uk-card-default">
+    <form asp-action="Upload" enctype="multipart/form-data">
+        <fieldset class="uk-fieldset">
+            <legend class="uk-margin">Form dedicated to uploading one file at a time.</legend>
+            <div class="uk-child-width-1-2">
+                <label for="caption" class="uk-label uk-width-1-1 uk-margin-top">Caption</label>
+                <input class="uk-input uk-width-1-1 uk-form-large" type="text" id="caption" asp-for="Caption" required>
+                <div id="captionHelp" class="uk-comment">
+                    Please type some text for the caption.
+                </div>
+            </div>
+            <div class="uk-child-width-1-2">
+                <label for="description" class="uk-label uk-width-1-1 uk-margin-top">Description</label>
+                <input class="uk-input uk-width-1-1 uk-form-large" type="text" id="description" asp-for="Description"
+                  required>
+                <div id="descriptionHelp" class="uk-comment">
+                    Please enter the descriptive text of the file you are going to upload.
+                </div>
+            </div>
+            <div class="uk-child-width-1-2">
+                <label for="concept" class="uk-label uk-width-1-1 uk-margin-top">Concept</label>
+                <input class="uk-button uk-button-default uk-width-1-1 uk-form-large" type="file" id="concept"
+                  asp-for="Concept" required>
+                <div id="conceptHelp" class="uk-comment">
+                    Please select the file to upload.
+                </div>
+            </div>
+            <div class="uk-margin-top">
+                <button type="submit" class="uk-button uk-button-primary uk-width-1-1 uk-button-large">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
