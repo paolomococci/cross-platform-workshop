@@ -66,5 +66,6 @@ touch Views/Home/Upload.cshtml
 touch Views/Home/Uploaded.cshtml
 mkdir Controllers
 echo -e "namespace Pivot.Mvc.Feather.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
+echo -e "namespace Pivot.Mvc.Feather.Controllers;\n\npublic class LedgerController {}" > Controllers/LedgerController.cs
 dotnet watch run
 ```
