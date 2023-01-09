@@ -50,4 +50,20 @@ echo -e "namespace Pivot.Common.Templates;\n\npublic class PinnedSheetTemplate {
 ```shell
 dotnet new web -o Pivot.Mvc.Feather
 cd Pivot.Mvc.Feather
+mkdir Models
+echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
+echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class PostModel {}" > Models/PostModel.cs
+mkdir Views
+touch Views/_ViewImports.cshtml
+touch Views/_ViewStart.cshtml
+mkdir Views/Shared
+touch Views/Shared/_Layout.cshtml
+touch Views/Shared/Error.cshtml
+mkdir Views/Home
+touch Views/Home/Index.cshtml
+touch Views/Home/Upload.cshtml
+touch Views/Home/Uploaded.cshtml
+mkdir Controllers
+echo -e "namespace Pivot.Mvc.Feather.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
+dotnet watch run
 ```
