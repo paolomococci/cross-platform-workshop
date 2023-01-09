@@ -4,7 +4,8 @@ using Pivot.Mvc.Feather.Models;
 
 namespace Pivot.Mvc.Feather.Controllers;
 
-public class HomeController : Controller {
+public class HomeController : Controller
+{
   private readonly ILogger<HomeController> _logger;
   private readonly IWebHostEnvironment webHostEnvironment;
 
@@ -39,7 +40,7 @@ public class HomeController : Controller {
       var conceptContentType = concept.ContentType;
       var unique = this.MakeUnique(conceptName);
       var upload = Path.Combine(
-        this.webHostEnvironment.WebRootPath, 
+        this.webHostEnvironment.WebRootPath,
         "Store"
       );
       var path = Path.Combine(upload, unique);
@@ -57,7 +58,7 @@ public class HomeController : Controller {
   {
     List<string> listOfUploadedFilenames = new();
     var store = Path.Combine(
-        this.webHostEnvironment.WebRootPath, 
+        this.webHostEnvironment.WebRootPath,
         "Store"
       );
     var uploadedFiles = Directory.GetFiles(store);
@@ -81,7 +82,8 @@ public class HomeController : Controller {
     );
   }
 
-  private string MakeUnique(string file) {
+  private string MakeUnique(string file)
+  {
     var name = Path.GetFileName(file);
     return Path.GetFileNameWithoutExtension(name) + "_" + Guid.NewGuid().ToString() + Path.GetExtension(name);
   }
