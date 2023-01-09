@@ -3,8 +3,9 @@ using Pivot.Common.Models;
 
 namespace Pivot.Mvc.Feather.Controllers;
 
-public class LedgerController : Controller {
-  
+public class LedgerController : Controller
+{
+
   private readonly ILogger<HomeController> _logger;
   private readonly IWebHostEnvironment webHostEnvironment;
 
