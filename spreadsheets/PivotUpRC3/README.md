@@ -24,7 +24,7 @@ cat <<EOF | tee PivotUpRC3.code-workspace
 EOF
 ```
 
-### main project
+### I continue to define the root of the whole project
 
 ```shell
 dotnet new gitignore
