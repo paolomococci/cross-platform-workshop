@@ -71,8 +71,11 @@ public class HomeController : Controller
     return View();
   }
 
-  public IActionResult Process() {
+  [HttpPost]
+  public IActionResult Process(string fileName)
+  {
     // TODO
+    System.Console.WriteLine($"Value passed to method: {fileName}");
     return View();
   }
 
