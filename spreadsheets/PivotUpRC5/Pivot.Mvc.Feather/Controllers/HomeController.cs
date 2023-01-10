@@ -82,6 +82,8 @@ public class HomeController : Controller
       );
       var path = Path.Combine(environmentPath, unique);
       var text = System.IO.File.ReadAllText(path);
+      System.Console.WriteLine($"Contents of {unique}:");
+      System.Console.WriteLine(text);
       // todo
     }
     return View();
