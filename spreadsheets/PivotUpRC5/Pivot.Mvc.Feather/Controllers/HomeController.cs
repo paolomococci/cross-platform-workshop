@@ -81,6 +81,7 @@ public class HomeController : Controller
         "Store"
       );
       var path = Path.Combine(environmentPath, unique);
+      var text = System.IO.File.ReadAllText(path);
       // todo
     }
     return View();
