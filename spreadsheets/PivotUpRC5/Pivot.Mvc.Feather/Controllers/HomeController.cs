@@ -105,4 +105,6 @@ public class HomeController : Controller
     var name = Path.GetFileName(file);
     return Path.GetFileNameWithoutExtension(name) + $"_{DateTime.Now:yyyy-MM-dd_hh-mm-ss}" + Path.GetExtension(name);
   }
+
+  private void DataCollection() {}
 }
