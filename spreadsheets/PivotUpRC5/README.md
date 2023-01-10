@@ -56,6 +56,7 @@ dotnet add ./Pivot.Mvc.Feather.csproj reference ../Pivot.Common/Pivot.Common.csp
 mkdir Models
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class PostModel {}" > Models/PostModel.cs
+echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class GiftModel {}" > Models/GiftModel.cs
 mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
