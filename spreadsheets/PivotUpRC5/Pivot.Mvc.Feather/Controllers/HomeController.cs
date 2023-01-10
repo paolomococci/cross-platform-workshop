@@ -111,4 +111,6 @@ public class HomeController : Controller
       System.Console.WriteLine(line);
     }
   }
+
+  private void ParseData() {}
 }
