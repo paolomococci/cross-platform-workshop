@@ -72,10 +72,19 @@ public class HomeController : Controller
   }
 
   [HttpPost]
-  public IActionResult Process(string fileName)
+  public IActionResult Process(string unique)
   {
     // TODO
-    System.Console.WriteLine($"--> feedback of selected filename: {fileName} <--");
+    if (unique != null && unique != string.Empty)
+    {
+      System.Console.WriteLine($"--> feedback of selected filename: {unique} <--");
+      var environmentPath = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store"
+      );
+      var path = Path.Combine(environmentPath, unique);
+      System.Console.WriteLine($"--> feedback of complete path: {path} <--");
+    }
     return View();
   }
 
