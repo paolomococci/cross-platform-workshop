@@ -80,7 +80,7 @@ public class HomeController : Controller
         this.webHostEnvironment.WebRootPath,
         "Store"
       );
-      var path = Path.Combine(environmentPath, unique);
+      string path = Path.Combine(environmentPath, unique);
       foreach (string line in System.IO.File.ReadLines(path)) {
         System.Console.WriteLine(line);
       }
