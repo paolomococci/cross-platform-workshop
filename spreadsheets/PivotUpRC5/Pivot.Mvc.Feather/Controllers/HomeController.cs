@@ -106,5 +106,5 @@ public class HomeController : Controller
     return Path.GetFileNameWithoutExtension(name) + $"_{DateTime.Now:yyyy-MM-dd_hh-mm-ss}" + Path.GetExtension(name);
   }
 
-  private void DataCollection() {}
+  private void DataCollection(string path) {}
 }
