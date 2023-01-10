@@ -8,4 +8,12 @@ public record CoordsModel
   public CoordsModel(DateOnly session) {
     this.Session = session;
   }
+
+  public CoordsModel(
+    DateOnly session,
+    List<int> hyperDots
+  ) {
+    this.Session = session;
+    this.HyperDots = hyperDots;
+  }
 }
