@@ -129,11 +129,8 @@ public class HomeController : Controller
         var dataSheet = new DataSheetModel(
           id: subdivided[1]
         );
-        if (dataSheet != null && dataSheet.Items != null)
-        {
-          dataSheet.Items.Add(coords);
-          workbook.SheetBinder.Add(dataSheet);
-        }
+        dataSheet.Items.Add(coords);
+        workbook.SheetBinder.Add(dataSheet);
       }
       else
       {
