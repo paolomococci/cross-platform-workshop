@@ -6,6 +6,15 @@ public class WorkbookModel
 
   internal void Sift(string[] subdivided)
   {
-    throw new NotImplementedException();
+    var item = new CoordsModel(
+          DateTime.Parse(subdivided[0]),
+          new List<int> {
+            int.Parse(subdivided[2]),
+            int.Parse(subdivided[3]),
+            int.Parse(subdivided[4]),
+            int.Parse(subdivided[5]),
+            int.Parse(subdivided[6])
+          }
+        );
   }
 }
