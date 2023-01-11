@@ -18,6 +18,6 @@ public class WorkbookModel
         );
         this.SheetBinder.Find(
           temp => temp.Id == subdivided[1]
-        );
+        ).Items!.Add(coords);
   }
 }
