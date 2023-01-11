@@ -59,6 +59,7 @@ echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class PostModel {}" > Mod
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class CoordsModel {}" > Models/CoordsModel.cs
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class AssetModel {}" > Models/AssetModel.cs
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class DataSheetModel {}" > Models/DataSheetModel.cs
+echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class WorkbookModel {}" > Models/WorkbookModel.cs
 mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
