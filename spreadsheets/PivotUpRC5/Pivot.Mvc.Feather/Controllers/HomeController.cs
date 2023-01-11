@@ -108,7 +108,7 @@ public class HomeController : Controller
   {
     foreach (string line in System.IO.File.ReadLines(path))
     {
-      this.ParseData(line);
+      var parsed = this.ParseData(line);
     }
   }
 
