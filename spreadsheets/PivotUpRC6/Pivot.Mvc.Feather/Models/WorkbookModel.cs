@@ -4,6 +4,8 @@ public class WorkbookModel
 {
   public List<DataSheetModel> SheetBinder { get; set; } = new();
 
+  internal void Initialize(string[] subdivided) {}
+
   internal void Sift(string[] subdivided)
   {
     var coords = new CoordsModel(
