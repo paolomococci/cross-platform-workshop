@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Pivot.Mvc.Feather.Models;
-using System.Globalization;
 
 namespace Pivot.Mvc.Feather.Controllers;
 
