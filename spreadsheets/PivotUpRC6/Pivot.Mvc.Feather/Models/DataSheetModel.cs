@@ -3,7 +3,7 @@ namespace Pivot.Mvc.Feather.Models;
 public class DataSheetModel
 {
   public string Id { get; set; } = string.Empty;
-  public List<CoordsModel>? Items { get; set; }
+  public List<CoordsModel> Items { get; set; } = new();
 
   public DataSheetModel(string id)
   {
