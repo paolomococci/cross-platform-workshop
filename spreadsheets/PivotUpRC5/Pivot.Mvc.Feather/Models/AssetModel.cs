@@ -8,7 +8,7 @@ public class AssetModel
     this.Labels.Add(tag);
   }
 
-  public bool HasBeenAdded(string? other)
+  public bool ItWasNotAdded(string? other)
   {
     if (other != null)
     {
