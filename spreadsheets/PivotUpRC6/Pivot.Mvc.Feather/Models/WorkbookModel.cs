@@ -18,6 +18,8 @@ public class WorkbookModel
         );
         this.SheetBinder.Where(
           temp => temp.Id == subdivided[1]
+        ).Select(
+          temp => temp.Items
         );
   }
 }
