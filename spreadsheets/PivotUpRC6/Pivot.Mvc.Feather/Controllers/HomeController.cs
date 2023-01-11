@@ -85,6 +85,9 @@ public class HomeController : Controller
       foreach (var item in workBook.SheetBinder)
       {
         System.Console.WriteLine($"sheet id: {item.Id}");
+        item.Items.ForEach(
+          x => System.Console.WriteLine($"session: {x.Session.Date.ToShortDateString()}") 
+        );
       }
       // todo
     }
