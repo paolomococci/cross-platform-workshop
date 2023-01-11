@@ -109,7 +109,7 @@ public class HomeController : Controller
 
   private void DataCollection(string path)
   {
-    List<DataSheetModel> workbook = new();
+    WorkbookModel workbook = new();
     AssetModel assetModel = new();
     foreach (string line in System.IO.File.ReadLines(path))
     {
@@ -132,7 +132,7 @@ public class HomeController : Controller
         if (dataSheet != null && dataSheet.Items != null)
         {
           dataSheet.Items.Add(item);
-          workbook.Add(dataSheet);
+          workbook.SheetBinder.Add(dataSheet);
         }        
       }
       else
