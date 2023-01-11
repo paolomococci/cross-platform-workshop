@@ -81,7 +81,7 @@ public class HomeController : Controller
         "Store"
       );
       string path = Path.Combine(environmentPath, unique);
-      this.DataCollection(path);
+      var workBook = this.DataCollection(path);
       // todo
     }
     return RedirectToAction(
