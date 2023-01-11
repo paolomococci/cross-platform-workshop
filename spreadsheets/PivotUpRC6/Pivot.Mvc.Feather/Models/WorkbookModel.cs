@@ -16,8 +16,15 @@ public class WorkbookModel
             int.Parse(subdivided[6])
           }
         );
-        this.SheetBinder.Find(
-          temp => temp.Id == subdivided[1]
-        ).Items!.Add(coords);
+        foreach (var item in this.SheetBinder)
+        {
+          if (item.Id == subdivided[1])
+          {
+            if (item.Items != null)
+            {
+              item.Items.Add(coords);
+            }
+          }
+        }
   }
 }
