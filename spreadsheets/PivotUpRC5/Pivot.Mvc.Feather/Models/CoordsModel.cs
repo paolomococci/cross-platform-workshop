@@ -2,16 +2,16 @@ namespace Pivot.Mvc.Feather.Models;
 
 public record CoordsModel
 {
-  public DateOnly Session { get; set; }
+  public DateTime Session { get; set; }
   public List<int>? HyperDots { get; set; }
 
-  public CoordsModel(DateOnly session)
+  public CoordsModel(DateTime session)
   {
     this.Session = session;
   }
 
   public CoordsModel(
-    DateOnly session,
+    DateTime session,
     List<int> hyperDots
   )
   {
