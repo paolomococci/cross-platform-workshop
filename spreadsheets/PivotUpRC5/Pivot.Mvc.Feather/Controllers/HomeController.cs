@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Pivot.Mvc.Feather.Models;
+using System.Globalization;
 
 namespace Pivot.Mvc.Feather.Controllers;
 
@@ -106,14 +107,34 @@ public class HomeController : Controller
 
   private void DataCollection(string path)
   {
-    List<GiftModel> gifts = new();
+    List<DataSheetModel> workbook = new();
     AssetModel assetModel = new();
     foreach (string line in System.IO.File.ReadLines(path))
     {
       var parsed = this.ParseData(line);
-      if (assetModel.HasBeenAdded(parsed[1]))
+      if (assetModel.ItWasNotAdded(parsed[1]))
       {
-        gifts.Add(new GiftModel(id: parsed[1]));
+        var item = new CoordsModel(
+          DateTime.Parse(parsed[0]),
+          new List<int> {
+            int.Parse(parsed[2]),
+            int.Parse(parsed[3]),
+            int.Parse(parsed[4]),
+            int.Parse(parsed[5]),
+            int.Parse(parsed[6])
+          }
+        );
+        var dataSheet = new DataSheetModel(
+          id: parsed[1]
+        );
+        if (dataSheet != null && dataSheet.Items != null)
+        {
+          dataSheet.Items.Add(item);
+          workbook.Add(dataSheet);
+        }        
+      }
+      else
+      {
         // todo
       }
     }
