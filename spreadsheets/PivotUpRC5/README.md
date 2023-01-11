@@ -58,7 +58,7 @@ echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" 
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class PostModel {}" > Models/PostModel.cs
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class CoordsModel {}" > Models/CoordsModel.cs
 echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class AssetModel {}" > Models/AssetModel.cs
-echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class DataSheetsModel {}" > Models/DataSheetsModel.cs
+echo -e "namespace Pivot.Mvc.Feather.Models;\n\npublic class DataSheetModel {}" > Models/DataSheetModel.cs
 mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
