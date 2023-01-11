@@ -108,9 +108,12 @@ public class HomeController : Controller
   {
     foreach (string line in System.IO.File.ReadLines(path))
     {
-      System.Console.WriteLine(line);
+      this.ParseData(line);
     }
   }
 
-  private void ParseData(string line) {}
+  private void ParseData(string line) {
+    string[] data = line.Split('\t');
+    System.Console.WriteLine(data[1]);
+  }
 }
