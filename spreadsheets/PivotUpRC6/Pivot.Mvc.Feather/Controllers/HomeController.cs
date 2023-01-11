@@ -84,7 +84,10 @@ public class HomeController : Controller
       this.DataCollection(path);
       // todo
     }
-    return View();
+    return RedirectToAction(
+      "Index",
+      "Home"
+    );
   }
 
   [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
