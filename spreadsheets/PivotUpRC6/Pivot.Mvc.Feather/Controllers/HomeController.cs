@@ -113,7 +113,7 @@ public class HomeController : Controller
     AssetModel assetModel = new();
     foreach (string line in System.IO.File.ReadLines(path))
     {
-      var subdivided = this.ParseData(line);
+      var subdivided = this.SplitLineOfData(line);
       if (assetModel.ItWasNotAdded(subdivided[1]))
       {
         var item = new CoordsModel(
@@ -143,7 +143,7 @@ public class HomeController : Controller
     return workbook;
   }
 
-  private string[] ParseData(string line)
+  private string[] SplitLineOfData(string line)
   {
     return line.Split('\t');
   }
