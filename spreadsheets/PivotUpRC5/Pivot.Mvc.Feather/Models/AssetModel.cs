@@ -1,6 +1,6 @@
 namespace Pivot.Mvc.Feather.Models;
 
-public class AssetModel : IComparable<AssetModel>
+public class AssetModel
 {
   public List<string> Labels { get; set; } = new();
 
@@ -8,12 +8,17 @@ public class AssetModel : IComparable<AssetModel>
     this.Labels.Add(tag);
   }
 
-  public int CompareTo(AssetModel? other)
+  public bool HasBeenAdded(string? other)
   {
     if (other != null)
     {
-      throw new NotImplementedException();
+      if (!this.Labels.Contains(other))
+      {
+        this.Labels.Add(other);
+        return true;
+      }
+      return false;
     }
-    return 0;
+    return false;
   }
 }
