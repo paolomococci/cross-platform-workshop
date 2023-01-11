@@ -82,10 +82,10 @@ public class HomeController : Controller
       );
       string path = Path.Combine(environmentPath, unique);
       var workBook = this.DataCollection(path);
-      foreach (var item in workBook.SheetBinder)
+      foreach (var sheet in workBook.SheetBinder)
       {
-        System.Console.WriteLine($"sheet id: {item.Id}");
-        item.Items.ForEach(
+        System.Console.WriteLine($"sheet id: {sheet.Id}");
+        sheet.Items.ForEach(
           x => System.Console.WriteLine($"session: {x.Session.Date.ToShortDateString()}") 
         );
       }
