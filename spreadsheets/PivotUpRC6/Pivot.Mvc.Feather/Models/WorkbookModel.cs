@@ -34,10 +34,7 @@ public class WorkbookModel
     {
       if (item.Id == subdivided[1])
       {
-        if (item.Items != null)
-        {
-          item.Items.Add(coords);
-        }
+        item.Items.Add(coords);
       }
     }
   }
