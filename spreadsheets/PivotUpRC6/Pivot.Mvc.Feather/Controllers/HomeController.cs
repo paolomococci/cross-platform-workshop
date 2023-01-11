@@ -107,7 +107,7 @@ public class HomeController : Controller
     return Path.GetFileNameWithoutExtension(name) + $"_{DateTime.Now:yyyy-MM-dd_hh-mm-ss}" + Path.GetExtension(name);
   }
 
-  private void DataCollection(string path)
+  private WorkbookModel DataCollection(string path)
   {
     WorkbookModel workbook = new();
     AssetModel assetModel = new();
@@ -133,16 +133,18 @@ public class HomeController : Controller
         {
           dataSheet.Items.Add(item);
           workbook.SheetBinder.Add(dataSheet);
-        }        
+        }
       }
       else
       {
         // todo
       }
     }
+    return workbook;
   }
 
-  private string[] ParseData(string line) {
+  private string[] ParseData(string line)
+  {
     return line.Split('\t');
   }
 }
