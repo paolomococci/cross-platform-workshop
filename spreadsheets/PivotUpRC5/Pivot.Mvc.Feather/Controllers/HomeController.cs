@@ -112,8 +112,7 @@ public class HomeController : Controller
     }
   }
 
-  private void ParseData(string line) {
-    string[] data = line.Split('\t');
-    System.Console.WriteLine(data[1]);
+  private string[] ParseData(string line) {
+    return line.Split('\t');
   }
 }
