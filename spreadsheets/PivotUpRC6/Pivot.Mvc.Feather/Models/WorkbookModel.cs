@@ -6,7 +6,7 @@ public class WorkbookModel
 
   internal void Sift(string[] subdivided)
   {
-    var item = new CoordsModel(
+    var coords = new CoordsModel(
           DateTime.Parse(subdivided[0]),
           new List<int> {
             int.Parse(subdivided[2]),
@@ -16,10 +16,8 @@ public class WorkbookModel
             int.Parse(subdivided[6])
           }
         );
-        this.SheetBinder.Where(
+        this.SheetBinder.Find(
           temp => temp.Id == subdivided[1]
-        ).Select(
-          temp => temp.Items
         );
   }
 }
