@@ -106,9 +106,14 @@ public class HomeController : Controller
 
   private void DataCollection(string path)
   {
+    AssetModel assetModel = new();
     foreach (string line in System.IO.File.ReadLines(path))
     {
       var parsed = this.ParseData(line);
+      if (assetModel.HasBeenAdded(parsed[1]))
+      {
+        // todo
+      }
     }
   }
 
