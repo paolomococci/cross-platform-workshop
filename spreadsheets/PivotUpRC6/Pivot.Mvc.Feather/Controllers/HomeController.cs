@@ -116,7 +116,7 @@ public class HomeController : Controller
       var subdivided = this.SplitLineOfData(line);
       if (assetModel.ItWasNotAdded(subdivided[1]))
       {
-        var item = new CoordsModel(
+        var coords = new CoordsModel(
           DateTime.Parse(subdivided[0]),
           new List<int> {
             int.Parse(subdivided[2]),
@@ -131,7 +131,7 @@ public class HomeController : Controller
         );
         if (dataSheet != null && dataSheet.Items != null)
         {
-          dataSheet.Items.Add(item);
+          dataSheet.Items.Add(coords);
           workbook.SheetBinder.Add(dataSheet);
         }
       }
