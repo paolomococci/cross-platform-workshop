@@ -106,13 +106,14 @@ public class HomeController : Controller
 
   private void DataCollection(string path)
   {
+    List<GiftModel> gifts = new();
     AssetModel assetModel = new();
     foreach (string line in System.IO.File.ReadLines(path))
     {
       var parsed = this.ParseData(line);
       if (assetModel.HasBeenAdded(parsed[1]))
       {
-        // todo
+        gifts.Add(new GiftModel(id: parsed[1]));
       }
     }
   }
