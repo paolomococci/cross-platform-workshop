@@ -16,6 +16,11 @@ public class WorkbookModel
             int.Parse(subdivided[6])
           }
     );
+    var dataSheet = new DataSheetModel(
+      id: subdivided[1]
+    );
+    dataSheet.Items.Add(coords);
+    this.SheetBinder.Add(dataSheet);
   }
 
   internal void Sift(string[] subdivided)
