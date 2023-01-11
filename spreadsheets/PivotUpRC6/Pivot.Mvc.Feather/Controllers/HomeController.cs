@@ -113,21 +113,21 @@ public class HomeController : Controller
     AssetModel assetModel = new();
     foreach (string line in System.IO.File.ReadLines(path))
     {
-      var parsed = this.ParseData(line);
-      if (assetModel.ItWasNotAdded(parsed[1]))
+      var subdivided = this.ParseData(line);
+      if (assetModel.ItWasNotAdded(subdivided[1]))
       {
         var item = new CoordsModel(
-          DateTime.Parse(parsed[0]),
+          DateTime.Parse(subdivided[0]),
           new List<int> {
-            int.Parse(parsed[2]),
-            int.Parse(parsed[3]),
-            int.Parse(parsed[4]),
-            int.Parse(parsed[5]),
-            int.Parse(parsed[6])
+            int.Parse(subdivided[2]),
+            int.Parse(subdivided[3]),
+            int.Parse(subdivided[4]),
+            int.Parse(subdivided[5]),
+            int.Parse(subdivided[6])
           }
         );
         var dataSheet = new DataSheetModel(
-          id: parsed[1]
+          id: subdivided[1]
         );
         if (dataSheet != null && dataSheet.Items != null)
         {
