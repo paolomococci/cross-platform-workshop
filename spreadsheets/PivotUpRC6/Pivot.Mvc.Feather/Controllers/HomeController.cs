@@ -137,7 +137,7 @@ public class HomeController : Controller
       }
       else
       {
-        // todo
+        workbook.Sift(subdivided);
       }
     }
     return workbook;
