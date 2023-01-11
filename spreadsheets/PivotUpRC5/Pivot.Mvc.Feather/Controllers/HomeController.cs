@@ -114,6 +114,7 @@ public class HomeController : Controller
       if (assetModel.HasBeenAdded(parsed[1]))
       {
         gifts.Add(new GiftModel(id: parsed[1]));
+        // todo
       }
     }
   }
