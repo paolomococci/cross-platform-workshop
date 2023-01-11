@@ -82,6 +82,10 @@ public class HomeController : Controller
       );
       string path = Path.Combine(environmentPath, unique);
       var workBook = this.DataCollection(path);
+      foreach (var item in workBook.SheetBinder)
+      {
+        System.Console.WriteLine($"sheet id: {item.Id}");
+      }
       // todo
     }
     return RedirectToAction(
