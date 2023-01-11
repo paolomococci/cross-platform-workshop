@@ -6,7 +6,7 @@ public class WorkbookModel
 
   internal void Sift(string[] subdivided)
   {
-    var item = new CoordsModel(
+    var coords = new CoordsModel(
           DateTime.Parse(subdivided[0]),
           new List<int> {
             int.Parse(subdivided[2]),
