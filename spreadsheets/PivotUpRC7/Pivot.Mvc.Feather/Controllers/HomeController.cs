@@ -41,7 +41,7 @@ public class HomeController : Controller
       var unique = this.AppendDateTime(conceptName);
       var upload = Path.Combine(
         this.webHostEnvironment.WebRootPath,
-        "Store"
+        "Store/datasets"
       );
       var path = Path.Combine(upload, unique);
       postModel.Concept.CopyTo(
@@ -59,7 +59,7 @@ public class HomeController : Controller
     List<string> listOfUploadedFilenames = new();
     var store = Path.Combine(
         this.webHostEnvironment.WebRootPath,
-        "Store"
+        "Store/datasets"
       );
     var uploadedFiles = Directory.GetFiles(store);
     foreach (var item in uploadedFiles)
@@ -78,7 +78,7 @@ public class HomeController : Controller
     {
       var environmentPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
-        "Store"
+        "Store/datasets"
       );
       string path = Path.Combine(environmentPath, unique);
       var workBook = this.DataCollection(path);
