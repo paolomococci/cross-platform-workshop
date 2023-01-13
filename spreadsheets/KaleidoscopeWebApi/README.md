@@ -23,3 +23,9 @@ echo -e "namespace Spreadsheet.WebApi.Sheet.Templates;\n\npublic class DatatypeS
 echo -e "namespace Spreadsheet.WebApi.Sheet.Templates;\n\npublic class PinnedSheetTemplate {}" > Sheet/Templates/PinnedSheetTemplate.cs
 dotnet run
 ```
+
+And here, for example, if port 8080 has been set in file launchSettings.json, connecting to the following address:
+
+http://localhost:8080/api/spreadsheets/generated
+
+you will get the option to download the Ledger.xlsx file.
