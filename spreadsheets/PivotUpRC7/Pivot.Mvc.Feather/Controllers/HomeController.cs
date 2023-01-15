@@ -164,6 +164,7 @@ public class HomeController : Controller
     DataTable dataTable = new();
     dataTable.Columns.Add("Session", typeof(DateTime));
     dataTable.Columns.Add("DotOne", typeof(int));
+    dataTable.Columns.Add("DotTwo", typeof(int));
     worksheet.Items.ForEach(
       item => {
 
