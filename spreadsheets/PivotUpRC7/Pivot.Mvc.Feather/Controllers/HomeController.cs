@@ -163,6 +163,7 @@ public class HomeController : Controller
   private DataTable SetDataTable(DataSheetModel worksheet) {
     DataTable dataTable = new();
     dataTable.Columns.Add("Session", typeof(DateTime));
+    dataTable.Columns.Add("DotOne", typeof(int));
     worksheet.Items.ForEach(
       item => {
 
