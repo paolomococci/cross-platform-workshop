@@ -167,6 +167,7 @@ public class HomeController : Controller
     dataTable.Columns.Add("DotTwo", typeof(int));
     dataTable.Columns.Add("DotThree", typeof(int));
     dataTable.Columns.Add("DotFour", typeof(int));
+    dataTable.Columns.Add("DotFive", typeof(int));
     worksheet.Items.ForEach(
       item => {
 
