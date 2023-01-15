@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Data;
 using Pivot.Mvc.Feather.Models;
 using ClosedXML.Excel;
 
@@ -156,5 +157,9 @@ public class HomeController : Controller
   private string[] SplitLineOfData(string line)
   {
     return line.Split('\t');
+  }
+
+  private DataTable SetDataTable() {
+    return new DataTable();
   }
 }
