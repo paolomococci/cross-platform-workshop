@@ -161,6 +161,7 @@ public class HomeController : Controller
   }
 
   private DataTable SetDataTable(DataSheetModel worksheet) {
-    return new DataTable();
+    DataTable dataTable = new();
+    return dataTable;
   }
 }
