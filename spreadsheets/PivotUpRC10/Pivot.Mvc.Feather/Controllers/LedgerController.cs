@@ -24,6 +24,18 @@ public class LedgerController : Controller
 
   public IActionResult Workbooks()
   {
+    List<string> workbookProcessedList = new();
+    var store = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/workbooks"
+      );
+    var uploadedFiles = Directory.GetFiles(store);
+    foreach (var item in uploadedFiles)
+    {
+      var itemName = Path.GetFileName(item);
+      workbookProcessedList.Add(itemName);
+      ViewData["workbookList"] = workbookProcessedList;
+    }
     return View();
   }
 }
