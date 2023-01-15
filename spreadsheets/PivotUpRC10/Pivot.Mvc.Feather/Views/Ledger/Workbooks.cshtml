@@ -1,5 +1,14 @@
 @{
   ViewData["Title"] = "PivotUp";
+  List<string>? items = new();
+  if (ViewData["workbookList"] as List<string> != null)
+  {
+    items = ViewData["workbookList"] as List<string>;
+  }
+  else
+  {
+    items.Add("");
+  }
 }
 
 <div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
@@ -9,6 +18,11 @@
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
   <h3 class="uk-card-title uk-margin-large-bottom">list of workbooks processed by the system</h3>
   <div class="uk-margin">
-    <ul class="uk-list uk-list-divider"></ul>
+    <ul class="uk-list uk-list-divider">
+      @foreach (var item in @items!)
+      {
+        <li>@item</li>
+      }
+    </ul>
   </div>
 </div>
