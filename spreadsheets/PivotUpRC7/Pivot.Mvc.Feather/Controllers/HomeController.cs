@@ -83,6 +83,7 @@ public class HomeController : Controller
       );
       string path = Path.Combine(environmentPath, unique);
       var workBook = this.DataCollection(path);
+      /*
       foreach (var sheet in workBook.SheetBinder)
       {
         System.Console.WriteLine($"sheet id: {sheet.Id}");
@@ -90,6 +91,7 @@ public class HomeController : Controller
           x => System.Console.WriteLine($"session: {x.Session.Date.ToShortDateString()}") 
         );
       }
+      */
       XLWorkbook xLWorkbook = new();
       foreach (var worksheet in workBook.SheetBinder)
       {
