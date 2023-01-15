@@ -72,6 +72,7 @@ touch Views/Home/Upload.cshtml
 touch Views/Home/Uploaded.cshtml
 mkdir Views/Ledger
 touch Views/Ledger/Index.cshtml
+touch Views/Ledger/Workbooks.cshtml
 mkdir Controllers
 echo -e "namespace Pivot.Mvc.Feather.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 echo -e "namespace Pivot.Mvc.Feather.Controllers;\n\npublic class LedgerController {}" > Controllers/LedgerController.cs
