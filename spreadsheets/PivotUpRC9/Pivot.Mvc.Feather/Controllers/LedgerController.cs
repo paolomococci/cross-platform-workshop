@@ -7,15 +7,12 @@ public class LedgerController : Controller
 {
 
   private readonly ILogger<HomeController> _logger;
-  private readonly IWebHostEnvironment webHostEnvironment;
 
   public LedgerController(
-    ILogger<HomeController> logger,
-    IWebHostEnvironment webHostEnvironment
+    ILogger<HomeController> logger
   )
   {
     _logger = logger;
-    this.webHostEnvironment = webHostEnvironment;
   }
 
   public IActionResult Index()
