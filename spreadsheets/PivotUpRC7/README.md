@@ -1,6 +1,7 @@
 # PivotUpRC7
 
 Example of a web application dedicated to the upload and subsequent programmatic processing of spreadsheets.
+It extracts data from a dataset previously loaded and stored and then transcribed into a workbook, also stored in a dedicated directory.
 
 ## Scaffolding
 
