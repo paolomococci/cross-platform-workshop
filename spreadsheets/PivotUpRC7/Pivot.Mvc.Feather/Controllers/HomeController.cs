@@ -91,6 +91,22 @@ public class HomeController : Controller
         );
       }
       XLWorkbook xLWorkbook = new();
+      foreach (var worksheet in workBook.SheetBinder)
+      {
+        var currentWorkSheet = xLWorkbook.Worksheets.Add(worksheet.Id);
+      }
+      // Save Ledger Workbook
+      var workbooksPath = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/workbooks"
+      );
+      workbooksPath = Path.Combine(
+        workbooksPath,
+        this.AppendDateTime("Ledger.xlsx")
+      );
+      xLWorkbook.SaveAs(
+        workbooksPath
+      );
       // todo: compiling a workbook in .xlsx format using the data just collected
     }
     return RedirectToAction(
