@@ -97,6 +97,7 @@ public class HomeController : Controller
       foreach (var worksheet in workBook.SheetBinder)
       {
         var currentWorkSheet = xLWorkbook.Worksheets.Add(worksheet.Id);
+        this.SetDataTable(worksheet);
       }
       // Save Ledger Workbook
       var workbooksPath = Path.Combine(
@@ -159,7 +160,7 @@ public class HomeController : Controller
     return line.Split('\t');
   }
 
-  private DataTable SetDataTable() {
+  private DataTable SetDataTable(DataSheetModel worksheet) {
     return new DataTable();
   }
 }
