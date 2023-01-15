@@ -18,4 +18,9 @@ public class LedgerController : Controller
   {
     return View();
   }
+
+  public IActionResult Workbooks()
+  {
+    return View();
+  }
 }
