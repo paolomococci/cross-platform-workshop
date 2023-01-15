@@ -84,22 +84,14 @@ public class HomeController : Controller
       );
       string path = Path.Combine(environmentPath, unique);
       var workBook = this.DataCollection(path);
-      /*
-      foreach (var sheet in workBook.SheetBinder)
-      {
-        System.Console.WriteLine($"sheet id: {sheet.Id}");
-        sheet.Items.ForEach(
-          x => System.Console.WriteLine($"session: {x.Session.Date.ToShortDateString()}") 
-        );
-      }
-      */
+      // compiling a workbook in .xlsx format using the data just collected
       XLWorkbook xLWorkbook = new();
       foreach (var worksheet in workBook.SheetBinder)
       {
         var currentWorkSheet = xLWorkbook.Worksheets.Add(worksheet.Id);
-        this.SetDataTable(worksheet);
+        currentWorkSheet.Cell(1, 1).InsertData(this.SetDataTable(worksheet));
       }
-      // Save Ledger Workbook
+      // save Ledger Workbook
       var workbooksPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/workbooks"
@@ -111,7 +103,6 @@ public class HomeController : Controller
       xLWorkbook.SaveAs(
         workbooksPath
       );
-      // todo: compiling a workbook in .xlsx format using the data just collected
     }
     return RedirectToAction(
       "Index",
