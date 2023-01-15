@@ -1,9 +1,9 @@
 @{
     ViewData["Title"] = "PivotUp";
     List<string>? items = new();
-    if (ViewData["fileNameList"] as List<string> != null)
+    if (ViewData["datasetList"] as List<string> != null)
     {
-        items = ViewData["fileNameList"] as List<string>;
+        items = ViewData["datasetList"] as List<string>;
     }
     else
     {
