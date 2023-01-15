@@ -58,7 +58,7 @@ public class HomeController : Controller
 
   public IActionResult Uploaded()
   {
-    List<string> listOfUploadedFilenames = new();
+    List<string> listOfUploadedDataset = new();
     var store = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/datasets"
@@ -67,8 +67,8 @@ public class HomeController : Controller
     foreach (var item in uploadedFiles)
     {
       var itemName = Path.GetFileName(item);
-      listOfUploadedFilenames.Add(itemName);
-      ViewData["fileNameList"] = listOfUploadedFilenames;
+      listOfUploadedDataset.Add(itemName);
+      ViewData["datasetList"] = listOfUploadedDataset;
     }
     return View();
   }
