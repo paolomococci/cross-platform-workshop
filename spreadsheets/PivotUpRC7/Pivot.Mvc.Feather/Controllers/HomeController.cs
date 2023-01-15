@@ -170,7 +170,17 @@ public class HomeController : Controller
     dataTable.Columns.Add("DotFive", typeof(int));
     worksheet.Items.ForEach(
       item => {
-        dataTable.Rows.Add(item.Session);
+        if (item.HyperDots != null)
+        {
+          dataTable.Rows.Add(
+          item.Session,
+          item.HyperDots[0],
+          item.HyperDots[1],
+          item.HyperDots[2],
+          item.HyperDots[3],
+          item.HyperDots[4]
+        );
+        }
       }
     );
     return dataTable;
