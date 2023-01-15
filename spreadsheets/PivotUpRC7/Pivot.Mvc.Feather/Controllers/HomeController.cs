@@ -162,8 +162,11 @@ public class HomeController : Controller
 
   private DataTable SetDataTable(DataSheetModel worksheet) {
     DataTable dataTable = new();
+    dataTable.Columns.Add("Session", typeof(DateTime));
     worksheet.Items.ForEach(
-      item => {}
+      item => {
+
+      }
     );
     return dataTable;
   }
