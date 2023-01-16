@@ -22,7 +22,9 @@
       @foreach (var item in @items!)
       {
         <li>
-          <span class="uk-badge">@item</span>
+          <span class="uk-badge">
+            <a class="uk-link-heading" href="#">@item</a>
+          </span>
         </li>
       }
     </ul>
