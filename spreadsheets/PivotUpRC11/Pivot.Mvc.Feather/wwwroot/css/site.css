@@ -73,6 +73,11 @@ button.accept-policy {
   line-height: 60px;
 }
 
+.draggable-container {
+  background-color: #eee;
+  border-radius: 0.5em;
+}
+
 .draggable-box {
   cursor: move;
 }
