@@ -1,0 +1,31 @@
+@{
+  ViewData["Title"] = "PivotUp";
+  List<string>? items = new();
+  if (ViewData["workbookList"] as List<string> != null)
+  {
+    items = ViewData["workbookList"] as List<string>;
+  }
+  else
+  {
+    items.Add("");
+  }
+}
+
+<div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
+  <h1 class="uk-heading-large uk-heading-divider">Workbooks</h1>
+  <div>
+    <span class="drop-box" title="todo download workbook" uk-icon="icon: download; ratio: 3"></span>
+  </div>
+</div>
+
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+  <h3 class="uk-card-title uk-margin-large-bottom">list of workbooks processed:</h3>
+  <div class="uk-margin">
+    <ul class="uk-list uk-list-divider draggable-container">
+      @foreach (var item in @items!)
+      {
+        <li draggable="true" class="draggable-box">@item</li>
+      }
+    </ul>
+  </div>
+</div>
