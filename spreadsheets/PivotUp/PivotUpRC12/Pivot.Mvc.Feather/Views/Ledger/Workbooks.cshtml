@@ -1,9 +1,9 @@
 @{
   ViewData["Title"] = "PivotUp";
   List<string>? items = new();
-  if (ViewData["workbookList"] as List<string> != null)
+  if (ViewData["workbookListNames"] as List<string> != null)
   {
-    items = ViewData["workbookList"] as List<string>;
+    items = ViewData["workbookListNames"] as List<string>;
   }
   else
   {
