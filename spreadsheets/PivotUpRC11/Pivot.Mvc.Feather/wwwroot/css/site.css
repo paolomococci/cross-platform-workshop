@@ -76,6 +76,6 @@ button.accept-policy {
 .draggable-box {
   background-color: #0bf;
   border-radius: 0.3em;
-  padding: 5px;
+  padding: 3px;
   cursor: move;
 }
