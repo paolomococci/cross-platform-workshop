@@ -72,3 +72,8 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.draggable-box {
+  padding: 5px;
+  cursor: move;
+}
