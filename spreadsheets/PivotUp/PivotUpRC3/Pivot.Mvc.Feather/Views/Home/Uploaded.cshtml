@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "PivotUp";
+    List<string>? items = new();
+    if (ViewData["fileNameList"] as List<string> != null)
+    {
+        items = ViewData["fileNameList"] as List<string>;
+    }
+    else
+    {
+        items.Add("");
+    }
+}
+
+<div class="uk-text-center">
+    <h1 class="uk-heading-large">Uploaded</h1>
+</div>
+
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+    <h3 class="uk-card-title uk-margin-large-bottom">List of files uploaded to the system:</h3>
+    <ul class="uk-list uk-list-large uk-list-divider">
+        @foreach (var item in @items!)
+        {
+            <li>@item</li>
+        }
+    </ul>
+</div>
