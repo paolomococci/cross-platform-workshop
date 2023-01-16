@@ -1,5 +1,0 @@
-# Weather forecast tests
-
-### basic request:
-
-GET http://localhost:5000/weatherforecast HTTP/1.1
