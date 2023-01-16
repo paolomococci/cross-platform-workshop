@@ -34,7 +34,7 @@ public class LedgerController : Controller
     {
       var itemName = Path.GetFileName(item);
       workbookProcessedList.Add(itemName);
-      ViewData["workbookList"] = workbookProcessedList;
+      ViewData["workbookListNames"] = workbookProcessedList;
     }
     return View();
   }
