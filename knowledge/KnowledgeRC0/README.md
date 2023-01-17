@@ -32,3 +32,14 @@ EOF
 dotnet new gitignore
 echo -e "# KnowledgeRC0" > README.md
 ```
+
+### Knowledge.Common project
+
+```shell
+dotnet new classlib -o Knowledge.Common
+cd Knowledge.Common
+rm Class1.cs
+dotnet add package ClosedXML --version 0.100.3
+dotnet add package Microsoft.ML --version 3.0.0-preview.22621.2
+mkdir Models
+```
