@@ -42,6 +42,9 @@ rm Class1.cs
 dotnet add package ClosedXML --version 0.100.3
 dotnet add package Microsoft.ML --version 3.0.0-preview.22621.2
 mkdir Models
+echo -e "namespace Knowledge.Common.Models;\n\npublic class AssetModel {}" > Models/AssetModel.cs
+echo -e "namespace Knowledge.Common.Models;\n\npublic class DataSheetModel {}" > Models/DataSheetModel.cs
+echo -e "namespace Knowledge.Common.Models;\n\npublic class WorkbookModel {}" > Models/WorkbookModel.cs
 ```
 
 ### Knowledge.Mvc.Feather project
@@ -52,9 +55,6 @@ cd Knowledge.Mvc.Feather
 dotnet add ./Knowledge.Mvc.Feather.csproj reference ../Knowledge.Common/Knowledge.Common.csproj
 mkdir Models
 echo -e "namespace Knowledge.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
-echo -e "namespace Knowledge.Mvc.Feather.Models;\n\npublic class AssetModel {}" > Models/AssetModel.cs
-echo -e "namespace Knowledge.Mvc.Feather.Models;\n\npublic class DataSheetModel {}" > Models/DataSheetModel.cs
-echo -e "namespace Knowledge.Mvc.Feather.Models;\n\npublic class WorkbookModel {}" > Models/WorkbookModel.cs
 mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
