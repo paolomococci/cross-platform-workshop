@@ -71,5 +71,10 @@ touch Views/Workbook/Workbooks.cshtml
 mkdir Controllers
 echo -e "namespace Knowledge.Mvc.Feather.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 echo -e "namespace Knowledge.Mvc.Feather.Controllers;\n\npublic class WorkbookController {}" > Controllers/WorkbookController.cs
+```
+
+### After that, from within the Knowledge.Mvc.Feather directory, I can launch the web application
+
+```shell
 dotnet watch run
 ```
