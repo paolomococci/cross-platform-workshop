@@ -2,4 +2,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Knowledge.Mvc.Feather.Controllers;
 
-public class WorkbookController : Controller {}
+public class WorkbookController : Controller 
+{
+  private readonly ILogger<HomeController> _logger;
+  private readonly IWebHostEnvironment webHostEnvironment;
+
+  public WorkbookController(
+    ILogger<HomeController> logger,
+    IWebHostEnvironment webHostEnvironment
+  )
+  {
+    _logger = logger;
+    this.webHostEnvironment = webHostEnvironment;
+  }
+}
