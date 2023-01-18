@@ -15,4 +15,9 @@ public class WorkbookController : Controller
     _logger = logger;
     this.webHostEnvironment = webHostEnvironment;
   }
+
+  public IActionResult Index()
+  {
+    return View();
+  }
 }
