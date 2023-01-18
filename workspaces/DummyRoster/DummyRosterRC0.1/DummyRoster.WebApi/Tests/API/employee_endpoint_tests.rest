@@ -1,0 +1,94 @@
+# employee endpoint tests
+
+## For example, values ​​can be generated pseudo-randomly with the following shell command:
+### cat /dev/urandom | tr -dc 'A-Z' | fold -w 16 | head -n 1
+
+### record number 1
+
+POST https://localhost:5001/api/employees HTTP/1.1
+Content-Type: application/json
+Content-Length: 152
+
+{
+  "Name": "PYYBQNEYVCDSUKTN",
+  "BirthDate": "2000-03-21T00:00:00",
+  "Description": "ZAQPGLXBTXZJOFGQDOAMIJVWFREIHGGW",
+  "Role": "GPPOEAYMHKHISPVE",
+  "Belonging": "A"
+}
+
+### record number 2
+
+POST https://localhost:5001/api/employees HTTP/1.1
+Content-Type: application/json
+Content-Length: 152
+
+{
+  "Name": "CYOFZZGZKZDYAVHD",
+  "BirthDate": "1997-07-11T00:00:00",
+  "Description": "YSCKQAEITWOZGMKWKJLWUTTANTUMPUTO",
+  "Role": "AKQWVLUCTGEFLCXU",
+  "Belonging": "B"
+}
+
+### record number 3
+
+POST https://localhost:5001/api/employees HTTP/1.1
+Content-Type: application/json
+Content-Length: 152
+
+{
+  "Name": "KFLVULYUGPTKQDFD",
+  "BirthDate": "1995-05-24T00:00:00",
+  "Description": "NTYWIVIBAFWGXRDXNIPAPDLBIAGSJUMW",
+  "Role": "HUTXWGDKQRJOKMSF",
+  "Belonging": "C"
+}
+
+### read
+
+GET https://localhost:5001/api/employees/2 HTTP/1.1
+
+### read all
+
+GET https://localhost:5001/api/employees HTTP/1.1
+
+### update a dummy data with id 2
+
+PUT https://localhost:5001/api/employees/2 HTTP/1.1
+Content-Type: application/json
+Content-Length: 293
+
+{
+  "id": 2,
+  "name": "CYOFZZGZKZDYAVHD",
+  "birthDate": "1997-07-11T00:00:00",
+  "description": "YSCKQAEITWOZGMKWKJLWUTTANTUMPUTO",
+  "picture": null,
+  "role": "RAZDVOGKAKTWUKSY",
+  "belonging": "B",
+  "loc": null,
+  "ref": null,
+  "carriers": [],
+  "customers": [],
+  "forms": [],
+  "locNavigation": null,
+  "refNavigation": null,
+  "suppliers": []
+}
+
+### partial update a dummy data with id 2
+
+PATCH https://localhost:5001/api/employees/2 HTTP/1.1
+Content-Type: application/json
+Content-Length: 60
+
+{
+  "id": 2,
+  "name": "CYOFZZGZKZDYAVHD",
+  "role": "IYMNJTHAQFAELGLW"
+}
+
+### delete an identified data entry
+
+DELETE https://localhost:5001/api/employees/1 HTTP/1.1
