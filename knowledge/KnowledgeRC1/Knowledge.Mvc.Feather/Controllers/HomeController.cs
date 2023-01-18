@@ -15,4 +15,9 @@ public class HomeController : Controller
     _logger = logger;
     this.webHostEnvironment = webHostEnvironment;
   }
+
+  public IActionResult Index()
+  {
+    return View();
+  }
 }
