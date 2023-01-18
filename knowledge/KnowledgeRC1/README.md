@@ -86,3 +86,7 @@ touch wwwroot/js/site.js
 ```shell
 dotnet watch run
 ```
+
+## Screenshots
+
+![Knowledge-Index](Screenshots/Knowledge-Index.png)
