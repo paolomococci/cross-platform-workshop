@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "knowledge";
+    ViewData["SubTitle"] = "index";
+}
+
+<div class="card knowledge-card">
+    <div class="card-body">
+        <h2 class="card-title p-2">
+            @ViewData["Title"]
+        </h2>
+        <h3 class="card-subtitle p-3 text-muted">
+            @ViewData["SubTitle"]
+        </h3>
+        <p class="card-text p-2">item list:</p>
+        <ul class="list-group list-group-flush pb-3">
+            <li class="list-group-item">item one</li>
+            <li class="list-group-item">item two</li>
+            <li class="list-group-item">item three</li>
+            <li class="list-group-item">item four</li>
+            <li class="list-group-item">item five</li>
+        </ul>
+        <div class="card-footer">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="p-4 card-link">
+                <i title="one" class="bi bi-1-circle-fill" style="font-size: 3rem;"></i>
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="p-4 card-link">
+                <i title="two" class="bi bi-2-circle-fill" style="font-size: 3rem;"></i>
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="p-4 card-link">
+                <i title="three" class="bi bi-3-circle-fill" style="font-size: 3rem;"></i>
+            </a>
+        </div>
+    </div>
+</div>
