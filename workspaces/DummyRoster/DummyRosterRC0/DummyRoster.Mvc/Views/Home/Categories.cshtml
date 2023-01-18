@@ -1,0 +1,42 @@
+@using DummyRoster.Common.EntityModel.Models
+@model IEnumerable<Category>
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="table-responsive-lg">
+  <table class="table  table-striped">
+    <caption>@ViewData["Title"] registered in the management system</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model is not null)
+      {
+        @foreach (Category item in Model)
+        {
+          <tr>
+            <th scope="row">
+              @Html.DisplayFor(
+          modelItem => item.Id
+          )
+            </th>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Name
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Description
+          )
+            </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>
