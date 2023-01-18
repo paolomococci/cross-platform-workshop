@@ -21,6 +21,11 @@ public class HomeController : Controller
     return View();
   }
 
+  public IActionResult Upload()
+  {
+    return View();
+  }
+
   public IActionResult Restricted()
   {
     return RedirectToAction(
