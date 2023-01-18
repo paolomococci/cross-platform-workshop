@@ -1,0 +1,90 @@
+# customer endpoint tests
+
+## For example, values ​​can be generated pseudo-randomly with the following shell command:
+### cat /dev/urandom | tr -dc 'A-Z' | fold -w 16 | head -n 1
+
+### I insert a dummy record
+
+POST https://localhost:5001/api/customers HTTP/1.1
+Content-Type: application/json
+Content-Length: 131
+
+{
+  "Name": "XFHRKGNZBZENDHXP",
+  "FoundationDate": "2010-01-15T00:00:00",
+  "Description": "AWWZFWDPHFLTVRGNQYBYHNDIUAPNCBGY",
+  "Belonging": "B"
+}
+
+### I insert another one
+
+POST https://localhost:5001/api/customers HTTP/1.1
+Content-Type: application/json
+Content-Length: 131
+
+{
+  "Name": "GWBLPABBCQOBHRQR",
+  "FoundationDate": "2002-03-21T00:00:00",
+  "Description": "SHQWFKDERPKOZLJHXPPCCHTRYHQLZXOP",
+  "Belonging": "A"
+}
+
+### I insert another one
+
+POST https://localhost:5001/api/customers HTTP/1.1
+Content-Type: application/json
+Content-Length: 131
+
+{
+  "Name": "YZIJGEYCLLDUCCNM",
+  "FoundationDate": "2012-04-14T00:00:00",
+  "Description": "SQFVRSNJDIKFWCJKWPGIVNZQNQUXKETL",
+  "Belonging": "C"
+}
+
+### read
+
+GET https://localhost:5001/api/customers/3 HTTP/1.1
+
+### read all
+
+GET https://localhost:5001/api/customers HTTP/1.1
+
+### update a dummy data with id 2
+
+PUT https://localhost:5001/api/customers/3 HTTP/1.1
+Content-Type: application/json
+Content-Length: 268
+
+{
+  "id": 3,
+  "name": "YZIJGEYCLLDUCCNM",
+  "foundationDate": "2012-04-15T00:00:00",
+  "description": "JPUECLPQUFNZZVXAODSPRKYHAUXQIOPA",
+  "picture": null,
+  "belonging": "C",
+  "contact": null,
+  "loc": null,
+  "ref": null,
+  "contactNavigation": null,
+  "forms": [],
+  "locNavigation": null,
+  "refNavigation": null
+}
+
+### partial update a dummy data with id 2
+
+PATCH https://localhost:5001/api/customers/3 HTTP/1.1
+Content-Type: application/json
+Content-Length: 122
+
+{
+  "id": 3,
+  "name": "YZIJGEYCLLDUCCNM",
+  "foundationDate": "2012-04-18T00:00:00",
+  "description": "UFWLQFROPDVHEAKAXVEWADDTOJRMXPWG"
+}
+
+### delete an identified data entry
+
+DELETE https://localhost:5001/api/customers/1 HTTP/1.1
