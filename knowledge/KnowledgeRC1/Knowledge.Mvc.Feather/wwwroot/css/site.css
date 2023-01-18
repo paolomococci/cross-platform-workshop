@@ -36,6 +36,12 @@ a {
   color: #07c;
 }
 
+a.disabled {
+  text-decoration: none;
+  pointer-events: none;
+  color: #888;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #116c;
