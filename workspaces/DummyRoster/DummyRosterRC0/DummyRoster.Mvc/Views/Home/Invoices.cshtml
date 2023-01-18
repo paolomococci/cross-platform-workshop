@@ -1,0 +1,66 @@
+@using DummyRoster.Common.EntityModel.Models
+@model IEnumerable<Invoice>
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="table-responsive-lg">
+  <table class="table  table-striped">
+    <caption>@ViewData["Title"] registered in the management system</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Form Id</th>
+        <th scope="col">Product Id</th>
+        <th scope="col">Note</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price Cut</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model is not null)
+      {
+        @foreach (Invoice item in Model)
+        {
+          <tr>
+            <th scope="row">
+              @Html.DisplayFor(
+          modelItem => item.Id
+          )
+            </th>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.FormId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.ProductId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Note
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.UnitPrice
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.Quantity
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.PriceCut
+          )
+            </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>
