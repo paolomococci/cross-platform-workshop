@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace Knowledge.Mvc.Feather.Controllers;
 
-public class HomeController {}
+public class HomeController : Controller {}
