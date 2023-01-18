@@ -90,4 +90,4 @@ dotnet watch run
 
 ## Screenshots
 
-![Knowledge-Index](screenshots/Knowledge-Index.png)
+![Knowledge-Index](screenshots/Knowledge-Workbook.png)
