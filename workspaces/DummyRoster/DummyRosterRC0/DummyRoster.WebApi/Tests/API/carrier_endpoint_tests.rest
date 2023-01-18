@@ -1,0 +1,89 @@
+# carrier endpoint tests
+
+## For example, values ​​can be generated pseudo-randomly with the following shell command:
+### cat /dev/urandom | tr -dc 'A-Z' | fold -w 16 | head -n 1
+
+### I insert a dummy record
+
+POST https://localhost:5001/api/carriers HTTP/1.1
+Content-Type: application/json
+Content-Length: 131
+
+{
+  "Name": "BAFRIMBBKYQDTBCA",
+  "FoundationDate": "2020-03-15T00:00:00",
+  "Description": "YAFWJSJKLYWJEDEKIFGPKAASQMSHIVFF",
+  "Belonging": "C"
+}
+
+### I insert another one
+
+POST https://localhost:5001/api/carriers HTTP/1.1
+Content-Type: application/json
+Content-Length: 131
+
+{
+  "Name": "VILZZNJYTDPNHCHM",
+  "FoundationDate": "2019-12-25T00:00:00",
+  "Description": "PPVLQAAQOBOVDHSHZYPLEKVPKGVNDHZF",
+  "Belonging": "B"
+}
+
+### I insert another one
+
+POST https://localhost:5001/api/carriers HTTP/1.1
+Content-Type: application/json
+Content-Length: 131
+
+{
+  "Name": "IAXQTZIGEENPGYXG",
+  "FoundationDate": "2018-08-16T00:00:00",
+  "Description": "ZIJNYHYFMFDKBGNAQNQDUTFFUUIREJLG",
+  "Belonging": "A"
+}
+
+### read
+
+GET https://localhost:5001/api/carriers/2 HTTP/1.1
+
+### read all
+
+GET https://localhost:5001/api/carriers HTTP/1.1
+
+### update a dummy data with id 2
+
+PUT https://localhost:5001/api/carriers/2 HTTP/1.1
+Content-Type: application/json
+Content-Length: 268
+
+{
+  "id": 2,
+  "name": "VILZZNJYTDPNHCHM",
+  "foundationDate": "2019-12-06T00:00:00",
+  "description": "PPVLQAAQOBOVDHSHZYPLEKVPKGVNDHZF",
+  "picture": null,
+  "belonging": "B",
+  "contact": null,
+  "loc": null,
+  "ref": null,
+  "contactNavigation": null,
+  "forms": [],
+  "locNavigation": null,
+  "refNavigation": null
+}
+
+### partial update a dummy data with id 2
+
+PATCH https://localhost:5001/api/carriers/2 HTTP/1.1
+Content-Type: application/json
+Content-Length: 73
+
+{
+  "id": 2,
+  "name": "VILZZNJYTDPNHCHM",
+  "foundationDate": "2019-12-05T00:00:00"
+}
+
+### delete an identified data entry
+
+DELETE https://localhost:5001/api/carriers/1 HTTP/1.1
