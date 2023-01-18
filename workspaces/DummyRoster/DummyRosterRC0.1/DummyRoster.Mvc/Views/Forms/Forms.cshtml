@@ -1,0 +1,78 @@
+@using DummyRoster.Common.EntityModel.Models
+@model IEnumerable<Form>
+
+<h1 class="display-4">@ViewData["Title"]</h1>
+
+<div class="table-responsive-lg">
+  <table class="table  table-striped">
+    <caption>@ViewData["Title"] registered in the management system</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Carrier Id</th>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Form Date</th>
+        <th scope="col">Required Date</th>
+        <th scope="col">Promised Date</th>
+        <th scope="col">Shipping Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model is not null)
+      {
+        @foreach (Form item in Model)
+        {
+          <tr>
+            <th scope="row">
+              @Html.DisplayFor(
+          modelItem => item.Id
+          )
+            </th>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.CustomerId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.CarrierId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.EmployeeId
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.FormDate
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.RequiredDate
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.PromisedDate
+          )
+            </td>
+            <td>
+              @Html.DisplayFor(
+          modelItem => item.ShippingCost
+          )
+            </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>
+
+<section class="container">
+  <a asp-controller="Home" asp-action="Index" style="position:absolute;bottom:80px;left:5px;margin:0;padding:5px 3px;">
+    <i class="bi bi-arrow-left-square" style="font-size: 3rem; color: grey;" title="back to Home page"></i>
+  </a>
+</section>
