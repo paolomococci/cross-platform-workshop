@@ -71,6 +71,12 @@ touch Views/Workbook/Workbooks.cshtml
 mkdir Controllers
 echo -e "namespace Knowledge.Mvc.Feather.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 echo -e "namespace Knowledge.Mvc.Feather.Controllers;\n\npublic class WorkbookController {}" > Controllers/WorkbookController.cs
+mkdir wwwroot
+mkdir wwwroot/css
+mkdir wwwroot/js
+mkdir wwwroot/Store
+mkdir wwwroot/Store/datasets
+mkdir wwwroot/Store/workbooks
 ```
 
 ### After that, from within the Knowledge.Mvc.Feather directory, I can launch the web application
