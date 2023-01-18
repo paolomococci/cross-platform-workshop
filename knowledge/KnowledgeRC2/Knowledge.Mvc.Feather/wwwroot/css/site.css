@@ -82,3 +82,7 @@ button.accept-policy {
 .card-link {
   text-decoration: none;
 }
+
+.knowledge-card {
+  width: 30rem;
+}
