@@ -20,4 +20,12 @@ public class HomeController : Controller
   {
     return View();
   }
+
+  public IActionResult Restricted()
+  {
+    return RedirectToAction(
+      "Index",
+      "Home"
+    );
+  }
 }
