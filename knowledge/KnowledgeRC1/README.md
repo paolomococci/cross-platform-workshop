@@ -77,6 +77,8 @@ mkdir wwwroot/js
 mkdir wwwroot/Store
 mkdir wwwroot/Store/datasets
 mkdir wwwroot/Store/workbooks
+touch wwwroot/css/site.css
+touch wwwroot/js/site.js
 ```
 
 ### After that, from within the Knowledge.Mvc.Feather directory, I can launch the web application
