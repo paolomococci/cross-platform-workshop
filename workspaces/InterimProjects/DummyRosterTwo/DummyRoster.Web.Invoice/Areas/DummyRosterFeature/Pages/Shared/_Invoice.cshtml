@@ -1,0 +1,25 @@
+@model DummyRoster.Common.EntityModel.Models.Invoice
+
+<div class="card border-dark m-3" style="max-width: 20rem;">
+  <img src="" class="card-img-top" alt="">
+  <div class="card-header">
+    Form ID: @Model?.FormId - Product ID: @Model?.ProductId
+  </div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">
+      quantity, price cut and note
+    </h5>
+    <p class="card-text">
+      @Model?.Quantity
+    </p>
+    <p class="card-text">
+      @Model?.PriceCut
+    </p>
+    <p class="card-text">
+      @Model?.Note
+    </p>
+  </div>
+  <div class="card-body">
+    <a href="/" class="card-link">home</a>
+  </div>
+</div>
