@@ -33,7 +33,7 @@ public class HomeController : Controller
   {
     if (dataCollectionModel.DatasetFormFile != null)
     {
-      var unique = dataCollectionModel.Unique();
+      var unique = dataCollectionModel.AddDateToName();
       if (unique != string.Empty)
       {
         var upload = Path.Combine(
