@@ -35,6 +35,7 @@ public class HomeController : Controller
     {
       var datasetFormFile = dataCollectionModel.DatasetFormFile;
       var filename = Path.GetFileName(datasetFormFile.FileName);
+      //var contentType = datasetFormFile.ContentType;
       // todo
     }
     return RedirectToAction(
