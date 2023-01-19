@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Knowledge.Mvc.Feather.Models;
 
 namespace Knowledge.Mvc.Feather.Controllers;
 
