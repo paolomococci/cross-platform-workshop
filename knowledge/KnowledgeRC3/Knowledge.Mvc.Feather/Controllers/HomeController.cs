@@ -31,8 +31,10 @@ public class HomeController : Controller
   [HttpPost]
   public IActionResult Upload(DataCollectionModel dataCollectionModel)
   {
-    if (dataCollectionModel.DatasetFilename != null)
+    if (dataCollectionModel.DatasetFormFile != null)
     {
+      var datasetFormFile = dataCollectionModel.DatasetFormFile;
+      var filename = Path.GetFileName(datasetFormFile.FileName);
       // todo
     }
     return RedirectToAction(
