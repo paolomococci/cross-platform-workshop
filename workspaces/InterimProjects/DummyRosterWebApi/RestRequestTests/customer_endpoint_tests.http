@@ -1,0 +1,15 @@
+# customer endpoint tests
+
+### read all:
+
+GET https://localhost:5001/api/customers HTTP/1.1
+
+### adding a new customer
+
+POST https://localhost:5001/api/customers HTTP/1.1
+Content-Type: application/json
+
+{
+  "Name": "CustomerOne",
+  "Description": "Some description of CustomerOne."
+}
