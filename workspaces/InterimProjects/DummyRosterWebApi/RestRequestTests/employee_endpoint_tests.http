@@ -1,0 +1,5 @@
+# employee endpoint tests
+
+### read all:
+
+GET https://localhost:5001/api/employees HTTP/1.1
