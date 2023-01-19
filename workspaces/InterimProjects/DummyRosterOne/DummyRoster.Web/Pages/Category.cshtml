@@ -1,0 +1,109 @@
+@page
+@using DummyRoster.Common.EntityModel.Models
+@model DummyRoster.Web.Pages.CategoryModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container p-3">
+
+  <div class="card mt-3">
+
+    <div class="card-header">
+      <h2 class="display-5">@ViewData["Title"]</h2>
+    </div>
+
+    <div class="card-body">
+      <div class="accordion accordion-flush" id="accordionFlushForCategories">
+        @if (Model.Categories is not null)
+        {
+          @foreach (Category item in Model.Categories)
+          {
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse-@(item.Id)" aria-expanded="false"
+                  aria-controls="flush-collapse-@(item.Id)">
+                  @item.Name
+                </button>
+              </h2>
+              <div id="flush-collapse-@(item.Id)" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushForCategories">
+                <div class="accordion-body">
+                  <table class="table">
+                    <caption>Details about the Category</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Registration Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>@item.RegistrationDate</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th scope="row">Category ID: </th>
+                        <td>@item.Id</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          }
+        }
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card mt-3">
+
+    <div class="card-header">
+      <h2 class="display-5">new category</h2>
+    </div>
+
+    <div class="card-body">
+      <form method="post">
+        <div class="row mb-3 align-items-center">
+          <div class="">
+            <label for="categoryName" class="col-form-label">Name</label>
+          </div>
+          <div class="">
+            <input asp-for="Category.Name" type="text" id="categoryName" class="form-control"
+              aria-describedby="categoryNameHelpInline" required minlength="1" maxlength="32" size="32">
+          </div>
+          <div class="">
+            <span id="categoryNameHelpInline" class="form-text">
+              Alphabetical characters only, typing in a maximum of thirty-two.
+            </span>
+          </div>
+        </div>
+        <div class="row mb-3 align-items-center">
+          <div class="">
+            <label for="categoryDescription" class="col-form-label">Description</label>
+          </div>
+          <div class="">
+            <input asp-for="Category.Description" type="text" id="categoryDescription" class="form-control"
+              aria-describedby="categoryDescriptionHelpInline" minlength="2" maxlength="64" size="64">
+          </div>
+          <div class="">
+            <span id="categoryDescriptionHelpInline" class="form-text">
+              Up to sixty-four characters are allowed.
+            </span>
+          </div>
+        </div>
+        <div class="align-items-center">
+          <input asp-for="Category.Id" value="@Model.Category.generateRandomId()" type="hidden">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
