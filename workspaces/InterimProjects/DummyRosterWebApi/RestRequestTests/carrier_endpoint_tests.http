@@ -1,0 +1,5 @@
+# carrier endpoint tests
+
+### read all:
+
+GET https://localhost:5001/api/carriers HTTP/1.1
