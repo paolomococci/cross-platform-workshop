@@ -1,0 +1,5 @@
+# supplier endpoint tests
+
+### read all:
+
+GET https://localhost:5001/api/suppliers HTTP/1.1
