@@ -33,10 +33,18 @@ public class HomeController : Controller
   {
     if (dataCollectionModel.DatasetFormFile != null)
     {
-      var datasetFormFile = dataCollectionModel.DatasetFormFile;
-      var filename = Path.GetFileName(datasetFormFile.FileName);
-      //var contentType = datasetFormFile.ContentType;
-      // todo
+      var unique = dataCollectionModel.Unique();
+      if (unique != string.Empty)
+      {
+        var upload = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+          "Store/datasets"
+        );
+        var path = Path.Combine(upload, unique);
+        dataCollectionModel.DatasetFormFile.CopyTo(
+          new FileStream(path, FileMode.Create)
+        );
+      }
     }
     return RedirectToAction(
       "Index",
