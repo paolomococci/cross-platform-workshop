@@ -1,3 +1,3 @@
 namespace Knowledge.Common.Models;
 
-public class AssetModel {}
+public class AssetModel { }
