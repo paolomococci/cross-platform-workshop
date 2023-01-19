@@ -1,0 +1,17 @@
+﻿@page
+@using DummyRoster.Common.EntityModel.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model DummyRoster.Web.Invoice.DummyRosterFeature.Pages.InvoiceModel
+
+<div class="row">
+    <h3 class="display-3">Invoices</h3>
+</div>
+
+<div class="row">
+    @foreach (Invoice item in Model.invoices)
+    {
+        <div class="col-sm-3">
+            <partial name="_Invoice" model="item" />
+        </div>
+    }
+</div>
