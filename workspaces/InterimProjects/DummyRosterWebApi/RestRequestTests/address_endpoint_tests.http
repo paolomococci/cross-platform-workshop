@@ -1,0 +1,72 @@
+# address endpoint tests
+
+### read all
+
+GET https://localhost:5001/api/addresses HTTP/1.1
+
+### read an identified data entry
+
+GET https://localhost:5001/api/addresses/3 HTTP/1.1
+
+### add a new fictitious data entry
+
+POST https://localhost:5001/api/addresses HTTP/1.1
+Content-Type: application/json
+Content-Length: 232
+
+{
+  "StreetOrSquare": "Some Street One",
+  "Civic": "151/B",
+  "City": "SomeOneCity",
+  "District": "SomeOneDistrict",
+  "Postcode": "010101",
+  "Country": "SomeOneCountry",
+  "Email": "some.one@example.local",
+  "Phone": "039035801010101",
+  "Fax": "039035801010102"
+}
+
+### add a new fictitious data entry
+
+POST https://localhost:5001/api/addresses HTTP/1.1
+Content-Type: application/json
+Content-Length: 229
+
+{
+  "StreetOrSquare": "Some Street Two",
+  "Civic": "15",
+  "City": "SomeTwoCity",
+  "District": "SomeTwoDistrict",
+  "Postcode": "020101",
+  "Country": "SomeTwoCountry",
+  "Email": "some.two@example.local",
+  "Phone": "039035801010103",
+  "Fax": "039035801010104"
+}
+
+### update an identified data entry
+
+PUT https://localhost:5001/api/addresses/3 HTTP/1.1
+Content-Type: application/json
+Content-Length: 296
+
+{
+  "id": 3,
+  "streetOrSquare": "SomeOne avenue",
+  "civic": "20/D",
+  "city": "SomeOneCity",
+  "district": "SomeOneDistrict",
+  "postcode": "010101",
+  "country": "SomeOneCountry",
+  "email": "some.one@example.local",
+  "phone": "039035801010101",
+  "fax": "039035801010102",
+  "carriers": [],
+  "customers": [],
+  "employees": [],
+  "suppliers": []
+}
+
+### delete an identified data entry
+
+DELETE https://localhost:5001/api/addresses/2 HTTP/1.1
