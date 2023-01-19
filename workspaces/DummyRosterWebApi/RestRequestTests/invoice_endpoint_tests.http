@@ -1,5 +1,0 @@
-# invoice endpoint tests
-
-### read all:
-
-GET https://localhost:5001/api/invoices HTTP/1.1
