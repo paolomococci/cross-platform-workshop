@@ -27,6 +27,16 @@ public class HomeController : Controller
     return View(new DataCollectionModel());
   }
 
+  [HttpPost]
+  public IActionResult Upload(DataCollectionModel dataCollectionModel)
+  {
+    // todo
+    return RedirectToAction(
+      "Index",
+      "Home"
+    );
+  }
+
   public IActionResult Uploaded()
   {
     return View();
