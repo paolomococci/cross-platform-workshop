@@ -1,3 +1,3 @@
 namespace Knowledge.Common.Models;
 
-public class WorkbookModel {}
+public class WorkbookModel { }
