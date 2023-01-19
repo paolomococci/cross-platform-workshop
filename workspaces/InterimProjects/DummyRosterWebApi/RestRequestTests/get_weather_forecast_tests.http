@@ -1,0 +1,9 @@
+# Weather forecast tests
+
+### basic request:
+
+GET https://localhost:5001/forecast HTTP/1.1
+
+### request with parameter:
+
+GET https://localhost:5001/forecast/1 HTTP/1.1
