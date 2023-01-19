@@ -30,7 +30,10 @@ public class HomeController : Controller
   [HttpPost]
   public IActionResult Upload(DataCollectionModel dataCollectionModel)
   {
-    // todo
+    if (dataCollectionModel.DatasetFilename != null)
+    {
+      // todo
+    }
     return RedirectToAction(
       "Index",
       "Home"
