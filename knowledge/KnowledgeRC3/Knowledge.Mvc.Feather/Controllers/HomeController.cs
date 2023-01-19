@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using Knowledge.Mvc.Feather.Models;
 
 namespace Knowledge.Mvc.Feather.Controllers;
@@ -50,6 +51,17 @@ public class HomeController : Controller
     return RedirectToAction(
       "Index",
       "Home"
+    );
+  }
+
+  [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+  public IActionResult Error()
+  {
+    return View(
+      new ErrorViewModel
+      {
+        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+      }
     );
   }
 }
