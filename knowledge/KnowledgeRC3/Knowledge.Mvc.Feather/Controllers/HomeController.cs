@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Knowledge.Mvc.Feather.Models;
 
 namespace Knowledge.Mvc.Feather.Controllers;
 
@@ -23,7 +24,7 @@ public class HomeController : Controller
 
   public IActionResult Upload()
   {
-    return View();
+    return View(new DataCollectionModel());
   }
 
   public IActionResult Uploaded()
