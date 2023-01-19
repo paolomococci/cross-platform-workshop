@@ -1,5 +1,0 @@
-# product endpoint tests
-
-### read all:
-
-GET https://localhost:5001/api/products HTTP/1.1
