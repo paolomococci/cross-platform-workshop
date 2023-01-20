@@ -69,6 +69,7 @@ public class HomeController : Controller
 
   private object AppendDateTime(string datasetName)
   {
-    throw new NotImplementedException();
+    var name = Path.GetFileName(datasetName);
+    return Path.GetFileNameWithoutExtension(name) + $"_{DateTime.Now:yyyy-MM-dd_hh-mm-ss}" + Path.GetExtension(name);
   }
 }
