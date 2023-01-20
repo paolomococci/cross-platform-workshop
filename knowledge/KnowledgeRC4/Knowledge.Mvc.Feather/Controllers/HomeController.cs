@@ -29,11 +29,11 @@ public class HomeController : Controller
   }
 
   [HttpPost]
-  public IActionResult Upload(DataCollectionModel dataCollectionModel)
+  public IActionResult Upload(DataCollectionModel collection)
   {
-    if (dataCollectionModel.Dataset != null)
+    if (collection.Dataset != null)
     {
-      var dataset = dataCollectionModel.Dataset;
+      var dataset = collection.Dataset;
       var datasetName = Path.GetFileName(dataset.FileName);
       var unique = this.AppendDateTime(datasetName);
       var upload = Path.Combine(
@@ -41,7 +41,7 @@ public class HomeController : Controller
         "Store/datasets"
       );
       var path = Path.Combine(upload, unique);
-      dataCollectionModel.Dataset.CopyTo(
+      collection.Dataset.CopyTo(
         new FileStream(path, FileMode.Create)
       );
     }
