@@ -14,8 +14,8 @@
         <div class="card-footer">
             <form asp-action="Upload" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="formFileLg" class="form-label">Select a file from your filesystem.</label>
-                    <input class="form-control form-control-lg" id="dataCollectionField" type="file">
+                    <label for="dataset" class="form-label">Select a file from your filesystem.</label>
+                    <input class="form-control form-control-lg" type="file" id="dataset" asp-for="Dataset" required>
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
