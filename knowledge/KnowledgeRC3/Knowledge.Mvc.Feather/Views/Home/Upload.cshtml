@@ -13,7 +13,12 @@
         </h3>
         <p class="card-text p-2">Upload form.</p>
         <div class="card-footer">
-            <form asp-action="Upload" enctype="multipart/form-data"></form>
+            <form asp-action="Upload" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="formFileLg" class="form-label">Select a file from your filesystem</label>
+                    <input class="form-control form-control-lg" id="dataCollectionField" type="file">
+                </div>
+            </form>
         </div>
     </div>
 </div>
