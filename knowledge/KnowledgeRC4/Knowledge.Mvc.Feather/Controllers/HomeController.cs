@@ -34,6 +34,7 @@ public class HomeController : Controller
     if (dataCollectionModel.Dataset != null)
     {
       var dataset = dataCollectionModel.Dataset;
+      var datasetName = Path.GetFileName(dataset.FileName);
     }
     return RedirectToAction(
       "Index",
