@@ -39,7 +39,6 @@ public class HomeController : Controller
       var description = postModel.Description;
       var concept = postModel.Concept;
       var conceptName = Path.GetFileName(concept.FileName);
-      //var conceptContentType = concept.ContentType;
       var unique = this.AppendDateTime(conceptName);
       var upload = Path.Combine(
         this.webHostEnvironment.WebRootPath,
