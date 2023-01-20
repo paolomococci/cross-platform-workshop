@@ -84,5 +84,5 @@ button.accept-policy {
 }
 
 .knowledge-card {
-  width: 30rem;
+  max-width: 100vw !important;
 }
