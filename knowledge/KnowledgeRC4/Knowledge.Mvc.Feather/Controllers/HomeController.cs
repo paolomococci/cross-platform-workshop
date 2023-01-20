@@ -31,20 +31,9 @@ public class HomeController : Controller
   [HttpPost]
   public IActionResult Upload(DataCollectionModel dataCollectionModel)
   {
-    if (dataCollectionModel.DatasetFormFile != null)
+    if (dataCollectionModel.Dataset != null)
     {
-      var unique = dataCollectionModel.AddDateToName();
-      if (unique != string.Empty)
-      {
-        var upload = Path.Combine(
-        this.webHostEnvironment.WebRootPath,
-          "Store/datasets"
-        );
-        var path = Path.Combine(upload, unique);
-        dataCollectionModel.DatasetFormFile.CopyTo(
-          new FileStream(path, FileMode.Create)
-        );
-      }
+      var dataset = dataCollectionModel.Dataset;
     }
     return RedirectToAction(
       "Index",
