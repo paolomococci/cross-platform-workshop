@@ -85,4 +85,5 @@ button.accept-policy {
 
 .knowledge-card {
   max-width: 100vw !important;
+  overflow: auto;
 }
