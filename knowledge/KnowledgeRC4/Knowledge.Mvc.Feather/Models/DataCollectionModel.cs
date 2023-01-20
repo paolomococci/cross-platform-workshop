@@ -2,10 +2,12 @@ namespace Knowledge.Mvc.Feather.Models;
 
 public class DataCollectionModel
 {
-  public string Id { get; } = DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss");
+  public string Id { get; set; } = string.Empty;
   public IFormFile? DatasetFormFile { get; set; }
 
-  public DataCollectionModel() {}
+  public DataCollectionModel() {
+
+  }
 
   public string AddDateToName()
   {
