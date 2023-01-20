@@ -5,6 +5,8 @@ public class DataCollectionModel
   public string Id { get; } = DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss");
   public IFormFile? DatasetFormFile { get; set; }
 
+  public DataCollectionModel() {}
+
   public string AddDateToName()
   {
     if (this.DatasetFormFile != null)
