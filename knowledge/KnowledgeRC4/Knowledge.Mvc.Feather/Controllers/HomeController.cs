@@ -36,6 +36,14 @@ public class HomeController : Controller
       var dataset = dataCollectionModel.Dataset;
       var datasetName = Path.GetFileName(dataset.FileName);
       var unique = this.AppendDateTime(datasetName);
+      var upload = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/datasets"
+      );
+      var path = Path.Combine(upload, unique);
+      dataCollectionModel.Dataset.CopyTo(
+        new FileStream(path, FileMode.Create)
+      );
     }
     return RedirectToAction(
       "Index",
@@ -67,7 +75,7 @@ public class HomeController : Controller
     );
   }
 
-  private object AppendDateTime(string datasetName)
+  private string AppendDateTime(string datasetName)
   {
     var name = Path.GetFileName(datasetName);
     return Path.GetFileNameWithoutExtension(name) + $"_{DateTime.Now:yyyy-MM-dd_hh-mm-ss}" + Path.GetExtension(name);
