@@ -35,6 +35,7 @@ public class HomeController : Controller
     {
       var dataset = dataCollectionModel.Dataset;
       var datasetName = Path.GetFileName(dataset.FileName);
+      var unique = this.AppendDateTime(datasetName);
     }
     return RedirectToAction(
       "Index",
@@ -64,5 +65,10 @@ public class HomeController : Controller
         RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
       }
     );
+  }
+
+  private object AppendDateTime(string datasetName)
+  {
+    throw new NotImplementedException();
   }
 }
