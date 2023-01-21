@@ -55,6 +55,7 @@ cd Knowledge.Mvc.Feather
 dotnet add ./Knowledge.Mvc.Feather.csproj reference ../Knowledge.Common/Knowledge.Common.csproj
 mkdir Models
 echo -e "namespace Knowledge.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
+echo -e "namespace Knowledge.Mvc.Feather.Models;\n\npublic class DataCollectionModel {}" > Models/DataCollectionModel.cs
 mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
