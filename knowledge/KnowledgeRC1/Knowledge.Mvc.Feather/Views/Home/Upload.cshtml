@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "knowledge";
+    ViewData["SubTitle"] = "upload";
+}
+@model DataCollectionModel
+
+<div class="card knowledge-card">
+    <div class="card-body">
+        <h2 class="card-title p-2">
+            @ViewData["Title"]
+        </h2>
+        <h3 class="card-subtitle p-3 text-muted">
+            @ViewData["SubTitle"]
+        </h3>
+        <div class="card-footer">
+            <form asp-action="Upload" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="dataset" class="form-label">Select a file from your filesystem.</label>
+                    <input class="form-control form-control-lg" type="file" id="dataset" asp-for="Dataset" required>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
