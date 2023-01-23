@@ -91,4 +91,6 @@ dotnet watch run
 
 ## Screenshots
 
+### Home page
+
 ![Knowledge-Index](screenshots/Knowledge-Home.png)
