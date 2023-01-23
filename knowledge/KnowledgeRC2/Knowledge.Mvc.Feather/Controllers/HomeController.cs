@@ -97,10 +97,4 @@ public class HomeController : Controller
       }
     );
   }
-
-  private string AppendDateTime(string datasetName)
-  {
-    var name = Path.GetFileName(datasetName);
-    return Path.GetFileNameWithoutExtension(name) + $"_{DateTime.Now:yyyy-MM-dd_hh-mm-ss}" + Path.GetExtension(name);
-  }
 }
