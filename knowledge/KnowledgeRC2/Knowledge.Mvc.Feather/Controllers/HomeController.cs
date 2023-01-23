@@ -69,7 +69,8 @@ public class HomeController : Controller
   [HttpPost]
   public IActionResult Process(string unique)
   {
-    if (unique != null && unique != string.Empty){
+    if (unique != null && unique != string.Empty)
+    {
       // todo
     }
     return RedirectToAction(
