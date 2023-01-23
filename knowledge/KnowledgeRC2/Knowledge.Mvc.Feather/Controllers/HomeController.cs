@@ -72,10 +72,12 @@ public class HomeController : Controller
     if (unique != null && unique != string.Empty)
     {
       System.Console.WriteLine($"Filename to process: {unique}");
-      var environmentPath = Path.Combine(
+      string environmentPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/datasets"
       );
+      string path = Path.Combine(environmentPath, unique);
+      // todo
     }
     return RedirectToAction(
       "Index",
