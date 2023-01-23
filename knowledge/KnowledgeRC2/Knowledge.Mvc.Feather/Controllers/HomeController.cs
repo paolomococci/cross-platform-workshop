@@ -71,7 +71,7 @@ public class HomeController : Controller
   {
     if (unique != null && unique != string.Empty)
     {
-      // todo
+      System.Console.WriteLine($"Filename to process: {unique}");
     }
     return RedirectToAction(
       "Index",
