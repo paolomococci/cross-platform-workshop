@@ -93,12 +93,12 @@ dotnet watch run
 
 ### Home page
 
-![Knowledge-Index](screenshots/Knowledge-Home.png)
+![Home-Index](screenshots/Knowledge-Home.png)
 
 ### Upload page
 
-![Knowledge-Upload](screenshots/Knowledge-Upload.png)
+![Home-Upload](screenshots/Knowledge-Upload.png)
 
 ### Uploaded page
 
-![Knowledge-Uploaded](screenshots/Knowledge-Uploaded.png)
+![Home-Uploaded](screenshots/Knowledge-Uploaded.png)
