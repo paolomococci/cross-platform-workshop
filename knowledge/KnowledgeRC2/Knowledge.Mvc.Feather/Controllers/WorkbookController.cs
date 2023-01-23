@@ -21,7 +21,7 @@ public class WorkbookController : Controller
     return View();
   }
 
-  public IActionResult Workbooks()
+  public IActionResult GetAll()
   {
     return View();
   }
