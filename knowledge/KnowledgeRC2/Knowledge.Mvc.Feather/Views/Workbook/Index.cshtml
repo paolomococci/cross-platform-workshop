@@ -1,6 +1,15 @@
 @{
     ViewData["Title"] = "workbook";
     ViewData["SubTitle"] = "index";
+    List<string>? items = new();
+    if (ViewData["workbookListNames"] as List<string> != null)
+    {
+        items = ViewData["workbookListNames"] as List<string>;
+    }
+    else
+    {
+        items.Add("");
+    }
 }
 
 <div class="card knowledge-card">
