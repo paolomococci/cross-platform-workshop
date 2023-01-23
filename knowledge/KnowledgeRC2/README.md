@@ -106,7 +106,3 @@ dotnet watch run
 ### Workbook Index page
 
 ![Workbook-Index](screenshots/Knowledge-Workbook-Index.png)
-
-### Workbook GetAll page
-
-![Workbook-GetAll](screenshots/Knowledge-Workbook-GetAll.png)
