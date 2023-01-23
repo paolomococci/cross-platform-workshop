@@ -25,7 +25,7 @@
             <form asp-action="Process" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="unique" class="form-label">Please, select a file from your filesystem.</label>
-                    <select name="unique" class="">
+                    <select name="unique" class="form-select form-select-lg mb-3">
                         @foreach (var item in @items!)
                         {
                             <option value="@item">@item</option>
