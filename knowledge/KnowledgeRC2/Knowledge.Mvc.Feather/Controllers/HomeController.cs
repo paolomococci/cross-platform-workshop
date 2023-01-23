@@ -33,9 +33,7 @@ public class HomeController : Controller
   {
     if (collection.Dataset != null)
     {
-      var dataset = collection.Dataset;
-      var datasetName = Path.GetFileName(dataset.FileName);
-      var unique = this.AppendDateTime(datasetName);
+      var unique = collection.SetTheDateInTheFilename();
       var upload = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/datasets"
