@@ -18,6 +18,18 @@ public class WorkbookController : Controller
 
   public IActionResult Index()
   {
+    List<string> workbookProcessedList = new();
+    var store = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/workbooks"
+      );
+    var uploadedFiles = Directory.GetFiles(store);
+    foreach (var item in uploadedFiles)
+    {
+      var itemName = Path.GetFileName(item);
+      workbookProcessedList.Add(itemName);
+      ViewData["workbookListNames"] = workbookProcessedList;
+    }
     return View();
   }
 }
