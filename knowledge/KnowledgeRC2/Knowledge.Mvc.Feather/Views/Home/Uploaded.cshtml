@@ -23,7 +23,7 @@
         <p class="card-text p-2">List of uploaded dataset:</p>
         <div class="card-footer">
             <form asp-action="Process" enctype="multipart/form-data">
-                <div class="mb-3">
+                <div class="m-3">
                     <label for="unique" class="form-label">Please, select a file from your filesystem.</label>
                     <select name="unique" class="form-select form-select-lg mb-3">
                         @foreach (var item in @items!)
