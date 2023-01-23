@@ -487,4 +487,4 @@ HELP.md
 *.ico
 *.png
 *.xlsx
-!screenshots/Knowledge-Workbook.png
+!screenshots/*.png
