@@ -20,9 +20,4 @@ public class WorkbookController : Controller
   {
     return View();
   }
-
-  public IActionResult GetAll()
-  {
-    return View();
-  }
 }
