@@ -1,6 +1,15 @@
 @{
     ViewData["Title"] = "knowledge";
     ViewData["SubTitle"] = "uploaded";
+    List<string>? items = new();
+    if (ViewData["datasetList"] as List<string> != null)
+    {
+        items = ViewData["datasetList"] as List<string>;
+    }
+    else
+    {
+        items.Add("");
+    }
 }
 
 <div class="card knowledge-card">
