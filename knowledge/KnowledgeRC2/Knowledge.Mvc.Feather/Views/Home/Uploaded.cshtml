@@ -23,22 +23,20 @@
         <p class="card-text p-2">List of uploaded dataset:</p>
         <div class="card-footer">
             <form asp-action="Process" enctype="multipart/form-data">
-                <fieldset class="">
-                    <legend class="">please select a file:</legend>
-                    <div class="">
-                        <select name="unique" class="">
-                            @foreach (var item in @items!)
-                            {
-                                <option value="@item">@item</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="">
-                        <button type="submit" class="">
-                            submit
-                        </button>
-                    </div>
-                </fieldset>
+                <div class="mb-3">
+                    <label for="unique" class="form-label">Please, select a file from your filesystem.</label>
+                    <select name="unique" class="">
+                        @foreach (var item in @items!)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-outline-primary btn-lg">
+                        Submit
+                    </button>
+                </div>
             </form>
         </div>
     </div>
