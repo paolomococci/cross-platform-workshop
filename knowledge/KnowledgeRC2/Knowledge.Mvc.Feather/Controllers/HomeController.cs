@@ -66,6 +66,18 @@ public class HomeController : Controller
     return View();
   }
 
+  [HttpPost]
+  public IActionResult Process(string unique)
+  {
+    if (unique != null && unique != string.Empty){
+      // todo
+    }
+    return RedirectToAction(
+      "Index",
+      "Home"
+    );
+  }
+
   public IActionResult Restricted()
   {
     return RedirectToAction(
