@@ -1,6 +1,7 @@
 # KnowledgeRC2
 
 Web application that offers access to machine learning features.
+Stylized using the CSS Bootstrap framework.
 
 ## Scaffolding
 
