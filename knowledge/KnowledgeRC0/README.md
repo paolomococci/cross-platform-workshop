@@ -1,6 +1,7 @@
 # KnowledgeRC0
 
 Web application that offers access to machine learning features.
+Stylized using the CSS UIkit framework.
 
 ## Scaffolding
 
