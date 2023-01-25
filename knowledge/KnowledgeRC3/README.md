@@ -88,3 +88,21 @@ touch wwwroot/js/site.js
 ```shell
 dotnet watch run
 ```
+
+## Screenshots
+
+### Home page
+
+![Home-Index](screenshots/Knowledge-Home.png)
+
+### Upload page
+
+![Home-Upload](screenshots/Knowledge-Upload.png)
+
+### Uploaded page
+
+![Home-Uploaded](screenshots/Knowledge-Uploaded.png)
+
+### Workbook Index page
+
+![Workbook-Index](screenshots/Knowledge-Workbook.png)
