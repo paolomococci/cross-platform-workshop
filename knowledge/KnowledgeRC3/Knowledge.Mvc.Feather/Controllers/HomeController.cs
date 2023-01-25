@@ -33,9 +33,7 @@ public class HomeController : Controller
   {
     if (dataCollection.Dataset != null)
     {
-      var concept = dataCollection.Dataset;
-      var conceptName = Path.GetFileName(concept.FileName);
-      var unique = this.AppendDateTime(conceptName);
+      var unique = dataCollection.SetTheDateInTheFilename();
       var upload = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/datasets"
@@ -91,11 +89,5 @@ public class HomeController : Controller
         RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
       }
     );
-  }
-
-  private string AppendDateTime(string file)
-  {
-    var name = Path.GetFileName(file);
-    return Path.GetFileNameWithoutExtension(name) + $"_{DateTime.Now:yyyy-MM-dd_hh-mm-ss}" + Path.GetExtension(name);
   }
 }
