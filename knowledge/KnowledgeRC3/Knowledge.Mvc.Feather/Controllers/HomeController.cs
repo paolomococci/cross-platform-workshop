@@ -38,9 +38,9 @@ public class HomeController : Controller
         this.webHostEnvironment.WebRootPath,
         "Store/datasets"
       );
-      var path = Path.Combine(upload, unique);
+      var datasetPath = Path.Combine(upload, unique);
       dataCollection.Dataset.CopyTo(
-        new FileStream(path, FileMode.Create)
+        new FileStream(datasetPath, FileMode.Create)
       );
     }
     return RedirectToAction(
@@ -71,7 +71,12 @@ public class HomeController : Controller
   {
     if (unique != null && unique != string.Empty)
     {
-      System.Console.WriteLine($"Dataset to process: {unique}");
+      string environmentPath = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/datasets"
+      );
+      string datasetPath = Path.Combine(environmentPath, unique);
+      System.Console.WriteLine($"Path of dataset to process: {datasetPath}");
       // todo
     }
     return RedirectToAction(
