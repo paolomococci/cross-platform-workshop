@@ -73,6 +73,7 @@ public class HomeController : Controller
   {
     if (unique != null && unique != string.Empty)
     {
+      System.Console.WriteLine($"Dataset to process: {unique}");
       // todo
     }
     return RedirectToAction(
