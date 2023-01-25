@@ -487,3 +487,6 @@ HELP.md
 *.ico
 *.png
 *.xlsx
+
+# to include
+!screenshots/*.png
