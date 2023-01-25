@@ -19,11 +19,6 @@ public class WorkbookController : Controller
 
   public IActionResult Index()
   {
-    return View();
-  }
-
-  public IActionResult Workbooks()
-  {
     List<string> workbookProcessedList = new();
     var store = Path.Combine(
         this.webHostEnvironment.WebRootPath,
