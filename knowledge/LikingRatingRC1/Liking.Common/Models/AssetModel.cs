@@ -6,7 +6,11 @@ public class AssetModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  public void CreateMLContext() {
+  public void CreateMLContext(string datasetPath) {
     MLContext mlContext = new MLContext(seed: 1);
+    IDataView dataView = mlContext.Data.LoadFromTextFile<DatasetRawModel>(
+      datasetPath,
+      hasHeader: true
+    );
   }
 }
