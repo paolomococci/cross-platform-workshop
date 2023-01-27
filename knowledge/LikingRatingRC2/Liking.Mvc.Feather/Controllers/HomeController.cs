@@ -71,11 +71,11 @@ public class HomeController : Controller
   {
     if (unique != null && unique != string.Empty)
     {
-      string environmentPath = Path.Combine(
+      string datasetsPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/datasets"
       );
-      string datasetPath = Path.Combine(environmentPath, unique);
+      string datasetPath = Path.Combine(datasetsPath, unique);
       System.Console.WriteLine($"Path of dataset to process: {datasetPath}");
       // todo
     }
