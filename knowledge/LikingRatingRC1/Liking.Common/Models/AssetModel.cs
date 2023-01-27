@@ -29,6 +29,8 @@ public class AssetModel
       inputColumnName: nameof(DatasetRawModel.Text)
     );
     /* training step */
-    SdcaLogisticRegressionBinaryTrainer sdcaLogisticRegressionBinaryTrainer = mlContext.BinaryClassification.Trainers.SdcaLogisticRegression();
+    SdcaLogisticRegressionBinaryTrainer sdcaLogisticRegressionBinaryTrainer = mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(
+      labelColumnName: "Label"
+    );
   }
 }
