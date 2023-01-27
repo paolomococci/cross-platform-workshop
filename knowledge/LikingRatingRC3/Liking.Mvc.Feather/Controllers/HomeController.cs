@@ -80,7 +80,7 @@ public class HomeController : Controller
         this.webHostEnvironment.WebRootPath,
         "Store/schemes"
       );
-      AssetModel asset = new();
+      SchemeModel asset = new();
       string datasetPath = Path.Combine(storeDatasetPath, unique);
       string schemePath = Path.Combine(storeSchemePath, $"asset_{asset.Id}.zip");
       System.Console.WriteLine($"Path of dataset to process: {datasetPath}");
