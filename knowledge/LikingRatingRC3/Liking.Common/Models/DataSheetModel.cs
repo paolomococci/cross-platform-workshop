@@ -3,5 +3,5 @@ namespace Liking.Common.Models;
 public class DataSheetModel
 {
   public string Label { get; set; } = string.Empty;
-  public List<AssetModel> Assets { get; set; } = new();
+  public List<SchemeModel> Assets { get; set; } = new();
 }
