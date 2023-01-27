@@ -16,7 +16,8 @@ public class AssetModel
     );
     /* configuration step */
     TrainTestData trainTestData = mlContext.Data.TrainTestSplit(
-      dataView
+      dataView,
+      testFraction: 0.2
     );
   }
 }
