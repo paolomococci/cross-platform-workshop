@@ -58,5 +58,6 @@ public class AssetModel
     DatasetRawModel datasetRawModel = new DatasetRawModel {
       Text = "I love testing apps!"
     };
+    var predictionEngine = mlContext.Model.CreatePredictionEngine<DatasetRawModel, DatasetCookedModel>(transformer);
   }
 }
