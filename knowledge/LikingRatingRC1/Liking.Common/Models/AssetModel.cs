@@ -1,4 +1,5 @@
 using Microsoft.ML;
+using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms.Text;
 using static Microsoft.ML.DataOperationsCatalog;
@@ -37,5 +38,10 @@ public class AssetModel
     ITransformer transformer = training.Fit(trainSetDataView);
     /* evaluate step */
     IDataView dataViewPredictions = transformer.Transform(testSetDataView);
+    CalibratedBinaryClassificationMetrics metrics = mlContext.BinaryClassification.Evaluate(
+      data: dataViewPredictions,
+      labelColumnName: "Label",
+      scoreColumnName: "Score"
+    );
   }
 }
