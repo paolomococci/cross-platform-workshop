@@ -35,5 +35,7 @@ public class AssetModel
     );
     var training = textFeaturizingEstimator.Append(sdcaLogisticRegressionBinaryTrainer);
     ITransformer transformer = training.Fit(trainSetDataView);
+    /* evaluate step */
+    var dataViewPredictions = transformer.Transform(testSetDataView);
   }
 }
