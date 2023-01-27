@@ -59,5 +59,6 @@ public class AssetModel
       Text = "I love testing apps!"
     };
     var predictionEngine = mlContext.Model.CreatePredictionEngine<DatasetRawModel, DatasetCookedModel>(transformer);
+    DatasetCookedModel datasetCookedModelResult = predictionEngine.Predict(datasetRawModel);
   }
 }
