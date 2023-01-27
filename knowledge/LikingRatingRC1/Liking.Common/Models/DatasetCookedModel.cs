@@ -9,4 +9,6 @@ public class DatasetCookedModel
   public bool Label { get; set; } = false;
 
   public decimal Likelihood { get; set; } = 0.0M;
+
+  public decimal Score { get; set; } = 0.0M;
 }
