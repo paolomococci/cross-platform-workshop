@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Liking.Mvc.Feather.Models;
+using Liking.Common.Models;
 
 namespace Liking.Mvc.Feather.Controllers;
 
@@ -79,7 +80,9 @@ public class HomeController : Controller
         this.webHostEnvironment.WebRootPath,
         "Store/schemes"
       );
+      AssetModel asset = new();
       string datasetPath = Path.Combine(storeDatasetPath, unique);
+      string schemePath = Path.Combine(storeSchemePath, $"asset_{asset.Id}.zip");
       System.Console.WriteLine($"Path of dataset to process: {datasetPath}");
       // todo
     }
