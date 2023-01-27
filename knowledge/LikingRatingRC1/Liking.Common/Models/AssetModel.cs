@@ -34,5 +34,6 @@ public class AssetModel
       featureColumnName: "Features"
     );
     var training = textFeaturizingEstimator.Append(sdcaLogisticRegressionBinaryTrainer);
+    ITransformer transformer = training.Fit(trainSetDataView);
   }
 }
