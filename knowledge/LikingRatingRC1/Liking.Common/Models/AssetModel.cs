@@ -38,10 +38,12 @@ public class AssetModel
     ITransformer transformer = training.Fit(trainSetDataView);
     /* evaluate step */
     IDataView dataViewPredictions = transformer.Transform(testSetDataView);
-    CalibratedBinaryClassificationMetrics metrics = mlContext.BinaryClassification.Evaluate(
+    CalibratedBinaryClassificationMetrics calibratedBinaryClassificationMetrics = mlContext.BinaryClassification.Evaluate(
       data: dataViewPredictions,
       labelColumnName: "Label",
       scoreColumnName: "Score"
     );
+    System.Console.WriteLine($"Trainer: {sdcaLogisticRegressionBinaryTrainer.ToString()}");
+    System.Console.WriteLine($"Metrics: {calibratedBinaryClassificationMetrics.ToString()}");
   }
 }
