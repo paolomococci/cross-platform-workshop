@@ -1,4 +1,5 @@
 using Microsoft.ML;
+using Microsoft.ML.Transforms.Text;
 using static Microsoft.ML.DataOperationsCatalog;
 
 namespace Liking.Common.Models;
@@ -21,5 +22,10 @@ public class AssetModel
     );
     IDataView trainSetDataView = trainTestData.TrainSet;
     IDataView testSetDataView = trainTestData.TestSet;
+    /* process configuration step */
+    TextFeaturizingEstimator textFeaturizingEstimator = mlContext.Transforms.Text.FeaturizeText(
+      outputColumnName: "Features",
+      inputColumnName: nameof(DatasetRawModel.Text)
+    );
   }
 }
