@@ -33,5 +33,6 @@ public class AssetModel
       labelColumnName: "Label",
       featureColumnName: "Features"
     );
+    var training = textFeaturizingEstimator.Append(sdcaLogisticRegressionBinaryTrainer);
   }
 }
