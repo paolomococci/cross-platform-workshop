@@ -84,7 +84,7 @@ public class HomeController : Controller
       string datasetPath = Path.Combine(storeDatasetPath, unique);
       string schemePath = Path.Combine(storeSchemePath, $"asset_{asset.Id}.zip");
       System.Console.WriteLine($"Path of dataset to process: {datasetPath}");
-      System.Console.WriteLine($"Path to the schema obtained from processing: {datasetPath}");
+      System.Console.WriteLine($"Path to the schema obtained from processing: {schemePath}");
       // todo
     }
     return RedirectToAction(
