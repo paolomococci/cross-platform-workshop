@@ -54,5 +54,9 @@ public class AssetModel
       trainSetDataView.Schema,
       schemaPath
     );
+    /* simple test step */
+    DatasetRawModel datasetRawModel = new DatasetRawModel {
+      Text = "I love testing apps!"
+    };
   }
 }
