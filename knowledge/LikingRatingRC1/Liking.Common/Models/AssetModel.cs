@@ -1,4 +1,5 @@
 using Microsoft.ML;
+using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms.Text;
 using static Microsoft.ML.DataOperationsCatalog;
 
@@ -27,5 +28,7 @@ public class AssetModel
       outputColumnName: "Features",
       inputColumnName: nameof(DatasetRawModel.Text)
     );
+    /* training step */
+    SdcaLogisticRegressionBinaryTrainer sdcaLogisticRegressionBinaryTrainer = mlContext.BinaryClassification.Trainers.SdcaLogisticRegression();
   }
 }
