@@ -10,7 +10,10 @@ public class AssetModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  public void CreateMLContext(string datasetPath) {
+  public void CreateMLContext(
+    string datasetPath,
+    string schemaPath
+  ) {
     MLContext mlContext = new MLContext(seed: 1);
     /* loading step */
     IDataView dataView = mlContext.Data.LoadFromTextFile<DatasetRawModel>(
@@ -45,5 +48,11 @@ public class AssetModel
     );
     System.Console.WriteLine($"Trainer: {sdcaLogisticRegressionBinaryTrainer.ToString()}");
     System.Console.WriteLine($"Metrics: {calibratedBinaryClassificationMetrics.ToString()}");
+    /* persist step */
+    mlContext.Model.Save(
+      transformer,
+      trainSetDataView.Schema,
+      schemaPath
+    );
   }
 }
