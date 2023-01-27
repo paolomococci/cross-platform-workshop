@@ -45,7 +45,7 @@ dotnet add package Microsoft.ML --version 3.0.0-preview.22621.2
 mkdir Models
 echo -e "namespace Liking.Common.Models;\n\npublic class DatasetRawModel {}" > Models/DatasetRawModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class DatasetCookedModel {}" > Models/DatasetCookedModel.cs
-echo -e "namespace Liking.Common.Models;\n\npublic class AssetModel {}" > Models/AssetModel.cs
+echo -e "namespace Liking.Common.Models;\n\npublic class SchemeModel {}" > Models/SchemeModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class DataSheetModel {}" > Models/DataSheetModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class WorkbookModel {}" > Models/WorkbookModel.cs
 ```
