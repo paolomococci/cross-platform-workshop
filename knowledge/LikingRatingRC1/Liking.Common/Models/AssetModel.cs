@@ -13,7 +13,8 @@ public class AssetModel
   public void CreateMLContext(
     string datasetPath,
     string schemaPath
-  ) {
+  )
+  {
     MLContext mlContext = new MLContext(seed: 1);
     /* loading step */
     IDataView dataView = mlContext.Data.LoadFromTextFile<DatasetRawModel>(
@@ -55,7 +56,8 @@ public class AssetModel
       schemaPath
     );
     /* simple test step */
-    DatasetRawModel datasetRawModel = new DatasetRawModel {
+    DatasetRawModel datasetRawModel = new DatasetRawModel
+    {
       Text = "I love testing apps!"
     };
     var predictionEngine = mlContext.Model.CreatePredictionEngine<DatasetRawModel, DatasetCookedModel>(transformer);
@@ -67,7 +69,10 @@ public class AssetModel
     System.Console.WriteLine("--------------------> end of the test phase results <--------------------");
   }
 
-  private string Evaluate(DatasetCookedModel datasetCookedModel) {
+  private string Evaluate(
+    DatasetCookedModel datasetCookedModel
+  )
+  {
     return Convert.ToBoolean(datasetCookedModel.Likelihood) ? "negative feeling" : "positive feeling";
   }
 }
