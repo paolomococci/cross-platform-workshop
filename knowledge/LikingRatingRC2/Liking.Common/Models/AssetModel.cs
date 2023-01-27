@@ -11,14 +11,14 @@ public class AssetModel
   public string Id { get; } = Guid.NewGuid().ToString();
 
   public void CreateMLContext(
-    string storeDatasetPath,
-    string storeSchemePath
+    string datasetPath,
+    string schemePath
   )
   {
     MLContext mlContext = new MLContext(seed: 1);
     /* loading step */
     IDataView dataView = mlContext.Data.LoadFromTextFile<DatasetRawModel>(
-      storeDatasetPath,
+      datasetPath,
       hasHeader: true
     );
     /* configuration step */
@@ -53,7 +53,7 @@ public class AssetModel
     mlContext.Model.Save(
       transformer,
       trainSetDataView.Schema,
-      storeSchemePath
+      schemePath
     );
     /* simple test step */
     DatasetRawModel datasetRawModel = new DatasetRawModel
