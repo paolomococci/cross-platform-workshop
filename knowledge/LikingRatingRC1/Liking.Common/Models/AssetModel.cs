@@ -30,7 +30,8 @@ public class AssetModel
     );
     /* training step */
     SdcaLogisticRegressionBinaryTrainer sdcaLogisticRegressionBinaryTrainer = mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(
-      labelColumnName: "Label"
+      labelColumnName: "Label",
+      featureColumnName: "Features"
     );
   }
 }
