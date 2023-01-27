@@ -20,5 +20,6 @@ public class AssetModel
       testFraction: 0.2
     );
     IDataView trainSetDataView = trainTestData.TrainSet;
+    IDataView testSetDataView = trainTestData.TestSet;
   }
 }
