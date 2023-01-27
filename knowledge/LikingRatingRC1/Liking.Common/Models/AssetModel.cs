@@ -60,11 +60,11 @@ public class AssetModel
     };
     var predictionEngine = mlContext.Model.CreatePredictionEngine<DatasetRawModel, DatasetCookedModel>(transformer);
     DatasetCookedModel datasetCookedModelResult = predictionEngine.Predict(datasetRawModel);
-    System.Console.WriteLine("--------------------> begin test step <--------------------");
+    System.Console.WriteLine("--------------------> results of the test phase <--------------------");
     System.Console.WriteLine($"Text: {datasetRawModel.Text}");
     System.Console.WriteLine($"Prediction: {this.Evaluate(datasetCookedModelResult)}");
     System.Console.WriteLine($"Probability of expressing a negative feeling: {datasetCookedModelResult.Likelihood}");
-    System.Console.WriteLine("--------------------> end test step <--------------------");
+    System.Console.WriteLine("--------------------> end of the test phase results <--------------------");
   }
 
   private string Evaluate(DatasetCookedModel datasetCookedModel) {
