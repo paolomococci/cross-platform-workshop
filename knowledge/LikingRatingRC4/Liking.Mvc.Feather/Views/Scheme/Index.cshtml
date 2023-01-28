@@ -1,3 +1,8 @@
 @{
   ViewData["Title"] = "Liking";
+  List<string>? items = new();
+  if (ViewData["schemeProcessedList"] as List<string> != null)
+  {
+    items = ViewData["schemeProcessedList"] as List<string>;
+  }
 }
