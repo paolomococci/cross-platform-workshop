@@ -71,7 +71,6 @@ touch Views/Home/Upload.cshtml
 touch Views/Home/Uploaded.cshtml
 mkdir Views/Workbook
 touch Views/Workbook/Index.cshtml
-touch Views/Workbook/Workbooks.cshtml
 mkdir Controllers
 echo -e "namespace Liking.Mvc.Feather.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 echo -e "namespace Liking.Mvc.Feather.Controllers;\n\npublic class WorkbookController {}" > Controllers/WorkbookController.cs
@@ -90,4 +89,3 @@ touch wwwroot/js/site.js
 ```shell
 dotnet watch run
 ```
-
