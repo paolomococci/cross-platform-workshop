@@ -70,6 +70,8 @@ public class SchemeModel
     System.Console.WriteLine("--------------------> end of the test phase results <--------------------");
   }
 
+  private void predictionEngineTest() {}
+
   private string Evaluate(
     DatasetCookedModel datasetCookedModel
   )
