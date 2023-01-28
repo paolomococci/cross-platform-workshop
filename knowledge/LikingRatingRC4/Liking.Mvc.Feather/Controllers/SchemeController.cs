@@ -29,7 +29,7 @@ public class SchemeController : Controller
     {
       var itemName = Path.GetFileName(item);
       schemeProcessedList.Add(itemName);
-      ViewData["workbookListNames"] = schemeProcessedList;
+      ViewData["schemeListNames"] = schemeProcessedList;
     }
     return View();
   }
