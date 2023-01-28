@@ -85,7 +85,10 @@ public class HomeController : Controller
       string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
       System.Console.WriteLine($"Path of dataset to process: {datasetPath}");
       System.Console.WriteLine($"Path to the schema obtained from processing: {schemePath}");
-      // todo
+      scheme.CreateMLContext(
+        datasetPath: datasetPath,
+        schemePath: schemePath
+      );
     }
     return RedirectToAction(
       "Index",
