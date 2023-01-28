@@ -60,6 +60,7 @@ public class SchemeModel
     {
       Text = "I love testing apps!"
     };
+    // todo: specified argument was out of the range of valid values
     var predictionEngine = mlContext.Model.CreatePredictionEngine<DatasetRawModel, DatasetCookedModel>(transformer);
     DatasetCookedModel datasetCookedModelResult = predictionEngine.Predict(datasetRawModel);
     System.Console.WriteLine("--------------------> results of the test phase <--------------------");
