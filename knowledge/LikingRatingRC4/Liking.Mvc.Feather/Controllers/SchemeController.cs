@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace Liking.Mvc.Feather.Controllers;
 
-public class SchemeController {}
+public class SchemeController : Controller {}
