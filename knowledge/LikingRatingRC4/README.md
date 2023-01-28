@@ -71,6 +71,8 @@ touch Views/Home/Upload.cshtml
 touch Views/Home/Uploaded.cshtml
 mkdir Views/Workbook
 touch Views/Workbook/Index.cshtml
+mkdir Views/Scheme
+touch Views/Scheme/Index.cshtml
 mkdir Controllers
 echo -e "namespace Liking.Mvc.Feather.Controllers;\n\npublic class HomeController {}" > Controllers/HomeController.cs
 echo -e "namespace Liking.Mvc.Feather.Controllers;\n\npublic class WorkbookController {}" > Controllers/WorkbookController.cs
