@@ -55,7 +55,13 @@ public class SchemeModel
       trainSetDataView.Schema,
       schemePath
     );
-    /* simple test step */
+  }
+
+  private void predictionEngineTest(
+    MLContext mlContext,
+    ITransformer transformer
+  )
+  {
     DatasetRawModel datasetRawModel = new DatasetRawModel
     {
       Text = "I love testing apps!"
@@ -69,10 +75,6 @@ public class SchemeModel
     System.Console.WriteLine($"Probability of expressing a negative feeling: {datasetCookedModelResult.Likelihood}");
     System.Console.WriteLine("--------------------> end of the test phase results <--------------------");
   }
-
-  private void predictionEngineTest(
-    MLContext mlContext
-  ) {}
 
   private string Evaluate(
     DatasetCookedModel datasetCookedModel
