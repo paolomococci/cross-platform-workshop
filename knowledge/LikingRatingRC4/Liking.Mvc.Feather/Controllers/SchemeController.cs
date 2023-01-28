@@ -15,4 +15,21 @@ public class SchemeController : Controller {
     _logger = logger;
     this.webHostEnvironment = webHostEnvironment;
   }
+
+  public IActionResult Index()
+  {
+    List<string> schemeProcessedList = new();
+    var store = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/schemes"
+      );
+    var uploadedFiles = Directory.GetFiles(store);
+    foreach (var item in uploadedFiles)
+    {
+      var itemName = Path.GetFileName(item);
+      schemeProcessedList.Add(itemName);
+      ViewData["workbookListNames"] = schemeProcessedList;
+    }
+    return View();
+  }
 }
