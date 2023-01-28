@@ -47,8 +47,6 @@ public class SchemeModel
       labelColumnName: "Label",
       scoreColumnName: "Score"
     );
-    System.Console.WriteLine($"Trainer: {sdcaLogisticRegressionBinaryTrainer.ToString()}");
-    System.Console.WriteLine($"Metrics: {calibratedBinaryClassificationMetrics.ToString()}");
     /* persist step */
     mlContext.Model.Save(
       transformer,
