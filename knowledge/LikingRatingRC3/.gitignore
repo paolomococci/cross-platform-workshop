@@ -486,6 +486,7 @@ HELP.md
 *.txt
 *.csv
 *.tsv
+*.zip
 *.ico
 *.png
 *.xlsx
