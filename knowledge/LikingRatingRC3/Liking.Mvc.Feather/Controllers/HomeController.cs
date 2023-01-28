@@ -83,8 +83,6 @@ public class HomeController : Controller
       SchemeModel scheme = new();
       string datasetPath = Path.Combine(storeDatasetPath, unique);
       string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
-      System.Console.WriteLine($"Path of dataset to process: {datasetPath}");
-      System.Console.WriteLine($"Path to the schema obtained from processing: {schemePath}");
       scheme.CreateMLContext(
         datasetPath: datasetPath,
         schemePath: schemePath
