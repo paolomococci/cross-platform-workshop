@@ -33,4 +33,8 @@ public class SchemeController : Controller
     }
     return View();
   }
+
+  public IActionResult Report() {
+    return View();
+  }
 }
