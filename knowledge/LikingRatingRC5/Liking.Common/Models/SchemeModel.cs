@@ -38,7 +38,9 @@ public class SchemeModel
       labelColumnName: "Label",
       featureColumnName: "Features"
     );
-    var training = textFeaturizingEstimator.Append(sdcaLogisticRegressionBinaryTrainer);
+    var training = textFeaturizingEstimator.Append(
+      sdcaLogisticRegressionBinaryTrainer
+    );
     ITransformer transformer = training.Fit(trainSetDataView);
     /* evaluate step */
     IDataView dataViewPredictions = transformer.Transform(testSetDataView);
