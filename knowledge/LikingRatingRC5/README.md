@@ -48,6 +48,10 @@ echo -e "namespace Liking.Common.Models;\n\npublic class DatasetCookedModel {}" 
 echo -e "namespace Liking.Common.Models;\n\npublic class SchemeModel {}" > Models/SchemeModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class DataSheetModel {}" > Models/DataSheetModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class WorkbookModel {}" > Models/WorkbookModel.cs
+mkdir Probes
+echo -e "namespace Liking.Common.Probes;\n\npublic class ConsoleProbe {}" > Probes/ConsoleProbe.cs
+mkdir Tests
+echo -e "namespace Liking.Common.Tests;\n\npublic class SchemeModelTest {}" > Tests/SchemeModelTest.cs
 ```
 
 ### Liking.Mvc.Feather project
