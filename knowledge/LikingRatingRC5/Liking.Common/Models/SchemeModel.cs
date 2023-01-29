@@ -3,6 +3,7 @@ using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms.Text;
 using static Microsoft.ML.DataOperationsCatalog;
+using Liking.Common.Probes;
 
 namespace Liking.Common.Models;
 
@@ -49,37 +50,16 @@ public class SchemeModel
       labelColumnName: "Label",
       scoreColumnName: "Score"
     );
+    /* probe step */
+    ConsoleProbe.BinaryClassificationMetricsProbe(
+      sdcaLogisticRegressionBinaryTrainer.ToString(),
+      calibratedBinaryClassificationMetrics
+    );
     /* persist step */
     mlContext.Model.Save(
       transformer,
       trainSetDataView.Schema,
       schemePath
     );
-  }
-
-  private void predictionEngineTest(
-    MLContext mlContext,
-    ITransformer transformer
-  )
-  {
-    DatasetRawModel datasetRawModel = new DatasetRawModel
-    {
-      Text = "I love testing apps!"
-    };
-    // todo: specified argument was out of the range of valid values
-    var predictionEngine = mlContext.Model.CreatePredictionEngine<DatasetRawModel, DatasetCookedModel>(transformer);
-    DatasetCookedModel datasetCookedModelResult = predictionEngine.Predict(datasetRawModel);
-    System.Console.WriteLine("--------------------> results of the test phase <--------------------");
-    System.Console.WriteLine($"Text: {datasetRawModel.Text}");
-    System.Console.WriteLine($"Prediction: {this.Evaluate(datasetCookedModelResult)}");
-    System.Console.WriteLine($"Probability of expressing a negative feeling: {datasetCookedModelResult.Likelihood}");
-    System.Console.WriteLine("--------------------> end of the test phase results <--------------------");
-  }
-
-  private string Evaluate(
-    DatasetCookedModel datasetCookedModel
-  )
-  {
-    return Convert.ToBoolean(datasetCookedModel.Likelihood) ? "negative feeling" : "positive feeling";
   }
 }
