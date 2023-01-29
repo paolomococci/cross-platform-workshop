@@ -50,7 +50,7 @@ echo -e "namespace Liking.Common.Models;\n\npublic class DataSheetModel {}" > Mo
 echo -e "namespace Liking.Common.Models;\n\npublic class WorkbookModel {}" > Models/WorkbookModel.cs
 mkdir Probes
 echo -e "namespace Liking.Common.Probes;\n\npublic class ConsoleProbe {}" > Probes/ConsoleProbe.cs
-echo -e "namespace Liking.Common.Probes;\n\npublic class WebViewProbe {}" > Probes/WebViewProbe.cs
+echo -e "namespace Liking.Common.Probes;\n\npublic class ReportProbe {}" > Probes/ReportProbe.cs
 mkdir Tests
 echo -e "namespace Liking.Common.Tests;\n\npublic class SchemeModelTest {}" > Tests/SchemeModelTest.cs
 ```
