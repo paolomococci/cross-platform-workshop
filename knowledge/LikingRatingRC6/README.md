@@ -46,7 +46,7 @@ mkdir Models
 echo -e "namespace Liking.Common.Models;\n\npublic class DatasetRawModel {}" > Models/DatasetRawModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class DatasetCookedModel {}" > Models/DatasetCookedModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class SchemeModel {}" > Models/SchemeModel.cs
-echo -e "namespace Liking.Common.Models;\n\npublic class ReportModel {}" > Probes/ReportModel.cs
+echo -e "namespace Liking.Common.Models;\n\npublic class ReportModel {}" > Models/ReportModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class DataSheetModel {}" > Models/DataSheetModel.cs
 echo -e "namespace Liking.Common.Models;\n\npublic class WorkbookModel {}" > Models/WorkbookModel.cs
 mkdir Probes
