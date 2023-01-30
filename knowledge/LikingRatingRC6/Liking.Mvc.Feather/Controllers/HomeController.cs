@@ -104,7 +104,8 @@ public class HomeController : Controller
     }
     return RedirectToAction(
       "Home",
-      "Report"
+      "Report",
+      ViewBag.Models
     );
   }
 
