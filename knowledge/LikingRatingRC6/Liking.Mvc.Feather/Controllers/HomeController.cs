@@ -87,7 +87,7 @@ public class HomeController : Controller
         datasetPath: datasetPath,
         schemePath: schemePath
       );
-      ReportModel report = new ReportModel
+      ReportModel report = new ReportModel()
       {
         Accuracy = string.Format("{0:F3}", schemeReport.Accuracy),
         AreaUnderRocCurve = string.Format("{0:F3}", schemeReport.AreaUnderRocCurve),
