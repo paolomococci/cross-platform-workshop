@@ -8,4 +8,6 @@ public class ReportModel {
   public string F1Score { get; set; } = string.Empty;
   public string LogLoss { get; set; } = string.Empty;
   public string LogLossReduction { get; set; } = string.Empty;
+  public string PositivePrecision { get; set; } = string.Empty;
+  public string PositiveRecall { get; set; } = string.Empty;
 }
