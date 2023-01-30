@@ -83,7 +83,7 @@ public class HomeController : Controller
       SchemeModel scheme = new();
       string datasetPath = Path.Combine(storeDatasetPath, unique);
       string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
-      scheme.CreateMLContext(
+      var report = scheme.CreateMLContext(
         datasetPath: datasetPath,
         schemePath: schemePath
       );
