@@ -10,4 +10,5 @@ public class ReportModel {
   public string LogLossReduction { get; set; } = string.Empty;
   public string PositivePrecision { get; set; } = string.Empty;
   public string PositiveRecall { get; set; } = string.Empty;
+  public string NegativePrecision { get; set; } = string.Empty;
 }
