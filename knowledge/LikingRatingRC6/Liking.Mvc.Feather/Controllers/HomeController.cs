@@ -119,33 +119,33 @@ public class HomeController : Controller
     }
   }
 
-[HttpGet]
+  [HttpGet]
   public IActionResult Report(
-    string Accuracy,
-    string AreaUnderRocCurve,
-    string AreaUnderPrecisionRecallCurve,
-    string F1Score,
-    string LogLoss,
-    string LogLossReduction,
-    string PositivePrecision,
-    string PositiveRecall,
-    string NegativePrecision,
-    string NegativeRecall
-  )
+      string Accuracy,
+      string AreaUnderRocCurve,
+      string AreaUnderPrecisionRecallCurve,
+      string F1Score,
+      string LogLoss,
+      string LogLossReduction,
+      string PositivePrecision,
+      string PositiveRecall,
+      string NegativePrecision,
+      string NegativeRecall
+    )
   {
     var reportModel = new ReportModel()
-      {
-        Accuracy = Accuracy,
-        AreaUnderRocCurve = AreaUnderRocCurve,
-        AreaUnderPrecisionRecallCurve = AreaUnderPrecisionRecallCurve,
-        F1Score = F1Score,
-        LogLoss = LogLoss,
-        LogLossReduction = LogLossReduction,
-        PositivePrecision = PositivePrecision,
-        PositiveRecall = PositiveRecall,
-        NegativePrecision = NegativePrecision,
-        NegativeRecall = NegativeRecall
-      };
+    {
+      Accuracy = Accuracy,
+      AreaUnderRocCurve = AreaUnderRocCurve,
+      AreaUnderPrecisionRecallCurve = AreaUnderPrecisionRecallCurve,
+      F1Score = F1Score,
+      LogLoss = LogLoss,
+      LogLossReduction = LogLossReduction,
+      PositivePrecision = PositivePrecision,
+      PositiveRecall = PositiveRecall,
+      NegativePrecision = NegativePrecision,
+      NegativeRecall = NegativeRecall
+    };
     return View(reportModel);
   }
 
