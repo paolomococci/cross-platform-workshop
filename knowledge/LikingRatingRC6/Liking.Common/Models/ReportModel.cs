@@ -4,4 +4,5 @@ public class ReportModel {
   public string Name { get; set; } = string.Empty;
   public string Accuracy { get; set; } = string.Empty;
   public string AreaUnderRocCurve { get; set; } = string.Empty;
+  public string AreaUnderPrecisionRecallCurve { get; set; } = string.Empty;
 }
