@@ -119,7 +119,7 @@ public class HomeController : Controller
     }
   }
 
-[HttpPost]
+[HttpGet]
   public IActionResult Report(ReportModel reportModel)
   {
     return View(reportModel);
