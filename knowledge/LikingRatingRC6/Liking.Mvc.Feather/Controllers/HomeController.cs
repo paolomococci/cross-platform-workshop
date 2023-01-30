@@ -100,8 +100,7 @@ public class HomeController : Controller
         NegativePrecision = string.Format("{0:F3}", schemeReport.NegativePrecision),
         NegativeRecall = string.Format("{0:F3}", schemeReport.NegativeRecall),
       };
-      TempData["report"] = report;
-      // todo: successfully pass an object from one controller to another.
+      ViewBag.Models = report;
     }
     return RedirectToAction(
       "Scheme",
