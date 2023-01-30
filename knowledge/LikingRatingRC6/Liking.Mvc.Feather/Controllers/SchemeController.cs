@@ -34,7 +34,8 @@ public class SchemeController : Controller
     return View();
   }
 
-  public IActionResult Report() {
+  public IActionResult Report()
+  {
     ViewData["report"] = TempData["report"];
     return View();
   }
