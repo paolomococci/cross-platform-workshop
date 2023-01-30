@@ -1,6 +1,5 @@
 @{
     ViewData["Title"] = "Liking";
-    Liking.Common.Models.ReportModel report = new();
 }
 
 <div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
@@ -20,43 +19,43 @@
     <tbody>
       <tr>
         <td>Accuracy</td>
-        <td>@report.Accuracy</td>
+        <td>@ViewBag.Models.Accuracy</td>
       </tr>
       <tr>
         <td>Area Under Roc Curve</td>
-        <td>@report.AreaUnderRocCurve</td>
+        <td>@ViewBag.Models.AreaUnderRocCurve</td>
       </tr>
       <tr>
         <td>Area Under Precision Recall Curve</td>
-        <td>@report.AreaUnderPrecisionRecallCurve</td>
+        <td>@ViewBag.Models.AreaUnderPrecisionRecallCurve</td>
       </tr>
       <tr>
         <td>F1 Score</td>
-        <td>@report.F1Score</td>
+        <td>@ViewBag.Models.F1Score</td>
       </tr>
       <tr>
         <td>Log Loss</td>
-        <td>@report.LogLoss</td>
+        <td>@ViewBag.Models.LogLoss</td>
       </tr>
       <tr>
         <td>Log Loss Reduction</td>
-        <td>@report.LogLossReduction</td>
+        <td>@ViewBag.Models.LogLossReduction</td>
       </tr>
       <tr>
         <td>Positive Precision</td>
-        <td>@report.PositivePrecision</td>
+        <td>@ViewBag.Models.PositivePrecision</td>
       </tr>
       <tr>
         <td>Positive Recall</td>
-        <td>@report.PositiveRecall</td>
+        <td>@ViewBag.Models.PositiveRecall</td>
       </tr>
       <tr>
         <td>Negative Precision</td>
-        <td>@report.NegativePrecision</td>
+        <td>@ViewBag.Models.NegativePrecision</td>
       </tr>
       <tr>
         <td>Negative Recall</td>
-        <td>@report.NegativeRecall</td>
+        <td>@ViewBag.Models.NegativeRecall</td>
       </tr>
     </tbody>
     </table>
