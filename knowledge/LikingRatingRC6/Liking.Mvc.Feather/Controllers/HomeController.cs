@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.ML.Data;
 using Liking.Mvc.Feather.Models;
 using Liking.Common.Models;
 
@@ -9,6 +10,7 @@ public class HomeController : Controller
 {
   private readonly ILogger<HomeController> _logger;
   private readonly IWebHostEnvironment webHostEnvironment;
+  private CalibratedBinaryClassificationMetrics? schemeReport;
 
   public HomeController(
     ILogger<HomeController> logger,
@@ -83,29 +85,44 @@ public class HomeController : Controller
       SchemeModel scheme = new();
       string datasetPath = Path.Combine(storeDatasetPath, unique);
       string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
-      var schemeReport = scheme.CreateMLContext(
+      this.schemeReport = scheme.CreateMLContext(
         datasetPath: datasetPath,
         schemePath: schemePath
       );
-      ReportModel report = new ReportModel()
-      {
-        Accuracy = string.Format("{0:F3}", schemeReport.Accuracy),
-        AreaUnderRocCurve = string.Format("{0:F3}", schemeReport.AreaUnderRocCurve),
-        AreaUnderPrecisionRecallCurve = string.Format("{0:F3}", schemeReport.AreaUnderPrecisionRecallCurve),
-        F1Score = string.Format("{0:F3}", schemeReport.F1Score),
-        LogLoss = string.Format("{0:F3}", schemeReport.LogLoss),
-        LogLossReduction = string.Format("{0:F3}", schemeReport.LogLossReduction),
-        PositivePrecision = string.Format("{0:F3}", schemeReport.PositivePrecision),
-        PositiveRecall = string.Format("{0:F3}", schemeReport.PositiveRecall),
-        NegativePrecision = string.Format("{0:F3}", schemeReport.NegativePrecision),
-        NegativeRecall = string.Format("{0:F3}", schemeReport.NegativeRecall),
-      };
     }
-    return RedirectToAction(
+    if (this.schemeReport != null)
+    {
+      return RedirectToAction(
       "Home",
       "Report",
-      new {}
+      new ReportModel()
+      {
+        Accuracy = string.Format("{0:F3}", this.schemeReport.Accuracy),
+        AreaUnderRocCurve = string.Format("{0:F3}", this.schemeReport.AreaUnderRocCurve),
+        AreaUnderPrecisionRecallCurve = string.Format("{0:F3}", this.schemeReport.AreaUnderPrecisionRecallCurve),
+        F1Score = string.Format("{0:F3}", this.schemeReport.F1Score),
+        LogLoss = string.Format("{0:F3}", this.schemeReport.LogLoss),
+        LogLossReduction = string.Format("{0:F3}", this.schemeReport.LogLossReduction),
+        PositivePrecision = string.Format("{0:F3}", this.schemeReport.PositivePrecision),
+        PositiveRecall = string.Format("{0:F3}", this.schemeReport.PositiveRecall),
+        NegativePrecision = string.Format("{0:F3}", this.schemeReport.NegativePrecision),
+        NegativeRecall = string.Format("{0:F3}", this.schemeReport.NegativeRecall)
+      }
     );
+    }
+    else
+    {
+      return RedirectToAction(
+      "Home",
+      "Index"
+      );
+    }
+  }
+
+[HttpPost]
+  public IActionResult Report(ReportModel reportModel)
+  {
+    return View(reportModel);
   }
 
   [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
