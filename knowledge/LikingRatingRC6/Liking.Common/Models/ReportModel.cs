@@ -6,4 +6,5 @@ public class ReportModel {
   public string AreaUnderRocCurve { get; set; } = string.Empty;
   public string AreaUnderPrecisionRecallCurve { get; set; } = string.Empty;
   public string F1Score { get; set; } = string.Empty;
+  public string LogLoss { get; set; } = string.Empty;
 }
