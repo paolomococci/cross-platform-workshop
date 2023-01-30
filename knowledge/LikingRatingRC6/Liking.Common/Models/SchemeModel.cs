@@ -11,7 +11,7 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  public void CreateMLContext(
+  public CalibratedBinaryClassificationMetrics CreateMLContext(
     string datasetPath,
     string schemePath
   )
@@ -61,5 +61,6 @@ public class SchemeModel
       trainSetDataView.Schema,
       schemePath
     );
+    return calibratedBinaryClassificationMetrics;
   }
 }
