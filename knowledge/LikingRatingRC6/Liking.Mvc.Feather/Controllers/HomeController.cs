@@ -101,6 +101,7 @@ public class HomeController : Controller
         NegativeRecall = string.Format("{0:F3}", schemeReport.NegativeRecall),
       };
       TempData["report"] = report;
+      // todo: successfully pass an object from one controller to another.
     }
     return RedirectToAction(
       "Scheme",
