@@ -89,6 +89,15 @@ public class HomeController : Controller
       );
       ReportModel report = new ReportModel {
         Accuracy = string.Format("{0:F3}", schemeReport.Accuracy),
+        AreaUnderRocCurve = string.Format("{0:F3}", schemeReport.AreaUnderRocCurve),
+        AreaUnderPrecisionRecallCurve = string.Format("{0:F3}", schemeReport.AreaUnderPrecisionRecallCurve),
+        F1Score = string.Format("{0:F3}", schemeReport.F1Score),
+        LogLoss = string.Format("{0:F3}", schemeReport.LogLoss),
+        LogLossReduction = string.Format("{0:F3}", schemeReport.LogLossReduction),
+        PositivePrecision = string.Format("{0:F3}", schemeReport.PositivePrecision),
+        PositiveRecall = string.Format("{0:F3}", schemeReport.PositiveRecall),
+        NegativePrecision = string.Format("{0:F3}", schemeReport.NegativePrecision),
+        NegativeRecall = string.Format("{0:F3}", schemeReport.NegativeRecall),
       };
       TempData["report"] = report;
     }
