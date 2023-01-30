@@ -35,8 +35,10 @@ public class SchemeController : Controller
     return View();
   }
 
-  public IActionResult Report()
+  [HttpPost]
+  public IActionResult Report(ReportModel report)
   {
+    ViewBag.Models = report;
     return View();
   }
 }
