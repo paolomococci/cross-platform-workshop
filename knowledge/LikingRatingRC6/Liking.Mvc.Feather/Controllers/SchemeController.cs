@@ -1,3 +1,4 @@
+using Liking.Common.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Liking.Mvc.Feather.Controllers;
@@ -34,7 +35,8 @@ public class SchemeController : Controller
     return View();
   }
 
-  public IActionResult Report()
+  [HttpPost]
+  public IActionResult Report(ReportModel report)
   {
     ViewData["report"] = TempData["report"];
     return View();
