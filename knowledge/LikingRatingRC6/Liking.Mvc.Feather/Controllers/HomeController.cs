@@ -83,14 +83,18 @@ public class HomeController : Controller
       SchemeModel scheme = new();
       string datasetPath = Path.Combine(storeDatasetPath, unique);
       string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
-      var report = scheme.CreateMLContext(
+      var schemeReport = scheme.CreateMLContext(
         datasetPath: datasetPath,
         schemePath: schemePath
       );
+      ReportModel report = new ReportModel {
+        Accuracy = string.Format("{0:F3}", schemeReport.Accuracy),
+      };
+      TempData["report"] = report;
     }
     return RedirectToAction(
-      "Index",
-      "Home"
+      "Scheme",
+      "Report"
     );
   }
 
