@@ -35,10 +35,8 @@ public class SchemeController : Controller
     return View();
   }
 
-  [HttpPost]
-  public IActionResult Report(ReportModel report)
+  public IActionResult Report()
   {
-    ViewData["report"] = TempData["report"];
     return View();
   }
 }
