@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Liking - Report";
+    var report = ViewData["report"];
 }
-@model Liking.Common.Models.ReportModel
 
 <div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
     <h1 class="uk-heading-large uk-heading-divider">@ViewData["Title"]</h1>
@@ -10,7 +10,7 @@
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
     <h3 class="uk-card-title uk-margin-large-bottom">Processing report.</h3>
     <table class="uk-table uk-table-striped">
-      <caption>metrics of model</caption>
+      <caption>metrics of report</caption>
       <thead>
         <tr>
             <th>Metrics</th>
@@ -20,43 +20,43 @@
     <tbody>
       <tr>
         <td>Accuracy</td>
-        <td>model.Accuracy</td>
+        <td>report.Accuracy</td>
       </tr>
       <tr>
         <td>Area Under Roc Curve</td>
-        <td>model.AreaUnderRocCurve</td>
+        <td>report.AreaUnderRocCurve</td>
       </tr>
       <tr>
         <td>Area Under Precision Recall Curve</td>
-        <td>model.AreaUnderPrecisionRecallCurve</td>
+        <td>report.AreaUnderPrecisionRecallCurve</td>
       </tr>
       <tr>
         <td>F1 Score</td>
-        <td>model.F1Score</td>
+        <td>report.F1Score</td>
       </tr>
       <tr>
         <td>Log Loss</td>
-        <td>model.LogLoss</td>
+        <td>report.LogLoss</td>
       </tr>
       <tr>
         <td>Log Loss Reduction</td>
-        <td>model.LogLossReduction</td>
+        <td>report.LogLossReduction</td>
       </tr>
       <tr>
         <td>Positive Precision</td>
-        <td>model.PositivePrecision</td>
+        <td>report.PositivePrecision</td>
       </tr>
       <tr>
         <td>Positive Recall</td>
-        <td>model.PositiveRecall</td>
+        <td>report.PositiveRecall</td>
       </tr>
       <tr>
         <td>Negative Precision</td>
-        <td>model.NegativePrecision</td>
+        <td>report.NegativePrecision</td>
       </tr>
       <tr>
         <td>Negative Recall</td>
-        <td>model.NegativeRecall</td>
+        <td>report.NegativeRecall</td>
       </tr>
     </tbody>
     </table>
