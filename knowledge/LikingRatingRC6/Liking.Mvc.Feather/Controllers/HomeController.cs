@@ -103,7 +103,7 @@ public class HomeController : Controller
       ViewBag.Models = report;
     }
     return RedirectToAction(
-      "Scheme",
+      "Home",
       "Report"
     );
   }
