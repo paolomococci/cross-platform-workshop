@@ -1,5 +1,10 @@
 @{
     ViewData["Title"] = "Liking";
+    Liking.Common.Models.ReportModel? report;
+    if (ViewData["report"] as Liking.Common.Models.ReportModel != null)
+    {
+      report = ViewData["report"] as Liking.Common.Models.ReportModel;
+    }
 }
 
 <div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
