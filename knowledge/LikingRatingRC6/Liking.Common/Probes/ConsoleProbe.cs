@@ -14,7 +14,7 @@ public class ConsoleProbe
     System.Console.WriteLine($"Metrics: {name} Binary Classification Metrics");
     System.Console.WriteLine("________________________________________________________________________________________________");
     System.Console.WriteLine($"Accuracy:___________________________________ {calibratedBinaryClassificationMetrics.Accuracy:P3}");
-    System.Console.WriteLine($"Area Under Roc Curve:___________________________ {calibratedBinaryClassificationMetrics.AreaUnderRocCurve:P3}");
+    System.Console.WriteLine($"Area Under Roc Curve:_______________________ {calibratedBinaryClassificationMetrics.AreaUnderRocCurve:P3}");
     System.Console.WriteLine($"Area Under Precision Recall Curve:__________ {calibratedBinaryClassificationMetrics.AreaUnderPrecisionRecallCurve:P3}");
     System.Console.WriteLine($"F1 Score:___________________________________ {calibratedBinaryClassificationMetrics.F1Score:P3}");
     System.Console.WriteLine($"Log Loss:___________________________________ {calibratedBinaryClassificationMetrics.LogLoss:#.###}");
