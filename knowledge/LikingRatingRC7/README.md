@@ -99,3 +99,6 @@ touch wwwroot/js/site.js
 dotnet watch run
 ```
 
+## screenshots
+
+![LikingRating-Home-Report](screenshots/LikingRating-Home-Report.png)
