@@ -1,7 +1,7 @@
 using Microsoft.ML;
 using Liking.Common.Models;
 
-namespace Liking.Common.Probe;
+namespace Liking.Common.Tests;
 
 public class SchemeModelTest
 {
