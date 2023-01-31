@@ -4,6 +4,7 @@ using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms.Text;
 using static Microsoft.ML.DataOperationsCatalog;
 using Liking.Common.Probes;
+using Liking.Common.Tests;
 
 namespace Liking.Common.Models;
 
@@ -60,6 +61,12 @@ public class SchemeModel
       transformer,
       trainSetDataView.Schema,
       schemePath
+    );
+    SchemeModelTest.PredictionEngineTest(
+      mlContext,
+      testSetDataView,
+      transformer,
+      "I love doing application testing."
     );
     return calibratedBinaryClassificationMetrics;
   }
