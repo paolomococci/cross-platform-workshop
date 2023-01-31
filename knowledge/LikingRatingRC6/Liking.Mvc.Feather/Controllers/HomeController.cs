@@ -93,8 +93,8 @@ public class HomeController : Controller
     if (this.schemeReport != null)
     {
       return RedirectToAction(
-      "Home",
       "Report",
+      "Home",
       new ReportModel()
       {
         Accuracy = string.Format("{0:F3}", this.schemeReport.Accuracy),
@@ -113,14 +113,14 @@ public class HomeController : Controller
     else
     {
       return RedirectToAction(
-      "Home",
-      "Index"
+      "Index",
+      "Home"
       );
     }
   }
 
 [HttpGet]
-  public IActionResult Report(
+  public IActionResult Report([FromQuery]
     string Accuracy,
     string AreaUnderRocCurve,
     string AreaUnderPrecisionRecallCurve,
@@ -146,8 +146,7 @@ public class HomeController : Controller
         NegativePrecision = NegativePrecision,
         NegativeRecall = NegativeRecall
       };
-      ViewData["report"] = report;
-    return View();
+    return View(report);
   }
 
   [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
