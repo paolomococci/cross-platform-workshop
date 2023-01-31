@@ -62,12 +62,14 @@ public class SchemeModel
       trainSetDataView.Schema,
       schemePath
     );
+    /*
     SchemeModelTest.PredictionEngineTest(
       mlContext,
       testSetDataView,
       transformer,
       "I love doing application testing."
     );
+    */
     return calibratedBinaryClassificationMetrics;
   }
 }
