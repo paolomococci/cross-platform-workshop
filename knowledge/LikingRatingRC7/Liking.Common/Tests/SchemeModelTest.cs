@@ -11,10 +11,7 @@ public class SchemeModelTest
     ITransformer transformer
   )
   {
-    DatasetRawModel datasetRawModel = new DatasetRawModel
-    {
-      Text = "I love testing apps!"
-    };
+    DatasetRawModel datasetRawModel = new DatasetRawModel(Text: "I love testing apps!");
     // todo: specified argument was out of the range of valid values
     var predictionEngine = mlContext.Model.CreatePredictionEngine<DatasetRawModel, DatasetCookedModel>(transformer);
     DatasetCookedModel datasetCookedModelResult = predictionEngine.Predict(datasetRawModel);
