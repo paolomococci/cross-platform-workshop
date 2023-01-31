@@ -10,4 +10,6 @@ public class DatasetRawModel
 
   [LoadColumn(2)]
   public string Text { get; set; } = string.Empty;
+
+  public DatasetRawModel() {}
 }
