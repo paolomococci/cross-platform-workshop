@@ -1,9 +1,9 @@
 @{
     ViewData["Title"] = "ShallowML";
     List<string>? items = new();
-    if (ViewData["datasetList"] as List<string> != null)
+    if (ViewData["workbooks"] as List<string> != null)
     {
-        items = ViewData["datasetList"] as List<string>;
+        items = ViewData["workbooks"] as List<string>;
     }
     else
     {
@@ -16,10 +16,10 @@
 </div>
 
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
-    <h3 class="uk-card-title uk-margin-large-bottom">Data file uploaded to system awaiting processing.</h3>
+    <h3 class="uk-card-title uk-margin-large-bottom">Workbook uploaded to system awaiting processing.</h3>
     <form asp-action="Process" enctype="multipart/form-data">
         <fieldset class="uk-fieldset">
-            <legend class="uk-legend">please select a dataset to process:</legend>
+            <legend class="uk-legend">please select a workbook to process:</legend>
             <div class="uk-margin">
                 <select name="unique" class="uk-select uk-width-1-1 uk-form-large" aria-label="select">
                     @foreach (var item in @items!)
