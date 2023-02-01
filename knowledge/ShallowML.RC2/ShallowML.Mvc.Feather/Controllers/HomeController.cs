@@ -53,17 +53,17 @@ public class HomeController : Controller
 
   public IActionResult Uploaded()
   {
-    List<string> listOfUploadedDataset = new();
+    List<string> workbooks = new();
     var store = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/workbooks"
       );
-    var uploadedFiles = Directory.GetFiles(store);
-    foreach (var item in uploadedFiles)
+    var uploadedWorkbooks = Directory.GetFiles(store);
+    foreach (var item in uploadedWorkbooks)
     {
       var itemName = Path.GetFileName(item);
-      listOfUploadedDataset.Add(itemName);
-      ViewData["datasetList"] = listOfUploadedDataset;
+      workbooks.Add(itemName);
+      ViewData["workbooks"] = workbooks;
     }
     return View();
   }
