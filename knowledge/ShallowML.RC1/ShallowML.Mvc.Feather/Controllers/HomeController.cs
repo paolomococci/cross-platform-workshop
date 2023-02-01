@@ -92,7 +92,12 @@ public class HomeController : Controller
       return RedirectToAction(
       "Report",
       "Home",
-      this.report
+      new ReportModel()
+      {
+        Name = this.report.Name,
+        Area = this.report.Area,
+        Price = this.report.Price
+      }
     );
     }
     else
