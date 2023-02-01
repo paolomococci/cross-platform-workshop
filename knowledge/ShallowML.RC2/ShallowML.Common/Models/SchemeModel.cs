@@ -17,6 +17,7 @@ public class SchemeModel
       datasetPath,
       hasHeader: true
     );*/
+    // todo: extract data from a spreadsheet and then assign the values ​​to an array representing the domain to be processed
     DomainModel[] domains = {
       new DomainModel() { Area = 12000.0F, Price = 35000.0F },
       new DomainModel() { Area = 15000.0F, Price = 47000.0F },
