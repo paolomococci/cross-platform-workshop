@@ -2,7 +2,6 @@ using Microsoft.ML.Data;
 
 namespace ShallowML.Common.Models;
 
-[Serializable]
 public class PredictionModel
 {
 
