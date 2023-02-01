@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "ShallowML - Report";
+}
+@model ShallowML.Common.Models.ReportModel
+
+<div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
+    <h1 class="uk-heading-large uk-heading-divider">@ViewData["Title"]</h1>
+</div>
+
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+    <h3 class="uk-card-title uk-margin-large-bottom">Dataset processing report.</h3>
+    <table class="uk-table uk-table-striped">
+      <caption>estimate of the price to be applied with respect to the storage area rented for one year</caption>
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Values</th>
+            <th>Units</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>@Model.Name</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Area</td>
+          <td>@Model.Area</td>
+          <td>ft&#178;</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>@Model.Price</td>
+          <td>&#36;</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
