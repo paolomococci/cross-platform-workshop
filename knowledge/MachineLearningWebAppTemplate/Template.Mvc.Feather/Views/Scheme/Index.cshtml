@@ -1,0 +1,29 @@
+@{
+  ViewData["Title"] = "Template";
+  List<string>? items = new();
+  if (ViewData["schemeListNames"] as List<string> != null)
+  {
+    items = ViewData["schemeListNames"] as List<string>;
+  }
+}
+
+<div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
+  <h1 class="uk-heading-large uk-heading-divider">Scheme</h1>
+</div>
+
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+  <h3 class="uk-card-title uk-margin-large-bottom">list of schemes processed:</h3>
+  <div class="uk-margin">
+    @if (items!.Count != 0)
+    {
+      <ul class="uk-list uk-list-divider">
+        @foreach (var item in @items!)
+        {
+          <li>
+            <a class="uk-button uk-button-primary uk-button-large" href="~/Store/schemes/@item">@item</a>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</div>
