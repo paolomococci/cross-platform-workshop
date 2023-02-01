@@ -13,11 +13,11 @@ public class SchemeModel
   {
     this.mlContext = new MLContext();
     /* loading dataset step */
-    /*IDataView dataView = mlContext.Data.LoadFromTextFile<DomainModel>(
+    IDataView dataView = mlContext.Data.LoadFromTextFile<DomainModel>(
       datasetPath,
       hasHeader: true
-    );*/
-    DomainModel[] domains = {
+    );
+    /*DomainModel[] domains = {
       new DomainModel() { Area = 12000.0F, Price = 35000.0F },
       new DomainModel() { Area = 15000.0F, Price = 47000.0F },
       new DomainModel() { Area = 11500.0F, Price = 37500.0F },
@@ -33,7 +33,7 @@ public class SchemeModel
       new DomainModel() { Area = 9000.0F, Price = 26000.0F },
       new DomainModel() { Area = 10500.0F, Price = 33500.0F }
     };
-    IDataView dataView = this.mlContext.Data.LoadFromEnumerable(domains);
+    IDataView dataView = this.mlContext.Data.LoadFromEnumerable(domains);*/
 
     /* create pipeline step */
     var pipeline = this.mlContext.Transforms.Concatenate(
