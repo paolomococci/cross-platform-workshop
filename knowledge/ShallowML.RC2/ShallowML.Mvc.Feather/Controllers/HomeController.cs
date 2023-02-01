@@ -38,7 +38,7 @@ public class HomeController : Controller
       var unique = dataCollection.SetTheDateInTheFilename();
       var upload = Path.Combine(
         this.webHostEnvironment.WebRootPath,
-        "Store/datasets"
+        "Store/workbooks"
       );
       var datasetPath = Path.Combine(upload, unique);
       dataCollection.Dataset.CopyTo(
@@ -56,7 +56,7 @@ public class HomeController : Controller
     List<string> listOfUploadedDataset = new();
     var store = Path.Combine(
         this.webHostEnvironment.WebRootPath,
-        "Store/datasets"
+        "Store/workbooks"
       );
     var uploadedFiles = Directory.GetFiles(store);
     foreach (var item in uploadedFiles)
@@ -75,7 +75,7 @@ public class HomeController : Controller
     {
       string storeDatasetPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
-        "Store/datasets"
+        "Store/workbooks"
       );
       string storeSchemePath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
