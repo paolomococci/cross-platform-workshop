@@ -68,6 +68,13 @@ public class SchemeModel
     /* prediction step */
     priced.Price = this.mlContext.Model.CreatePredictionEngine<DomainModel, PredictionModel>(scheme).Predict(priced).Price;
 
+    /* persist step */
+    this.mlContext.Model.Save(
+      scheme,
+      dataView.Schema,
+      schemePath
+    );
+
     return new ReportModel()
     {
       Name = this.Id,
