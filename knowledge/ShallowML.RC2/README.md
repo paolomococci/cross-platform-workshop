@@ -47,7 +47,6 @@ echo -e "namespace ShallowML.Common.Models;\n\npublic class DatasetModel {}" > M
 echo -e "namespace ShallowML.Common.Models;\n\npublic class PredictionModel {}" > Models/PredictionModel.cs
 echo -e "namespace ShallowML.Common.Models;\n\npublic class SchemeModel {}" > Models/SchemeModel.cs
 echo -e "namespace ShallowML.Common.Models;\n\npublic class ReportModel {}" > Models/ReportModel.cs
-echo -e "namespace ShallowML.Common.Models;\n\npublic class DataSheetModel {}" > Models/DataSheetModel.cs
 echo -e "namespace ShallowML.Common.Models;\n\npublic class WorkbookModel {}" > Models/WorkbookModel.cs
 mkdir Tests
 echo -e "namespace ShallowML.Common.Tests;\n\npublic class SchemeModelTest {}" > Tests/SchemeModelTest.cs
