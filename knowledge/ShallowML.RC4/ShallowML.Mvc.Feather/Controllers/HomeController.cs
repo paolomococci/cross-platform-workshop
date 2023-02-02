@@ -87,9 +87,10 @@ public class HomeController : Controller
       SchemeModel scheme = new();
       string datasetPath = Path.Combine(storeDatasetPath, workbook);
       string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
-      this.report = scheme.CreateMLContext(
+      this.report = scheme.CreateMLContextAndSaveSchema(
         dataset: WorkbookModel.GetDataset(datasetPath),
-        priced: new DomainModel() { Area = float.Parse(area) }
+        priced: new DomainModel() { Area = float.Parse(area) },
+        schemePath: schemePath
       );
     }
     if (this.report != null)
