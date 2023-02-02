@@ -95,3 +95,9 @@ touch wwwroot/js/site.js
 ```shell
 dotnet watch run
 ```
+
+## screenshot
+
+Screenshot of report view:
+
+![report](screenshots/ShallowML_Home_Report.png)
