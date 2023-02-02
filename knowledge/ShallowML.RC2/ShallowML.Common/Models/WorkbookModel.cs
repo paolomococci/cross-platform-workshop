@@ -6,8 +6,7 @@ public class WorkbookModel
 {
   public static DomainModel[] GetDataset(string datasetPath)
   {
-    List<DataSheetModel> Sheets;
-    XLWorkbook xlWorkbook;
+    XLWorkbook xlWorkbook = new XLWorkbook(datasetPath);
     throw new NotImplementedException();
   }
 }
