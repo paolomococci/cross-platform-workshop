@@ -101,3 +101,5 @@ dotnet watch run
 Screenshot of report view:
 
 ![report](screenshots/ShallowML_Home_Report.png)
+
+Based on the data in the selected spreadsheet, the system uses machine learning to estimate the annual rental cost of a 950 square foot storage area.
