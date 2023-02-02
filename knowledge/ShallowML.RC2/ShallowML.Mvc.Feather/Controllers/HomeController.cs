@@ -86,6 +86,9 @@ public class HomeController : Controller
       );
       SchemeModel scheme = new();
       string datasetPath = Path.Combine(storeDatasetPath, workbook);
+      System.Console.WriteLine($"workbook: {workbook}");
+      System.Console.WriteLine($"datasetPath: {datasetPath}");
+      System.Console.WriteLine($"area: {area}");
       // todo
       this.report = scheme.CreateMLContext(
         datasetPath: datasetPath
