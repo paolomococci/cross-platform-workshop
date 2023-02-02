@@ -18,7 +18,6 @@ public class WorkbookModel
           Price = item.Cell(2).GetValue<float>()
         }
       );
-      System.Console.WriteLine($"area: {item.Cell(1).GetValue<float>()}, price: {item.Cell(2).GetValue<float>()}");
     }
     return domains.ToArray();
   }
