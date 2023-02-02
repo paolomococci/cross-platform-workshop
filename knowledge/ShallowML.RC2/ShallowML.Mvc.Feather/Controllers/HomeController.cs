@@ -35,12 +35,12 @@ public class HomeController : Controller
   {
     if (dataCollection.Dataset != null)
     {
-      var unique = dataCollection.SetTheDateInTheFilename();
+      var workbook = dataCollection.SetTheDateInTheFilename();
       var upload = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/workbooks"
       );
-      var datasetPath = Path.Combine(upload, unique);
+      var datasetPath = Path.Combine(upload, workbook);
       dataCollection.Dataset.CopyTo(
         new FileStream(datasetPath, FileMode.Create)
       );
@@ -69,9 +69,9 @@ public class HomeController : Controller
   }
 
   [HttpPost]
-  public IActionResult Process(string unique)
+  public IActionResult Process(string workbook)
   {
-    if (unique != null && unique != string.Empty)
+    if (workbook != null && workbook != string.Empty)
     {
       string storeDatasetPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
@@ -82,7 +82,7 @@ public class HomeController : Controller
         "Store/schemes"
       );
       SchemeModel scheme = new();
-      string datasetPath = Path.Combine(storeDatasetPath, unique);
+      string datasetPath = Path.Combine(storeDatasetPath, workbook);
       this.report = scheme.CreateMLContext(
         datasetPath: datasetPath
       );
