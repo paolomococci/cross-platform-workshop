@@ -18,6 +18,10 @@
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
     <h3 class="uk-card-title uk-margin-large-bottom">Workbook uploaded to system awaiting processing.</h3>
     <form asp-action="Process" enctype="multipart/form-data">
+        <div class="uk-margin uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: cog; ratio: 1"></span>
+            <input class="uk-input uk-form-width-medium uk-form-large" type="text" placeholder="Area" aria-label="area on which you want to make a rental price forecast">
+        </div>
         <fieldset class="uk-fieldset">
             <legend class="uk-legend">please select a workbook to process:</legend>
             <div class="uk-margin">
