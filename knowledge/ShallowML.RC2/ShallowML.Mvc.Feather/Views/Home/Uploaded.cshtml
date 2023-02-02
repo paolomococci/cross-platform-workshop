@@ -23,8 +23,10 @@
         </label>
         <div class="uk-margin uk-inline">
             <span class="uk-form-icon" uk-icon="icon: cog; ratio: 1"></span>
-            <input class="uk-input uk-form-width-medium uk-form-large uk-width-1-1" type="text" id="area"
-              placeholder="Area *" aria-label="" minlength="3" maxlength="8" required>
+            <input class="uk-input uk-form-width-medium uk-form-large uk-width-1-1" placeholder="Area *" 
+              type="number" step="50" min="500" max="5000" value="500" inputmode="decimal" id="area" 
+              aria-label="" minlength="3" maxlength="8" required="required"
+              onkeypress = "return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46">
         </div>
         <fieldset class="uk-fieldset">
             <legend class="uk-legend"></legend>
