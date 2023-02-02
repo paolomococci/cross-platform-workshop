@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "ShallowML";
+    List<string>? items = new();
+    if (ViewData["workbooks"] as List<string> != null)
+    {
+        items = ViewData["workbooks"] as List<string>;
+    }
+    else
+    {
+        items.Add("");
+    }
+}
+
+<div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
+    <h1 class="uk-heading-large uk-heading-divider">Uploaded</h1>
+</div>
+
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+    <h3 class="uk-card-title uk-margin-large-bottom">System awaiting processing.</h3>
+    <form asp-action="Process" enctype="multipart/form-data">
+        <label class="uk-form-label" for="area">
+            Please enter the area in square feet for annual rental price forecast:
+        </label>
+        <div class="uk-margin uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: cog; ratio: 1"></span>
+            <input class="uk-input uk-form-width-medium uk-form-large uk-width-1-1" placeholder="Area *" 
+              type="number" step="50" min="500" max="5000" value="500" inputmode="decimal" id="area" 
+              aria-label="" minlength="3" maxlength="8" required="required" name="area"
+              onkeypress = "return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46">
+        </div>
+        <fieldset class="uk-fieldset">
+            <legend class="uk-legend"></legend>
+            <label class="uk-form-label" for="workbook">
+                Please select a workbook from which to extract training data:
+            </label>
+            <div class="uk-margin">
+                <select name="workbook" class="uk-select uk-width-1-1 uk-form-large" aria-label="select" id="workbook">
+                    @foreach (var item in @items!)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+            </div>
+            <div class="uk-margin-top">
+                <button type="submit" class="uk-button uk-button-primary uk-width-1-1 uk-button-large"
+                  uk-tooltip="title: sending the file containing the data to be processed; pos: bottom">
+                    submit
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>
