@@ -91,7 +91,8 @@ public class HomeController : Controller
       System.Console.WriteLine($"area: {area}");
       // todo
       this.report = scheme.CreateMLContext(
-        datasetPath: datasetPath
+        dataset: WorkbookModel.GetDataset(datasetPath),
+        priced: new DomainModel() { Area = float.Parse(area) }
       );
     }
     if (this.report != null)
