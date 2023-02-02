@@ -69,9 +69,12 @@ public class HomeController : Controller
   }
 
   [HttpPost]
-  public IActionResult Process(string workbook)
+  public IActionResult Process(
+    string workbook,
+    string area
+  )
   {
-    if (workbook != null && workbook != string.Empty)
+    if (workbook != null && workbook != string.Empty && area != string.Empty)
     {
       string storeDatasetPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
@@ -83,6 +86,7 @@ public class HomeController : Controller
       );
       SchemeModel scheme = new();
       string datasetPath = Path.Combine(storeDatasetPath, workbook);
+      // todo
       this.report = scheme.CreateMLContext(
         datasetPath: datasetPath
       );
