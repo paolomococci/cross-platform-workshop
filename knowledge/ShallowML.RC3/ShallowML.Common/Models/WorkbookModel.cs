@@ -14,11 +14,11 @@ public class WorkbookModel
     {
       domains.Add(
         new DomainModel() {
-          Area = float.Parse((string)item.Cell(1).Value),
-          Price = float.Parse((string)item.Cell(2).Value)
+          Area = item.Cell(1).GetValue<float>(),
+          Price = item.Cell(2).GetValue<float>()
         }
       );
-      System.Console.WriteLine($"area: {float.Parse((string)item.Cell(1).Value)}, price: {float.Parse((string)item.Cell(2).Value)}");
+      System.Console.WriteLine($"area: {item.Cell(1).GetValue<float>()}, price: {item.Cell(2).GetValue<float>()}");
     }
     return domains.ToArray();
   }
