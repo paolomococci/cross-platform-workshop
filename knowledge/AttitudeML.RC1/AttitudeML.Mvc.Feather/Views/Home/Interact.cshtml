@@ -20,14 +20,14 @@
         System awaiting processing
     </h3>
     <form asp-action="Process" enctype="multipart/form-data">
-        <label class="uk-form-label" for="comment">
+        <label class="uk-form-label" for="interactCommentField">
             Please enter a sentence expressing a state of mind with a maximum of thirty characters:
         </label>
         <div class="uk-margin uk-width-1-1 uk-inline">
             <span class="uk-form-icon" uk-icon="icon: pencil; ratio: 1"></span>
             <input class="uk-input uk-form-large" placeholder="phrase that expresses a state of mind *" 
-              type="text" id="comment" aria-label="" maxlength="30" required="required" name="comment"
-              onkeypress = "return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 44 || event.charCode == 46 || event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122">
+              type="text" id="interactCommentField" aria-label="" maxlength="30" required="required" name="comment" 
+              onkeydown="validateTypedCharacter(event)" onpaste="validatePastedString(this, event)">
         </div>
         <fieldset class="uk-fieldset">
             <legend class="uk-legend"></legend>
@@ -50,4 +50,23 @@
             </div>
         </fieldset>
     </form>
+    <script>
+        const regex = new RegExp("^[0-9a-zA-Z\.\,]*$");
+        
+        function validateTypedCharacter(event) {
+            var key = event.key;
+            if(!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        }
+
+        function validatePastedString(element, event) {
+            var key = event.clipboardData.getData('Text')
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        }
+    </script>
 </div>
