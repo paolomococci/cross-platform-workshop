@@ -70,7 +70,7 @@ touch Views/Shared/Error.cshtml
 mkdir Views/Home
 touch Views/Home/Index.cshtml
 touch Views/Home/Upload.cshtml
-touch Views/Home/Uploaded.cshtml
+touch Views/Home/Interact.cshtml
 touch Views/Home/Report.cshtml
 mkdir Views/Workbook
 touch Views/Workbook/Index.cshtml
