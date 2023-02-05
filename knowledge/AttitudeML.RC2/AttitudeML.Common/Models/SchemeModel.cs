@@ -37,7 +37,6 @@ public class SchemeModel
       () => CreatePredictionEngine(schemePath),
       true
     );
-    // todo
-    throw new NotImplementedException();
+    return PredictEngine.Value.Predict(domainModel);
   }
 }
