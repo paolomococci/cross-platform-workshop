@@ -7,7 +7,7 @@ public class SchemeModel
   public string Id { get; } = Guid.NewGuid().ToString();
   public MLContext? mlContext;
 
-  public ReportModel CreateMLContext(
+  public ReportModel CreatePredictionEngine(
     DomainModel[] dataset,
     DomainModel disposition
   )
@@ -28,7 +28,7 @@ public class SchemeModel
     };
   }
 
-  public ReportModel CreateMLContextAndSaveSchema(
+  public ReportModel CreatePredictionEngineAndSaveSchema(
     DomainModel[] dataset,
     DomainModel disposition,
     string schemePath
