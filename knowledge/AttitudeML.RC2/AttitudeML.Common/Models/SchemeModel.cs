@@ -18,15 +18,6 @@ public class SchemeModel
     return mLContext.Model.CreatePredictionEngine<DomainModel, PredictionModel>(transformer);
   }
 
-  public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngineAndSaveSchema(
-    DomainModel disposition
-  )
-  {
-    MLContext mLContext = new();
-    // todo
-    throw new NotImplementedException();
-  }
-
   public static PredictionModel Prediction(
     DomainModel domainModel,
     string schemePath
