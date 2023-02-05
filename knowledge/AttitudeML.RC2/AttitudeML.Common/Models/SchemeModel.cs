@@ -27,4 +27,9 @@ public class SchemeModel
     // todo
     throw new NotImplementedException();
   }
+
+  public static PredictionModel Prediction() {
+    // todo
+    throw new NotImplementedException();
+  }
 }
