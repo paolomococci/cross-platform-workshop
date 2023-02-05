@@ -17,8 +17,7 @@ public class SchemeModel
       schemePath,
       out var _
     );
-    // todo
-    throw new NotImplementedException();
+    return mLContext.Model.CreatePredictionEngine<DomainModel, PredictionModel>(transformer);
   }
 
   public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngineAndSaveSchema(
