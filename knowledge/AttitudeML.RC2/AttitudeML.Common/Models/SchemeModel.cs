@@ -8,7 +8,6 @@ public class SchemeModel
   public MLContext? mlContext;
 
   public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
-    DomainModel[] dataset,
     DomainModel disposition
   )
   {
@@ -18,9 +17,7 @@ public class SchemeModel
   }
 
   public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngineAndSaveSchema(
-    DomainModel[] dataset,
-    DomainModel disposition,
-    string schemePath
+    DomainModel disposition
   )
   {
     MLContext mLContext = new();
