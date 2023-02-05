@@ -8,11 +8,15 @@ public class SchemeModel
   public MLContext? mlContext;
 
   public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
-    DomainModel disposition
+    DomainModel disposition,
+    string schemePath
   )
   {
     MLContext mLContext = new();
-    ITransformer transformer = mLContext.Model.Load();
+    ITransformer transformer = mLContext.Model.Load(
+      schemePath,
+      out var _
+    );
     // todo
     throw new NotImplementedException();
   }
