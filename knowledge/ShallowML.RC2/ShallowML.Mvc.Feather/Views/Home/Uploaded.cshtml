@@ -34,7 +34,7 @@
                 Please select a workbook from which to extract training data:
             </label>
             <div class="uk-margin">
-                <select name="workbook" class="uk-select uk-width-1-1 uk-form-large" aria-label="select" id="workbook">
+                <select name="workbook" class="uk-select uk-width-1-1 uk-form-large" aria-label="select" id="workbook" required="required">
                     @foreach (var item in @items!)
                     {
                         <option value="@item">@item</option>
