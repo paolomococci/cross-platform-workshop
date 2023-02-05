@@ -21,7 +21,7 @@
         <fieldset class="uk-fieldset">
             <legend class="uk-legend">please select a file:</legend>
             <div class="uk-margin">
-                <select name="unique" class="uk-select uk-width-1-1 uk-form-large" aria-label="select">
+                <select name="unique" class="uk-select uk-width-1-1 uk-form-large" aria-label="select" required="required">
                     @foreach (var item in @items!)
                     {
                         <option value="@item">@item</option>
