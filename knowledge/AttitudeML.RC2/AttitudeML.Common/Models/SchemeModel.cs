@@ -12,6 +12,7 @@ public class SchemeModel
   )
   {
     MLContext mLContext = new();
+    ITransformer transformer = mLContext.Model.Load();
     // todo
     throw new NotImplementedException();
   }
