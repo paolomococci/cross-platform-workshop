@@ -27,7 +27,10 @@ public class SchemeModel
     throw new NotImplementedException();
   }
 
-  public static PredictionModel Prediction(string schemePath)
+  public static PredictionModel Prediction(
+    DomainModel domainModel,
+    string schemePath
+  )
   {
     Lazy<PredictionEngine<DomainModel, PredictionModel>> PredictEngine;
     PredictEngine = new Lazy<PredictionEngine<DomainModel, PredictionModel>>(
