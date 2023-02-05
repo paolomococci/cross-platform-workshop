@@ -7,48 +7,20 @@ public class SchemeModel
   public string Id { get; } = Guid.NewGuid().ToString();
   public MLContext? mlContext;
 
-  public ReportModel CreatePredictionEngine(
+  public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
     DomainModel[] dataset,
     DomainModel disposition
   )
   {
-    this.mlContext = new MLContext();
-    /* loading dataset step */
-    IDataView dataView = this.mlContext.Data.LoadFromEnumerable(dataset);
-
-    /* create pipeline step */
-
-    /* training step */
-
-    /* prediction step */
-
-    return new ReportModel()
-    {
-      Name = this.Id
-    };
+    throw new NotImplementedException();
   }
 
-  public ReportModel CreatePredictionEngineAndSaveSchema(
+  public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngineAndSaveSchema(
     DomainModel[] dataset,
     DomainModel disposition,
     string schemePath
   )
   {
-    this.mlContext = new MLContext();
-    /* loading dataset step */
-    IDataView dataView = this.mlContext.Data.LoadFromEnumerable(dataset);
-
-    /* create pipeline step */
-
-    /* training step */
-
-    /* prediction step */
-
-    /* persist step */
-
-    return new ReportModel()
-    {
-      Name = this.Id
-    };
+    throw new NotImplementedException();
   }
 }
