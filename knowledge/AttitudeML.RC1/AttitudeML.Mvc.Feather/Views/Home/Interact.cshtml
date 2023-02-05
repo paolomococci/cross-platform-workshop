@@ -50,23 +50,4 @@
             </div>
         </fieldset>
     </form>
-    <script>
-        const regex = new RegExp("^[0-9a-zA-Z\.\,]*$");
-        
-        function validateTypedCharacter(event) {
-            var key = event.key;
-            if(!regex.test(key)) {
-                event.preventDefault();
-                return false;
-            }
-        }
-
-        function validatePastedString(element, event) {
-            var key = event.clipboardData.getData('Text')
-            if (!regex.test(key)) {
-                event.preventDefault();
-                return false;
-            }
-        }
-    </script>
 </div>
