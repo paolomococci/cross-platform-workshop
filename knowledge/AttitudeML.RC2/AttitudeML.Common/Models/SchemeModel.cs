@@ -6,7 +6,7 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
+  private static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
     string schemePath
   )
   {
