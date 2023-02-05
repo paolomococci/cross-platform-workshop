@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Report";
+}
+@model AttitudeML.Common.Models.ReportModel
+
+<div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
+    <h1 class="uk-heading-large uk-heading-divider">@ViewData["Title"]</h1>
+</div>
+
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+    <h3 class="uk-card-title uk-margin-large-bottom uk-heading-small uk-text-center">
+      Dataset processing report
+    </h3>
+    <table class="uk-table uk-table-striped">
+      <caption></caption>
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Values</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>@Model.Name</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
