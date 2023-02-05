@@ -485,6 +485,7 @@ appsettings.json
 HELP.md
 *.txt
 *.zip
+*.xlsx
 *.ico
 *.png
 
