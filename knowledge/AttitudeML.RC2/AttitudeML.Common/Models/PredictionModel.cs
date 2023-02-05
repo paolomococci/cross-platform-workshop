@@ -4,6 +4,9 @@ namespace AttitudeML.Common.Models;
 
 public class PredictionModel
 {
+  [ColumnName("Comment")]
+  public string Comment { get; set; } = string.Empty;
+
   [ColumnName("Logged")]
   public bool Logged { get; set; } = false;
 
