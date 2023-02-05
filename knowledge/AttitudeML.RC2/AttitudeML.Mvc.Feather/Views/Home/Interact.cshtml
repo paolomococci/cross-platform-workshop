@@ -1,14 +1,14 @@
 @{
-ViewData["Title"] = "AttitudeML";
-List<string>? items = new();
-if (ViewData["workbooks"] as List<string> != null)
-{
-    items = ViewData["workbooks"] as List<string>;
-}
-else
-{
-    items.Add("");
-}
+    ViewData["Title"] = "AttitudeML";
+    List<string>? items = new();
+    if (ViewData["workbooks"] as List<string> != null)
+    {
+        items = ViewData["workbooks"] as List<string>;
+    }
+    else
+    {
+        items.Add("");
+    }
 }
 
 <div class="uk-text-center uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
