@@ -7,7 +7,6 @@ public class SchemeModel
   public string Id { get; } = Guid.NewGuid().ToString();
 
   public static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
-    DomainModel disposition,
     string schemePath
   )
   {
@@ -28,7 +27,13 @@ public class SchemeModel
     throw new NotImplementedException();
   }
 
-  public static PredictionModel Prediction() {
+  public static PredictionModel Prediction(string schemePath)
+  {
+    Lazy<PredictionEngine<DomainModel, PredictionModel>> PredictEngine;
+    PredictEngine = new Lazy<PredictionEngine<DomainModel, PredictionModel>>(
+      () => CreatePredictionEngine(schemePath),
+      true
+    );
     // todo
     throw new NotImplementedException();
   }
