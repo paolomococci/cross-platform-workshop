@@ -4,6 +4,9 @@ namespace AttitudeML.Common.Models;
 
 public class PredictionModel
 {
+  [ColumnName("Sentiment")]
+  public int Sentiment { get; set; } = 0;
+
   [ColumnName("Comment")]
   public string Comment { get; set; } = string.Empty;
 
