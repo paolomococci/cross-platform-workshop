@@ -12,6 +12,8 @@ public class SchemeModel
     DomainModel disposition
   )
   {
+    MLContext mLContext = new();
+    // todo
     throw new NotImplementedException();
   }
 
@@ -21,6 +23,8 @@ public class SchemeModel
     string schemePath
   )
   {
+    MLContext mLContext = new();
+    // todo
     throw new NotImplementedException();
   }
 }
