@@ -2,5 +2,5 @@ namespace AttitudeML.Common.Models;
 
 public class DomainModel
 {
-  // todo
+  public int Sentiment { get; set; } = 0;
 }
