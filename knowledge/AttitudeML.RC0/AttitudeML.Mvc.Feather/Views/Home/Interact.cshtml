@@ -25,7 +25,7 @@
         </label>
         <div class="uk-margin uk-width-1-1 uk-inline">
             <span class="uk-form-icon" uk-icon="icon: pencil; ratio: 1"></span>
-            <input class="uk-input uk-form-large" placeholder="phrase that expresses a state of mind *" 
+            <input class="uk-input uk-form-large" placeholder="phrase that expresses a state of mind *"
               type="text" id="comment" aria-label="" maxlength="30" required="required" name="comment"
               onkeypress = "return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 44 || event.charCode == 46 || event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122">
         </div>
@@ -35,7 +35,7 @@
                 Please select a workbook from which to extract training data:
             </label>
             <div class="uk-margin">
-                <select name="workbook" class="uk-select uk-width-1-1 uk-form-large" aria-label="select" id="workbook">
+                <select name="workbook" class="uk-select uk-width-1-1 uk-form-large" aria-label="select" id="workbook" required="required">
                     @foreach (var item in @items!)
                     {
                         <option value="@item">@item</option>
