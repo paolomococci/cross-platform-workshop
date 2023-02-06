@@ -88,6 +88,7 @@ public class HomeController : Controller
       );
       // todo
       this.report = new ReportModel() {
+        Comment = comment,
         Disposition = Convert.ToBoolean(predictionModel.PredictedLabel)
       };
     }
@@ -98,6 +99,7 @@ public class HomeController : Controller
       "Home",
       new ReportModel()
       {
+        Comment = this.report.Comment,
         Disposition = this.report.Disposition
       }
     );
