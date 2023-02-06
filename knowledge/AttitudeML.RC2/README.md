@@ -41,7 +41,8 @@ dotnet new classlib -o AttitudeML.Common
 cd AttitudeML.Common
 rm Class1.cs
 dotnet add package ClosedXML --version 0.100.3
-dotnet add package Microsoft.ML --version 2.0.1
+dotnet add package Microsoft.ML --version 3.0.0-preview.22621.2
+dotnet add package Microsoft.ML.TorchSharp --version 0.21.0-preview.22621.2
 mkdir Models
 echo -e "namespace AttitudeML.Common.Models;\n\npublic class DatasetModel {}" > Models/DomainModel.cs
 echo -e "namespace AttitudeML.Common.Models;\n\npublic class PredictionModel {}" > Models/PredictionModel.cs
