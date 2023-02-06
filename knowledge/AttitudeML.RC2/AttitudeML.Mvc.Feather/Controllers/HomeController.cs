@@ -81,6 +81,7 @@ public class HomeController : Controller
         this.webHostEnvironment.WebRootPath,
         "Store/schemes"
       );
+      SchemeModel scheme = new();
     }
     // todo
     throw new NotImplementedException();
