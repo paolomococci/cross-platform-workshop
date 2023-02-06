@@ -14,7 +14,9 @@ public class SchemeModel
     throw new NotImplementedException();
   }
 
-  public static IEstimator<ITransformer> MakePipeline()
+  public static IEstimator<ITransformer> MakePipeline(
+    MLContext mlContext
+  )
   {
     throw new NotImplementedException();
   }
