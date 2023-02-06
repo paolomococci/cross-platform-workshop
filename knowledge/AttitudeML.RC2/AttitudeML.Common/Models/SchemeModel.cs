@@ -10,6 +10,11 @@ public class SchemeModel
     MLContext mlContext
   )
   {
+    var pipeline = mlContext.Transforms.Conversion.MapValueToKey(
+      outputColumnName: @"Sentiment",
+      inputColumnName: @"Sentiment"
+    );
+    // todo
     throw new NotImplementedException();
   }
 
