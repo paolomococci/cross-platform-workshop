@@ -8,6 +8,6 @@ public class ReportModel
 
   public string GetResponse()
   {
-    return this.Disposition ? "" : "";
+    return this.Disposition ? "Unpleasant" : "Pleasant";
   }
 }
