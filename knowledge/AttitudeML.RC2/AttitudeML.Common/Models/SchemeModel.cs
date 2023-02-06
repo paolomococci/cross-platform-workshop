@@ -34,9 +34,7 @@ public class SchemeModel
     IDataView trainingDataView
   )
   {
-    var pipeline = MakePipeline(mlContext);
-    var scheme = pipeline.Fit(trainingDataView);
-    throw new NotImplementedException();
+    return MakePipeline(mlContext).Fit(trainingDataView);
   }
 
   private static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
