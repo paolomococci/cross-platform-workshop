@@ -8,6 +8,8 @@ public class DomainModel
   [ColumnName(@"Sentiment")]
   public int Sentiment { get; set; } = 0;
 
+  [LoadColumn(1)]
+  [ColumnName(@"Comment")]
   public string Comment { get; set; } = string.Empty;
   
   public bool Logged { get; set; } = false;
