@@ -86,8 +86,10 @@ public class HomeController : Controller
       string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
       scheme.MakeAndSaveSchema();
     }
-    // todo
-    throw new NotImplementedException();
+    return RedirectToAction(
+      "Index",
+      "Home"
+    );
   }
 
   public IActionResult Interact()
