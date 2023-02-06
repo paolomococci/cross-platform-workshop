@@ -15,7 +15,8 @@ public class WorkbookModel
       domains.Add(
         new DomainModel() {
           Sentiment = item.Cell(1).GetValue<int>(),
-          Comment = item.Cell(2).GetValue<string>()
+          Comment = item.Cell(2).GetValue<string>(),
+          Registered = item.Cell(3).GetValue<bool>()
         }
       );
     }
