@@ -4,18 +4,18 @@ namespace AttitudeML.Common.Models;
 
 public class PredictionModel
 {
-  [ColumnName("Sentiment")]
+  [ColumnName(@"Sentiment")]
   public int Sentiment { get; set; } = 0;
 
-  [ColumnName("Comment")]
+  [ColumnName(@"Comment")]
   public string Comment { get; set; } = string.Empty;
 
-  [ColumnName("Logged")]
+  [ColumnName(@"Logged")]
   public bool Logged { get; set; } = false;
 
-  [ColumnName("PredictedLabel")]
+  [ColumnName(@"PredictedLabel")]
   public float PredictedLabel { get; set; } = 0.0F;
 
-  [ColumnName("Score")]
+  [ColumnName(@"Score")]
   public float Score { get; set; } = 0.0F;
 }
