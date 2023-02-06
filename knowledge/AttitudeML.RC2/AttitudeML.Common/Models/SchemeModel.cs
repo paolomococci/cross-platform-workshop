@@ -7,6 +7,11 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
+  public void MakeAndSaveSchema()
+  {
+    throw new NotImplementedException();
+  }
+
   private PredictionEngine<DomainModel, PredictionModel> CreatePredictEngine(
     string schemePath
   )
