@@ -13,6 +13,6 @@ public class DomainModel
   public string Comment { get; set; } = string.Empty;
   
   [LoadColumn(2)]
-  [ColumnName(@"Logged")]
-  public bool Logged { get; set; } = false;
+  [ColumnName(@"Registered")]
+  public bool Registered { get; set; } = false;
 }
