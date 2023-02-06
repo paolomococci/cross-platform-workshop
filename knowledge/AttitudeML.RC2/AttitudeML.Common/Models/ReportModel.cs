@@ -7,6 +7,6 @@ public class ReportModel
 
   public string GetResponse()
   {
-    throw new NotImplementedException();
+    return this.Disposition ? "" : "";
   }
 }
