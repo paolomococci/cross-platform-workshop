@@ -14,7 +14,7 @@ public class WorkbookModel
     {
       domains.Add(
         new DomainModel() {
-          
+          Sentiment = item.Cell(1).GetValue<int>()
         }
       );
     }
