@@ -86,7 +86,6 @@ public class HomeController : Controller
         domainModel: new DomainModel() { Comment = comment },
         schemePath: schemePath
       );
-      // todo
       this.report = new ReportModel() {
         Comment = comment,
         Disposition = Convert.ToBoolean(predictionModel.PredictedLabel)
