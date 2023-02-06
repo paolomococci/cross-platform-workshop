@@ -70,29 +70,24 @@ public class HomeController : Controller
 
   [HttpPost]
   public IActionResult Process(
-    string workbook,
+    string frozenScheme,
     string comment
   )
   {
-    if (workbook != null && workbook != string.Empty && comment != string.Empty)
+    if (frozenScheme != null && frozenScheme != string.Empty && comment != string.Empty)
     {
-      string storeDatasetPath = Path.Combine(
-        this.webHostEnvironment.WebRootPath,
-        "Store/workbooks"
-      );
       string storeSchemePath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/schemes"
       );
       SchemeModel scheme = new();
-      string datasetPath = Path.Combine(storeDatasetPath, workbook);
-      string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
-      // todo
-      /*this.report = scheme.CreateMLContextAndSaveSchema(
-        dataset: WorkbookModel.GetDataset(datasetPath),
-        disposition: new DomainModel() {},
+      string schemePath = Path.Combine(storeSchemePath, frozenScheme);
+      PredictionModel predictionModel = scheme.Prediction(
+        domainModel: new DomainModel() { Comment = comment },
         schemePath: schemePath
-      );*/
+      );
+      // todo
+      //this.report
     }
     if (this.report != null)
     {
