@@ -9,20 +9,20 @@
 
 <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
     <h3 class="uk-card-title uk-margin-large-bottom uk-heading-small uk-text-center">
-      Dataset processing report
+      Report on the mood of the comment
     </h3>
     <table class="uk-table uk-table-striped">
       <caption></caption>
       <thead>
         <tr>
-            <th>Name</th>
-            <th>Values</th>
+            <th>Comment</th>
+            <th>Response</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Name</td>
-          <td>@Model.Name</td>
+          <td>@Model.Comment</td>
+          <td>@Model.GetResponse()</td>
         </tr>
       </tbody>
     </table>
