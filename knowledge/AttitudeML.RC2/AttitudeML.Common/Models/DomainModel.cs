@@ -12,5 +12,7 @@ public class DomainModel
   [ColumnName(@"Comment")]
   public string Comment { get; set; } = string.Empty;
   
+  [LoadColumn(2)]
+  [ColumnName(@"Logged")]
   public bool Logged { get; set; } = false;
 }
