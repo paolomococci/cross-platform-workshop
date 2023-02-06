@@ -53,17 +53,17 @@ public class HomeController : Controller
 
   public IActionResult Interact()
   {
-    List<string> workbooks = new();
+    List<string> schemes = new();
     var store = Path.Combine(
         this.webHostEnvironment.WebRootPath,
-        "Store/workbooks"
+        "Store/schemes"
       );
-    var uploadedWorkbooks = Directory.GetFiles(store);
-    foreach (var item in uploadedWorkbooks)
+    var uploadedSchemes = Directory.GetFiles(store);
+    foreach (var item in uploadedSchemes)
     {
       var itemName = Path.GetFileName(item);
-      workbooks.Add(itemName);
-      ViewData["workbooks"] = workbooks;
+      schemes.Add(itemName);
+      ViewData["schemes"] = schemes;
     }
     return View();
   }
