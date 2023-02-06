@@ -113,11 +113,13 @@ public class HomeController : Controller
 
 [HttpGet]
   public IActionResult Report([FromQuery]
+    string Comment,
     bool Disposition
   )
   {
     var report = new ReportModel()
       {
+        Comment = Comment,
         Disposition = Disposition
       };
     return View(report);
