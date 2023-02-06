@@ -14,7 +14,8 @@ public class SchemeModel
   )
   {
     // todo
-
+    this.mlContext = new MLContext();
+    /* loading dataset step */
     throw new NotImplementedException();
   }
 
