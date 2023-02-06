@@ -7,7 +7,7 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  private static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
+  private static PredictionEngine<DomainModel, PredictionModel> CreatePredictEngine(
     string schemePath
   )
   {
@@ -26,7 +26,7 @@ public class SchemeModel
   {
     Lazy<PredictionEngine<DomainModel, PredictionModel>> PredictEngine;
     PredictEngine = new Lazy<PredictionEngine<DomainModel, PredictionModel>>(
-      () => CreatePredictionEngine(schemePath),
+      () => CreatePredictEngine(schemePath),
       true
     );
     return PredictEngine.Value.Predict(domainModel);
