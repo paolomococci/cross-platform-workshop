@@ -7,7 +7,10 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  public void MakeAndSaveSchema()
+  public void MakeAndSaveSchema(
+    DomainModel[] dataset,
+    string schemePath
+  )
   {
     // todo
     throw new NotImplementedException();
