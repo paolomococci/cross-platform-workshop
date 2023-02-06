@@ -72,6 +72,7 @@ public class HomeController : Controller
   public IActionResult Schematize(
     string workbook
   ) {
+    if (workbook != null && workbook != string.Empty) {}
     // todo
     throw new NotImplementedException();
   }
