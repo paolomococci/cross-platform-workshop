@@ -72,7 +72,6 @@ mkdir Views/Home
 touch Views/Home/Index.cshtml
 touch Views/Home/Upload.cshtml
 touch Views/Home/Workbooks.cshtml
-touch Views/Home/Schematize.cshtml
 touch Views/Home/Interact.cshtml
 touch Views/Home/Report.cshtml
 mkdir Views/Workbook
