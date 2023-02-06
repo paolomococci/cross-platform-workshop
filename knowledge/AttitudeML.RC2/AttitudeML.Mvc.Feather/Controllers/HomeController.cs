@@ -87,7 +87,9 @@ public class HomeController : Controller
         schemePath: schemePath
       );
       // todo
-      //this.report
+      this.report = new ReportModel() {
+        Disposition = Convert.ToBoolean(predictionModel.PredictedLabel)
+      };
     }
     if (this.report != null)
     {
@@ -96,7 +98,7 @@ public class HomeController : Controller
       "Home",
       new ReportModel()
       {
-        Name = this.report.Name
+        Disposition = this.report.Disposition
       }
     );
     }
@@ -111,12 +113,12 @@ public class HomeController : Controller
 
 [HttpGet]
   public IActionResult Report([FromQuery]
-    string Name
+    bool Disposition
   )
   {
     var report = new ReportModel()
       {
-        Name = Name
+        Disposition = Disposition
       };
     return View(report);
   }
