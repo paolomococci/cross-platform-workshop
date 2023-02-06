@@ -6,16 +6,16 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  public static ITransformer TrainingScheme(
-    MLContext mlContext,
-    IDataView trainingDataView
+  public static IEstimator<ITransformer> MakePipeline(
+    MLContext mlContext
   )
   {
     throw new NotImplementedException();
   }
 
-  public static IEstimator<ITransformer> MakePipeline(
-    MLContext mlContext
+  public static ITransformer TrainingScheme(
+    MLContext mlContext,
+    IDataView trainingDataView
   )
   {
     throw new NotImplementedException();
