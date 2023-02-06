@@ -35,6 +35,7 @@ public class SchemeModel
   )
   {
     var pipeline = MakePipeline(mlContext);
+    var scheme = pipeline.Fit(trainingDataView);
     throw new NotImplementedException();
   }
 
