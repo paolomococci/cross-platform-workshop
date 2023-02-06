@@ -6,7 +6,10 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  public static ITransformer TrainingScheme()
+  public static ITransformer TrainingScheme(
+    MLContext mlContext,
+    IDataView trainingDataView
+  )
   {
     throw new NotImplementedException();
   }
