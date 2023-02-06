@@ -7,7 +7,7 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
-  private static PredictionEngine<DomainModel, PredictionModel> CreatePredictEngine(
+  private PredictionEngine<DomainModel, PredictionModel> CreatePredictEngine(
     string schemePath
   )
   {
@@ -19,7 +19,7 @@ public class SchemeModel
     return mLContext.Model.CreatePredictionEngine<DomainModel, PredictionModel>(transformer);
   }
 
-  public static PredictionModel Prediction(
+  public PredictionModel Prediction(
     DomainModel domainModel,
     string schemePath
   )
@@ -32,7 +32,7 @@ public class SchemeModel
     return PredictEngine.Value.Predict(domainModel);
   }
 
-  public static IEstimator<ITransformer> MakePipeline(
+  public IEstimator<ITransformer> MakePipeline(
     MLContext mlContext
   )
   {
@@ -52,7 +52,7 @@ public class SchemeModel
     );
   }
 
-  public static ITransformer TrainingScheme(
+  public ITransformer TrainingScheme(
     MLContext mlContext,
     IDataView trainingDataView
   )
