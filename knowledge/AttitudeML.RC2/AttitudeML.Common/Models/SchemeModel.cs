@@ -13,9 +13,15 @@ public class SchemeModel
     string schemePath
   )
   {
-    // todo
     this.mlContext = new MLContext();
     /* loading dataset step */
+    // todo
+    /* create pipeline step */
+    // todo
+    /* training step */
+    // todo
+    /* persist step */
+    // todo
     throw new NotImplementedException();
   }
 
