@@ -51,6 +51,23 @@ public class HomeController : Controller
     );
   }
 
+  public IActionResult Workbooks()
+  {
+    List<string> workbooks = new();
+    var store = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/workbooks"
+      );
+    var uploadedWorkbooks = Directory.GetFiles(store);
+    foreach (var item in uploadedWorkbooks)
+    {
+      var itemName = Path.GetFileName(item);
+      workbooks.Add(itemName);
+      ViewData["workbooks"] = workbooks;
+    }
+    return View();
+  }
+
   public IActionResult Interact()
   {
     List<string> schemes = new();
