@@ -10,8 +10,8 @@ public class PredictionModel
   [ColumnName(@"Comment")]
   public string Comment { get; set; } = string.Empty;
 
-  [ColumnName(@"Logged")]
-  public bool Logged { get; set; } = false;
+  [ColumnName(@"Registered")]
+  public bool Registered { get; set; } = false;
 
   [ColumnName(@"PredictedLabel")]
   public float PredictedLabel { get; set; } = 0.0F;
