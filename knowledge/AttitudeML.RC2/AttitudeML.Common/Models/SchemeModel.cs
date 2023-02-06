@@ -1,7 +1,5 @@
 using Microsoft.ML;
-using Microsoft.ML.Trainers;
 using Microsoft.ML.TorchSharp;
-using Microsoft.ML.Data;
 
 namespace AttitudeML.Common.Models;
 
