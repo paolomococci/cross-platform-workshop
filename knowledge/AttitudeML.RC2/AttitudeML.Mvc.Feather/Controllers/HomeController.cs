@@ -83,6 +83,7 @@ public class HomeController : Controller
       );
       SchemeModel scheme = new();
       string datasetPath = Path.Combine(storeDatasetPath, workbook);
+      string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
     }
     // todo
     throw new NotImplementedException();
