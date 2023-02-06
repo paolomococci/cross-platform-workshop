@@ -69,7 +69,9 @@ public class HomeController : Controller
   }
 
   [HttpPost]
-  public IActionResult Schematize() {
+  public IActionResult Schematize(
+    string workbook
+  ) {
     // todo
     throw new NotImplementedException();
   }
