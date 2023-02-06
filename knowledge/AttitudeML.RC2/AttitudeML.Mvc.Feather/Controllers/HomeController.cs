@@ -68,6 +68,11 @@ public class HomeController : Controller
     return View();
   }
 
+  public IActionResult Schematize() {
+    // todo
+    throw new NotImplementedException();
+  }
+
   public IActionResult Interact()
   {
     List<string> schemes = new();
