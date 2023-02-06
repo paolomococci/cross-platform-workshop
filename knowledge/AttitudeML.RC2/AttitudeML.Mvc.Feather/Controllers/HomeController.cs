@@ -71,10 +71,10 @@ public class HomeController : Controller
   [HttpPost]
   public IActionResult Process(
     string workbook,
-    string area
+    string comment
   )
   {
-    if (workbook != null && workbook != string.Empty && area != string.Empty)
+    if (workbook != null && workbook != string.Empty && comment != string.Empty)
     {
       string storeDatasetPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
