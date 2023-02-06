@@ -1,4 +1,7 @@
 using Microsoft.ML;
+using Microsoft.ML.Trainers;
+using Microsoft.ML.TorchSharp;
+using Microsoft.ML.Data;
 
 namespace AttitudeML.Common.Models;
 
@@ -13,6 +16,16 @@ public class SchemeModel
     var pipeline = mlContext.Transforms.Conversion.MapValueToKey(
       outputColumnName: @"Sentiment",
       inputColumnName: @"Sentiment"
+    ).Append(
+      mlContext.MulticlassClassification.Trainers.TextClassification(
+        labelColumnName: @"Sentiment", 
+        sentence1ColumnName: @"SentimentText"
+      )
+    ).Append(
+      mlContext.Transforms.Conversion.MapKeyToValue(
+        outputColumnName:@"PredictedLabel", 
+        inputColumnName:@"PredictedLabel"
+      )
     );
     // todo
     throw new NotImplementedException();
