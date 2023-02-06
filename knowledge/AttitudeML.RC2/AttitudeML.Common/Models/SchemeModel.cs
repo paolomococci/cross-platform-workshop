@@ -13,7 +13,7 @@ public class SchemeModel
     MLContext mlContext
   )
   {
-    var pipeline = mlContext.Transforms.Conversion.MapValueToKey(
+    return mlContext.Transforms.Conversion.MapValueToKey(
       outputColumnName: @"Sentiment",
       inputColumnName: @"Sentiment"
     ).Append(
@@ -27,8 +27,6 @@ public class SchemeModel
         inputColumnName:@"PredictedLabel"
       )
     );
-    // todo
-    throw new NotImplementedException();
   }
 
   public static ITransformer TrainingScheme(
@@ -36,6 +34,7 @@ public class SchemeModel
     IDataView trainingDataView
   )
   {
+    var pipeline = MakePipeline(mlContext);
     throw new NotImplementedException();
   }
 
