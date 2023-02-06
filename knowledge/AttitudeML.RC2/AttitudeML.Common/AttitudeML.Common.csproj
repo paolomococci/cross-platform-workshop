@@ -8,7 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="ClosedXML" Version="0.100.3" />
-    <PackageReference Include="Microsoft.ML" Version="2.0.1" />
+    <PackageReference Include="Microsoft.ML" Version="3.0.0-preview.22621.2" />
+    <PackageReference Include="Microsoft.ML.TorchSharp" Version="0.21.0-preview.22621.2" />
   </ItemGroup>
 
 </Project>
