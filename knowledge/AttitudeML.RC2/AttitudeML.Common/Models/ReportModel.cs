@@ -5,7 +5,8 @@ public class ReportModel
 {
   public bool Disposition { get; set; } = false;
 
-  public string GetResponse() {
+  public string GetResponse()
+  {
     throw new NotImplementedException();
   }
 }
