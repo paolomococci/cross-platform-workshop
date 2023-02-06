@@ -72,7 +72,16 @@ public class HomeController : Controller
   public IActionResult Schematize(
     string workbook
   ) {
-    if (workbook != null && workbook != string.Empty) {}
+    if (workbook != null && workbook != string.Empty) {
+      string storeDatasetPath = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/workbooks"
+      );
+      string storeSchemePath = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/schemes"
+      );
+    }
     // todo
     throw new NotImplementedException();
   }
