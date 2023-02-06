@@ -6,6 +6,14 @@ public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
 
+  public static ITransformer TrainingScheme() {
+    throw new NotImplementedException();
+  }
+
+  public static IEstimator<ITransformer> MakePipeline() {
+    throw new NotImplementedException();
+  }
+
   private static PredictionEngine<DomainModel, PredictionModel> CreatePredictionEngine(
     string schemePath
   )
