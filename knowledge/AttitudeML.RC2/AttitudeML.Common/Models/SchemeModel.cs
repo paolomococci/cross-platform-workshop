@@ -6,6 +6,7 @@ namespace AttitudeML.Common.Models;
 public class SchemeModel
 {
   public string Id { get; } = Guid.NewGuid().ToString();
+  public MLContext? mlContext;
 
   public void MakeAndSaveSchema(
     DomainModel[] dataset,
@@ -13,6 +14,7 @@ public class SchemeModel
   )
   {
     // todo
+
     throw new NotImplementedException();
   }
 
