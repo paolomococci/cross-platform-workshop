@@ -13,6 +13,10 @@ public class SchemeModel
     string schemePath
   )
   {
+    foreach (var item in dataset)
+    {
+      System.Console.WriteLine($"item -> [{item.Sentiment}, {item.Comment}, {item.Registered}]");
+    }
     this.mlContext = new MLContext();
     /* loading dataset step */
     IDataView dataView = this.mlContext.Data.LoadFromEnumerable(dataset);
