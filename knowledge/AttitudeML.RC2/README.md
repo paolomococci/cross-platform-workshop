@@ -1,6 +1,6 @@
 # AttitudeML.RC2
 
-Web application that provides access to machine learning capabilities using the ML.NET version 2.0.1 framework.
+Web application that provides access to machine learning capabilities using the ML.NET version 3.0.0-preview.22621.2 framework.
 Stylized using the CSS UIkit framework.
 
 ## Scaffolding
