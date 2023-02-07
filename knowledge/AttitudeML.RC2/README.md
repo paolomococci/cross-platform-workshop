@@ -3,6 +3,10 @@
 Web application that provides access to machine learning capabilities using the ML.NET version 3.0.0-preview.22621.2 framework.
 Stylized using the CSS UIkit framework.
 
+### Note
+
+At this point I could also use the sentence evaluation scheme directly without archiving it.
+
 ## Scaffolding
 
 ### I start by creating the directory that will house the entire project
