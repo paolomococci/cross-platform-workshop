@@ -1,4 +1,12 @@
 @{
     ViewData["Title"] = "AttitudeML";
     List<string>? items = new();
+    if (ViewData["workbooks"] as List<string> != null)
+    {
+        items = ViewData["workbooks"] as List<string>;
+    }
+    else
+    {
+        items.Add("");
+    }
 }
