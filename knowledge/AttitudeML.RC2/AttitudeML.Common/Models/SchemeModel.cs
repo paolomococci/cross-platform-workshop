@@ -15,7 +15,7 @@ public class SchemeModel
   {
     this.mlContext = new MLContext();
     /* loading dataset step */
-    // todo
+    IDataView dataView = this.mlContext.Data.LoadFromEnumerable(dataset);
     /* create pipeline step */
     // todo
     /* training step */
