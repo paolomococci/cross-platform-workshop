@@ -73,19 +73,14 @@ public class HomeController : Controller
     string workbook
   ) {
     if (workbook != null && workbook != string.Empty) {
-      string storeDatasetPath = Path.Combine(
-        this.webHostEnvironment.WebRootPath,
-        "Store/workbooks"
-      );
       string storeSchemePath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/schemes"
       );
       SchemeModel scheme = new();
-      string datasetPath = Path.Combine(storeDatasetPath, workbook);
       string schemePath = Path.Combine(storeSchemePath, $"scheme_{scheme.Id}.zip");
       scheme.MakeAndSaveSchema(
-        dataset: WorkbookModel.GetDataset(datasetPath),
+        dataset: WorkbookModel.GetDataset(workbook),
         schemePath: schemePath
       );
     }
