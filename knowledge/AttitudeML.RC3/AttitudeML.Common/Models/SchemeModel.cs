@@ -26,7 +26,6 @@ public class SchemeModel
     // todo
     /* persist step */
     // todo
-    throw new NotImplementedException();
   }
 
   private PredictionEngine<DomainModel, PredictionModel> CreatePredictEngine(
