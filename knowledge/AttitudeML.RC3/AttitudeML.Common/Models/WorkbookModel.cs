@@ -4,7 +4,9 @@ namespace AttitudeML.Common.Models;
 
 public class WorkbookModel
 {
-  public static DomainModel[] GetDataset(string datasetPath)
+  public static DomainModel[] GetDataset(
+    string datasetPath
+  )
   {
     List<DomainModel> domains = new();
     XLWorkbook xlWorkbook = new XLWorkbook(datasetPath);
