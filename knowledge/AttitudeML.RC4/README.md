@@ -62,6 +62,8 @@ dotnet add ./AttitudeML.Mvc.Feather.csproj reference ../AttitudeML.Common/Attitu
 mkdir Models
 echo -e "namespace AttitudeML.Mvc.Feather.Models;\n\npublic class ErrorViewModel {}" > Models/ErrorViewModel.cs
 echo -e "namespace AttitudeML.Mvc.Feather.Models;\n\npublic class DataCollectionModel {}" > Models/DataCollectionModel.cs
+mkdir Services
+echo -e "namespace AttitudeML.Mvc.Feather.Services;\n\npublic class FileUploadService {}" > Services/FileUploadService.cs
 mkdir Views
 touch Views/_ViewImports.cshtml
 touch Views/_ViewStart.cshtml
