@@ -10,7 +10,7 @@
     <h3 class="uk-card-title uk-margin-large-bottom uk-heading-small uk-text-center">
         Upload dataset
     </h3>
-    <form asp-action="Upload" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" asp-action="Upload">
         <fieldset class="uk-fieldset">
             <legend class="uk-margin">Form dedicated to uploading one dataset file at a time.</legend>
             <div class="uk-child-width-1-2">
