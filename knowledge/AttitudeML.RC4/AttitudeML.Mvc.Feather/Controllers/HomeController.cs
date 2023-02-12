@@ -32,9 +32,7 @@ public class HomeController : Controller
     return View(new DataCollectionModel());
   }
 
-  [HttpPost, ActionName("Upload")]
-  [AllowAnonymous]
-  [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
+  [HttpPost, ActionName("Upload"), DisableRequestSizeLimit]
   public async Task<IActionResult> Upload(
     [FromForm] IFormFile formFile
   )
