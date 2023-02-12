@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using System.Diagnostics;
 using AttitudeML.Mvc.Feather.Models;
 using AttitudeML.Common.Models;
@@ -31,6 +32,7 @@ public class HomeController : Controller
   }
 
   [HttpPost]
+  [AllowAnonymous]
   [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
   public IActionResult Upload(DataCollectionModel dataCollection)
   {
