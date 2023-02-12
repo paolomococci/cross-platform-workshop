@@ -7,6 +7,7 @@ public class FileUploadService
     string datasetPath
   )
   {
+    // todo: change so that it doesn't create a directory
     try
     {
       if (formFile.Length > 0)
