@@ -31,6 +31,7 @@ public class HomeController : Controller
   }
 
   [HttpPost]
+  [RequestFormLimits(MultipartBodyLengthLimit = 51200)]
   public IActionResult Upload(DataCollectionModel dataCollection)
   {
     if (dataCollection.Dataset != null)
