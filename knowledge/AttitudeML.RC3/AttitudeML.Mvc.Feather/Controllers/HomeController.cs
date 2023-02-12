@@ -31,23 +31,28 @@ public class HomeController : Controller
     return View(new DataCollectionModel());
   }
 
-  [HttpPost]
+  [HttpPost, ActionName("Upload")]
   [AllowAnonymous]
   [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
-  public IActionResult Upload(DataCollectionModel dataCollection)
+  public async Task<IActionResult> Upload(
+    [FromForm] DataCollectionModel dataCollection
+  )
   {
-    // todo: fix the problem of getting a corrupted file
-    if (dataCollection != null && dataCollection.Dataset != null)
+    using (MemoryStream memoryStream = new MemoryStream())
     {
-      var workbook = dataCollection.SetTheDateInTheFilename();
-      var upload = Path.Combine(
-        this.webHostEnvironment.WebRootPath,
-        "Store/workbooks"
-      );
-      var datasetPath = Path.Combine(upload, workbook);
-      dataCollection.Dataset.CopyTo(
-        new FileStream(datasetPath, FileMode.Create)
-      );
+      if (dataCollection != null && dataCollection.Dataset != null)
+      {
+        await dataCollection.Dataset.CopyToAsync(memoryStream);
+        var workbook = dataCollection.SetTheDateInTheFilename();
+        var upload = Path.Combine(
+          this.webHostEnvironment.WebRootPath,
+          "Store/workbooks"
+        );
+        var datasetPath = Path.Combine(upload, workbook);
+        dataCollection.Dataset.CopyTo(
+          new FileStream(datasetPath, FileMode.Create)
+        );
+      }
     }
     return RedirectToAction(
       "Index",
@@ -75,8 +80,10 @@ public class HomeController : Controller
   [HttpPost]
   public IActionResult Schematize(
     string workbook
-  ) {
-    if (workbook != null && workbook != string.Empty) {
+  )
+  {
+    if (workbook != null && workbook != string.Empty)
+    {
       string storeDatasetPath = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/workbooks"
@@ -134,7 +141,8 @@ public class HomeController : Controller
         domainModel: new DomainModel() { Comment = comment },
         schemePath: schemePath
       );
-      this.report = new ReportModel() {
+      this.report = new ReportModel()
+      {
         Comment = comment,
         Disposition = Convert.ToBoolean(predictionModel.PredictedLabel)
       };
@@ -160,17 +168,17 @@ public class HomeController : Controller
     }
   }
 
-[HttpGet]
+  [HttpGet]
   public IActionResult Report([FromQuery]
     string Comment,
-    bool Disposition
-  )
+      bool Disposition
+    )
   {
     var report = new ReportModel()
-      {
-        Comment = Comment,
-        Disposition = Disposition
-      };
+    {
+      Comment = Comment,
+      Disposition = Disposition
+    };
     return View(report);
   }
 
