@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 using System.Diagnostics;
 using AttitudeML.Mvc.Feather.Models;
 using AttitudeML.Common.Models;
