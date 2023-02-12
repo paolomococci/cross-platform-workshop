@@ -31,7 +31,6 @@ public class HomeController : Controller
     [FromForm] IFormFile formFile
   )
   {
-    // todo: it works, it also uploads large files
     try
     {
       var upload = Path.Combine(
