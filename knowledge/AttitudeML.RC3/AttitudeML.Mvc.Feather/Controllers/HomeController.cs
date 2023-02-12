@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 using System.Diagnostics;
 using AttitudeML.Mvc.Feather.Models;
 using AttitudeML.Common.Models;
@@ -32,19 +31,23 @@ public class HomeController : Controller
   }
 
   [HttpPost]
-  public IActionResult Upload(DataCollectionModel dataCollection)
+  public async Task<IActionResult> Upload(IFormFile formFile)
   {
-    if (dataCollection.Dataset != null)
+    // todo: method to do it all over again, it does not work!
+    if (formFile != null && formFile.Length > 0)
     {
-      var workbook = dataCollection.SetTheDateInTheFilename();
       var upload = Path.Combine(
         this.webHostEnvironment.WebRootPath,
         "Store/workbooks"
       );
-      var datasetPath = Path.Combine(upload, workbook);
-      dataCollection.Dataset.CopyTo(
-        new FileStream(datasetPath, FileMode.Create)
-      );
+      var datasetPath = Path.Combine(upload, formFile.FileName);
+      using (FileStream fileStream = new FileStream(datasetPath, FileMode.Create))
+      {
+        await formFile.CopyToAsync(fileStream);
+        byte[] temp = new byte[fileStream.Length];
+        fileStream.Seek(0, SeekOrigin.Begin);
+        fileStream.Read(temp, 0, temp.Length);
+      }
     }
     return RedirectToAction(
       "Index",
