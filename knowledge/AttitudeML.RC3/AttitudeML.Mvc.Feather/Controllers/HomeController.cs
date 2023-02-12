@@ -31,10 +31,10 @@ public class HomeController : Controller
   }
 
   [HttpPost]
-  [RequestFormLimits(MultipartBodyLengthLimit = 52428800)]
+  [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
   public IActionResult Upload(DataCollectionModel dataCollection)
   {
-    if (dataCollection.Dataset != null)
+    if (dataCollection != null && dataCollection.Dataset != null)
     {
       var workbook = dataCollection.SetTheDateInTheFilename();
       var upload = Path.Combine(
