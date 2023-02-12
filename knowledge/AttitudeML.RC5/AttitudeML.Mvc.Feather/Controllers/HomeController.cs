@@ -27,11 +27,6 @@ public class HomeController : Controller
     return View();
   }
 
-  public IActionResult Upload()
-  {
-    return View(new DataCollectionModel());
-  }
-
   [HttpPost, ActionName("Upload"), DisableRequestSizeLimit]
   public async Task<IActionResult> Upload(
     [FromForm] IFormFile formFile
