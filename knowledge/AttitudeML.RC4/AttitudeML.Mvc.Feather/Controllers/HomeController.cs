@@ -56,7 +56,6 @@ public class HomeController : Controller
       }
       else
       {
-        ViewBag.Message = "File Upload Failed";
         System.Console.WriteLine("File upload failed.");
       }
     }
