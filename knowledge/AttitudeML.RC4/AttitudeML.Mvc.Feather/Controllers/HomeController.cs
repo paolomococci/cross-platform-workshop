@@ -37,7 +37,7 @@ public class HomeController : Controller
     [FromForm] IFormFile formFile
   )
   {
-    // todo: fix error: Object reference not set to an instance of an object
+    // todo: it works, it also uploads large files, but it creates an unwanted directory
     try
     {
       var upload = Path.Combine(
