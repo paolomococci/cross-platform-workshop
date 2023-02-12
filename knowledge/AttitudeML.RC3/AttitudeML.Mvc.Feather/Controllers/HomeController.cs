@@ -31,29 +31,20 @@ public class HomeController : Controller
     return View(new DataCollectionModel());
   }
 
-  [HttpPost, ActionName("Upload")]
-  [AllowAnonymous]
-  [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
-  public async Task<IActionResult> Upload(
-    [FromForm] DataCollectionModel dataCollection
-  )
+  [HttpPost]
+  public IActionResult Upload(DataCollectionModel dataCollection)
   {
-    using (MemoryStream memoryStream = new MemoryStream())
+    if (dataCollection.Dataset != null)
     {
-      if (dataCollection != null && dataCollection.Dataset != null)
-      {
-        await dataCollection.Dataset.CopyToAsync(memoryStream);
-        var data = memoryStream.ToArray();
-        var workbook = dataCollection.SetTheDateInTheFilename();
-        var upload = Path.Combine(
-          this.webHostEnvironment.WebRootPath,
-          "Store/workbooks"
-        );
-        var datasetPath = Path.Combine(upload, workbook);
-        dataCollection.Dataset.CopyTo(
-          new FileStream(datasetPath, FileMode.Create)
-        );
-      }
+      var workbook = dataCollection.SetTheDateInTheFilename();
+      var upload = Path.Combine(
+        this.webHostEnvironment.WebRootPath,
+        "Store/workbooks"
+      );
+      var datasetPath = Path.Combine(upload, workbook);
+      dataCollection.Dataset.CopyTo(
+        new FileStream(datasetPath, FileMode.Create)
+      );
     }
     return RedirectToAction(
       "Index",
