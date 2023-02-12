@@ -43,6 +43,7 @@ public class HomeController : Controller
       if (dataCollection != null && dataCollection.Dataset != null)
       {
         await dataCollection.Dataset.CopyToAsync(memoryStream);
+        var data = memoryStream.ToArray();
         var workbook = dataCollection.SetTheDateInTheFilename();
         var upload = Path.Combine(
           this.webHostEnvironment.WebRootPath,
