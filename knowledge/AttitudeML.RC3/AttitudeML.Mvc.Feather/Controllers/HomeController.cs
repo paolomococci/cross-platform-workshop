@@ -36,6 +36,7 @@ public class HomeController : Controller
   [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
   public IActionResult Upload(DataCollectionModel dataCollection)
   {
+    // todo: fix the problem of getting a corrupted file
     if (dataCollection != null && dataCollection.Dataset != null)
     {
       var workbook = dataCollection.SetTheDateInTheFilename();
